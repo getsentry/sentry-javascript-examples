@@ -8,10 +8,14 @@
   },
   "packageManager": "yarn@4.1.1",
   "scripts": {
+    "start:express": "yarn workspace express-test-application run start",
     "fix:prettier": "prettier . --write",
     "fix:lint": "yarn run eslint --fix",
     "lint": "yarn run eslint"
   },
+  "workspaces": [
+    "apps/express"
+  ],
   "devDependencies": {
     "@eslint/js": "^9.0.0",
     "@types/node": "^20.12.5",
