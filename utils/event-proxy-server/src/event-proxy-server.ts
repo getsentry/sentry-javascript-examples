@@ -9,7 +9,9 @@ import * as zlib from 'zlib';
 import type { Envelope, EnvelopeItem } from '@sentry/types';
 import { parseEnvelope } from '@sentry/utils';
 
+const readFile = util.promisify(fs.readFile);
 const writeFile = util.promisify(fs.writeFile);
+const unlink = util.promisify(fs.unlink);
 
 interface EventProxyServerOptions {
   /** Port to start the event proxy server at. */
@@ -83,12 +85,9 @@ function replaceDynamicValues(data: string): string[] {
  *  The new content is saved into a new file with the url as the filename.
  *  The temporary file is deleted in the end.
  */
-function transformSavedJSON() {
-  fs.readFile(TEMPORARY_FILE_PATH, 'utf8', (err, data) => {
-    if (err) {
-      console.error('Error reading file', err);
-      return;
-    }
+async function transformSavedJSON() {
+  try {
+    const data = await readFile(TEMPORARY_FILE_PATH, 'utf8');
 
     const jsonData = addCommaAfterEachLine(data);
     const transformedJSON = replaceDynamicValues(jsonData);
@@ -98,23 +97,15 @@ function transformSavedJSON() {
       const url = objWithReq.request.url;
       const filepath = `payload-files/${extractPathFromUrl(url)}.json`;
 
-      fs.writeFile(filepath, JSON.stringify(transformedJSON, null, 2), err => {
-        if (err) {
-          console.error('Error writing file', err);
-        } else {
-          console.log(`Successfully modified timestamp in ${filepath}`);
-        }
-      });
+      await writeFile(filepath, JSON.stringify(transformedJSON, null, 2));
+      console.log(`Successfully modified timestamp in ${filepath}`);
     }
-  });
 
-  fs.unlink(TEMPORARY_FILE_PATH, err => {
-    if (err) {
-      console.error('Error deleting file', err);
-    } else {
-      console.log(`Successfully deleted ${TEMPORARY_FILE_PATH}`);
-    }
-  });
+    await unlink(TEMPORARY_FILE_PATH);
+    console.log(`Successfully deleted ${TEMPORARY_FILE_PATH}`);
+  } catch (err) {
+    console.error('Error', err);
+  }
 }
 
 /**
