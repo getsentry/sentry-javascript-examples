@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "version": "8.0.0-alpha.7",
+  "name": "event-proxy-server",
+  "author": "Sentry",
+  "license": "MIT",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=14.18"
+  },
+  "scripts": {
+    "start": "ts-node start-event-proxy.ts",
+    "fix": "eslint . --format stylish --fix",
+    "lint": "eslint . --format stylish",
+    "build:dev": "yarn build",
+    "clean": "rimraf -g ./node_modules ./build"
+  },
+  "dependencies": {
+    "@sentry/types": "7.109.0",
+    "@sentry/utils": "7.109.0"
+  },
+  "volta": {
+    "extends": "../../package.json"
+  }
+}
