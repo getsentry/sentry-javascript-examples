@@ -11,9 +11,6 @@ Sentry.init({
 
 // can use `import` instead of `require` because of `'esModuleInterop': true` in tsconfig.json
 import express from 'express';
-import dotenv from 'dotenv';
-
-dotenv.config({ path: './../../.env' });
 
 declare global {
   namespace globalThis {
@@ -23,19 +20,6 @@ declare global {
 
 const app = express();
 const port = 3030;
-
-Sentry.init({
-  environment: 'qa', // dynamic sampling bias to keep transactions
-  dsn: process.env.SENTRY_DSN,
-  includeLocalVariables: true,
-  debug: true,
-  tunnel: `http://localhost:3031/`, // proxy server
-  tracesSampleRate: 1,
-  integrations: [new Sentry.Integrations.Express({ app })],
-});
-
-app.use(Sentry.Handlers.requestHandler());
-app.use(Sentry.Handlers.tracingHandler());
 
 app.get('/test-success', function (req, res) {
   res.send({ version: 'v1' });

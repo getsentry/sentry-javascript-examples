@@ -1,270 +1,201 @@
 [
   {
-    "dsn": "[[dsn]]",
     "event_id": "[[ID1]]",
+    "sent_at": "[[ISODateString]]",
     "sdk": {
       "name": "sentry.javascript.node",
-      "version": "7.110.1"
+      "version": "8.0.0-alpha.9"
     },
-    "sent_at": "[[ISODateString]]",
-    "trace": {
-      "environment": "qa",
-      "public_key": "[[publicKey]]",
-      "sample_rate": "1",
-      "sampled": "true",
-      "trace_id": "[[ID2]]",
-      "transaction": "GET /test-error-manual"
-    }
+    "dsn": "[[dsn]]"
   },
   {
     "type": "event"
   },
   {
-    "breadcrumbs": [
-      {
-        "category": "console",
-        "level": "log",
-        "message": "Example app listening on port 3030",
-        "timestamp": "[[timestamp]]"
-      }
-    ],
-    "contexts": {
-      "app": {
-        "app_memory": "[[highNumber]]",
-        "app_start_time": "[[ISODateString]]"
-      },
-      "cloud_resource": {},
-      "culture": {
-        "locale": "en-US",
-        "timezone": "Europe/Vienna"
-      },
-      "device": {
-        "arch": "arm64",
-        "boot_time": "[[ISODateString]]",
-        "cpu_description": "Apple M1 Pro",
-        "free_memory": "[[highNumber]]",
-        "memory_size": "[[highNumber]]",
-        "processor_count": 10,
-        "processor_frequency": "[[highNumber]]"
-      },
-      "os": {
-        "build": "23D56",
-        "kernel_version": "23.3.0",
-        "name": "macOS",
-        "version": "14.3"
-      },
-      "runtime": {
-        "name": "node",
-        "version": "v20.12.1"
-      },
-      "trace": {
-        "data": {
-          "sentry.origin": "manual"
-        },
-        "origin": "manual",
-        "parent_span_id": "[[ID3]]",
-        "span_id": "[[ID4]]",
-        "trace_id": "[[ID2]]"
-      }
-    },
-    "environment": "qa",
-    "event_id": "[[ID1]]",
     "exception": {
       "values": [
         {
-          "mechanism": {
-            "handled": true,
-            "type": "generic"
-          },
+          "type": "Error",
+          "value": "This is an error",
           "stacktrace": {
             "frames": [
               {
-                "colno": 25,
-                "context_line": "    return asyncStorage.run(newHub, () => {",
                 "filename": "[[FILENAME1]]",
-                "function": "Object.runWithAsyncContext",
+                "module": "@sentry.opentelemetry.cjs:index",
+                "function": "Object.startSpan",
+                "lineno": 874,
+                "colno": 17,
                 "in_app": false,
-                "lineno": 45,
-                "module": "@sentry.node.cjs.async:hooks",
-                "post_context": [
-                  "      return callback();",
-                  "    });",
-                  "  }",
+                "pre_context": [
                   "",
-                  "  core.setAsyncContextStrategy({ getCurrentHub, runWithAsyncContext });",
-                  "}",
+                  "  const activeCtx = getContext(options.scope, options.forceTransaction);",
+                  "  const shouldSkipSpan = options.onlyIfParent && !api.trace.getSpan(activeCtx);",
+                  "  const ctx = shouldSkipSpan ? core$1.suppressTracing(activeCtx) : activeCtx;",
+                  "",
+                  "  const spanContext = getSpanContext(options);",
                   ""
                 ],
-                "pre_context": [
-                  "      // We're already in an async context, so we don't need to create a new one",
-                  "      // just call the callback with the current hub",
-                  "      return callback();",
-                  "    }",
+                "context_line": "  return tracer.startActiveSpan(name, spanContext, ctx, span => {",
+                "post_context": [
+                  "    _applySentryAttributesToSpan(span, options);",
                   "",
-                  "    const newHub = createNewHub(existingHub);",
-                  ""
+                  "    return core.handleCallbackErrors(",
+                  "      () => callback(span),",
+                  "      () => {",
+                  "        // Only set the span status to ERROR when there wasn't any status set before, in order to avoid stomping useful span statuses",
+                  "        if (core.spanToJSON(span).status === undefined) {"
                 ]
               },
               {
-                "colno": 14,
                 "filename": "[[FILENAME2]]",
-                "function": "AsyncLocalStorage.run",
+                "module": "@opentelemetry.sdk-trace-base.build.src:Tracer",
+                "function": "Tracer.startActiveSpan",
+                "lineno": 121,
+                "colno": 32,
                 "in_app": false,
-                "lineno": 346,
-                "module": "node:async_hooks"
+                "pre_context": [
+                  "            opts = arg2;",
+                  "            ctx = arg3;",
+                  "            fn = arg4;",
+                  "        }",
+                  "        const parentContext = ctx !== null && ctx !== void 0 ? ctx : api.context.active();",
+                  "        const span = this.startSpan(name, opts, parentContext);",
+                  "        const contextWithSpanSet = api.trace.setSpan(parentContext, span);"
+                ],
+                "context_line": "        return api.context.with(contextWithSpanSet, fn, undefined, span);",
+                "post_context": [
+                  "    }",
+                  "    /** Returns the active {@link GeneralLimits}. */",
+                  "    getGeneralLimits() {",
+                  "        return this._generalLimits;",
+                  "    }",
+                  "    /** Returns the active {@link SpanLimits}. */",
+                  "    getSpanLimits() {"
+                ]
               },
               {
-                "colno": 14,
-                "context_line": "      return callback();",
-                "filename": "[[FILENAME1]]",
-                "function": "<anonymous>",
+                "filename": "[[FILENAME3]]",
+                "module": "@opentelemetry.api.build.src.api:context",
+                "function": "ContextAPI.with",
+                "lineno": 60,
+                "colno": 46,
                 "in_app": false,
-                "lineno": 46,
-                "module": "@sentry.node.cjs.async:hooks",
+                "pre_context": [
+                  "     *",
+                  "     * @param context context to be active during function execution",
+                  "     * @param fn function to execute in a context",
+                  "     * @param thisArg optional receiver to be used for calling fn",
+                  "     * @param args optional arguments forwarded to fn",
+                  "     */",
+                  "    with(context, fn, thisArg, ...args) {"
+                ],
+                "context_line": "        return this._getContextManager().with(context, fn, thisArg, ...args);",
                 "post_context": [
-                  "    });",
+                  "    }",
+                  "    /**",
+                  "     * Bind a context to a target function or event emitter",
+                  "     *",
+                  "     * @param context context to bind to the event emitter or function. Defaults to the currently active context",
+                  "     * @param target function or event emitter to bind",
+                  "     */"
+                ]
+              },
+              {
+                "filename": "[[FILENAME1]]",
+                "module": "@sentry.opentelemetry.cjs:index",
+                "function": "SentryContextManager.with",
+                "lineno": "[[highNumber]]",
+                "colno": 24,
+                "in_app": false,
+                "pre_context": [
+                  "      const ctx2 = ctx1",
+                  "        .deleteValue(SENTRY_FORK_ISOLATION_SCOPE_CONTEXT_KEY)",
+                  "        .deleteValue(SENTRY_FORK_SET_SCOPE_CONTEXT_KEY)",
+                  "        .deleteValue(SENTRY_FORK_SET_ISOLATION_SCOPE_CONTEXT_KEY);",
+                  "",
+                  "      setContextOnScope(newCurrentScope, ctx2);",
+                  ""
+                ],
+                "context_line": "      return super.with(ctx2, fn, thisArg, ...args);",
+                "post_context": [
+                  "    }",
                   "  }",
                   "",
-                  "  core.setAsyncContextStrategy({ getCurrentHub, runWithAsyncContext });",
+                  "  return SentryContextManager ;",
                   "}",
                   "",
-                  "exports.setHooksAsyncContextStrategy = setHooksAsyncContextStrategy;"
-                ],
-                "pre_context": [
-                  "      // just call the callback with the current hub",
-                  "      return callback();",
-                  "    }",
-                  "",
-                  "    const newHub = createNewHub(existingHub);",
-                  "",
-                  "    return asyncStorage.run(newHub, () => {"
+                  "/** If this attribute is true, it means that the parent is a remote span. */"
                 ]
               },
               {
-                "colno": 22,
-                "context_line": "    return exports$1.withScope(context.scope, scope => {",
-                "filename": "[[FILENAME3]]",
-                "function": "<anonymous>",
-                "in_app": false,
-                "lineno": 83,
-                "module": "@sentry.core.cjs.tracing:trace",
-                "post_context": [
-                  "      // eslint-disable-next-line deprecation/deprecation",
-                  "      const hub$1 = hub.getCurrentHub();",
-                  "      // eslint-disable-next-line deprecation/deprecation",
-                  "      const parentSpan = scope.getSpan();",
-                  "",
-                  "      const shouldSkipSpan = context.onlyIfParent && !parentSpan;",
-                  "      const activeSpan = shouldSkipSpan"
-                ],
-                "pre_context": [
-                  " * or you didn't set `tracesSampleRate`, this function will not generate spans",
-                  " * and the `span` returned from the callback will be undefined.",
-                  " */",
-                  "function startSpan(context, callback) {",
-                  "  const spanContext = normalizeContext(context);",
-                  "",
-                  "  return hub.runWithAsyncContext(() => {"
-                ]
-              },
-              {
-                "colno": 20,
-                "context_line": "      return hub$1.withScope(callback);",
                 "filename": "[[FILENAME4]]",
-                "function": "Object.withScope",
+                "module": "@opentelemetry.context-async-hooks.build.src:AsyncLocalStorageContextManager",
+                "function": "SentryContextManager.with",
+                "lineno": 33,
+                "colno": 40,
                 "in_app": false,
-                "lineno": 177,
-                "module": "@sentry.core.cjs:exports",
+                "pre_context": [
+                  "    }",
+                  "    active() {",
+                  "        var _a;",
+                  "        return (_a = this._asyncLocalStorage.getStore()) !== null && _a !== void 0 ? _a : api_1.ROOT_CONTEXT;",
+                  "    }",
+                  "    with(context, fn, thisArg, ...args) {",
+                  "        const cb = thisArg == null ? fn : fn.bind(thisArg);"
+                ],
+                "context_line": "        return this._asyncLocalStorage.run(context, cb, ...args);",
                 "post_context": [
                   "    }",
-                  "",
-                  "    // eslint-disable-next-line deprecation/deprecation",
-                  "    return hub$1.withScope(() => {",
-                  "      // eslint-disable-next-line deprecation/deprecation",
-                  "      hub$1.getStackTop().scope = scope ;",
-                  "      return callback(scope );"
-                ],
-                "pre_context": [
-                  "  const hub$1 = hub.getCurrentHub();",
-                  "",
-                  "  // If a scope is defined, we want to make this the active scope instead of the default one",
-                  "  if (rest.length === 2) {",
-                  "    const [scope, callback] = rest;",
-                  "    if (!scope) {",
-                  "      // eslint-disable-next-line deprecation/deprecation"
+                  "    enable() {",
+                  "        return this;",
+                  "    }",
+                  "    disable() {",
+                  "        this._asyncLocalStorage.disable();",
+                  "        return this;"
                 ]
               },
               {
-                "colno": 28,
-                "context_line": "      maybePromiseResult = callback(scope);",
                 "filename": "[[FILENAME5]]",
-                "function": "Hub.withScope",
-                "in_app": false,
-                "lineno": 194,
-                "module": "@sentry.core.cjs:hub",
-                "post_context": [
-                  "    } catch (e) {",
-                  "      // eslint-disable-next-line deprecation/deprecation",
-                  "      this.popScope();",
-                  "      throw e;",
-                  "    }",
-                  "",
-                  "    if (utils.isThenable(maybePromiseResult)) {"
-                ],
-                "pre_context": [
-                  "   */",
-                  "   withScope(callback) {",
-                  "    // eslint-disable-next-line deprecation/deprecation",
-                  "    const scope = this.pushScope();",
-                  "",
-                  "    let maybePromiseResult;",
-                  "    try {"
-                ]
+                "module": "node:async_hooks",
+                "function": "AsyncLocalStorage.run",
+                "lineno": 346,
+                "colno": 14,
+                "in_app": false
               },
               {
-                "colno": 35,
-                "context_line": "      return handleCallbackErrors.handleCallbackErrors(",
-                "filename": "[[FILENAME3]]",
-                "function": "<anonymous>",
+                "filename": "[[FILENAME1]]",
+                "module": "@sentry.opentelemetry.cjs:index",
+                "function": "?",
+                "lineno": 877,
+                "colno": 17,
                 "in_app": false,
-                "lineno": 99,
-                "module": "@sentry.core.cjs.tracing:trace",
-                "post_context": [
-                  "        () => callback(activeSpan),",
-                  "        () => {",
-                  "          // Only update the span status if it hasn't been changed yet",
-                  "          if (activeSpan) {",
-                  "            const { status } = spanUtils.spanToJSON(activeSpan);",
-                  "            if (!status || status === 'ok') {",
-                  "              activeSpan.setStatus('internal_error');"
-                ],
                 "pre_context": [
-                  "        : createChildSpanOrTransaction(hub$1, {",
-                  "            parentSpan,",
-                  "            spanContext,",
-                  "            forceTransaction: context.forceTransaction,",
-                  "            scope,",
-                  "          });",
+                  "  const ctx = shouldSkipSpan ? core$1.suppressTracing(activeCtx) : activeCtx;",
+                  "",
+                  "  const spanContext = getSpanContext(options);",
+                  "",
+                  "  return tracer.startActiveSpan(name, spanContext, ctx, span => {",
+                  "    _applySentryAttributesToSpan(span, options);",
                   ""
+                ],
+                "context_line": "    return core.handleCallbackErrors(",
+                "post_context": [
+                  "      () => callback(span),",
+                  "      () => {",
+                  "        // Only set the span status to ERROR when there wasn't any status set before, in order to avoid stomping useful span statuses",
+                  "        if (core.spanToJSON(span).status === undefined) {",
+                  "          span.setStatus({ code: api.SpanStatusCode.ERROR });",
+                  "        }",
+                  "      },"
                 ]
               },
               {
-                "colno": 26,
-                "context_line": "    maybePromiseResult = fn();",
                 "filename": "[[FILENAME6]]",
-                "function": "Object.handleCallbackErrors",
-                "in_app": false,
-                "lineno": 26,
                 "module": "@sentry.core.cjs.utils:handleCallbackErrors",
-                "post_context": [
-                  "  } catch (e) {",
-                  "    onError(e);",
-                  "    onFinally();",
-                  "    throw e;",
-                  "  }",
-                  "",
-                  "  return maybeHandlePromiseRejection(maybePromiseResult, onError, onFinally);"
-                ],
+                "function": "Object.handleCallbackErrors",
+                "lineno": 26,
+                "colno": 26,
+                "in_app": false,
                 "pre_context": [
                   "  fn,",
                   "  onError,",
@@ -273,52 +204,52 @@
                   ") {",
                   "  let maybePromiseResult;",
                   "  try {"
-                ]
-              },
-              {
-                "colno": 15,
-                "context_line": "        () => callback(activeSpan),",
-                "filename": "[[FILENAME3]]",
-                "function": "handleCallbackErrors.handleCallbackErrors.status.status",
-                "in_app": false,
-                "lineno": 100,
-                "module": "@sentry.core.cjs.tracing:trace",
-                "post_context": [
-                  "        () => {",
-                  "          // Only update the span status if it hasn't been changed yet",
-                  "          if (activeSpan) {",
-                  "            const { status } = spanUtils.spanToJSON(activeSpan);",
-                  "            if (!status || status === 'ok') {",
-                  "              activeSpan.setStatus('internal_error');",
-                  "            }"
                 ],
-                "pre_context": [
-                  "            parentSpan,",
-                  "            spanContext,",
-                  "            forceTransaction: context.forceTransaction,",
-                  "            scope,",
-                  "          });",
+                "context_line": "    maybePromiseResult = fn();",
+                "post_context": [
+                  "  } catch (e) {",
+                  "    onError(e);",
+                  "    onFinally();",
+                  "    throw e;",
+                  "  }",
                   "",
-                  "      return handleCallbackErrors.handleCallbackErrors("
+                  "  return maybeHandlePromiseRejection(maybePromiseResult, onError, onFinally);"
                 ]
               },
               {
-                "colno": 53,
-                "context_line": "                            Sentry.captureException(new Error('This is an error'));",
-                "filename": "[[FILENAME7]]",
-                "function": "<anonymous>",
-                "in_app": true,
-                "lineno": 146,
-                "module": "app",
-                "post_context": [
-                  "                        });",
-                  "                    });",
-                  "                    return [4 /*yield*/, Sentry.flush(2000)];",
-                  "                case 1:",
-                  "                    _a.sent();",
-                  "                    res.send({",
-                  "                        transactionIds: global.transactionIds || [],"
+                "filename": "[[FILENAME1]]",
+                "module": "@sentry.opentelemetry.cjs:index",
+                "function": "?",
+                "lineno": 878,
+                "colno": 13,
+                "in_app": false,
+                "pre_context": [
+                  "",
+                  "  const spanContext = getSpanContext(options);",
+                  "",
+                  "  return tracer.startActiveSpan(name, spanContext, ctx, span => {",
+                  "    _applySentryAttributesToSpan(span, options);",
+                  "",
+                  "    return core.handleCallbackErrors("
                 ],
+                "context_line": "      () => callback(span),",
+                "post_context": [
+                  "      () => {",
+                  "        // Only set the span status to ERROR when there wasn't any status set before, in order to avoid stomping useful span statuses",
+                  "        if (core.spanToJSON(span).status === undefined) {",
+                  "          span.setStatus({ code: api.SpanStatusCode.ERROR });",
+                  "        }",
+                  "      },",
+                  "      () => span.end(),"
+                ]
+              },
+              {
+                "filename": "[[FILENAME7]]",
+                "module": "app",
+                "function": "?",
+                "lineno": 143,
+                "colno": 53,
+                "in_app": true,
                 "pre_context": [
                   "app.get('/test-error-manual', function (req, res) {",
                   "    return __awaiter(this, void 0, void 0, function () {",
@@ -327,106 +258,67 @@
                   "                case 0:",
                   "                    Sentry.startSpan({ name: 'test-transaction', op: 'e2e-test' }, function () {",
                   "                        Sentry.startSpan({ name: 'test-span' }, function () {"
+                ],
+                "context_line": "                            Sentry.captureException(new Error('This is an error'));",
+                "post_context": [
+                  "                        });",
+                  "                    });",
+                  "                    return [4 /*yield*/, Sentry.flush(2000)];",
+                  "                case 1:",
+                  "                    _a.sent();",
+                  "                    res.send({",
+                  "                        transactionIds: global.transactionIds || [],"
                 ]
               }
             ]
           },
-          "type": "Error",
-          "value": "This is an error"
+          "mechanism": {
+            "type": "generic",
+            "handled": true
+          }
         }
       ]
     },
-    "modules": {
-      "accepts": "1.3.8",
-      "array-flatten": "1.1.1",
-      "body-parser": "1.20.2",
-      "bytes": "3.1.2",
-      "call-bind": "1.0.7",
-      "content-disposition": "0.5.4",
-      "content-type": "1.0.5",
-      "cookie": "0.6.0",
-      "cookie-signature": "1.0.6",
-      "define-data-property": "1.1.4",
-      "depd": "2.0.0",
-      "destroy": "1.2.0",
-      "dotenv": "16.4.5",
-      "ee-first": "1.1.1",
-      "encodeurl": "1.0.2",
-      "es-define-property": "1.0.0",
-      "es-errors": "1.3.0",
-      "escape-html": "1.0.3",
-      "etag": "1.8.1",
-      "express": "4.19.2",
-      "finalhandler": "1.2.0",
-      "forwarded": "0.2.0",
-      "fresh": "0.5.2",
-      "function-bind": "1.1.2",
-      "get-intrinsic": "1.2.4",
-      "gopd": "1.0.1",
-      "has-property-descriptors": "1.0.2",
-      "has-proto": "1.0.3",
-      "has-symbols": "1.0.3",
-      "hasown": "2.0.2",
-      "http-errors": "2.0.0",
-      "iconv-lite": "0.4.24",
-      "inherits": "2.0.4",
-      "ipaddr.js": "1.9.1",
-      "media-typer": "0.3.0",
-      "merge-descriptors": "1.0.1",
-      "methods": "1.1.2",
-      "mime": "1.6.0",
-      "mime-db": "1.52.0",
-      "mime-types": "2.1.35",
-      "ms": "2.1.3",
-      "negotiator": "0.6.3",
-      "object-inspect": "1.13.1",
-      "on-finished": "2.4.1",
-      "parseurl": "1.3.3",
-      "path-to-regexp": "0.1.7",
-      "proxy-addr": "2.0.7",
-      "qs": "6.11.0",
-      "range-parser": "1.2.1",
-      "raw-body": "2.5.2",
-      "safe-buffer": "5.2.1",
-      "safer-buffer": "2.1.2",
-      "send": "0.18.0",
-      "serve-static": "1.15.0",
-      "set-function-length": "1.2.2",
-      "setprototypeof": "1.2.0",
-      "side-channel": "1.0.6",
-      "statuses": "2.0.1",
-      "toidentifier": "1.0.1",
-      "type-is": "1.6.18",
-      "unpipe": "1.0.0",
-      "utils-merge": "1.0.1",
-      "vary": "1.1.2"
-    },
+    "event_id": "[[ID1]]",
     "platform": "node",
-    "request": {
-      "cookies": {
-        "sc": "2pGHpwfeQfLDqPcR9gwpxKl0DHTlOKYq"
+    "contexts": {
+      "trace": {
+        "trace_id": "[[ID2]]",
+        "span_id": "[[ID3]]",
+        "parent_span_id": "[[ID4]]"
       },
-      "headers": {
-        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
-        "accept-encoding": "gzip, deflate, br, zstd",
-        "accept-language": "en-GB,en-US;q=0.9,en;q=0.8,de;q=0.7",
-        "connection": "keep-alive",
-        "cookie": "sc=2pGHpwfeQfLDqPcR9gwpxKl0DHTlOKYq",
-        "host": "localhost:3030",
-        "sec-ch-ua": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"",
-        "sec-ch-ua-mobile": "?0",
-        "sec-ch-ua-platform": "\"macOS\"",
-        "sec-fetch-dest": "document",
-        "sec-fetch-mode": "navigate",
-        "sec-fetch-site": "none",
-        "sec-fetch-user": "?1",
-        "upgrade-insecure-requests": "1",
-        "user-agent": "[[user-agent]]"
+      "runtime": {
+        "name": "node",
+        "version": "v20.12.1"
       },
-      "method": "GET",
-      "query_string": {},
-      "url": "http://localhost:3030/test-error-manual"
+      "app": {
+        "app_start_time": "[[ISODateString]]",
+        "app_memory": "[[highNumber]]"
+      },
+      "os": {
+        "kernel_version": "23.2.0",
+        "name": "macOS",
+        "version": "14.2",
+        "build": "23C64"
+      },
+      "device": {
+        "boot_time": "[[ISODateString]]",
+        "arch": "arm64",
+        "memory_size": "[[highNumber]]",
+        "free_memory": "[[highNumber]]",
+        "processor_count": 10,
+        "cpu_description": "Apple M1 Pro",
+        "processor_frequency": "[[highNumber]]"
+      },
+      "culture": {
+        "locale": "en-US",
+        "timezone": "Europe/Vienna"
+      },
+      "cloud_resource": {}
     },
+    "server_name": "D9M3PY4LQ7.local",
+    "timestamp": "[[timestamp]]",
+    "environment": "qa",
     "sdk": {
       "integrations": [
         "InboundFilters",
@@ -435,29 +327,137 @@
         "RequestData",
         "Console",
         "Http",
-        "Undici",
+        "NodeFetch",
         "OnUncaughtException",
         "OnUnhandledRejection",
         "ContextLines",
         "LocalVariables",
         "Context",
         "Modules",
-        "Express"
+        "Express",
+        "Fastify",
+        "Graphql",
+        "Mongo",
+        "Mongoose",
+        "Mysql",
+        "Mysql2",
+        "Postgres",
+        "Nest",
+        "Hapi",
+        "Koa"
       ],
       "name": "sentry.javascript.node",
+      "version": "8.0.0-alpha.9",
       "packages": [
         {
           "name": "npm:@sentry/node",
-          "version": "7.110.1"
+          "version": "8.0.0-alpha.9"
         }
-      ],
-      "version": "7.110.1"
+      ]
     },
-    "server_name": "JH0G94X29Q.local",
-    "tags": {
-      "transaction": "GET /test-error-manual"
+    "breadcrumbs": [
+      {
+        "timestamp": "[[timestamp]]",
+        "category": "console",
+        "level": "log",
+        "message": "Example app listening on port 3030"
+      }
+    ],
+    "request": {
+      "method": "GET",
+      "cookies": {},
+      "headers": {
+        "host": "localhost:3030",
+        "user-agent": "[[user-agent]]",
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        "accept-language": "en-US,en;q=0.5",
+        "accept-encoding": "gzip, deflate, br",
+        "connection": "keep-alive",
+        "upgrade-insecure-requests": "1",
+        "sec-fetch-dest": "document",
+        "sec-fetch-mode": "navigate",
+        "sec-fetch-site": "none",
+        "sec-fetch-user": "?1",
+        "pragma": "no-cache",
+        "cache-control": "no-cache"
+      },
+      "url": "http://localhost:3030/test-error-manual"
     },
-    "timestamp": "[[timestamp]]",
-    "transaction": "GET /test-error-manual"
+    "transaction": "GET /test-error-manual",
+    "modules": {
+      "semver": "7.6.0",
+      "yallist": "4.0.0",
+      "shimmer": "1.2.1",
+      "require-in-the-middle": "7.3.0",
+      "resolve": "1.22.8",
+      "is-core-module": "2.13.1",
+      "hasown": "2.0.2",
+      "function-bind": "1.1.2",
+      "debug": "4.3.4",
+      "supports-color": "5.5.0",
+      "module-details-from-path": "1.0.3",
+      "import-in-the-middle": "1.7.3",
+      "express": "4.19.2",
+      "body-parser": "1.20.2",
+      "depd": "2.0.0",
+      "merge-descriptors": "1.0.1",
+      "finalhandler": "1.2.0",
+      "encodeurl": "1.0.2",
+      "escape-html": "1.0.3",
+      "on-finished": "2.4.1",
+      "ee-first": "1.1.1",
+      "parseurl": "1.3.3",
+      "statuses": "2.0.1",
+      "unpipe": "1.0.0",
+      "array-flatten": "1.1.1",
+      "path-to-regexp": "0.1.7",
+      "methods": "1.1.2",
+      "utils-merge": "1.0.1",
+      "setprototypeof": "1.2.0",
+      "qs": "6.11.0",
+      "side-channel": "1.0.6",
+      "get-intrinsic": "1.2.4",
+      "es-errors": "1.3.0",
+      "has-symbols": "1.0.3",
+      "has-proto": "1.0.3",
+      "call-bind": "1.0.7",
+      "set-function-length": "1.2.2",
+      "define-data-property": "1.1.4",
+      "es-define-property": "1.0.0",
+      "gopd": "1.0.1",
+      "has-property-descriptors": "1.0.2",
+      "object-inspect": "1.13.1",
+      "safe-buffer": "5.2.1",
+      "content-disposition": "0.5.4",
+      "content-type": "1.0.5",
+      "send": "0.18.0",
+      "http-errors": "2.0.0",
+      "inherits": "2.0.4",
+      "toidentifier": "1.0.1",
+      "destroy": "1.2.0",
+      "etag": "1.8.1",
+      "fresh": "0.5.2",
+      "mime": "1.6.0",
+      "ms": "2.1.3",
+      "range-parser": "1.2.1",
+      "proxy-addr": "2.0.7",
+      "forwarded": "0.2.0",
+      "ipaddr.js": "1.9.1",
+      "accepts": "1.3.8",
+      "negotiator": "0.6.3",
+      "mime-types": "2.1.35",
+      "mime-db": "1.52.0",
+      "type-is": "1.6.18",
+      "media-typer": "0.3.0",
+      "cookie-signature": "1.0.6",
+      "cookie": "0.6.0",
+      "vary": "1.1.2",
+      "bytes": "3.1.2",
+      "raw-body": "2.5.2",
+      "iconv-lite": "0.4.24",
+      "safer-buffer": "2.1.2",
+      "serve-static": "1.15.0",
+      "opentelemetry-instrumentation-fetch-node": "1.1.2"
+    }
   }
 ]

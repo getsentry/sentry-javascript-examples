@@ -1,103 +1,31 @@
 [
   {
-    "dsn": "[[dsn]]",
     "event_id": "[[ID1]]",
+    "sent_at": "[[ISODateString]]",
     "sdk": {
       "name": "sentry.javascript.node",
-      "version": "7.110.1"
+      "version": "8.0.0-alpha.9"
     },
-    "sent_at": "[[ISODateString]]",
-    "trace": {
-      "environment": "qa",
-      "public_key": "[[publicKey]]",
-      "sample_rate": "1",
-      "sampled": "true",
-      "trace_id": "[[ID2]]",
-      "transaction": "GET /test-error"
-    }
+    "dsn": "[[dsn]]"
   },
   {
     "type": "event"
   },
   {
-    "breadcrumbs": [
-      {
-        "category": "console",
-        "level": "log",
-        "message": "Example app listening on port 3030",
-        "timestamp": "[[timestamp]]"
-      }
-    ],
-    "contexts": {
-      "app": {
-        "app_memory": "[[highNumber]]",
-        "app_start_time": "[[ISODateString]]"
-      },
-      "cloud_resource": {},
-      "culture": {
-        "locale": "en-US",
-        "timezone": "Europe/Vienna"
-      },
-      "device": {
-        "arch": "arm64",
-        "boot_time": "[[ISODateString]]",
-        "cpu_description": "Apple M1 Pro",
-        "free_memory": "[[highNumber]]",
-        "memory_size": "[[highNumber]]",
-        "processor_count": 10,
-        "processor_frequency": "[[highNumber]]"
-      },
-      "os": {
-        "build": "23D56",
-        "kernel_version": "23.3.0",
-        "name": "macOS",
-        "version": "14.3"
-      },
-      "runtime": {
-        "name": "node",
-        "version": "v20.12.1"
-      },
-      "trace": {
-        "data": {
-          "sentry.op": "http.server",
-          "sentry.origin": "auto.http.node.tracingHandler",
-          "sentry.sample_rate": 1,
-          "sentry.source": "route"
-        },
-        "op": "http.server",
-        "origin": "auto.http.node.tracingHandler",
-        "span_id": "[[ID3]]",
-        "trace_id": "[[ID2]]"
-      }
-    },
-    "environment": "qa",
-    "event_id": "[[ID1]]",
     "exception": {
       "values": [
         {
-          "mechanism": {
-            "handled": true,
-            "type": "generic"
-          },
+          "type": "Error",
+          "value": "This is an error",
           "stacktrace": {
             "frames": [
               {
-                "colno": 3,
-                "context_line": "  next();",
                 "filename": "[[FILENAME1]]",
-                "function": "Route.dispatch",
-                "in_app": false,
-                "lineno": 119,
                 "module": "express.lib.router:route",
-                "post_context": [
-                  "",
-                  "  function next(err) {",
-                  "    // signal to exit route",
-                  "    if (err && err === 'route') {",
-                  "      return done();",
-                  "    }",
-                  ""
-                ],
+                "function": "Route.dispatch",
+                "lineno": 119,
+                "colno": 3,
+                "in_app": false,
                 "pre_context": [
                   "",
                   "  if (method === 'head' && !this.methods['head']) {",
@@ -106,25 +34,25 @@
                   "",
                   "  req.route = this;",
                   ""
+                ],
+                "context_line": "  next();",
+                "post_context": [
+                  "",
+                  "  function next(err) {",
+                  "    // signal to exit route",
+                  "    if (err && err === 'route') {",
+                  "      return done();",
+                  "    }",
+                  ""
                 ]
               },
               {
-                "colno": 13,
-                "context_line": "      layer.handle_request(req, res, next);",
                 "filename": "[[FILENAME1]]",
-                "function": "next",
-                "in_app": false,
-                "lineno": 149,
                 "module": "express.lib.router:route",
-                "post_context": [
-                  "    }",
-                  "",
-                  "    sync = 0",
-                  "  }",
-                  "};",
-                  "",
-                  "/**"
-                ],
+                "function": "next",
+                "lineno": 149,
+                "colno": 13,
+                "in_app": false,
                 "pre_context": [
                   "    }",
                   "",
@@ -133,25 +61,25 @@
                   "    } else if (err) {",
                   "      layer.handle_error(err, req, res, next);",
                   "    } else {"
-                ]
-              },
-              {
-                "colno": 5,
-                "context_line": "    fn(req, res, next);",
-                "filename": "[[FILENAME2]]",
-                "function": "Layer.handle [as handle_request]",
-                "in_app": false,
-                "lineno": 95,
-                "module": "express.lib.router:layer",
+                ],
+                "context_line": "      layer.handle_request(req, res, next);",
                 "post_context": [
-                  "  } catch (err) {",
-                  "    next(err);",
+                  "    }",
+                  "",
+                  "    sync = 0",
                   "  }",
                   "};",
                   "",
-                  "/**",
-                  " * Check if this route matches `path`, if so"
-                ],
+                  "/**"
+                ]
+              },
+              {
+                "filename": "[[FILENAME2]]",
+                "module": "express.lib.router:layer",
+                "function": "Layer.handle [as handle_request]",
+                "lineno": 95,
+                "colno": 5,
+                "in_app": false,
                 "pre_context": [
                   "",
                   "  if (fn.length > 3) {",
@@ -160,16 +88,35 @@
                   "  }",
                   "",
                   "  try {"
+                ],
+                "context_line": "    fn(req, res, next);",
+                "post_context": [
+                  "  } catch (err) {",
+                  "    next(err);",
+                  "  }",
+                  "};",
+                  "",
+                  "/**",
+                  " * Check if this route matches `path`, if so"
                 ]
               },
               {
-                "colno": 12,
-                "context_line": "    return __awaiter(this, void 0, void 0, function () {",
                 "filename": "[[FILENAME3]]",
-                "function": "<anonymous>",
-                "in_app": true,
-                "lineno": 86,
                 "module": "app",
+                "function": "?",
+                "lineno": 83,
+                "colno": 12,
+                "in_app": true,
+                "pre_context": [
+                  "var app = (0, express_1.default)();",
+                  "var port = 3030;",
+                  "// todo: add express integration to docs",
+                  "app.get('/test-success', function (req, res) {",
+                  "    res.send({ version: 'v1' });",
+                  "});",
+                  "app.get('/test-error', function (req, res) {"
+                ],
+                "context_line": "    return __awaiter(this, void 0, void 0, function () {",
                 "post_context": [
                   "        var exceptionId;",
                   "        return __generator(this, function (_a) {",
@@ -178,34 +125,15 @@
                   "                    exceptionId = Sentry.captureException(new Error('This is an error'));",
                   "                    return [4 /*yield*/, Sentry.flush(2000)];",
                   "                case 1:"
-                ],
-                "pre_context": [
-                  "});",
-                  "app.use(Sentry.Handlers.requestHandler());",
-                  "app.use(Sentry.Handlers.tracingHandler());",
-                  "app.get('/test-success', function (req, res) {",
-                  "    res.send({ version: 'v1' });",
-                  "});",
-                  "app.get('/test-error', function (req, res) {"
                 ]
               },
               {
-                "colno": 12,
-                "context_line": "    return new (P || (P = Promise))(function (resolve, reject) {",
                 "filename": "[[FILENAME3]]",
-                "function": "__awaiter",
-                "in_app": true,
-                "lineno": 27,
                 "module": "app",
-                "post_context": [
-                  "        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }",
-                  "        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }",
-                  "        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }",
-                  "        step((generator = generator.apply(thisArg, _arguments || [])).next());",
-                  "    });",
-                  "};",
-                  "var __generator = (this && this.__generator) || function (thisArg, body) {"
-                ],
+                "function": "__awaiter",
+                "lineno": 27,
+                "colno": 12,
+                "in_app": true,
                 "pre_context": [
                   "    var result = {};",
                   "    if (mod != null) for (var k in mod) if (k !== \"default\" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);",
@@ -214,31 +142,31 @@
                   "};",
                   "var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {",
                   "    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }"
+                ],
+                "context_line": "    return new (P || (P = Promise))(function (resolve, reject) {",
+                "post_context": [
+                  "        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }",
+                  "        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }",
+                  "        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }",
+                  "        step((generator = generator.apply(thisArg, _arguments || [])).next());",
+                  "    });",
+                  "};",
+                  "var __generator = (this && this.__generator) || function (thisArg, body) {"
                 ]
               },
               {
                 "filename": "[[FILENAME4]]",
+                "module": "<anonymous>",
                 "function": "new Promise",
-                "in_app": false,
-                "module": "<anonymous>"
+                "in_app": false
               },
               {
-                "colno": 71,
-                "context_line": "        step((generator = generator.apply(thisArg, _arguments || [])).next());",
                 "filename": "[[FILENAME3]]",
-                "function": "<anonymous>",
-                "in_app": true,
-                "lineno": 31,
                 "module": "app",
-                "post_context": [
-                  "    });",
-                  "};",
-                  "var __generator = (this && this.__generator) || function (thisArg, body) {",
-                  "    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;",
-                  "    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { re {snip}",
-                  "    function verb(n) { return function (v) { return step([n, v]); }; }",
-                  "    function step(op) {"
-                ],
+                "function": "?",
+                "lineno": 31,
+                "colno": 71,
+                "in_app": true,
                 "pre_context": [
                   "};",
                   "var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {",
@@ -247,25 +175,25 @@
                   "        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }",
                   "        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }",
                   "        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }"
+                ],
+                "context_line": "        step((generator = generator.apply(thisArg, _arguments || [])).next());",
+                "post_context": [
+                  "    });",
+                  "};",
+                  "var __generator = (this && this.__generator) || function (thisArg, body) {",
+                  "    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;",
+                  "    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { re {snip}",
+                  "    function verb(n) { return function (v) { return step([n, v]); }; }",
+                  "    function step(op) {"
                 ]
               },
               {
-                "colno": 53,
-                "context_line": "    function verb(n) { return function (v) { return step([n, v]); }; }",
                 "filename": "[[FILENAME3]]",
-                "function": "Object.next",
-                "in_app": true,
-                "lineno": 37,
                 "module": "app",
-                "post_context": [
-                  "    function step(op) {",
-                  "        if (f) throw new TypeError(\"Generator is already executing.\");",
-                  "        while (g && (g = 0, op[0] && (_ = 0)), _) try {",
-                  "            if (f = 1, y && (t = op[0] & 2 ? y[\"return\"] : op[0] ? y[\"throw\"] || ((t = y[\"return\"]) && t.call(y), 0) : y.next) && !(t = t.ca {snip}",
-                  "            if (y = 0, t) op = [op[0] & 2, t.value];",
-                  "            switch (op[0]) {",
-                  "                case 0: case 1: t = op; break;"
-                ],
+                "function": "Object.next",
+                "lineno": 37,
+                "colno": 53,
+                "in_app": true,
                 "pre_context": [
                   "        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }",
                   "        step((generator = generator.apply(thisArg, _arguments || [])).next());",
@@ -274,25 +202,25 @@
                   "var __generator = (this && this.__generator) || function (thisArg, body) {",
                   "    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;",
                   "    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { re {snip}"
+                ],
+                "context_line": "    function verb(n) { return function (v) { return step([n, v]); }; }",
+                "post_context": [
+                  "    function step(op) {",
+                  "        if (f) throw new TypeError(\"Generator is already executing.\");",
+                  "        while (g && (g = 0, op[0] && (_ = 0)), _) try {",
+                  "            if (f = 1, y && (t = op[0] & 2 ? y[\"return\"] : op[0] ? y[\"throw\"] || ((t = y[\"return\"]) && t.call(y), 0) : y.next) && !(t = t.ca {snip}",
+                  "            if (y = 0, t) op = [op[0] & 2, t.value];",
+                  "            switch (op[0]) {",
+                  "                case 0: case 1: t = op; break;"
                 ]
               },
               {
-                "colno": 23,
-                "context_line": "            op = body.call(thisArg, _);",
                 "filename": "[[FILENAME3]]",
-                "function": "step",
-                "in_app": true,
-                "lineno": 56,
                 "module": "app",
-                "post_context": [
-                  "        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }",
-                  "        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };",
-                  "    }",
-                  "};",
-                  "var __importDefault = (this && this.__importDefault) || function (mod) {",
-                  "    return (mod && mod.__esModule) ? mod : { \"default\": mod };",
-                  "};"
-                ],
+                "function": "step",
+                "lineno": 56,
+                "colno": 23,
+                "in_app": true,
                 "pre_context": [
                   "                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }",
                   "                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }",
@@ -301,25 +229,25 @@
                   "                    if (t[2]) _.ops.pop();",
                   "                    _.trys.pop(); continue;",
                   "            }"
+                ],
+                "context_line": "            op = body.call(thisArg, _);",
+                "post_context": [
+                  "        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }",
+                  "        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };",
+                  "    }",
+                  "};",
+                  "var __importDefault = (this && this.__importDefault) || function (mod) {",
+                  "    return (mod && mod.__esModule) ? mod : { \"default\": mod };",
+                  "};"
                 ]
               },
               {
-                "colno": 59,
-                "context_line": "                    exceptionId = Sentry.captureException(new Error('This is an error'));",
                 "filename": "[[FILENAME3]]",
-                "function": "<anonymous>",
-                "in_app": true,
-                "lineno": 91,
                 "module": "app",
-                "post_context": [
-                  "                    return [4 /*yield*/, Sentry.flush(2000)];",
-                  "                case 1:",
-                  "                    _a.sent();",
-                  "                    res.send({ exceptionId: exceptionId });",
-                  "                    return [2 /*return*/];",
-                  "            }",
-                  "        });"
-                ],
+                "function": "?",
+                "lineno": 88,
+                "colno": 59,
+                "in_app": true,
                 "pre_context": [
                   "});",
                   "app.get('/test-error', function (req, res) {",
@@ -328,107 +256,66 @@
                   "        return __generator(this, function (_a) {",
                   "            switch (_a.label) {",
                   "                case 0:"
+                ],
+                "context_line": "                    exceptionId = Sentry.captureException(new Error('This is an error'));",
+                "post_context": [
+                  "                    return [4 /*yield*/, Sentry.flush(2000)];",
+                  "                case 1:",
+                  "                    _a.sent();",
+                  "                    res.send({ exceptionId: exceptionId });",
+                  "                    return [2 /*return*/];",
+                  "            }",
+                  "        });"
                 ]
               }
             ]
           },
-          "type": "Error",
-          "value": "This is an error"
+          "mechanism": {
+            "type": "generic",
+            "handled": true
+          }
         }
       ]
     },
-    "modules": {
-      "accepts": "1.3.8",
-      "array-flatten": "1.1.1",
-      "body-parser": "1.20.2",
-      "bytes": "3.1.2",
-      "call-bind": "1.0.7",
-      "content-disposition": "0.5.4",
-      "content-type": "1.0.5",
-      "cookie": "0.6.0",
-      "cookie-signature": "1.0.6",
-      "define-data-property": "1.1.4",
-      "depd": "2.0.0",
-      "destroy": "1.2.0",
-      "dotenv": "16.4.5",
-      "ee-first": "1.1.1",
-      "encodeurl": "1.0.2",
-      "es-define-property": "1.0.0",
-      "es-errors": "1.3.0",
-      "escape-html": "1.0.3",
-      "etag": "1.8.1",
-      "express": "4.19.2",
-      "finalhandler": "1.2.0",
-      "forwarded": "0.2.0",
-      "fresh": "0.5.2",
-      "function-bind": "1.1.2",
-      "get-intrinsic": "1.2.4",
-      "gopd": "1.0.1",
-      "has-property-descriptors": "1.0.2",
-      "has-proto": "1.0.3",
-      "has-symbols": "1.0.3",
-      "hasown": "2.0.2",
-      "http-errors": "2.0.0",
-      "iconv-lite": "0.4.24",
-      "inherits": "2.0.4",
-      "ipaddr.js": "1.9.1",
-      "media-typer": "0.3.0",
-      "merge-descriptors": "1.0.1",
-      "methods": "1.1.2",
-      "mime": "1.6.0",
-      "mime-db": "1.52.0",
-      "mime-types": "2.1.35",
-      "ms": "2.1.3",
-      "negotiator": "0.6.3",
-      "object-inspect": "1.13.1",
-      "on-finished": "2.4.1",
-      "parseurl": "1.3.3",
-      "path-to-regexp": "0.1.7",
-      "proxy-addr": "2.0.7",
-      "qs": "6.11.0",
-      "range-parser": "1.2.1",
-      "raw-body": "2.5.2",
-      "safe-buffer": "5.2.1",
-      "safer-buffer": "2.1.2",
-      "send": "0.18.0",
-      "serve-static": "1.15.0",
-      "set-function-length": "1.2.2",
-      "setprototypeof": "1.2.0",
-      "side-channel": "1.0.6",
-      "statuses": "2.0.1",
-      "toidentifier": "1.0.1",
-      "type-is": "1.6.18",
-      "unpipe": "1.0.0",
-      "utils-merge": "1.0.1",
-      "vary": "1.1.2"
-    },
+    "event_id": "[[ID1]]",
     "platform": "node",
-    "request": {
-      "cookies": {
-        "sc": "2pGHpwfeQfLDqPcR9gwpxKl0DHTlOKYq"
+    "contexts": {
+      "trace": {
+        "trace_id": "[[ID2]]",
+        "span_id": "[[ID3]]"
       },
-      "headers": {
-        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
-        "accept-encoding": "gzip, deflate, br, zstd",
-        "accept-language": "en-GB,en-US;q=0.9,en;q=0.8,de;q=0.7",
-        "connection": "keep-alive",
-        "cookie": "sc=2pGHpwfeQfLDqPcR9gwpxKl0DHTlOKYq",
-        "host": "localhost:3030",
-        "if-none-match": "[[W/entityTagValue]]",
-        "sec-ch-ua": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"",
-        "sec-ch-ua-mobile": "?0",
-        "sec-ch-ua-platform": "\"macOS\"",
-        "sec-fetch-dest": "document",
-        "sec-fetch-mode": "navigate",
-        "sec-fetch-site": "none",
-        "sec-fetch-user": "?1",
-        "upgrade-insecure-requests": "1",
-        "user-agent": "[[user-agent]]"
+      "runtime": {
+        "name": "node",
+        "version": "v20.12.1"
       },
-      "method": "GET",
-      "query_string": {},
-      "url": "http://localhost:3030/test-error"
+      "app": {
+        "app_start_time": "[[ISODateString]]",
+        "app_memory": "[[highNumber]]"
+      },
+      "os": {
+        "kernel_version": "23.2.0",
+        "name": "macOS",
+        "version": "14.2",
+        "build": "23C64"
+      },
+      "device": {
+        "boot_time": "[[ISODateString]]",
+        "arch": "arm64",
+        "memory_size": "[[highNumber]]",
+        "free_memory": "[[highNumber]]",
+        "processor_count": 10,
+        "cpu_description": "Apple M1 Pro",
+        "processor_frequency": "[[highNumber]]"
+      },
+      "culture": {
+        "locale": "en-US",
+        "timezone": "Europe/Vienna"
+      },
+      "cloud_resource": {}
     },
+    "server_name": "D9M3PY4LQ7.local",
+    "timestamp": "[[timestamp]]",
+    "environment": "qa",
     "sdk": {
       "integrations": [
         "InboundFilters",
@@ -437,29 +324,137 @@
         "RequestData",
         "Console",
         "Http",
-        "Undici",
+        "NodeFetch",
         "OnUncaughtException",
         "OnUnhandledRejection",
         "ContextLines",
         "LocalVariables",
         "Context",
         "Modules",
-        "Express"
+        "Express",
+        "Fastify",
+        "Graphql",
+        "Mongo",
+        "Mongoose",
+        "Mysql",
+        "Mysql2",
+        "Postgres",
+        "Nest",
+        "Hapi",
+        "Koa"
       ],
       "name": "sentry.javascript.node",
+      "version": "8.0.0-alpha.9",
       "packages": [
         {
           "name": "npm:@sentry/node",
-          "version": "7.110.1"
+          "version": "8.0.0-alpha.9"
         }
-      ],
-      "version": "7.110.1"
+      ]
     },
-    "server_name": "JH0G94X29Q.local",
-    "tags": {
-      "transaction": "GET /test-error"
+    "breadcrumbs": [
+      {
+        "timestamp": "[[timestamp]]",
+        "category": "console",
+        "level": "log",
+        "message": "Example app listening on port 3030"
+      }
+    ],
+    "request": {
+      "method": "GET",
+      "cookies": {},
+      "headers": {
+        "host": "localhost:3030",
+        "user-agent": "[[user-agent]]",
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        "accept-language": "en-US,en;q=0.5",
+        "accept-encoding": "gzip, deflate, br",
+        "connection": "keep-alive",
+        "upgrade-insecure-requests": "1",
+        "sec-fetch-dest": "document",
+        "sec-fetch-mode": "navigate",
+        "sec-fetch-site": "none",
+        "sec-fetch-user": "?1",
+        "pragma": "no-cache",
+        "cache-control": "no-cache"
+      },
+      "url": "http://localhost:3030/test-error"
     },
-    "timestamp": "[[timestamp]]",
-    "transaction": "GET /test-error"
+    "transaction": "GET /test-error",
+    "modules": {
+      "semver": "7.6.0",
+      "yallist": "4.0.0",
+      "shimmer": "1.2.1",
+      "require-in-the-middle": "7.3.0",
+      "resolve": "1.22.8",
+      "is-core-module": "2.13.1",
+      "hasown": "2.0.2",
+      "function-bind": "1.1.2",
+      "debug": "4.3.4",
+      "supports-color": "5.5.0",
+      "module-details-from-path": "1.0.3",
+      "import-in-the-middle": "1.7.3",
+      "express": "4.19.2",
+      "body-parser": "1.20.2",
+      "depd": "2.0.0",
+      "merge-descriptors": "1.0.1",
+      "finalhandler": "1.2.0",
+      "encodeurl": "1.0.2",
+      "escape-html": "1.0.3",
+      "on-finished": "2.4.1",
+      "ee-first": "1.1.1",
+      "parseurl": "1.3.3",
+      "statuses": "2.0.1",
+      "unpipe": "1.0.0",
+      "array-flatten": "1.1.1",
+      "path-to-regexp": "0.1.7",
+      "methods": "1.1.2",
+      "utils-merge": "1.0.1",
+      "setprototypeof": "1.2.0",
+      "qs": "6.11.0",
+      "side-channel": "1.0.6",
+      "get-intrinsic": "1.2.4",
+      "es-errors": "1.3.0",
+      "has-symbols": "1.0.3",
+      "has-proto": "1.0.3",
+      "call-bind": "1.0.7",
+      "set-function-length": "1.2.2",
+      "define-data-property": "1.1.4",
+      "es-define-property": "1.0.0",
+      "gopd": "1.0.1",
+      "has-property-descriptors": "1.0.2",
+      "object-inspect": "1.13.1",
+      "safe-buffer": "5.2.1",
+      "content-disposition": "0.5.4",
+      "content-type": "1.0.5",
+      "send": "0.18.0",
+      "http-errors": "2.0.0",
+      "inherits": "2.0.4",
+      "toidentifier": "1.0.1",
+      "destroy": "1.2.0",
+      "etag": "1.8.1",
+      "fresh": "0.5.2",
+      "mime": "1.6.0",
+      "ms": "2.1.3",
+      "range-parser": "1.2.1",
+      "proxy-addr": "2.0.7",
+      "forwarded": "0.2.0",
+      "ipaddr.js": "1.9.1",
+      "accepts": "1.3.8",
+      "negotiator": "0.6.3",
+      "mime-types": "2.1.35",
+      "mime-db": "1.52.0",
+      "type-is": "1.6.18",
+      "media-typer": "0.3.0",
+      "cookie-signature": "1.0.6",
+      "cookie": "0.6.0",
+      "vary": "1.1.2",
+      "bytes": "3.1.2",
+      "raw-body": "2.5.2",
+      "iconv-lite": "0.4.24",
+      "safer-buffer": "2.1.2",
+      "serve-static": "1.15.0",
+      "opentelemetry-instrumentation-fetch-node": "1.1.2"
+    }
   }
 ]
