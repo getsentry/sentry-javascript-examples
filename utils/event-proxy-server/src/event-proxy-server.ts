@@ -49,31 +49,66 @@ function addCommaAfterEachLine(data: string): string {
   return jsonDataWithCommas.join('\n');
 }
 
-function recursivelyReplaceData(obj: any, idCounter: number, idMap: Map<string, string>) {
-  for (let key in obj) {
-    if (typeof obj[key] === 'string' && isDateLikeString(obj[key])) {
-      obj[key] = `[[ISODateString]]`;
-    } else if (key.includes('timestamp')) {
-      obj[key] = `[[timestamp]]`;
-    } else if (typeof obj[key] === 'number' && obj[key] > 1000) {
-      obj[key] = `[[highNumber]]`;
-    } else if (key === 'if-none-match') {
-      if (obj[key].startsWith('W/')) {
-        obj[key] = `[[W/entityTagValue]]`;
-      } else {
-        obj[key] = `[[entityTagValue]]`;
+// has to be an object to be able to pass by reference. Otherwise, the counter would not increase
+type Counter = {
+  value: number;
+};
+
+function recursivelyReplaceData(
+  obj: any,
+  idCounter: Counter,
+  idMap: Map<string, string>,
+  filenameCounter: Counter,
+  filenameMap: Map<string, string>,
+) {
+  if (Array.isArray(obj)) {
+    // some values are arrays with objects in it
+    obj.forEach((item, index) => {
+      if (typeof item === 'object' && item !== null) {
+        recursivelyReplaceData(item, idCounter, idMap, filenameCounter, filenameMap);
       }
-    } else if (key.includes('_id')) {
-      if (idMap.has(obj[key])) {
-        // give the same ID replacement to the same value
-        obj[key] = idMap.get(obj[key]);
-      } else {
-        const newId = `[[ID${idCounter++}]]`;
-        idMap.set(obj[key], newId);
-        obj[key] = newId;
+    });
+  } else {
+    for (let key in obj) {
+      if (typeof obj[key] === 'string' && isDateLikeString(obj[key])) {
+        obj[key] = `[[ISODateString]]`;
+      } else if (key.includes('timestamp')) {
+        obj[key] = `[[timestamp]]`;
+      } else if (key.includes('timestamp')) {
+        obj[key] = `[[timestamp]]`;
+      } else if (typeof obj[key] === 'number' && obj[key] > 1000) {
+        obj[key] = `[[highNumber]]`;
+      } else if (key === 'if-none-match') {
+        if (obj[key].startsWith('W/')) {
+          obj[key] = `[[W/entityTagValue]]`;
+        } else {
+          obj[key] = `[[entityTagValue]]`;
+        }
+      } else if (key === 'user-agent') {
+        obj[key] = `[[user-agent]]`;
+      } else if (key.includes('_id')) {
+        if (idMap.has(obj[key])) {
+          // give the same ID replacement to the same value
+          obj[key] = idMap.get(obj[key]);
+        } else {
+          const newId = `[[ID${idCounter.value++}]]`;
+          idMap.set(obj[key], newId);
+          obj[key] = newId;
+        }
+      } else if (key === 'filename') {
+        if (filenameMap.has(obj[key])) {
+          // give the same ID replacement to the same value
+          obj[key] = filenameMap.get(obj[key]);
+        } else {
+          const newId = `[[FILENAME${filenameCounter.value++}]]`;
+          filenameMap.set(obj[key], newId);
+          obj[key] = newId;
+        }
       }
-    } else if (typeof obj[key] === 'object' && obj[key] !== null) {
-      recursivelyReplaceData(obj[key], idCounter, idMap);
+      // recurse into object or array
+      else if (typeof obj[key] === 'object' && obj[key] !== null) {
+        recursivelyReplaceData(obj[key], idCounter, idMap, filenameCounter, filenameMap);
+      }
     }
   }
 }
@@ -81,12 +116,15 @@ function recursivelyReplaceData(obj: any, idCounter: number, idMap: Map<string, 
 function replaceDynamicValues(data: string): string[] {
   const jsonData = JSON.parse(data);
 
-  recursivelyReplaceData(jsonData, 1, new Map());
+  recursivelyReplaceData(jsonData, { value: 1 }, new Map(), { value: 1 }, new Map());
 
   // change remaining dynamic values
   jsonData.forEach((item: any) => {
     if (item.trace?.public_key) {
       item.trace.public_key = '[[publicKey]]';
+    }
+    if (item.dsn) {
+      item.dsn = '[[dsn]]';
     }
   });
 
@@ -103,13 +141,15 @@ async function transformSavedJSON() {
 
     const jsonData = addCommaAfterEachLine(data);
     const transformedJSON = replaceDynamicValues(jsonData);
+
     const objWithReq = transformedJSON[2] as unknown as { request: { url: string } };
+    const type = (transformedJSON[1] as unknown as { type: string }).type;
 
     if ('request' in objWithReq) {
       const url = objWithReq.request.url;
       const replaceForwardSlashes = (str: string) => str.split('/').join('_');
 
-      const filepath = `payload-files/${APP}/${replaceForwardSlashes(extractPathFromUrl(url))}.json`;
+      const filepath = `payload-files/${APP}/${replaceForwardSlashes(extractPathFromUrl(url))}--${type}.json`;
 
       writeFile(filepath, JSON.stringify(transformedJSON, null, 2)).then(() => {
         console.log(`Successfully replaced data and saved file in ${filepath}`);
