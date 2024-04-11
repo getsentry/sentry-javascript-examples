@@ -20,6 +20,7 @@ Sentry.init({
 });
 
 app.use(Sentry.Handlers.requestHandler());
+app.use(Sentry.Handlers.tracingHandler());
 
 app.get('/test-success', function (req, res) {
   res.send({ version: 'v1' });
