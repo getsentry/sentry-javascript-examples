@@ -57,6 +57,12 @@ function recursivelyReplaceData(obj: any, idCounter: number, idMap: Map<string, 
       obj[key] = `[[timestamp]]`;
     } else if (typeof obj[key] === 'number' && obj[key] > 1000) {
       obj[key] = `[[highNumber]]`;
+    } else if (key === 'if-none-match') {
+      if (obj[key].startsWith('W/')) {
+        obj[key] = `[[W/entityTagValue]]`;
+      } else {
+        obj[key] = `[[entityTagValue]]`;
+      }
     } else if (key.includes('_id')) {
       if (idMap.has(obj[key])) {
         // give the same ID replacement to the same value
