@@ -32,7 +32,7 @@
           "url": "/test-local-variables-uncaught"
         },
         "op": "http.server",
-        "span_id": "[[ID3]]",
+        "span_id": "[[ID1]]",
         "status": "internal_error",
         "tags": {
           "http.status_code": "500"

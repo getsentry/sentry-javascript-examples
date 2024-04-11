@@ -1,6 +1,6 @@
 [
   {
-    "event_id": "[[ID4]]",
+    "event_id": "[[ID1]]",
     "sent_at": "[[ISODateString]]",
     "sdk": {
       "name": "sentry.javascript.node",
@@ -10,7 +10,7 @@
     "trace": {
       "environment": "qa",
       "public_key": "[[publicKey]]",
-      "trace_id": "[[ID5]]",
+      "trace_id": "[[ID2]]",
       "sample_rate": "1",
       "transaction": "GET /test-transaction",
       "sampled": "true"
@@ -32,12 +32,12 @@
           "url": "/test-transaction"
         },
         "op": "http.server",
-        "span_id": "[[ID6]]",
+        "span_id": "[[ID1]]",
         "status": "ok",
         "tags": {
           "http.status_code": "200"
         },
-        "trace_id": "[[ID5]]",
+        "trace_id": "[[ID2]]",
         "origin": "auto.http.node.tracingHandler"
       },
       "runtime": {
@@ -77,11 +77,11 @@
         },
         "description": "test-transaction",
         "op": "e2e-test",
-        "parent_span_id": "[[ID6]]",
-        "span_id": "[[ID7]]",
+        "parent_span_id": "[[ID1]]",
+        "span_id": "[[ID1]]",
         "start_timestamp": "[[timestamp]]",
         "timestamp": "[[timestamp]]",
-        "trace_id": "[[ID5]]",
+        "trace_id": "[[ID2]]",
         "origin": "manual"
       },
       {
@@ -89,11 +89,11 @@
           "sentry.origin": "manual"
         },
         "description": "test-span",
-        "parent_span_id": "[[ID7]]",
-        "span_id": "[[ID8]]",
+        "parent_span_id": "[[ID1]]",
+        "span_id": "[[ID1]]",
         "start_timestamp": "[[timestamp]]",
         "timestamp": "[[timestamp]]",
-        "trace_id": "[[ID5]]",
+        "trace_id": "[[ID2]]",
         "origin": "manual"
       }
     ],
@@ -109,7 +109,7 @@
     },
     "platform": "node",
     "server_name": "D9M3PY4LQ7.local",
-    "event_id": "[[ID4]]",
+    "event_id": "[[ID1]]",
     "environment": "qa",
     "sdk": {
       "integrations": [
@@ -159,7 +159,7 @@
         "sec-fetch-mode": "navigate",
         "sec-fetch-site": "none",
         "sec-fetch-user": "?1",
-        "if-none-match": "W/\"5a-iJbMW5CpJUeecTISkKPbqYm7yjc\""
+        "if-none-match": "W/\"5a-xlzxXW0cHjP0THY9T2h4YB9IHR4\""
       },
       "query_string": {},
       "url": "http://localhost:3030/test-transaction"

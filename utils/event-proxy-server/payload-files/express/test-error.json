@@ -1,6 +1,6 @@
 [
   {
-    "event_id": "[[ID12]]",
+    "event_id": "[[ID1]]",
     "sent_at": "[[ISODateString]]",
     "sdk": {
       "name": "sentry.javascript.node",
@@ -10,34 +10,286 @@
     "trace": {
       "environment": "qa",
       "public_key": "[[publicKey]]",
-      "trace_id": "[[ID10]]",
+      "trace_id": "[[ID2]]",
       "sample_rate": "1",
       "transaction": "GET /test-error",
       "sampled": "true"
     }
   },
   {
-    "type": "transaction"
+    "type": "event"
   },
   {
+    "exception": {
+      "values": [
+        {
+          "type": "Error",
+          "value": "This is an error",
+          "stacktrace": {
+            "frames": [
+              {
+                "filename": "/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/express/lib/router/route.js",
+                "module": "express.lib.router:route",
+                "function": "Route.dispatch",
+                "lineno": 119,
+                "colno": 3,
+                "in_app": false,
+                "pre_context": [
+                  "",
+                  "  if (method === 'head' && !this.methods['head']) {",
+                  "    method = 'get';",
+                  "  }",
+                  "",
+                  "  req.route = this;",
+                  ""
+                ],
+                "context_line": "  next();",
+                "post_context": [
+                  "",
+                  "  function next(err) {",
+                  "    // signal to exit route",
+                  "    if (err && err === 'route') {",
+                  "      return done();",
+                  "    }",
+                  ""
+                ]
+              },
+              {
+                "filename": "/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/express/lib/router/route.js",
+                "module": "express.lib.router:route",
+                "function": "next",
+                "lineno": 149,
+                "colno": 13,
+                "in_app": false,
+                "pre_context": [
+                  "    }",
+                  "",
+                  "    if (layer.method && layer.method !== method) {",
+                  "      next(err)",
+                  "    } else if (err) {",
+                  "      layer.handle_error(err, req, res, next);",
+                  "    } else {"
+                ],
+                "context_line": "      layer.handle_request(req, res, next);",
+                "post_context": ["    }", "", "    sync = 0", "  }", "};", "", "/**"]
+              },
+              {
+                "filename": "/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/express/lib/router/layer.js",
+                "module": "express.lib.router:layer",
+                "function": "Layer.handle [as handle_request]",
+                "lineno": 95,
+                "colno": 5,
+                "in_app": false,
+                "pre_context": [
+                  "",
+                  "  if (fn.length > 3) {",
+                  "    // not a standard request handler",
+                  "    return next();",
+                  "  }",
+                  "",
+                  "  try {"
+                ],
+                "context_line": "    fn(req, res, next);",
+                "post_context": [
+                  "  } catch (err) {",
+                  "    next(err);",
+                  "  }",
+                  "};",
+                  "",
+                  "/**",
+                  " * Check if this route matches `path`, if so"
+                ]
+              },
+              {
+                "filename": "/Users/sigridh/Documents/DEV/sentry-javascript-examples/apps/express/dist/app.js",
+                "module": "app",
+                "function": "<anonymous>",
+                "lineno": 105,
+                "colno": 12,
+                "in_app": true,
+                "pre_context": [
+                  "                    });",
+                  "                    return [2 /*return*/];",
+                  "            }",
+                  "        });",
+                  "    });",
+                  "});",
+                  "app.get('/test-error', function (req, res) {"
+                ],
+                "context_line": "    return __awaiter(this, void 0, void 0, function () {",
+                "post_context": [
+                  "        var exceptionId;",
+                  "        return __generator(this, function (_a) {",
+                  "            switch (_a.label) {",
+                  "                case 0:",
+                  "                    exceptionId = Sentry.captureException(new Error('This is an error'));",
+                  "                    return [4 /*yield*/, Sentry.flush(2000)];",
+                  "                case 1:"
+                ]
+              },
+              {
+                "filename": "/Users/sigridh/Documents/DEV/sentry-javascript-examples/apps/express/dist/app.js",
+                "module": "app",
+                "function": "__awaiter",
+                "lineno": 27,
+                "colno": 12,
+                "in_app": true,
+                "pre_context": [
+                  "    var result = {};",
+                  "    if (mod != null) for (var k in mod) if (k !== \"default\" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);",
+                  "    __setModuleDefault(result, mod);",
+                  "    return result;",
+                  "};",
+                  "var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {",
+                  "    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }"
+                ],
+                "context_line": "    return new (P || (P = Promise))(function (resolve, reject) {",
+                "post_context": [
+                  "        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }",
+                  "        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }",
+                  "        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }",
+                  "        step((generator = generator.apply(thisArg, _arguments || [])).next());",
+                  "    });",
+                  "};",
+                  "var __generator = (this && this.__generator) || function (thisArg, body) {"
+                ]
+              },
+              {
+                "filename": "<anonymous>",
+                "module": "<anonymous>",
+                "function": "new Promise",
+                "in_app": false
+              },
+              {
+                "filename": "/Users/sigridh/Documents/DEV/sentry-javascript-examples/apps/express/dist/app.js",
+                "module": "app",
+                "function": "<anonymous>",
+                "lineno": 31,
+                "colno": 71,
+                "in_app": true,
+                "pre_context": [
+                  "};",
+                  "var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {",
+                  "    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }",
+                  "    return new (P || (P = Promise))(function (resolve, reject) {",
+                  "        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }",
+                  "        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }",
+                  "        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }"
+                ],
+                "context_line": "        step((generator = generator.apply(thisArg, _arguments || [])).next());",
+                "post_context": [
+                  "    });",
+                  "};",
+                  "var __generator = (this && this.__generator) || function (thisArg, body) {",
+                  "    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;",
+                  "    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { re {snip}",
+                  "    function verb(n) { return function (v) { return step([n, v]); }; }",
+                  "    function step(op) {"
+                ]
+              },
+              {
+                "filename": "/Users/sigridh/Documents/DEV/sentry-javascript-examples/apps/express/dist/app.js",
+                "module": "app",
+                "function": "Object.next",
+                "lineno": 37,
+                "colno": 53,
+                "in_app": true,
+                "pre_context": [
+                  "        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }",
+                  "        step((generator = generator.apply(thisArg, _arguments || [])).next());",
+                  "    });",
+                  "};",
+                  "var __generator = (this && this.__generator) || function (thisArg, body) {",
+                  "    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;",
+                  "    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { re {snip}"
+                ],
+                "context_line": "    function verb(n) { return function (v) { return step([n, v]); }; }",
+                "post_context": [
+                  "    function step(op) {",
+                  "        if (f) throw new TypeError(\"Generator is already executing.\");",
+                  "        while (g && (g = 0, op[0] && (_ = 0)), _) try {",
+                  "            if (f = 1, y && (t = op[0] & 2 ? y[\"return\"] : op[0] ? y[\"throw\"] || ((t = y[\"return\"]) && t.call(y), 0) : y.next) && !(t = t.ca {snip}",
+                  "            if (y = 0, t) op = [op[0] & 2, t.value];",
+                  "            switch (op[0]) {",
+                  "                case 0: case 1: t = op; break;"
+                ]
+              },
+              {
+                "filename": "/Users/sigridh/Documents/DEV/sentry-javascript-examples/apps/express/dist/app.js",
+                "module": "app",
+                "function": "step",
+                "lineno": 56,
+                "colno": 23,
+                "in_app": true,
+                "pre_context": [
+                  "                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }",
+                  "                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }",
+                  "                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }",
+                  "                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }",
+                  "                    if (t[2]) _.ops.pop();",
+                  "                    _.trys.pop(); continue;",
+                  "            }"
+                ],
+                "context_line": "            op = body.call(thisArg, _);",
+                "post_context": [
+                  "        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }",
+                  "        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };",
+                  "    }",
+                  "};",
+                  "var __importDefault = (this && this.__importDefault) || function (mod) {",
+                  "    return (mod && mod.__esModule) ? mod : { \"default\": mod };",
+                  "};"
+                ]
+              },
+              {
+                "filename": "/Users/sigridh/Documents/DEV/sentry-javascript-examples/apps/express/dist/app.js",
+                "module": "app",
+                "function": "<anonymous>",
+                "lineno": 110,
+                "colno": 59,
+                "in_app": true,
+                "pre_context": [
+                  "});",
+                  "app.get('/test-error', function (req, res) {",
+                  "    return __awaiter(this, void 0, void 0, function () {",
+                  "        var exceptionId;",
+                  "        return __generator(this, function (_a) {",
+                  "            switch (_a.label) {",
+                  "                case 0:"
+                ],
+                "context_line": "                    exceptionId = Sentry.captureException(new Error('This is an error'));",
+                "post_context": [
+                  "                    return [4 /*yield*/, Sentry.flush(2000)];",
+                  "                case 1:",
+                  "                    _a.sent();",
+                  "                    res.send({ exceptionId: exceptionId });",
+                  "                    return [2 /*return*/];",
+                  "            }",
+                  "        });"
+                ]
+              }
+            ]
+          },
+          "mechanism": {
+            "type": "generic",
+            "handled": true
+          }
+        }
+      ]
+    },
+    "event_id": "[[ID1]]",
+    "platform": "node",
     "contexts": {
       "trace": {
         "data": {
           "sentry.source": "url",
-          "query": {},
-          "http.response.status_code": 200,
           "sentry.origin": "auto.http.node.tracingHandler",
           "sentry.op": "http.server",
-          "sentry.sample_rate": 1,
-          "url": "/test-error"
+          "sentry.sample_rate": 1
         },
         "op": "http.server",
-        "span_id": "[[ID11]]",
-        "status": "ok",
-        "tags": {
-          "http.status_code": "200"
-        },
-        "trace_id": "[[ID10]]",
+        "span_id": "[[ID1]]",
+        "trace_id": "[[ID2]]",
         "origin": "auto.http.node.tracingHandler"
       },
       "runtime": {
@@ -69,20 +321,8 @@
       },
       "cloud_resource": {}
     },
-    "spans": [],
-    "start_timestamp": "[[timestamp]]",
-    "tags": {
-      "http.status_code": "200"
-    },
-    "timestamp": "[[timestamp]]",
-    "transaction": "GET /test-error",
-    "type": "transaction",
-    "transaction_info": {
-      "source": "custom"
-    },
-    "platform": "node",
     "server_name": "D9M3PY4LQ7.local",
-    "event_id": "[[ID12]]",
+    "timestamp": "[[timestamp]]",
     "environment": "qa",
     "sdk": {
       "integrations": [
@@ -108,6 +348,9 @@
           "version": "7.109.0"
         }
       ]
+    },
+    "tags": {
+      "transaction": "GET /test-error"
     },
     "breadcrumbs": [
       {
@@ -137,6 +380,7 @@
       "query_string": {},
       "url": "http://localhost:3030/test-error"
     },
+    "transaction": "GET /test-error",
     "modules": {
       "express": "4.19.2",
       "body-parser": "1.20.2",

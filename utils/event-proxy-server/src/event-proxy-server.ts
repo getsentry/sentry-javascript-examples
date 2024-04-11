@@ -49,10 +49,7 @@ function addCommaAfterEachLine(data: string): string {
   return jsonDataWithCommas.join('\n');
 }
 
-let idCounter = 1;
-const idMap = new Map();
-
-function recursivelyReplaceData(obj: any) {
+function recursivelyReplaceData(obj: any, idCounter: number, idMap: Map<string, string>) {
   for (let key in obj) {
     if (typeof obj[key] === 'string' && isDateLikeString(obj[key])) {
       obj[key] = `[[ISODateString]]`;
@@ -70,7 +67,7 @@ function recursivelyReplaceData(obj: any) {
         obj[key] = newId;
       }
     } else if (typeof obj[key] === 'object' && obj[key] !== null) {
-      recursivelyReplaceData(obj[key]);
+      recursivelyReplaceData(obj[key], idCounter, idMap);
     }
   }
 }
@@ -78,7 +75,7 @@ function recursivelyReplaceData(obj: any) {
 function replaceDynamicValues(data: string): string[] {
   const jsonData = JSON.parse(data);
 
-  recursivelyReplaceData(jsonData);
+  recursivelyReplaceData(jsonData, 1, new Map());
 
   // change remaining dynamic values
   jsonData.forEach((item: any) => {

@@ -32,7 +32,7 @@
           "url": "/test-param/3"
         },
         "op": "http.server",
-        "span_id": "[[ID3]]",
+        "span_id": "[[ID1]]",
         "status": "ok",
         "tags": {
           "http.status_code": "200"
