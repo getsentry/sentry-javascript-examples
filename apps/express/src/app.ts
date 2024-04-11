@@ -17,6 +17,7 @@ Sentry.init({
   debug: true,
   tunnel: `http://127.0.0.1:3031/`, // proxy server
   tracesSampleRate: 1,
+  integrations: [new Sentry.Integrations.Express({ app })],
 });
 
 app.use(Sentry.Handlers.requestHandler());
@@ -26,11 +27,27 @@ app.get('/test-success', function (req, res) {
   res.send({ version: 'v1' });
 });
 
-app.get('/test-param/:param', function (req, res) {
+app.get('/test-error', async function (req, res) {
+  const exceptionId = Sentry.captureException(new Error('This is an error'));
+
+  await Sentry.flush(2000);
+
+  res.send({ exceptionId });
+});
+
+app.get('/test-param-success/:param', function (req, res) {
   res.send({ paramWas: req.params.param });
 });
 
-app.get('/test-transaction', async function (req, res) {
+app.get('/test-param-error/:param', async function (req, res) {
+  const exceptionId = Sentry.captureException(new Error('This is an error'));
+
+  await Sentry.flush(2000);
+
+  res.send({ exceptionId, paramWas: req.params.param });
+});
+
+app.get('/test-success-manual', async function (req, res) {
   Sentry.startSpan({ name: 'test-transaction', op: 'e2e-test' }, () => {
     Sentry.startSpan({ name: 'test-span' }, () => undefined);
   });
@@ -42,21 +59,27 @@ app.get('/test-transaction', async function (req, res) {
   });
 });
 
-app.get('/test-error', async function (req, res) {
-  const exceptionId = Sentry.captureException(new Error('This is an error'));
+app.get('/test-error-manual', async function (req, res) {
+  Sentry.startSpan({ name: 'test-transaction', op: 'e2e-test' }, () => {
+    Sentry.startSpan({ name: 'test-span' }, () => {
+      Sentry.captureException(new Error('This is an error'));
+    });
+  });
 
   await Sentry.flush(2000);
 
-  res.send({ exceptionId });
+  res.send({
+    transactionIds: global.transactionIds || [],
+  });
 });
 
 app.get('/test-local-variables-uncaught', function (req, res) {
-  const randomVariableToRecord = Math.random();
+  const randomVariableToRecord = 'LOCAL VARIABLE';
   throw new Error(`Uncaught Local Variable Error - ${JSON.stringify({ randomVariableToRecord })}`);
 });
 
 app.get('/test-local-variables-caught', function (req, res) {
-  const randomVariableToRecord = Math.random();
+  const randomVariableToRecord = 'LOCAL VARIABLE';
 
   let exceptionId: string;
   try {

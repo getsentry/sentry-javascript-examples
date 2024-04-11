@@ -6,7 +6,7 @@
       "name": "sentry.javascript.node",
       "version": "7.109.0"
     },
-    "dsn": "https://3b6c388182fb435097f41d181be2b2ba@o4504321058471936.ingest.sentry.io/4504321066008576",
+    "dsn": "[[dsn]]",
     "trace": {
       "environment": "qa",
       "public_key": "[[publicKey]]",
@@ -28,7 +28,7 @@
           "stacktrace": {
             "frames": [
               {
-                "filename": "/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/express/lib/router/route.js",
+                "filename": "[[FILENAME1]]",
                 "module": "express.lib.router:route",
                 "function": "Route.dispatch",
                 "lineno": 119,
@@ -55,7 +55,7 @@
                 ]
               },
               {
-                "filename": "/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/express/lib/router/route.js",
+                "filename": "[[FILENAME1]]",
                 "module": "express.lib.router:route",
                 "function": "next",
                 "lineno": 149,
@@ -71,10 +71,18 @@
                   "    } else {"
                 ],
                 "context_line": "      layer.handle_request(req, res, next);",
-                "post_context": ["    }", "", "    sync = 0", "  }", "};", "", "/**"]
+                "post_context": [
+                  "    }",
+                  "",
+                  "    sync = 0",
+                  "  }",
+                  "};",
+                  "",
+                  "/**"
+                ]
               },
               {
-                "filename": "/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/express/lib/router/layer.js",
+                "filename": "[[FILENAME2]]",
                 "module": "express.lib.router:layer",
                 "function": "Layer.handle [as handle_request]",
                 "lineno": 95,
@@ -101,18 +109,18 @@
                 ]
               },
               {
-                "filename": "/Users/sigridh/Documents/DEV/sentry-javascript-examples/apps/express/dist/app.js",
+                "filename": "[[FILENAME3]]",
                 "module": "app",
                 "function": "<anonymous>",
-                "lineno": 105,
+                "lineno": 85,
                 "colno": 12,
                 "in_app": true,
                 "pre_context": [
-                  "                    });",
-                  "                    return [2 /*return*/];",
-                  "            }",
-                  "        });",
-                  "    });",
+                  "// todo: add express integration to docs",
+                  "app.use(Sentry.Handlers.requestHandler());",
+                  "app.use(Sentry.Handlers.tracingHandler());",
+                  "app.get('/test-success', function (req, res) {",
+                  "    res.send({ version: 'v1' });",
                   "});",
                   "app.get('/test-error', function (req, res) {"
                 ],
@@ -128,7 +136,7 @@
                 ]
               },
               {
-                "filename": "/Users/sigridh/Documents/DEV/sentry-javascript-examples/apps/express/dist/app.js",
+                "filename": "[[FILENAME3]]",
                 "module": "app",
                 "function": "__awaiter",
                 "lineno": 27,
@@ -155,13 +163,13 @@
                 ]
               },
               {
-                "filename": "<anonymous>",
+                "filename": "[[FILENAME4]]",
                 "module": "<anonymous>",
                 "function": "new Promise",
                 "in_app": false
               },
               {
-                "filename": "/Users/sigridh/Documents/DEV/sentry-javascript-examples/apps/express/dist/app.js",
+                "filename": "[[FILENAME3]]",
                 "module": "app",
                 "function": "<anonymous>",
                 "lineno": 31,
@@ -188,7 +196,7 @@
                 ]
               },
               {
-                "filename": "/Users/sigridh/Documents/DEV/sentry-javascript-examples/apps/express/dist/app.js",
+                "filename": "[[FILENAME3]]",
                 "module": "app",
                 "function": "Object.next",
                 "lineno": 37,
@@ -215,7 +223,7 @@
                 ]
               },
               {
-                "filename": "/Users/sigridh/Documents/DEV/sentry-javascript-examples/apps/express/dist/app.js",
+                "filename": "[[FILENAME3]]",
                 "module": "app",
                 "function": "step",
                 "lineno": 56,
@@ -242,10 +250,10 @@
                 ]
               },
               {
-                "filename": "/Users/sigridh/Documents/DEV/sentry-javascript-examples/apps/express/dist/app.js",
+                "filename": "[[FILENAME3]]",
                 "module": "app",
                 "function": "<anonymous>",
-                "lineno": 110,
+                "lineno": 90,
                 "colno": 59,
                 "in_app": true,
                 "pre_context": [
@@ -282,13 +290,13 @@
     "contexts": {
       "trace": {
         "data": {
-          "sentry.source": "url",
+          "sentry.source": "route",
           "sentry.origin": "auto.http.node.tracingHandler",
           "sentry.op": "http.server",
           "sentry.sample_rate": 1
         },
         "op": "http.server",
-        "span_id": "[[ID1]]",
+        "span_id": "[[ID3]]",
         "trace_id": "[[ID2]]",
         "origin": "auto.http.node.tracingHandler"
       },
@@ -338,7 +346,8 @@
         "ContextLines",
         "LocalVariables",
         "Context",
-        "Modules"
+        "Modules",
+        "Express"
       ],
       "name": "sentry.javascript.node",
       "version": "7.109.0",
@@ -365,7 +374,7 @@
       "cookies": {},
       "headers": {
         "host": "localhost:3030",
-        "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:124.0) Gecko/20100101 Firefox/124.0",
+        "user-agent": "[[user-agent]]",
         "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
         "accept-language": "en-US,en;q=0.5",
         "accept-encoding": "gzip, deflate, br",
@@ -375,7 +384,8 @@
         "sec-fetch-mode": "navigate",
         "sec-fetch-site": "none",
         "sec-fetch-user": "?1",
-        "if-none-match": "W/\"32-pMMsTilhCm5O0WdOKAWpxeIiRbs\""
+        "pragma": "no-cache",
+        "cache-control": "no-cache"
       },
       "query_string": {},
       "url": "http://localhost:3030/test-error"
