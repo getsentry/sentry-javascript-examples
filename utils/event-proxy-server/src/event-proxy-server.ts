@@ -9,6 +9,11 @@ import * as zlib from 'zlib';
 import type { Envelope, EnvelopeItem } from '@sentry/types';
 import { parseEnvelope } from '@sentry/utils';
 
+// change to folder name of app to test
+const APP = 'express';
+
+const TEMPORARY_FILE_PATH = `payload-files/${APP}/temporary.json`;
+
 const readFile = util.promisify(fs.readFile);
 const writeFile = util.promisify(fs.writeFile);
 const unlink = util.promisify(fs.unlink);
@@ -26,8 +31,6 @@ interface SentryRequestCallbackData {
   rawSentryResponseBody: string;
   sentryResponseStatusCode?: number;
 }
-
-const TEMPORARY_FILE_PATH = 'payload-files/temporary.json';
 
 function isDateLikeString(str: string): boolean {
   // matches strings in the format "YYYY-MM-DD"
@@ -105,7 +108,9 @@ async function transformSavedJSON() {
 
     if ('request' in objWithReq) {
       const url = objWithReq.request.url;
-      const filepath = `payload-files/${extractPathFromUrl(url)}.json`;
+      const replaceForwardSlashes = (str: string) => str.split('/').join('_');
+
+      const filepath = `payload-files/${APP}/${replaceForwardSlashes(extractPathFromUrl(url))}.json`;
 
       writeFile(filepath, JSON.stringify(transformedJSON, null, 2)).then(() => {
         console.log(`Successfully replaced data and saved file in ${filepath}`);
