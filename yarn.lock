@@ -1259,6 +1259,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"event-proxy-server@workspace:utils/event-proxy-server":
+  version: 0.0.0-use.local
+  resolution: "event-proxy-server@workspace:utils/event-proxy-server"
+  dependencies:
+    "@sentry/types": "npm:7.109.0"
+    "@sentry/utils": "npm:7.109.0"
+  languageName: unknown
+  linkType: soft
+
 "exponential-backoff@npm:^3.1.1":
   version: 3.1.1
   resolution: "exponential-backoff@npm:3.1.1"
