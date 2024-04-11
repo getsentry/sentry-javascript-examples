@@ -6,10 +6,12 @@ import * as os from 'os';
 import * as path from 'path';
 import * as util from 'util';
 import * as zlib from 'zlib';
-import type { Envelope } from '@sentry/types';
+import type { Envelope, EnvelopeItem } from '@sentry/types';
 import { parseEnvelope } from '@sentry/utils';
 
+const readFile = util.promisify(fs.readFile);
 const writeFile = util.promisify(fs.writeFile);
+const unlink = util.promisify(fs.unlink);
 
 interface EventProxyServerOptions {
   /** Port to start the event proxy server at. */
@@ -25,6 +27,99 @@ interface SentryRequestCallbackData {
   sentryResponseStatusCode?: number;
 }
 
+const TEMPORARY_FILE_PATH = 'payload-files/temporary.json';
+
+function isDateLikeString(str: string): boolean {
+  // matches strings in the format "YYYY-MM-DD"
+  const datePattern = /^\d{4}-\d{2}-\d{2}/;
+  return datePattern.test(str);
+}
+
+function extractPathFromUrl(url: string): string {
+  const localhost = 'http://localhost:3030/';
+  return url.replace(localhost, '');
+}
+
+function addCommaAfterEachLine(data: string): string {
+  const jsonData = data.trim().split('\n');
+
+  const jsonDataWithCommas = jsonData.map((item, index) =>
+    index < jsonData.length - 1 ? item + ',' : item,
+  );
+
+  return jsonDataWithCommas.join('\n');
+}
+
+let idCounter = 1;
+const idMap = new Map();
+
+function recursivelyReplaceData(obj: any) {
+  for (let key in obj) {
+    if (typeof obj[key] === 'string' && isDateLikeString(obj[key])) {
+      obj[key] = `[[ISODateString]]`;
+    } else if (key.includes('timestamp')) {
+      obj[key] = `[[timestamp]]`;
+    } else if (typeof obj[key] === 'number' && obj[key] > 1000) {
+      obj[key] = `[[highNumber]]`;
+    } else if (key.includes('_id')) {
+      if (idMap.has(obj[key])) {
+        // give the same ID replacement to the same value
+        obj[key] = idMap.get(obj[key]);
+      } else {
+        const newId = `[[ID${idCounter++}]]`;
+        idMap.set(obj[key], newId);
+        obj[key] = newId;
+      }
+    } else if (typeof obj[key] === 'object' && obj[key] !== null) {
+      recursivelyReplaceData(obj[key]);
+    }
+  }
+}
+
+function replaceDynamicValues(data: string): string[] {
+  const jsonData = JSON.parse(data);
+
+  recursivelyReplaceData(jsonData);
+
+  // change remaining dynamic values
+  jsonData.forEach((item: any) => {
+    if (item.trace?.public_key) {
+      item.trace.public_key = '[[publicKey]]';
+    }
+  });
+
+  return jsonData;
+}
+
+/** This function transforms all dynamic data (like timestamps) from the temporarily saved file.
+ *  The new content is saved into a new file with the url as the filename.
+ *  The temporary file is deleted in the end.
+ */
+async function transformSavedJSON() {
+  try {
+    const data = await readFile(TEMPORARY_FILE_PATH, 'utf8');
+
+    const jsonData = addCommaAfterEachLine(data);
+    const transformedJSON = replaceDynamicValues(jsonData);
+    const objWithReq = transformedJSON[2] as unknown as { request: { url: string } };
+
+    if ('request' in objWithReq) {
+      const url = objWithReq.request.url;
+      const filepath = `payload-files/${extractPathFromUrl(url)}.json`;
+
+      writeFile(filepath, JSON.stringify(transformedJSON, null, 2)).then(() => {
+        console.log(`Successfully replaced data and saved file in ${filepath}`);
+
+        unlink(TEMPORARY_FILE_PATH).then(() =>
+          console.log(`Successfully deleted ${TEMPORARY_FILE_PATH}`),
+        );
+      });
+    }
+  } catch (err) {
+    console.error('Error', err);
+  }
+}
+
 /**
  * Starts an event proxy server that will proxy events to sentry when the `tunnel` option is used. Point the `tunnel`
  * option to this server (like this `tunnel: http://localhost:${port option}/`).
@@ -32,6 +127,8 @@ interface SentryRequestCallbackData {
  */
 export async function startEventProxyServer(options: EventProxyServerOptions): Promise<void> {
   const eventCallbackListeners: Set<(data: string) => void> = new Set();
+
+  console.log(`Proxy server "${options.proxyServerName}" running. Waiting for events...`);
 
   const proxyServer = http.createServer((proxyRequest, proxyResponse) => {
     const proxyRequestChunks: Uint8Array[] = [];
@@ -50,7 +147,16 @@ export async function startEventProxyServer(options: EventProxyServerOptions): P
           ? zlib.gunzipSync(Buffer.concat(proxyRequestChunks)).toString()
           : Buffer.concat(proxyRequestChunks).toString();
 
-      let envelopeHeader = JSON.parse(proxyRequestBody.split('\n')[0]);
+      // save the JSON payload into a file
+      try {
+        writeFile(TEMPORARY_FILE_PATH, `[${proxyRequestBody}]`).then(() => {
+          transformSavedJSON();
+        });
+      } catch (err) {
+        console.error(`Error writing file ${TEMPORARY_FILE_PATH}`, err);
+      }
+
+      const envelopeHeader: EnvelopeItem[0] = JSON.parse(proxyRequestBody.split('\n')[0]);
 
       if (!envelopeHeader.dsn) {
         throw new Error(
@@ -58,7 +164,7 @@ export async function startEventProxyServer(options: EventProxyServerOptions): P
         );
       }
 
-      const { origin, pathname, host } = new URL(envelopeHeader.dsn);
+      const { origin, pathname, host } = new URL(envelopeHeader.dsn as string);
 
       const projectId = pathname.substring(1);
       const sentryIngestUrl = `${origin}/api/${projectId}/envelope/`;
