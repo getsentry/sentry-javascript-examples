@@ -1,4 +1,15 @@
 import * as Sentry from '@sentry/node';
+
+Sentry.init({
+  environment: 'qa', // dynamic sampling bias to keep transactions
+  dsn: process.env.E2E_TEST_DSN,
+  includeLocalVariables: true,
+  debug: true,
+  tunnel: `http://localhost:3031/`, // proxy server
+  tracesSampleRate: 1,
+});
+
+// can use `import` instead of `require` because of `'esModuleInterop': true` in tsconfig.json
 import express from 'express';
 import dotenv from 'dotenv';
 
@@ -94,7 +105,7 @@ app.get('/test-local-variables-caught', function (req, res) {
   res.send({ exceptionId, randomVariableToRecord });
 });
 
-app.use(Sentry.Handlers.errorHandler());
+Sentry.setupExpressErrorHandler(app);
 
 // @ts-ignore
 app.use(function onError(err, req, res, next) {
