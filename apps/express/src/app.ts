@@ -21,19 +21,6 @@ declare global {
 const app = express();
 const port = 3030;
 
-Sentry.init({
-  environment: 'qa', // dynamic sampling bias to keep transactions
-  dsn: process.env.E2E_TEST_DSN,
-  includeLocalVariables: true,
-  debug: true,
-  tunnel: `http://127.0.0.1:3031/`, // proxy server
-  tracesSampleRate: 1,
-  integrations: [new Sentry.Integrations.Express({ app })],
-});
-
-app.use(Sentry.Handlers.requestHandler());
-app.use(Sentry.Handlers.tracingHandler());
-
 app.get('/test-success', function (req, res) {
   res.send({ version: 'v1' });
 });

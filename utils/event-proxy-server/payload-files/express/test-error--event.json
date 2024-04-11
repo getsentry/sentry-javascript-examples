@@ -4,17 +4,9 @@
     "sent_at": "[[ISODateString]]",
     "sdk": {
       "name": "sentry.javascript.node",
-      "version": "7.109.0"
+      "version": "8.0.0-alpha.9"
     },
-    "dsn": "[[dsn]]",
-    "trace": {
-      "environment": "qa",
-      "public_key": "[[publicKey]]",
-      "trace_id": "[[ID2]]",
-      "sample_rate": "1",
-      "transaction": "GET /test-error",
-      "sampled": "true"
-    }
+    "dsn": "[[dsn]]"
   },
   {
     "type": "event"
@@ -111,14 +103,14 @@
               {
                 "filename": "[[FILENAME3]]",
                 "module": "app",
-                "function": "<anonymous>",
-                "lineno": 85,
+                "function": "?",
+                "lineno": 83,
                 "colno": 12,
                 "in_app": true,
                 "pre_context": [
+                  "var app = (0, express_1.default)();",
+                  "var port = 3030;",
                   "// todo: add express integration to docs",
-                  "app.use(Sentry.Handlers.requestHandler());",
-                  "app.use(Sentry.Handlers.tracingHandler());",
                   "app.get('/test-success', function (req, res) {",
                   "    res.send({ version: 'v1' });",
                   "});",
@@ -171,7 +163,7 @@
               {
                 "filename": "[[FILENAME3]]",
                 "module": "app",
-                "function": "<anonymous>",
+                "function": "?",
                 "lineno": 31,
                 "colno": 71,
                 "in_app": true,
@@ -252,8 +244,8 @@
               {
                 "filename": "[[FILENAME3]]",
                 "module": "app",
-                "function": "<anonymous>",
-                "lineno": 90,
+                "function": "?",
+                "lineno": 88,
                 "colno": 59,
                 "in_app": true,
                 "pre_context": [
@@ -289,16 +281,8 @@
     "platform": "node",
     "contexts": {
       "trace": {
-        "data": {
-          "sentry.source": "route",
-          "sentry.origin": "auto.http.node.tracingHandler",
-          "sentry.op": "http.server",
-          "sentry.sample_rate": 1
-        },
-        "op": "http.server",
-        "span_id": "[[ID3]]",
         "trace_id": "[[ID2]]",
-        "origin": "auto.http.node.tracingHandler"
+        "span_id": "[[ID3]]"
       },
       "runtime": {
         "name": "node",
@@ -340,26 +324,33 @@
         "RequestData",
         "Console",
         "Http",
-        "Undici",
+        "NodeFetch",
         "OnUncaughtException",
         "OnUnhandledRejection",
         "ContextLines",
         "LocalVariables",
         "Context",
         "Modules",
-        "Express"
+        "Express",
+        "Fastify",
+        "Graphql",
+        "Mongo",
+        "Mongoose",
+        "Mysql",
+        "Mysql2",
+        "Postgres",
+        "Nest",
+        "Hapi",
+        "Koa"
       ],
       "name": "sentry.javascript.node",
-      "version": "7.109.0",
+      "version": "8.0.0-alpha.9",
       "packages": [
         {
           "name": "npm:@sentry/node",
-          "version": "7.109.0"
+          "version": "8.0.0-alpha.9"
         }
       ]
-    },
-    "tags": {
-      "transaction": "GET /test-error"
     },
     "breadcrumbs": [
       {
@@ -387,11 +378,22 @@
         "pragma": "no-cache",
         "cache-control": "no-cache"
       },
-      "query_string": {},
       "url": "http://localhost:3030/test-error"
     },
     "transaction": "GET /test-error",
     "modules": {
+      "semver": "7.6.0",
+      "yallist": "4.0.0",
+      "shimmer": "1.2.1",
+      "require-in-the-middle": "7.3.0",
+      "resolve": "1.22.8",
+      "is-core-module": "2.13.1",
+      "hasown": "2.0.2",
+      "function-bind": "1.1.2",
+      "debug": "4.3.4",
+      "supports-color": "5.5.0",
+      "module-details-from-path": "1.0.3",
+      "import-in-the-middle": "1.7.3",
       "express": "4.19.2",
       "body-parser": "1.20.2",
       "depd": "2.0.0",
@@ -415,8 +417,6 @@
       "es-errors": "1.3.0",
       "has-symbols": "1.0.3",
       "has-proto": "1.0.3",
-      "function-bind": "1.1.2",
-      "hasown": "2.0.2",
       "call-bind": "1.0.7",
       "set-function-length": "1.2.2",
       "define-data-property": "1.1.4",
@@ -453,7 +453,8 @@
       "raw-body": "2.5.2",
       "iconv-lite": "0.4.24",
       "safer-buffer": "2.1.2",
-      "serve-static": "1.15.0"
+      "serve-static": "1.15.0",
+      "opentelemetry-instrumentation-fetch-node": "1.1.2"
     }
   }
 ]
