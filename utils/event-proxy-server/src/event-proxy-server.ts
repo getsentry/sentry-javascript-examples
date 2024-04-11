@@ -50,16 +50,26 @@ function addCommaAfterEachLine(data: string): string {
   return jsonDataWithCommas.join('\n');
 }
 
+let idCounter = 1;
+const idMap = new Map();
+
 function recursivelyReplaceData(obj: any) {
   for (let key in obj) {
     if (typeof obj[key] === 'string' && isDateLikeString(obj[key])) {
       obj[key] = `[[ISODateString]]`;
     } else if (key.includes('timestamp')) {
       obj[key] = `[[timestamp]]`;
-    } else if (key.includes('_id')) {
-      obj[key] = `[[ID]]`;
     } else if (typeof obj[key] === 'number' && obj[key] > 1000) {
       obj[key] = `[[highNumber]]`;
+    } else if (key.includes('_id')) {
+      if (idMap.has(obj[key])) {
+        // give the same ID replacement to the same value
+        obj[key] = idMap.get(obj[key]);
+      } else {
+        const newId = `[[ID${idCounter++}]]`;
+        idMap.set(obj[key], newId);
+        obj[key] = newId;
+      }
     } else if (typeof obj[key] === 'object' && obj[key] !== null) {
       recursivelyReplaceData(obj[key]);
     }
@@ -97,12 +107,14 @@ async function transformSavedJSON() {
       const url = objWithReq.request.url;
       const filepath = `payload-files/${extractPathFromUrl(url)}.json`;
 
-      await writeFile(filepath, JSON.stringify(transformedJSON, null, 2));
-      console.log(`Successfully modified timestamp in ${filepath}`);
-    }
+      writeFile(filepath, JSON.stringify(transformedJSON, null, 2)).then(() => {
+        console.log(`Successfully replaced data and saved file in ${filepath}`);
 
-    await unlink(TEMPORARY_FILE_PATH);
-    console.log(`Successfully deleted ${TEMPORARY_FILE_PATH}`);
+        unlink(TEMPORARY_FILE_PATH).then(() =>
+          console.log(`Successfully deleted ${TEMPORARY_FILE_PATH}`),
+        );
+      });
+    }
   } catch (err) {
     console.error('Error', err);
   }
@@ -135,15 +147,14 @@ export async function startEventProxyServer(options: EventProxyServerOptions): P
           ? zlib.gunzipSync(Buffer.concat(proxyRequestChunks)).toString()
           : Buffer.concat(proxyRequestChunks).toString();
 
-      fs.writeFile(TEMPORARY_FILE_PATH, `[${proxyRequestBody}]`, err => {
-        if (err) {
-          console.error(`Error writing file ${TEMPORARY_FILE_PATH}`, err);
-        } else {
-          console.log(`Successfully wrote to ${TEMPORARY_FILE_PATH}`);
-        }
-      });
-
-      transformSavedJSON();
+      // save the JSON payload into a file
+      try {
+        writeFile(TEMPORARY_FILE_PATH, `[${proxyRequestBody}]`).then(() => {
+          transformSavedJSON();
+        });
+      } catch (err) {
+        console.error(`Error writing file ${TEMPORARY_FILE_PATH}`, err);
+      }
 
       const envelopeHeader: EnvelopeItem[0] = JSON.parse(proxyRequestBody.split('\n')[0]);
 
