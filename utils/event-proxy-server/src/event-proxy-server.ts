@@ -1,13 +1,9 @@
 import * as fs from 'fs';
 import * as http from 'http';
 import * as https from 'https';
-import type { AddressInfo } from 'net';
-import * as os from 'os';
-import * as path from 'path';
 import * as util from 'util';
 import * as zlib from 'zlib';
 import type { Envelope, EnvelopeItem } from '@sentry/types';
-import { parseEnvelope } from '@sentry/utils';
 
 // change to folder name of app to test
 const APP = 'express';
@@ -131,8 +127,6 @@ async function transformSavedJSON() {
  *
  */
 export async function startEventProxyServer(options: EventProxyServerOptions): Promise<void> {
-  const eventCallbackListeners: Set<(data: string) => void> = new Set();
-
   console.log(`Proxy server "${options.proxyServerName}" running. Waiting for events...`);
 
   const proxyServer = http.createServer((proxyRequest, proxyResponse) => {
@@ -176,30 +170,15 @@ export async function startEventProxyServer(options: EventProxyServerOptions): P
 
       proxyRequest.headers.host = host;
 
-      const sentryResponseChunks: Uint8Array[] = [];
-
       const sentryRequest = https.request(
         sentryIngestUrl,
         { headers: proxyRequest.headers, method: proxyRequest.method },
         sentryResponse => {
           sentryResponse.addListener('data', (chunk: Buffer) => {
             proxyResponse.write(chunk, 'binary');
-            sentryResponseChunks.push(chunk);
           });
 
           sentryResponse.addListener('end', () => {
-            eventCallbackListeners.forEach(listener => {
-              const rawSentryResponseBody = Buffer.concat(sentryResponseChunks).toString();
-
-              const data: SentryRequestCallbackData = {
-                envelope: parseEnvelope(proxyRequestBody, new TextEncoder(), new TextDecoder()),
-                rawProxyRequestBody: proxyRequestBody,
-                rawSentryResponseBody,
-                sentryResponseStatusCode: sentryResponse.statusCode,
-              };
-
-              listener(Buffer.from(JSON.stringify(data)).toString('base64'));
-            });
             proxyResponse.end();
           });
 
@@ -222,40 +201,6 @@ export async function startEventProxyServer(options: EventProxyServerOptions): P
     });
   });
 
-  const eventCallbackServer = http.createServer((eventCallbackRequest, eventCallbackResponse) => {
-    eventCallbackResponse.statusCode = 200;
-    eventCallbackResponse.setHeader('connection', 'keep-alive');
-
-    const callbackListener = (data: string): void => {
-      eventCallbackResponse.write(data.concat('\n'), 'utf8');
-    };
-
-    eventCallbackListeners.add(callbackListener);
-
-    eventCallbackRequest.on('close', () => {
-      eventCallbackListeners.delete(callbackListener);
-    });
-
-    eventCallbackRequest.on('error', () => {
-      eventCallbackListeners.delete(callbackListener);
-    });
-  });
-
-  const eventCallbackServerStartupPromise = new Promise<void>(resolve => {
-    eventCallbackServer.listen(0, () => {
-      const port = String((eventCallbackServer.address() as AddressInfo).port);
-      void registerCallbackServerPort(options.proxyServerName, port).then(resolve);
-    });
-  });
-
-  await eventCallbackServerStartupPromise;
   await proxyServerStartupPromise;
   return;
-}
-
-const TEMP_FILE_PREFIX = 'event-proxy-server-';
-
-async function registerCallbackServerPort(serverName: string, port: string): Promise<void> {
-  const tmpFilePath = path.join(os.tmpdir(), `${TEMP_FILE_PREFIX}${serverName}`);
-  await writeFile(tmpFilePath, port, { encoding: 'utf8' });
 }
