@@ -142,22 +142,30 @@ async function transformSavedJSON() {
     const jsonData = addCommaAfterEachLine(data);
     const transformedJSON = replaceDynamicValues(jsonData);
 
-    const objWithReq = transformedJSON[2] as unknown as { request: { url: string } };
     const type = (transformedJSON[1] as unknown as { type: string }).type;
+    const objData = transformedJSON[2] as unknown as {
+      request?: { url?: string };
+      contexts?: { trace?: { data?: { url?: string } } };
+    };
 
-    if ('request' in objWithReq) {
-      const url = objWithReq.request.url;
-      const replaceForwardSlashes = (str: string) => str.split('/').join('_');
+    if ('request' in objData || 'contexts' in objData) {
+      const url = objData?.request?.url || objData.contexts?.trace?.data?.url;
 
-      const filepath = `payload-files/${APP}/${replaceForwardSlashes(extractPathFromUrl(url))}--${type}.json`;
+      if (url) {
+        const replaceForwardSlashes = (str: string) => str.split('/').join('_');
 
-      writeFile(filepath, JSON.stringify(transformedJSON, null, 2)).then(() => {
-        console.log(`Successfully replaced data and saved file in ${filepath}`);
+        const filepath = `payload-files/${APP}/${replaceForwardSlashes(extractPathFromUrl(url))}--${type}.json`;
 
-        unlink(TEMPORARY_FILE_PATH).then(() =>
-          console.log(`Successfully deleted ${TEMPORARY_FILE_PATH}`),
-        );
-      });
+        writeFile(filepath, JSON.stringify(transformedJSON, null, 2)).then(() => {
+          console.log(`Successfully replaced data and saved file in ${filepath}`);
+
+          unlink(TEMPORARY_FILE_PATH).then(() =>
+            console.log(`Successfully deleted ${TEMPORARY_FILE_PATH}`),
+          );
+        });
+      } else {
+        console.warn('No url found in JSON');
+      }
     }
   } catch (err) {
     console.error('Error', err);

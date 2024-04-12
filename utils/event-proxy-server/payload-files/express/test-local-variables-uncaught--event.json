@@ -16,7 +16,7 @@
       "values": [
         {
           "type": "Error",
-          "value": "Local Variable Error",
+          "value": "Uncaught Local Variable Error - {\"randomVariableToRecord\":\"LOCAL VARIABLE\"}",
           "stacktrace": {
             "frames": [
               {
@@ -266,30 +266,29 @@
                 "filename": "[[FILENAME5]]",
                 "module": "app",
                 "function": "?",
-                "lineno": 165,
-                "colno": 15,
+                "lineno": 159,
+                "colno": 11,
                 "in_app": true,
                 "pre_context": [
-                  "    var randomVariableToRecord = 'LOCAL VARIABLE';",
-                  "    throw new Error(\"Uncaught Local Variable Error - \".concat(JSON.stringify({ randomVariableToRecord: randomVariableToRecord })));",
+                  "                    return [2 /*return*/];",
+                  "            }",
+                  "        });",
+                  "    });",
+                  "});",
+                  "app.get('/test-local-variables-uncaught', function (req, res) {",
+                  "    var randomVariableToRecord = 'LOCAL VARIABLE';"
+                ],
+                "context_line": "    throw new Error(\"Uncaught Local Variable Error - \".concat(JSON.stringify({ randomVariableToRecord: randomVariableToRecord })));",
+                "post_context": [
                   "});",
                   "app.get('/test-local-variables-caught', function (req, res) {",
                   "    var randomVariableToRecord = 'LOCAL VARIABLE';",
                   "    var exceptionId;",
-                  "    try {"
-                ],
-                "context_line": "        throw new Error('Local Variable Error');",
-                "post_context": [
-                  "    }",
-                  "    catch (e) {",
-                  "        exceptionId = Sentry.captureException(e);",
-                  "    }",
-                  "    res.send({ exceptionId: exceptionId, randomVariableToRecord: randomVariableToRecord });",
-                  "});",
-                  "Sentry.setupExpressErrorHandler(app);"
+                  "    try {",
+                  "        throw new Error('Local Variable Error');",
+                  "    }"
                 ],
                 "vars": {
-                  "exceptionId": "<undefined>",
                   "randomVariableToRecord": "LOCAL VARIABLE",
                   "res": "<ServerResponse>",
                   "req": "<IncomingMessage>"
@@ -298,8 +297,8 @@
             ]
           },
           "mechanism": {
-            "type": "generic",
-            "handled": true
+            "type": "middleware",
+            "handled": false
           }
         }
       ]
@@ -401,12 +400,11 @@
         "sec-fetch-dest": "document",
         "sec-fetch-mode": "navigate",
         "sec-fetch-site": "none",
-        "sec-fetch-user": "?1",
-        "if-none-match": "[[W/entityTagValue]]"
+        "sec-fetch-user": "?1"
       },
-      "url": "http://localhost:3030/test-local-variables-caught"
+      "url": "http://localhost:3030/test-local-variables-uncaught"
     },
-    "transaction": "GET /test-local-variables-caught",
+    "transaction": "GET /test-local-variables-uncaught",
     "modules": {
       "semver": "7.6.0",
       "yallist": "4.0.0",
