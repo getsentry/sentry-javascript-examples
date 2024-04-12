@@ -12,7 +12,7 @@
       "public_key": "[[publicKey]]",
       "trace_id": "[[ID2]]",
       "sample_rate": "1",
-      "transaction": "GET /test-success-manual",
+      "transaction": "GET /test-local-variables-uncaught",
       "sampled": "true"
     }
   },
@@ -29,15 +29,15 @@
           "sentry.sample_rate": 1,
           "sentry.op": "http.server",
           "sentry.origin": "auto.http.otel.http",
-          "url": "http://localhost:3030/test-success-manual",
+          "url": "http://localhost:3030/test-local-variables-uncaught",
           "otel.kind": "SERVER",
-          "http.response.status_code": 200,
-          "http.url": "http://localhost:3030/test-success-manual",
+          "http.response.status_code": 500,
+          "http.url": "http://localhost:3030/test-local-variables-uncaught",
           "http.host": "localhost:3030",
           "net.host.name": "localhost",
           "http.method": "GET",
           "http.scheme": "http",
-          "http.target": "/test-success-manual",
+          "http.target": "/test-local-variables-uncaught",
           "http.user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:124.0) Gecko/20100101 Firefox/124.0",
           "http.flavor": "1.1",
           "net.transport": "ip_tcp",
@@ -45,22 +45,22 @@
           "net.host.port": "[[highNumber]]",
           "net.peer.ip": "::ffff:127.0.0.1",
           "net.peer.port": "[[highNumber]]",
-          "http.status_code": 200,
-          "http.status_text": "OK",
-          "http.route": "/test-success-manual"
+          "http.status_code": 500,
+          "http.status_text": "INTERNAL SERVER ERROR",
+          "http.route": "/test-local-variables-uncaught"
         },
         "origin": "auto.http.otel.http",
         "op": "http.server",
-        "status": "ok"
+        "status": "unknown_error"
       },
       "otel": {
         "attributes": {
-          "http.url": "http://localhost:3030/test-success-manual",
+          "http.url": "http://localhost:3030/test-local-variables-uncaught",
           "http.host": "localhost:3030",
           "net.host.name": "localhost",
           "http.method": "GET",
           "http.scheme": "http",
-          "http.target": "/test-success-manual",
+          "http.target": "/test-local-variables-uncaught",
           "http.user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:124.0) Gecko/20100101 Firefox/124.0",
           "http.flavor": "1.1",
           "net.transport": "ip_tcp",
@@ -69,9 +69,9 @@
           "net.host.port": "[[highNumber]]",
           "net.peer.ip": "::ffff:127.0.0.1",
           "net.peer.port": "[[highNumber]]",
-          "http.status_code": 200,
-          "http.status_text": "OK",
-          "http.route": "/test-success-manual"
+          "http.status_code": 500,
+          "http.status_text": "INTERNAL SERVER ERROR",
+          "http.route": "/test-local-variables-uncaught"
         },
         "resource": {
           "service.name": "node",
@@ -151,52 +151,22 @@
         "trace_id": "[[ID2]]",
         "data": {
           "sentry.origin": "auto.http.otel.express",
-          "http.route": "/test-success-manual",
-          "express.name": "/test-success-manual",
+          "http.route": "/test-local-variables-uncaught",
+          "express.name": "/test-local-variables-uncaught",
           "express.type": "request_handler",
           "otel.kind": "INTERNAL"
         },
-        "description": "request handler - /test-success-manual",
+        "description": "request handler - /test-local-variables-uncaught",
         "parent_span_id": "[[ID3]]",
         "start_timestamp": "[[timestamp]]",
         "timestamp": "[[timestamp]]",
         "status": "ok",
         "origin": "auto.http.otel.express"
-      },
-      {
-        "span_id": "[[ID7]]",
-        "trace_id": "[[ID2]]",
-        "data": {
-          "sentry.origin": "manual",
-          "sentry.op": "e2e-test",
-          "otel.kind": "INTERNAL"
-        },
-        "description": "test-transaction",
-        "parent_span_id": "[[ID3]]",
-        "start_timestamp": "[[timestamp]]",
-        "timestamp": "[[timestamp]]",
-        "status": "ok",
-        "op": "e2e-test",
-        "origin": "manual"
-      },
-      {
-        "span_id": "[[ID8]]",
-        "trace_id": "[[ID2]]",
-        "data": {
-          "sentry.origin": "manual",
-          "otel.kind": "INTERNAL"
-        },
-        "description": "test-span",
-        "parent_span_id": "[[ID7]]",
-        "start_timestamp": "[[timestamp]]",
-        "timestamp": "[[timestamp]]",
-        "status": "ok",
-        "origin": "manual"
       }
     ],
     "start_timestamp": "[[timestamp]]",
     "timestamp": "[[timestamp]]",
-    "transaction": "GET /test-success-manual",
+    "transaction": "GET /test-local-variables-uncaught",
     "type": "transaction",
     "transaction_info": {
       "source": "route"
