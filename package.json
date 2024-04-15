@@ -10,13 +10,15 @@
   "scripts": {
     "start:proxy-server": "yarn workspace event-proxy-server run start",
     "start:express": "yarn workspace express-test-application run start",
+    "start:koa": "yarn workspace koa-test-application run start",
     "fix:prettier": "prettier . --write",
     "fix:lint": "yarn run eslint --fix",
     "lint": "yarn run eslint"
   },
   "workspaces": [
     "utils/event-proxy-server",
-    "apps/express"
+    "apps/express",
+    "apps/koa"
   ],
   "devDependencies": {
     "@eslint/js": "^9.0.0",
