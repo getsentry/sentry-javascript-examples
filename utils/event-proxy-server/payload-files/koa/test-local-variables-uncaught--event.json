@@ -1,0 +1,436 @@
+[
+  {
+    "event_id": "[[ID1]]",
+    "sent_at": "[[ISODateString]]",
+    "sdk": {
+      "name": "sentry.javascript.node",
+      "version": "8.0.0-alpha.9"
+    },
+    "dsn": "[[dsn]]"
+  },
+  {
+    "type": "event"
+  },
+  {
+    "exception": {
+      "values": [
+        {
+          "type": "Error",
+          "value": "Uncaught Local Variable Error - {\"randomVariableToRecord\":\"LOCAL VARIABLE\"}",
+          "stacktrace": {
+            "frames": [
+              {
+                "filename": "[[FILENAME1]]",
+                "module": "koa-compose:index",
+                "function": "dispatch",
+                "lineno": 42,
+                "colno": 32,
+                "in_app": false,
+                "pre_context": [
+                  "    function dispatch (i) {",
+                  "      if (i <= index) return Promise.reject(new Error('next() called multiple times'))",
+                  "      index = i",
+                  "      let fn = middleware[i]",
+                  "      if (i === middleware.length) fn = next",
+                  "      if (!fn) return Promise.resolve()",
+                  "      try {"
+                ],
+                "context_line": "        return Promise.resolve(fn(context, dispatch.bind(null, i + 1)));",
+                "post_context": [
+                  "      } catch (err) {",
+                  "        return Promise.reject(err)",
+                  "      }",
+                  "    }",
+                  "  }",
+                  "}",
+                  ""
+                ]
+              },
+              {
+                "filename": "[[FILENAME2]]",
+                "module": "@koa.router.lib:router",
+                "function": "?",
+                "lineno": 423,
+                "colno": 16,
+                "in_app": false,
+                "pre_context": [
+                  "        ctx.routerPath = layer.path;",
+                  "        ctx.routerName = layer.name;",
+                  "        ctx._matchedRoute = layer.path;",
+                  "        if (layer.name) {",
+                  "          ctx._matchedRouteName = layer.name;",
+                  "        }",
+                  ""
+                ],
+                "context_line": "        return next();",
+                "post_context": [
+                  "      });",
+                  "      return memo.concat(layer.stack);",
+                  "    }, []);",
+                  "",
+                  "    return compose(layerChain)(ctx, next);",
+                  "  };",
+                  ""
+                ]
+              },
+              {
+                "filename": "[[FILENAME1]]",
+                "module": "koa-compose:index",
+                "function": "dispatch",
+                "lineno": 42,
+                "colno": 32,
+                "in_app": false,
+                "pre_context": [
+                  "    function dispatch (i) {",
+                  "      if (i <= index) return Promise.reject(new Error('next() called multiple times'))",
+                  "      index = i",
+                  "      let fn = middleware[i]",
+                  "      if (i === middleware.length) fn = next",
+                  "      if (!fn) return Promise.resolve()",
+                  "      try {"
+                ],
+                "context_line": "        return Promise.resolve(fn(context, dispatch.bind(null, i + 1)));",
+                "post_context": [
+                  "      } catch (err) {",
+                  "        return Promise.reject(err)",
+                  "      }",
+                  "    }",
+                  "  }",
+                  "}",
+                  ""
+                ]
+              },
+              {
+                "filename": "[[FILENAME3]]",
+                "module": "@opentelemetry.instrumentation-koa.build.src:instrumentation",
+                "function": "?",
+                "lineno": 148,
+                "colno": 36,
+                "in_app": false,
+                "pre_context": [
+                  "                }), e => {",
+                  "                    if (e) {",
+                  "                        api.diag.error('koa instrumentation: request hook failed', e);",
+                  "                    }",
+                  "                }, true);",
+                  "            }",
+                  "            const newContext = api.trace.setSpan(api.context.active(), span);"
+                ],
+                "context_line": "            return api.context.with(newContext, async () => {",
+                "post_context": [
+                  "                try {",
+                  "                    return await middlewareLayer(context, next);",
+                  "                }",
+                  "                catch (err) {",
+                  "                    span.recordException(err);",
+                  "                    throw err;",
+                  "                }"
+                ]
+              },
+              {
+                "filename": "[[FILENAME4]]",
+                "module": "@opentelemetry.api.build.src.api:context",
+                "function": "ContextAPI.with",
+                "lineno": 60,
+                "colno": 46,
+                "in_app": false,
+                "pre_context": [
+                  "     *",
+                  "     * @param context context to be active during function execution",
+                  "     * @param fn function to execute in a context",
+                  "     * @param thisArg optional receiver to be used for calling fn",
+                  "     * @param args optional arguments forwarded to fn",
+                  "     */",
+                  "    with(context, fn, thisArg, ...args) {"
+                ],
+                "context_line": "        return this._getContextManager().with(context, fn, thisArg, ...args);",
+                "post_context": [
+                  "    }",
+                  "    /**",
+                  "     * Bind a context to a target function or event emitter",
+                  "     *",
+                  "     * @param context context to bind to the event emitter or function. Defaults to the currently active context",
+                  "     * @param target function or event emitter to bind",
+                  "     */"
+                ]
+              },
+              {
+                "filename": "[[FILENAME5]]",
+                "module": "@sentry.opentelemetry.cjs:index",
+                "function": "SentryContextManager.with",
+                "lineno": "[[highNumber]]",
+                "colno": 24,
+                "in_app": false,
+                "pre_context": [
+                  "      const ctx2 = ctx1",
+                  "        .deleteValue(SENTRY_FORK_ISOLATION_SCOPE_CONTEXT_KEY)",
+                  "        .deleteValue(SENTRY_FORK_SET_SCOPE_CONTEXT_KEY)",
+                  "        .deleteValue(SENTRY_FORK_SET_ISOLATION_SCOPE_CONTEXT_KEY);",
+                  "",
+                  "      setContextOnScope(newCurrentScope, ctx2);",
+                  ""
+                ],
+                "context_line": "      return super.with(ctx2, fn, thisArg, ...args);",
+                "post_context": [
+                  "    }",
+                  "  }",
+                  "",
+                  "  return SentryContextManager ;",
+                  "}",
+                  "",
+                  "/** If this attribute is true, it means that the parent is a remote span. */"
+                ]
+              },
+              {
+                "filename": "[[FILENAME6]]",
+                "module": "@opentelemetry.context-async-hooks.build.src:AsyncLocalStorageContextManager",
+                "function": "SentryContextManager.with",
+                "lineno": 33,
+                "colno": 40,
+                "in_app": false,
+                "pre_context": [
+                  "    }",
+                  "    active() {",
+                  "        var _a;",
+                  "        return (_a = this._asyncLocalStorage.getStore()) !== null && _a !== void 0 ? _a : api_1.ROOT_CONTEXT;",
+                  "    }",
+                  "    with(context, fn, thisArg, ...args) {",
+                  "        const cb = thisArg == null ? fn : fn.bind(thisArg);"
+                ],
+                "context_line": "        return this._asyncLocalStorage.run(context, cb, ...args);",
+                "post_context": [
+                  "    }",
+                  "    enable() {",
+                  "        return this;",
+                  "    }",
+                  "    disable() {",
+                  "        this._asyncLocalStorage.disable();",
+                  "        return this;"
+                ]
+              },
+              {
+                "filename": "[[FILENAME7]]",
+                "module": "node:async_hooks",
+                "function": "AsyncLocalStorage.run",
+                "lineno": 346,
+                "colno": 14,
+                "in_app": false
+              },
+              {
+                "filename": "[[FILENAME3]]",
+                "module": "@opentelemetry.instrumentation-koa.build.src:instrumentation",
+                "function": "?",
+                "lineno": 150,
+                "colno": 34,
+                "in_app": false,
+                "pre_context": [
+                  "                        api.diag.error('koa instrumentation: request hook failed', e);",
+                  "                    }",
+                  "                }, true);",
+                  "            }",
+                  "            const newContext = api.trace.setSpan(api.context.active(), span);",
+                  "            return api.context.with(newContext, async () => {",
+                  "                try {"
+                ],
+                "context_line": "                    return await middlewareLayer(context, next);",
+                "post_context": [
+                  "                }",
+                  "                catch (err) {",
+                  "                    span.recordException(err);",
+                  "                    throw err;",
+                  "                }",
+                  "                finally {",
+                  "                    span.end();"
+                ]
+              },
+              {
+                "filename": "[[FILENAME8]]",
+                "module": "app",
+                "function": "?",
+                "lineno": 130,
+                "colno": 11,
+                "in_app": true,
+                "pre_context": [
+                  "            transactionIds: global.transactionIds || [],",
+                  "        };",
+                  "        return [2 /*return*/];",
+                  "    });",
+                  "}); });",
+                  "router.get('/test-local-variables-uncaught', function (ctx) {",
+                  "    var randomVariableToRecord = 'LOCAL VARIABLE';"
+                ],
+                "context_line": "    throw new Error(\"Uncaught Local Variable Error - \".concat(JSON.stringify({ randomVariableToRecord: randomVariableToRecord })));",
+                "post_context": [
+                  "});",
+                  "router.get('/test-local-variables-caught', function (ctx) {",
+                  "    var randomVariableToRecord = 'LOCAL VARIABLE';",
+                  "    var exceptionId;",
+                  "    try {",
+                  "        throw new Error('Local Variable Error');",
+                  "    }"
+                ],
+                "vars": {}
+              }
+            ]
+          },
+          "mechanism": {
+            "type": "generic",
+            "handled": true
+          }
+        }
+      ]
+    },
+    "event_id": "[[ID1]]",
+    "platform": "node",
+    "contexts": {
+      "trace": {
+        "trace_id": "[[ID2]]",
+        "span_id": "[[ID3]]",
+        "parent_span_id": "[[ID4]]"
+      },
+      "runtime": {
+        "name": "node",
+        "version": "v20.12.1"
+      },
+      "app": {
+        "app_start_time": "[[ISODateString]]",
+        "app_memory": "[[highNumber]]"
+      },
+      "os": {
+        "kernel_version": "23.2.0",
+        "name": "macOS",
+        "version": "14.2",
+        "build": "23C64"
+      },
+      "device": {
+        "boot_time": "[[ISODateString]]",
+        "arch": "arm64",
+        "memory_size": "[[highNumber]]",
+        "free_memory": "[[highNumber]]",
+        "processor_count": 10,
+        "cpu_description": "Apple M1 Pro",
+        "processor_frequency": "[[highNumber]]"
+      },
+      "culture": {
+        "locale": "en-US",
+        "timezone": "Europe/Vienna"
+      },
+      "cloud_resource": {}
+    },
+    "server_name": "D9M3PY4LQ7.local",
+    "timestamp": "[[timestamp]]",
+    "environment": "qa",
+    "sdk": {
+      "integrations": [
+        "InboundFilters",
+        "FunctionToString",
+        "LinkedErrors",
+        "RequestData",
+        "Console",
+        "Http",
+        "NodeFetch",
+        "OnUncaughtException",
+        "OnUnhandledRejection",
+        "ContextLines",
+        "LocalVariables",
+        "Context",
+        "Modules",
+        "Express",
+        "Fastify",
+        "Graphql",
+        "Mongo",
+        "Mongoose",
+        "Mysql",
+        "Mysql2",
+        "Postgres",
+        "Nest",
+        "Hapi",
+        "Koa"
+      ],
+      "name": "sentry.javascript.node",
+      "version": "8.0.0-alpha.9",
+      "packages": [
+        {
+          "name": "npm:@sentry/node",
+          "version": "8.0.0-alpha.9"
+        }
+      ]
+    },
+    "request": {
+      "method": "GET",
+      "cookies": {},
+      "headers": {
+        "host": "localhost:3030",
+        "user-agent": "[[user-agent]]",
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        "accept-language": "en-US,en;q=0.5",
+        "accept-encoding": "gzip, deflate, br",
+        "connection": "keep-alive",
+        "upgrade-insecure-requests": "1",
+        "sec-fetch-dest": "document",
+        "sec-fetch-mode": "navigate",
+        "sec-fetch-site": "none",
+        "sec-fetch-user": "?1",
+        "pragma": "no-cache",
+        "cache-control": "no-cache"
+      },
+      "url": "http://localhost:3030/test-local-variables-uncaught"
+    },
+    "transaction": "GET /test-local-variables-uncaught",
+    "modules": {
+      "semver": "7.6.0",
+      "yallist": "4.0.0",
+      "shimmer": "1.2.1",
+      "require-in-the-middle": "7.3.0",
+      "resolve": "1.22.8",
+      "is-core-module": "2.13.1",
+      "hasown": "2.0.2",
+      "function-bind": "1.1.2",
+      "debug": "4.3.4",
+      "supports-color": "5.5.0",
+      "module-details-from-path": "1.0.3",
+      "import-in-the-middle": "1.7.3",
+      "koa": "2.15.3",
+      "is-generator-function": "1.0.10",
+      "has-tostringtag": "1.0.2",
+      "has-symbols": "1.0.3",
+      "on-finished": "2.4.1",
+      "ee-first": "1.1.1",
+      "content-disposition": "0.5.4",
+      "safe-buffer": "5.2.1",
+      "cache-content-type": "1.0.1",
+      "mime-types": "2.1.35",
+      "mime-db": "1.52.0",
+      "ylru": "1.4.0",
+      "escape-html": "1.0.3",
+      "type-is": "1.6.18",
+      "media-typer": "0.3.0",
+      "destroy": "1.2.0",
+      "vary": "1.1.2",
+      "only": "0.0.2",
+      "encodeurl": "1.0.2",
+      "koa-compose": "4.1.0",
+      "setprototypeof": "1.2.0",
+      "inherits": "2.0.4",
+      "toidentifier": "1.0.1",
+      "http-assert": "1.5.0",
+      "deep-equal": "1.0.1",
+      "delegates": "1.0.0",
+      "cookies": "0.9.1",
+      "depd": "2.0.0",
+      "keygrip": "1.1.0",
+      "tsscmp": "1.0.6",
+      "accepts": "1.3.8",
+      "negotiator": "0.6.3",
+      "content-type": "1.0.5",
+      "parseurl": "1.3.3",
+      "fresh": "0.5.2",
+      "koa-convert": "2.0.0",
+      "co": "4.6.0",
+      "http-errors": "2.0.0",
+      "statuses": "2.0.1",
+      "methods": "1.1.2",
+      "opentelemetry-instrumentation-fetch-node": "1.1.2"
+    }
+  }
+]
