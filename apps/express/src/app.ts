@@ -15,7 +15,7 @@ Sentry.init({
   dsn: process.env.E2E_TEST_DSN,
   includeLocalVariables: true,
   debug: true,
-  tunnel: `http://127.0.0.1:3031/`, // proxy server
+  tunnel: `http://localhost:3031/`, // proxy server
   tracesSampleRate: 1,
   integrations: [new Sentry.Integrations.Express({ app })],
 });
