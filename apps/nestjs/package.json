@@ -1,0 +1,31 @@
+{
+  "name": "nestjs-test-application",
+  "version": "1.0.0",
+  "main": "dist/main.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "build": "nest build",
+    "start": "nest start",
+    "clean": "npx rimraf node_modules,pnpm-lock.yaml"
+  },
+  "license": "MIT",
+  "volta": {
+    "extends": "../../package.json"
+  },
+  "dependencies": {
+    "@nestjs/common": "10.3.7",
+    "@nestjs/core": "10.3.7",
+    "@nestjs/platform-express": "10.3.7",
+    "@sentry/node": "7.110.1",
+    "@sentry/types": "7.110.1",
+    "reflect-metadata": "0.2.2",
+    "rxjs": "7.8.1"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "10.3.2",
+    "@nestjs/schematics": "10.1.1",
+    "@types/express": "^4.17.17"
+  }
+}
