@@ -134,3 +134,7 @@ dist
 
 # Mac
 .DS_Store
+
+# Yalc
+yalc.lock
+.yalc/*
