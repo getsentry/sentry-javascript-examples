@@ -10,6 +10,7 @@
   "scripts": {
     "start:proxy-server": "yarn workspace event-proxy-server run start",
     "start:express": "yarn workspace express-test-application run start",
+    "start:fastify": "yarn workspace fastify-test-application run start",
     "start:nestjs": "yarn workspace nestjs-test-application run start",
     "start:koa": "yarn workspace koa-test-application run start",
     "fix:prettier": "prettier . --write",
@@ -19,6 +20,7 @@
   "workspaces": [
     "utils/event-proxy-server",
     "apps/express",
+    "apps/fastify",
     "apps/nestjs",
     "apps/koa"
   ],

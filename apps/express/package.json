@@ -15,7 +15,7 @@
     "extends": "../../package.json"
   },
   "dependencies": {
-    "@sentry/node": "^8.0.0-alpha.9",
+    "@sentry/node": "^8.0.0-beta.1",
     "express": "^4.19.2"
   },
   "devDependencies": {
