@@ -8,10 +8,24 @@
   },
   "packageManager": "yarn@4.1.1",
   "scripts": {
+    "start:proxy-server": "yarn workspace event-proxy-server run start",
+    "start:express": "yarn workspace express-test-application run start",
+    "start:fastify": "yarn workspace fastify-test-application run start",
+    "start:nestjs": "yarn workspace nestjs-test-application run start",
+    "start:koa": "yarn workspace koa-test-application run start",
+    "start:nextjs-14_2_1": "yarn workspace nextjs-14_2_1-test-application run dev",
     "fix:prettier": "prettier . --write",
     "fix:lint": "yarn run eslint --fix",
     "lint": "yarn run eslint"
   },
+  "workspaces": [
+    "utils/event-proxy-server",
+    "apps/express",
+    "apps/fastify",
+    "apps/nestjs",
+    "apps/koa",
+    "apps/nextjs-14_2_1"
+  ],
   "devDependencies": {
     "@eslint/js": "^9.0.0",
     "@types/node": "^20.12.5",
@@ -28,7 +42,7 @@
   },
   "prettier": {
     "arrowParens": "avoid",
-    "printWidth": 120,
+    "printWidth": 100,
     "proseWrap": "always",
     "singleQuote": true,
     "trailingComma": "all"
