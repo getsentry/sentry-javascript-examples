@@ -6,7 +6,7 @@ import * as zlib from 'zlib';
 import type { Envelope, EnvelopeItem } from '@sentry/types';
 
 // change to folder name of app to test
-const APP = 'express';
+const APP = 'nextjs-14_2_1/route-handlers';
 
 const TEMPORARY_FILE_PATH = `payload-files/${APP}/temporary.json`;
 
@@ -35,8 +35,15 @@ function isDateLikeString(str: string): boolean {
 }
 
 function extractPathFromUrl(url: string): string {
-  const localhost = 'http://localhost:3030/';
-  return url.replace(localhost, '');
+  return url.replace('http://localhost:3030/', '');
+}
+
+function extractTransactionRoute(transactionName: string): string {
+  return transactionName.replace('GET ', '');
+}
+
+function extractRelevantFileName(str: string): string {
+  return extractPathFromUrl(extractTransactionRoute(str));
 }
 
 function addCommaAfterEachLine(data: string): string {
@@ -113,9 +120,24 @@ function recursivelyReplaceData(
   }
 }
 
-function replaceDynamicValues(data: string): string[] {
-  const jsonData = JSON.parse(data);
+function sortObjectKeys(obj: unknown): unknown {
+  if (typeof obj !== 'object' || obj === null) {
+    return obj;
+  }
 
+  if (Array.isArray(obj)) {
+    return obj.map(sortObjectKeys);
+  }
+
+  return Object.keys(obj as Record<string, unknown>)
+    .sort()
+    .reduce((result: Record<string, unknown>, key: string) => {
+      result[key] = sortObjectKeys((obj as Record<string, unknown>)[key]);
+      return result;
+    }, {});
+}
+
+function replaceDynamicValues(jsonData: object[]): object[] {
   recursivelyReplaceData(jsonData, { value: 1 }, new Map(), { value: 1 }, new Map());
 
   // change remaining dynamic values
@@ -140,21 +162,29 @@ async function transformSavedJSON() {
     const data = await readFile(TEMPORARY_FILE_PATH, 'utf8');
 
     const jsonData = addCommaAfterEachLine(data);
-    const transformedJSON = replaceDynamicValues(jsonData);
+    const sortedJSON = sortObjectKeys(JSON.parse(jsonData));
+    const transformedJSON = replaceDynamicValues(sortedJSON as object[]);
 
-    const type = (transformedJSON[1] as unknown as { type: string }).type;
+    const type = (transformedJSON[1] as unknown as { type: string }).type; // transaction or event
+
     const objData = transformedJSON[2] as unknown as {
       request?: { url?: string };
+      transaction?: string;
       contexts?: { trace?: { data?: { url?: string } } };
     };
 
     if ('request' in objData || 'contexts' in objData) {
+      const transactionName = objData?.transaction;
       const url = objData?.request?.url || objData.contexts?.trace?.data?.url;
 
-      if (url) {
+      // Change to `url` or `transactionName` depending on what you want to use as filename
+      // Using transaction name as filename is useful when testing frameworks (such as Next.js) as the API routes are often called from the client and `url` would just be 'localhost:3030'
+      const filename = transactionName; // url;
+
+      if (filename) {
         const replaceForwardSlashes = (str: string) => str.split('/').join('_');
 
-        const filepath = `payload-files/${APP}/${replaceForwardSlashes(extractPathFromUrl(url))}--${type}.json`;
+        const filepath = `payload-files/${APP}/${replaceForwardSlashes(extractRelevantFileName(filename))}--${type}.json`;
 
         writeFile(filepath, JSON.stringify(transformedJSON, null, 2)).then(() => {
           console.log(`Successfully replaced data and saved file in ${filepath}`);
@@ -164,7 +194,7 @@ async function transformSavedJSON() {
           );
         });
       } else {
-        console.warn('No url found in JSON');
+        console.warn('No url or transaction found in JSON');
       }
     }
   } catch (err) {
