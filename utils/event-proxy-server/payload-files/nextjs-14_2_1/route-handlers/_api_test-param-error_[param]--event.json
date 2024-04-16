@@ -1,0 +1,937 @@
+[
+  {
+    "dsn": "[[dsn]]",
+    "event_id": "[[ID1]]",
+    "sdk": {
+      "name": "sentry.javascript.nextjs",
+      "version": "8.0.0-beta.1"
+    },
+    "sent_at": "[[ISODateString]]"
+  },
+  {
+    "type": "event"
+  },
+  {
+    "breadcrumbs": [
+      {
+        "category": "console",
+        "level": "log",
+        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Ready in 5.6s",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": " \u001b[37m\u001b[1m○\u001b[22m\u001b[39m Compiling /api/test-success ...",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled /api/test-success in 1849ms (2123 modules)",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled /api/test-error in 481ms (2125 modules)",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled /api/test-param-success/[param] in 259ms (2127 modules)",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled /api/test-success-manual in 251ms (2129 modules)",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled /api/test-param-error/[param] in 373ms (2131 modules)",
+        "timestamp": "[[timestamp]]"
+      }
+    ],
+    "contexts": {
+      "app": {
+        "app_memory": "[[highNumber]]",
+        "app_start_time": "[[ISODateString]]"
+      },
+      "cloud_resource": {},
+      "culture": {
+        "locale": "en-US",
+        "timezone": "Europe/Vienna"
+      },
+      "device": {
+        "arch": "arm64",
+        "boot_time": "[[ISODateString]]",
+        "cpu_description": "Apple M1 Pro",
+        "free_memory": "[[highNumber]]",
+        "memory_size": "[[highNumber]]",
+        "processor_count": 10,
+        "processor_frequency": "[[highNumber]]"
+      },
+      "os": {
+        "build": "23C64",
+        "kernel_version": "23.2.0",
+        "name": "macOS",
+        "version": "14.2"
+      },
+      "runtime": {
+        "name": "node",
+        "version": "v20.12.1"
+      },
+      "trace": {
+        "parent_span_id": "[[ID2]]",
+        "span_id": "[[ID3]]",
+        "trace_id": "[[ID4]]"
+      }
+    },
+    "environment": "qa",
+    "event_id": "[[ID1]]",
+    "exception": {
+      "values": [
+        {
+          "mechanism": {
+            "handled": true,
+            "type": "generic"
+          },
+          "stacktrace": {
+            "frames": [
+              {
+                "colno": 20,
+                "context_line": "            return await super.handleRequest(req, res, parsedUrl);",
+                "filename": "[[FILENAME1]]",
+                "function": "?",
+                "in_app": false,
+                "lineno": 339,
+                "module": "next.dist.server.dev:next-dev-server",
+                "post_context": [
+                  "        });",
+                  "        const memoryUsage = process.memoryUsage();",
+                  "        span.traceChild(\"memory-usage\", {",
+                  "            url: req.url,",
+                  "            \"memory.rss\": String(memoryUsage.rss),",
+                  "            \"memory.heapUsed\": String(memoryUsage.heapUsed),",
+                  "            \"memory.heapTotal\": String(memoryUsage.heapTotal)"
+                ],
+                "pre_context": [
+                  "    async handleRequest(req, res, parsedUrl) {",
+                  "        const span = (0, _trace.trace)(\"handle-request\", undefined, {",
+                  "            url: req.url",
+                  "        });",
+                  "        const result = await span.traceAsyncFn(async ()=>{",
+                  "            var _this_ready;",
+                  "            await ((_this_ready = this.ready) == null ? void 0 : _this_ready.promise);"
+                ]
+              },
+              {
+                "colno": 17,
+                "context_line": "                await this.handleCatchallRenderRequest(req, res, parsedUrl);",
+                "filename": "[[FILENAME2]]",
+                "function": "DevServer.handleRequestImpl",
+                "in_app": false,
+                "lineno": 811,
+                "module": "next.dist.server:base-server",
+                "post_context": [
+                  "                return;",
+                  "            }",
+                  "            if (process.env.NEXT_RUNTIME !== \"edge\" && req.headers[\"x-middleware-invoke\"]) {",
+                  "                finished = await this.normalizeAndAttachMetadata(req, res, parsedUrl);",
+                  "                if (finished) return;",
+                  "                finished = await this.handleCatchallMiddlewareRequest(req, res, parsedUrl);",
+                  "                if (finished) return;"
+                ],
+                "pre_context": [
+                  "                }",
+                  "                const invokeQuery = req.headers[\"x-invoke-query\"];",
+                  "                if (typeof invokeQuery === \"string\") {",
+                  "                    Object.assign(parsedUrl.query, JSON.parse(decodeURIComponent(invokeQuery)));",
+                  "                }",
+                  "                finished = await this.normalizeAndAttachMetadata(req, res, parsedUrl);",
+                  "                if (finished) return;"
+                ]
+              },
+              {
+                "colno": 17,
+                "context_line": "                await this.render(req, res, pathname, query, parsedUrl, true);",
+                "filename": "[[FILENAME3]]",
+                "function": "NextNodeServer.handleCatchallRenderRequest",
+                "in_app": false,
+                "lineno": 272,
+                "module": "next.dist.server:next-server",
+                "post_context": [
+                  "                return true;",
+                  "            } catch (err) {",
+                  "                if (err instanceof _baseserver.NoFallbackError) {",
+                  "                    throw err;",
+                  "                }",
+                  "                try {",
+                  "                    if (this.renderOpts.dev) {"
+                ],
+                "pre_context": [
+                  "                        await this.render404(req, res, parsedUrl);",
+                  "                        return true;",
+                  "                    }",
+                  "                    delete query._nextBubbleNoFallback;",
+                  "                    const handled = await this.handleApiRequest(req, res, query, match);",
+                  "                    if (handled) return true;",
+                  "                }"
+                ]
+              },
+              {
+                "colno": 25,
+                "context_line": "        const payload = await fn(ctx);",
+                "filename": "[[FILENAME2]]",
+                "function": "DevServer.pipeImpl",
+                "in_app": false,
+                "lineno": 915,
+                "module": "next.dist.server:base-server",
+                "post_context": [
+                  "        if (payload === null) {",
+                  "            return;",
+                  "        }",
+                  "        const { req, res } = ctx;",
+                  "        const originalStatus = res.statusCode;",
+                  "        const { body, type } = payload;",
+                  "        let { revalidate } = payload;"
+                ],
+                "pre_context": [
+                  "            ...partialContext,",
+                  "            renderOpts: {",
+                  "                ...this.renderOpts,",
+                  "                supportsDynamicHTML: !isBotRequest,",
+                  "                isBot: !!isBotRequest",
+                  "            }",
+                  "        };"
+                ]
+              },
+              {
+                "colno": 32,
+                "context_line": "                const result = await this.renderPageComponent({",
+                "filename": "[[FILENAME2]]",
+                "function": "DevServer.renderToResponseImpl",
+                "in_app": false,
+                "lineno": "[[highNumber]]",
+                "module": "next.dist.server:base-server",
+                "post_context": [
+                  "                    ...ctx,",
+                  "                    pathname: match.definition.pathname,",
+                  "                    renderOpts: {",
+                  "                        ...ctx.renderOpts,",
+                  "                        params: match.params",
+                  "                    }",
+                  "                }, bubbleNoFallback);"
+                ],
+                "pre_context": [
+                  "            for await (const match of this.matchers.matchAll(pathname, options)){",
+                  "                // when a specific invoke-output is meant to be matched",
+                  "                // ensure a prior dynamic route/page doesn't take priority",
+                  "                const invokeOutput = ctx.req.headers[\"x-invoke-output\"];",
+                  "                if (!this.minimalMode && typeof invokeOutput === \"string\" && (0, _utils1.isDynamicRoute)(invokeOutput || \"\") && invokeOutput {snip}",
+                  "                    continue;",
+                  "                }"
+                ]
+              },
+              {
+                "colno": 24,
+                "context_line": "                return await this.renderToResponseWithComponents(ctx, result);",
+                "filename": "[[FILENAME2]]",
+                "function": "DevServer.renderPageComponent",
+                "in_app": false,
+                "lineno": "[[highNumber]]",
+                "module": "next.dist.server:base-server",
+                "post_context": [
+                  "            } catch (err) {",
+                  "                const isNoFallbackError = err instanceof NoFallbackError;",
+                  "                if (!isNoFallbackError || isNoFallbackError && bubbleNoFallback) {",
+                  "                    throw err;",
+                  "                }",
+                  "            }",
+                  "        }"
+                ],
+                "pre_context": [
+                  "            // Ensuring for loading page component routes is done via the matcher.",
+                  "            shouldEnsure: false",
+                  "        });",
+                  "        if (result) {",
+                  "            var _getTracer_getRootSpanAttributes;",
+                  "            (_getTracer_getRootSpanAttributes = (0, _tracer.getTracer)().getRootSpanAttributes()) == null ? void 0 : _getTracer_getRootSpanA {snip}",
+                  "            try {"
+                ]
+              },
+              {
+                "colno": 5,
+                "filename": "[[FILENAME4]]",
+                "function": "process.processTicksAndRejections",
+                "in_app": false,
+                "lineno": 95,
+                "module": "task_queues",
+                "platform": "nodejs"
+              },
+              {
+                "colno": 53,
+                "context_line": "        const cacheEntry = await this.responseCache.get(ssgCacheKey, async (hasResolved, previousCacheEntry, isRevalidating)=>{",
+                "filename": "[[FILENAME2]]",
+                "function": "DevServer.renderToResponseWithComponentsImpl",
+                "in_app": false,
+                "lineno": "[[highNumber]]",
+                "module": "next.dist.server:base-server",
+                "post_context": [
+                  "            const isProduction = !this.renderOpts.dev;",
+                  "            const didRespond = hasResolved || res.sent;",
+                  "            if (!staticPaths) {",
+                  "                ({ staticPaths, fallbackMode } = hasStaticPaths ? await this.getStaticPaths({",
+                  "                    pathname,",
+                  "                    requestHeaders: req.headers,",
+                  "                    isAppPath,"
+                ],
+                "pre_context": [
+                  "                    postponed: metadata.postponed,",
+                  "                    headers,",
+                  "                    status: isAppPath ? res.statusCode : undefined",
+                  "                },",
+                  "                revalidate: metadata.revalidate",
+                  "            };",
+                  "        };"
+                ]
+              },
+              {
+                "colno": 26,
+                "context_line": "        if (!key) return responseGenerator(false, null);",
+                "filename": "[[FILENAME5]]",
+                "function": "ResponseCache.get",
+                "in_app": false,
+                "lineno": 49,
+                "module": "next.dist.server.response-cache:index",
+                "post_context": [
+                  "        const { incrementalCache, isOnDemandRevalidate = false } = context;",
+                  "        const response = await this.batcher.batch({",
+                  "            key,",
+                  "            isOnDemandRevalidate",
+                  "        }, async (cacheKey, resolve)=>{",
+                  "            var _this_previousCacheItem;",
+                  "            // We keep the previous cache entry around to leverage when the"
+                ],
+                "pre_context": [
+                  "        // because we replace this.minimalMode to true in production bundles.",
+                  "        const minimalModeKey = \"minimalMode\";",
+                  "        this[minimalModeKey] = minimalMode;",
+                  "    }",
+                  "    async get(key, responseGenerator, context) {",
+                  "        // If there is no key for the cache, we can't possibly look this up in the",
+                  "        // cache so just return the result of the response generator."
+                ]
+              },
+              {
+                "colno": 46,
+                "context_line": "                        const result = await doRender({",
+                "filename": "[[FILENAME2]]",
+                "function": "cacheEntry.responseCache.get.routeKind",
+                "in_app": false,
+                "lineno": "[[highNumber]]",
+                "module": "next.dist.server:base-server",
+                "post_context": [
+                  "                            postponed: undefined",
+                  "                        });",
+                  "                        if (!result) {",
+                  "                            return null;",
+                  "                        }",
+                  "                        // Prevent caching this result",
+                  "                        delete result.revalidate;"
+                ],
+                "pre_context": [
+                  "                                pageData: {}",
+                  "                            }",
+                  "                        };",
+                  "                    } else {",
+                  "                        query.__nextFallback = \"true\";",
+                  "                        // We pass `undefined` as there cannot be a postponed state in",
+                  "                        // development."
+                ]
+              },
+              {
+                "colno": 60,
+                "context_line": "                        const response = await routeModule.handle(request, context);",
+                "filename": "[[FILENAME2]]",
+                "function": "doRender",
+                "in_app": false,
+                "lineno": "[[highNumber]]",
+                "module": "next.dist.server:base-server",
+                "post_context": [
+                  "                        req.fetchMetrics = context.renderOpts.fetchMetrics;",
+                  "                        const cacheTags = context.renderOpts.fetchTags;",
+                  "                        // If the request is for a static response, we can cache it so long",
+                  "                        // as it's not edge.",
+                  "                        if (isSSG && process.env.NEXT_RUNTIME !== \"edge\") {",
+                  "                            var _context_renderOpts_store;",
+                  "                            const blob = await response.blob();"
+                ],
+                "pre_context": [
+                  "                            supportsDynamicHTML,",
+                  "                            incrementalCache,",
+                  "                            isRevalidate: isSSG",
+                  "                        }",
+                  "                    };",
+                  "                    try {",
+                  "                        const request = _nextrequest.NextRequestAdapter.fromBaseNextRequest(req, (0, _nextrequest.signalFromNodeResponse)(re {snip}"
+                ]
+              },
+              {
+                "colno": "[[highNumber]]",
+                "context_line": "'{snip} handler\");return s}async handle(e,t){try{return await this.execute(e,t)}catch(t){let e=function(e){if(eg(e)){let t=eg(e)?e.digest.split(\";\", {snip}",
+                "filename": "[[FILENAME6]]",
+                "function": "e_.handle",
+                "in_app": false,
+                "lineno": 6,
+                "module": "next.dist.compiled.next-server:app-route.runtime.dev",
+                "post_context": [
+                  "//# sourceMappingURL=app-route.runtime.dev.js.map"
+                ],
+                "pre_context": [
+                  "(()=>{var e={\"./dist/compiled/@edge-runtime/cookies/index.js\":e=>{\"use strict\";var t=Object.defineProperty,r=Object.getOwnPropertyDescriptor {snip}",
+                  " * cookie",
+                  " * Copyright(c) 2012-2014 Roman Shtylman",
+                  " * Copyright(c) 2015 Douglas Christopher Wilson",
+                  " * MIT Licensed"
+                ]
+              },
+              {
+                "colno": "[[highNumber]]",
+                "context_line": "'{snip} is.userland.fetchCache;let s=await this.actionAsyncStorage.run({isAppRoute:!0,isAction:function(e){let{isFetchAction:t,isURLEncodedAction:r, {snip}",
+                "filename": "[[FILENAME6]]",
+                "function": "e_.execute",
+                "in_app": false,
+                "lineno": 6,
+                "module": "next.dist.compiled.next-server:app-route.runtime.dev",
+                "post_context": [
+                  "//# sourceMappingURL=app-route.runtime.dev.js.map"
+                ],
+                "pre_context": [
+                  "(()=>{var e={\"./dist/compiled/@edge-runtime/cookies/index.js\":e=>{\"use strict\";var t=Object.defineProperty,r=Object.getOwnPropertyDescriptor {snip}",
+                  " * cookie",
+                  " * Copyright(c) 2012-2014 Roman Shtylman",
+                  " * Copyright(c) 2015 Douglas Christopher Wilson",
+                  " * MIT Licensed"
+                ]
+              },
+              {
+                "colno": 14,
+                "filename": "[[FILENAME7]]",
+                "function": "AsyncLocalStorage.run",
+                "in_app": false,
+                "lineno": 346,
+                "module": "node:async_hooks"
+              },
+              {
+                "colno": "[[highNumber]]",
+                "context_line": "'{snip} Action:o,isFetchAction:a}}(e);return!!(t||r||n)}(e)},()=>H.wrap(this.requestAsyncStorage,n,()=>V.wrap(this.staticGenerationAsyncStorage,o,n= {snip}",
+                "filename": "[[FILENAME6]]",
+                "function": "?",
+                "in_app": false,
+                "lineno": 6,
+                "module": "next.dist.compiled.next-server:app-route.runtime.dev",
+                "post_context": [
+                  "//# sourceMappingURL=app-route.runtime.dev.js.map"
+                ],
+                "pre_context": [
+                  "(()=>{var e={\"./dist/compiled/@edge-runtime/cookies/index.js\":e=>{\"use strict\";var t=Object.defineProperty,r=Object.getOwnPropertyDescriptor {snip}",
+                  " * cookie",
+                  " * Copyright(c) 2012-2014 Roman Shtylman",
+                  " * Copyright(c) 2015 Douglas Christopher Wilson",
+                  " * MIT Licensed"
+                ]
+              },
+              {
+                "colno": "[[highNumber]]",
+                "context_line": "'{snip} },assetPrefix:(null==n?void 0:n.assetPrefix)||\"\"};return e.run(c,o,c)}};var I=r(\"./dist/compiled/react/index.js\"),U=r.n(I);let F=\"DYNAMIC_SE {snip}",
+                "filename": "[[FILENAME6]]",
+                "function": "Object.wrap",
+                "in_app": false,
+                "lineno": 6,
+                "module": "next.dist.compiled.next-server:app-route.runtime.dev",
+                "post_context": [
+                  "//# sourceMappingURL=app-route.runtime.dev.js.map"
+                ],
+                "pre_context": [
+                  "(()=>{var e={\"./dist/compiled/@edge-runtime/cookies/index.js\":e=>{\"use strict\";var t=Object.defineProperty,r=Object.getOwnPropertyDescriptor {snip}",
+                  " * cookie",
+                  " * Copyright(c) 2012-2014 Roman Shtylman",
+                  " * Copyright(c) 2015 Douglas Christopher Wilson",
+                  " * MIT Licensed"
+                ]
+              },
+              {
+                "colno": 14,
+                "filename": "[[FILENAME7]]",
+                "function": "AsyncLocalStorage.run",
+                "in_app": false,
+                "lineno": 346,
+                "module": "node:async_hooks"
+              },
+              {
+                "colno": "[[highNumber]]",
+                "context_line": "'{snip} (t||r||n)}(e)},()=>H.wrap(this.requestAsyncStorage,n,()=>V.wrap(this.staticGenerationAsyncStorage,o,n=>{var o;let s=n.isStaticGeneration;if( {snip}",
+                "filename": "[[FILENAME6]]",
+                "function": "?",
+                "in_app": false,
+                "lineno": 6,
+                "module": "next.dist.compiled.next-server:app-route.runtime.dev",
+                "post_context": [
+                  "//# sourceMappingURL=app-route.runtime.dev.js.map"
+                ],
+                "pre_context": [
+                  "(()=>{var e={\"./dist/compiled/@edge-runtime/cookies/index.js\":e=>{\"use strict\";var t=Object.defineProperty,r=Object.getOwnPropertyDescriptor {snip}",
+                  " * cookie",
+                  " * Copyright(c) 2012-2014 Roman Shtylman",
+                  " * Copyright(c) 2015 Douglas Christopher Wilson",
+                  " * MIT Licensed"
+                ]
+              },
+              {
+                "colno": "[[highNumber]]",
+                "context_line": "'{snip} aftMode:r.isDraftMode,prerenderState:a};return r.store=s,e.run(s,n,s)}};function Y(){return new Response(null,{status:400})}function J(){ret {snip}",
+                "filename": "[[FILENAME6]]",
+                "function": "Object.wrap",
+                "in_app": false,
+                "lineno": 6,
+                "module": "next.dist.compiled.next-server:app-route.runtime.dev",
+                "post_context": [
+                  "//# sourceMappingURL=app-route.runtime.dev.js.map"
+                ],
+                "pre_context": [
+                  "(()=>{var e={\"./dist/compiled/@edge-runtime/cookies/index.js\":e=>{\"use strict\";var t=Object.defineProperty,r=Object.getOwnPropertyDescriptor {snip}",
+                  " * cookie",
+                  " * Copyright(c) 2012-2014 Roman Shtylman",
+                  " * Copyright(c) 2015 Douglas Christopher Wilson",
+                  " * MIT Licensed"
+                ]
+              },
+              {
+                "colno": 14,
+                "filename": "[[FILENAME7]]",
+                "function": "AsyncLocalStorage.run",
+                "in_app": false,
+                "lineno": 346,
+                "module": "node:async_hooks"
+              },
+              {
+                "colno": "[[highNumber]]",
+                "context_line": "'{snip} SpanAttributes())||o.set(\"next.route\",l),(0,M.getTracer)().trace(d.runHandler,{spanName:`executing api route (app) ${l}`,attributes:{\"next.r {snip}",
+                "filename": "[[FILENAME6]]",
+                "function": "?",
+                "in_app": false,
+                "lineno": 6,
+                "module": "next.dist.compiled.next-server:app-route.runtime.dev",
+                "post_context": [
+                  "//# sourceMappingURL=app-route.runtime.dev.js.map"
+                ],
+                "pre_context": [
+                  "(()=>{var e={\"./dist/compiled/@edge-runtime/cookies/index.js\":e=>{\"use strict\";var t=Object.defineProperty,r=Object.getOwnPropertyDescriptor {snip}",
+                  " * cookie",
+                  " * Copyright(c) 2012-2014 Roman Shtylman",
+                  " * Copyright(c) 2015 Douglas Christopher Wilson",
+                  " * MIT Licensed"
+                ]
+              },
+              {
+                "colno": 28,
+                "context_line": "        return context.with(spanContext.setValue(rootSpanIdKey, spanId), ()=>this.getTracerInstance().startActiveSpan(spanName, options, (span)=>{",
+                "filename": "[[FILENAME8]]",
+                "function": "NextTracerImpl.trace",
+                "in_app": false,
+                "lineno": 122,
+                "module": "next.dist.server.lib.trace:tracer",
+                "post_context": [
+                  "                const startTime = \"performance\" in globalThis ? globalThis.performance.now() : undefined;",
+                  "                const onCleanup = ()=>{",
+                  "                    rootSpanAttributesStore.delete(spanId);",
+                  "                    if (startTime && process.env.NEXT_OTEL_PERFORMANCE_PREFIX && _constants.LogSpanAllowList.includes(type || \"\")) {",
+                  "                        performance.measure(`${process.env.NEXT_OTEL_PERFORMANCE_PREFIX}:next-${(type.split(\".\").pop() || \"\").replace(/[A-Z] {snip}",
+                  "                            start: startTime,",
+                  "                            end: performance.now()"
+                ],
+                "pre_context": [
+                  "        }",
+                  "        const spanId = getSpanId();",
+                  "        options.attributes = {",
+                  "            \"next.span_name\": spanName,",
+                  "            \"next.span_type\": type,",
+                  "            ...options.attributes",
+                  "        };"
+                ]
+              },
+              {
+                "colno": 46,
+                "context_line": "        return this._getContextManager().with(context, fn, thisArg, ...args);",
+                "filename": "[[FILENAME9]]",
+                "function": "ContextAPI.with",
+                "in_app": false,
+                "lineno": 60,
+                "module": "@opentelemetry.api.build.src.api:context",
+                "post_context": [
+                  "    }",
+                  "    /**",
+                  "     * Bind a context to a target function or event emitter",
+                  "     *",
+                  "     * @param context context to bind to the event emitter or function. Defaults to the currently active context",
+                  "     * @param target function or event emitter to bind",
+                  "     */"
+                ],
+                "pre_context": [
+                  "     *",
+                  "     * @param context context to be active during function execution",
+                  "     * @param fn function to execute in a context",
+                  "     * @param thisArg optional receiver to be used for calling fn",
+                  "     * @param args optional arguments forwarded to fn",
+                  "     */",
+                  "    with(context, fn, thisArg, ...args) {"
+                ]
+              },
+              {
+                "colno": 24,
+                "filename": "[[FILENAME10]]",
+                "function": "SentryContextManager.with",
+                "in_app": false,
+                "lineno": "[[highNumber]]",
+                "module": "@sentry.opentelemetry.cjs:index"
+              },
+              {
+                "colno": 40,
+                "filename": "[[FILENAME11]]",
+                "function": "SentryContextManager.with",
+                "in_app": false,
+                "lineno": 33,
+                "module": "@opentelemetry.context-async-hooks.build.src:AsyncLocalStorageContextManager"
+              },
+              {
+                "colno": 14,
+                "filename": "[[FILENAME7]]",
+                "function": "AsyncLocalStorage.run",
+                "in_app": false,
+                "lineno": 346,
+                "module": "node:async_hooks"
+              },
+              {
+                "colno": 103,
+                "context_line": "        return context.with(spanContext.setValue(rootSpanIdKey, spanId), ()=>this.getTracerInstance().startActiveSpan(spanName, options, (span)=>{",
+                "filename": "[[FILENAME8]]",
+                "function": "?",
+                "in_app": false,
+                "lineno": 122,
+                "module": "next.dist.server.lib.trace:tracer",
+                "post_context": [
+                  "                const startTime = \"performance\" in globalThis ? globalThis.performance.now() : undefined;",
+                  "                const onCleanup = ()=>{",
+                  "                    rootSpanAttributesStore.delete(spanId);",
+                  "                    if (startTime && process.env.NEXT_OTEL_PERFORMANCE_PREFIX && _constants.LogSpanAllowList.includes(type || \"\")) {",
+                  "                        performance.measure(`${process.env.NEXT_OTEL_PERFORMANCE_PREFIX}:next-${(type.split(\".\").pop() || \"\").replace(/[A-Z] {snip}",
+                  "                            start: startTime,",
+                  "                            end: performance.now()"
+                ],
+                "pre_context": [
+                  "        }",
+                  "        const spanId = getSpanId();",
+                  "        options.attributes = {",
+                  "            \"next.span_name\": spanName,",
+                  "            \"next.span_type\": type,",
+                  "            ...options.attributes",
+                  "        };"
+                ]
+              },
+              {
+                "colno": 76,
+                "filename": "[[FILENAME12]]",
+                "function": "Tracer.startActiveSpan",
+                "in_app": false,
+                "lineno": 136,
+                "module": "@opentelemetry.sdk-trace-base.build.esm:Tracer"
+              },
+              {
+                "colno": 54,
+                "filename": "[[FILENAME13]]",
+                "function": "ContextAPI.with",
+                "in_app": false,
+                "lineno": 95,
+                "module": "@opentelemetry.api.build.esm.api:context"
+              },
+              {
+                "colno": 24,
+                "filename": "[[FILENAME10]]",
+                "function": "SentryContextManager.with",
+                "in_app": false,
+                "lineno": "[[highNumber]]",
+                "module": "@sentry.opentelemetry.cjs:index"
+              },
+              {
+                "colno": 40,
+                "filename": "[[FILENAME11]]",
+                "function": "SentryContextManager.with",
+                "in_app": false,
+                "lineno": 33,
+                "module": "@opentelemetry.context-async-hooks.build.src:AsyncLocalStorageContextManager"
+              },
+              {
+                "colno": 14,
+                "filename": "[[FILENAME7]]",
+                "function": "AsyncLocalStorage.run",
+                "in_app": false,
+                "lineno": 346,
+                "module": "node:async_hooks"
+              },
+              {
+                "colno": 36,
+                "context_line": "                    const result = fn(span);",
+                "filename": "[[FILENAME8]]",
+                "function": "?",
+                "in_app": false,
+                "lineno": 140,
+                "module": "next.dist.server.lib.trace:tracer",
+                "post_context": [
+                  "                    if (isPromise(result)) {",
+                  "                        // If there's error make sure it throws",
+                  "                        return result.then((res)=>{",
+                  "                            span.end();",
+                  "                            // Need to pass down the promise result,",
+                  "                            // it could be react stream response with error { error, stream }",
+                  "                            return res;"
+                ],
+                "pre_context": [
+                  "                if (isRootSpan) {",
+                  "                    rootSpanAttributesStore.set(spanId, new Map(Object.entries(options.attributes ?? {})));",
+                  "                }",
+                  "                try {",
+                  "                    if (fn.length > 1) {",
+                  "                        return fn(span, (err)=>closeSpanWithError(span, err));",
+                  "                    }"
+                ]
+              },
+              {
+                "colno": "[[highNumber]]",
+                "context_line": "'{snip} yncStorage:this.staticGenerationAsyncStorage});let o=await r(i,{params:t.params?function(e){let t={};for(let[r,n]of Object.entries(e))void 0 {snip}",
+                "filename": "[[FILENAME6]]",
+                "function": "?",
+                "in_app": false,
+                "lineno": 6,
+                "module": "next.dist.compiled.next-server:app-route.runtime.dev",
+                "post_context": [
+                  "//# sourceMappingURL=app-route.runtime.dev.js.map"
+                ],
+                "pre_context": [
+                  "(()=>{var e={\"./dist/compiled/@edge-runtime/cookies/index.js\":e=>{\"use strict\";var t=Object.defineProperty,r=Object.getOwnPropertyDescriptor {snip}",
+                  " * cookie",
+                  " * Copyright(c) 2012-2014 Roman Shtylman",
+                  " * Copyright(c) 2015 Douglas Christopher Wilson",
+                  " * MIT Licensed"
+                ]
+              },
+              {
+                "colno": 10,
+                "filename": "[[FILENAME14]]",
+                "function": "Object.apply",
+                "in_app": false,
+                "lineno": 68,
+                "module": "route.ts"
+              },
+              {
+                "colno": 52,
+                "filename": "[[FILENAME15]]",
+                "function": "Object.apply",
+                "in_app": false,
+                "lineno": 65,
+                "module": "@sentry.nextjs.cjs.common:wrapRouteHandlerWithSentry"
+              },
+              {
+                "colno": 17,
+                "filename": "[[FILENAME16]]",
+                "function": "Object.withIsolationScopeOrReuseFromRootSpan",
+                "in_app": false,
+                "lineno": 24,
+                "module": "@sentry.nextjs.cjs.common.utils:withIsolationScopeOrReuseFromRootSpan"
+              },
+              {
+                "colno": 14,
+                "filename": "[[FILENAME17]]",
+                "function": "Object.withIsolationScope",
+                "in_app": false,
+                "lineno": 96,
+                "module": "@sentry.core.cjs:currentScopes"
+              },
+              {
+                "colno": 28,
+                "filename": "[[FILENAME10]]",
+                "function": "Object.withIsolationScope",
+                "in_app": false,
+                "lineno": "[[highNumber]]",
+                "module": "@sentry.opentelemetry.cjs:index"
+              },
+              {
+                "colno": 54,
+                "filename": "[[FILENAME13]]",
+                "function": "ContextAPI.with",
+                "in_app": false,
+                "lineno": 95,
+                "module": "@opentelemetry.api.build.esm.api:context"
+              },
+              {
+                "colno": 24,
+                "filename": "[[FILENAME10]]",
+                "function": "SentryContextManager.with",
+                "in_app": false,
+                "lineno": "[[highNumber]]",
+                "module": "@sentry.opentelemetry.cjs:index"
+              },
+              {
+                "colno": 40,
+                "filename": "[[FILENAME11]]",
+                "function": "SentryContextManager.with",
+                "in_app": false,
+                "lineno": 33,
+                "module": "@opentelemetry.context-async-hooks.build.src:AsyncLocalStorageContextManager"
+              },
+              {
+                "colno": 14,
+                "filename": "[[FILENAME7]]",
+                "function": "AsyncLocalStorage.run",
+                "in_app": false,
+                "lineno": 346,
+                "module": "node:async_hooks"
+              },
+              {
+                "colno": 14,
+                "filename": "[[FILENAME10]]",
+                "function": "eval",
+                "in_app": false,
+                "lineno": "[[highNumber]]",
+                "module": "@sentry.opentelemetry.cjs:index"
+              },
+              {
+                "colno": 24,
+                "filename": "[[FILENAME15]]",
+                "function": "eval",
+                "in_app": false,
+                "lineno": 73,
+                "module": "@sentry.nextjs.cjs.common:wrapRouteHandlerWithSentry"
+              },
+              {
+                "colno": 10,
+                "filename": "[[FILENAME15]]",
+                "function": "startOrUpdateSpan",
+                "in_app": false,
+                "lineno": 50,
+                "module": "@sentry.nextjs.cjs.common:wrapRouteHandlerWithSentry"
+              },
+              {
+                "colno": 41,
+                "filename": "[[FILENAME15]]",
+                "function": "eval",
+                "in_app": false,
+                "lineno": 74,
+                "module": "@sentry.nextjs.cjs.common:wrapRouteHandlerWithSentry"
+              },
+              {
+                "colno": 26,
+                "filename": "[[FILENAME18]]",
+                "function": "Object.handleCallbackErrors",
+                "in_app": false,
+                "lineno": 26,
+                "module": "@sentry.core.cjs.utils:handleCallbackErrors"
+              },
+              {
+                "colno": 38,
+                "filename": "[[FILENAME15]]",
+                "function": "eval",
+                "in_app": false,
+                "lineno": 75,
+                "module": "@sentry.nextjs.cjs.common:wrapRouteHandlerWithSentry"
+              },
+              {
+                "colno": 86,
+                "filename": "[[FILENAME14]]",
+                "function": "GET$1",
+                "in_app": false,
+                "lineno": 22,
+                "module": "route.ts"
+              }
+            ]
+          },
+          "type": "Error",
+          "value": "This is an error"
+        }
+      ]
+    },
+    "modules": {},
+    "platform": "node",
+    "request": {
+      "cookies": {},
+      "headers": {
+        "accept": "*/*",
+        "accept-encoding": "gzip, deflate, br",
+        "accept-language": "en-US,en;q=0.5",
+        "baggage": "sentry-environment=qa,sentry-public_key=3b6c388182fb435097f41d181be2b2ba,sentry-trace_id=7cd7e0c3aefe457d9b521e2faee8e354",
+        "cache-control": "no-cache",
+        "connection": "keep-alive",
+        "host": "localhost:3030",
+        "pragma": "no-cache",
+        "referer": "http://localhost:3030/",
+        "sec-fetch-dest": "empty",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "same-origin",
+        "sentry-trace": "7cd7e0c3aefe457d9b521e2faee8e354-b0006bb220ed247c",
+        "user-agent": "[[user-agent]]",
+        "x-forwarded-for": "::ffff:127.0.0.1",
+        "x-forwarded-host": "localhost:3030",
+        "x-forwarded-port": "3030",
+        "x-forwarded-proto": "http"
+      },
+      "url": "http://localhost:3030"
+    },
+    "sdk": {
+      "integrations": [
+        "InboundFilters",
+        "FunctionToString",
+        "LinkedErrors",
+        "RequestData",
+        "Console",
+        "OnUncaughtException",
+        "OnUnhandledRejection",
+        "ContextLines",
+        "LocalVariables",
+        "Context",
+        "Modules",
+        "Express",
+        "Fastify",
+        "Graphql",
+        "Mongo",
+        "Mongoose",
+        "Mysql",
+        "Mysql2",
+        "Postgres",
+        "Nest",
+        "Hapi",
+        "Koa",
+        "RequestIsolationScope",
+        "DistDirRewriteFrames"
+      ],
+      "name": "sentry.javascript.nextjs",
+      "packages": [
+        {
+          "name": "npm:@sentry/nextjs",
+          "version": "8.0.0-beta.1"
+        },
+        {
+          "name": "npm:@sentry/node",
+          "version": "8.0.0-beta.1"
+        }
+      ],
+      "version": "8.0.0-beta.1"
+    },
+    "server_name": "D9M3PY4LQ7.local",
+    "timestamp": "[[timestamp]]",
+    "transaction": "GET /api/test-param-error/[param]"
+  }
+]
