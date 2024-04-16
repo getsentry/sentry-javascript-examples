@@ -6,9 +6,10 @@ import * as zlib from 'zlib';
 import type { Envelope, EnvelopeItem } from '@sentry/types';
 
 // change to folder name of app to test
-const APP = 'nextjs-14_2_1/route-handlers';
+const APP = 'express';
+const DIRECTORY = '../../payload-files';
 
-const TEMPORARY_FILE_PATH = `payload-files/${APP}/temporary.json`;
+const TEMPORARY_FILE_PATH = `${DIRECTORY}/${APP}/temporary.json`;
 
 const readFile = util.promisify(fs.readFile);
 const writeFile = util.promisify(fs.writeFile);
@@ -179,12 +180,12 @@ async function transformSavedJSON() {
 
       // Change to `url` or `transactionName` depending on what you want to use as filename
       // Using transaction name as filename is useful when testing frameworks (such as Next.js) as the API routes are often called from the client and `url` would just be 'localhost:3030'
-      const filename = transactionName; // url;
+      const filename = url; // transactionName;
 
       if (filename) {
         const replaceForwardSlashes = (str: string) => str.split('/').join('_');
 
-        const filepath = `payload-files/${APP}/${replaceForwardSlashes(extractRelevantFileName(filename))}--${type}.json`;
+        const filepath = `${DIRECTORY}/${APP}/${replaceForwardSlashes(extractRelevantFileName(filename))}--${type}.json`;
 
         writeFile(filepath, JSON.stringify(transformedJSON, null, 2)).then(() => {
           console.log(`Successfully replaced data and saved file in ${filepath}`);
