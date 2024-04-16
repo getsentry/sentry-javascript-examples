@@ -10,3 +10,4 @@ the generated files go.
 ### Next.js
 
 - v7: "transaction" is " " in sent event (when error happens)
+- v8: '/route' is added to transaction name for route handlers

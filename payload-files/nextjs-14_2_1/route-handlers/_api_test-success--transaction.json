@@ -4,7 +4,7 @@
     "event_id": "[[ID1]]",
     "sdk": {
       "name": "sentry.javascript.nextjs",
-      "version": "7.110.1"
+      "version": "8.0.0-beta.1"
     },
     "sent_at": "[[ISODateString]]",
     "trace": {
@@ -21,25 +21,19 @@
       {
         "category": "console",
         "level": "log",
-        "message": " \u001b[37m\u001b[1m○\u001b[22m\u001b[39m Compiling / ...",
+        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Ready in 5.6s",
         "timestamp": "[[timestamp]]"
       },
       {
         "category": "console",
         "level": "log",
-        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled / in 3s (2143 modules)",
+        "message": " \u001b[37m\u001b[1m○\u001b[22m\u001b[39m Compiling /api/test-success ...",
         "timestamp": "[[timestamp]]"
       },
       {
         "category": "console",
         "level": "log",
-        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled /favicon.ico in 181ms (1216 modules)",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled /api/test-success in 130ms (1218 modules)",
+        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled /api/test-success in 1849ms (2123 modules)",
         "timestamp": "[[timestamp]]"
       }
     ],
@@ -68,13 +62,32 @@
         "name": "macOS",
         "version": "14.2"
       },
+      "otel": {
+        "resource": {
+          "service.name": "node",
+          "service.namespace": "sentry",
+          "service.version": "8.0.0-beta.1",
+          "telemetry.sdk.language": "nodejs",
+          "telemetry.sdk.name": "opentelemetry",
+          "telemetry.sdk.version": "1.21.0"
+        }
+      },
       "runtime": {
         "name": "node",
         "version": "v20.12.1"
       },
       "trace": {
         "data": {
+          "http.method": "GET",
           "http.response.status_code": 200,
+          "http.route": "/api/test-success/route",
+          "http.status_code": 200,
+          "http.target": "/api/test-success",
+          "next.route": "/api/test-success/route",
+          "next.rsc": false,
+          "next.span_name": "GET /api/test-success/route",
+          "next.span_type": "BaseServer.handleRequest",
+          "otel.kind": "SERVER",
           "sentry.op": "http.server",
           "sentry.origin": "auto.function.nextjs",
           "sentry.sample_rate": 1,
@@ -85,9 +98,6 @@
         "parent_span_id": "[[ID3]]",
         "span_id": "[[ID4]]",
         "status": "ok",
-        "tags": {
-          "http.status_code": "200"
-        },
         "trace_id": "[[ID2]]"
       }
     },
@@ -95,30 +105,6 @@
     "event_id": "[[ID1]]",
     "modules": {},
     "platform": "node",
-    "request": {
-      "cookies": {},
-      "headers": {
-        "accept": "*/*",
-        "accept-encoding": "gzip, deflate, br",
-        "accept-language": "en-US,en;q=0.5",
-        "baggage": "sentry-environment=qa,sentry-public_key=3b6c388182fb435097f41d181be2b2ba,sentry-trace_id=2cdc9402e1174cd08ca2f51a4804cd16",
-        "cache-control": "no-cache",
-        "connection": "keep-alive",
-        "host": "localhost:3030",
-        "pragma": "no-cache",
-        "referer": "http://localhost:3030/",
-        "sec-fetch-dest": "empty",
-        "sec-fetch-mode": "cors",
-        "sec-fetch-site": "same-origin",
-        "sentry-trace": "2cdc9402e1174cd08ca2f51a4804cd16-abe8d663cfdee8d7",
-        "user-agent": "[[user-agent]]",
-        "x-forwarded-for": "::ffff:127.0.0.1",
-        "x-forwarded-host": "localhost:3030",
-        "x-forwarded-port": "3030",
-        "x-forwarded-proto": "http"
-      },
-      "url": "http://localhost:3030"
-    },
     "sdk": {
       "integrations": [
         "InboundFilters",
@@ -126,39 +112,95 @@
         "LinkedErrors",
         "RequestData",
         "Console",
-        "Undici",
+        "OnUncaughtException",
         "OnUnhandledRejection",
         "ContextLines",
         "LocalVariables",
         "Context",
         "Modules",
-        "RewriteFrames",
-        "Http",
-        "OnUncaughtException"
+        "Express",
+        "Fastify",
+        "Graphql",
+        "Mongo",
+        "Mongoose",
+        "Mysql",
+        "Mysql2",
+        "Postgres",
+        "Nest",
+        "Hapi",
+        "Koa",
+        "RequestIsolationScope",
+        "DistDirRewriteFrames"
       ],
       "name": "sentry.javascript.nextjs",
       "packages": [
         {
           "name": "npm:@sentry/nextjs",
-          "version": "7.110.1"
+          "version": "8.0.0-beta.1"
         },
         {
           "name": "npm:@sentry/node",
-          "version": "7.110.1"
+          "version": "8.0.0-beta.1"
         }
       ],
-      "version": "7.110.1"
+      "version": "8.0.0-beta.1"
     },
     "server_name": "D9M3PY4LQ7.local",
-    "spans": [],
+    "spans": [
+      {
+        "data": {
+          "next.route": "/api/test-success",
+          "next.span_name": "resolve page components",
+          "next.span_type": "NextNodeServer.findPageComponents",
+          "otel.kind": "INTERNAL",
+          "sentry.origin": "manual"
+        },
+        "description": "resolve page components",
+        "origin": "manual",
+        "parent_span_id": "[[ID4]]",
+        "span_id": "[[ID5]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "ok",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "next.route": "/api/test-success/route",
+          "next.span_name": "executing api route (app) /api/test-success/route",
+          "next.span_type": "AppRouteRouteHandlers.runHandler",
+          "otel.kind": "INTERNAL",
+          "sentry.origin": "manual"
+        },
+        "description": "executing api route (app) /api/test-success/route",
+        "origin": "manual",
+        "parent_span_id": "[[ID4]]",
+        "span_id": "[[ID6]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "ok",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "next.span_name": "start response",
+          "next.span_type": "NextNodeServer.startResponse",
+          "otel.kind": "INTERNAL",
+          "sentry.origin": "manual"
+        },
+        "description": "start response",
+        "origin": "manual",
+        "parent_span_id": "[[ID4]]",
+        "span_id": "[[ID7]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "ok",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      }
+    ],
     "start_timestamp": "[[timestamp]]",
-    "tags": {
-      "http.status_code": "200",
-      "runtime": "node",
-      "transaction": "GET /api/test-success"
-    },
     "timestamp": "[[timestamp]]",
-    "transaction": "GET /api/test-success",
+    "transaction": "GET /api/test-success/route",
     "transaction_info": {
       "source": "route"
     },
