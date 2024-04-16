@@ -14,8 +14,8 @@
     "extends": "../../package.json"
   },
   "dependencies": {
-    "@sentry/node": "7.110.1",
-    "dotenv": "^16.4.5",
-    "fastify": "4.26.2"
+    "@sentry/node": "8.0.0-beta.1",
+    "fastify": "4.26.2",
+    "koa": "2.15.3"
   }
 }
