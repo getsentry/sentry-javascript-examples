@@ -42,8 +42,13 @@ function extractTransactionRoute(transactionName: string): string {
   return transactionName.replace('GET ', '');
 }
 
+/** With v8, Next.js attaches /route which pollutes the filename */
+function deleteRouteFromName(transactionName: string): string {
+  return transactionName.replace('/route', '');
+}
+
 function extractRelevantFileName(str: string): string {
-  return extractPathFromUrl(extractTransactionRoute(str));
+  return extractPathFromUrl(extractTransactionRoute(deleteRouteFromName(str)));
 }
 
 function addCommaAfterEachLine(data: string): string {
@@ -174,15 +179,22 @@ async function transformSavedJSON(
 
     const objData = transformedJSON[2] as unknown as {
       request?: { url?: string };
+      tags?: { transaction?: string };
       transaction?: string;
       contexts?: { trace?: { data?: { url?: string } } };
     };
 
     if ('request' in objData || 'contexts' in objData) {
       const transactionName = objData?.transaction;
+      const transactionNameFromTags = objData?.tags?.transaction;
       const url = objData?.request?.url || objData.contexts?.trace?.data?.url;
 
-      const filename = filenameOrigin === 'transactionName' ? transactionName : url;
+      const filename =
+        filenameOrigin === 'transactionName'
+          ? transactionName !== ' ' // In v7 "transaction" is a space in error events in Next.js
+            ? transactionName
+            : transactionNameFromTags
+          : url;
 
       if (filename) {
         const replaceForwardSlashes = (str: string) => str.split('/').join('_');
