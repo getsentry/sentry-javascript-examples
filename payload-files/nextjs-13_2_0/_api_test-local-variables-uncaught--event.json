@@ -21,79 +21,85 @@
       {
         "category": "console",
         "level": "log",
-        "message": " \u001b[37m\u001b[1m○\u001b[22m\u001b[39m Compiling /test-route-handlers ...",
+        "message": "\u001b[36mwait\u001b[39m  - compiling /api/test-success/route (client and server)...",
         "timestamp": "[[timestamp]]"
       },
       {
         "category": "console",
         "level": "log",
-        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled /test-route-handlers in 701ms (1251 modules)",
+        "message": "\u001b[35mevent\u001b[39m - compiled client and server successfully in 255 ms (1321 modules)",
         "timestamp": "[[timestamp]]"
       },
       {
         "category": "console",
         "level": "log",
-        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled /api/test-success in 148ms (748 modules)",
+        "message": "\u001b[36mwait\u001b[39m  - compiling /api/test-error/route (client and server)...",
         "timestamp": "[[timestamp]]"
       },
       {
         "category": "console",
         "level": "log",
-        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled /api/test-error in 152ms (750 modules)",
+        "message": "\u001b[35mevent\u001b[39m - compiled successfully in 91 ms (502 modules)",
         "timestamp": "[[timestamp]]"
       },
       {
         "category": "console",
         "level": "log",
-        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled /api/test-param-success/[param] in 143ms (752 modules)",
+        "message": "\u001b[36mwait\u001b[39m  - compiling /api/test-param-success/[param]/route (client and server)...",
         "timestamp": "[[timestamp]]"
       },
       {
         "category": "console",
         "level": "log",
-        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled /api/test-param-error/[param] in 141ms (754 modules)",
+        "message": "\u001b[35mevent\u001b[39m - compiled successfully in 108 ms (502 modules)",
         "timestamp": "[[timestamp]]"
       },
       {
         "category": "console",
         "level": "log",
-        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled /api/test-success-manual in 156ms (756 modules)",
+        "message": "\u001b[36mwait\u001b[39m  - compiling /api/test-param-error/[param]/route (client and server)...",
         "timestamp": "[[timestamp]]"
       },
       {
         "category": "console",
         "level": "log",
-        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled /api/test-error-manual in 160ms (758 modules)",
+        "message": "\u001b[35mevent\u001b[39m - compiled successfully in 98 ms (504 modules)",
         "timestamp": "[[timestamp]]"
       },
       {
         "category": "console",
         "level": "log",
-        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled /api/test-local-variables-uncaught in 146ms (760 modules)",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "error",
-        "message": " \u001b[31m\u001b[1m⨯\u001b[22m\u001b[39m Error: Uncaught Local Variable Error - {\"randomVariableToRecord\":\"LOCAL_VARIABLE\"}\n    at GET$1 (webpack-internal:///(rsc)/./app/api/test-local-variables-uncaught/route.ts:24:11)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/nextjs/esm/common/wrapRouteHandlerWithSentry.js:61:44)\n    at handleCallbackErrors (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/utils/handleCallbackErrors.js:29:26)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/nextjs/esm/common/wrapRouteHandlerWithSentry.js:60:108)\n    at status.status (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/tracing/trace.js:119:15)\n    at handleCallbackErrors (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/utils/handleCallbackErrors.js:29:26)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/tracing/trace.js:118:98)\n    at Hub.withScope (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/hub.js:216:28)\n    at withScope (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/exports.js:214:18)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/tracing/trace.js:102:66)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/node/esm/async/hooks.js:49:14)\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at Object.runWithAsyncContext (webpack-internal:///(rsc)/../../node_modules/@sentry/node/esm/async/hooks.js:48:25)\n    at runWithAsyncContext (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/hub.js:799:36)\n    at startSpan (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/tracing/trace.js:101:70)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/nextjs/esm/common/wrapRouteHandlerWithSentry.js:50:83)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/tracing/trace.js:290:12)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/node/esm/async/hooks.js:49:14)\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at Object.runWithAsyncContext (webpack-internal:///(rsc)/../../node_modules/@sentry/node/esm/async/hooks.js:48:25)\n    at runWithAsyncContext (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/hub.js:799:36)\n    at continueTrace (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/tracing/trace.js:289:70)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/nextjs/esm/common/wrapRouteHandlerWithSentry.js:43:75)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/exports.js:245:12)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/node/esm/async/hooks.js:49:14)\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at Object.runWithAsyncContext (webpack-internal:///(rsc)/../../node_modules/@sentry/node/esm/async/hooks.js:48:25)\n    at runWithAsyncContext (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/hub.js:799:36)\n    at withIsolationScope (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/exports.js:244:70)\n    at Object.apply (webpack-internal:///(rsc)/../../node_modules/@sentry/nextjs/esm/common/wrapRouteHandlerWithSentry.js:37:78)\n    at Object.apply (webpack-internal:///(rsc)/./app/api/test-local-variables-uncaught/route.ts:64:10)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:53244\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/lib/trace/tracer.js:140:36\n    at NoopContextManager.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:7062)\n    at ContextAPI.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:518)\n    at NoopTracer.startActiveSpan (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:18093)\n    at ProxyTracer.startActiveSpan (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:18854)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/lib/trace/tracer.js:122:103\n    at NoopContextManager.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:7062)\n    at ContextAPI.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:518)\n    at NextTracerImpl.trace (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/lib/trace/tracer.js:122:28)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:46069\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at Object.wrap (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:39157)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:45176\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at Object.wrap (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:37592)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:45138\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at e_.execute (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:44531)",
+        "message": "\u001b[36mwait\u001b[39m  - compiling /api/test-success-manual/route (client and server)...",
         "timestamp": "[[timestamp]]"
       },
       {
         "category": "console",
         "level": "log",
-        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled /api/test-local-variables-caught in 135ms (762 modules)",
+        "message": "\u001b[35mevent\u001b[39m - compiled successfully in 96 ms (506 modules)",
         "timestamp": "[[timestamp]]"
       },
       {
         "category": "console",
-        "level": "error",
-        "message": " \u001b[31m\u001b[1m⨯\u001b[22m\u001b[39m Error: Uncaught Local Variable Error - {\"randomVariableToRecord\":\"LOCAL_VARIABLE\"}\n    at GET$1 (webpack-internal:///(rsc)/./app/api/test-local-variables-uncaught/route.ts:24:11)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/nextjs/esm/common/wrapRouteHandlerWithSentry.js:61:44)\n    at handleCallbackErrors (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/utils/handleCallbackErrors.js:29:26)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/nextjs/esm/common/wrapRouteHandlerWithSentry.js:60:108)\n    at status.status (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/tracing/trace.js:119:15)\n    at handleCallbackErrors (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/utils/handleCallbackErrors.js:29:26)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/tracing/trace.js:118:98)\n    at Hub.withScope (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/hub.js:216:28)\n    at withScope (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/exports.js:214:18)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/tracing/trace.js:102:66)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/node/esm/async/hooks.js:49:14)\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at Object.runWithAsyncContext (webpack-internal:///(rsc)/../../node_modules/@sentry/node/esm/async/hooks.js:48:25)\n    at runWithAsyncContext (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/hub.js:799:36)\n    at startSpan (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/tracing/trace.js:101:70)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/nextjs/esm/common/wrapRouteHandlerWithSentry.js:50:83)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/tracing/trace.js:290:12)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/node/esm/async/hooks.js:49:14)\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at Object.runWithAsyncContext (webpack-internal:///(rsc)/../../node_modules/@sentry/node/esm/async/hooks.js:48:25)\n    at runWithAsyncContext (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/hub.js:799:36)\n    at continueTrace (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/tracing/trace.js:289:70)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/nextjs/esm/common/wrapRouteHandlerWithSentry.js:43:75)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/exports.js:245:12)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/node/esm/async/hooks.js:49:14)\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at Object.runWithAsyncContext (webpack-internal:///(rsc)/../../node_modules/@sentry/node/esm/async/hooks.js:48:25)\n    at runWithAsyncContext (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/hub.js:799:36)\n    at withIsolationScope (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/exports.js:244:70)\n    at Object.apply (webpack-internal:///(rsc)/../../node_modules/@sentry/nextjs/esm/common/wrapRouteHandlerWithSentry.js:37:78)\n    at Object.apply (webpack-internal:///(rsc)/./app/api/test-local-variables-uncaught/route.ts:64:10)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:53244\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/lib/trace/tracer.js:140:36\n    at NoopContextManager.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:7062)\n    at ContextAPI.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:518)\n    at NoopTracer.startActiveSpan (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:18093)\n    at ProxyTracer.startActiveSpan (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:18854)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/lib/trace/tracer.js:122:103\n    at NoopContextManager.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:7062)\n    at ContextAPI.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:518)\n    at NextTracerImpl.trace (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/lib/trace/tracer.js:122:28)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:46069\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at Object.wrap (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:39157)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:45176\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at Object.wrap (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:37592)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:45138\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at e_.execute (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:44531)",
+        "level": "log",
+        "message": "\u001b[36mwait\u001b[39m  - compiling /api/test-error-manual/route (client and server)...",
         "timestamp": "[[timestamp]]"
       },
       {
         "category": "console",
-        "level": "error",
-        "message": " \u001b[31m\u001b[1m⨯\u001b[22m\u001b[39m Error: Uncaught Local Variable Error - {\"randomVariableToRecord\":\"LOCAL_VARIABLE\"}\n    at GET$1 (webpack-internal:///(rsc)/./app/api/test-local-variables-uncaught/route.ts:24:11)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/nextjs/esm/common/wrapRouteHandlerWithSentry.js:61:44)\n    at handleCallbackErrors (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/utils/handleCallbackErrors.js:29:26)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/nextjs/esm/common/wrapRouteHandlerWithSentry.js:60:108)\n    at status.status (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/tracing/trace.js:119:15)\n    at handleCallbackErrors (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/utils/handleCallbackErrors.js:29:26)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/tracing/trace.js:118:98)\n    at Hub.withScope (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/hub.js:216:28)\n    at withScope (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/exports.js:214:18)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/tracing/trace.js:102:66)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/node/esm/async/hooks.js:49:14)\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at Object.runWithAsyncContext (webpack-internal:///(rsc)/../../node_modules/@sentry/node/esm/async/hooks.js:48:25)\n    at runWithAsyncContext (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/hub.js:799:36)\n    at startSpan (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/tracing/trace.js:101:70)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/nextjs/esm/common/wrapRouteHandlerWithSentry.js:50:83)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/tracing/trace.js:290:12)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/node/esm/async/hooks.js:49:14)\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at Object.runWithAsyncContext (webpack-internal:///(rsc)/../../node_modules/@sentry/node/esm/async/hooks.js:48:25)\n    at runWithAsyncContext (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/hub.js:799:36)\n    at continueTrace (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/tracing/trace.js:289:70)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/nextjs/esm/common/wrapRouteHandlerWithSentry.js:43:75)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/exports.js:245:12)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/node/esm/async/hooks.js:49:14)\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at Object.runWithAsyncContext (webpack-internal:///(rsc)/../../node_modules/@sentry/node/esm/async/hooks.js:48:25)\n    at runWithAsyncContext (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/hub.js:799:36)\n    at withIsolationScope (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/exports.js:244:70)\n    at Object.apply (webpack-internal:///(rsc)/../../node_modules/@sentry/nextjs/esm/common/wrapRouteHandlerWithSentry.js:37:78)\n    at Object.apply (webpack-internal:///(rsc)/./app/api/test-local-variables-uncaught/route.ts:64:10)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:53244\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/lib/trace/tracer.js:140:36\n    at NoopContextManager.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:7062)\n    at ContextAPI.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:518)\n    at NoopTracer.startActiveSpan (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:18093)\n    at ProxyTracer.startActiveSpan (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:18854)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/lib/trace/tracer.js:122:103\n    at NoopContextManager.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:7062)\n    at ContextAPI.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:518)\n    at NextTracerImpl.trace (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/lib/trace/tracer.js:122:28)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:46069\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at Object.wrap (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:39157)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:45176\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at Object.wrap (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:37592)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:45138\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at e_.execute (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:44531)",
+        "level": "log",
+        "message": "\u001b[35mevent\u001b[39m - compiled successfully in 99 ms (508 modules)",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\u001b[36mwait\u001b[39m  - compiling /api/test-local-variables-uncaught/route (client and server)...",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\u001b[35mevent\u001b[39m - compiled successfully in 95 ms (510 modules)",
         "timestamp": "[[timestamp]]"
       }
     ],
@@ -152,338 +158,468 @@
           "stacktrace": {
             "frames": [
               {
-                "colno": "[[highNumber]]",
-                "context_line": "'{snip} is.userland.fetchCache;let s=await this.actionAsyncStorage.run({isAppRoute:!0,isAction:function(e){let{isFetchAction:t,isURLEncodedAction:r, {snip}",
-                "filename": "[[FILENAME1]]",
-                "function": "e_.execute",
-                "in_app": false,
-                "lineno": 6,
-                "module": "next.dist.compiled.next-server:app-route.runtime.dev",
-                "post_context": ["//# sourceMappingURL=app-route.runtime.dev.js.map"],
-                "pre_context": [
-                  "(()=>{var e={\"./dist/compiled/@edge-runtime/cookies/index.js\":e=>{\"use strict\";var t=Object.defineProperty,r=Object.getOwnPropertyDescriptor {snip}",
-                  " * cookie",
-                  " * Copyright(c) 2012-2014 Roman Shtylman",
-                  " * Copyright(c) 2015 Douglas Christopher Wilson",
-                  " * MIT Licensed"
-                ]
-              },
-              {
-                "colno": 14,
-                "filename": "[[FILENAME2]]",
-                "function": "AsyncLocalStorage.run",
-                "in_app": false,
-                "lineno": 346,
-                "module": "node:async_hooks"
-              },
-              {
-                "colno": "[[highNumber]]",
-                "context_line": "'{snip} Action:o,isFetchAction:a}}(e);return!!(t||r||n)}(e)},()=>H.wrap(this.requestAsyncStorage,n,()=>V.wrap(this.staticGenerationAsyncStorage,o,n= {snip}",
+                "colno": 36,
+                "context_line": "                const cacheEntry = await responseGenerator(resolved, !!cachedResponse);",
                 "filename": "[[FILENAME1]]",
                 "function": "<anonymous>",
                 "in_app": false,
-                "lineno": 6,
-                "module": "next.dist.compiled.next-server:app-route.runtime.dev",
-                "post_context": ["//# sourceMappingURL=app-route.runtime.dev.js.map"],
+                "lineno": 83,
+                "module": "next.dist.server.response-cache:index",
+                "post_context": [
+                  "                const resolveValue = cacheEntry === null ? null : {",
+                  "                    ...cacheEntry,",
+                  "                    isMiss: !cachedResponse",
+                  "                };",
+                  "                // for manual revalidate wait to resolve until cache is set",
+                  "                if (!context.isManualRevalidate) {",
+                  "                    resolve1(resolveValue);"
+                ],
                 "pre_context": [
-                  "(()=>{var e={\"./dist/compiled/@edge-runtime/cookies/index.js\":e=>{\"use strict\";var t=Object.defineProperty,r=Object.getOwnPropertyDescriptor {snip}",
-                  " * cookie",
-                  " * Copyright(c) 2012-2014 Roman Shtylman",
-                  " * Copyright(c) 2015 Douglas Christopher Wilson",
-                  " * MIT Licensed"
-                ]
-              },
-              {
-                "colno": "[[highNumber]]",
-                "context_line": "'{snip} },assetPrefix:(null==n?void 0:n.assetPrefix)||\"\"};return e.run(c,o,c)}};var I=r(\"./dist/compiled/react/index.js\"),U=r.n(I);let F=\"DYNAMIC_SE {snip}",
-                "filename": "[[FILENAME1]]",
-                "function": "Object.wrap",
-                "in_app": false,
-                "lineno": 6,
-                "module": "next.dist.compiled.next-server:app-route.runtime.dev",
-                "post_context": ["//# sourceMappingURL=app-route.runtime.dev.js.map"],
-                "pre_context": [
-                  "(()=>{var e={\"./dist/compiled/@edge-runtime/cookies/index.js\":e=>{\"use strict\";var t=Object.defineProperty,r=Object.getOwnPropertyDescriptor {snip}",
-                  " * cookie",
-                  " * Copyright(c) 2012-2014 Roman Shtylman",
-                  " * Copyright(c) 2015 Douglas Christopher Wilson",
-                  " * MIT Licensed"
-                ]
-              },
-              {
-                "colno": 14,
-                "filename": "[[FILENAME2]]",
-                "function": "AsyncLocalStorage.run",
-                "in_app": false,
-                "lineno": 346,
-                "module": "node:async_hooks"
-              },
-              {
-                "colno": "[[highNumber]]",
-                "context_line": "'{snip} (t||r||n)}(e)},()=>H.wrap(this.requestAsyncStorage,n,()=>V.wrap(this.staticGenerationAsyncStorage,o,n=>{var o;let s=n.isStaticGeneration;if( {snip}",
-                "filename": "[[FILENAME1]]",
-                "function": "<anonymous>",
-                "in_app": false,
-                "lineno": 6,
-                "module": "next.dist.compiled.next-server:app-route.runtime.dev",
-                "post_context": ["//# sourceMappingURL=app-route.runtime.dev.js.map"],
-                "pre_context": [
-                  "(()=>{var e={\"./dist/compiled/@edge-runtime/cookies/index.js\":e=>{\"use strict\";var t=Object.defineProperty,r=Object.getOwnPropertyDescriptor {snip}",
-                  " * cookie",
-                  " * Copyright(c) 2012-2014 Roman Shtylman",
-                  " * Copyright(c) 2015 Douglas Christopher Wilson",
-                  " * MIT Licensed"
-                ]
-              },
-              {
-                "colno": "[[highNumber]]",
-                "context_line": "'{snip} aftMode:r.isDraftMode,prerenderState:a};return r.store=s,e.run(s,n,s)}};function Y(){return new Response(null,{status:400})}function J(){ret {snip}",
-                "filename": "[[FILENAME1]]",
-                "function": "Object.wrap",
-                "in_app": false,
-                "lineno": 6,
-                "module": "next.dist.compiled.next-server:app-route.runtime.dev",
-                "post_context": ["//# sourceMappingURL=app-route.runtime.dev.js.map"],
-                "pre_context": [
-                  "(()=>{var e={\"./dist/compiled/@edge-runtime/cookies/index.js\":e=>{\"use strict\";var t=Object.defineProperty,r=Object.getOwnPropertyDescriptor {snip}",
-                  " * cookie",
-                  " * Copyright(c) 2012-2014 Roman Shtylman",
-                  " * Copyright(c) 2015 Douglas Christopher Wilson",
-                  " * MIT Licensed"
-                ]
-              },
-              {
-                "colno": 14,
-                "filename": "[[FILENAME2]]",
-                "function": "AsyncLocalStorage.run",
-                "in_app": false,
-                "lineno": 346,
-                "module": "node:async_hooks"
-              },
-              {
-                "colno": "[[highNumber]]",
-                "context_line": "'{snip} SpanAttributes())||o.set(\"next.route\",l),(0,M.getTracer)().trace(d.runHandler,{spanName:`executing api route (app) ${l}`,attributes:{\"next.r {snip}",
-                "filename": "[[FILENAME1]]",
-                "function": "<anonymous>",
-                "in_app": false,
-                "lineno": 6,
-                "module": "next.dist.compiled.next-server:app-route.runtime.dev",
-                "post_context": ["//# sourceMappingURL=app-route.runtime.dev.js.map"],
-                "pre_context": [
-                  "(()=>{var e={\"./dist/compiled/@edge-runtime/cookies/index.js\":e=>{\"use strict\";var t=Object.defineProperty,r=Object.getOwnPropertyDescriptor {snip}",
-                  " * cookie",
-                  " * Copyright(c) 2012-2014 Roman Shtylman",
-                  " * Copyright(c) 2015 Douglas Christopher Wilson",
-                  " * MIT Licensed"
+                  "                    });",
+                  "                    if (!cachedResponse.isStale || context.isPrefetch) {",
+                  "                        // The cached value is still valid, so we don't need",
+                  "                        // to update it yet.",
+                  "                        return;",
+                  "                    }",
+                  "                }"
                 ]
               },
               {
                 "colno": 28,
-                "context_line": "        return context.with(spanContext.setValue(rootSpanIdKey, spanId), ()=>this.getTracerInstance().startActiveSpan(spanName, options, (span)=>{",
-                "filename": "[[FILENAME3]]",
-                "function": "NextTracerImpl.trace",
+                "context_line": "            const result = await doRender();",
+                "filename": "[[FILENAME2]]",
+                "function": "cacheEntry1.responseCache.get.incrementalCache.incrementalCache",
                 "in_app": false,
-                "lineno": 122,
-                "module": "next.dist.server.lib.trace:tracer",
+                "lineno": 926,
+                "module": "next.dist.server:base-server",
                 "post_context": [
-                  "                const startTime = \"performance\" in globalThis ? globalThis.performance.now() : undefined;",
-                  "                const onCleanup = ()=>{",
-                  "                    rootSpanAttributesStore.delete(spanId);",
-                  "                    if (startTime && process.env.NEXT_OTEL_PERFORMANCE_PREFIX && _constants.LogSpanAllowList.includes(type || \"\")) {",
-                  "                        performance.measure(`${process.env.NEXT_OTEL_PERFORMANCE_PREFIX}:next-${(type.split(\".\").pop() || \"\").replace(/[A-Z] {snip}",
-                  "                            start: startTime,",
-                  "                            end: performance.now()"
+                  "            if (!result) {",
+                  "                return null;",
+                  "            }",
+                  "            return {",
+                  "                ...result,",
+                  "                revalidate: result.revalidate !== undefined ? result.revalidate : /* default to minimum revalidate (this should be an invariant) */ 1",
+                  "            };"
                 ],
                 "pre_context": [
-                  "        }",
-                  "        const spanId = getSpanId();",
-                  "        options.attributes = {",
-                  "            \"next.span_name\": spanName,",
-                  "            \"next.span_type\": type,",
-                  "            ...options.attributes",
-                  "        };"
-                ]
-              },
-              {
-                "colno": 518,
-                "context_line": "'{snip} ve()}with(e,t,r,...n){return this._getContextManager().with(e,t,r,...n)}bind(e,t){return this._getContextManager().bind(e,t)}_getContextMana {snip}",
-                "filename": "[[FILENAME4]]",
-                "function": "ContextAPI.with",
-                "in_app": false,
-                "lineno": 1,
-                "module": "next.dist.compiled.@opentelemetry.api:index",
-                "post_context": [],
-                "pre_context": []
-              },
-              {
-                "colno": "[[highNumber]]",
-                "context_line": "'{snip} r{active(){return n.ROOT_CONTEXT}with(e,t,r,...n){return t.call(r,...n)}bind(e,t){return t}enable(){return this}disable(){return this}}t.Noo {snip}",
-                "filename": "[[FILENAME4]]",
-                "function": "NoopContextManager.with",
-                "in_app": false,
-                "lineno": 1,
-                "module": "next.dist.compiled.@opentelemetry.api:index",
-                "post_context": [],
-                "pre_context": []
-              },
-              {
-                "colno": 103,
-                "context_line": "        return context.with(spanContext.setValue(rootSpanIdKey, spanId), ()=>this.getTracerInstance().startActiveSpan(spanName, options, (span)=>{",
-                "filename": "[[FILENAME3]]",
-                "function": "<anonymous>",
-                "in_app": false,
-                "lineno": 122,
-                "module": "next.dist.server.lib.trace:tracer",
-                "post_context": [
-                  "                const startTime = \"performance\" in globalThis ? globalThis.performance.now() : undefined;",
-                  "                const onCleanup = ()=>{",
-                  "                    rootSpanAttributesStore.delete(spanId);",
-                  "                    if (startTime && process.env.NEXT_OTEL_PERFORMANCE_PREFIX && _constants.LogSpanAllowList.includes(type || \"\")) {",
-                  "                        performance.measure(`${process.env.NEXT_OTEL_PERFORMANCE_PREFIX}:next-${(type.split(\".\").pop() || \"\").replace(/[A-Z] {snip}",
-                  "                            start: startTime,",
-                  "                            end: performance.now()"
-                ],
-                "pre_context": [
-                  "        }",
-                  "        const spanId = getSpanId();",
-                  "        options.attributes = {",
-                  "            \"next.span_name\": spanName,",
-                  "            \"next.span_type\": type,",
-                  "            ...options.attributes",
-                  "        };"
-                ]
-              },
-              {
-                "colno": "[[highNumber]]",
-                "context_line": "'{snip} tiveSpan(e,t,r,n){const a=this._getTracer();return Reflect.apply(a.startActiveSpan,a,arguments)}_getTracer(){if(this._delegate){return this. {snip}",
-                "filename": "[[FILENAME4]]",
-                "function": "ProxyTracer.startActiveSpan",
-                "in_app": false,
-                "lineno": 1,
-                "module": "next.dist.compiled.@opentelemetry.api:index",
-                "post_context": [],
-                "pre_context": []
-              },
-              {
-                "colno": "[[highNumber]]",
-                "context_line": "'{snip} s.startSpan(e,o,u);const g=(0,a.setSpan)(u,l);return c.with(g,s,undefined,l)}}t.NoopTracer=NoopTracer;function isSpanContext(e){return typeo {snip}",
-                "filename": "[[FILENAME4]]",
-                "function": "NoopTracer.startActiveSpan",
-                "in_app": false,
-                "lineno": 1,
-                "module": "next.dist.compiled.@opentelemetry.api:index",
-                "post_context": [],
-                "pre_context": []
-              },
-              {
-                "colno": 518,
-                "context_line": "'{snip} ve()}with(e,t,r,...n){return this._getContextManager().with(e,t,r,...n)}bind(e,t){return this._getContextManager().bind(e,t)}_getContextMana {snip}",
-                "filename": "[[FILENAME4]]",
-                "function": "ContextAPI.with",
-                "in_app": false,
-                "lineno": 1,
-                "module": "next.dist.compiled.@opentelemetry.api:index",
-                "post_context": [],
-                "pre_context": []
-              },
-              {
-                "colno": "[[highNumber]]",
-                "context_line": "'{snip} r{active(){return n.ROOT_CONTEXT}with(e,t,r,...n){return t.call(r,...n)}bind(e,t){return t}enable(){return this}disable(){return this}}t.Noo {snip}",
-                "filename": "[[FILENAME4]]",
-                "function": "NoopContextManager.with",
-                "in_app": false,
-                "lineno": 1,
-                "module": "next.dist.compiled.@opentelemetry.api:index",
-                "post_context": [],
-                "pre_context": []
-              },
-              {
-                "colno": 36,
-                "context_line": "                    const result = fn(span);",
-                "filename": "[[FILENAME3]]",
-                "function": "<anonymous>",
-                "in_app": false,
-                "lineno": 140,
-                "module": "next.dist.server.lib.trace:tracer",
-                "post_context": [
-                  "                    if (isPromise(result)) {",
-                  "                        // If there's error make sure it throws",
-                  "                        return result.then((res)=>{",
-                  "                            span.end();",
-                  "                            // Need to pass down the promise result,",
-                  "                            // it could be react stream response with error { error, stream }",
-                  "                            return res;"
-                ],
-                "pre_context": [
-                  "                if (isRootSpan) {",
-                  "                    rootSpanAttributesStore.set(spanId, new Map(Object.entries(options.attributes ?? {})));",
+                  "                        }",
+                  "                        // Prevent caching this result",
+                  "                        delete result.revalidate;",
+                  "                        return result;",
+                  "                    }",
                   "                }",
-                  "                try {",
-                  "                    if (fn.length > 1) {",
-                  "                        return fn(span, (err)=>closeSpanWithError(span, err));",
-                  "                    }"
+                  "            }"
                 ]
               },
               {
-                "colno": "[[highNumber]]",
-                "context_line": "'{snip} yncStorage:this.staticGenerationAsyncStorage});let o=await r(i,{params:t.params?function(e){let t={};for(let[r,n]of Object.entries(e))void 0 {snip}",
-                "filename": "[[FILENAME1]]",
+                "colno": 32,
+                "context_line": "                let response = await this.handlers.handle(match, req, res, context, isSSG);",
+                "filename": "[[FILENAME2]]",
+                "function": "doRender",
+                "in_app": false,
+                "lineno": 743,
+                "module": "next.dist.server:base-server",
+                "post_context": [
+                  "                if (response) {",
+                  "                    if (isSSG && process.env.NEXT_RUNTIME !== \"edge\") {",
+                  "                        const blob = await response.blob();",
+                  "                        const headers = Object.fromEntries(response.headers);",
+                  "                        if (!headers[\"content-type\"] && blob.type) {",
+                  "                            headers[\"content-type\"] = blob.type;",
+                  "                        }"
+                ],
+                "pre_context": [
+                  "            const supportsDynamicHTML = !(isSSG || hasStaticPaths);",
+                  "            const match = pathname !== \"/_error\" && !is404Page && !is500Page ? (0, _requestMeta).getRequestMeta(req, \"_nextMatch\") : undefined;",
+                  "            if (match) {",
+                  "                const context = {",
+                  "                    supportsDynamicHTML,",
+                  "                    incrementalCache",
+                  "                };"
+                ]
+              },
+              {
+                "colno": 24,
+                "context_line": "        const result = await handler.handle(match, req, res, context, bubbleResult);",
+                "filename": "[[FILENAME3]]",
+                "function": "RouteHandlerManager.handle",
+                "in_app": false,
+                "lineno": 16,
+                "module": "next.dist.server.future.route-handler-managers:route-handler-manager",
+                "post_context": [
+                  "        if (bubbleResult) {",
+                  "            return result;",
+                  "        }",
+                  "        return true;",
+                  "    }",
+                  "}",
+                  "exports.RouteHandlerManager = RouteHandlerManager;"
+                ],
+                "pre_context": [
+                  "            throw new Error(\"Invariant: duplicate route handler added for kind\");",
+                  "        }",
+                  "        this.handlers[kind] = handler;",
+                  "    }",
+                  "    async handle(match, req, res, context, bubbleResult) {",
+                  "        const handler = this.handlers[match.definition.kind];",
+                  "        if (!handler) return false;"
+                ]
+              },
+              {
+                "colno": 5,
+                "filename": "[[FILENAME4]]",
+                "function": "process.processTicksAndRejections",
+                "in_app": false,
+                "lineno": 95,
+                "module": "task_queues",
+                "platform": "nodejs"
+              },
+              {
+                "colno": 41,
+                "context_line": "            const response = await this.execute(match, appRouteModule, req, res, context);",
+                "filename": "[[FILENAME5]]",
+                "function": "AppRouteRouteHandler.handle",
+                "in_app": false,
+                "lineno": 348,
+                "module": "next.dist.server.future.route-handlers:app-route-route-handler",
+                "post_context": [
+                  "            if (bubbleResult) {",
+                  "                return response;",
+                  "            }",
+                  "            // Send the response back to the response.",
+                  "            await sendResponse(req, res, response);",
+                  "        } catch (err) {",
+                  "            const response = resolveHandlerError(err, bubbleResult);"
+                ],
+                "pre_context": [
+                  "    }",
+                  "    async handle(match, req, res, context, bubbleResult) {",
+                  "        try {",
+                  "            // Load the module using the module loader.",
+                  "            const appRouteModule = await this.moduleLoader.load(match.definition.filename);",
+                  "            (0, _patchFetch).patchFetch(appRouteModule);",
+                  "            // Execute the route to get the response."
+                ]
+              },
+              {
+                "colno": 69,
+                "context_line": "        const response = await this.requestAsyncLocalStorageWrapper.wrap(requestAsyncStorage, {",
+                "filename": "[[FILENAME5]]",
+                "function": "AppRouteRouteHandler.execute",
+                "in_app": false,
+                "lineno": 214,
+                "module": "next.dist.server.future.route-handlers:app-route-route-handler",
+                "post_context": [
+                  "            req: req.originalRequest,",
+                  "            res: res.originalResponse",
+                  "        }, ()=>this.staticAsyncLocalStorageWrapper.wrap(staticGenerationAsyncStorage, {",
+                  "                pathname: definition.pathname,",
+                  "                renderOpts: context || {}",
+                  "            }, ()=>{",
+                  "                const _req = request ? request : wrapRequest(req);"
+                ],
+                "pre_context": [
+                  "    request) {",
+                  "        // This is added by the webpack loader, we load it directly from the module.",
+                  "        const { requestAsyncStorage , staticGenerationAsyncStorage  } = module;",
+                  "        // Get the handler function for the given method.",
+                  "        const handle = this.resolve(req.method, module);",
+                  "        // Run the handler with the request AsyncLocalStorage to inject the helper",
+                  "        // support."
+                ]
+              },
+              {
+                "colno": 43,
+                "context_line": "        return RequestAsyncStorageWrapper.wrap(storage, context, callback);",
+                "filename": "[[FILENAME6]]",
+                "function": "RequestAsyncStorageWrapper.wrap",
+                "in_app": false,
+                "lineno": 30,
+                "module": "next.dist.server.async-storage:request-async-storage-wrapper",
+                "post_context": [
+                  "    }",
+                  "    /**",
+                  "   * @deprecated instance method should be used in favor of the static method",
+                  "   */ static wrap(storage, { req , res , renderOpts  }, callback) {",
+                  "        // Reads of this are cached on the `req` object, so this should resolve",
+                  "        // instantly. There's no need to pass this data down from a previous",
+                  "        // invoke, where we'd have to consider server & serverless."
+                ],
+                "pre_context": [
+                  "   * store using hooks.",
+                  "   *",
+                  "   * @param storage underlying storage object returned by the module",
+                  "   * @param context context to seed the store",
+                  "   * @param callback function to call within the scope of the context",
+                  "   * @returns the result returned by the callback",
+                  "   */ wrap(storage, context, callback) {"
+                ]
+              },
+              {
+                "colno": 24,
+                "context_line": "        return storage.run(store, callback);",
+                "filename": "[[FILENAME6]]",
+                "function": "RequestAsyncStorageWrapper.wrap",
+                "in_app": false,
+                "lineno": 65,
+                "module": "next.dist.server.async-storage:request-async-storage-wrapper",
+                "post_context": [
+                  "    }",
+                  "}",
+                  "exports.RequestAsyncStorageWrapper = RequestAsyncStorageWrapper;",
+                  "",
+                  "//# sourceMappingURL=request-async-storage-wrapper.js.map"
+                ],
+                "pre_context": [
+                  "                        }",
+                  "                    });",
+                  "                }",
+                  "                return cachedCookiesInstance;",
+                  "            },",
+                  "            previewData",
+                  "        };"
+                ]
+              },
+              {
+                "colno": 14,
+                "filename": "[[FILENAME7]]",
+                "function": "AsyncLocalStorage.run",
+                "in_app": false,
+                "lineno": 346,
+                "module": "node:async_hooks"
+              },
+              {
+                "colno": 52,
+                "context_line": "        }, ()=>this.staticAsyncLocalStorageWrapper.wrap(staticGenerationAsyncStorage, {",
+                "filename": "[[FILENAME5]]",
                 "function": "<anonymous>",
                 "in_app": false,
-                "lineno": 6,
-                "module": "next.dist.compiled.next-server:app-route.runtime.dev",
-                "post_context": ["//# sourceMappingURL=app-route.runtime.dev.js.map"],
+                "lineno": 217,
+                "module": "next.dist.server.future.route-handlers:app-route-route-handler",
+                "post_context": [
+                  "                pathname: definition.pathname,",
+                  "                renderOpts: context || {}",
+                  "            }, ()=>{",
+                  "                const _req = request ? request : wrapRequest(req);",
+                  "                // We can currently only statically optimize if only GET/HEAD",
+                  "                // are used as a Prerender can't be used conditionally based",
+                  "                // on the method currently"
+                ],
                 "pre_context": [
-                  "(()=>{var e={\"./dist/compiled/@edge-runtime/cookies/index.js\":e=>{\"use strict\";var t=Object.defineProperty,r=Object.getOwnPropertyDescriptor {snip}",
-                  " * cookie",
-                  " * Copyright(c) 2012-2014 Roman Shtylman",
-                  " * Copyright(c) 2015 Douglas Christopher Wilson",
-                  " * MIT Licensed"
+                  "        // Get the handler function for the given method.",
+                  "        const handle = this.resolve(req.method, module);",
+                  "        // Run the handler with the request AsyncLocalStorage to inject the helper",
+                  "        // support.",
+                  "        const response = await this.requestAsyncLocalStorageWrapper.wrap(requestAsyncStorage, {",
+                  "            req: req.originalRequest,",
+                  "            res: res.originalResponse"
+                ]
+              },
+              {
+                "colno": 52,
+                "context_line": "        return StaticGenerationAsyncStorageWrapper.wrap(storage, context, callback);",
+                "filename": "[[FILENAME8]]",
+                "function": "StaticGenerationAsyncStorageWrapper.wrap",
+                "in_app": false,
+                "lineno": 7,
+                "module": "next.dist.server.async-storage:static-generation-async-storage-wrapper",
+                "post_context": [
+                  "    }",
+                  "    /**",
+                  "   * @deprecated instance method should be used in favor of the static method",
+                  "   */ static wrap(storage, { pathname , renderOpts  }, callback) {",
+                  "        /**",
+                  "     * Rules of Static & Dynamic HTML:",
+                  "     *"
+                ],
+                "pre_context": [
+                  "\"use strict\";",
+                  "Object.defineProperty(exports, \"__esModule\", {",
+                  "    value: true",
+                  "});",
+                  "class StaticGenerationAsyncStorageWrapper {",
+                  "    wrap(storage, context, callback) {"
+                ]
+              },
+              {
+                "colno": 24,
+                "context_line": "        return storage.run(store, callback);",
+                "filename": "[[FILENAME8]]",
+                "function": "StaticGenerationAsyncStorageWrapper.wrap",
+                "in_app": false,
+                "lineno": 33,
+                "module": "next.dist.server.async-storage:static-generation-async-storage-wrapper",
+                "post_context": [
+                  "    }",
+                  "}",
+                  "exports.StaticGenerationAsyncStorageWrapper = StaticGenerationAsyncStorageWrapper;",
+                  "",
+                  "//# sourceMappingURL=static-generation-async-storage-wrapper.js.map"
+                ],
+                "pre_context": [
+                  "        const store = {",
+                  "            isStaticGeneration,",
+                  "            pathname,",
+                  "            incrementalCache: renderOpts.incrementalCache,",
+                  "            isRevalidate: renderOpts.isRevalidate",
+                  "        };",
+                  "        renderOpts.store = store;"
+                ]
+              },
+              {
+                "colno": 14,
+                "filename": "[[FILENAME7]]",
+                "function": "AsyncLocalStorage.run",
+                "in_app": false,
+                "lineno": 346,
+                "module": "node:async_hooks"
+              },
+              {
+                "colno": 24,
+                "context_line": "                return handle(wrappedReq, {",
+                "filename": "[[FILENAME5]]",
+                "function": "<anonymous>",
+                "in_app": false,
+                "lineno": 306,
+                "module": "next.dist.server.future.route-handlers:app-route-route-handler",
+                "post_context": [
+                  "                    params",
+                  "                });",
+                  "            }));",
+                  "        // If the handler did't return a valid response, then return the internal",
+                  "        // error response.",
+                  "        if (!(response instanceof Response)) {",
+                  "            // TODO: validate the correct handling behavior, maybe log something?"
+                ],
+                "pre_context": [
+                  "                    },",
+                  "                    set (target, prop, value) {",
+                  "                        handleReqBailout(prop);",
+                  "                        target[prop] = value;",
+                  "                        return true;",
+                  "                    }",
+                  "                });"
                 ]
               },
               {
                 "colno": 10,
-                "filename": "[[FILENAME5]]",
+                "filename": "[[FILENAME9]]",
                 "function": "Object.apply",
                 "in_app": false,
                 "lineno": 64,
                 "module": "route.ts"
               },
               {
-                "colno": 78,
-                "filename": "[[FILENAME6]]",
+                "colno": 19,
+                "context_line": "      return core.withIsolationScope(async isolationScope => {",
+                "filename": "[[FILENAME10]]",
                 "function": "Object.apply",
                 "in_app": false,
-                "lineno": 37,
-                "module": "@sentry.nextjs.esm.common:wrapRouteHandlerWithSentry"
-              },
-              {
-                "colno": 70,
-                "filename": "[[FILENAME7]]",
-                "function": "withIsolationScope",
-                "in_app": false,
-                "lineno": 244,
-                "module": "@sentry.core.esm:exports"
-              },
-              {
-                "colno": 36,
-                "filename": "[[FILENAME8]]",
-                "function": "runWithAsyncContext",
-                "in_app": false,
-                "lineno": 799,
-                "module": "@sentry.core.esm:hub"
-              },
-              {
-                "colno": 25,
-                "filename": "[[FILENAME9]]",
-                "function": "Object.runWithAsyncContext",
-                "in_app": false,
-                "lineno": 48,
-                "module": "@sentry.node.esm.async:hooks"
+                "lineno": 27,
+                "module": "@sentry.nextjs.cjs.common:wrapRouteHandlerWithSentry",
+                "post_context": [
+                  "        isolationScope.setSDKProcessingMetadata({",
+                  "          request: {",
+                  "            headers: headers ? utils.winterCGHeadersToDict(headers) : undefined,",
+                  "          },",
+                  "        });",
+                  "        return core.continueTrace(",
+                  "          {"
+                ],
+                "pre_context": [
+                  "  context,",
+                  ") {",
+                  "  core.addTracingExtensions();",
+                  "  // eslint-disable-next-line deprecation/deprecation",
+                  "  const { method, parameterizedRoute, baggageHeader, sentryTraceHeader, headers } = context;",
+                  "  return new Proxy(routeHandler, {",
+                  "    apply: (originalFunction, thisArg, args) => {"
+                ]
               },
               {
                 "colno": 14,
-                "filename": "[[FILENAME2]]",
+                "context_line": "  return hub.runWithAsyncContext(() => {",
+                "filename": "[[FILENAME11]]",
+                "function": "Object.withIsolationScope",
+                "in_app": false,
+                "lineno": 207,
+                "module": "@sentry.core.cjs:exports",
+                "post_context": [
+                  "    return callback(hub.getIsolationScope());",
+                  "  });",
+                  "}",
+                  "",
+                  "/**",
+                  " * Forks the current scope and sets the provided span as active span in the context of the provided callback.",
+                  " *"
+                ],
+                "pre_context": [
+                  " * applications directly because it comes with pitfalls. Use at your own risk!",
+                  " *",
+                  " * @param callback The callback in which the passed isolation scope is active. (Note: In environments without async",
+                  " * context strategy, the currently active isolation scope may change within execution of the callback.)",
+                  " * @returns The same value that `callback` returns.",
+                  " */",
+                  "function withIsolationScope(callback) {"
+                ]
+              },
+              {
+                "colno": 36,
+                "context_line": "    return registry.__SENTRY__.acs.runWithAsyncContext(callback, options);",
+                "filename": "[[FILENAME12]]",
+                "function": "Object.runWithAsyncContext",
+                "in_app": false,
+                "lineno": 777,
+                "module": "@sentry.core.cjs:hub",
+                "post_context": [
+                  "  }",
+                  "",
+                  "  // if there was no strategy, fallback to just calling the callback",
+                  "  return callback();",
+                  "}",
+                  "",
+                  "/**"
+                ],
+                "pre_context": [
+                  " * @param options Options to pass to the async context strategy",
+                  " * @returns The result of the callback",
+                  " */",
+                  "function runWithAsyncContext(callback, options = {}) {",
+                  "  const registry = getMainCarrier();",
+                  "",
+                  "  if (registry.__SENTRY__ && registry.__SENTRY__.acs) {"
+                ]
+              },
+              {
+                "colno": 25,
+                "context_line": "    return asyncStorage.run(newHub, () => {",
+                "filename": "[[FILENAME13]]",
+                "function": "Object.runWithAsyncContext",
+                "in_app": false,
+                "lineno": 45,
+                "module": "@sentry.node.cjs.async:hooks",
+                "post_context": [
+                  "      return callback();",
+                  "    });",
+                  "  }",
+                  "",
+                  "  core.setAsyncContextStrategy({ getCurrentHub, runWithAsyncContext });",
+                  "}",
+                  ""
+                ],
+                "pre_context": [
+                  "      // We're already in an async context, so we don't need to create a new one",
+                  "      // just call the callback with the current hub",
+                  "      return callback();",
+                  "    }",
+                  "",
+                  "    const newHub = createNewHub(existingHub);",
+                  ""
+                ]
+              },
+              {
+                "colno": 14,
+                "filename": "[[FILENAME7]]",
                 "function": "AsyncLocalStorage.run",
                 "in_app": false,
                 "lineno": 346,
@@ -491,55 +627,169 @@
               },
               {
                 "colno": 14,
-                "filename": "[[FILENAME9]]",
-                "function": "eval",
+                "context_line": "      return callback();",
+                "filename": "[[FILENAME13]]",
+                "function": "<anonymous>",
                 "in_app": false,
-                "lineno": 49,
-                "module": "@sentry.node.esm.async:hooks"
+                "lineno": 46,
+                "module": "@sentry.node.cjs.async:hooks",
+                "post_context": [
+                  "    });",
+                  "  }",
+                  "",
+                  "  core.setAsyncContextStrategy({ getCurrentHub, runWithAsyncContext });",
+                  "}",
+                  "",
+                  "exports.setHooksAsyncContextStrategy = setHooksAsyncContextStrategy;"
+                ],
+                "pre_context": [
+                  "      // just call the callback with the current hub",
+                  "      return callback();",
+                  "    }",
+                  "",
+                  "    const newHub = createNewHub(existingHub);",
+                  "",
+                  "    return asyncStorage.run(newHub, () => {"
+                ]
               },
               {
                 "colno": 12,
-                "filename": "[[FILENAME7]]",
-                "function": "eval",
+                "context_line": "    return callback(hub.getIsolationScope());",
+                "filename": "[[FILENAME11]]",
+                "function": "<anonymous>",
                 "in_app": false,
-                "lineno": 245,
-                "module": "@sentry.core.esm:exports"
+                "lineno": 208,
+                "module": "@sentry.core.cjs:exports",
+                "post_context": [
+                  "  });",
+                  "}",
+                  "",
+                  "/**",
+                  " * Forks the current scope and sets the provided span as active span in the context of the provided callback.",
+                  " *",
+                  " * @param span Spans started in the context of the provided callback will be children of this span."
+                ],
+                "pre_context": [
+                  " *",
+                  " * @param callback The callback in which the passed isolation scope is active. (Note: In environments without async",
+                  " * context strategy, the currently active isolation scope may change within execution of the callback.)",
+                  " * @returns The same value that `callback` returns.",
+                  " */",
+                  "function withIsolationScope(callback) {",
+                  "  return hub.runWithAsyncContext(() => {"
+                ]
               },
               {
-                "colno": 75,
-                "filename": "[[FILENAME6]]",
-                "function": "eval",
-                "in_app": false,
-                "lineno": 43,
-                "module": "@sentry.nextjs.esm.common:wrapRouteHandlerWithSentry"
-              },
-              {
-                "colno": 70,
+                "colno": 21,
+                "context_line": "        return core.continueTrace(",
                 "filename": "[[FILENAME10]]",
-                "function": "continueTrace",
+                "function": "<anonymous>",
                 "in_app": false,
-                "lineno": 289,
-                "module": "@sentry.core.esm.tracing:trace"
-              },
-              {
-                "colno": 36,
-                "filename": "[[FILENAME8]]",
-                "function": "runWithAsyncContext",
-                "in_app": false,
-                "lineno": 799,
-                "module": "@sentry.core.esm:hub"
-              },
-              {
-                "colno": 25,
-                "filename": "[[FILENAME9]]",
-                "function": "Object.runWithAsyncContext",
-                "in_app": false,
-                "lineno": 48,
-                "module": "@sentry.node.esm.async:hooks"
+                "lineno": 33,
+                "module": "@sentry.nextjs.cjs.common:wrapRouteHandlerWithSentry",
+                "post_context": [
+                  "          {",
+                  "            sentryTrace: _nullishCoalesce(_nullishCoalesce(sentryTraceHeader, () => ( _optionalChain([headers, 'optionalAccess', _ => _.get, {snip}",
+                  "            baggage: _nullishCoalesce(baggageHeader, () => ( _optionalChain([headers, 'optionalAccess', _3 => _3.get, 'call', _4 => _4('baggage')]))),",
+                  "          },",
+                  "          async () => {",
+                  "            try {",
+                  "              return await core.startSpan("
+                ],
+                "pre_context": [
+                  "    apply: (originalFunction, thisArg, args) => {",
+                  "      return core.withIsolationScope(async isolationScope => {",
+                  "        isolationScope.setSDKProcessingMetadata({",
+                  "          request: {",
+                  "            headers: headers ? utils.winterCGHeadersToDict(headers) : undefined,",
+                  "          },",
+                  "        });"
+                ]
               },
               {
                 "colno": 14,
-                "filename": "[[FILENAME2]]",
+                "context_line": "  return hub.runWithAsyncContext(() => {",
+                "filename": "[[FILENAME14]]",
+                "function": "Object.continueTrace",
+                "in_app": false,
+                "lineno": 270,
+                "module": "@sentry.core.cjs.tracing:trace",
+                "post_context": [
+                  "    return callback(transactionContext);",
+                  "  });",
+                  "};",
+                  "",
+                  "function createChildSpanOrTransaction(",
+                  "  // eslint-disable-next-line deprecation/deprecation",
+                  "  hub$1,"
+                ],
+                "pre_context": [
+                  "    }),",
+                  "  };",
+                  "",
+                  "  if (!callback) {",
+                  "    return transactionContext;",
+                  "  }",
+                  ""
+                ]
+              },
+              {
+                "colno": 36,
+                "context_line": "    return registry.__SENTRY__.acs.runWithAsyncContext(callback, options);",
+                "filename": "[[FILENAME12]]",
+                "function": "Object.runWithAsyncContext",
+                "in_app": false,
+                "lineno": 777,
+                "module": "@sentry.core.cjs:hub",
+                "post_context": [
+                  "  }",
+                  "",
+                  "  // if there was no strategy, fallback to just calling the callback",
+                  "  return callback();",
+                  "}",
+                  "",
+                  "/**"
+                ],
+                "pre_context": [
+                  " * @param options Options to pass to the async context strategy",
+                  " * @returns The result of the callback",
+                  " */",
+                  "function runWithAsyncContext(callback, options = {}) {",
+                  "  const registry = getMainCarrier();",
+                  "",
+                  "  if (registry.__SENTRY__ && registry.__SENTRY__.acs) {"
+                ]
+              },
+              {
+                "colno": 25,
+                "context_line": "    return asyncStorage.run(newHub, () => {",
+                "filename": "[[FILENAME13]]",
+                "function": "Object.runWithAsyncContext",
+                "in_app": false,
+                "lineno": 45,
+                "module": "@sentry.node.cjs.async:hooks",
+                "post_context": [
+                  "      return callback();",
+                  "    });",
+                  "  }",
+                  "",
+                  "  core.setAsyncContextStrategy({ getCurrentHub, runWithAsyncContext });",
+                  "}",
+                  ""
+                ],
+                "pre_context": [
+                  "      // We're already in an async context, so we don't need to create a new one",
+                  "      // just call the callback with the current hub",
+                  "      return callback();",
+                  "    }",
+                  "",
+                  "    const newHub = createNewHub(existingHub);",
+                  ""
+                ]
+              },
+              {
+                "colno": 14,
+                "filename": "[[FILENAME7]]",
                 "function": "AsyncLocalStorage.run",
                 "in_app": false,
                 "lineno": 346,
@@ -547,55 +797,169 @@
               },
               {
                 "colno": 14,
-                "filename": "[[FILENAME9]]",
-                "function": "eval",
+                "context_line": "      return callback();",
+                "filename": "[[FILENAME13]]",
+                "function": "<anonymous>",
                 "in_app": false,
-                "lineno": 49,
-                "module": "@sentry.node.esm.async:hooks"
+                "lineno": 46,
+                "module": "@sentry.node.cjs.async:hooks",
+                "post_context": [
+                  "    });",
+                  "  }",
+                  "",
+                  "  core.setAsyncContextStrategy({ getCurrentHub, runWithAsyncContext });",
+                  "}",
+                  "",
+                  "exports.setHooksAsyncContextStrategy = setHooksAsyncContextStrategy;"
+                ],
+                "pre_context": [
+                  "      // just call the callback with the current hub",
+                  "      return callback();",
+                  "    }",
+                  "",
+                  "    const newHub = createNewHub(existingHub);",
+                  "",
+                  "    return asyncStorage.run(newHub, () => {"
+                ]
               },
               {
                 "colno": 12,
+                "context_line": "    return callback(transactionContext);",
+                "filename": "[[FILENAME14]]",
+                "function": "<anonymous>",
+                "in_app": false,
+                "lineno": 271,
+                "module": "@sentry.core.cjs.tracing:trace",
+                "post_context": [
+                  "  });",
+                  "};",
+                  "",
+                  "function createChildSpanOrTransaction(",
+                  "  // eslint-disable-next-line deprecation/deprecation",
+                  "  hub$1,",
+                  "  {"
+                ],
+                "pre_context": [
+                  "  };",
+                  "",
+                  "  if (!callback) {",
+                  "    return transactionContext;",
+                  "  }",
+                  "",
+                  "  return hub.runWithAsyncContext(() => {"
+                ]
+              },
+              {
+                "colno": 33,
+                "context_line": "              return await core.startSpan(",
                 "filename": "[[FILENAME10]]",
-                "function": "eval",
+                "function": "<anonymous>",
                 "in_app": false,
-                "lineno": 290,
-                "module": "@sentry.core.esm.tracing:trace"
-              },
-              {
-                "colno": 83,
-                "filename": "[[FILENAME6]]",
-                "function": "eval",
-                "in_app": false,
-                "lineno": 50,
-                "module": "@sentry.nextjs.esm.common:wrapRouteHandlerWithSentry"
-              },
-              {
-                "colno": 70,
-                "filename": "[[FILENAME10]]",
-                "function": "startSpan",
-                "in_app": false,
-                "lineno": 101,
-                "module": "@sentry.core.esm.tracing:trace"
-              },
-              {
-                "colno": 36,
-                "filename": "[[FILENAME8]]",
-                "function": "runWithAsyncContext",
-                "in_app": false,
-                "lineno": 799,
-                "module": "@sentry.core.esm:hub"
-              },
-              {
-                "colno": 25,
-                "filename": "[[FILENAME9]]",
-                "function": "Object.runWithAsyncContext",
-                "in_app": false,
-                "lineno": 48,
-                "module": "@sentry.node.esm.async:hooks"
+                "lineno": 40,
+                "module": "@sentry.nextjs.cjs.common:wrapRouteHandlerWithSentry",
+                "post_context": [
+                  "                {",
+                  "                  op: 'http.server',",
+                  "                  name: `${method} ${parameterizedRoute}`,",
+                  "                  attributes: {",
+                  "                    [core.SEMANTIC_ATTRIBUTE_SENTRY_SOURCE]: 'route',",
+                  "                    [core.SEMANTIC_ATTRIBUTE_SENTRY_ORIGIN]: 'auto.function.nextjs',",
+                  "                  },"
+                ],
+                "pre_context": [
+                  "        return core.continueTrace(",
+                  "          {",
+                  "            sentryTrace: _nullishCoalesce(_nullishCoalesce(sentryTraceHeader, () => ( _optionalChain([headers, 'optionalAccess', _ => _.get, {snip}",
+                  "            baggage: _nullishCoalesce(baggageHeader, () => ( _optionalChain([headers, 'optionalAccess', _3 => _3.get, 'call', _4 => _4('baggage')]))),",
+                  "          },",
+                  "          async () => {",
+                  "            try {"
+                ]
               },
               {
                 "colno": 14,
-                "filename": "[[FILENAME2]]",
+                "context_line": "  return hub.runWithAsyncContext(() => {",
+                "filename": "[[FILENAME14]]",
+                "function": "Object.startSpan",
+                "in_app": false,
+                "lineno": 82,
+                "module": "@sentry.core.cjs.tracing:trace",
+                "post_context": [
+                  "    return exports$1.withScope(context.scope, scope => {",
+                  "      // eslint-disable-next-line deprecation/deprecation",
+                  "      const hub$1 = hub.getCurrentHub();",
+                  "      // eslint-disable-next-line deprecation/deprecation",
+                  "      const parentSpan = scope.getSpan();",
+                  "",
+                  "      const shouldSkipSpan = context.onlyIfParent && !parentSpan;"
+                ],
+                "pre_context": [
+                  " * Note that if you have not enabled tracing extensions via `addTracingExtensions`",
+                  " * or you didn't set `tracesSampleRate`, this function will not generate spans",
+                  " * and the `span` returned from the callback will be undefined.",
+                  " */",
+                  "function startSpan(context, callback) {",
+                  "  const spanContext = normalizeContext(context);",
+                  ""
+                ]
+              },
+              {
+                "colno": 36,
+                "context_line": "    return registry.__SENTRY__.acs.runWithAsyncContext(callback, options);",
+                "filename": "[[FILENAME12]]",
+                "function": "Object.runWithAsyncContext",
+                "in_app": false,
+                "lineno": 777,
+                "module": "@sentry.core.cjs:hub",
+                "post_context": [
+                  "  }",
+                  "",
+                  "  // if there was no strategy, fallback to just calling the callback",
+                  "  return callback();",
+                  "}",
+                  "",
+                  "/**"
+                ],
+                "pre_context": [
+                  " * @param options Options to pass to the async context strategy",
+                  " * @returns The result of the callback",
+                  " */",
+                  "function runWithAsyncContext(callback, options = {}) {",
+                  "  const registry = getMainCarrier();",
+                  "",
+                  "  if (registry.__SENTRY__ && registry.__SENTRY__.acs) {"
+                ]
+              },
+              {
+                "colno": 25,
+                "context_line": "    return asyncStorage.run(newHub, () => {",
+                "filename": "[[FILENAME13]]",
+                "function": "Object.runWithAsyncContext",
+                "in_app": false,
+                "lineno": 45,
+                "module": "@sentry.node.cjs.async:hooks",
+                "post_context": [
+                  "      return callback();",
+                  "    });",
+                  "  }",
+                  "",
+                  "  core.setAsyncContextStrategy({ getCurrentHub, runWithAsyncContext });",
+                  "}",
+                  ""
+                ],
+                "pre_context": [
+                  "      // We're already in an async context, so we don't need to create a new one",
+                  "      // just call the callback with the current hub",
+                  "      return callback();",
+                  "    }",
+                  "",
+                  "    const newHub = createNewHub(existingHub);",
+                  ""
+                ]
+              },
+              {
+                "colno": 14,
+                "filename": "[[FILENAME7]]",
                 "function": "AsyncLocalStorage.run",
                 "in_app": false,
                 "lineno": 346,
@@ -603,87 +967,277 @@
               },
               {
                 "colno": 14,
-                "filename": "[[FILENAME9]]",
-                "function": "eval",
+                "context_line": "      return callback();",
+                "filename": "[[FILENAME13]]",
+                "function": "<anonymous>",
                 "in_app": false,
-                "lineno": 49,
-                "module": "@sentry.node.esm.async:hooks"
+                "lineno": 46,
+                "module": "@sentry.node.cjs.async:hooks",
+                "post_context": [
+                  "    });",
+                  "  }",
+                  "",
+                  "  core.setAsyncContextStrategy({ getCurrentHub, runWithAsyncContext });",
+                  "}",
+                  "",
+                  "exports.setHooksAsyncContextStrategy = setHooksAsyncContextStrategy;"
+                ],
+                "pre_context": [
+                  "      // just call the callback with the current hub",
+                  "      return callback();",
+                  "    }",
+                  "",
+                  "    const newHub = createNewHub(existingHub);",
+                  "",
+                  "    return asyncStorage.run(newHub, () => {"
+                ]
               },
               {
-                "colno": 66,
-                "filename": "[[FILENAME10]]",
-                "function": "eval",
+                "colno": 22,
+                "context_line": "    return exports$1.withScope(context.scope, scope => {",
+                "filename": "[[FILENAME14]]",
+                "function": "<anonymous>",
                 "in_app": false,
-                "lineno": 102,
-                "module": "@sentry.core.esm.tracing:trace"
+                "lineno": 83,
+                "module": "@sentry.core.cjs.tracing:trace",
+                "post_context": [
+                  "      // eslint-disable-next-line deprecation/deprecation",
+                  "      const hub$1 = hub.getCurrentHub();",
+                  "      // eslint-disable-next-line deprecation/deprecation",
+                  "      const parentSpan = scope.getSpan();",
+                  "",
+                  "      const shouldSkipSpan = context.onlyIfParent && !parentSpan;",
+                  "      const activeSpan = shouldSkipSpan"
+                ],
+                "pre_context": [
+                  " * or you didn't set `tracesSampleRate`, this function will not generate spans",
+                  " * and the `span` returned from the callback will be undefined.",
+                  " */",
+                  "function startSpan(context, callback) {",
+                  "  const spanContext = normalizeContext(context);",
+                  "",
+                  "  return hub.runWithAsyncContext(() => {"
+                ]
               },
               {
-                "colno": 18,
-                "filename": "[[FILENAME7]]",
-                "function": "withScope",
+                "colno": 20,
+                "context_line": "      return hub$1.withScope(callback);",
+                "filename": "[[FILENAME11]]",
+                "function": "Object.withScope",
                 "in_app": false,
-                "lineno": 214,
-                "module": "@sentry.core.esm:exports"
+                "lineno": 177,
+                "module": "@sentry.core.cjs:exports",
+                "post_context": [
+                  "    }",
+                  "",
+                  "    // eslint-disable-next-line deprecation/deprecation",
+                  "    return hub$1.withScope(() => {",
+                  "      // eslint-disable-next-line deprecation/deprecation",
+                  "      hub$1.getStackTop().scope = scope ;",
+                  "      return callback(scope );"
+                ],
+                "pre_context": [
+                  "  const hub$1 = hub.getCurrentHub();",
+                  "",
+                  "  // If a scope is defined, we want to make this the active scope instead of the default one",
+                  "  if (rest.length === 2) {",
+                  "    const [scope, callback] = rest;",
+                  "    if (!scope) {",
+                  "      // eslint-disable-next-line deprecation/deprecation"
+                ]
               },
               {
                 "colno": 28,
-                "filename": "[[FILENAME8]]",
+                "context_line": "      maybePromiseResult = callback(scope);",
+                "filename": "[[FILENAME12]]",
                 "function": "Hub.withScope",
                 "in_app": false,
-                "lineno": 216,
-                "module": "@sentry.core.esm:hub"
+                "lineno": 194,
+                "module": "@sentry.core.cjs:hub",
+                "post_context": [
+                  "    } catch (e) {",
+                  "      // eslint-disable-next-line deprecation/deprecation",
+                  "      this.popScope();",
+                  "      throw e;",
+                  "    }",
+                  "",
+                  "    if (utils.isThenable(maybePromiseResult)) {"
+                ],
+                "pre_context": [
+                  "   */",
+                  "   withScope(callback) {",
+                  "    // eslint-disable-next-line deprecation/deprecation",
+                  "    const scope = this.pushScope();",
+                  "",
+                  "    let maybePromiseResult;",
+                  "    try {"
+                ]
               },
               {
-                "colno": 98,
-                "filename": "[[FILENAME10]]",
-                "function": "eval",
+                "colno": 35,
+                "context_line": "      return handleCallbackErrors.handleCallbackErrors(",
+                "filename": "[[FILENAME14]]",
+                "function": "<anonymous>",
                 "in_app": false,
-                "lineno": 118,
-                "module": "@sentry.core.esm.tracing:trace"
+                "lineno": 99,
+                "module": "@sentry.core.cjs.tracing:trace",
+                "post_context": [
+                  "        () => callback(activeSpan),",
+                  "        () => {",
+                  "          // Only update the span status if it hasn't been changed yet",
+                  "          if (activeSpan) {",
+                  "            const { status } = spanUtils.spanToJSON(activeSpan);",
+                  "            if (!status || status === 'ok') {",
+                  "              activeSpan.setStatus('internal_error');"
+                ],
+                "pre_context": [
+                  "        : createChildSpanOrTransaction(hub$1, {",
+                  "            parentSpan,",
+                  "            spanContext,",
+                  "            forceTransaction: context.forceTransaction,",
+                  "            scope,",
+                  "          });",
+                  ""
+                ]
               },
               {
                 "colno": 26,
-                "filename": "[[FILENAME11]]",
-                "function": "handleCallbackErrors",
+                "context_line": "    maybePromiseResult = fn();",
+                "filename": "[[FILENAME15]]",
+                "function": "Object.handleCallbackErrors",
                 "in_app": false,
-                "lineno": 29,
-                "module": "@sentry.core.esm.utils:handleCallbackErrors"
+                "lineno": 26,
+                "module": "@sentry.core.cjs.utils:handleCallbackErrors",
+                "post_context": [
+                  "  } catch (e) {",
+                  "    onError(e);",
+                  "    onFinally();",
+                  "    throw e;",
+                  "  }",
+                  "",
+                  "  return maybeHandlePromiseRejection(maybePromiseResult, onError, onFinally);"
+                ],
+                "pre_context": [
+                  "  fn,",
+                  "  onError,",
+                  "  // eslint-disable-next-line @typescript-eslint/no-empty-function",
+                  "  onFinally = () => {},",
+                  ") {",
+                  "  let maybePromiseResult;",
+                  "  try {"
+                ]
               },
               {
                 "colno": 15,
-                "filename": "[[FILENAME10]]",
-                "function": "status.status",
+                "context_line": "        () => callback(activeSpan),",
+                "filename": "[[FILENAME14]]",
+                "function": "handleCallbackErrors.handleCallbackErrors.status.status",
                 "in_app": false,
-                "lineno": 119,
-                "module": "@sentry.core.esm.tracing:trace"
+                "lineno": 100,
+                "module": "@sentry.core.cjs.tracing:trace",
+                "post_context": [
+                  "        () => {",
+                  "          // Only update the span status if it hasn't been changed yet",
+                  "          if (activeSpan) {",
+                  "            const { status } = spanUtils.spanToJSON(activeSpan);",
+                  "            if (!status || status === 'ok') {",
+                  "              activeSpan.setStatus('internal_error');",
+                  "            }"
+                ],
+                "pre_context": [
+                  "            parentSpan,",
+                  "            spanContext,",
+                  "            forceTransaction: context.forceTransaction,",
+                  "            scope,",
+                  "          });",
+                  "",
+                  "      return handleCallbackErrors.handleCallbackErrors("
+                ]
               },
               {
-                "colno": 108,
-                "filename": "[[FILENAME6]]",
-                "function": "eval",
+                "colno": 47,
+                "context_line": "                  const response = await core.handleCallbackErrors(",
+                "filename": "[[FILENAME10]]",
+                "function": "<anonymous>",
                 "in_app": false,
-                "lineno": 60,
-                "module": "@sentry.nextjs.esm.common:wrapRouteHandlerWithSentry"
+                "lineno": 50,
+                "module": "@sentry.nextjs.cjs.common:wrapRouteHandlerWithSentry",
+                "post_context": [
+                  "                    () => originalFunction.apply(thisArg, args),",
+                  "                    error => {",
+                  "                      // Next.js throws errors when calling `redirect()`. We don't wanna report these.",
+                  "                      if (!nextNavigationErrorUtils.isRedirectNavigationError(error)) {",
+                  "                        core.captureException(error, {",
+                  "                          mechanism: {",
+                  "                            handled: false,"
+                ],
+                "pre_context": [
+                  "                  name: `${method} ${parameterizedRoute}`,",
+                  "                  attributes: {",
+                  "                    [core.SEMANTIC_ATTRIBUTE_SENTRY_SOURCE]: 'route',",
+                  "                    [core.SEMANTIC_ATTRIBUTE_SENTRY_ORIGIN]: 'auto.function.nextjs',",
+                  "                  },",
+                  "                },",
+                  "                async span => {"
+                ]
               },
               {
                 "colno": 26,
-                "filename": "[[FILENAME11]]",
-                "function": "handleCallbackErrors",
+                "context_line": "    maybePromiseResult = fn();",
+                "filename": "[[FILENAME15]]",
+                "function": "Object.handleCallbackErrors",
                 "in_app": false,
-                "lineno": 29,
-                "module": "@sentry.core.esm.utils:handleCallbackErrors"
+                "lineno": 26,
+                "module": "@sentry.core.cjs.utils:handleCallbackErrors",
+                "post_context": [
+                  "  } catch (e) {",
+                  "    onError(e);",
+                  "    onFinally();",
+                  "    throw e;",
+                  "  }",
+                  "",
+                  "  return maybeHandlePromiseRejection(maybePromiseResult, onError, onFinally);"
+                ],
+                "pre_context": [
+                  "  fn,",
+                  "  onError,",
+                  "  // eslint-disable-next-line @typescript-eslint/no-empty-function",
+                  "  onFinally = () => {},",
+                  ") {",
+                  "  let maybePromiseResult;",
+                  "  try {"
+                ]
               },
               {
                 "colno": 44,
-                "filename": "[[FILENAME6]]",
-                "function": "eval",
+                "context_line": "                    () => originalFunction.apply(thisArg, args),",
+                "filename": "[[FILENAME10]]",
+                "function": "<anonymous>",
                 "in_app": false,
-                "lineno": 61,
-                "module": "@sentry.nextjs.esm.common:wrapRouteHandlerWithSentry"
+                "lineno": 51,
+                "module": "@sentry.nextjs.cjs.common:wrapRouteHandlerWithSentry",
+                "post_context": [
+                  "                    error => {",
+                  "                      // Next.js throws errors when calling `redirect()`. We don't wanna report these.",
+                  "                      if (!nextNavigationErrorUtils.isRedirectNavigationError(error)) {",
+                  "                        core.captureException(error, {",
+                  "                          mechanism: {",
+                  "                            handled: false,",
+                  "                          },"
+                ],
+                "pre_context": [
+                  "                  attributes: {",
+                  "                    [core.SEMANTIC_ATTRIBUTE_SENTRY_SOURCE]: 'route',",
+                  "                    [core.SEMANTIC_ATTRIBUTE_SENTRY_ORIGIN]: 'auto.function.nextjs',",
+                  "                  },",
+                  "                },",
+                  "                async span => {",
+                  "                  const response = await core.handleCallbackErrors("
+                ]
               },
               {
                 "colno": 11,
-                "filename": "[[FILENAME5]]",
+                "filename": "[[FILENAME9]]",
                 "function": "GET$1",
                 "in_app": false,
                 "lineno": 24,
@@ -696,7 +1250,40 @@
         }
       ]
     },
-    "modules": {},
+    "modules": {
+      "ansi-styles": "4.3.0",
+      "balanced-match": "1.0.2",
+      "brace-expansion": "2.0.1",
+      "caniuse-lite": "1.0.30001610",
+      "commondir": "1.0.1",
+      "estree-walker": "2.0.2",
+      "fs.realpath": "1.0.0",
+      "function-bind": "1.1.2",
+      "has-flag": "4.0.0",
+      "hasown": "2.0.2",
+      "inflight": "1.0.6",
+      "inherits": "2.0.4",
+      "is-core-module": "2.13.1",
+      "is-reference": "1.2.1",
+      "js-tokens": "4.0.0",
+      "localforage": "1.10.0",
+      "loose-envify": "1.4.0",
+      "nanoid": "3.3.7",
+      "next": "13.2.0",
+      "once": "1.4.0",
+      "picocolors": "1.0.0",
+      "picomatch": "2.3.1",
+      "postcss": "8.4.14",
+      "react": "18.2.0",
+      "react-dom": "18.2.0",
+      "resolve": "1.22.8",
+      "rollup": "2.78.0",
+      "scheduler": "0.23.0",
+      "source-map-js": "1.2.0",
+      "stacktrace-parser": "0.1.10",
+      "styled-jsx": "5.1.1",
+      "wrappy": "1.0.2"
+    },
     "platform": "node",
     "request": {
       "cookies": {},
@@ -704,7 +1291,7 @@
         "accept": "*/*",
         "accept-encoding": "gzip, deflate, br",
         "accept-language": "en-US,en;q=0.5",
-        "baggage": "sentry-environment=qa,sentry-public_key=3b6c388182fb435097f41d181be2b2ba,sentry-trace_id=96dcb0026a0f40339970ec59c407bfd4",
+        "baggage": "sentry-environment=qa,sentry-public_key=3b6c388182fb435097f41d181be2b2ba,sentry-trace_id=1e639b3a12f042eb99339c3baac20ffa",
         "cache-control": "no-cache",
         "connection": "keep-alive",
         "host": "localhost:3030",
@@ -713,12 +1300,8 @@
         "sec-fetch-dest": "empty",
         "sec-fetch-mode": "cors",
         "sec-fetch-site": "same-origin",
-        "sentry-trace": "96dcb0026a0f40339970ec59c407bfd4-8bb7fde8e3a10101",
-        "user-agent": "[[user-agent]]",
-        "x-forwarded-for": "::ffff:127.0.0.1",
-        "x-forwarded-host": "localhost:3030",
-        "x-forwarded-port": "3030",
-        "x-forwarded-proto": "http"
+        "sentry-trace": "1e639b3a12f042eb99339c3baac20ffa-84813d02de47733d",
+        "user-agent": "[[user-agent]]"
       },
       "url": "http://localhost:3030"
     },
