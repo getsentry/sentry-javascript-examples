@@ -1029,7 +1029,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^20, @types/node@npm:^20.12.5":
+"@types/node@npm:*, @types/node@npm:20.12.7, @types/node@npm:^20, @types/node@npm:^20.12.5":
   version: 20.12.7
   resolution: "@types/node@npm:20.12.7"
   dependencies:
@@ -1059,7 +1059,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:^18":
+"@types/react-dom@npm:18.2.25, @types/react-dom@npm:^18":
   version: 18.2.25
   resolution: "@types/react-dom@npm:18.2.25"
   dependencies:
@@ -1068,7 +1068,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:^18":
+"@types/react@npm:*, @types/react@npm:18.2.79, @types/react@npm:^18":
   version: 18.2.79
   resolution: "@types/react@npm:18.2.79"
   dependencies:
@@ -4555,6 +4555,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"nextjs-13_2_0-test-application@workspace:apps/nextjs-13_2_0":
+  version: 0.0.0-use.local
+  resolution: "nextjs-13_2_0-test-application@workspace:apps/nextjs-13_2_0"
+  dependencies:
+    "@sentry/nextjs": "npm:7.110.1"
+    "@types/node": "npm:20.12.7"
+    "@types/react": "npm:18.2.79"
+    "@types/react-dom": "npm:18.2.25"
+    next: "npm:14.2.1"
+    react: "npm:18.2.0"
+    react-dom: "npm:18.2.0"
+    typescript: "npm:5.4.5"
+  languageName: unknown
+  linkType: soft
+
 "node-abort-controller@npm:^3.0.1":
   version: 3.1.1
   resolution: "node-abort-controller@npm:3.1.1"
@@ -5104,7 +5119,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-dom@npm:^18":
+"react-dom@npm:18.2.0, react-dom@npm:^18":
   version: 18.2.0
   resolution: "react-dom@npm:18.2.0"
   dependencies:
@@ -5123,7 +5138,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:^18":
+"react@npm:18.2.0, react@npm:^18":
   version: 18.2.0
   resolution: "react@npm:18.2.0"
   dependencies:
@@ -6158,7 +6173,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^5":
+"typescript@npm:5.4.5, typescript@npm:^5":
   version: 5.4.5
   resolution: "typescript@npm:5.4.5"
   bin:
@@ -6188,7 +6203,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A^5#optional!builtin<compat/typescript>":
+"typescript@patch:typescript@npm%3A5.4.5#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5#optional!builtin<compat/typescript>":
   version: 5.4.5
   resolution: "typescript@patch:typescript@npm%3A5.4.5#optional!builtin<compat/typescript>::version=5.4.5&hash=5adc0c"
   bin:

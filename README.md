@@ -8,18 +8,19 @@ example applications can also be used as a reference for using the JS SDKs.
 
 ## How to test apps and save the payloads
 
-1. Change the proxy-server options in  `utils/event-proxy-server/start-event-proxy.ts` 
+1. Change the proxy-server options in `utils/event-proxy-server/start-event-proxy.ts`
    - `appName`: the app folder name you want to test (e.g. `apps/express` -> `appName: 'express'`)
    - `filenameOrigin`: where the filename comes from (usually `url` but sometimes `transactionName`)
 2. Make sure you have a folder named like the app in `payload-files`.
    - Example: `apps/express` -> `payload-files/express`
-3. Run `yarn start:proxy-server`.
-4. Run `yarn start:[app]` like `start:express`.
-5. Check the "Disable Cache" option in the DevTools Network tab of your browser.
-6. Open the following URLs in your browser.
-7. The json file will be generated.
+3. Add an env variable for `E2E_TEST_DSN`
+4. Run `yarn start:proxy-server`.
+5. Run `yarn start:[app]` like `start:express`.
+6. Check the "Disable Cache" option in the DevTools Network tab of your browser.
+7. Open the following URLs in your browser.
+8. The json file will be generated.
 
-### Test URLs
+### Test URLs (for servers like express, fastify)
 
 - http://localhost:3030/test-success
 - http://localhost:3030/test-error
@@ -29,3 +30,8 @@ example applications can also be used as a reference for using the JS SDKs.
 - http://localhost:3030/test-error-manual
 - http://localhost:3030/test-local-variables-caught
 - http://localhost:3030/test-local-variables-uncaught
+
+### Test URLs (for meta frameworks like Next.js)
+
+- http://localhost:3000/test-route-handlers
+  - click all the buttons to make requests

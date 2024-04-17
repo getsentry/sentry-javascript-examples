@@ -1,0 +1,978 @@
+[
+  {
+    "dsn": "[[dsn]]",
+    "event_id": "[[ID1]]",
+    "sdk": {
+      "name": "sentry.javascript.nextjs",
+      "version": "7.110.1"
+    },
+    "sent_at": "[[ISODateString]]",
+    "trace": {
+      "environment": "qa",
+      "public_key": "[[publicKey]]",
+      "sample_rate": "1",
+      "sampled": "true",
+      "trace_id": "[[ID2]]",
+      "transaction": "GET /api/test-param-error/[param]"
+    }
+  },
+  {
+    "type": "transaction"
+  },
+  {
+    "breadcrumbs": [
+      {
+        "category": "console",
+        "level": "log",
+        "message": " \u001b[37m\u001b[1m○\u001b[22m\u001b[39m Compiling /test-route-handlers ...",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled /test-route-handlers in 701ms (1251 modules)",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled /api/test-success in 148ms (748 modules)",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled /api/test-error in 152ms (750 modules)",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled /api/test-param-success/[param] in 143ms (752 modules)",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled /api/test-param-error/[param] in 141ms (754 modules)",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled /api/test-success-manual in 156ms (756 modules)",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled /api/test-error-manual in 160ms (758 modules)",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled /api/test-local-variables-uncaught in 146ms (760 modules)",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "error",
+        "message": " \u001b[31m\u001b[1m⨯\u001b[22m\u001b[39m Error: Uncaught Local Variable Error - {\"randomVariableToRecord\":\"LOCAL_VARIABLE\"}\n    at GET$1 (webpack-internal:///(rsc)/./app/api/test-local-variables-uncaught/route.ts:24:11)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/nextjs/esm/common/wrapRouteHandlerWithSentry.js:61:44)\n    at handleCallbackErrors (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/utils/handleCallbackErrors.js:29:26)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/nextjs/esm/common/wrapRouteHandlerWithSentry.js:60:108)\n    at status.status (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/tracing/trace.js:119:15)\n    at handleCallbackErrors (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/utils/handleCallbackErrors.js:29:26)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/tracing/trace.js:118:98)\n    at Hub.withScope (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/hub.js:216:28)\n    at withScope (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/exports.js:214:18)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/tracing/trace.js:102:66)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/node/esm/async/hooks.js:49:14)\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at Object.runWithAsyncContext (webpack-internal:///(rsc)/../../node_modules/@sentry/node/esm/async/hooks.js:48:25)\n    at runWithAsyncContext (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/hub.js:799:36)\n    at startSpan (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/tracing/trace.js:101:70)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/nextjs/esm/common/wrapRouteHandlerWithSentry.js:50:83)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/tracing/trace.js:290:12)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/node/esm/async/hooks.js:49:14)\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at Object.runWithAsyncContext (webpack-internal:///(rsc)/../../node_modules/@sentry/node/esm/async/hooks.js:48:25)\n    at runWithAsyncContext (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/hub.js:799:36)\n    at continueTrace (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/tracing/trace.js:289:70)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/nextjs/esm/common/wrapRouteHandlerWithSentry.js:43:75)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/exports.js:245:12)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/node/esm/async/hooks.js:49:14)\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at Object.runWithAsyncContext (webpack-internal:///(rsc)/../../node_modules/@sentry/node/esm/async/hooks.js:48:25)\n    at runWithAsyncContext (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/hub.js:799:36)\n    at withIsolationScope (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/exports.js:244:70)\n    at Object.apply (webpack-internal:///(rsc)/../../node_modules/@sentry/nextjs/esm/common/wrapRouteHandlerWithSentry.js:37:78)\n    at Object.apply (webpack-internal:///(rsc)/./app/api/test-local-variables-uncaught/route.ts:64:10)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:53244\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/lib/trace/tracer.js:140:36\n    at NoopContextManager.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:7062)\n    at ContextAPI.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:518)\n    at NoopTracer.startActiveSpan (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:18093)\n    at ProxyTracer.startActiveSpan (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:18854)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/lib/trace/tracer.js:122:103\n    at NoopContextManager.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:7062)\n    at ContextAPI.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:518)\n    at NextTracerImpl.trace (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/lib/trace/tracer.js:122:28)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:46069\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at Object.wrap (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:39157)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:45176\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at Object.wrap (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:37592)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:45138\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at e_.execute (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:44531)",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled /api/test-local-variables-caught in 135ms (762 modules)",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "error",
+        "message": " \u001b[31m\u001b[1m⨯\u001b[22m\u001b[39m Error: Uncaught Local Variable Error - {\"randomVariableToRecord\":\"LOCAL_VARIABLE\"}\n    at GET$1 (webpack-internal:///(rsc)/./app/api/test-local-variables-uncaught/route.ts:24:11)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/nextjs/esm/common/wrapRouteHandlerWithSentry.js:61:44)\n    at handleCallbackErrors (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/utils/handleCallbackErrors.js:29:26)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/nextjs/esm/common/wrapRouteHandlerWithSentry.js:60:108)\n    at status.status (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/tracing/trace.js:119:15)\n    at handleCallbackErrors (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/utils/handleCallbackErrors.js:29:26)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/tracing/trace.js:118:98)\n    at Hub.withScope (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/hub.js:216:28)\n    at withScope (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/exports.js:214:18)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/tracing/trace.js:102:66)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/node/esm/async/hooks.js:49:14)\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at Object.runWithAsyncContext (webpack-internal:///(rsc)/../../node_modules/@sentry/node/esm/async/hooks.js:48:25)\n    at runWithAsyncContext (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/hub.js:799:36)\n    at startSpan (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/tracing/trace.js:101:70)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/nextjs/esm/common/wrapRouteHandlerWithSentry.js:50:83)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/tracing/trace.js:290:12)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/node/esm/async/hooks.js:49:14)\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at Object.runWithAsyncContext (webpack-internal:///(rsc)/../../node_modules/@sentry/node/esm/async/hooks.js:48:25)\n    at runWithAsyncContext (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/hub.js:799:36)\n    at continueTrace (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/tracing/trace.js:289:70)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/nextjs/esm/common/wrapRouteHandlerWithSentry.js:43:75)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/exports.js:245:12)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/node/esm/async/hooks.js:49:14)\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at Object.runWithAsyncContext (webpack-internal:///(rsc)/../../node_modules/@sentry/node/esm/async/hooks.js:48:25)\n    at runWithAsyncContext (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/hub.js:799:36)\n    at withIsolationScope (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/exports.js:244:70)\n    at Object.apply (webpack-internal:///(rsc)/../../node_modules/@sentry/nextjs/esm/common/wrapRouteHandlerWithSentry.js:37:78)\n    at Object.apply (webpack-internal:///(rsc)/./app/api/test-local-variables-uncaught/route.ts:64:10)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:53244\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/lib/trace/tracer.js:140:36\n    at NoopContextManager.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:7062)\n    at ContextAPI.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:518)\n    at NoopTracer.startActiveSpan (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:18093)\n    at ProxyTracer.startActiveSpan (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:18854)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/lib/trace/tracer.js:122:103\n    at NoopContextManager.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:7062)\n    at ContextAPI.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:518)\n    at NextTracerImpl.trace (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/lib/trace/tracer.js:122:28)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:46069\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at Object.wrap (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:39157)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:45176\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at Object.wrap (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:37592)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:45138\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at e_.execute (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:44531)",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "error",
+        "message": " \u001b[31m\u001b[1m⨯\u001b[22m\u001b[39m Error: Uncaught Local Variable Error - {\"randomVariableToRecord\":\"LOCAL_VARIABLE\"}\n    at GET$1 (webpack-internal:///(rsc)/./app/api/test-local-variables-uncaught/route.ts:24:11)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/nextjs/esm/common/wrapRouteHandlerWithSentry.js:61:44)\n    at handleCallbackErrors (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/utils/handleCallbackErrors.js:29:26)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/nextjs/esm/common/wrapRouteHandlerWithSentry.js:60:108)\n    at status.status (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/tracing/trace.js:119:15)\n    at handleCallbackErrors (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/utils/handleCallbackErrors.js:29:26)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/tracing/trace.js:118:98)\n    at Hub.withScope (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/hub.js:216:28)\n    at withScope (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/exports.js:214:18)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/tracing/trace.js:102:66)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/node/esm/async/hooks.js:49:14)\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at Object.runWithAsyncContext (webpack-internal:///(rsc)/../../node_modules/@sentry/node/esm/async/hooks.js:48:25)\n    at runWithAsyncContext (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/hub.js:799:36)\n    at startSpan (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/tracing/trace.js:101:70)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/nextjs/esm/common/wrapRouteHandlerWithSentry.js:50:83)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/tracing/trace.js:290:12)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/node/esm/async/hooks.js:49:14)\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at Object.runWithAsyncContext (webpack-internal:///(rsc)/../../node_modules/@sentry/node/esm/async/hooks.js:48:25)\n    at runWithAsyncContext (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/hub.js:799:36)\n    at continueTrace (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/tracing/trace.js:289:70)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/nextjs/esm/common/wrapRouteHandlerWithSentry.js:43:75)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/exports.js:245:12)\n    at eval (webpack-internal:///(rsc)/../../node_modules/@sentry/node/esm/async/hooks.js:49:14)\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at Object.runWithAsyncContext (webpack-internal:///(rsc)/../../node_modules/@sentry/node/esm/async/hooks.js:48:25)\n    at runWithAsyncContext (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/hub.js:799:36)\n    at withIsolationScope (webpack-internal:///(rsc)/../../node_modules/@sentry/core/esm/exports.js:244:70)\n    at Object.apply (webpack-internal:///(rsc)/../../node_modules/@sentry/nextjs/esm/common/wrapRouteHandlerWithSentry.js:37:78)\n    at Object.apply (webpack-internal:///(rsc)/./app/api/test-local-variables-uncaught/route.ts:64:10)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:53244\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/lib/trace/tracer.js:140:36\n    at NoopContextManager.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:7062)\n    at ContextAPI.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:518)\n    at NoopTracer.startActiveSpan (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:18093)\n    at ProxyTracer.startActiveSpan (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:18854)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/lib/trace/tracer.js:122:103\n    at NoopContextManager.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:7062)\n    at ContextAPI.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/@opentelemetry/api/index.js:1:518)\n    at NextTracerImpl.trace (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/lib/trace/tracer.js:122:28)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:46069\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at Object.wrap (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:39157)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:45176\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at Object.wrap (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:37592)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:45138\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at e_.execute (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/compiled/next-server/app-route.runtime.dev.js:6:44531)",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "http",
+        "data": {
+          "method": "GET",
+          "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fnextjs%2Fesm%2Fcommon%2FwrapRouteHandlerWithSentry.js&methodName=eval&arguments=&lineNumber=61&column=44"
+        },
+        "level": "error",
+        "timestamp": "[[timestamp]]",
+        "type": "http"
+      },
+      {
+        "category": "http",
+        "data": {
+          "method": "GET",
+          "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F.%2Fapp%2Fapi%2Ftest-param-error%2F%5Bparam%5D%2Froute.ts&methodName=GET%241&arguments=&lineNumber=24&column=86"
+        },
+        "level": "error",
+        "timestamp": "[[timestamp]]",
+        "type": "http"
+      },
+      {
+        "category": "http",
+        "data": {
+          "method": "GET",
+          "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fcore%2Fesm%2Futils%2FhandleCallbackErrors.js&methodName=handleCallbackErrors&arguments=&lineNumber=29&column=26"
+        },
+        "level": "error",
+        "timestamp": "[[timestamp]]",
+        "type": "http"
+      },
+      {
+        "category": "http",
+        "data": {
+          "method": "GET",
+          "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fnextjs%2Fesm%2Fcommon%2FwrapRouteHandlerWithSentry.js&methodName=eval&arguments=&lineNumber=60&column=108"
+        },
+        "level": "error",
+        "timestamp": "[[timestamp]]",
+        "type": "http"
+      },
+      {
+        "category": "http",
+        "data": {
+          "method": "GET",
+          "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fcore%2Fesm%2Ftracing%2Ftrace.js&methodName=eval&arguments=&lineNumber=118&column=98"
+        },
+        "level": "error",
+        "timestamp": "[[timestamp]]",
+        "type": "http"
+      },
+      {
+        "category": "http",
+        "data": {
+          "method": "GET",
+          "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fcore%2Fesm%2Ftracing%2Ftrace.js&methodName=status.status&arguments=&lineNumber=119&column=15"
+        },
+        "level": "error",
+        "timestamp": "[[timestamp]]",
+        "type": "http"
+      },
+      {
+        "category": "http",
+        "data": {
+          "method": "GET",
+          "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fcore%2Fesm%2Fhub.js&methodName=Hub.withScope&arguments=&lineNumber=216&column=28"
+        },
+        "level": "error",
+        "timestamp": "[[timestamp]]",
+        "type": "http"
+      },
+      {
+        "category": "http",
+        "data": {
+          "method": "GET",
+          "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fcore%2Fesm%2Ftracing%2Ftrace.js&methodName=eval&arguments=&lineNumber=102&column=66"
+        },
+        "level": "error",
+        "timestamp": "[[timestamp]]",
+        "type": "http"
+      },
+      {
+        "category": "http",
+        "data": {
+          "method": "GET",
+          "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fcore%2Fesm%2Fexports.js&methodName=withScope&arguments=&lineNumber=214&column=18"
+        },
+        "level": "error",
+        "timestamp": "[[timestamp]]",
+        "type": "http"
+      },
+      {
+        "category": "http",
+        "data": {
+          "method": "GET",
+          "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fnode%2Fesm%2Fasync%2Fhooks.js&methodName=Object.runWithAsyncContext&arguments=&lineNumber=48&column=25"
+        },
+        "level": "error",
+        "timestamp": "[[timestamp]]",
+        "type": "http"
+      },
+      {
+        "category": "http",
+        "data": {
+          "method": "GET",
+          "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fnode%2Fesm%2Fasync%2Fhooks.js&methodName=eval&arguments=&lineNumber=49&column=14"
+        },
+        "level": "error",
+        "timestamp": "[[timestamp]]",
+        "type": "http"
+      },
+      {
+        "category": "http",
+        "data": {
+          "method": "GET",
+          "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fcore%2Fesm%2Ftracing%2Ftrace.js&methodName=startSpan&arguments=&lineNumber=101&column=70"
+        },
+        "level": "error",
+        "timestamp": "[[timestamp]]",
+        "type": "http"
+      },
+      {
+        "category": "http",
+        "data": {
+          "method": "GET",
+          "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fnextjs%2Fesm%2Fcommon%2FwrapRouteHandlerWithSentry.js&methodName=eval&arguments=&lineNumber=50&column=83"
+        },
+        "level": "error",
+        "timestamp": "[[timestamp]]",
+        "type": "http"
+      },
+      {
+        "category": "http",
+        "data": {
+          "method": "GET",
+          "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fcore%2Fesm%2Fhub.js&methodName=runWithAsyncContext&arguments=&lineNumber=799&column=36"
+        },
+        "level": "error",
+        "timestamp": "[[timestamp]]",
+        "type": "http"
+      },
+      {
+        "category": "http",
+        "data": {
+          "method": "GET",
+          "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fcore%2Fesm%2Ftracing%2Ftrace.js&methodName=eval&arguments=&lineNumber=290&column=12"
+        },
+        "level": "error",
+        "timestamp": "[[timestamp]]",
+        "type": "http"
+      },
+      {
+        "category": "http",
+        "data": {
+          "method": "GET",
+          "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fnextjs%2Fesm%2Fcommon%2FwrapRouteHandlerWithSentry.js&methodName=eval&arguments=&lineNumber=43&column=75"
+        },
+        "level": "error",
+        "timestamp": "[[timestamp]]",
+        "type": "http"
+      },
+      {
+        "category": "http",
+        "data": {
+          "method": "GET",
+          "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fcore%2Fesm%2Ftracing%2Ftrace.js&methodName=continueTrace&arguments=&lineNumber=289&column=70"
+        },
+        "level": "error",
+        "timestamp": "[[timestamp]]",
+        "type": "http"
+      },
+      {
+        "category": "http",
+        "data": {
+          "method": "GET",
+          "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fcore%2Fesm%2Fexports.js&methodName=eval&arguments=&lineNumber=245&column=12"
+        },
+        "level": "error",
+        "timestamp": "[[timestamp]]",
+        "type": "http"
+      },
+      {
+        "category": "http",
+        "data": {
+          "method": "GET",
+          "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fcore%2Fesm%2Fexports.js&methodName=withIsolationScope&arguments=&lineNumber=244&column=70"
+        },
+        "level": "error",
+        "timestamp": "[[timestamp]]",
+        "type": "http"
+      },
+      {
+        "category": "http",
+        "data": {
+          "method": "GET",
+          "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F.%2Fapp%2Fapi%2Ftest-param-error%2F%5Bparam%5D%2Froute.ts&methodName=Object.apply&arguments=&lineNumber=70&column=10"
+        },
+        "level": "error",
+        "timestamp": "[[timestamp]]",
+        "type": "http"
+      },
+      {
+        "category": "http",
+        "data": {
+          "method": "GET",
+          "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fnextjs%2Fesm%2Fcommon%2FwrapRouteHandlerWithSentry.js&methodName=Object.apply&arguments=&lineNumber=37&column=78"
+        },
+        "level": "error",
+        "timestamp": "[[timestamp]]",
+        "type": "http"
+      },
+      {
+        "category": "http",
+        "data": {
+          "method": "GET",
+          "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fcore%2Fesm%2Futils%2FhandleCallbackErrors.js&methodName=handleCallbackErrors&arguments=&lineNumber=29&column=26"
+        },
+        "level": "error",
+        "timestamp": "[[timestamp]]",
+        "type": "http"
+      },
+      {
+        "category": "http",
+        "data": {
+          "method": "GET",
+          "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fnode%2Fesm%2Fasync%2Fhooks.js&methodName=Object.runWithAsyncContext&arguments=&lineNumber=48&column=25"
+        },
+        "level": "error",
+        "timestamp": "[[timestamp]]",
+        "type": "http"
+      },
+      {
+        "category": "http",
+        "data": {
+          "method": "GET",
+          "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fnode%2Fesm%2Fasync%2Fhooks.js&methodName=Object.runWithAsyncContext&arguments=&lineNumber=48&column=25"
+        },
+        "level": "error",
+        "timestamp": "[[timestamp]]",
+        "type": "http"
+      },
+      {
+        "category": "http",
+        "data": {
+          "method": "GET",
+          "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fnode%2Fesm%2Fasync%2Fhooks.js&methodName=eval&arguments=&lineNumber=49&column=14"
+        },
+        "level": "error",
+        "timestamp": "[[timestamp]]",
+        "type": "http"
+      },
+      {
+        "category": "http",
+        "data": {
+          "method": "GET",
+          "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fnode%2Fesm%2Fasync%2Fhooks.js&methodName=eval&arguments=&lineNumber=49&column=14"
+        },
+        "level": "error",
+        "timestamp": "[[timestamp]]",
+        "type": "http"
+      },
+      {
+        "category": "http",
+        "data": {
+          "method": "GET",
+          "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fcore%2Fesm%2Fhub.js&methodName=runWithAsyncContext&arguments=&lineNumber=799&column=36"
+        },
+        "level": "error",
+        "timestamp": "[[timestamp]]",
+        "type": "http"
+      },
+      {
+        "category": "http",
+        "data": {
+          "method": "GET",
+          "url": "http://localhost:3000/__nextjs_original-stack-frame?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fcore%2Fesm%2Fhub.js&methodName=runWithAsyncContext&arguments=&lineNumber=799&column=36"
+        },
+        "level": "error",
+        "timestamp": "[[timestamp]]",
+        "type": "http"
+      }
+    ],
+    "contexts": {
+      "app": {
+        "app_memory": "[[highNumber]]",
+        "app_start_time": "[[ISODateString]]"
+      },
+      "cloud_resource": {},
+      "culture": {
+        "locale": "en-US",
+        "timezone": "Europe/Vienna"
+      },
+      "device": {
+        "arch": "arm64",
+        "boot_time": "[[ISODateString]]",
+        "cpu_description": "Apple M1 Pro",
+        "free_memory": "[[highNumber]]",
+        "memory_size": "[[highNumber]]",
+        "processor_count": 10,
+        "processor_frequency": "[[highNumber]]"
+      },
+      "os": {
+        "build": "23C64",
+        "kernel_version": "23.2.0",
+        "name": "macOS",
+        "version": "14.2"
+      },
+      "runtime": {
+        "name": "node",
+        "version": "v20.12.1"
+      },
+      "trace": {
+        "data": {
+          "http.response.status_code": 200,
+          "sentry.op": "http.server",
+          "sentry.origin": "auto.function.nextjs",
+          "sentry.sample_rate": 1,
+          "sentry.source": "route"
+        },
+        "op": "http.server",
+        "origin": "auto.function.nextjs",
+        "span_id": "[[ID3]]",
+        "status": "ok",
+        "tags": {
+          "http.status_code": "200"
+        },
+        "trace_id": "[[ID2]]"
+      }
+    },
+    "environment": "qa",
+    "event_id": "[[ID1]]",
+    "modules": {},
+    "platform": "node",
+    "request": {
+      "cookies": {},
+      "headers": {
+        "accept": "*/*",
+        "accept-encoding": "gzip, deflate, br",
+        "accept-language": "en-US,en;q=0.5",
+        "cache-control": "no-cache",
+        "connection": "keep-alive",
+        "host": "localhost:3030",
+        "pragma": "no-cache",
+        "referer": "http://localhost:3030/test-route-handlers",
+        "sec-fetch-dest": "empty",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "same-origin",
+        "user-agent": "[[user-agent]]",
+        "x-forwarded-for": "::ffff:127.0.0.1",
+        "x-forwarded-host": "localhost:3030",
+        "x-forwarded-port": "3030",
+        "x-forwarded-proto": "http"
+      },
+      "url": "http://localhost:3030"
+    },
+    "sdk": {
+      "integrations": [
+        "InboundFilters",
+        "FunctionToString",
+        "LinkedErrors",
+        "RequestData",
+        "Console",
+        "Undici",
+        "OnUnhandledRejection",
+        "ContextLines",
+        "LocalVariables",
+        "Context",
+        "Modules",
+        "RewriteFrames",
+        "Http",
+        "OnUncaughtException"
+      ],
+      "name": "sentry.javascript.nextjs",
+      "packages": [
+        {
+          "name": "npm:@sentry/nextjs",
+          "version": "7.110.1"
+        },
+        {
+          "name": "npm:@sentry/node",
+          "version": "7.110.1"
+        }
+      ],
+      "version": "7.110.1"
+    },
+    "server_name": "D9M3PY4LQ7.local",
+    "spans": [
+      {
+        "data": {
+          "http.method": "GET",
+          "http.query": "?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F.%2Fapp%2Fapi%2Ftest-param-error%2F%5Bparam%5D%2Froute.ts&methodName=GET%241&arguments=&lineNumber=24&column=86",
+          "sentry.op": "http.client",
+          "sentry.origin": "auto.http.node.undici"
+        },
+        "description": "GET http://localhost:3000/__nextjs_original-stack-frame",
+        "op": "http.client",
+        "origin": "auto.http.node.undici",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID4]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "internal_error",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "http.method": "GET",
+          "http.query": "?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fnextjs%2Fesm%2Fcommon%2FwrapRouteHandlerWithSentry.js&methodName=eval&arguments=&lineNumber=61&column=44",
+          "sentry.op": "http.client",
+          "sentry.origin": "auto.http.node.undici"
+        },
+        "description": "GET http://localhost:3000/__nextjs_original-stack-frame",
+        "op": "http.client",
+        "origin": "auto.http.node.undici",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID5]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "internal_error",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "http.method": "GET",
+          "http.query": "?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fcore%2Fesm%2Futils%2FhandleCallbackErrors.js&methodName=handleCallbackErrors&arguments=&lineNumber=29&column=26",
+          "sentry.op": "http.client",
+          "sentry.origin": "auto.http.node.undici"
+        },
+        "description": "GET http://localhost:3000/__nextjs_original-stack-frame",
+        "op": "http.client",
+        "origin": "auto.http.node.undici",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID6]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "internal_error",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "http.method": "GET",
+          "http.query": "?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fnextjs%2Fesm%2Fcommon%2FwrapRouteHandlerWithSentry.js&methodName=eval&arguments=&lineNumber=60&column=108",
+          "sentry.op": "http.client",
+          "sentry.origin": "auto.http.node.undici"
+        },
+        "description": "GET http://localhost:3000/__nextjs_original-stack-frame",
+        "op": "http.client",
+        "origin": "auto.http.node.undici",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID7]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "internal_error",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "http.method": "GET",
+          "http.query": "?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fcore%2Fesm%2Ftracing%2Ftrace.js&methodName=status.status&arguments=&lineNumber=119&column=15",
+          "sentry.op": "http.client",
+          "sentry.origin": "auto.http.node.undici"
+        },
+        "description": "GET http://localhost:3000/__nextjs_original-stack-frame",
+        "op": "http.client",
+        "origin": "auto.http.node.undici",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID8]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "internal_error",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "http.method": "GET",
+          "http.query": "?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fcore%2Fesm%2Ftracing%2Ftrace.js&methodName=eval&arguments=&lineNumber=118&column=98",
+          "sentry.op": "http.client",
+          "sentry.origin": "auto.http.node.undici"
+        },
+        "description": "GET http://localhost:3000/__nextjs_original-stack-frame",
+        "op": "http.client",
+        "origin": "auto.http.node.undici",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID9]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "internal_error",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "http.method": "GET",
+          "http.query": "?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fcore%2Fesm%2Fhub.js&methodName=Hub.withScope&arguments=&lineNumber=216&column=28",
+          "sentry.op": "http.client",
+          "sentry.origin": "auto.http.node.undici"
+        },
+        "description": "GET http://localhost:3000/__nextjs_original-stack-frame",
+        "op": "http.client",
+        "origin": "auto.http.node.undici",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID10]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "internal_error",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "http.method": "GET",
+          "http.query": "?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fcore%2Fesm%2Fexports.js&methodName=withScope&arguments=&lineNumber=214&column=18",
+          "sentry.op": "http.client",
+          "sentry.origin": "auto.http.node.undici"
+        },
+        "description": "GET http://localhost:3000/__nextjs_original-stack-frame",
+        "op": "http.client",
+        "origin": "auto.http.node.undici",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID11]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "internal_error",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "http.method": "GET",
+          "http.query": "?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fcore%2Fesm%2Ftracing%2Ftrace.js&methodName=eval&arguments=&lineNumber=102&column=66",
+          "sentry.op": "http.client",
+          "sentry.origin": "auto.http.node.undici"
+        },
+        "description": "GET http://localhost:3000/__nextjs_original-stack-frame",
+        "op": "http.client",
+        "origin": "auto.http.node.undici",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID12]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "internal_error",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "http.method": "GET",
+          "http.query": "?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fnode%2Fesm%2Fasync%2Fhooks.js&methodName=eval&arguments=&lineNumber=49&column=14",
+          "sentry.op": "http.client",
+          "sentry.origin": "auto.http.node.undici"
+        },
+        "description": "GET http://localhost:3000/__nextjs_original-stack-frame",
+        "op": "http.client",
+        "origin": "auto.http.node.undici",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID13]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "internal_error",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "http.method": "GET",
+          "http.query": "?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fnode%2Fesm%2Fasync%2Fhooks.js&methodName=Object.runWithAsyncContext&arguments=&lineNumber=48&column=25",
+          "sentry.op": "http.client",
+          "sentry.origin": "auto.http.node.undici"
+        },
+        "description": "GET http://localhost:3000/__nextjs_original-stack-frame",
+        "op": "http.client",
+        "origin": "auto.http.node.undici",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID14]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "internal_error",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "http.method": "GET",
+          "http.query": "?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fcore%2Fesm%2Fhub.js&methodName=runWithAsyncContext&arguments=&lineNumber=799&column=36",
+          "sentry.op": "http.client",
+          "sentry.origin": "auto.http.node.undici"
+        },
+        "description": "GET http://localhost:3000/__nextjs_original-stack-frame",
+        "op": "http.client",
+        "origin": "auto.http.node.undici",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID15]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "internal_error",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "http.method": "GET",
+          "http.query": "?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fcore%2Fesm%2Ftracing%2Ftrace.js&methodName=startSpan&arguments=&lineNumber=101&column=70",
+          "sentry.op": "http.client",
+          "sentry.origin": "auto.http.node.undici"
+        },
+        "description": "GET http://localhost:3000/__nextjs_original-stack-frame",
+        "op": "http.client",
+        "origin": "auto.http.node.undici",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID16]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "internal_error",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "http.method": "GET",
+          "http.query": "?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fnextjs%2Fesm%2Fcommon%2FwrapRouteHandlerWithSentry.js&methodName=eval&arguments=&lineNumber=50&column=83",
+          "sentry.op": "http.client",
+          "sentry.origin": "auto.http.node.undici"
+        },
+        "description": "GET http://localhost:3000/__nextjs_original-stack-frame",
+        "op": "http.client",
+        "origin": "auto.http.node.undici",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID17]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "internal_error",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "http.method": "GET",
+          "http.query": "?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fcore%2Fesm%2Ftracing%2Ftrace.js&methodName=eval&arguments=&lineNumber=290&column=12",
+          "sentry.op": "http.client",
+          "sentry.origin": "auto.http.node.undici"
+        },
+        "description": "GET http://localhost:3000/__nextjs_original-stack-frame",
+        "op": "http.client",
+        "origin": "auto.http.node.undici",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID18]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "internal_error",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "http.method": "GET",
+          "http.query": "?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fcore%2Fesm%2Ftracing%2Ftrace.js&methodName=continueTrace&arguments=&lineNumber=289&column=70",
+          "sentry.op": "http.client",
+          "sentry.origin": "auto.http.node.undici"
+        },
+        "description": "GET http://localhost:3000/__nextjs_original-stack-frame",
+        "op": "http.client",
+        "origin": "auto.http.node.undici",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID19]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "internal_error",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "http.method": "GET",
+          "http.query": "?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fnextjs%2Fesm%2Fcommon%2FwrapRouteHandlerWithSentry.js&methodName=eval&arguments=&lineNumber=43&column=75",
+          "sentry.op": "http.client",
+          "sentry.origin": "auto.http.node.undici"
+        },
+        "description": "GET http://localhost:3000/__nextjs_original-stack-frame",
+        "op": "http.client",
+        "origin": "auto.http.node.undici",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID20]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "internal_error",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "http.method": "GET",
+          "http.query": "?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fcore%2Fesm%2Fexports.js&methodName=eval&arguments=&lineNumber=245&column=12",
+          "sentry.op": "http.client",
+          "sentry.origin": "auto.http.node.undici"
+        },
+        "description": "GET http://localhost:3000/__nextjs_original-stack-frame",
+        "op": "http.client",
+        "origin": "auto.http.node.undici",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID21]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "internal_error",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "http.method": "GET",
+          "http.query": "?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fcore%2Fesm%2Fexports.js&methodName=withIsolationScope&arguments=&lineNumber=244&column=70",
+          "sentry.op": "http.client",
+          "sentry.origin": "auto.http.node.undici"
+        },
+        "description": "GET http://localhost:3000/__nextjs_original-stack-frame",
+        "op": "http.client",
+        "origin": "auto.http.node.undici",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID22]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "internal_error",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "http.method": "GET",
+          "http.query": "?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fnextjs%2Fesm%2Fcommon%2FwrapRouteHandlerWithSentry.js&methodName=Object.apply&arguments=&lineNumber=37&column=78",
+          "sentry.op": "http.client",
+          "sentry.origin": "auto.http.node.undici"
+        },
+        "description": "GET http://localhost:3000/__nextjs_original-stack-frame",
+        "op": "http.client",
+        "origin": "auto.http.node.undici",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID23]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "internal_error",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "http.method": "GET",
+          "http.query": "?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F.%2Fapp%2Fapi%2Ftest-param-error%2F%5Bparam%5D%2Froute.ts&methodName=Object.apply&arguments=&lineNumber=70&column=10",
+          "sentry.op": "http.client",
+          "sentry.origin": "auto.http.node.undici"
+        },
+        "description": "GET http://localhost:3000/__nextjs_original-stack-frame",
+        "op": "http.client",
+        "origin": "auto.http.node.undici",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID24]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "internal_error",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "http.method": "GET",
+          "http.query": "?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fcore%2Fesm%2Futils%2FhandleCallbackErrors.js&methodName=handleCallbackErrors&arguments=&lineNumber=29&column=26",
+          "sentry.op": "http.client",
+          "sentry.origin": "auto.http.node.undici"
+        },
+        "description": "GET http://localhost:3000/__nextjs_original-stack-frame",
+        "op": "http.client",
+        "origin": "auto.http.node.undici",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID25]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "internal_error",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "http.method": "GET",
+          "http.query": "?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fnode%2Fesm%2Fasync%2Fhooks.js&methodName=Object.runWithAsyncContext&arguments=&lineNumber=48&column=25",
+          "sentry.op": "http.client",
+          "sentry.origin": "auto.http.node.undici"
+        },
+        "description": "GET http://localhost:3000/__nextjs_original-stack-frame",
+        "op": "http.client",
+        "origin": "auto.http.node.undici",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID26]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "internal_error",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "http.method": "GET",
+          "http.query": "?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fnode%2Fesm%2Fasync%2Fhooks.js&methodName=Object.runWithAsyncContext&arguments=&lineNumber=48&column=25",
+          "sentry.op": "http.client",
+          "sentry.origin": "auto.http.node.undici"
+        },
+        "description": "GET http://localhost:3000/__nextjs_original-stack-frame",
+        "op": "http.client",
+        "origin": "auto.http.node.undici",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID27]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "internal_error",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "http.method": "GET",
+          "http.query": "?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fnode%2Fesm%2Fasync%2Fhooks.js&methodName=eval&arguments=&lineNumber=49&column=14",
+          "sentry.op": "http.client",
+          "sentry.origin": "auto.http.node.undici"
+        },
+        "description": "GET http://localhost:3000/__nextjs_original-stack-frame",
+        "op": "http.client",
+        "origin": "auto.http.node.undici",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID28]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "internal_error",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "http.method": "GET",
+          "http.query": "?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fnode%2Fesm%2Fasync%2Fhooks.js&methodName=eval&arguments=&lineNumber=49&column=14",
+          "sentry.op": "http.client",
+          "sentry.origin": "auto.http.node.undici"
+        },
+        "description": "GET http://localhost:3000/__nextjs_original-stack-frame",
+        "op": "http.client",
+        "origin": "auto.http.node.undici",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID29]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "internal_error",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "http.method": "GET",
+          "http.query": "?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fcore%2Fesm%2Fhub.js&methodName=runWithAsyncContext&arguments=&lineNumber=799&column=36",
+          "sentry.op": "http.client",
+          "sentry.origin": "auto.http.node.undici"
+        },
+        "description": "GET http://localhost:3000/__nextjs_original-stack-frame",
+        "op": "http.client",
+        "origin": "auto.http.node.undici",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID30]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "internal_error",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "http.method": "GET",
+          "http.query": "?isServer=false&isEdgeServer=false&isAppDirectory=true&errorMessage=Error%3A+This+is+an+error&file=webpack-internal%3A%2F%2F%2F%28rsc%29%2F..%2F..%2Fnode_modules%2F%40sentry%2Fcore%2Fesm%2Fhub.js&methodName=runWithAsyncContext&arguments=&lineNumber=799&column=36",
+          "sentry.op": "http.client",
+          "sentry.origin": "auto.http.node.undici"
+        },
+        "description": "GET http://localhost:3000/__nextjs_original-stack-frame",
+        "op": "http.client",
+        "origin": "auto.http.node.undici",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID31]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "internal_error",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      }
+    ],
+    "start_timestamp": "[[timestamp]]",
+    "tags": {
+      "http.status_code": "200",
+      "runtime": "node",
+      "transaction": "GET /api/test-param-error/[param]"
+    },
+    "timestamp": "[[timestamp]]",
+    "transaction": "GET /api/test-param-error/[param]",
+    "transaction_info": {
+      "source": "route"
+    },
+    "type": "transaction"
+  }
+]
