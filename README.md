@@ -8,11 +8,11 @@ example applications can also be used as a reference for using the JS SDKs.
 
 ## How to test apps and save the payloads
 
-1. Change the `APP` variable of `utils/event-proxy-server/src/event-proxy-server.ts` to the app
-   folder name you want to test.
-   - Example: `apps/express` -> `APP = 'express'`
-2. Make sure you have a folder named like the app in `utils/event-proxy-server/payload-files`.
-   - Example: `apps/express` -> `utils/event-proxy-server/payload-files/express`
+1. Change the proxy-server options in  `utils/event-proxy-server/start-event-proxy.ts` 
+   - `appName`: the app folder name you want to test (e.g. `apps/express` -> `appName: 'express'`)
+   - `filenameOrigin`: where the filename comes from (usually `url` but sometimes `transactionName`)
+2. Make sure you have a folder named like the app in `payload-files`.
+   - Example: `apps/express` -> `payload-files/express`
 3. Run `yarn start:proxy-server`.
 4. Run `yarn start:[app]` like `start:express`.
 5. Check the "Disable Cache" option in the DevTools Network tab of your browser.

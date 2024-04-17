@@ -5,12 +5,6 @@ import * as util from 'util';
 import * as zlib from 'zlib';
 import type { Envelope, EnvelopeItem } from '@sentry/types';
 
-// change to folder name of app to test
-const APP = 'express';
-const DIRECTORY = '../../payload-files';
-
-const TEMPORARY_FILE_PATH = `${DIRECTORY}/${APP}/temporary.json`;
-
 const readFile = util.promisify(fs.readFile);
 const writeFile = util.promisify(fs.writeFile);
 const unlink = util.promisify(fs.unlink);
@@ -19,7 +13,12 @@ interface EventProxyServerOptions {
   /** Port to start the event proxy server at. */
   port: number;
   /** The name for the proxy server used for referencing it with listener functions */
-  proxyServerName: string;
+  /* The folder name of the app to test (e.g. 'nextjs-13_2_0' or 'express') */
+  appName: string;
+  /** Change to `url` or `transactionName` depending on what you want to use as filename
+  /*  Using transaction name as filename is useful when testing frameworks (such as Next.js) as
+  /*  the API routes are often called from the client and `url` would just be 'localhost:3030' */
+  filenameOrigin: 'url' | 'transactionName';
 }
 
 interface SentryRequestCallbackData {
@@ -158,9 +157,14 @@ function replaceDynamicValues(jsonData: object[]): object[] {
  *  The new content is saved into a new file with the url as the filename.
  *  The temporary file is deleted in the end.
  */
-async function transformSavedJSON() {
+async function transformSavedJSON(
+  directory: string,
+  appName: string,
+  temporaryFilePath: string,
+  filenameOrigin: 'url' | 'transactionName',
+): Promise<void> {
   try {
-    const data = await readFile(TEMPORARY_FILE_PATH, 'utf8');
+    const data = await readFile(temporaryFilePath, 'utf8');
 
     const jsonData = addCommaAfterEachLine(data);
     const sortedJSON = sortObjectKeys(JSON.parse(jsonData));
@@ -178,20 +182,18 @@ async function transformSavedJSON() {
       const transactionName = objData?.transaction;
       const url = objData?.request?.url || objData.contexts?.trace?.data?.url;
 
-      // Change to `url` or `transactionName` depending on what you want to use as filename
-      // Using transaction name as filename is useful when testing frameworks (such as Next.js) as the API routes are often called from the client and `url` would just be 'localhost:3030'
-      const filename = url; // transactionName;
+      const filename = filenameOrigin === 'transactionName' ? transactionName : url;
 
       if (filename) {
         const replaceForwardSlashes = (str: string) => str.split('/').join('_');
 
-        const filepath = `${DIRECTORY}/${APP}/${replaceForwardSlashes(extractRelevantFileName(filename))}--${type}.json`;
+        const filepath = `${directory}/${appName}/${replaceForwardSlashes(extractRelevantFileName(filename))}--${type}.json`;
 
         writeFile(filepath, JSON.stringify(transformedJSON, null, 2)).then(() => {
           console.log(`Successfully replaced data and saved file in ${filepath}`);
 
-          unlink(TEMPORARY_FILE_PATH).then(() =>
-            console.log(`Successfully deleted ${TEMPORARY_FILE_PATH}`),
+          unlink(temporaryFilePath).then(() =>
+            console.log(`Successfully deleted ${temporaryFilePath}`),
           );
         });
       } else {
@@ -209,7 +211,11 @@ async function transformSavedJSON() {
  *
  */
 export async function startEventProxyServer(options: EventProxyServerOptions): Promise<void> {
-  console.log(`Proxy server "${options.proxyServerName}" running. Waiting for events...`);
+  const APP = options.appName;
+  const DIRECTORY = '../../payload-files';
+  const TEMPORARY_FILE_PATH = `${DIRECTORY}/${APP}/temporary.json`;
+
+  console.log(`Proxy server for "${APP}" running. Waiting for events...`);
 
   const proxyServer = http.createServer((proxyRequest, proxyResponse) => {
     const proxyRequestChunks: Uint8Array[] = [];
@@ -231,7 +237,7 @@ export async function startEventProxyServer(options: EventProxyServerOptions): P
       // save the JSON payload into a file
       try {
         writeFile(TEMPORARY_FILE_PATH, `[${proxyRequestBody}]`).then(() => {
-          transformSavedJSON();
+          transformSavedJSON(DIRECTORY, APP, TEMPORARY_FILE_PATH, options.filenameOrigin);
         });
       } catch (err) {
         console.error(`Error writing file ${TEMPORARY_FILE_PATH}`, err);
