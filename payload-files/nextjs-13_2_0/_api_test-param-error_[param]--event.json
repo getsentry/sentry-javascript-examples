@@ -4,17 +4,9 @@
     "event_id": "[[ID1]]",
     "sdk": {
       "name": "sentry.javascript.nextjs",
-      "version": "7.110.1"
+      "version": "8.0.0-beta.1"
     },
-    "sent_at": "[[ISODateString]]",
-    "trace": {
-      "environment": "qa",
-      "public_key": "[[publicKey]]",
-      "sample_rate": "1",
-      "sampled": "true",
-      "trace_id": "[[ID2]]",
-      "transaction": "GET /api/test-param-error/[param]"
-    }
+    "sent_at": "[[ISODateString]]"
   },
   {
     "type": "event"
@@ -24,49 +16,55 @@
       {
         "category": "console",
         "level": "log",
-        "message": "\u001b[36mwait\u001b[39m  - compiling /api/test-success/route (client and server)...",
+        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Ready in 3.9s",
         "timestamp": "[[timestamp]]"
       },
       {
         "category": "console",
-        "level": "log",
-        "message": "\u001b[35mevent\u001b[39m - compiled client and server successfully in 255 ms (1321 modules)",
+        "level": "warning",
+        "message": " \u001b[33m\u001b[1m⚠\u001b[22m\u001b[39m ../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@prisma/instrumentation/dist/chunk-L6V5ZEAH.js\n../../node_modules/@prisma/instrumentation/dist/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js",
         "timestamp": "[[timestamp]]"
       },
       {
         "category": "console",
-        "level": "log",
-        "message": "\u001b[36mwait\u001b[39m  - compiling /api/test-error/route (client and server)...",
+        "level": "warning",
+        "message": " \u001b[33m\u001b[1m⚠\u001b[22m\u001b[39m ../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@prisma/instrumentation/dist/chunk-L6V5ZEAH.js\n../../node_modules/@prisma/instrumentation/dist/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n./app/api/test-success/route.ts\n\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@prisma/instrumentation/dist/chunk-L6V5ZEAH.js\n../../node_modules/@prisma/instrumentation/dist/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n./app/api/test-success/route.ts",
         "timestamp": "[[timestamp]]"
       },
       {
         "category": "console",
-        "level": "log",
-        "message": "\u001b[35mevent\u001b[39m - compiled successfully in 91 ms (502 modules)",
+        "level": "warning",
+        "message": " \u001b[33m\u001b[1m⚠\u001b[22m\u001b[39m ../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@prisma/instrumentation/dist/chunk-L6V5ZEAH.js\n../../node_modules/@prisma/instrumentation/dist/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n./app/api/test-success/route.ts\n\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@prisma/instrumentation/dist/chunk-L6V5ZEAH.js\n../../node_modules/@prisma/instrumentation/dist/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n./app/api/test-success/route.ts",
         "timestamp": "[[timestamp]]"
       },
       {
         "category": "console",
-        "level": "log",
-        "message": "\u001b[36mwait\u001b[39m  - compiling /api/test-param-success/[param]/route (client and server)...",
+        "level": "warning",
+        "message": " \u001b[33m\u001b[1m⚠\u001b[22m\u001b[39m ../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@prisma/instrumentation/dist/chunk-L6V5ZEAH.js\n../../node_modules/@prisma/instrumentation/dist/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n./app/api/test-success/route.ts\n\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@prisma/instrumentation/dist/chunk-L6V5ZEAH.js\n../../node_modules/@prisma/instrumentation/dist/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n./app/api/test-success/route.ts",
         "timestamp": "[[timestamp]]"
       },
       {
         "category": "console",
-        "level": "log",
-        "message": "\u001b[35mevent\u001b[39m - compiled successfully in 108 ms (502 modules)",
+        "level": "warning",
+        "message": " \u001b[33m\u001b[1m⚠\u001b[22m\u001b[39m ../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@prisma/instrumentation/dist/chunk-L6V5ZEAH.js\n../../node_modules/@prisma/instrumentation/dist/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n./app/api/test-success/route.ts\n\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@prisma/instrumentation/dist/chunk-L6V5ZEAH.js\n../../node_modules/@prisma/instrumentation/dist/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n./app/api/test-success/route.ts",
         "timestamp": "[[timestamp]]"
       },
       {
         "category": "console",
-        "level": "log",
-        "message": "\u001b[36mwait\u001b[39m  - compiling /api/test-param-error/[param]/route (client and server)...",
+        "level": "warning",
+        "message": " \u001b[33m\u001b[1m⚠\u001b[22m\u001b[39m ../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@prisma/instrumentation/dist/chunk-L6V5ZEAH.js\n../../node_modules/@prisma/instrumentation/dist/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n./app/api/test-success/route.ts\n\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@prisma/instrumentation/dist/chunk-L6V5ZEAH.js\n../../node_modules/@prisma/instrumentation/dist/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n./app/api/test-success/route.ts",
         "timestamp": "[[timestamp]]"
       },
       {
         "category": "console",
-        "level": "log",
-        "message": "\u001b[35mevent\u001b[39m - compiled successfully in 98 ms (504 modules)",
+        "level": "warning",
+        "message": " \u001b[33m\u001b[1m⚠\u001b[22m\u001b[39m ../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@prisma/instrumentation/dist/chunk-L6V5ZEAH.js\n../../node_modules/@prisma/instrumentation/dist/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n./app/api/test-success/route.ts\n\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@prisma/instrumentation/dist/chunk-L6V5ZEAH.js\n../../node_modules/@prisma/instrumentation/dist/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n./app/api/test-success/route.ts",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "warning",
+        "message": " \u001b[33m\u001b[1m⚠\u001b[22m\u001b[39m ../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@prisma/instrumentation/dist/chunk-L6V5ZEAH.js\n../../node_modules/@prisma/instrumentation/dist/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n./app/api/test-error/route.ts\n\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@prisma/instrumentation/dist/chunk-L6V5ZEAH.js\n../../node_modules/@prisma/instrumentation/dist/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n./app/api/test-error/route.ts",
         "timestamp": "[[timestamp]]"
       }
     ],
@@ -100,16 +98,9 @@
         "version": "v20.12.1"
       },
       "trace": {
-        "data": {
-          "sentry.op": "http.server",
-          "sentry.origin": "auto.function.nextjs",
-          "sentry.sample_rate": 1,
-          "sentry.source": "route"
-        },
-        "op": "http.server",
-        "origin": "auto.function.nextjs",
+        "parent_span_id": "[[ID2]]",
         "span_id": "[[ID3]]",
-        "trace_id": "[[ID2]]"
+        "trace_id": "[[ID4]]"
       }
     },
     "environment": "qa",
@@ -124,111 +115,165 @@
           "stacktrace": {
             "frames": [
               {
-                "colno": 36,
-                "context_line": "                const cacheEntry = await responseGenerator(resolved, !!cachedResponse);",
+                "colno": 20,
+                "context_line": "            return await super.handleRequest(req, res, parsedUrl);",
                 "filename": "[[FILENAME1]]",
-                "function": "<anonymous>",
+                "function": "?",
                 "in_app": false,
-                "lineno": 83,
-                "module": "next.dist.server.response-cache:index",
+                "lineno": 339,
+                "module": "next.dist.server.dev:next-dev-server",
                 "post_context": [
-                  "                const resolveValue = cacheEntry === null ? null : {",
-                  "                    ...cacheEntry,",
-                  "                    isMiss: !cachedResponse",
-                  "                };",
-                  "                // for manual revalidate wait to resolve until cache is set",
-                  "                if (!context.isManualRevalidate) {",
-                  "                    resolve1(resolveValue);"
+                  "        });",
+                  "        const memoryUsage = process.memoryUsage();",
+                  "        span.traceChild(\"memory-usage\", {",
+                  "            url: req.url,",
+                  "            \"memory.rss\": String(memoryUsage.rss),",
+                  "            \"memory.heapUsed\": String(memoryUsage.heapUsed),",
+                  "            \"memory.heapTotal\": String(memoryUsage.heapTotal)"
                 ],
                 "pre_context": [
-                  "                    });",
-                  "                    if (!cachedResponse.isStale || context.isPrefetch) {",
-                  "                        // The cached value is still valid, so we don't need",
-                  "                        // to update it yet.",
-                  "                        return;",
+                  "    async handleRequest(req, res, parsedUrl) {",
+                  "        const span = (0, _trace.trace)(\"handle-request\", undefined, {",
+                  "            url: req.url",
+                  "        });",
+                  "        const result = await span.traceAsyncFn(async ()=>{",
+                  "            var _this_ready;",
+                  "            await ((_this_ready = this.ready) == null ? void 0 : _this_ready.promise);"
+                ]
+              },
+              {
+                "colno": 17,
+                "context_line": "                await this.handleCatchallRenderRequest(req, res, parsedUrl);",
+                "filename": "[[FILENAME2]]",
+                "function": "DevServer.handleRequestImpl",
+                "in_app": false,
+                "lineno": 811,
+                "module": "next.dist.server:base-server",
+                "post_context": [
+                  "                return;",
+                  "            }",
+                  "            if (process.env.NEXT_RUNTIME !== \"edge\" && req.headers[\"x-middleware-invoke\"]) {",
+                  "                finished = await this.normalizeAndAttachMetadata(req, res, parsedUrl);",
+                  "                if (finished) return;",
+                  "                finished = await this.handleCatchallMiddlewareRequest(req, res, parsedUrl);",
+                  "                if (finished) return;"
+                ],
+                "pre_context": [
+                  "                }",
+                  "                const invokeQuery = req.headers[\"x-invoke-query\"];",
+                  "                if (typeof invokeQuery === \"string\") {",
+                  "                    Object.assign(parsedUrl.query, JSON.parse(decodeURIComponent(invokeQuery)));",
+                  "                }",
+                  "                finished = await this.normalizeAndAttachMetadata(req, res, parsedUrl);",
+                  "                if (finished) return;"
+                ]
+              },
+              {
+                "colno": 17,
+                "context_line": "                await this.render(req, res, pathname, query, parsedUrl, true);",
+                "filename": "[[FILENAME3]]",
+                "function": "NextNodeServer.handleCatchallRenderRequest",
+                "in_app": false,
+                "lineno": 272,
+                "module": "next.dist.server:next-server",
+                "post_context": [
+                  "                return true;",
+                  "            } catch (err) {",
+                  "                if (err instanceof _baseserver.NoFallbackError) {",
+                  "                    throw err;",
+                  "                }",
+                  "                try {",
+                  "                    if (this.renderOpts.dev) {"
+                ],
+                "pre_context": [
+                  "                        await this.render404(req, res, parsedUrl);",
+                  "                        return true;",
                   "                    }",
+                  "                    delete query._nextBubbleNoFallback;",
+                  "                    const handled = await this.handleApiRequest(req, res, query, match);",
+                  "                    if (handled) return true;",
                   "                }"
                 ]
               },
               {
-                "colno": 28,
-                "context_line": "            const result = await doRender();",
+                "colno": 25,
+                "context_line": "        const payload = await fn(ctx);",
                 "filename": "[[FILENAME2]]",
-                "function": "cacheEntry1.responseCache.get.incrementalCache.incrementalCache",
+                "function": "DevServer.pipeImpl",
                 "in_app": false,
-                "lineno": 926,
+                "lineno": 915,
                 "module": "next.dist.server:base-server",
                 "post_context": [
-                  "            if (!result) {",
-                  "                return null;",
-                  "            }",
-                  "            return {",
-                  "                ...result,",
-                  "                revalidate: result.revalidate !== undefined ? result.revalidate : /* default to minimum revalidate (this should be an invariant) */ 1",
-                  "            };"
+                  "        if (payload === null) {",
+                  "            return;",
+                  "        }",
+                  "        const { req, res } = ctx;",
+                  "        const originalStatus = res.statusCode;",
+                  "        const { body, type } = payload;",
+                  "        let { revalidate } = payload;"
                 ],
                 "pre_context": [
-                  "                        }",
-                  "                        // Prevent caching this result",
-                  "                        delete result.revalidate;",
-                  "                        return result;",
-                  "                    }",
-                  "                }",
-                  "            }"
+                  "            ...partialContext,",
+                  "            renderOpts: {",
+                  "                ...this.renderOpts,",
+                  "                supportsDynamicHTML: !isBotRequest,",
+                  "                isBot: !!isBotRequest",
+                  "            }",
+                  "        };"
                 ]
               },
               {
                 "colno": 32,
-                "context_line": "                let response = await this.handlers.handle(match, req, res, context, isSSG);",
+                "context_line": "                const result = await this.renderPageComponent({",
                 "filename": "[[FILENAME2]]",
-                "function": "doRender",
+                "function": "DevServer.renderToResponseImpl",
                 "in_app": false,
-                "lineno": 743,
+                "lineno": "[[highNumber]]",
                 "module": "next.dist.server:base-server",
                 "post_context": [
-                  "                if (response) {",
-                  "                    if (isSSG && process.env.NEXT_RUNTIME !== \"edge\") {",
-                  "                        const blob = await response.blob();",
-                  "                        const headers = Object.fromEntries(response.headers);",
-                  "                        if (!headers[\"content-type\"] && blob.type) {",
-                  "                            headers[\"content-type\"] = blob.type;",
-                  "                        }"
+                  "                    ...ctx,",
+                  "                    pathname: match.definition.pathname,",
+                  "                    renderOpts: {",
+                  "                        ...ctx.renderOpts,",
+                  "                        params: match.params",
+                  "                    }",
+                  "                }, bubbleNoFallback);"
                 ],
                 "pre_context": [
-                  "            const supportsDynamicHTML = !(isSSG || hasStaticPaths);",
-                  "            const match = pathname !== \"/_error\" && !is404Page && !is500Page ? (0, _requestMeta).getRequestMeta(req, \"_nextMatch\") : undefined;",
-                  "            if (match) {",
-                  "                const context = {",
-                  "                    supportsDynamicHTML,",
-                  "                    incrementalCache",
-                  "                };"
+                  "            for await (const match of this.matchers.matchAll(pathname, options)){",
+                  "                // when a specific invoke-output is meant to be matched",
+                  "                // ensure a prior dynamic route/page doesn't take priority",
+                  "                const invokeOutput = ctx.req.headers[\"x-invoke-output\"];",
+                  "                if (!this.minimalMode && typeof invokeOutput === \"string\" && (0, _utils1.isDynamicRoute)(invokeOutput || \"\") && invokeOutput {snip}",
+                  "                    continue;",
+                  "                }"
                 ]
               },
               {
                 "colno": 24,
-                "context_line": "        const result = await handler.handle(match, req, res, context, bubbleResult);",
-                "filename": "[[FILENAME3]]",
-                "function": "RouteHandlerManager.handle",
+                "context_line": "                return await this.renderToResponseWithComponents(ctx, result);",
+                "filename": "[[FILENAME2]]",
+                "function": "DevServer.renderPageComponent",
                 "in_app": false,
-                "lineno": 16,
-                "module": "next.dist.server.future.route-handler-managers:route-handler-manager",
+                "lineno": "[[highNumber]]",
+                "module": "next.dist.server:base-server",
                 "post_context": [
-                  "        if (bubbleResult) {",
-                  "            return result;",
-                  "        }",
-                  "        return true;",
-                  "    }",
-                  "}",
-                  "exports.RouteHandlerManager = RouteHandlerManager;"
+                  "            } catch (err) {",
+                  "                const isNoFallbackError = err instanceof NoFallbackError;",
+                  "                if (!isNoFallbackError || isNoFallbackError && bubbleNoFallback) {",
+                  "                    throw err;",
+                  "                }",
+                  "            }",
+                  "        }"
                 ],
                 "pre_context": [
-                  "            throw new Error(\"Invariant: duplicate route handler added for kind\");",
-                  "        }",
-                  "        this.handlers[kind] = handler;",
-                  "    }",
-                  "    async handle(match, req, res, context, bubbleResult) {",
-                  "        const handler = this.handlers[match.definition.kind];",
-                  "        if (!handler) return false;"
+                  "            // Ensuring for loading page component routes is done via the matcher.",
+                  "            shouldEnsure: false",
+                  "        });",
+                  "        if (result) {",
+                  "            var _getTracer_getRootSpanAttributes;",
+                  "            (_getTracer_getRootSpanAttributes = (0, _tracer.getTracer)().getRootSpanAttributes()) == null ? void 0 : _getTracer_getRootSpanA {snip}",
+                  "            try {"
                 ]
               },
               {
@@ -241,195 +286,145 @@
                 "platform": "nodejs"
               },
               {
-                "colno": 41,
-                "context_line": "            const response = await this.execute(match, appRouteModule, req, res, context);",
-                "filename": "[[FILENAME5]]",
-                "function": "AppRouteRouteHandler.handle",
+                "colno": 53,
+                "context_line": "        const cacheEntry = await this.responseCache.get(ssgCacheKey, async (hasResolved, previousCacheEntry, isRevalidating)=>{",
+                "filename": "[[FILENAME2]]",
+                "function": "DevServer.renderToResponseWithComponentsImpl",
                 "in_app": false,
-                "lineno": 348,
-                "module": "next.dist.server.future.route-handlers:app-route-route-handler",
+                "lineno": "[[highNumber]]",
+                "module": "next.dist.server:base-server",
                 "post_context": [
-                  "            if (bubbleResult) {",
-                  "                return response;",
-                  "            }",
-                  "            // Send the response back to the response.",
-                  "            await sendResponse(req, res, response);",
-                  "        } catch (err) {",
-                  "            const response = resolveHandlerError(err, bubbleResult);"
+                  "            const isProduction = !this.renderOpts.dev;",
+                  "            const didRespond = hasResolved || res.sent;",
+                  "            if (!staticPaths) {",
+                  "                ({ staticPaths, fallbackMode } = hasStaticPaths ? await this.getStaticPaths({",
+                  "                    pathname,",
+                  "                    requestHeaders: req.headers,",
+                  "                    isAppPath,"
                 ],
                 "pre_context": [
-                  "    }",
-                  "    async handle(match, req, res, context, bubbleResult) {",
-                  "        try {",
-                  "            // Load the module using the module loader.",
-                  "            const appRouteModule = await this.moduleLoader.load(match.definition.filename);",
-                  "            (0, _patchFetch).patchFetch(appRouteModule);",
-                  "            // Execute the route to get the response."
-                ]
-              },
-              {
-                "colno": 69,
-                "context_line": "        const response = await this.requestAsyncLocalStorageWrapper.wrap(requestAsyncStorage, {",
-                "filename": "[[FILENAME5]]",
-                "function": "AppRouteRouteHandler.execute",
-                "in_app": false,
-                "lineno": 214,
-                "module": "next.dist.server.future.route-handlers:app-route-route-handler",
-                "post_context": [
-                  "            req: req.originalRequest,",
-                  "            res: res.originalResponse",
-                  "        }, ()=>this.staticAsyncLocalStorageWrapper.wrap(staticGenerationAsyncStorage, {",
-                  "                pathname: definition.pathname,",
-                  "                renderOpts: context || {}",
-                  "            }, ()=>{",
-                  "                const _req = request ? request : wrapRequest(req);"
-                ],
-                "pre_context": [
-                  "    request) {",
-                  "        // This is added by the webpack loader, we load it directly from the module.",
-                  "        const { requestAsyncStorage , staticGenerationAsyncStorage  } = module;",
-                  "        // Get the handler function for the given method.",
-                  "        const handle = this.resolve(req.method, module);",
-                  "        // Run the handler with the request AsyncLocalStorage to inject the helper",
-                  "        // support."
-                ]
-              },
-              {
-                "colno": 43,
-                "context_line": "        return RequestAsyncStorageWrapper.wrap(storage, context, callback);",
-                "filename": "[[FILENAME6]]",
-                "function": "RequestAsyncStorageWrapper.wrap",
-                "in_app": false,
-                "lineno": 30,
-                "module": "next.dist.server.async-storage:request-async-storage-wrapper",
-                "post_context": [
-                  "    }",
-                  "    /**",
-                  "   * @deprecated instance method should be used in favor of the static method",
-                  "   */ static wrap(storage, { req , res , renderOpts  }, callback) {",
-                  "        // Reads of this are cached on the `req` object, so this should resolve",
-                  "        // instantly. There's no need to pass this data down from a previous",
-                  "        // invoke, where we'd have to consider server & serverless."
-                ],
-                "pre_context": [
-                  "   * store using hooks.",
-                  "   *",
-                  "   * @param storage underlying storage object returned by the module",
-                  "   * @param context context to seed the store",
-                  "   * @param callback function to call within the scope of the context",
-                  "   * @returns the result returned by the callback",
-                  "   */ wrap(storage, context, callback) {"
-                ]
-              },
-              {
-                "colno": 24,
-                "context_line": "        return storage.run(store, callback);",
-                "filename": "[[FILENAME6]]",
-                "function": "RequestAsyncStorageWrapper.wrap",
-                "in_app": false,
-                "lineno": 65,
-                "module": "next.dist.server.async-storage:request-async-storage-wrapper",
-                "post_context": [
-                  "    }",
-                  "}",
-                  "exports.RequestAsyncStorageWrapper = RequestAsyncStorageWrapper;",
-                  "",
-                  "//# sourceMappingURL=request-async-storage-wrapper.js.map"
-                ],
-                "pre_context": [
-                  "                        }",
-                  "                    });",
-                  "                }",
-                  "                return cachedCookiesInstance;",
-                  "            },",
-                  "            previewData",
+                  "                    postponed: metadata.postponed,",
+                  "                    headers,",
+                  "                    status: isAppPath ? res.statusCode : undefined",
+                  "                },",
+                  "                revalidate: metadata.revalidate",
+                  "            };",
                   "        };"
                 ]
               },
               {
-                "colno": 14,
-                "filename": "[[FILENAME7]]",
-                "function": "AsyncLocalStorage.run",
-                "in_app": false,
-                "lineno": 346,
-                "module": "node:async_hooks"
-              },
-              {
-                "colno": 52,
-                "context_line": "        }, ()=>this.staticAsyncLocalStorageWrapper.wrap(staticGenerationAsyncStorage, {",
+                "colno": 26,
+                "context_line": "        if (!key) return responseGenerator(false, null);",
                 "filename": "[[FILENAME5]]",
-                "function": "<anonymous>",
+                "function": "ResponseCache.get",
                 "in_app": false,
-                "lineno": 217,
-                "module": "next.dist.server.future.route-handlers:app-route-route-handler",
+                "lineno": 49,
+                "module": "next.dist.server.response-cache:index",
                 "post_context": [
-                  "                pathname: definition.pathname,",
-                  "                renderOpts: context || {}",
-                  "            }, ()=>{",
-                  "                const _req = request ? request : wrapRequest(req);",
-                  "                // We can currently only statically optimize if only GET/HEAD",
-                  "                // are used as a Prerender can't be used conditionally based",
-                  "                // on the method currently"
+                  "        const { incrementalCache, isOnDemandRevalidate = false } = context;",
+                  "        const response = await this.batcher.batch({",
+                  "            key,",
+                  "            isOnDemandRevalidate",
+                  "        }, async (cacheKey, resolve)=>{",
+                  "            var _this_previousCacheItem;",
+                  "            // We keep the previous cache entry around to leverage when the"
                 ],
                 "pre_context": [
-                  "        // Get the handler function for the given method.",
-                  "        const handle = this.resolve(req.method, module);",
-                  "        // Run the handler with the request AsyncLocalStorage to inject the helper",
-                  "        // support.",
-                  "        const response = await this.requestAsyncLocalStorageWrapper.wrap(requestAsyncStorage, {",
-                  "            req: req.originalRequest,",
-                  "            res: res.originalResponse"
+                  "        // because we replace this.minimalMode to true in production bundles.",
+                  "        const minimalModeKey = \"minimalMode\";",
+                  "        this[minimalModeKey] = minimalMode;",
+                  "    }",
+                  "    async get(key, responseGenerator, context) {",
+                  "        // If there is no key for the cache, we can't possibly look this up in the",
+                  "        // cache so just return the result of the response generator."
                 ]
               },
               {
-                "colno": 52,
-                "context_line": "        return StaticGenerationAsyncStorageWrapper.wrap(storage, context, callback);",
-                "filename": "[[FILENAME8]]",
-                "function": "StaticGenerationAsyncStorageWrapper.wrap",
+                "colno": 46,
+                "context_line": "                        const result = await doRender({",
+                "filename": "[[FILENAME2]]",
+                "function": "cacheEntry.responseCache.get.routeKind",
                 "in_app": false,
-                "lineno": 7,
-                "module": "next.dist.server.async-storage:static-generation-async-storage-wrapper",
+                "lineno": "[[highNumber]]",
+                "module": "next.dist.server:base-server",
                 "post_context": [
-                  "    }",
-                  "    /**",
-                  "   * @deprecated instance method should be used in favor of the static method",
-                  "   */ static wrap(storage, { pathname , renderOpts  }, callback) {",
-                  "        /**",
-                  "     * Rules of Static & Dynamic HTML:",
-                  "     *"
+                  "                            postponed: undefined",
+                  "                        });",
+                  "                        if (!result) {",
+                  "                            return null;",
+                  "                        }",
+                  "                        // Prevent caching this result",
+                  "                        delete result.revalidate;"
                 ],
                 "pre_context": [
-                  "\"use strict\";",
-                  "Object.defineProperty(exports, \"__esModule\", {",
-                  "    value: true",
-                  "});",
-                  "class StaticGenerationAsyncStorageWrapper {",
-                  "    wrap(storage, context, callback) {"
+                  "                                pageData: {}",
+                  "                            }",
+                  "                        };",
+                  "                    } else {",
+                  "                        query.__nextFallback = \"true\";",
+                  "                        // We pass `undefined` as there cannot be a postponed state in",
+                  "                        // development."
                 ]
               },
               {
-                "colno": 24,
-                "context_line": "        return storage.run(store, callback);",
-                "filename": "[[FILENAME8]]",
-                "function": "StaticGenerationAsyncStorageWrapper.wrap",
+                "colno": 60,
+                "context_line": "                        const response = await routeModule.handle(request, context);",
+                "filename": "[[FILENAME2]]",
+                "function": "doRender",
                 "in_app": false,
-                "lineno": 33,
-                "module": "next.dist.server.async-storage:static-generation-async-storage-wrapper",
+                "lineno": "[[highNumber]]",
+                "module": "next.dist.server:base-server",
                 "post_context": [
-                  "    }",
-                  "}",
-                  "exports.StaticGenerationAsyncStorageWrapper = StaticGenerationAsyncStorageWrapper;",
-                  "",
-                  "//# sourceMappingURL=static-generation-async-storage-wrapper.js.map"
+                  "                        req.fetchMetrics = context.renderOpts.fetchMetrics;",
+                  "                        const cacheTags = context.renderOpts.fetchTags;",
+                  "                        // If the request is for a static response, we can cache it so long",
+                  "                        // as it's not edge.",
+                  "                        if (isSSG && process.env.NEXT_RUNTIME !== \"edge\") {",
+                  "                            var _context_renderOpts_store;",
+                  "                            const blob = await response.blob();"
                 ],
                 "pre_context": [
-                  "        const store = {",
-                  "            isStaticGeneration,",
-                  "            pathname,",
-                  "            incrementalCache: renderOpts.incrementalCache,",
-                  "            isRevalidate: renderOpts.isRevalidate",
-                  "        };",
-                  "        renderOpts.store = store;"
+                  "                            supportsDynamicHTML,",
+                  "                            incrementalCache,",
+                  "                            isRevalidate: isSSG",
+                  "                        }",
+                  "                    };",
+                  "                    try {",
+                  "                        const request = _nextrequest.NextRequestAdapter.fromBaseNextRequest(req, (0, _nextrequest.signalFromNodeResponse)(re {snip}"
+                ]
+              },
+              {
+                "colno": "[[highNumber]]",
+                "context_line": "'{snip} handler\");return s}async handle(e,t){try{return await this.execute(e,t)}catch(t){let e=function(e){if(eg(e)){let t=eg(e)?e.digest.split(\";\", {snip}",
+                "filename": "[[FILENAME6]]",
+                "function": "e_.handle",
+                "in_app": false,
+                "lineno": 6,
+                "module": "next.dist.compiled.next-server:app-route.runtime.dev",
+                "post_context": ["//# sourceMappingURL=app-route.runtime.dev.js.map"],
+                "pre_context": [
+                  "(()=>{var e={\"./dist/compiled/@edge-runtime/cookies/index.js\":e=>{\"use strict\";var t=Object.defineProperty,r=Object.getOwnPropertyDescriptor {snip}",
+                  " * cookie",
+                  " * Copyright(c) 2012-2014 Roman Shtylman",
+                  " * Copyright(c) 2015 Douglas Christopher Wilson",
+                  " * MIT Licensed"
+                ]
+              },
+              {
+                "colno": "[[highNumber]]",
+                "context_line": "'{snip} is.userland.fetchCache;let s=await this.actionAsyncStorage.run({isAppRoute:!0,isAction:function(e){let{isFetchAction:t,isURLEncodedAction:r, {snip}",
+                "filename": "[[FILENAME6]]",
+                "function": "e_.execute",
+                "in_app": false,
+                "lineno": 6,
+                "module": "next.dist.compiled.next-server:app-route.runtime.dev",
+                "post_context": ["//# sourceMappingURL=app-route.runtime.dev.js.map"],
+                "pre_context": [
+                  "(()=>{var e={\"./dist/compiled/@edge-runtime/cookies/index.js\":e=>{\"use strict\";var t=Object.defineProperty,r=Object.getOwnPropertyDescriptor {snip}",
+                  " * cookie",
+                  " * Copyright(c) 2012-2014 Roman Shtylman",
+                  " * Copyright(c) 2015 Douglas Christopher Wilson",
+                  " * MIT Licensed"
                 ]
               },
               {
@@ -441,146 +436,37 @@
                 "module": "node:async_hooks"
               },
               {
-                "colno": 24,
-                "context_line": "                return handle(wrappedReq, {",
-                "filename": "[[FILENAME5]]",
-                "function": "<anonymous>",
+                "colno": "[[highNumber]]",
+                "context_line": "'{snip} Action:o,isFetchAction:a}}(e);return!!(t||r||n)}(e)},()=>H.wrap(this.requestAsyncStorage,n,()=>V.wrap(this.staticGenerationAsyncStorage,o,n= {snip}",
+                "filename": "[[FILENAME6]]",
+                "function": "?",
                 "in_app": false,
-                "lineno": 306,
-                "module": "next.dist.server.future.route-handlers:app-route-route-handler",
-                "post_context": [
-                  "                    params",
-                  "                });",
-                  "            }));",
-                  "        // If the handler did't return a valid response, then return the internal",
-                  "        // error response.",
-                  "        if (!(response instanceof Response)) {",
-                  "            // TODO: validate the correct handling behavior, maybe log something?"
-                ],
+                "lineno": 6,
+                "module": "next.dist.compiled.next-server:app-route.runtime.dev",
+                "post_context": ["//# sourceMappingURL=app-route.runtime.dev.js.map"],
                 "pre_context": [
-                  "                    },",
-                  "                    set (target, prop, value) {",
-                  "                        handleReqBailout(prop);",
-                  "                        target[prop] = value;",
-                  "                        return true;",
-                  "                    }",
-                  "                });"
+                  "(()=>{var e={\"./dist/compiled/@edge-runtime/cookies/index.js\":e=>{\"use strict\";var t=Object.defineProperty,r=Object.getOwnPropertyDescriptor {snip}",
+                  " * cookie",
+                  " * Copyright(c) 2012-2014 Roman Shtylman",
+                  " * Copyright(c) 2015 Douglas Christopher Wilson",
+                  " * MIT Licensed"
                 ]
               },
               {
-                "colno": 10,
-                "filename": "[[FILENAME9]]",
-                "function": "Object.apply",
+                "colno": "[[highNumber]]",
+                "context_line": "'{snip} },assetPrefix:(null==n?void 0:n.assetPrefix)||\"\"};return e.run(c,o,c)}};var I=r(\"./dist/compiled/react/index.js\"),U=r.n(I);let F=\"DYNAMIC_SE {snip}",
+                "filename": "[[FILENAME6]]",
+                "function": "Object.wrap",
                 "in_app": false,
-                "lineno": 69,
-                "module": "route.ts"
-              },
-              {
-                "colno": 19,
-                "context_line": "      return core.withIsolationScope(async isolationScope => {",
-                "filename": "[[FILENAME10]]",
-                "function": "Object.apply",
-                "in_app": false,
-                "lineno": 27,
-                "module": "@sentry.nextjs.cjs.common:wrapRouteHandlerWithSentry",
-                "post_context": [
-                  "        isolationScope.setSDKProcessingMetadata({",
-                  "          request: {",
-                  "            headers: headers ? utils.winterCGHeadersToDict(headers) : undefined,",
-                  "          },",
-                  "        });",
-                  "        return core.continueTrace(",
-                  "          {"
-                ],
+                "lineno": 6,
+                "module": "next.dist.compiled.next-server:app-route.runtime.dev",
+                "post_context": ["//# sourceMappingURL=app-route.runtime.dev.js.map"],
                 "pre_context": [
-                  "  context,",
-                  ") {",
-                  "  core.addTracingExtensions();",
-                  "  // eslint-disable-next-line deprecation/deprecation",
-                  "  const { method, parameterizedRoute, baggageHeader, sentryTraceHeader, headers } = context;",
-                  "  return new Proxy(routeHandler, {",
-                  "    apply: (originalFunction, thisArg, args) => {"
-                ]
-              },
-              {
-                "colno": 14,
-                "context_line": "  return hub.runWithAsyncContext(() => {",
-                "filename": "[[FILENAME11]]",
-                "function": "Object.withIsolationScope",
-                "in_app": false,
-                "lineno": 207,
-                "module": "@sentry.core.cjs:exports",
-                "post_context": [
-                  "    return callback(hub.getIsolationScope());",
-                  "  });",
-                  "}",
-                  "",
-                  "/**",
-                  " * Forks the current scope and sets the provided span as active span in the context of the provided callback.",
-                  " *"
-                ],
-                "pre_context": [
-                  " * applications directly because it comes with pitfalls. Use at your own risk!",
-                  " *",
-                  " * @param callback The callback in which the passed isolation scope is active. (Note: In environments without async",
-                  " * context strategy, the currently active isolation scope may change within execution of the callback.)",
-                  " * @returns The same value that `callback` returns.",
-                  " */",
-                  "function withIsolationScope(callback) {"
-                ]
-              },
-              {
-                "colno": 36,
-                "context_line": "    return registry.__SENTRY__.acs.runWithAsyncContext(callback, options);",
-                "filename": "[[FILENAME12]]",
-                "function": "Object.runWithAsyncContext",
-                "in_app": false,
-                "lineno": 777,
-                "module": "@sentry.core.cjs:hub",
-                "post_context": [
-                  "  }",
-                  "",
-                  "  // if there was no strategy, fallback to just calling the callback",
-                  "  return callback();",
-                  "}",
-                  "",
-                  "/**"
-                ],
-                "pre_context": [
-                  " * @param options Options to pass to the async context strategy",
-                  " * @returns The result of the callback",
-                  " */",
-                  "function runWithAsyncContext(callback, options = {}) {",
-                  "  const registry = getMainCarrier();",
-                  "",
-                  "  if (registry.__SENTRY__ && registry.__SENTRY__.acs) {"
-                ]
-              },
-              {
-                "colno": 25,
-                "context_line": "    return asyncStorage.run(newHub, () => {",
-                "filename": "[[FILENAME13]]",
-                "function": "Object.runWithAsyncContext",
-                "in_app": false,
-                "lineno": 45,
-                "module": "@sentry.node.cjs.async:hooks",
-                "post_context": [
-                  "      return callback();",
-                  "    });",
-                  "  }",
-                  "",
-                  "  core.setAsyncContextStrategy({ getCurrentHub, runWithAsyncContext });",
-                  "}",
-                  ""
-                ],
-                "pre_context": [
-                  "      // We're already in an async context, so we don't need to create a new one",
-                  "      // just call the callback with the current hub",
-                  "      return callback();",
-                  "    }",
-                  "",
-                  "    const newHub = createNewHub(existingHub);",
-                  ""
+                  "(()=>{var e={\"./dist/compiled/@edge-runtime/cookies/index.js\":e=>{\"use strict\";var t=Object.defineProperty,r=Object.getOwnPropertyDescriptor {snip}",
+                  " * cookie",
+                  " * Copyright(c) 2012-2014 Roman Shtylman",
+                  " * Copyright(c) 2015 Douglas Christopher Wilson",
+                  " * MIT Licensed"
                 ]
               },
               {
@@ -592,165 +478,37 @@
                 "module": "node:async_hooks"
               },
               {
-                "colno": 14,
-                "context_line": "      return callback();",
-                "filename": "[[FILENAME13]]",
-                "function": "<anonymous>",
+                "colno": "[[highNumber]]",
+                "context_line": "'{snip} (t||r||n)}(e)},()=>H.wrap(this.requestAsyncStorage,n,()=>V.wrap(this.staticGenerationAsyncStorage,o,n=>{var o;let s=n.isStaticGeneration;if( {snip}",
+                "filename": "[[FILENAME6]]",
+                "function": "?",
                 "in_app": false,
-                "lineno": 46,
-                "module": "@sentry.node.cjs.async:hooks",
-                "post_context": [
-                  "    });",
-                  "  }",
-                  "",
-                  "  core.setAsyncContextStrategy({ getCurrentHub, runWithAsyncContext });",
-                  "}",
-                  "",
-                  "exports.setHooksAsyncContextStrategy = setHooksAsyncContextStrategy;"
-                ],
+                "lineno": 6,
+                "module": "next.dist.compiled.next-server:app-route.runtime.dev",
+                "post_context": ["//# sourceMappingURL=app-route.runtime.dev.js.map"],
                 "pre_context": [
-                  "      // just call the callback with the current hub",
-                  "      return callback();",
-                  "    }",
-                  "",
-                  "    const newHub = createNewHub(existingHub);",
-                  "",
-                  "    return asyncStorage.run(newHub, () => {"
+                  "(()=>{var e={\"./dist/compiled/@edge-runtime/cookies/index.js\":e=>{\"use strict\";var t=Object.defineProperty,r=Object.getOwnPropertyDescriptor {snip}",
+                  " * cookie",
+                  " * Copyright(c) 2012-2014 Roman Shtylman",
+                  " * Copyright(c) 2015 Douglas Christopher Wilson",
+                  " * MIT Licensed"
                 ]
               },
               {
-                "colno": 12,
-                "context_line": "    return callback(hub.getIsolationScope());",
-                "filename": "[[FILENAME11]]",
-                "function": "<anonymous>",
+                "colno": "[[highNumber]]",
+                "context_line": "'{snip} aftMode:r.isDraftMode,prerenderState:a};return r.store=s,e.run(s,n,s)}};function Y(){return new Response(null,{status:400})}function J(){ret {snip}",
+                "filename": "[[FILENAME6]]",
+                "function": "Object.wrap",
                 "in_app": false,
-                "lineno": 208,
-                "module": "@sentry.core.cjs:exports",
-                "post_context": [
-                  "  });",
-                  "}",
-                  "",
-                  "/**",
-                  " * Forks the current scope and sets the provided span as active span in the context of the provided callback.",
-                  " *",
-                  " * @param span Spans started in the context of the provided callback will be children of this span."
-                ],
+                "lineno": 6,
+                "module": "next.dist.compiled.next-server:app-route.runtime.dev",
+                "post_context": ["//# sourceMappingURL=app-route.runtime.dev.js.map"],
                 "pre_context": [
-                  " *",
-                  " * @param callback The callback in which the passed isolation scope is active. (Note: In environments without async",
-                  " * context strategy, the currently active isolation scope may change within execution of the callback.)",
-                  " * @returns The same value that `callback` returns.",
-                  " */",
-                  "function withIsolationScope(callback) {",
-                  "  return hub.runWithAsyncContext(() => {"
-                ]
-              },
-              {
-                "colno": 21,
-                "context_line": "        return core.continueTrace(",
-                "filename": "[[FILENAME10]]",
-                "function": "<anonymous>",
-                "in_app": false,
-                "lineno": 33,
-                "module": "@sentry.nextjs.cjs.common:wrapRouteHandlerWithSentry",
-                "post_context": [
-                  "          {",
-                  "            sentryTrace: _nullishCoalesce(_nullishCoalesce(sentryTraceHeader, () => ( _optionalChain([headers, 'optionalAccess', _ => _.get, {snip}",
-                  "            baggage: _nullishCoalesce(baggageHeader, () => ( _optionalChain([headers, 'optionalAccess', _3 => _3.get, 'call', _4 => _4('baggage')]))),",
-                  "          },",
-                  "          async () => {",
-                  "            try {",
-                  "              return await core.startSpan("
-                ],
-                "pre_context": [
-                  "    apply: (originalFunction, thisArg, args) => {",
-                  "      return core.withIsolationScope(async isolationScope => {",
-                  "        isolationScope.setSDKProcessingMetadata({",
-                  "          request: {",
-                  "            headers: headers ? utils.winterCGHeadersToDict(headers) : undefined,",
-                  "          },",
-                  "        });"
-                ]
-              },
-              {
-                "colno": 14,
-                "context_line": "  return hub.runWithAsyncContext(() => {",
-                "filename": "[[FILENAME14]]",
-                "function": "Object.continueTrace",
-                "in_app": false,
-                "lineno": 270,
-                "module": "@sentry.core.cjs.tracing:trace",
-                "post_context": [
-                  "    return callback(transactionContext);",
-                  "  });",
-                  "};",
-                  "",
-                  "function createChildSpanOrTransaction(",
-                  "  // eslint-disable-next-line deprecation/deprecation",
-                  "  hub$1,"
-                ],
-                "pre_context": [
-                  "    }),",
-                  "  };",
-                  "",
-                  "  if (!callback) {",
-                  "    return transactionContext;",
-                  "  }",
-                  ""
-                ]
-              },
-              {
-                "colno": 36,
-                "context_line": "    return registry.__SENTRY__.acs.runWithAsyncContext(callback, options);",
-                "filename": "[[FILENAME12]]",
-                "function": "Object.runWithAsyncContext",
-                "in_app": false,
-                "lineno": 777,
-                "module": "@sentry.core.cjs:hub",
-                "post_context": [
-                  "  }",
-                  "",
-                  "  // if there was no strategy, fallback to just calling the callback",
-                  "  return callback();",
-                  "}",
-                  "",
-                  "/**"
-                ],
-                "pre_context": [
-                  " * @param options Options to pass to the async context strategy",
-                  " * @returns The result of the callback",
-                  " */",
-                  "function runWithAsyncContext(callback, options = {}) {",
-                  "  const registry = getMainCarrier();",
-                  "",
-                  "  if (registry.__SENTRY__ && registry.__SENTRY__.acs) {"
-                ]
-              },
-              {
-                "colno": 25,
-                "context_line": "    return asyncStorage.run(newHub, () => {",
-                "filename": "[[FILENAME13]]",
-                "function": "Object.runWithAsyncContext",
-                "in_app": false,
-                "lineno": 45,
-                "module": "@sentry.node.cjs.async:hooks",
-                "post_context": [
-                  "      return callback();",
-                  "    });",
-                  "  }",
-                  "",
-                  "  core.setAsyncContextStrategy({ getCurrentHub, runWithAsyncContext });",
-                  "}",
-                  ""
-                ],
-                "pre_context": [
-                  "      // We're already in an async context, so we don't need to create a new one",
-                  "      // just call the callback with the current hub",
-                  "      return callback();",
-                  "    }",
-                  "",
-                  "    const newHub = createNewHub(existingHub);",
-                  ""
+                  "(()=>{var e={\"./dist/compiled/@edge-runtime/cookies/index.js\":e=>{\"use strict\";var t=Object.defineProperty,r=Object.getOwnPropertyDescriptor {snip}",
+                  " * cookie",
+                  " * Copyright(c) 2012-2014 Roman Shtylman",
+                  " * Copyright(c) 2015 Douglas Christopher Wilson",
+                  " * MIT Licensed"
                 ]
               },
               {
@@ -762,451 +520,337 @@
                 "module": "node:async_hooks"
               },
               {
-                "colno": 14,
-                "context_line": "      return callback();",
-                "filename": "[[FILENAME13]]",
-                "function": "<anonymous>",
+                "colno": "[[highNumber]]",
+                "context_line": "'{snip} SpanAttributes())||o.set(\"next.route\",l),(0,M.getTracer)().trace(d.runHandler,{spanName:`executing api route (app) ${l}`,attributes:{\"next.r {snip}",
+                "filename": "[[FILENAME6]]",
+                "function": "?",
                 "in_app": false,
-                "lineno": 46,
-                "module": "@sentry.node.cjs.async:hooks",
-                "post_context": [
-                  "    });",
-                  "  }",
-                  "",
-                  "  core.setAsyncContextStrategy({ getCurrentHub, runWithAsyncContext });",
-                  "}",
-                  "",
-                  "exports.setHooksAsyncContextStrategy = setHooksAsyncContextStrategy;"
-                ],
+                "lineno": 6,
+                "module": "next.dist.compiled.next-server:app-route.runtime.dev",
+                "post_context": ["//# sourceMappingURL=app-route.runtime.dev.js.map"],
                 "pre_context": [
-                  "      // just call the callback with the current hub",
-                  "      return callback();",
-                  "    }",
-                  "",
-                  "    const newHub = createNewHub(existingHub);",
-                  "",
-                  "    return asyncStorage.run(newHub, () => {"
-                ]
-              },
-              {
-                "colno": 12,
-                "context_line": "    return callback(transactionContext);",
-                "filename": "[[FILENAME14]]",
-                "function": "<anonymous>",
-                "in_app": false,
-                "lineno": 271,
-                "module": "@sentry.core.cjs.tracing:trace",
-                "post_context": [
-                  "  });",
-                  "};",
-                  "",
-                  "function createChildSpanOrTransaction(",
-                  "  // eslint-disable-next-line deprecation/deprecation",
-                  "  hub$1,",
-                  "  {"
-                ],
-                "pre_context": [
-                  "  };",
-                  "",
-                  "  if (!callback) {",
-                  "    return transactionContext;",
-                  "  }",
-                  "",
-                  "  return hub.runWithAsyncContext(() => {"
-                ]
-              },
-              {
-                "colno": 33,
-                "context_line": "              return await core.startSpan(",
-                "filename": "[[FILENAME10]]",
-                "function": "<anonymous>",
-                "in_app": false,
-                "lineno": 40,
-                "module": "@sentry.nextjs.cjs.common:wrapRouteHandlerWithSentry",
-                "post_context": [
-                  "                {",
-                  "                  op: 'http.server',",
-                  "                  name: `${method} ${parameterizedRoute}`,",
-                  "                  attributes: {",
-                  "                    [core.SEMANTIC_ATTRIBUTE_SENTRY_SOURCE]: 'route',",
-                  "                    [core.SEMANTIC_ATTRIBUTE_SENTRY_ORIGIN]: 'auto.function.nextjs',",
-                  "                  },"
-                ],
-                "pre_context": [
-                  "        return core.continueTrace(",
-                  "          {",
-                  "            sentryTrace: _nullishCoalesce(_nullishCoalesce(sentryTraceHeader, () => ( _optionalChain([headers, 'optionalAccess', _ => _.get, {snip}",
-                  "            baggage: _nullishCoalesce(baggageHeader, () => ( _optionalChain([headers, 'optionalAccess', _3 => _3.get, 'call', _4 => _4('baggage')]))),",
-                  "          },",
-                  "          async () => {",
-                  "            try {"
-                ]
-              },
-              {
-                "colno": 14,
-                "context_line": "  return hub.runWithAsyncContext(() => {",
-                "filename": "[[FILENAME14]]",
-                "function": "Object.startSpan",
-                "in_app": false,
-                "lineno": 82,
-                "module": "@sentry.core.cjs.tracing:trace",
-                "post_context": [
-                  "    return exports$1.withScope(context.scope, scope => {",
-                  "      // eslint-disable-next-line deprecation/deprecation",
-                  "      const hub$1 = hub.getCurrentHub();",
-                  "      // eslint-disable-next-line deprecation/deprecation",
-                  "      const parentSpan = scope.getSpan();",
-                  "",
-                  "      const shouldSkipSpan = context.onlyIfParent && !parentSpan;"
-                ],
-                "pre_context": [
-                  " * Note that if you have not enabled tracing extensions via `addTracingExtensions`",
-                  " * or you didn't set `tracesSampleRate`, this function will not generate spans",
-                  " * and the `span` returned from the callback will be undefined.",
-                  " */",
-                  "function startSpan(context, callback) {",
-                  "  const spanContext = normalizeContext(context);",
-                  ""
-                ]
-              },
-              {
-                "colno": 36,
-                "context_line": "    return registry.__SENTRY__.acs.runWithAsyncContext(callback, options);",
-                "filename": "[[FILENAME12]]",
-                "function": "Object.runWithAsyncContext",
-                "in_app": false,
-                "lineno": 777,
-                "module": "@sentry.core.cjs:hub",
-                "post_context": [
-                  "  }",
-                  "",
-                  "  // if there was no strategy, fallback to just calling the callback",
-                  "  return callback();",
-                  "}",
-                  "",
-                  "/**"
-                ],
-                "pre_context": [
-                  " * @param options Options to pass to the async context strategy",
-                  " * @returns The result of the callback",
-                  " */",
-                  "function runWithAsyncContext(callback, options = {}) {",
-                  "  const registry = getMainCarrier();",
-                  "",
-                  "  if (registry.__SENTRY__ && registry.__SENTRY__.acs) {"
-                ]
-              },
-              {
-                "colno": 25,
-                "context_line": "    return asyncStorage.run(newHub, () => {",
-                "filename": "[[FILENAME13]]",
-                "function": "Object.runWithAsyncContext",
-                "in_app": false,
-                "lineno": 45,
-                "module": "@sentry.node.cjs.async:hooks",
-                "post_context": [
-                  "      return callback();",
-                  "    });",
-                  "  }",
-                  "",
-                  "  core.setAsyncContextStrategy({ getCurrentHub, runWithAsyncContext });",
-                  "}",
-                  ""
-                ],
-                "pre_context": [
-                  "      // We're already in an async context, so we don't need to create a new one",
-                  "      // just call the callback with the current hub",
-                  "      return callback();",
-                  "    }",
-                  "",
-                  "    const newHub = createNewHub(existingHub);",
-                  ""
-                ]
-              },
-              {
-                "colno": 14,
-                "filename": "[[FILENAME7]]",
-                "function": "AsyncLocalStorage.run",
-                "in_app": false,
-                "lineno": 346,
-                "module": "node:async_hooks"
-              },
-              {
-                "colno": 14,
-                "context_line": "      return callback();",
-                "filename": "[[FILENAME13]]",
-                "function": "<anonymous>",
-                "in_app": false,
-                "lineno": 46,
-                "module": "@sentry.node.cjs.async:hooks",
-                "post_context": [
-                  "    });",
-                  "  }",
-                  "",
-                  "  core.setAsyncContextStrategy({ getCurrentHub, runWithAsyncContext });",
-                  "}",
-                  "",
-                  "exports.setHooksAsyncContextStrategy = setHooksAsyncContextStrategy;"
-                ],
-                "pre_context": [
-                  "      // just call the callback with the current hub",
-                  "      return callback();",
-                  "    }",
-                  "",
-                  "    const newHub = createNewHub(existingHub);",
-                  "",
-                  "    return asyncStorage.run(newHub, () => {"
-                ]
-              },
-              {
-                "colno": 22,
-                "context_line": "    return exports$1.withScope(context.scope, scope => {",
-                "filename": "[[FILENAME14]]",
-                "function": "<anonymous>",
-                "in_app": false,
-                "lineno": 83,
-                "module": "@sentry.core.cjs.tracing:trace",
-                "post_context": [
-                  "      // eslint-disable-next-line deprecation/deprecation",
-                  "      const hub$1 = hub.getCurrentHub();",
-                  "      // eslint-disable-next-line deprecation/deprecation",
-                  "      const parentSpan = scope.getSpan();",
-                  "",
-                  "      const shouldSkipSpan = context.onlyIfParent && !parentSpan;",
-                  "      const activeSpan = shouldSkipSpan"
-                ],
-                "pre_context": [
-                  " * or you didn't set `tracesSampleRate`, this function will not generate spans",
-                  " * and the `span` returned from the callback will be undefined.",
-                  " */",
-                  "function startSpan(context, callback) {",
-                  "  const spanContext = normalizeContext(context);",
-                  "",
-                  "  return hub.runWithAsyncContext(() => {"
-                ]
-              },
-              {
-                "colno": 20,
-                "context_line": "      return hub$1.withScope(callback);",
-                "filename": "[[FILENAME11]]",
-                "function": "Object.withScope",
-                "in_app": false,
-                "lineno": 177,
-                "module": "@sentry.core.cjs:exports",
-                "post_context": [
-                  "    }",
-                  "",
-                  "    // eslint-disable-next-line deprecation/deprecation",
-                  "    return hub$1.withScope(() => {",
-                  "      // eslint-disable-next-line deprecation/deprecation",
-                  "      hub$1.getStackTop().scope = scope ;",
-                  "      return callback(scope );"
-                ],
-                "pre_context": [
-                  "  const hub$1 = hub.getCurrentHub();",
-                  "",
-                  "  // If a scope is defined, we want to make this the active scope instead of the default one",
-                  "  if (rest.length === 2) {",
-                  "    const [scope, callback] = rest;",
-                  "    if (!scope) {",
-                  "      // eslint-disable-next-line deprecation/deprecation"
+                  "(()=>{var e={\"./dist/compiled/@edge-runtime/cookies/index.js\":e=>{\"use strict\";var t=Object.defineProperty,r=Object.getOwnPropertyDescriptor {snip}",
+                  " * cookie",
+                  " * Copyright(c) 2012-2014 Roman Shtylman",
+                  " * Copyright(c) 2015 Douglas Christopher Wilson",
+                  " * MIT Licensed"
                 ]
               },
               {
                 "colno": 28,
-                "context_line": "      maybePromiseResult = callback(scope);",
-                "filename": "[[FILENAME12]]",
-                "function": "Hub.withScope",
+                "context_line": "        return context.with(spanContext.setValue(rootSpanIdKey, spanId), ()=>this.getTracerInstance().startActiveSpan(spanName, options, (span)=>{",
+                "filename": "[[FILENAME8]]",
+                "function": "NextTracerImpl.trace",
                 "in_app": false,
-                "lineno": 194,
-                "module": "@sentry.core.cjs:hub",
+                "lineno": 122,
+                "module": "next.dist.server.lib.trace:tracer",
                 "post_context": [
-                  "    } catch (e) {",
-                  "      // eslint-disable-next-line deprecation/deprecation",
-                  "      this.popScope();",
-                  "      throw e;",
+                  "                const startTime = \"performance\" in globalThis ? globalThis.performance.now() : undefined;",
+                  "                const onCleanup = ()=>{",
+                  "                    rootSpanAttributesStore.delete(spanId);",
+                  "                    if (startTime && process.env.NEXT_OTEL_PERFORMANCE_PREFIX && _constants.LogSpanAllowList.includes(type || \"\")) {",
+                  "                        performance.measure(`${process.env.NEXT_OTEL_PERFORMANCE_PREFIX}:next-${(type.split(\".\").pop() || \"\").replace(/[A-Z] {snip}",
+                  "                            start: startTime,",
+                  "                            end: performance.now()"
+                ],
+                "pre_context": [
+                  "        }",
+                  "        const spanId = getSpanId();",
+                  "        options.attributes = {",
+                  "            \"next.span_name\": spanName,",
+                  "            \"next.span_type\": type,",
+                  "            ...options.attributes",
+                  "        };"
+                ]
+              },
+              {
+                "colno": 46,
+                "context_line": "        return this._getContextManager().with(context, fn, thisArg, ...args);",
+                "filename": "[[FILENAME9]]",
+                "function": "ContextAPI.with",
+                "in_app": false,
+                "lineno": 60,
+                "module": "@opentelemetry.api.build.src.api:context",
+                "post_context": [
                   "    }",
-                  "",
-                  "    if (utils.isThenable(maybePromiseResult)) {"
+                  "    /**",
+                  "     * Bind a context to a target function or event emitter",
+                  "     *",
+                  "     * @param context context to bind to the event emitter or function. Defaults to the currently active context",
+                  "     * @param target function or event emitter to bind",
+                  "     */"
                 ],
                 "pre_context": [
-                  "   */",
-                  "   withScope(callback) {",
-                  "    // eslint-disable-next-line deprecation/deprecation",
-                  "    const scope = this.pushScope();",
-                  "",
-                  "    let maybePromiseResult;",
-                  "    try {"
+                  "     *",
+                  "     * @param context context to be active during function execution",
+                  "     * @param fn function to execute in a context",
+                  "     * @param thisArg optional receiver to be used for calling fn",
+                  "     * @param args optional arguments forwarded to fn",
+                  "     */",
+                  "    with(context, fn, thisArg, ...args) {"
                 ]
               },
               {
-                "colno": 35,
-                "context_line": "      return handleCallbackErrors.handleCallbackErrors(",
-                "filename": "[[FILENAME14]]",
-                "function": "<anonymous>",
-                "in_app": false,
-                "lineno": 99,
-                "module": "@sentry.core.cjs.tracing:trace",
-                "post_context": [
-                  "        () => callback(activeSpan),",
-                  "        () => {",
-                  "          // Only update the span status if it hasn't been changed yet",
-                  "          if (activeSpan) {",
-                  "            const { status } = spanUtils.spanToJSON(activeSpan);",
-                  "            if (!status || status === 'ok') {",
-                  "              activeSpan.setStatus('internal_error');"
-                ],
-                "pre_context": [
-                  "        : createChildSpanOrTransaction(hub$1, {",
-                  "            parentSpan,",
-                  "            spanContext,",
-                  "            forceTransaction: context.forceTransaction,",
-                  "            scope,",
-                  "          });",
-                  ""
-                ]
-              },
-              {
-                "colno": 26,
-                "context_line": "    maybePromiseResult = fn();",
-                "filename": "[[FILENAME15]]",
-                "function": "Object.handleCallbackErrors",
-                "in_app": false,
-                "lineno": 26,
-                "module": "@sentry.core.cjs.utils:handleCallbackErrors",
-                "post_context": [
-                  "  } catch (e) {",
-                  "    onError(e);",
-                  "    onFinally();",
-                  "    throw e;",
-                  "  }",
-                  "",
-                  "  return maybeHandlePromiseRejection(maybePromiseResult, onError, onFinally);"
-                ],
-                "pre_context": [
-                  "  fn,",
-                  "  onError,",
-                  "  // eslint-disable-next-line @typescript-eslint/no-empty-function",
-                  "  onFinally = () => {},",
-                  ") {",
-                  "  let maybePromiseResult;",
-                  "  try {"
-                ]
-              },
-              {
-                "colno": 15,
-                "context_line": "        () => callback(activeSpan),",
-                "filename": "[[FILENAME14]]",
-                "function": "handleCallbackErrors.handleCallbackErrors.status.status",
-                "in_app": false,
-                "lineno": 100,
-                "module": "@sentry.core.cjs.tracing:trace",
-                "post_context": [
-                  "        () => {",
-                  "          // Only update the span status if it hasn't been changed yet",
-                  "          if (activeSpan) {",
-                  "            const { status } = spanUtils.spanToJSON(activeSpan);",
-                  "            if (!status || status === 'ok') {",
-                  "              activeSpan.setStatus('internal_error');",
-                  "            }"
-                ],
-                "pre_context": [
-                  "            parentSpan,",
-                  "            spanContext,",
-                  "            forceTransaction: context.forceTransaction,",
-                  "            scope,",
-                  "          });",
-                  "",
-                  "      return handleCallbackErrors.handleCallbackErrors("
-                ]
-              },
-              {
-                "colno": 47,
-                "context_line": "                  const response = await core.handleCallbackErrors(",
+                "colno": 24,
                 "filename": "[[FILENAME10]]",
-                "function": "<anonymous>",
+                "function": "SentryContextManager.with",
+                "in_app": false,
+                "lineno": "[[highNumber]]",
+                "module": "@sentry.opentelemetry.cjs:index"
+              },
+              {
+                "colno": 40,
+                "filename": "[[FILENAME11]]",
+                "function": "SentryContextManager.with",
+                "in_app": false,
+                "lineno": 33,
+                "module": "@opentelemetry.context-async-hooks.build.src:AsyncLocalStorageContextManager"
+              },
+              {
+                "colno": 14,
+                "filename": "[[FILENAME7]]",
+                "function": "AsyncLocalStorage.run",
+                "in_app": false,
+                "lineno": 346,
+                "module": "node:async_hooks"
+              },
+              {
+                "colno": 103,
+                "context_line": "        return context.with(spanContext.setValue(rootSpanIdKey, spanId), ()=>this.getTracerInstance().startActiveSpan(spanName, options, (span)=>{",
+                "filename": "[[FILENAME8]]",
+                "function": "?",
+                "in_app": false,
+                "lineno": 122,
+                "module": "next.dist.server.lib.trace:tracer",
+                "post_context": [
+                  "                const startTime = \"performance\" in globalThis ? globalThis.performance.now() : undefined;",
+                  "                const onCleanup = ()=>{",
+                  "                    rootSpanAttributesStore.delete(spanId);",
+                  "                    if (startTime && process.env.NEXT_OTEL_PERFORMANCE_PREFIX && _constants.LogSpanAllowList.includes(type || \"\")) {",
+                  "                        performance.measure(`${process.env.NEXT_OTEL_PERFORMANCE_PREFIX}:next-${(type.split(\".\").pop() || \"\").replace(/[A-Z] {snip}",
+                  "                            start: startTime,",
+                  "                            end: performance.now()"
+                ],
+                "pre_context": [
+                  "        }",
+                  "        const spanId = getSpanId();",
+                  "        options.attributes = {",
+                  "            \"next.span_name\": spanName,",
+                  "            \"next.span_type\": type,",
+                  "            ...options.attributes",
+                  "        };"
+                ]
+              },
+              {
+                "colno": 76,
+                "filename": "[[FILENAME12]]",
+                "function": "Tracer.startActiveSpan",
+                "in_app": false,
+                "lineno": 136,
+                "module": "@opentelemetry.sdk-trace-base.build.esm:Tracer"
+              },
+              {
+                "colno": 54,
+                "filename": "[[FILENAME13]]",
+                "function": "ContextAPI.with",
+                "in_app": false,
+                "lineno": 95,
+                "module": "@opentelemetry.api.build.esm.api:context"
+              },
+              {
+                "colno": 24,
+                "filename": "[[FILENAME10]]",
+                "function": "SentryContextManager.with",
+                "in_app": false,
+                "lineno": "[[highNumber]]",
+                "module": "@sentry.opentelemetry.cjs:index"
+              },
+              {
+                "colno": 40,
+                "filename": "[[FILENAME11]]",
+                "function": "SentryContextManager.with",
+                "in_app": false,
+                "lineno": 33,
+                "module": "@opentelemetry.context-async-hooks.build.src:AsyncLocalStorageContextManager"
+              },
+              {
+                "colno": 14,
+                "filename": "[[FILENAME7]]",
+                "function": "AsyncLocalStorage.run",
+                "in_app": false,
+                "lineno": 346,
+                "module": "node:async_hooks"
+              },
+              {
+                "colno": 36,
+                "context_line": "                    const result = fn(span);",
+                "filename": "[[FILENAME8]]",
+                "function": "?",
+                "in_app": false,
+                "lineno": 140,
+                "module": "next.dist.server.lib.trace:tracer",
+                "post_context": [
+                  "                    if (isPromise(result)) {",
+                  "                        // If there's error make sure it throws",
+                  "                        return result.then((res)=>{",
+                  "                            span.end();",
+                  "                            // Need to pass down the promise result,",
+                  "                            // it could be react stream response with error { error, stream }",
+                  "                            return res;"
+                ],
+                "pre_context": [
+                  "                if (isRootSpan) {",
+                  "                    rootSpanAttributesStore.set(spanId, new Map(Object.entries(options.attributes ?? {})));",
+                  "                }",
+                  "                try {",
+                  "                    if (fn.length > 1) {",
+                  "                        return fn(span, (err)=>closeSpanWithError(span, err));",
+                  "                    }"
+                ]
+              },
+              {
+                "colno": "[[highNumber]]",
+                "context_line": "'{snip} yncStorage:this.staticGenerationAsyncStorage});let o=await r(i,{params:t.params?function(e){let t={};for(let[r,n]of Object.entries(e))void 0 {snip}",
+                "filename": "[[FILENAME6]]",
+                "function": "?",
+                "in_app": false,
+                "lineno": 6,
+                "module": "next.dist.compiled.next-server:app-route.runtime.dev",
+                "post_context": ["//# sourceMappingURL=app-route.runtime.dev.js.map"],
+                "pre_context": [
+                  "(()=>{var e={\"./dist/compiled/@edge-runtime/cookies/index.js\":e=>{\"use strict\";var t=Object.defineProperty,r=Object.getOwnPropertyDescriptor {snip}",
+                  " * cookie",
+                  " * Copyright(c) 2012-2014 Roman Shtylman",
+                  " * Copyright(c) 2015 Douglas Christopher Wilson",
+                  " * MIT Licensed"
+                ]
+              },
+              {
+                "colno": 10,
+                "filename": "[[FILENAME14]]",
+                "function": "Object.apply",
+                "in_app": false,
+                "lineno": 68,
+                "module": "route.ts"
+              },
+              {
+                "colno": 52,
+                "filename": "[[FILENAME15]]",
+                "function": "Object.apply",
+                "in_app": false,
+                "lineno": 65,
+                "module": "@sentry.nextjs.cjs.common:wrapRouteHandlerWithSentry"
+              },
+              {
+                "colno": 17,
+                "filename": "[[FILENAME16]]",
+                "function": "Object.withIsolationScopeOrReuseFromRootSpan",
+                "in_app": false,
+                "lineno": 24,
+                "module": "@sentry.nextjs.cjs.common.utils:withIsolationScopeOrReuseFromRootSpan"
+              },
+              {
+                "colno": 14,
+                "filename": "[[FILENAME17]]",
+                "function": "Object.withIsolationScope",
+                "in_app": false,
+                "lineno": 96,
+                "module": "@sentry.core.cjs:currentScopes"
+              },
+              {
+                "colno": 28,
+                "filename": "[[FILENAME10]]",
+                "function": "Object.withIsolationScope",
+                "in_app": false,
+                "lineno": "[[highNumber]]",
+                "module": "@sentry.opentelemetry.cjs:index"
+              },
+              {
+                "colno": 54,
+                "filename": "[[FILENAME13]]",
+                "function": "ContextAPI.with",
+                "in_app": false,
+                "lineno": 95,
+                "module": "@opentelemetry.api.build.esm.api:context"
+              },
+              {
+                "colno": 24,
+                "filename": "[[FILENAME10]]",
+                "function": "SentryContextManager.with",
+                "in_app": false,
+                "lineno": "[[highNumber]]",
+                "module": "@sentry.opentelemetry.cjs:index"
+              },
+              {
+                "colno": 40,
+                "filename": "[[FILENAME11]]",
+                "function": "SentryContextManager.with",
+                "in_app": false,
+                "lineno": 33,
+                "module": "@opentelemetry.context-async-hooks.build.src:AsyncLocalStorageContextManager"
+              },
+              {
+                "colno": 14,
+                "filename": "[[FILENAME7]]",
+                "function": "AsyncLocalStorage.run",
+                "in_app": false,
+                "lineno": 346,
+                "module": "node:async_hooks"
+              },
+              {
+                "colno": 14,
+                "filename": "[[FILENAME10]]",
+                "function": "eval",
+                "in_app": false,
+                "lineno": "[[highNumber]]",
+                "module": "@sentry.opentelemetry.cjs:index"
+              },
+              {
+                "colno": 24,
+                "filename": "[[FILENAME15]]",
+                "function": "eval",
+                "in_app": false,
+                "lineno": 73,
+                "module": "@sentry.nextjs.cjs.common:wrapRouteHandlerWithSentry"
+              },
+              {
+                "colno": 10,
+                "filename": "[[FILENAME15]]",
+                "function": "startOrUpdateSpan",
                 "in_app": false,
                 "lineno": 50,
-                "module": "@sentry.nextjs.cjs.common:wrapRouteHandlerWithSentry",
-                "post_context": [
-                  "                    () => originalFunction.apply(thisArg, args),",
-                  "                    error => {",
-                  "                      // Next.js throws errors when calling `redirect()`. We don't wanna report these.",
-                  "                      if (!nextNavigationErrorUtils.isRedirectNavigationError(error)) {",
-                  "                        core.captureException(error, {",
-                  "                          mechanism: {",
-                  "                            handled: false,"
-                ],
-                "pre_context": [
-                  "                  name: `${method} ${parameterizedRoute}`,",
-                  "                  attributes: {",
-                  "                    [core.SEMANTIC_ATTRIBUTE_SENTRY_SOURCE]: 'route',",
-                  "                    [core.SEMANTIC_ATTRIBUTE_SENTRY_ORIGIN]: 'auto.function.nextjs',",
-                  "                  },",
-                  "                },",
-                  "                async span => {"
-                ]
+                "module": "@sentry.nextjs.cjs.common:wrapRouteHandlerWithSentry"
+              },
+              {
+                "colno": 41,
+                "filename": "[[FILENAME15]]",
+                "function": "eval",
+                "in_app": false,
+                "lineno": 74,
+                "module": "@sentry.nextjs.cjs.common:wrapRouteHandlerWithSentry"
               },
               {
                 "colno": 26,
-                "context_line": "    maybePromiseResult = fn();",
-                "filename": "[[FILENAME15]]",
+                "filename": "[[FILENAME18]]",
                 "function": "Object.handleCallbackErrors",
                 "in_app": false,
                 "lineno": 26,
-                "module": "@sentry.core.cjs.utils:handleCallbackErrors",
-                "post_context": [
-                  "  } catch (e) {",
-                  "    onError(e);",
-                  "    onFinally();",
-                  "    throw e;",
-                  "  }",
-                  "",
-                  "  return maybeHandlePromiseRejection(maybePromiseResult, onError, onFinally);"
-                ],
-                "pre_context": [
-                  "  fn,",
-                  "  onError,",
-                  "  // eslint-disable-next-line @typescript-eslint/no-empty-function",
-                  "  onFinally = () => {},",
-                  ") {",
-                  "  let maybePromiseResult;",
-                  "  try {"
-                ]
+                "module": "@sentry.core.cjs.utils:handleCallbackErrors"
               },
               {
-                "colno": 44,
-                "context_line": "                    () => originalFunction.apply(thisArg, args),",
-                "filename": "[[FILENAME10]]",
-                "function": "<anonymous>",
+                "colno": 38,
+                "filename": "[[FILENAME15]]",
+                "function": "eval",
                 "in_app": false,
-                "lineno": 51,
-                "module": "@sentry.nextjs.cjs.common:wrapRouteHandlerWithSentry",
-                "post_context": [
-                  "                    error => {",
-                  "                      // Next.js throws errors when calling `redirect()`. We don't wanna report these.",
-                  "                      if (!nextNavigationErrorUtils.isRedirectNavigationError(error)) {",
-                  "                        core.captureException(error, {",
-                  "                          mechanism: {",
-                  "                            handled: false,",
-                  "                          },"
-                ],
-                "pre_context": [
-                  "                  attributes: {",
-                  "                    [core.SEMANTIC_ATTRIBUTE_SENTRY_SOURCE]: 'route',",
-                  "                    [core.SEMANTIC_ATTRIBUTE_SENTRY_ORIGIN]: 'auto.function.nextjs',",
-                  "                  },",
-                  "                },",
-                  "                async span => {",
-                  "                  const response = await core.handleCallbackErrors("
-                ]
+                "lineno": 75,
+                "module": "@sentry.nextjs.cjs.common:wrapRouteHandlerWithSentry"
               },
               {
                 "colno": 86,
-                "filename": "[[FILENAME9]]",
+                "filename": "[[FILENAME14]]",
                 "function": "GET$1",
                 "in_app": false,
-                "lineno": 23,
+                "lineno": 22,
                 "module": "route.ts"
               }
             ]
@@ -1216,40 +860,7 @@
         }
       ]
     },
-    "modules": {
-      "ansi-styles": "4.3.0",
-      "balanced-match": "1.0.2",
-      "brace-expansion": "2.0.1",
-      "caniuse-lite": "1.0.30001610",
-      "commondir": "1.0.1",
-      "estree-walker": "2.0.2",
-      "fs.realpath": "1.0.0",
-      "function-bind": "1.1.2",
-      "has-flag": "4.0.0",
-      "hasown": "2.0.2",
-      "inflight": "1.0.6",
-      "inherits": "2.0.4",
-      "is-core-module": "2.13.1",
-      "is-reference": "1.2.1",
-      "js-tokens": "4.0.0",
-      "localforage": "1.10.0",
-      "loose-envify": "1.4.0",
-      "nanoid": "3.3.7",
-      "next": "13.2.0",
-      "once": "1.4.0",
-      "picocolors": "1.0.0",
-      "picomatch": "2.3.1",
-      "postcss": "8.4.14",
-      "react": "18.2.0",
-      "react-dom": "18.2.0",
-      "resolve": "1.22.8",
-      "rollup": "2.78.0",
-      "scheduler": "0.23.0",
-      "source-map-js": "1.2.0",
-      "stacktrace-parser": "0.1.10",
-      "styled-jsx": "5.1.1",
-      "wrappy": "1.0.2"
-    },
+    "modules": {},
     "platform": "node",
     "request": {
       "cookies": {},
@@ -1265,7 +876,11 @@
         "sec-fetch-dest": "empty",
         "sec-fetch-mode": "cors",
         "sec-fetch-site": "same-origin",
-        "user-agent": "[[user-agent]]"
+        "user-agent": "[[user-agent]]",
+        "x-forwarded-for": "::ffff:127.0.0.1",
+        "x-forwarded-host": "localhost:3030",
+        "x-forwarded-port": "3030",
+        "x-forwarded-proto": "http"
       },
       "url": "http://localhost:3030"
     },
@@ -1276,35 +891,41 @@
         "LinkedErrors",
         "RequestData",
         "Console",
-        "Undici",
+        "OnUncaughtException",
         "OnUnhandledRejection",
         "ContextLines",
         "LocalVariables",
         "Context",
         "Modules",
-        "RewriteFrames",
-        "Http",
-        "OnUncaughtException"
+        "Express",
+        "Fastify",
+        "Graphql",
+        "Mongo",
+        "Mongoose",
+        "Mysql",
+        "Mysql2",
+        "Postgres",
+        "Nest",
+        "Hapi",
+        "Koa",
+        "RequestIsolationScope",
+        "DistDirRewriteFrames"
       ],
       "name": "sentry.javascript.nextjs",
       "packages": [
         {
           "name": "npm:@sentry/nextjs",
-          "version": "7.110.1"
+          "version": "8.0.0-beta.1"
         },
         {
           "name": "npm:@sentry/node",
-          "version": "7.110.1"
+          "version": "8.0.0-beta.1"
         }
       ],
-      "version": "7.110.1"
+      "version": "8.0.0-beta.1"
     },
     "server_name": "D9M3PY4LQ7.local",
-    "tags": {
-      "runtime": "node",
-      "transaction": "GET /api/test-param-error/[param]"
-    },
     "timestamp": "[[timestamp]]",
-    "transaction": " "
+    "transaction": "GET /api/test-param-error/[param]"
   }
 ]
