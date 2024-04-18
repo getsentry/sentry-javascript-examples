@@ -2,6 +2,9 @@ import Koa from 'koa';
 import Router from '@koa/router';
 import * as Sentry from '@sentry/node';
 import { stripUrlQueryAndFragment } from '@sentry/utils';
+import dotenv from 'dotenv';
+
+dotenv.config({ path: './../../.env' });
 
 declare global {
   namespace globalThis {
@@ -14,7 +17,7 @@ const app = new Koa();
 
 Sentry.init({
   environment: 'qa', // dynamic sampling bias to keep transactions
-  dsn: process.env.E2E_TEST_DSN,
+  dsn: process.env.SENTRY_DSN,
   includeLocalVariables: true,
   debug: true,
   tunnel: `http://localhost:3031/`, // proxy server
