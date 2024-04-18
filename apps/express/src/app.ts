@@ -1,5 +1,5 @@
 import * as Sentry from '@sentry/node';
-import express from 'express';
+
 import dotenv from 'dotenv';
 
 dotenv.config({ path: './../../.env' });
@@ -10,8 +10,6 @@ declare global {
   }
 }
 
-const app = express();
-const port = 3030;
 
 Sentry.init({
   environment: 'qa', // dynamic sampling bias to keep transactions
@@ -20,11 +18,14 @@ Sentry.init({
   debug: true,
   tunnel: `http://localhost:3031/`, // proxy server
   tracesSampleRate: 1,
-  integrations: [new Sentry.Integrations.Express({ app })],
 });
 
-app.use(Sentry.Handlers.requestHandler());
-app.use(Sentry.Handlers.tracingHandler());
+import express from 'express';
+
+const app = express();
+const port = 3030;
+
+Sentry.setupExpressErrorHandler(app);
 
 app.get('/test-success', function (req, res) {
   res.send({ version: 'v1' });
@@ -93,8 +94,6 @@ app.get('/test-local-variables-caught', function (req, res) {
 
   res.send({ exceptionId, randomVariableToRecord });
 });
-
-app.use(Sentry.Handlers.errorHandler());
 
 // @ts-ignore
 app.use(function onError(err, req, res, next) {
