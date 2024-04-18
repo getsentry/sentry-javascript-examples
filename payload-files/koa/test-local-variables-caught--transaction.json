@@ -13,7 +13,7 @@
       "sample_rate": "1",
       "sampled": "true",
       "trace_id": "[[ID2]]",
-      "transaction": "GET /test-success"
+      "transaction": "GET /test-local-variables-caught"
     }
   },
   {
@@ -127,7 +127,6 @@
         "connection": "keep-alive",
         "cookie": "sc=2pGHpwfeQfLDqPcR9gwpxKl0DHTlOKYq",
         "host": "localhost:3030",
-        "if-none-match": "[[W/entityTagValue]]",
         "sec-ch-ua": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"",
         "sec-ch-ua-mobile": "?0",
         "sec-ch-ua-platform": "\"macOS\"",
@@ -140,7 +139,7 @@
       },
       "method": "GET",
       "query_string": {},
-      "url": "http://localhost:3030/test-success"
+      "url": "http://localhost:3030/test-local-variables-caught"
     },
     "sdk": {
       "integrations": [
@@ -172,10 +171,10 @@
     "start_timestamp": "[[timestamp]]",
     "tags": {
       "http.status_code": "200",
-      "transaction": "GET /test-success"
+      "transaction": "GET /test-local-variables-caught"
     },
     "timestamp": "[[timestamp]]",
-    "transaction": "GET /test-success",
+    "transaction": "GET /test-local-variables-caught",
     "transaction_info": {
       "source": "custom"
     },

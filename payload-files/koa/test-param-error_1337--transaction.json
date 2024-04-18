@@ -13,7 +13,7 @@
       "sample_rate": "1",
       "sampled": "true",
       "trace_id": "[[ID2]]",
-      "transaction": "GET /test-success"
+      "transaction": "GET /test-param-error/:param"
     }
   },
   {
@@ -140,7 +140,7 @@
       },
       "method": "GET",
       "query_string": {},
-      "url": "http://localhost:3030/test-success"
+      "url": "http://localhost:3030/test-param-error/1337"
     },
     "sdk": {
       "integrations": [
@@ -172,10 +172,10 @@
     "start_timestamp": "[[timestamp]]",
     "tags": {
       "http.status_code": "200",
-      "transaction": "GET /test-success"
+      "transaction": "GET /test-param-error/:param"
     },
     "timestamp": "[[timestamp]]",
-    "transaction": "GET /test-success",
+    "transaction": "GET /test-param-error/:param",
     "transaction_info": {
       "source": "custom"
     },

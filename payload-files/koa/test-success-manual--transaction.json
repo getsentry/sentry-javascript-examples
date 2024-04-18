@@ -1,19 +1,19 @@
 [
   {
+    "dsn": "[[dsn]]",
     "event_id": "[[ID1]]",
-    "sent_at": "[[ISODateString]]",
     "sdk": {
       "name": "sentry.javascript.node",
-      "version": "7.110.0"
+      "version": "7.110.1"
     },
-    "dsn": "[[dsn]]",
+    "sent_at": "[[ISODateString]]",
     "trace": {
       "environment": "qa",
       "public_key": "[[publicKey]]",
-      "trace_id": "[[ID2]]",
       "sample_rate": "1",
-      "transaction": "GET /test-success-manual",
-      "sampled": "true"
+      "sampled": "true",
+      "trace_id": "[[ID2]]",
+      "transaction": "GET /test-success-manual"
     }
   },
   {
@@ -21,95 +21,126 @@
   },
   {
     "contexts": {
-      "trace": {
-        "data": {
-          "http.response.status_code": 200,
-          "sentry.origin": "manual",
-          "sentry.op": "http.server",
-          "sentry.sample_rate": 1,
-          "sentry.source": "custom"
-        },
-        "op": "http.server",
-        "span_id": "[[ID3]]",
-        "status": "ok",
-        "tags": {
-          "http.status_code": "200"
-        },
-        "trace_id": "[[ID2]]",
-        "origin": "manual"
+      "app": {
+        "app_memory": "[[highNumber]]",
+        "app_start_time": "[[ISODateString]]"
+      },
+      "cloud_resource": {},
+      "culture": {
+        "locale": "en-US",
+        "timezone": "Europe/Vienna"
+      },
+      "device": {
+        "arch": "arm64",
+        "boot_time": "[[ISODateString]]",
+        "cpu_description": "Apple M1 Pro",
+        "free_memory": "[[highNumber]]",
+        "memory_size": "[[highNumber]]",
+        "processor_count": 10,
+        "processor_frequency": "[[highNumber]]"
+      },
+      "os": {
+        "build": "23D56",
+        "kernel_version": "23.3.0",
+        "name": "macOS",
+        "version": "14.3"
       },
       "runtime": {
         "name": "node",
         "version": "v20.12.1"
       },
-      "app": {
-        "app_start_time": "[[ISODateString]]",
-        "app_memory": "[[highNumber]]"
-      },
-      "os": {
-        "kernel_version": "23.2.0",
-        "name": "macOS",
-        "version": "14.2",
-        "build": "23C64"
-      },
-      "device": {
-        "boot_time": "[[ISODateString]]",
-        "arch": "arm64",
-        "memory_size": "[[highNumber]]",
-        "free_memory": "[[highNumber]]",
-        "processor_count": 10,
-        "cpu_description": "Apple M1 Pro",
-        "processor_frequency": "[[highNumber]]"
-      },
-      "culture": {
-        "locale": "en-US",
-        "timezone": "Europe/Vienna"
-      },
-      "cloud_resource": {}
-    },
-    "spans": [
-      {
+      "trace": {
         "data": {
+          "http.response.status_code": 200,
+          "sentry.op": "http.server",
           "sentry.origin": "manual",
-          "sentry.op": "e2e-test"
+          "sentry.sample_rate": 1,
+          "sentry.source": "custom"
         },
-        "description": "test-transaction",
-        "op": "e2e-test",
-        "parent_span_id": "[[ID3]]",
-        "span_id": "[[ID4]]",
-        "start_timestamp": "[[timestamp]]",
-        "timestamp": "[[timestamp]]",
-        "trace_id": "[[ID2]]",
-        "origin": "manual"
-      },
-      {
-        "data": {
-          "sentry.origin": "manual"
+        "op": "http.server",
+        "origin": "manual",
+        "span_id": "[[ID3]]",
+        "status": "ok",
+        "tags": {
+          "http.status_code": "200"
         },
-        "description": "test-span",
-        "parent_span_id": "[[ID4]]",
-        "span_id": "[[ID5]]",
-        "start_timestamp": "[[timestamp]]",
-        "timestamp": "[[timestamp]]",
-        "trace_id": "[[ID2]]",
-        "origin": "manual"
+        "trace_id": "[[ID2]]"
       }
-    ],
-    "start_timestamp": "[[timestamp]]",
-    "tags": {
-      "transaction": "GET /test-success-manual",
-      "http.status_code": "200"
     },
-    "timestamp": "[[timestamp]]",
-    "transaction": "GET /test-success-manual",
-    "type": "transaction",
-    "transaction_info": {
-      "source": "custom"
+    "environment": "qa",
+    "event_id": "[[ID1]]",
+    "modules": {
+      "accepts": "1.3.8",
+      "cache-content-type": "1.0.1",
+      "co": "4.6.0",
+      "content-disposition": "0.5.4",
+      "content-type": "1.0.5",
+      "cookies": "0.9.1",
+      "debug": "4.3.4",
+      "deep-equal": "1.0.1",
+      "delegates": "1.0.0",
+      "depd": "2.0.0",
+      "destroy": "1.2.0",
+      "dotenv": "16.4.5",
+      "ee-first": "1.1.1",
+      "encodeurl": "1.0.2",
+      "escape-html": "1.0.3",
+      "fresh": "0.5.2",
+      "has-symbols": "1.0.3",
+      "has-tostringtag": "1.0.2",
+      "http-assert": "1.5.0",
+      "http-errors": "2.0.0",
+      "inherits": "2.0.4",
+      "is-generator-function": "1.0.10",
+      "keygrip": "1.1.0",
+      "koa": "2.15.3",
+      "koa-compose": "4.1.0",
+      "koa-convert": "2.0.0",
+      "media-typer": "0.3.0",
+      "methods": "1.1.2",
+      "mime-db": "1.52.0",
+      "mime-types": "2.1.35",
+      "negotiator": "0.6.3",
+      "on-finished": "2.4.1",
+      "only": "0.0.2",
+      "parseurl": "1.3.3",
+      "safe-buffer": "5.2.1",
+      "setprototypeof": "1.2.0",
+      "statuses": "2.0.1",
+      "supports-color": "5.5.0",
+      "toidentifier": "1.0.1",
+      "tsscmp": "1.0.6",
+      "type-is": "1.6.18",
+      "vary": "1.1.2",
+      "ylru": "1.4.0"
     },
     "platform": "node",
-    "server_name": "D9M3PY4LQ7.local",
-    "event_id": "[[ID1]]",
-    "environment": "qa",
+    "request": {
+      "cookies": {
+        "sc": "2pGHpwfeQfLDqPcR9gwpxKl0DHTlOKYq"
+      },
+      "headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "accept-language": "en-GB,en-US;q=0.9,en;q=0.8,de;q=0.7",
+        "cache-control": "max-age=0",
+        "connection": "keep-alive",
+        "cookie": "sc=2pGHpwfeQfLDqPcR9gwpxKl0DHTlOKYq",
+        "host": "localhost:3030",
+        "sec-ch-ua": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"macOS\"",
+        "sec-fetch-dest": "document",
+        "sec-fetch-mode": "navigate",
+        "sec-fetch-site": "none",
+        "sec-fetch-user": "?1",
+        "upgrade-insecure-requests": "1",
+        "user-agent": "[[user-agent]]"
+      },
+      "method": "GET",
+      "query_string": {},
+      "url": "http://localhost:3030/test-success-manual"
+    },
     "sdk": {
       "integrations": [
         "InboundFilters",
@@ -127,78 +158,53 @@
         "Modules"
       ],
       "name": "sentry.javascript.node",
-      "version": "7.110.0",
       "packages": [
         {
           "name": "npm:@sentry/node",
-          "version": "7.110.0"
+          "version": "7.110.1"
         }
-      ]
+      ],
+      "version": "7.110.1"
     },
-    "modules": {
-      "koa": "2.15.3",
-      "is-generator-function": "1.0.10",
-      "has-tostringtag": "1.0.2",
-      "has-symbols": "1.0.3",
-      "debug": "4.3.4",
-      "supports-color": "5.5.0",
-      "on-finished": "2.4.1",
-      "ee-first": "1.1.1",
-      "content-disposition": "0.5.4",
-      "safe-buffer": "5.2.1",
-      "cache-content-type": "1.0.1",
-      "mime-types": "2.1.35",
-      "mime-db": "1.52.0",
-      "ylru": "1.4.0",
-      "escape-html": "1.0.3",
-      "type-is": "1.6.18",
-      "media-typer": "0.3.0",
-      "destroy": "1.2.0",
-      "vary": "1.1.2",
-      "only": "0.0.2",
-      "encodeurl": "1.0.2",
-      "koa-compose": "4.1.0",
-      "setprototypeof": "1.2.0",
-      "inherits": "2.0.4",
-      "toidentifier": "1.0.1",
-      "http-assert": "1.5.0",
-      "deep-equal": "1.0.1",
-      "delegates": "1.0.0",
-      "cookies": "0.9.1",
-      "depd": "2.0.0",
-      "keygrip": "1.1.0",
-      "tsscmp": "1.0.6",
-      "accepts": "1.3.8",
-      "negotiator": "0.6.3",
-      "content-type": "1.0.5",
-      "parseurl": "1.3.3",
-      "fresh": "0.5.2",
-      "koa-convert": "2.0.0",
-      "co": "4.6.0",
-      "http-errors": "2.0.0",
-      "statuses": "2.0.1",
-      "methods": "1.1.2"
-    },
-    "request": {
-      "cookies": {},
-      "headers": {
-        "host": "localhost:3030",
-        "user-agent": "[[user-agent]]",
-        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-        "accept-language": "en-US,en;q=0.5",
-        "accept-encoding": "gzip, deflate, br",
-        "connection": "keep-alive",
-        "upgrade-insecure-requests": "1",
-        "sec-fetch-dest": "document",
-        "sec-fetch-mode": "navigate",
-        "sec-fetch-site": "none",
-        "sec-fetch-user": "?1",
-        "pragma": "no-cache",
-        "cache-control": "no-cache"
+    "server_name": "JH0G94X29Q.local",
+    "spans": [
+      {
+        "data": {
+          "sentry.op": "e2e-test",
+          "sentry.origin": "manual"
+        },
+        "description": "test-transaction",
+        "op": "e2e-test",
+        "origin": "manual",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID4]]",
+        "start_timestamp": "[[timestamp]]",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
       },
-      "method": "GET",
-      "query_string": {},
-      "url": "http://localhost:3030/test-success-manual"
-    }
+      {
+        "data": {
+          "sentry.origin": "manual"
+        },
+        "description": "test-span",
+        "origin": "manual",
+        "parent_span_id": "[[ID4]]",
+        "span_id": "[[ID5]]",
+        "start_timestamp": "[[timestamp]]",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      }
+    ],
+    "start_timestamp": "[[timestamp]]",
+    "tags": {
+      "http.status_code": "200",
+      "transaction": "GET /test-success-manual"
+    },
+    "timestamp": "[[timestamp]]",
+    "transaction": "GET /test-success-manual",
+    "transaction_info": {
+      "source": "custom"
+    },
+    "type": "transaction"
   }
 ]

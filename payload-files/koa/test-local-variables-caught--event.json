@@ -1,0 +1,466 @@
+[
+  {
+    "dsn": "[[dsn]]",
+    "event_id": "[[ID1]]",
+    "sdk": {
+      "name": "sentry.javascript.node",
+      "version": "7.110.1"
+    },
+    "sent_at": "[[ISODateString]]",
+    "trace": {
+      "environment": "qa",
+      "public_key": "[[publicKey]]",
+      "sample_rate": "1",
+      "sampled": "true",
+      "trace_id": "[[ID2]]",
+      "transaction": "GET /test-local-variables-caught"
+    }
+  },
+  {
+    "type": "event"
+  },
+  {
+    "contexts": {
+      "app": {
+        "app_memory": "[[highNumber]]",
+        "app_start_time": "[[ISODateString]]"
+      },
+      "cloud_resource": {},
+      "culture": {
+        "locale": "en-US",
+        "timezone": "Europe/Vienna"
+      },
+      "device": {
+        "arch": "arm64",
+        "boot_time": "[[ISODateString]]",
+        "cpu_description": "Apple M1 Pro",
+        "free_memory": "[[highNumber]]",
+        "memory_size": "[[highNumber]]",
+        "processor_count": 10,
+        "processor_frequency": "[[highNumber]]"
+      },
+      "os": {
+        "build": "23D56",
+        "kernel_version": "23.3.0",
+        "name": "macOS",
+        "version": "14.3"
+      },
+      "runtime": {
+        "name": "node",
+        "version": "v20.12.1"
+      },
+      "trace": {
+        "data": {
+          "sentry.op": "http.server",
+          "sentry.origin": "manual",
+          "sentry.sample_rate": 1
+        },
+        "op": "http.server",
+        "origin": "manual",
+        "span_id": "[[ID3]]",
+        "trace_id": "[[ID2]]"
+      }
+    },
+    "environment": "qa",
+    "event_id": "[[ID1]]",
+    "exception": {
+      "values": [
+        {
+          "mechanism": {
+            "handled": true,
+            "type": "generic"
+          },
+          "stacktrace": {
+            "frames": [
+              {
+                "colno": 9,
+                "context_line": "        next();",
+                "filename": "[[FILENAME1]]",
+                "function": "<anonymous>",
+                "in_app": true,
+                "lineno": 177,
+                "module": "app",
+                "post_context": [
+                  "    });",
+                  "};",
+                  "// this tracing middleware creates a transaction per request",
+                  "var tracingMiddleWare = function (ctx, next) {",
+                  "    var reqMethod = (ctx.method || '').toUpperCase();",
+                  "    var reqUrl = ctx.url && (0, utils_1.stripUrlQueryAndFragment)(ctx.url);",
+                  "    // connect to trace of upstream app"
+                ],
+                "pre_context": [
+                  "        scope.addEventProcessor(function (event) {",
+                  "            return Sentry.addRequestDataToEvent(event, ctx.request, {",
+                  "                include: {",
+                  "                    user: false,",
+                  "                },",
+                  "            });",
+                  "        });"
+                ]
+              },
+              {
+                "colno": 32,
+                "context_line": "        return Promise.resolve(fn(context, dispatch.bind(null, i + 1)));",
+                "filename": "[[FILENAME2]]",
+                "function": "dispatch",
+                "in_app": false,
+                "lineno": 42,
+                "module": "koa-compose:index",
+                "post_context": [
+                  "      } catch (err) {",
+                  "        return Promise.reject(err)",
+                  "      }",
+                  "    }",
+                  "  }",
+                  "}",
+                  ""
+                ],
+                "pre_context": [
+                  "    function dispatch (i) {",
+                  "      if (i <= index) return Promise.reject(new Error('next() called multiple times'))",
+                  "      index = i",
+                  "      let fn = middleware[i]",
+                  "      if (i === middleware.length) fn = next",
+                  "      if (!fn) return Promise.resolve()",
+                  "      try {"
+                ]
+              },
+              {
+                "colno": 5,
+                "context_line": "    next();",
+                "filename": "[[FILENAME1]]",
+                "function": "tracingMiddleWare",
+                "in_app": true,
+                "lineno": 205,
+                "module": "app",
+                "post_context": [
+                  "};",
+                  "app.use(requestHandler);",
+                  "app.use(tracingMiddleWare);",
+                  "app.on('error', function (err, ctx) {",
+                  "    Sentry.withScope(function (scope) {",
+                  "        scope.setSDKProcessingMetadata({ request: ctx.request });",
+                  "        Sentry.captureException(err);"
+                ],
+                "pre_context": [
+                  "                var mountPath = ctx.mountPath || '';",
+                  "                transaction.setName(\"\".concat(reqMethod, \" \").concat(mountPath).concat(ctx._matchedRoute));",
+                  "            }",
+                  "            transaction.setHttpStatus(ctx.status);",
+                  "            transaction.finish();",
+                  "        });",
+                  "    });"
+                ]
+              },
+              {
+                "colno": 32,
+                "context_line": "        return Promise.resolve(fn(context, dispatch.bind(null, i + 1)));",
+                "filename": "[[FILENAME2]]",
+                "function": "dispatch",
+                "in_app": false,
+                "lineno": 42,
+                "module": "koa-compose:index",
+                "post_context": [
+                  "      } catch (err) {",
+                  "        return Promise.reject(err)",
+                  "      }",
+                  "    }",
+                  "  }",
+                  "}",
+                  ""
+                ],
+                "pre_context": [
+                  "    function dispatch (i) {",
+                  "      if (i <= index) return Promise.reject(new Error('next() called multiple times'))",
+                  "      index = i",
+                  "      let fn = middleware[i]",
+                  "      if (i === middleware.length) fn = next",
+                  "      if (!fn) return Promise.resolve()",
+                  "      try {"
+                ]
+              },
+              {
+                "colno": 31,
+                "context_line": "    return compose(layerChain)(ctx, next);",
+                "filename": "[[FILENAME3]]",
+                "function": "dispatch",
+                "in_app": false,
+                "lineno": 428,
+                "module": "@koa.router.lib:router",
+                "post_context": [
+                  "  };",
+                  "",
+                  "  dispatch.router = this;",
+                  "",
+                  "  return dispatch;",
+                  "};",
+                  ""
+                ],
+                "pre_context": [
+                  "        }",
+                  "",
+                  "        return next();",
+                  "      });",
+                  "      return memo.concat(layer.stack);",
+                  "    }, []);",
+                  ""
+                ]
+              },
+              {
+                "colno": 12,
+                "context_line": "    return dispatch(0)",
+                "filename": "[[FILENAME2]]",
+                "function": "<anonymous>",
+                "in_app": false,
+                "lineno": 34,
+                "module": "koa-compose:index",
+                "post_context": [
+                  "    function dispatch (i) {",
+                  "      if (i <= index) return Promise.reject(new Error('next() called multiple times'))",
+                  "      index = i",
+                  "      let fn = middleware[i]",
+                  "      if (i === middleware.length) fn = next",
+                  "      if (!fn) return Promise.resolve()",
+                  "      try {"
+                ],
+                "pre_context": [
+                  "   * @return {Promise}",
+                  "   * @api public",
+                  "   */",
+                  "",
+                  "  return function (context, next) {",
+                  "    // last called middleware #",
+                  "    let index = -1"
+                ]
+              },
+              {
+                "colno": 32,
+                "context_line": "        return Promise.resolve(fn(context, dispatch.bind(null, i + 1)));",
+                "filename": "[[FILENAME2]]",
+                "function": "dispatch",
+                "in_app": false,
+                "lineno": 42,
+                "module": "koa-compose:index",
+                "post_context": [
+                  "      } catch (err) {",
+                  "        return Promise.reject(err)",
+                  "      }",
+                  "    }",
+                  "  }",
+                  "}",
+                  ""
+                ],
+                "pre_context": [
+                  "    function dispatch (i) {",
+                  "      if (i <= index) return Promise.reject(new Error('next() called multiple times'))",
+                  "      index = i",
+                  "      let fn = middleware[i]",
+                  "      if (i === middleware.length) fn = next",
+                  "      if (!fn) return Promise.resolve()",
+                  "      try {"
+                ]
+              },
+              {
+                "colno": 16,
+                "context_line": "        return next();",
+                "filename": "[[FILENAME3]]",
+                "function": "<anonymous>",
+                "in_app": false,
+                "lineno": 423,
+                "module": "@koa.router.lib:router",
+                "post_context": [
+                  "      });",
+                  "      return memo.concat(layer.stack);",
+                  "    }, []);",
+                  "",
+                  "    return compose(layerChain)(ctx, next);",
+                  "  };",
+                  ""
+                ],
+                "pre_context": [
+                  "        ctx.routerPath = layer.path;",
+                  "        ctx.routerName = layer.name;",
+                  "        ctx._matchedRoute = layer.path;",
+                  "        if (layer.name) {",
+                  "          ctx._matchedRouteName = layer.name;",
+                  "        }",
+                  ""
+                ]
+              },
+              {
+                "colno": 32,
+                "context_line": "        return Promise.resolve(fn(context, dispatch.bind(null, i + 1)));",
+                "filename": "[[FILENAME2]]",
+                "function": "dispatch",
+                "in_app": false,
+                "lineno": 42,
+                "module": "koa-compose:index",
+                "post_context": [
+                  "      } catch (err) {",
+                  "        return Promise.reject(err)",
+                  "      }",
+                  "    }",
+                  "  }",
+                  "}",
+                  ""
+                ],
+                "pre_context": [
+                  "    function dispatch (i) {",
+                  "      if (i <= index) return Promise.reject(new Error('next() called multiple times'))",
+                  "      index = i",
+                  "      let fn = middleware[i]",
+                  "      if (i === middleware.length) fn = next",
+                  "      if (!fn) return Promise.resolve()",
+                  "      try {"
+                ]
+              },
+              {
+                "colno": 15,
+                "context_line": "        throw new Error('Local Variable Error');",
+                "filename": "[[FILENAME1]]",
+                "function": "<anonymous>",
+                "in_app": true,
+                "lineno": 160,
+                "module": "app",
+                "post_context": [
+                  "    }",
+                  "    catch (e) {",
+                  "        exceptionId = Sentry.captureException(e);",
+                  "    }",
+                  "    ctx.body = { exceptionId: exceptionId, randomVariableToRecord: randomVariableToRecord };",
+                  "});",
+                  "var requestHandler = function (ctx, next) {"
+                ],
+                "pre_context": [
+                  "    var randomVariableToRecord = 'LOCAL VARIABLE';",
+                  "    throw new Error(\"Uncaught Local Variable Error - \".concat(JSON.stringify({ randomVariableToRecord: randomVariableToRecord })));",
+                  "});",
+                  "router.get('/test-local-variables-caught', function (ctx) {",
+                  "    var randomVariableToRecord = 'LOCAL VARIABLE';",
+                  "    var exceptionId;",
+                  "    try {"
+                ],
+                "vars": {
+                  "ctx": {
+                    "_matchedRoute": "/test-local-variables-caught",
+                    "originalUrl": "/test-local-variables-caught",
+                    "routerName": null,
+                    "routerPath": "/test-local-variables-caught"
+                  },
+                  "randomVariableToRecord": "LOCAL VARIABLE"
+                }
+              }
+            ]
+          },
+          "type": "Error",
+          "value": "Local Variable Error"
+        }
+      ]
+    },
+    "modules": {
+      "accepts": "1.3.8",
+      "cache-content-type": "1.0.1",
+      "co": "4.6.0",
+      "content-disposition": "0.5.4",
+      "content-type": "1.0.5",
+      "cookies": "0.9.1",
+      "debug": "4.3.4",
+      "deep-equal": "1.0.1",
+      "delegates": "1.0.0",
+      "depd": "2.0.0",
+      "destroy": "1.2.0",
+      "dotenv": "16.4.5",
+      "ee-first": "1.1.1",
+      "encodeurl": "1.0.2",
+      "escape-html": "1.0.3",
+      "fresh": "0.5.2",
+      "has-symbols": "1.0.3",
+      "has-tostringtag": "1.0.2",
+      "http-assert": "1.5.0",
+      "http-errors": "2.0.0",
+      "inherits": "2.0.4",
+      "is-generator-function": "1.0.10",
+      "keygrip": "1.1.0",
+      "koa": "2.15.3",
+      "koa-compose": "4.1.0",
+      "koa-convert": "2.0.0",
+      "media-typer": "0.3.0",
+      "methods": "1.1.2",
+      "mime-db": "1.52.0",
+      "mime-types": "2.1.35",
+      "negotiator": "0.6.3",
+      "on-finished": "2.4.1",
+      "only": "0.0.2",
+      "parseurl": "1.3.3",
+      "safe-buffer": "5.2.1",
+      "setprototypeof": "1.2.0",
+      "statuses": "2.0.1",
+      "supports-color": "5.5.0",
+      "toidentifier": "1.0.1",
+      "tsscmp": "1.0.6",
+      "type-is": "1.6.18",
+      "vary": "1.1.2",
+      "ylru": "1.4.0"
+    },
+    "platform": "node",
+    "request": {
+      "cookies": {
+        "sc": "2pGHpwfeQfLDqPcR9gwpxKl0DHTlOKYq"
+      },
+      "headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "accept-language": "en-GB,en-US;q=0.9,en;q=0.8,de;q=0.7",
+        "cache-control": "max-age=0",
+        "connection": "keep-alive",
+        "cookie": "sc=2pGHpwfeQfLDqPcR9gwpxKl0DHTlOKYq",
+        "host": "localhost:3030",
+        "if-none-match": "[[W/entityTagValue]]",
+        "sec-ch-ua": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"macOS\"",
+        "sec-fetch-dest": "document",
+        "sec-fetch-mode": "navigate",
+        "sec-fetch-site": "none",
+        "sec-fetch-user": "?1",
+        "upgrade-insecure-requests": "1",
+        "user-agent": "[[user-agent]]"
+      },
+      "method": "GET",
+      "query_string": {},
+      "url": "http://localhost:3030/test-local-variables-caught"
+    },
+    "sdk": {
+      "integrations": [
+        "InboundFilters",
+        "FunctionToString",
+        "LinkedErrors",
+        "RequestData",
+        "Console",
+        "Http",
+        "Undici",
+        "OnUncaughtException",
+        "OnUnhandledRejection",
+        "ContextLines",
+        "LocalVariables",
+        "Context",
+        "Modules"
+      ],
+      "name": "sentry.javascript.node",
+      "packages": [
+        {
+          "name": "npm:@sentry/node",
+          "version": "7.110.1"
+        }
+      ],
+      "version": "7.110.1"
+    },
+    "server_name": "JH0G94X29Q.local",
+    "tags": {
+      "transaction": "GET /test-local-variables-caught"
+    },
+    "timestamp": "[[timestamp]]",
+    "transaction": "GET /test-local-variables-caught"
+  }
+]
