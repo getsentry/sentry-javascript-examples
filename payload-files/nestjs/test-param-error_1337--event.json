@@ -1,57 +1,94 @@
 [
   {
+    "dsn": "[[dsn]]",
     "event_id": "[[ID1]]",
-    "sent_at": "[[ISODateString]]",
     "sdk": {
       "name": "sentry.javascript.node",
       "version": "7.110.1"
     },
-    "dsn": "[[dsn]]",
+    "sent_at": "[[ISODateString]]",
     "trace": {
       "environment": "qa",
       "public_key": "[[publicKey]]",
-      "trace_id": "[[ID2]]",
       "sample_rate": "1",
-      "transaction": "GET /test-param-error/1337",
-      "sampled": "true"
+      "sampled": "true",
+      "trace_id": "[[ID2]]",
+      "transaction": "GET /test-param-error/1337"
     }
   },
   {
     "type": "event"
   },
   {
+    "contexts": {
+      "app": {
+        "app_memory": "[[highNumber]]",
+        "app_start_time": "[[ISODateString]]"
+      },
+      "cloud_resource": {},
+      "culture": {
+        "locale": "en-US",
+        "timezone": "Europe/Vienna"
+      },
+      "device": {
+        "arch": "arm64",
+        "boot_time": "[[ISODateString]]",
+        "cpu_description": "Apple M1 Pro",
+        "free_memory": "[[highNumber]]",
+        "memory_size": "[[highNumber]]",
+        "processor_count": 10,
+        "processor_frequency": "[[highNumber]]"
+      },
+      "os": {
+        "build": "23D56",
+        "kernel_version": "23.3.0",
+        "name": "macOS",
+        "version": "14.3"
+      },
+      "runtime": {
+        "name": "node",
+        "version": "v20.12.1"
+      },
+      "trace": {
+        "data": {
+          "sentry.op": "http.server",
+          "sentry.origin": "auto.http.node.tracingHandler",
+          "sentry.sample_rate": 1,
+          "sentry.source": "url"
+        },
+        "op": "http.server",
+        "origin": "auto.http.node.tracingHandler",
+        "span_id": "[[ID3]]",
+        "trace_id": "[[ID2]]"
+      }
+    },
+    "environment": "qa",
+    "event_id": "[[ID1]]",
     "exception": {
       "values": [
         {
-          "type": "Error",
-          "value": "This is an error",
+          "mechanism": {
+            "handled": true,
+            "type": "generic"
+          },
           "stacktrace": {
             "frames": [
               {
-                "filename": "[[FILENAME1]]",
-                "module": "task_queues",
-                "function": "processTicksAndRejections",
-                "lineno": 95,
                 "colno": 5,
-                "in_app": false
+                "filename": "[[FILENAME1]]",
+                "function": "processTicksAndRejections",
+                "in_app": false,
+                "lineno": 95,
+                "module": "task_queues"
               },
               {
-                "filename": "[[FILENAME2]]",
-                "module": "@nestjs.core.router:router-execution-context",
-                "function": "<anonymous>",
-                "lineno": 38,
                 "colno": 29,
-                "in_app": false,
-                "pre_context": [
-                  "        const pipes = this.pipesContextCreator.create(instance, callback, moduleKey, contextId, inquirerId);",
-                  "        const guards = this.guardsContextCreator.create(instance, callback, moduleKey, contextId, inquirerId);",
-                  "        const interceptors = this.interceptorsContextCreator.create(instance, callback, moduleKey, contextId, inquirerId);",
-                  "        const fnCanActivate = this.createGuardsFn(guards, instance, callback, contextType);",
-                  "        const fnApplyPipes = this.createPipesFn(pipes, paramsOptions);",
-                  "        const handler = (args, req, res, next) => async () => {",
-                  "            fnApplyPipes && (await fnApplyPipes(args, req, res, next));"
-                ],
                 "context_line": "            return callback.apply(instance, args);",
+                "filename": "[[FILENAME2]]",
+                "function": "<anonymous>",
+                "in_app": false,
+                "lineno": 38,
+                "module": "@nestjs.core.router:router-execution-context",
                 "post_context": [
                   "        };",
                   "        return async (req, res, next) => {",
@@ -60,25 +97,25 @@
                   "            this.responseController.setStatus(res, httpStatusCode);",
                   "            hasCustomHeaders &&",
                   "                this.responseController.setHeaders(res, responseHeaders);"
+                ],
+                "pre_context": [
+                  "        const pipes = this.pipesContextCreator.create(instance, callback, moduleKey, contextId, inquirerId);",
+                  "        const guards = this.guardsContextCreator.create(instance, callback, moduleKey, contextId, inquirerId);",
+                  "        const interceptors = this.interceptorsContextCreator.create(instance, callback, moduleKey, contextId, inquirerId);",
+                  "        const fnCanActivate = this.createGuardsFn(guards, instance, callback, contextType);",
+                  "        const fnApplyPipes = this.createPipesFn(pipes, paramsOptions);",
+                  "        const handler = (args, req, res, next) => async () => {",
+                  "            fnApplyPipes && (await fnApplyPipes(args, req, res, next));"
                 ]
               },
               {
-                "filename": "[[FILENAME3]]",
-                "module": "app.controller",
-                "function": "AppController.testParamError",
-                "lineno": 32,
                 "colno": 32,
-                "in_app": true,
-                "pre_context": [
-                  "    AppController.prototype.testError = function () {",
-                  "        return this.appService.testError();",
-                  "    };",
-                  "    AppController.prototype.testParamSuccess = function (param) {",
-                  "        return this.appService.testParamSuccess(param);",
-                  "    };",
-                  "    AppController.prototype.testParamError = function (param) {"
-                ],
                 "context_line": "        return this.appService.testParamError(param);",
+                "filename": "[[FILENAME3]]",
+                "function": "AppController.testParamError",
+                "in_app": true,
+                "lineno": 33,
+                "module": "app.controller",
                 "post_context": [
                   "    };",
                   "    AppController.prototype.testSuccessManual = function () {",
@@ -87,25 +124,25 @@
                   "    AppController.prototype.testErrorManual = function () {",
                   "        return this.appService.testErrorManual();",
                   "    };"
+                ],
+                "pre_context": [
+                  "    AppController.prototype.testError = function () {",
+                  "        return this.appService.testError();",
+                  "    };",
+                  "    AppController.prototype.testParamSuccess = function (param) {",
+                  "        return this.appService.testParamSuccess(param);",
+                  "    };",
+                  "    AppController.prototype.testParamError = function (param) {"
                 ]
               },
               {
-                "filename": "[[FILENAME4]]",
-                "module": "app.service",
-                "function": "AppService.testParamError",
-                "lineno": 96,
                 "colno": 16,
-                "in_app": true,
-                "pre_context": [
-                  "            });",
-                  "        });",
-                  "    };",
-                  "    AppService.prototype.testParamSuccess = function (param) {",
-                  "        return { paramWas: param };",
-                  "    };",
-                  "    AppService.prototype.testParamError = function (param) {"
-                ],
                 "context_line": "        return __awaiter(this, void 0, void 0, function () {",
+                "filename": "[[FILENAME4]]",
+                "function": "AppService.testParamError",
+                "in_app": true,
+                "lineno": 96,
+                "module": "app.service",
                 "post_context": [
                   "            var exceptionId;",
                   "            return __generator(this, function (_a) {",
@@ -114,25 +151,25 @@
                   "                        exceptionId = Sentry.captureException(new Error('This is an error'));",
                   "                        return [4 /*yield*/, Sentry.flush(2000)];",
                   "                    case 1:"
+                ],
+                "pre_context": [
+                  "            });",
+                  "        });",
+                  "    };",
+                  "    AppService.prototype.testParamSuccess = function (param) {",
+                  "        return { paramWas: param };",
+                  "    };",
+                  "    AppService.prototype.testParamError = function (param) {"
                 ]
               },
               {
-                "filename": "[[FILENAME4]]",
-                "module": "app.service",
-                "function": "__awaiter",
-                "lineno": 33,
                 "colno": 12,
-                "in_app": true,
-                "pre_context": [
-                  "    var result = {};",
-                  "    if (mod != null) for (var k in mod) if (k !== \"default\" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);",
-                  "    __setModuleDefault(result, mod);",
-                  "    return result;",
-                  "};",
-                  "var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {",
-                  "    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }"
-                ],
                 "context_line": "    return new (P || (P = Promise))(function (resolve, reject) {",
+                "filename": "[[FILENAME4]]",
+                "function": "__awaiter",
+                "in_app": true,
+                "lineno": 33,
+                "module": "app.service",
                 "post_context": [
                   "        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }",
                   "        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }",
@@ -141,31 +178,31 @@
                   "    });",
                   "};",
                   "var __generator = (this && this.__generator) || function (thisArg, body) {"
+                ],
+                "pre_context": [
+                  "    var result = {};",
+                  "    if (mod != null) for (var k in mod) if (k !== \"default\" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);",
+                  "    __setModuleDefault(result, mod);",
+                  "    return result;",
+                  "};",
+                  "var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {",
+                  "    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }"
                 ]
               },
               {
                 "filename": "[[FILENAME5]]",
-                "module": "<anonymous>",
                 "function": "new Promise",
-                "in_app": false
+                "in_app": false,
+                "module": "<anonymous>"
               },
               {
-                "filename": "[[FILENAME4]]",
-                "module": "app.service",
-                "function": "<anonymous>",
-                "lineno": 37,
                 "colno": 71,
-                "in_app": true,
-                "pre_context": [
-                  "};",
-                  "var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {",
-                  "    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }",
-                  "    return new (P || (P = Promise))(function (resolve, reject) {",
-                  "        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }",
-                  "        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }",
-                  "        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }"
-                ],
                 "context_line": "        step((generator = generator.apply(thisArg, _arguments || [])).next());",
+                "filename": "[[FILENAME4]]",
+                "function": "<anonymous>",
+                "in_app": true,
+                "lineno": 37,
+                "module": "app.service",
                 "post_context": [
                   "    });",
                   "};",
@@ -174,25 +211,25 @@
                   "    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { re {snip}",
                   "    function verb(n) { return function (v) { return step([n, v]); }; }",
                   "    function step(op) {"
+                ],
+                "pre_context": [
+                  "};",
+                  "var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {",
+                  "    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }",
+                  "    return new (P || (P = Promise))(function (resolve, reject) {",
+                  "        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }",
+                  "        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }",
+                  "        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }"
                 ]
               },
               {
-                "filename": "[[FILENAME4]]",
-                "module": "app.service",
-                "function": "Object.next",
-                "lineno": 43,
                 "colno": 53,
-                "in_app": true,
-                "pre_context": [
-                  "        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }",
-                  "        step((generator = generator.apply(thisArg, _arguments || [])).next());",
-                  "    });",
-                  "};",
-                  "var __generator = (this && this.__generator) || function (thisArg, body) {",
-                  "    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;",
-                  "    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { re {snip}"
-                ],
                 "context_line": "    function verb(n) { return function (v) { return step([n, v]); }; }",
+                "filename": "[[FILENAME4]]",
+                "function": "Object.next",
+                "in_app": true,
+                "lineno": 43,
+                "module": "app.service",
                 "post_context": [
                   "    function step(op) {",
                   "        if (f) throw new TypeError(\"Generator is already executing.\");",
@@ -201,25 +238,25 @@
                   "            if (y = 0, t) op = [op[0] & 2, t.value];",
                   "            switch (op[0]) {",
                   "                case 0: case 1: t = op; break;"
+                ],
+                "pre_context": [
+                  "        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }",
+                  "        step((generator = generator.apply(thisArg, _arguments || [])).next());",
+                  "    });",
+                  "};",
+                  "var __generator = (this && this.__generator) || function (thisArg, body) {",
+                  "    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;",
+                  "    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { re {snip}"
                 ]
               },
               {
-                "filename": "[[FILENAME4]]",
-                "module": "app.service",
-                "function": "step",
-                "lineno": 62,
                 "colno": 23,
-                "in_app": true,
-                "pre_context": [
-                  "                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }",
-                  "                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }",
-                  "                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }",
-                  "                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }",
-                  "                    if (t[2]) _.ops.pop();",
-                  "                    _.trys.pop(); continue;",
-                  "            }"
-                ],
                 "context_line": "            op = body.call(thisArg, _);",
+                "filename": "[[FILENAME4]]",
+                "function": "step",
+                "in_app": true,
+                "lineno": 62,
+                "module": "app.service",
                 "post_context": [
                   "        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }",
                   "        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };",
@@ -228,25 +265,25 @@
                   "Object.defineProperty(exports, \"__esModule\", { value: true });",
                   "exports.AppService = void 0;",
                   "var common_1 = require(\"@nestjs/common\");"
+                ],
+                "pre_context": [
+                  "                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }",
+                  "                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }",
+                  "                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }",
+                  "                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }",
+                  "                    if (t[2]) _.ops.pop();",
+                  "                    _.trys.pop(); continue;",
+                  "            }"
                 ]
               },
               {
-                "filename": "[[FILENAME4]]",
-                "module": "app.service",
-                "function": "AppService.<anonymous>",
-                "lineno": 101,
                 "colno": 63,
-                "in_app": true,
-                "pre_context": [
-                  "    };",
-                  "    AppService.prototype.testParamError = function (param) {",
-                  "        return __awaiter(this, void 0, void 0, function () {",
-                  "            var exceptionId;",
-                  "            return __generator(this, function (_a) {",
-                  "                switch (_a.label) {",
-                  "                    case 0:"
-                ],
                 "context_line": "                        exceptionId = Sentry.captureException(new Error('This is an error'));",
+                "filename": "[[FILENAME4]]",
+                "function": "AppService.<anonymous>",
+                "in_app": true,
+                "lineno": 101,
+                "module": "app.service",
                 "post_context": [
                   "                        return [4 /*yield*/, Sentry.flush(2000)];",
                   "                    case 1:",
@@ -255,64 +292,136 @@
                   "                }",
                   "            });",
                   "        });"
+                ],
+                "pre_context": [
+                  "    };",
+                  "    AppService.prototype.testParamError = function (param) {",
+                  "        return __awaiter(this, void 0, void 0, function () {",
+                  "            var exceptionId;",
+                  "            return __generator(this, function (_a) {",
+                  "                switch (_a.label) {",
+                  "                    case 0:"
                 ]
               }
             ]
           },
-          "mechanism": {
-            "type": "generic",
-            "handled": true
-          }
+          "type": "Error",
+          "value": "This is an error"
         }
       ]
     },
-    "event_id": "[[ID1]]",
-    "platform": "node",
-    "contexts": {
-      "trace": {
-        "data": {
-          "sentry.source": "url",
-          "sentry.origin": "auto.http.node.tracingHandler",
-          "sentry.op": "http.server",
-          "sentry.sample_rate": 1
-        },
-        "op": "http.server",
-        "span_id": "[[ID3]]",
-        "trace_id": "[[ID2]]",
-        "origin": "auto.http.node.tracingHandler"
-      },
-      "runtime": {
-        "name": "node",
-        "version": "v20.12.1"
-      },
-      "app": {
-        "app_start_time": "[[ISODateString]]",
-        "app_memory": "[[highNumber]]"
-      },
-      "os": {
-        "kernel_version": "23.2.0",
-        "name": "macOS",
-        "version": "14.2",
-        "build": "23C64"
-      },
-      "device": {
-        "boot_time": "[[ISODateString]]",
-        "arch": "arm64",
-        "memory_size": "[[highNumber]]",
-        "free_memory": "[[highNumber]]",
-        "processor_count": 10,
-        "cpu_description": "Apple M1 Pro",
-        "processor_frequency": "[[highNumber]]"
-      },
-      "culture": {
-        "locale": "en-US",
-        "timezone": "Europe/Vienna"
-      },
-      "cloud_resource": {}
+    "modules": {
+      "accepts": "1.3.8",
+      "append-field": "1.0.0",
+      "array-flatten": "1.1.1",
+      "body-parser": "1.20.2",
+      "buffer-from": "1.1.2",
+      "busboy": "1.6.0",
+      "bytes": "3.1.2",
+      "call-bind": "1.0.7",
+      "concat-stream": "1.6.2",
+      "content-disposition": "0.5.4",
+      "content-type": "1.0.5",
+      "cookie": "0.6.0",
+      "cookie-signature": "1.0.6",
+      "core-util-is": "1.0.3",
+      "cors": "2.8.5",
+      "define-data-property": "1.1.4",
+      "depd": "2.0.0",
+      "destroy": "1.2.0",
+      "dotenv": "16.4.5",
+      "ee-first": "1.1.1",
+      "encodeurl": "1.0.2",
+      "es-define-property": "1.0.0",
+      "es-errors": "1.3.0",
+      "escape-html": "1.0.3",
+      "etag": "1.8.1",
+      "express": "4.19.2",
+      "fast-safe-stringify": "2.1.1",
+      "finalhandler": "1.2.0",
+      "forwarded": "0.2.0",
+      "fresh": "0.5.2",
+      "function-bind": "1.1.2",
+      "get-intrinsic": "1.2.4",
+      "gopd": "1.0.1",
+      "has-property-descriptors": "1.0.2",
+      "has-proto": "1.0.3",
+      "has-symbols": "1.0.3",
+      "hasown": "2.0.2",
+      "http-errors": "2.0.0",
+      "iconv-lite": "0.4.24",
+      "inherits": "2.0.4",
+      "ipaddr.js": "1.9.1",
+      "iterare": "1.2.1",
+      "media-typer": "0.3.0",
+      "merge-descriptors": "1.0.1",
+      "methods": "1.1.2",
+      "mime": "1.6.0",
+      "mime-db": "1.52.0",
+      "mime-types": "2.1.35",
+      "mkdirp": "0.5.6",
+      "ms": "2.1.3",
+      "multer": "1.4.4-lts.1",
+      "negotiator": "0.6.3",
+      "object-assign": "4.1.1",
+      "object-inspect": "1.13.1",
+      "on-finished": "2.4.1",
+      "parseurl": "1.3.3",
+      "path-to-regexp": "0.1.7",
+      "process-nextick-args": "2.0.1",
+      "proxy-addr": "2.0.7",
+      "qs": "6.11.0",
+      "range-parser": "1.2.1",
+      "raw-body": "2.5.2",
+      "reflect-metadata": "0.2.2",
+      "rxjs": "7.8.1",
+      "safe-buffer": "5.2.1",
+      "safer-buffer": "2.1.2",
+      "send": "0.18.0",
+      "serve-static": "1.15.0",
+      "set-function-length": "1.2.2",
+      "setprototypeof": "1.2.0",
+      "side-channel": "1.0.6",
+      "source-map-support": "0.5.21",
+      "statuses": "2.0.1",
+      "streamsearch": "1.1.0",
+      "toidentifier": "1.0.1",
+      "tslib": "2.6.2",
+      "type-is": "1.6.18",
+      "uid": "2.0.2",
+      "unpipe": "1.0.0",
+      "util-deprecate": "1.0.2",
+      "utils-merge": "1.0.1",
+      "vary": "1.1.2",
+      "xtend": "4.0.2"
     },
-    "server_name": "D9M3PY4LQ7.local",
-    "timestamp": "[[timestamp]]",
-    "environment": "qa",
+    "platform": "node",
+    "request": {
+      "cookies": {
+        "sc": "2pGHpwfeQfLDqPcR9gwpxKl0DHTlOKYq"
+      },
+      "headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "accept-language": "en-GB,en-US;q=0.9,en;q=0.8,de;q=0.7",
+        "cache-control": "max-age=0",
+        "connection": "keep-alive",
+        "cookie": "sc=2pGHpwfeQfLDqPcR9gwpxKl0DHTlOKYq",
+        "host": "localhost:3030",
+        "sec-ch-ua": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"macOS\"",
+        "sec-fetch-dest": "document",
+        "sec-fetch-mode": "navigate",
+        "sec-fetch-site": "none",
+        "sec-fetch-user": "?1",
+        "upgrade-insecure-requests": "1",
+        "user-agent": "[[user-agent]]"
+      },
+      "method": "GET",
+      "query_string": {},
+      "url": "http://localhost:3030/test-param-error/1337"
+    },
     "sdk": {
       "integrations": [
         "InboundFilters",
@@ -330,122 +439,19 @@
         "Modules"
       ],
       "name": "sentry.javascript.node",
-      "version": "7.110.1",
       "packages": [
         {
           "name": "npm:@sentry/node",
           "version": "7.110.1"
         }
-      ]
+      ],
+      "version": "7.110.1"
     },
+    "server_name": "JH0G94X29Q.local",
     "tags": {
       "transaction": "GET /test-param-error/1337"
     },
-    "request": {
-      "method": "GET",
-      "cookies": {},
-      "headers": {
-        "host": "localhost:3030",
-        "user-agent": "[[user-agent]]",
-        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-        "accept-language": "en-US,en;q=0.5",
-        "accept-encoding": "gzip, deflate, br",
-        "connection": "keep-alive",
-        "upgrade-insecure-requests": "1",
-        "sec-fetch-dest": "document",
-        "sec-fetch-mode": "navigate",
-        "sec-fetch-site": "none",
-        "sec-fetch-user": "?1",
-        "pragma": "no-cache",
-        "cache-control": "no-cache"
-      },
-      "query_string": {},
-      "url": "http://localhost:3030/test-param-error/1337"
-    },
-    "transaction": "GET /test-param-error/:param",
-    "modules": {
-      "source-map-support": "0.5.21",
-      "buffer-from": "1.1.2",
-      "tslib": "2.6.2",
-      "reflect-metadata": "0.2.2",
-      "uid": "2.0.2",
-      "iterare": "1.2.1",
-      "rxjs": "7.8.1",
-      "fast-safe-stringify": "2.1.1",
-      "body-parser": "1.20.2",
-      "depd": "2.0.0",
-      "cors": "2.8.5",
-      "object-assign": "4.1.1",
-      "vary": "1.1.2",
-      "express": "4.19.2",
-      "merge-descriptors": "1.0.1",
-      "finalhandler": "1.2.0",
-      "encodeurl": "1.0.2",
-      "escape-html": "1.0.3",
-      "on-finished": "2.4.1",
-      "ee-first": "1.1.1",
-      "parseurl": "1.3.3",
-      "statuses": "2.0.1",
-      "unpipe": "1.0.0",
-      "array-flatten": "1.1.1",
-      "path-to-regexp": "0.1.7",
-      "methods": "1.1.2",
-      "utils-merge": "1.0.1",
-      "setprototypeof": "1.2.0",
-      "qs": "6.11.0",
-      "side-channel": "1.0.6",
-      "get-intrinsic": "1.2.4",
-      "es-errors": "1.3.0",
-      "has-symbols": "1.0.3",
-      "has-proto": "1.0.3",
-      "function-bind": "1.1.2",
-      "hasown": "2.0.2",
-      "call-bind": "1.0.7",
-      "set-function-length": "1.2.2",
-      "define-data-property": "1.1.4",
-      "es-define-property": "1.0.0",
-      "gopd": "1.0.1",
-      "has-property-descriptors": "1.0.2",
-      "object-inspect": "1.13.1",
-      "safe-buffer": "5.2.1",
-      "content-disposition": "0.5.4",
-      "content-type": "1.0.5",
-      "send": "0.18.0",
-      "http-errors": "2.0.0",
-      "inherits": "2.0.4",
-      "toidentifier": "1.0.1",
-      "destroy": "1.2.0",
-      "etag": "1.8.1",
-      "fresh": "0.5.2",
-      "mime": "1.6.0",
-      "ms": "2.1.3",
-      "range-parser": "1.2.1",
-      "proxy-addr": "2.0.7",
-      "forwarded": "0.2.0",
-      "ipaddr.js": "1.9.1",
-      "accepts": "1.3.8",
-      "negotiator": "0.6.3",
-      "mime-types": "2.1.35",
-      "mime-db": "1.52.0",
-      "type-is": "1.6.18",
-      "media-typer": "0.3.0",
-      "cookie-signature": "1.0.6",
-      "cookie": "0.6.0",
-      "bytes": "3.1.2",
-      "raw-body": "2.5.2",
-      "iconv-lite": "0.4.24",
-      "safer-buffer": "2.1.2",
-      "serve-static": "1.15.0",
-      "multer": "1.4.4-lts.1",
-      "busboy": "1.6.0",
-      "streamsearch": "1.1.0",
-      "xtend": "4.0.2",
-      "append-field": "1.0.0",
-      "concat-stream": "1.6.2",
-      "process-nextick-args": "2.0.1",
-      "isarray": "1.0.0",
-      "core-util-is": "1.0.3",
-      "util-deprecate": "1.0.2"
-    }
+    "timestamp": "[[timestamp]]",
+    "transaction": "GET /test-param-error/:param"
   }
 ]
