@@ -1,57 +1,94 @@
 [
   {
+    "dsn": "[[dsn]]",
     "event_id": "[[ID1]]",
-    "sent_at": "[[ISODateString]]",
     "sdk": {
       "name": "sentry.javascript.node",
       "version": "7.110.1"
     },
-    "dsn": "[[dsn]]",
+    "sent_at": "[[ISODateString]]",
     "trace": {
       "environment": "qa",
       "public_key": "[[publicKey]]",
-      "trace_id": "[[ID2]]",
       "sample_rate": "1",
-      "transaction": "GET /test-local-variables-uncaught",
-      "sampled": "true"
+      "sampled": "true",
+      "trace_id": "[[ID2]]",
+      "transaction": "GET /test-local-variables-uncaught"
     }
   },
   {
     "type": "event"
   },
   {
+    "contexts": {
+      "app": {
+        "app_memory": "[[highNumber]]",
+        "app_start_time": "[[ISODateString]]"
+      },
+      "cloud_resource": {},
+      "culture": {
+        "locale": "en-US",
+        "timezone": "Europe/Vienna"
+      },
+      "device": {
+        "arch": "arm64",
+        "boot_time": "[[ISODateString]]",
+        "cpu_description": "Apple M1 Pro",
+        "free_memory": "[[highNumber]]",
+        "memory_size": "[[highNumber]]",
+        "processor_count": 10,
+        "processor_frequency": "[[highNumber]]"
+      },
+      "os": {
+        "build": "23D56",
+        "kernel_version": "23.3.0",
+        "name": "macOS",
+        "version": "14.3"
+      },
+      "runtime": {
+        "name": "node",
+        "version": "v20.12.1"
+      },
+      "trace": {
+        "data": {
+          "sentry.op": "http.server",
+          "sentry.origin": "auto.http.node.tracingHandler",
+          "sentry.sample_rate": 1,
+          "sentry.source": "url"
+        },
+        "op": "http.server",
+        "origin": "auto.http.node.tracingHandler",
+        "span_id": "[[ID3]]",
+        "trace_id": "[[ID2]]"
+      }
+    },
+    "environment": "qa",
+    "event_id": "[[ID1]]",
     "exception": {
       "values": [
         {
-          "type": "Error",
-          "value": "Uncaught Local Variable Error - {\"randomVariableToRecord\":\"LOCAL_VARIABLE\"}",
+          "mechanism": {
+            "handled": false,
+            "type": "middleware"
+          },
           "stacktrace": {
             "frames": [
               {
-                "filename": "[[FILENAME1]]",
-                "module": "task_queues",
-                "function": "process.processTicksAndRejections",
-                "lineno": 95,
                 "colno": 5,
-                "in_app": false
+                "filename": "[[FILENAME1]]",
+                "function": "process.processTicksAndRejections",
+                "in_app": false,
+                "lineno": 95,
+                "module": "task_queues"
               },
               {
-                "filename": "[[FILENAME2]]",
-                "module": "fastify.lib:hooks",
-                "function": "handleResolve",
-                "lineno": 250,
                 "colno": 7,
-                "in_app": false,
-                "pre_context": [
-                  "      }",
-                  "      if (result && typeof result.then === 'function') {",
-                  "        result.then(handleResolve, handleReject)",
-                  "      }",
-                  "    }",
-                  "",
-                  "    function handleResolve () {"
-                ],
                 "context_line": "      next()",
+                "filename": "[[FILENAME2]]",
+                "function": "handleResolve",
+                "in_app": false,
+                "lineno": 250,
+                "module": "fastify.lib:hooks",
                 "post_context": [
                   "    }",
                   "",
@@ -60,25 +97,25 @@
                   "        err = new FST_ERR_SEND_UNDEFINED_ERR()",
                   "      }",
                   ""
+                ],
+                "pre_context": [
+                  "      }",
+                  "      if (result && typeof result.then === 'function') {",
+                  "        result.then(handleResolve, handleReject)",
+                  "      }",
+                  "    }",
+                  "",
+                  "    function handleResolve () {"
                 ]
               },
               {
-                "filename": "[[FILENAME2]]",
-                "module": "fastify.lib:hooks",
-                "function": "next",
-                "lineno": 233,
                 "colno": 9,
-                "in_app": false,
-                "pre_context": [
-                  "",
-                  "function hookRunnerGenerator (iterator) {",
-                  "  return function hookRunner (functions, request, reply, cb) {",
-                  "    let i = 0",
-                  "",
-                  "    function next (err) {",
-                  "      if (err || i === functions.length) {"
-                ],
                 "context_line": "        cb(err, request, reply)",
+                "filename": "[[FILENAME2]]",
+                "function": "next",
+                "in_app": false,
+                "lineno": 233,
+                "module": "fastify.lib:hooks",
                 "post_context": [
                   "        return",
                   "      }",
@@ -87,25 +124,25 @@
                   "      try {",
                   "        result = iterator(functions[i++], request, reply, next)",
                   "      } catch (error) {"
+                ],
+                "pre_context": [
+                  "",
+                  "function hookRunnerGenerator (iterator) {",
+                  "  return function hookRunner (functions, request, reply, cb) {",
+                  "    let i = 0",
+                  "",
+                  "    function next (err) {",
+                  "      if (err || i === functions.length) {"
                 ]
               },
               {
-                "filename": "[[FILENAME3]]",
-                "module": "fastify.lib:route",
-                "function": "runPreParsing",
-                "lineno": 609,
                 "colno": 5,
-                "in_app": false,
-                "pre_context": [
-                  "  }",
-                  "",
-                  "  request[kRequestPayloadStream] = request.raw",
-                  "",
-                  "  if (request[kRouteContext].preParsing !== null) {",
-                  "    preParsingHookRunner(request[kRouteContext].preParsing, request, reply, handleRequest)",
-                  "  } else {"
-                ],
                 "context_line": "    handleRequest(null, request, reply)",
+                "filename": "[[FILENAME3]]",
+                "function": "runPreParsing",
+                "in_app": false,
+                "lineno": 609,
+                "module": "fastify.lib:route",
                 "post_context": [
                   "  }",
                   "}",
@@ -114,25 +151,25 @@
                   " * Used within the route handler as a `net.Socket.close` event handler.",
                   " * The purpose is to remove a socket from the tracked sockets collection when",
                   " * the socket has naturally timed out."
-                ]
-              },
-              {
-                "filename": "[[FILENAME4]]",
-                "module": "fastify.lib:handleRequest",
-                "function": "handleRequest",
-                "lineno": 24,
-                "colno": 5,
-                "in_app": false,
+                ],
                 "pre_context": [
                   "  }",
                   "",
-                  "  const method = request.raw.method",
-                  "  const headers = request.headers",
-                  "  const context = request[kRouteContext]",
+                  "  request[kRequestPayloadStream] = request.raw",
                   "",
-                  "  if (method === 'GET' || method === 'HEAD') {"
-                ],
+                  "  if (request[kRouteContext].preParsing !== null) {",
+                  "    preParsingHookRunner(request[kRouteContext].preParsing, request, reply, handleRequest)",
+                  "  } else {"
+                ]
+              },
+              {
+                "colno": 5,
                 "context_line": "    handler(request, reply)",
+                "filename": "[[FILENAME4]]",
+                "function": "handleRequest",
+                "in_app": false,
+                "lineno": 24,
+                "module": "fastify.lib:handleRequest",
                 "post_context": [
                   "    return",
                   "  }",
@@ -141,25 +178,25 @@
                   "",
                   "  if (method === 'POST' || method === 'PUT' || method === 'PATCH' || method === 'TRACE' || method === 'SEARCH') {",
                   "    if (contentType === undefined) {"
+                ],
+                "pre_context": [
+                  "  }",
+                  "",
+                  "  const method = request.raw.method",
+                  "  const headers = request.headers",
+                  "  const context = request[kRouteContext]",
+                  "",
+                  "  if (method === 'GET' || method === 'HEAD') {"
                 ]
               },
               {
-                "filename": "[[FILENAME4]]",
-                "module": "fastify.lib:handleRequest",
-                "function": "handler",
-                "lineno": 75,
                 "colno": 7,
-                "in_app": false,
-                "pre_context": [
-                  "      preValidationHookRunner(",
-                  "        request[kRouteContext].preValidation,",
-                  "        request,",
-                  "        reply,",
-                  "        preValidationCallback",
-                  "      )",
-                  "    } else {"
-                ],
                 "context_line": "      preValidationCallback(null, request, reply)",
+                "filename": "[[FILENAME4]]",
+                "function": "handler",
+                "in_app": false,
+                "lineno": 75,
+                "module": "fastify.lib:handleRequest",
                 "post_context": [
                   "    }",
                   "  } catch (err) {",
@@ -168,25 +205,25 @@
                   "}",
                   "",
                   "function preValidationCallback (err, request, reply) {"
+                ],
+                "pre_context": [
+                  "      preValidationHookRunner(",
+                  "        request[kRouteContext].preValidation,",
+                  "        request,",
+                  "        reply,",
+                  "        preValidationCallback",
+                  "      )",
+                  "    } else {"
                 ]
               },
               {
-                "filename": "[[FILENAME4]]",
-                "module": "fastify.lib:handleRequest",
-                "function": "preValidationCallback",
-                "lineno": 98,
                 "colno": 5,
-                "in_app": false,
-                "pre_context": [
-                  "  const validationErr = validateSchema(reply[kRouteContext], request)",
-                  "  const isAsync = (validationErr && typeof validationErr.then === 'function') || false",
-                  "",
-                  "  if (isAsync) {",
-                  "    const cb = validationCompleted.bind(null, request, reply)",
-                  "    validationErr.then(cb, cb)",
-                  "  } else {"
-                ],
                 "context_line": "    validationCompleted(request, reply, validationErr)",
+                "filename": "[[FILENAME4]]",
+                "function": "preValidationCallback",
+                "in_app": false,
+                "lineno": 98,
+                "module": "fastify.lib:handleRequest",
                 "post_context": [
                   "  }",
                   "}",
@@ -195,25 +232,25 @@
                   "  if (validationErr) {",
                   "    if (reply[kRouteContext].attachValidation === false) {",
                   "      reply.send(validationErr)"
+                ],
+                "pre_context": [
+                  "  const validationErr = validateSchema(reply[kRouteContext], request)",
+                  "  const isAsync = (validationErr && typeof validationErr.then === 'function') || false",
+                  "",
+                  "  if (isAsync) {",
+                  "    const cb = validationCompleted.bind(null, request, reply)",
+                  "    validationErr.then(cb, cb)",
+                  "  } else {"
                 ]
               },
               {
-                "filename": "[[FILENAME4]]",
-                "module": "fastify.lib:handleRequest",
-                "function": "validationCompleted",
-                "lineno": 121,
                 "colno": 5,
-                "in_app": false,
-                "pre_context": [
-                  "    preHandlerHookRunner(",
-                  "      request[kRouteContext].preHandler,",
-                  "      request,",
-                  "      reply,",
-                  "      preHandlerCallback",
-                  "    )",
-                  "  } else {"
-                ],
                 "context_line": "    preHandlerCallback(null, request, reply)",
+                "filename": "[[FILENAME4]]",
+                "function": "validationCompleted",
+                "in_app": false,
+                "lineno": 121,
+                "module": "fastify.lib:handleRequest",
                 "post_context": [
                   "  }",
                   "}",
@@ -222,25 +259,25 @@
                   "  if (reply.sent) return",
                   "",
                   "  if (err != null) {"
+                ],
+                "pre_context": [
+                  "    preHandlerHookRunner(",
+                  "      request[kRouteContext].preHandler,",
+                  "      request,",
+                  "      reply,",
+                  "      preHandlerCallback",
+                  "    )",
+                  "  } else {"
                 ]
               },
               {
-                "filename": "[[FILENAME4]]",
-                "module": "fastify.lib:handleRequest",
-                "function": "preHandlerCallback",
-                "lineno": 137,
                 "colno": 37,
-                "in_app": false,
-                "pre_context": [
-                  "    reply.send(err)",
-                  "    return",
-                  "  }",
-                  "",
-                  "  let result",
-                  "",
-                  "  try {"
-                ],
                 "context_line": "    result = request[kRouteContext].handler(request, reply)",
+                "filename": "[[FILENAME4]]",
+                "function": "preHandlerCallback",
+                "in_app": false,
+                "lineno": 137,
+                "module": "fastify.lib:handleRequest",
                 "post_context": [
                   "  } catch (err) {",
                   "    reply[kReplyIsError] = true",
@@ -249,25 +286,25 @@
                   "  }",
                   "",
                   "  if (result !== undefined) {"
+                ],
+                "pre_context": [
+                  "    reply.send(err)",
+                  "    return",
+                  "  }",
+                  "",
+                  "  let result",
+                  "",
+                  "  try {"
                 ]
               },
               {
-                "filename": "[[FILENAME5]]",
-                "module": "app",
-                "function": "Object.<anonymous>",
-                "lineno": 165,
                 "colno": 11,
-                "in_app": true,
-                "pre_context": [
-                  "                    return [2 /*return*/];",
-                  "            }",
-                  "        });",
-                  "    });",
-                  "});",
-                  "app.get('/test-local-variables-uncaught', function (req, res) {",
-                  "    var randomVariableToRecord = 'LOCAL_VARIABLE';"
-                ],
                 "context_line": "    throw new Error(\"Uncaught Local Variable Error - \".concat(JSON.stringify({ randomVariableToRecord: randomVariableToRecord })));",
+                "filename": "[[FILENAME5]]",
+                "function": "Object.<anonymous>",
+                "in_app": true,
+                "lineno": 170,
+                "module": "app",
                 "post_context": [
                   "});",
                   "app.get('/test-local-variables-caught', function (req, res) {",
@@ -276,64 +313,88 @@
                   "    try {",
                   "        throw new Error('Local Variable Error');",
                   "    }"
+                ],
+                "pre_context": [
+                  "                    return [2 /*return*/];",
+                  "            }",
+                  "        });",
+                  "    });",
+                  "});",
+                  "app.get('/test-local-variables-uncaught', function (req, res) {",
+                  "    var randomVariableToRecord = 'LOCAL_VARIABLE';"
                 ]
               }
             ]
           },
-          "mechanism": {
-            "type": "middleware",
-            "handled": false
-          }
+          "type": "Error",
+          "value": "Uncaught Local Variable Error - {\"randomVariableToRecord\":\"LOCAL_VARIABLE\"}"
         }
       ]
     },
-    "event_id": "[[ID1]]",
-    "platform": "node",
-    "contexts": {
-      "trace": {
-        "data": {
-          "sentry.source": "url",
-          "sentry.origin": "auto.http.node.tracingHandler",
-          "sentry.op": "http.server",
-          "sentry.sample_rate": 1
-        },
-        "op": "http.server",
-        "span_id": "[[ID3]]",
-        "trace_id": "[[ID2]]",
-        "origin": "auto.http.node.tracingHandler"
-      },
-      "runtime": {
-        "name": "node",
-        "version": "v20.12.1"
-      },
-      "app": {
-        "app_start_time": "[[ISODateString]]",
-        "app_memory": "[[highNumber]]"
-      },
-      "os": {
-        "kernel_version": "23.2.0",
-        "name": "macOS",
-        "version": "14.2",
-        "build": "23C64"
-      },
-      "device": {
-        "boot_time": "[[ISODateString]]",
-        "arch": "arm64",
-        "memory_size": "[[highNumber]]",
-        "free_memory": "[[highNumber]]",
-        "processor_count": 10,
-        "cpu_description": "Apple M1 Pro",
-        "processor_frequency": "[[highNumber]]"
-      },
-      "culture": {
-        "locale": "en-US",
-        "timezone": "Europe/Vienna"
-      },
-      "cloud_resource": {}
+    "modules": {
+      "abstract-logging": "2.0.1",
+      "ajv": "8.12.0",
+      "atomic-sleep": "1.0.0",
+      "avvio": "8.3.0",
+      "dotenv": "16.4.5",
+      "fast-content-type-parse": "1.1.0",
+      "fast-decode-uri-component": "1.0.1",
+      "fast-deep-equal": "3.1.3",
+      "fast-json-stringify": "5.14.1",
+      "fast-querystring": "1.1.2",
+      "fast-redact": "3.5.0",
+      "fast-uri": "2.3.0",
+      "fastify": "4.26.2",
+      "fastq": "1.17.1",
+      "find-my-way": "8.1.0",
+      "forwarded": "0.2.0",
+      "ipaddr.js": "1.9.1",
+      "json-schema-ref-resolver": "1.0.1",
+      "on-exit-leak-free": "2.1.2",
+      "pino": "8.20.0",
+      "pino-std-serializers": "6.2.2",
+      "process-warning": "3.0.0",
+      "proxy-addr": "2.0.7",
+      "quick-format-unescaped": "4.0.4",
+      "ret": "0.2.2",
+      "reusify": "1.0.4",
+      "rfdc": "1.3.1",
+      "safe-regex2": "2.0.0",
+      "safe-stable-stringify": "2.4.3",
+      "secure-json-parse": "2.7.0",
+      "semver": "7.6.0",
+      "sonic-boom": "3.8.1",
+      "thread-stream": "2.4.1",
+      "toad-cache": "3.7.0",
+      "uri-js": "4.4.1",
+      "yallist": "4.0.0"
     },
-    "server_name": "D9M3PY4LQ7.local",
-    "timestamp": "[[timestamp]]",
-    "environment": "qa",
+    "platform": "node",
+    "request": {
+      "cookies": {
+        "sc": "2pGHpwfeQfLDqPcR9gwpxKl0DHTlOKYq"
+      },
+      "headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "accept-encoding": "gzip, deflate, br, zstd",
+        "accept-language": "en-GB,en-US;q=0.9,en;q=0.8,de;q=0.7",
+        "cache-control": "max-age=0",
+        "connection": "keep-alive",
+        "cookie": "sc=2pGHpwfeQfLDqPcR9gwpxKl0DHTlOKYq",
+        "host": "localhost:3030",
+        "sec-ch-ua": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"",
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": "\"macOS\"",
+        "sec-fetch-dest": "document",
+        "sec-fetch-mode": "navigate",
+        "sec-fetch-site": "none",
+        "sec-fetch-user": "?1",
+        "upgrade-insecure-requests": "1",
+        "user-agent": "[[user-agent]]"
+      },
+      "method": "GET",
+      "url": "http://localhost:3030/test-local-variables-uncaught"
+    },
     "sdk": {
       "integrations": [
         "InboundFilters",
@@ -351,74 +412,19 @@
         "Modules"
       ],
       "name": "sentry.javascript.node",
-      "version": "7.110.1",
       "packages": [
         {
           "name": "npm:@sentry/node",
           "version": "7.110.1"
         }
-      ]
+      ],
+      "version": "7.110.1"
     },
+    "server_name": "JH0G94X29Q.local",
     "tags": {
       "transaction": "GET /test-local-variables-uncaught"
     },
-    "request": {
-      "method": "GET",
-      "cookies": {},
-      "headers": {
-        "host": "localhost:3030",
-        "user-agent": "[[user-agent]]",
-        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-        "accept-language": "en-US,en;q=0.5",
-        "accept-encoding": "gzip, deflate, br",
-        "connection": "keep-alive",
-        "upgrade-insecure-requests": "1",
-        "sec-fetch-dest": "document",
-        "sec-fetch-mode": "navigate",
-        "sec-fetch-site": "none",
-        "sec-fetch-user": "?1",
-        "pragma": "no-cache",
-        "cache-control": "no-cache"
-      },
-      "url": "http://localhost:3030/test-local-variables-uncaught"
-    },
-    "transaction": "GET /test-local-variables-uncaught",
-    "modules": {
-      "fastify": "4.26.2",
-      "avvio": "8.3.0",
-      "fastq": "1.17.1",
-      "reusify": "1.0.4",
-      "process-warning": "3.0.0",
-      "abstract-logging": "2.0.1",
-      "pino": "8.20.0",
-      "pino-std-serializers": "6.2.2",
-      "fast-redact": "3.5.0",
-      "quick-format-unescaped": "4.0.4",
-      "sonic-boom": "3.8.1",
-      "atomic-sleep": "1.0.0",
-      "on-exit-leak-free": "2.1.2",
-      "thread-stream": "2.4.1",
-      "safe-stable-stringify": "2.4.3",
-      "rfdc": "1.3.1",
-      "fast-json-stringify": "5.14.1",
-      "ajv": "8.12.0",
-      "fast-deep-equal": "3.1.3",
-      "uri-js": "4.4.1",
-      "fast-uri": "2.3.0",
-      "proxy-addr": "2.0.7",
-      "forwarded": "0.2.0",
-      "ipaddr.js": "1.9.1",
-      "semver": "7.6.0",
-      "yallist": "4.0.0",
-      "toad-cache": "3.7.0",
-      "fast-content-type-parse": "1.1.0",
-      "secure-json-parse": "2.7.0",
-      "json-schema-ref-resolver": "1.0.1",
-      "find-my-way": "8.1.0",
-      "fast-querystring": "1.1.2",
-      "fast-decode-uri-component": "1.0.1",
-      "safe-regex2": "2.0.0",
-      "ret": "0.2.2"
-    }
+    "timestamp": "[[timestamp]]",
+    "transaction": "GET /test-local-variables-uncaught"
   }
 ]
