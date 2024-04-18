@@ -9,16 +9,16 @@ example applications can also be used as a reference for using the JS SDKs.
 ## Setup
 
 1. Clone the repository
-1. Copy the `.env.example` file to `.env` and set the `SENTRY_DSN` variable in it
+2. Copy the `.env.example` file to `.env` and set the `SENTRY_DSN` variable in it
 
 ## How to test apps and save the payloads
 
 1. Make sure you have a folder named like the app in `payload-files`.
    - Example: `apps/express` -> `payload-files/express`
-1. Run `yarn start:[app]`, e.g. `yarn start:express`.
-1. Check the "Disable Cache" option in the DevTools Network tab of your browser.
-1. Open the following URLs in your browser.
-1. The json file will be generated.
+2. Run `yarn start:[app]`, e.g. `yarn start:express`.
+3. Check the "Disable Cache" option in the DevTools Network tab of your browser.
+4. Open the following URLs in your browser.
+5. The json file will be generated.
 
 ### Test URLs (for servers like express, fastify)
 
