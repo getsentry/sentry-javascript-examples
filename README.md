@@ -6,19 +6,19 @@ The main purpose of this repository is to visualize the differences between the
 [Sentry JS SDK](https://github.com/getsentry/sentry-javascript) version 7 and version 8. Those
 example applications can also be used as a reference for using the JS SDKs.
 
+## Setup
+
+1. Clone the repository
+1. Copy the `.env.example` file to `.env` and set the `SENTRY_DSN` variable in it
+
 ## How to test apps and save the payloads
 
-1. Change the proxy-server options in `utils/event-proxy-server/start-event-proxy.ts`
-   - `appName`: the app folder name you want to test (e.g. `apps/express` -> `appName: 'express'`)
-   - `filenameOrigin`: where the filename comes from (usually `url` but sometimes `transactionName`)
-2. Make sure you have a folder named like the app in `payload-files`.
+1. Make sure you have a folder named like the app in `payload-files`.
    - Example: `apps/express` -> `payload-files/express`
-3. Add an env variable for `E2E_TEST_DSN`
-4. Run `yarn start:proxy-server`.
-5. Run `yarn start:[app]` like `start:express`.
-6. Check the "Disable Cache" option in the DevTools Network tab of your browser.
-7. Open the following URLs in your browser.
-8. The json file will be generated.
+1. Run `yarn start:[app]`, e.g. `yarn start:express`.
+1. Check the "Disable Cache" option in the DevTools Network tab of your browser.
+1. Open the following URLs in your browser.
+1. The json file will be generated.
 
 ### Test URLs (for servers like express, fastify)
 
