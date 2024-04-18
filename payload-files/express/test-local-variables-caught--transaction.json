@@ -13,7 +13,7 @@
       "sample_rate": "1",
       "sampled": "true",
       "trace_id": "[[ID2]]",
-      "transaction": "GET /test-error"
+      "transaction": "GET /test-local-variables-caught"
     }
   },
   {
@@ -65,7 +65,7 @@
           "sentry.origin": "auto.http.node.tracingHandler",
           "sentry.sample_rate": 1,
           "sentry.source": "route",
-          "url": "/test-error"
+          "url": "/test-local-variables-caught"
         },
         "op": "http.server",
         "origin": "auto.http.node.tracingHandler",
@@ -156,7 +156,6 @@
         "connection": "keep-alive",
         "cookie": "sc=2pGHpwfeQfLDqPcR9gwpxKl0DHTlOKYq",
         "host": "localhost:3030",
-        "if-none-match": "[[W/entityTagValue]]",
         "sec-ch-ua": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"",
         "sec-ch-ua-mobile": "?0",
         "sec-ch-ua-platform": "\"macOS\"",
@@ -169,7 +168,7 @@
       },
       "method": "GET",
       "query_string": {},
-      "url": "http://localhost:3030/test-error"
+      "url": "http://localhost:3030/test-local-variables-caught"
     },
     "sdk": {
       "integrations": [
@@ -204,7 +203,7 @@
       "http.status_code": "200"
     },
     "timestamp": "[[timestamp]]",
-    "transaction": "GET /test-error",
+    "transaction": "GET /test-local-variables-caught",
     "transaction_info": {
       "source": "route"
     },
