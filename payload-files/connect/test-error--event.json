@@ -1,0 +1,390 @@
+[
+  {
+    "dsn": "[[dsn]]",
+    "event_id": "[[ID1]]",
+    "sdk": {
+      "name": "sentry.javascript.node",
+      "version": "7.110.1"
+    },
+    "sent_at": "[[ISODateString]]",
+    "trace": {
+      "environment": "qa",
+      "public_key": "[[publicKey]]",
+      "trace_id": "[[ID2]]"
+    }
+  },
+  {
+    "type": "event"
+  },
+  {
+    "breadcrumbs": [
+      {
+        "category": "console",
+        "level": "log",
+        "message": "Example app listening on port 3030",
+        "timestamp": "[[timestamp]]"
+      }
+    ],
+    "contexts": {
+      "app": {
+        "app_memory": "[[highNumber]]",
+        "app_start_time": "[[ISODateString]]"
+      },
+      "cloud_resource": {},
+      "culture": {
+        "locale": "en-US",
+        "timezone": "Europe/Vienna"
+      },
+      "device": {
+        "arch": "arm64",
+        "boot_time": "[[ISODateString]]",
+        "cpu_description": "Apple M1 Pro",
+        "free_memory": "[[highNumber]]",
+        "memory_size": "[[highNumber]]",
+        "processor_count": 10,
+        "processor_frequency": "[[highNumber]]"
+      },
+      "os": {
+        "build": "23C64",
+        "kernel_version": "23.2.0",
+        "name": "macOS",
+        "version": "14.2"
+      },
+      "runtime": {
+        "name": "node",
+        "version": "v20.12.1"
+      },
+      "trace": {
+        "span_id": "[[ID3]]",
+        "trace_id": "[[ID2]]"
+      }
+    },
+    "environment": "qa",
+    "event_id": "[[ID1]]",
+    "exception": {
+      "values": [
+        {
+          "mechanism": {
+            "handled": true,
+            "type": "generic"
+          },
+          "stacktrace": {
+            "frames": [
+              {
+                "colno": 14,
+                "context_line": "      return next(err);",
+                "filename": "[[FILENAME1]]",
+                "function": "next",
+                "in_app": false,
+                "lineno": 161,
+                "module": "connect:index",
+                "post_context": [
+                  "    }",
+                  "",
+                  "    // skip if route match does not border \"/\", \".\", or end",
+                  "    var c = path.length > route.length && path[route.length];",
+                  "    if (c && c !== '/' && c !== '.') {",
+                  "      return next(err);",
+                  "    }"
+                ],
+                "pre_context": [
+                  "",
+                  "    // route data",
+                  "    var path = parseUrl(req).pathname || '/';",
+                  "    var route = layer.route;",
+                  "",
+                  "    // skip this layer if the route doesn't match",
+                  "    if (path.toLowerCase().substr(0, route.length) !== route.toLowerCase()) {"
+                ]
+              },
+              {
+                "colno": 5,
+                "context_line": "    call(layer.handle, route, err, req, res, next);",
+                "filename": "[[FILENAME1]]",
+                "function": "next",
+                "in_app": false,
+                "lineno": 183,
+                "module": "connect:index",
+                "post_context": [
+                  "  }",
+                  "",
+                  "  next();",
+                  "};",
+                  "",
+                  "/**",
+                  " * Listen for connections."
+                ],
+                "pre_context": [
+                  "      if (!protohost && req.url[0] !== '/') {",
+                  "        req.url = '/' + req.url;",
+                  "        slashAdded = true;",
+                  "      }",
+                  "    }",
+                  "",
+                  "    // call the layer handle"
+                ]
+              },
+              {
+                "colno": 7,
+                "context_line": "      handle(req, res, next);",
+                "filename": "[[FILENAME1]]",
+                "function": "call",
+                "in_app": false,
+                "lineno": 239,
+                "module": "connect:index",
+                "post_context": [
+                  "      return;",
+                  "    }",
+                  "  } catch (e) {",
+                  "    // replace the error",
+                  "    error = e;",
+                  "  }",
+                  ""
+                ],
+                "pre_context": [
+                  "  try {",
+                  "    if (hasError && arity === 4) {",
+                  "      // error-handling middleware",
+                  "      handle(err, req, res, next);",
+                  "      return;",
+                  "    } else if (!hasError && arity < 4) {",
+                  "      // request-handling middleware"
+                ]
+              },
+              {
+                "colno": 12,
+                "context_line": "    return __awaiter(this, void 0, void 0, function () {",
+                "filename": "[[FILENAME2]]",
+                "function": "<anonymous>",
+                "in_app": true,
+                "lineno": 86,
+                "module": "app",
+                "post_context": [
+                  "        var exceptionId;",
+                  "        return __generator(this, function (_a) {",
+                  "            switch (_a.label) {",
+                  "                case 0:",
+                  "                    exceptionId = Sentry.captureException(new Error('This is an error'));",
+                  "                    return [4 /*yield*/, Sentry.flush(2000)];",
+                  "                case 1:"
+                ],
+                "pre_context": [
+                  "app.use(Sentry.Handlers.requestHandler());",
+                  "// app.use(Sentry.Handlers.tracingHandler());",
+                  "var stringify = function (obj) { return JSON.stringify(obj, null, 2); };",
+                  "app.use('/test-success', function (req, res) {",
+                  "    res.end(stringify({ version: 'v1' }));",
+                  "});",
+                  "app.use('/test-error', function (req, res) {"
+                ]
+              },
+              {
+                "colno": 12,
+                "context_line": "    return new (P || (P = Promise))(function (resolve, reject) {",
+                "filename": "[[FILENAME2]]",
+                "function": "__awaiter",
+                "in_app": true,
+                "lineno": 27,
+                "module": "app",
+                "post_context": [
+                  "        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }",
+                  "        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }",
+                  "        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }",
+                  "        step((generator = generator.apply(thisArg, _arguments || [])).next());",
+                  "    });",
+                  "};",
+                  "var __generator = (this && this.__generator) || function (thisArg, body) {"
+                ],
+                "pre_context": [
+                  "    var result = {};",
+                  "    if (mod != null) for (var k in mod) if (k !== \"default\" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);",
+                  "    __setModuleDefault(result, mod);",
+                  "    return result;",
+                  "};",
+                  "var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {",
+                  "    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }"
+                ]
+              },
+              {
+                "filename": "[[FILENAME3]]",
+                "function": "new Promise",
+                "in_app": false,
+                "module": "<anonymous>"
+              },
+              {
+                "colno": 71,
+                "context_line": "        step((generator = generator.apply(thisArg, _arguments || [])).next());",
+                "filename": "[[FILENAME2]]",
+                "function": "<anonymous>",
+                "in_app": true,
+                "lineno": 31,
+                "module": "app",
+                "post_context": [
+                  "    });",
+                  "};",
+                  "var __generator = (this && this.__generator) || function (thisArg, body) {",
+                  "    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;",
+                  "    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { re {snip}",
+                  "    function verb(n) { return function (v) { return step([n, v]); }; }",
+                  "    function step(op) {"
+                ],
+                "pre_context": [
+                  "};",
+                  "var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {",
+                  "    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }",
+                  "    return new (P || (P = Promise))(function (resolve, reject) {",
+                  "        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }",
+                  "        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }",
+                  "        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }"
+                ]
+              },
+              {
+                "colno": 53,
+                "context_line": "    function verb(n) { return function (v) { return step([n, v]); }; }",
+                "filename": "[[FILENAME2]]",
+                "function": "Object.next",
+                "in_app": true,
+                "lineno": 37,
+                "module": "app",
+                "post_context": [
+                  "    function step(op) {",
+                  "        if (f) throw new TypeError(\"Generator is already executing.\");",
+                  "        while (g && (g = 0, op[0] && (_ = 0)), _) try {",
+                  "            if (f = 1, y && (t = op[0] & 2 ? y[\"return\"] : op[0] ? y[\"throw\"] || ((t = y[\"return\"]) && t.call(y), 0) : y.next) && !(t = t.ca {snip}",
+                  "            if (y = 0, t) op = [op[0] & 2, t.value];",
+                  "            switch (op[0]) {",
+                  "                case 0: case 1: t = op; break;"
+                ],
+                "pre_context": [
+                  "        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }",
+                  "        step((generator = generator.apply(thisArg, _arguments || [])).next());",
+                  "    });",
+                  "};",
+                  "var __generator = (this && this.__generator) || function (thisArg, body) {",
+                  "    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;",
+                  "    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { re {snip}"
+                ]
+              },
+              {
+                "colno": 23,
+                "context_line": "            op = body.call(thisArg, _);",
+                "filename": "[[FILENAME2]]",
+                "function": "step",
+                "in_app": true,
+                "lineno": 56,
+                "module": "app",
+                "post_context": [
+                  "        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }",
+                  "        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };",
+                  "    }",
+                  "};",
+                  "var __importDefault = (this && this.__importDefault) || function (mod) {",
+                  "    return (mod && mod.__esModule) ? mod : { \"default\": mod };",
+                  "};"
+                ],
+                "pre_context": [
+                  "                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }",
+                  "                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }",
+                  "                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }",
+                  "                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }",
+                  "                    if (t[2]) _.ops.pop();",
+                  "                    _.trys.pop(); continue;",
+                  "            }"
+                ]
+              },
+              {
+                "colno": 59,
+                "context_line": "                    exceptionId = Sentry.captureException(new Error('This is an error'));",
+                "filename": "[[FILENAME2]]",
+                "function": "<anonymous>",
+                "in_app": true,
+                "lineno": 91,
+                "module": "app",
+                "post_context": [
+                  "                    return [4 /*yield*/, Sentry.flush(2000)];",
+                  "                case 1:",
+                  "                    _a.sent();",
+                  "                    res.end(stringify({ exceptionId: exceptionId }));",
+                  "                    return [2 /*return*/];",
+                  "            }",
+                  "        });"
+                ],
+                "pre_context": [
+                  "});",
+                  "app.use('/test-error', function (req, res) {",
+                  "    return __awaiter(this, void 0, void 0, function () {",
+                  "        var exceptionId;",
+                  "        return __generator(this, function (_a) {",
+                  "            switch (_a.label) {",
+                  "                case 0:"
+                ]
+              }
+            ]
+          },
+          "type": "Error",
+          "value": "This is an error"
+        }
+      ]
+    },
+    "modules": {
+      "connect": "3.7.0",
+      "dotenv": "16.4.5",
+      "ee-first": "1.1.1",
+      "encodeurl": "1.0.2",
+      "escape-html": "1.0.3",
+      "finalhandler": "1.1.2",
+      "parseurl": "1.3.3",
+      "unpipe": "1.0.0",
+      "utils-merge": "1.0.1"
+    },
+    "platform": "node",
+    "request": {
+      "cookies": {},
+      "headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        "accept-encoding": "gzip, deflate, br",
+        "accept-language": "en-US,en;q=0.5",
+        "cache-control": "no-cache",
+        "connection": "keep-alive",
+        "host": "localhost:3030",
+        "pragma": "no-cache",
+        "sec-fetch-dest": "document",
+        "sec-fetch-mode": "navigate",
+        "sec-fetch-site": "none",
+        "sec-fetch-user": "?1",
+        "upgrade-insecure-requests": "1",
+        "user-agent": "[[user-agent]]"
+      },
+      "method": "GET",
+      "url": "http://localhost:3030/test-error"
+    },
+    "sdk": {
+      "integrations": [
+        "InboundFilters",
+        "FunctionToString",
+        "LinkedErrors",
+        "RequestData",
+        "Console",
+        "Http",
+        "Undici",
+        "OnUncaughtException",
+        "OnUnhandledRejection",
+        "ContextLines",
+        "LocalVariables",
+        "Context",
+        "Modules"
+      ],
+      "name": "sentry.javascript.node",
+      "packages": [
+        {
+          "name": "npm:@sentry/node",
+          "version": "7.110.1"
+        }
+      ],
+      "version": "7.110.1"
+    },
+    "server_name": "D9M3PY4LQ7.oekorouter.com",
+    "timestamp": "[[timestamp]]",
+    "transaction": "GET /test-error"
+  }
+]

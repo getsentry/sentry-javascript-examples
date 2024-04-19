@@ -1,0 +1,151 @@
+[
+  {
+    "dsn": "[[dsn]]",
+    "event_id": "[[ID1]]",
+    "sdk": {
+      "name": "sentry.javascript.node",
+      "version": "7.110.1"
+    },
+    "sent_at": "[[ISODateString]]",
+    "trace": {
+      "environment": "qa",
+      "public_key": "[[publicKey]]",
+      "sample_rate": "1",
+      "sampled": "true",
+      "trace_id": "[[ID2]]",
+      "transaction": "GET /test-param-success/1337"
+    }
+  },
+  {
+    "type": "transaction"
+  },
+  {
+    "breadcrumbs": [
+      {
+        "category": "console",
+        "level": "log",
+        "message": "Example app listening on port 3030",
+        "timestamp": "[[timestamp]]"
+      }
+    ],
+    "contexts": {
+      "app": {
+        "app_memory": "[[highNumber]]",
+        "app_start_time": "[[ISODateString]]"
+      },
+      "cloud_resource": {},
+      "culture": {
+        "locale": "en-US",
+        "timezone": "Europe/Vienna"
+      },
+      "device": {
+        "arch": "arm64",
+        "boot_time": "[[ISODateString]]",
+        "cpu_description": "Apple M1 Pro",
+        "free_memory": "[[highNumber]]",
+        "memory_size": "[[highNumber]]",
+        "processor_count": 10,
+        "processor_frequency": "[[highNumber]]"
+      },
+      "os": {
+        "build": "23C64",
+        "kernel_version": "23.2.0",
+        "name": "macOS",
+        "version": "14.2"
+      },
+      "runtime": {
+        "name": "node",
+        "version": "v20.12.1"
+      },
+      "trace": {
+        "data": {
+          "http.response.status_code": 200,
+          "sentry.op": "http.server",
+          "sentry.origin": "auto.http.node.tracingHandler",
+          "sentry.sample_rate": 1,
+          "sentry.source": "url",
+          "url": "/test-param-success/1337"
+        },
+        "op": "http.server",
+        "origin": "auto.http.node.tracingHandler",
+        "span_id": "[[ID3]]",
+        "status": "ok",
+        "tags": {
+          "http.status_code": "200"
+        },
+        "trace_id": "[[ID2]]"
+      }
+    },
+    "environment": "qa",
+    "event_id": "[[ID1]]",
+    "modules": {
+      "connect": "3.7.0",
+      "dotenv": "16.4.5",
+      "ee-first": "1.1.1",
+      "encodeurl": "1.0.2",
+      "escape-html": "1.0.3",
+      "finalhandler": "1.1.2",
+      "parseurl": "1.3.3",
+      "unpipe": "1.0.0",
+      "utils-merge": "1.0.1"
+    },
+    "platform": "node",
+    "request": {
+      "cookies": {},
+      "headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        "accept-encoding": "gzip, deflate, br",
+        "accept-language": "en-US,en;q=0.5",
+        "cache-control": "no-cache",
+        "connection": "keep-alive",
+        "host": "localhost:3030",
+        "pragma": "no-cache",
+        "sec-fetch-dest": "document",
+        "sec-fetch-mode": "navigate",
+        "sec-fetch-site": "none",
+        "sec-fetch-user": "?1",
+        "upgrade-insecure-requests": "1",
+        "user-agent": "[[user-agent]]"
+      },
+      "method": "GET",
+      "url": "http://localhost:3030/test-param-success/1337"
+    },
+    "sdk": {
+      "integrations": [
+        "InboundFilters",
+        "FunctionToString",
+        "LinkedErrors",
+        "RequestData",
+        "Console",
+        "Http",
+        "Undici",
+        "OnUncaughtException",
+        "OnUnhandledRejection",
+        "ContextLines",
+        "LocalVariables",
+        "Context",
+        "Modules"
+      ],
+      "name": "sentry.javascript.node",
+      "packages": [
+        {
+          "name": "npm:@sentry/node",
+          "version": "7.110.1"
+        }
+      ],
+      "version": "7.110.1"
+    },
+    "server_name": "D9M3PY4LQ7.oekorouter.com",
+    "spans": [],
+    "start_timestamp": "[[timestamp]]",
+    "tags": {
+      "http.status_code": "200"
+    },
+    "timestamp": "[[timestamp]]",
+    "transaction": "GET /test-param-success/1337",
+    "transaction_info": {
+      "source": "custom"
+    },
+    "type": "transaction"
+  }
+]

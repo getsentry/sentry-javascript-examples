@@ -1,0 +1,403 @@
+[
+  {
+    "dsn": "[[dsn]]",
+    "event_id": "[[ID1]]",
+    "sdk": {
+      "name": "sentry.javascript.node",
+      "version": "7.110.1"
+    },
+    "sent_at": "[[ISODateString]]",
+    "trace": {
+      "environment": "qa",
+      "public_key": "[[publicKey]]",
+      "sample_rate": "1",
+      "sampled": "true",
+      "trace_id": "[[ID2]]",
+      "transaction": "GET /test-error-manual"
+    }
+  },
+  {
+    "type": "event"
+  },
+  {
+    "breadcrumbs": [
+      {
+        "category": "console",
+        "level": "log",
+        "message": "Example app listening on port 3030",
+        "timestamp": "[[timestamp]]"
+      }
+    ],
+    "contexts": {
+      "app": {
+        "app_memory": "[[highNumber]]",
+        "app_start_time": "[[ISODateString]]"
+      },
+      "cloud_resource": {},
+      "culture": {
+        "locale": "en-US",
+        "timezone": "Europe/Vienna"
+      },
+      "device": {
+        "arch": "arm64",
+        "boot_time": "[[ISODateString]]",
+        "cpu_description": "Apple M1 Pro",
+        "free_memory": "[[highNumber]]",
+        "memory_size": "[[highNumber]]",
+        "processor_count": 10,
+        "processor_frequency": "[[highNumber]]"
+      },
+      "os": {
+        "build": "23C64",
+        "kernel_version": "23.2.0",
+        "name": "macOS",
+        "version": "14.2"
+      },
+      "runtime": {
+        "name": "node",
+        "version": "v20.12.1"
+      },
+      "trace": {
+        "data": {
+          "sentry.origin": "manual"
+        },
+        "origin": "manual",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID4]]",
+        "trace_id": "[[ID2]]"
+      }
+    },
+    "environment": "qa",
+    "event_id": "[[ID1]]",
+    "exception": {
+      "values": [
+        {
+          "mechanism": {
+            "handled": true,
+            "type": "generic"
+          },
+          "stacktrace": {
+            "frames": [
+              {
+                "colno": 25,
+                "context_line": "    return asyncStorage.run(newHub, () => {",
+                "filename": "[[FILENAME1]]",
+                "function": "Object.runWithAsyncContext",
+                "in_app": false,
+                "lineno": 45,
+                "module": "@sentry.node.cjs.async:hooks",
+                "post_context": [
+                  "      return callback();",
+                  "    });",
+                  "  }",
+                  "",
+                  "  core.setAsyncContextStrategy({ getCurrentHub, runWithAsyncContext });",
+                  "}",
+                  ""
+                ],
+                "pre_context": [
+                  "      // We're already in an async context, so we don't need to create a new one",
+                  "      // just call the callback with the current hub",
+                  "      return callback();",
+                  "    }",
+                  "",
+                  "    const newHub = createNewHub(existingHub);",
+                  ""
+                ]
+              },
+              {
+                "colno": 14,
+                "filename": "[[FILENAME2]]",
+                "function": "AsyncLocalStorage.run",
+                "in_app": false,
+                "lineno": 346,
+                "module": "node:async_hooks"
+              },
+              {
+                "colno": 14,
+                "context_line": "      return callback();",
+                "filename": "[[FILENAME1]]",
+                "function": "<anonymous>",
+                "in_app": false,
+                "lineno": 46,
+                "module": "@sentry.node.cjs.async:hooks",
+                "post_context": [
+                  "    });",
+                  "  }",
+                  "",
+                  "  core.setAsyncContextStrategy({ getCurrentHub, runWithAsyncContext });",
+                  "}",
+                  "",
+                  "exports.setHooksAsyncContextStrategy = setHooksAsyncContextStrategy;"
+                ],
+                "pre_context": [
+                  "      // just call the callback with the current hub",
+                  "      return callback();",
+                  "    }",
+                  "",
+                  "    const newHub = createNewHub(existingHub);",
+                  "",
+                  "    return asyncStorage.run(newHub, () => {"
+                ]
+              },
+              {
+                "colno": 22,
+                "context_line": "    return exports$1.withScope(context.scope, scope => {",
+                "filename": "[[FILENAME3]]",
+                "function": "<anonymous>",
+                "in_app": false,
+                "lineno": 83,
+                "module": "@sentry.core.cjs.tracing:trace",
+                "post_context": [
+                  "      // eslint-disable-next-line deprecation/deprecation",
+                  "      const hub$1 = hub.getCurrentHub();",
+                  "      // eslint-disable-next-line deprecation/deprecation",
+                  "      const parentSpan = scope.getSpan();",
+                  "",
+                  "      const shouldSkipSpan = context.onlyIfParent && !parentSpan;",
+                  "      const activeSpan = shouldSkipSpan"
+                ],
+                "pre_context": [
+                  " * or you didn't set `tracesSampleRate`, this function will not generate spans",
+                  " * and the `span` returned from the callback will be undefined.",
+                  " */",
+                  "function startSpan(context, callback) {",
+                  "  const spanContext = normalizeContext(context);",
+                  "",
+                  "  return hub.runWithAsyncContext(() => {"
+                ]
+              },
+              {
+                "colno": 20,
+                "context_line": "      return hub$1.withScope(callback);",
+                "filename": "[[FILENAME4]]",
+                "function": "Object.withScope",
+                "in_app": false,
+                "lineno": 177,
+                "module": "@sentry.core.cjs:exports",
+                "post_context": [
+                  "    }",
+                  "",
+                  "    // eslint-disable-next-line deprecation/deprecation",
+                  "    return hub$1.withScope(() => {",
+                  "      // eslint-disable-next-line deprecation/deprecation",
+                  "      hub$1.getStackTop().scope = scope ;",
+                  "      return callback(scope );"
+                ],
+                "pre_context": [
+                  "  const hub$1 = hub.getCurrentHub();",
+                  "",
+                  "  // If a scope is defined, we want to make this the active scope instead of the default one",
+                  "  if (rest.length === 2) {",
+                  "    const [scope, callback] = rest;",
+                  "    if (!scope) {",
+                  "      // eslint-disable-next-line deprecation/deprecation"
+                ]
+              },
+              {
+                "colno": 28,
+                "context_line": "      maybePromiseResult = callback(scope);",
+                "filename": "[[FILENAME5]]",
+                "function": "Hub.withScope",
+                "in_app": false,
+                "lineno": 194,
+                "module": "@sentry.core.cjs:hub",
+                "post_context": [
+                  "    } catch (e) {",
+                  "      // eslint-disable-next-line deprecation/deprecation",
+                  "      this.popScope();",
+                  "      throw e;",
+                  "    }",
+                  "",
+                  "    if (utils.isThenable(maybePromiseResult)) {"
+                ],
+                "pre_context": [
+                  "   */",
+                  "   withScope(callback) {",
+                  "    // eslint-disable-next-line deprecation/deprecation",
+                  "    const scope = this.pushScope();",
+                  "",
+                  "    let maybePromiseResult;",
+                  "    try {"
+                ]
+              },
+              {
+                "colno": 35,
+                "context_line": "      return handleCallbackErrors.handleCallbackErrors(",
+                "filename": "[[FILENAME3]]",
+                "function": "<anonymous>",
+                "in_app": false,
+                "lineno": 99,
+                "module": "@sentry.core.cjs.tracing:trace",
+                "post_context": [
+                  "        () => callback(activeSpan),",
+                  "        () => {",
+                  "          // Only update the span status if it hasn't been changed yet",
+                  "          if (activeSpan) {",
+                  "            const { status } = spanUtils.spanToJSON(activeSpan);",
+                  "            if (!status || status === 'ok') {",
+                  "              activeSpan.setStatus('internal_error');"
+                ],
+                "pre_context": [
+                  "        : createChildSpanOrTransaction(hub$1, {",
+                  "            parentSpan,",
+                  "            spanContext,",
+                  "            forceTransaction: context.forceTransaction,",
+                  "            scope,",
+                  "          });",
+                  ""
+                ]
+              },
+              {
+                "colno": 26,
+                "context_line": "    maybePromiseResult = fn();",
+                "filename": "[[FILENAME6]]",
+                "function": "Object.handleCallbackErrors",
+                "in_app": false,
+                "lineno": 26,
+                "module": "@sentry.core.cjs.utils:handleCallbackErrors",
+                "post_context": [
+                  "  } catch (e) {",
+                  "    onError(e);",
+                  "    onFinally();",
+                  "    throw e;",
+                  "  }",
+                  "",
+                  "  return maybeHandlePromiseRejection(maybePromiseResult, onError, onFinally);"
+                ],
+                "pre_context": [
+                  "  fn,",
+                  "  onError,",
+                  "  // eslint-disable-next-line @typescript-eslint/no-empty-function",
+                  "  onFinally = () => {},",
+                  ") {",
+                  "  let maybePromiseResult;",
+                  "  try {"
+                ]
+              },
+              {
+                "colno": 15,
+                "context_line": "        () => callback(activeSpan),",
+                "filename": "[[FILENAME3]]",
+                "function": "handleCallbackErrors.handleCallbackErrors.status.status",
+                "in_app": false,
+                "lineno": 100,
+                "module": "@sentry.core.cjs.tracing:trace",
+                "post_context": [
+                  "        () => {",
+                  "          // Only update the span status if it hasn't been changed yet",
+                  "          if (activeSpan) {",
+                  "            const { status } = spanUtils.spanToJSON(activeSpan);",
+                  "            if (!status || status === 'ok') {",
+                  "              activeSpan.setStatus('internal_error');",
+                  "            }"
+                ],
+                "pre_context": [
+                  "            parentSpan,",
+                  "            spanContext,",
+                  "            forceTransaction: context.forceTransaction,",
+                  "            scope,",
+                  "          });",
+                  "",
+                  "      return handleCallbackErrors.handleCallbackErrors("
+                ]
+              },
+              {
+                "colno": 53,
+                "context_line": "                            Sentry.captureException(new Error('This is an error'));",
+                "filename": "[[FILENAME7]]",
+                "function": "<anonymous>",
+                "in_app": true,
+                "lineno": 150,
+                "module": "app",
+                "post_context": [
+                  "                        });",
+                  "                    });",
+                  "                    return [4 /*yield*/, Sentry.flush(2000)];",
+                  "                case 1:",
+                  "                    _a.sent();",
+                  "                    res.end(stringify({",
+                  "                        transactionIds: global.transactionIds || [],"
+                ],
+                "pre_context": [
+                  "app.use('/test-error-manual', function (req, res) {",
+                  "    return __awaiter(this, void 0, void 0, function () {",
+                  "        return __generator(this, function (_a) {",
+                  "            switch (_a.label) {",
+                  "                case 0:",
+                  "                    Sentry.startSpan({ name: 'test-transaction', op: 'e2e-test' }, function () {",
+                  "                        Sentry.startSpan({ name: 'test-span' }, function () {"
+                ]
+              }
+            ]
+          },
+          "type": "Error",
+          "value": "This is an error"
+        }
+      ]
+    },
+    "modules": {
+      "connect": "3.7.0",
+      "dotenv": "16.4.5",
+      "ee-first": "1.1.1",
+      "encodeurl": "1.0.2",
+      "escape-html": "1.0.3",
+      "finalhandler": "1.1.2",
+      "parseurl": "1.3.3",
+      "unpipe": "1.0.0",
+      "utils-merge": "1.0.1"
+    },
+    "platform": "node",
+    "request": {
+      "cookies": {},
+      "headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        "accept-encoding": "gzip, deflate, br",
+        "accept-language": "en-US,en;q=0.5",
+        "cache-control": "no-cache",
+        "connection": "keep-alive",
+        "host": "localhost:3030",
+        "pragma": "no-cache",
+        "sec-fetch-dest": "document",
+        "sec-fetch-mode": "navigate",
+        "sec-fetch-site": "none",
+        "sec-fetch-user": "?1",
+        "upgrade-insecure-requests": "1",
+        "user-agent": "[[user-agent]]"
+      },
+      "method": "GET",
+      "url": "http://localhost:3030/test-error-manual"
+    },
+    "sdk": {
+      "integrations": [
+        "InboundFilters",
+        "FunctionToString",
+        "LinkedErrors",
+        "RequestData",
+        "Console",
+        "Http",
+        "Undici",
+        "OnUncaughtException",
+        "OnUnhandledRejection",
+        "ContextLines",
+        "LocalVariables",
+        "Context",
+        "Modules"
+      ],
+      "name": "sentry.javascript.node",
+      "packages": [
+        {
+          "name": "npm:@sentry/node",
+          "version": "7.110.1"
+        }
+      ],
+      "version": "7.110.1"
+    },
+    "server_name": "D9M3PY4LQ7.oekorouter.com",
+    "tags": {
+      "transaction": "GET /test-error-manual"
+    },
+    "timestamp": "[[timestamp]]",
+    "transaction": "GET /test-error-manual"
+  }
+]
