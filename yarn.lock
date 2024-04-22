@@ -5046,21 +5046,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"next-14_2_1-test-application@workspace:apps/nextjs-14_2_1":
-  version: 0.0.0-use.local
-  resolution: "next-14_2_1-test-application@workspace:apps/nextjs-14_2_1"
-  dependencies:
-    "@sentry/nextjs": "npm:7.110.1"
-    "@types/node": "npm:^20"
-    "@types/react": "npm:^18"
-    "@types/react-dom": "npm:^18"
-    next: "npm:14.2.1"
-    react: "npm:^18"
-    react-dom: "npm:^18"
-    typescript: "npm:^5"
-  languageName: unknown
-  linkType: soft
-
 "next@npm:13.2.0":
   version: 13.2.0
   resolution: "next@npm:13.2.0"
@@ -5202,6 +5187,21 @@ __metadata:
     react: "npm:18.2.0"
     react-dom: "npm:18.2.0"
     typescript: "npm:5.4.5"
+  languageName: unknown
+  linkType: soft
+
+"nextjs-14_2_1-test-application@workspace:apps/nextjs-14_2_1":
+  version: 0.0.0-use.local
+  resolution: "nextjs-14_2_1-test-application@workspace:apps/nextjs-14_2_1"
+  dependencies:
+    "@sentry/nextjs": "npm:7.110.1"
+    "@types/node": "npm:^20"
+    "@types/react": "npm:^18"
+    "@types/react-dom": "npm:^18"
+    next: "npm:14.2.1"
+    react: "npm:^18"
+    react-dom: "npm:^18"
+    typescript: "npm:^5"
   languageName: unknown
   linkType: soft
 
