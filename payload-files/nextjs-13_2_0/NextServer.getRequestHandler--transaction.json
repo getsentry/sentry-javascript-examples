@@ -1,0 +1,320 @@
+[
+  {
+    "dsn": "[[dsn]]",
+    "event_id": "[[ID1]]",
+    "sdk": {
+      "name": "sentry.javascript.nextjs",
+      "version": "8.0.0-beta.3"
+    },
+    "sent_at": "[[ISODateString]]",
+    "trace": {
+      "environment": "qa",
+      "public_key": "[[publicKey]]",
+      "sample_rate": "1",
+      "sampled": "true",
+      "trace_id": "[[ID2]]",
+      "transaction": "NextServer.getRequestHandler"
+    }
+  },
+  {
+    "type": "transaction"
+  },
+  {
+    "breadcrumbs": [
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\u001b[36mwait\u001b[39m  - compiling /api/test-success/route (client and server)...",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\u001b[35mevent\u001b[39m - compiled successfully in 247 ms (95 modules)",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\u001b[36mwait\u001b[39m  - compiling /api/test-error/route (client and server)...",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\u001b[35mevent\u001b[39m - compiled successfully in 77 ms (97 modules)",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\u001b[36mwait\u001b[39m  - compiling /api/test-param-success/[param]/route (client and server)...",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\u001b[35mevent\u001b[39m - compiled successfully in 67 ms (99 modules)",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\u001b[36mwait\u001b[39m  - compiling /api/test-param-error/[param]/route (client and server)...",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\u001b[35mevent\u001b[39m - compiled successfully in 74 ms (101 modules)",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\u001b[36mwait\u001b[39m  - compiling /api/test-success-manual/route (client and server)...",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\u001b[35mevent\u001b[39m - compiled successfully in 70 ms (103 modules)",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\u001b[36mwait\u001b[39m  - compiling /api/test-error-manual/route (client and server)...",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\u001b[35mevent\u001b[39m - compiled successfully in 86 ms (105 modules)",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\u001b[36mwait\u001b[39m  - compiling /api/test-local-variables-uncaught/route (client and server)...",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\u001b[35mevent\u001b[39m - compiled successfully in 77 ms (107 modules)",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "error",
+        "message": "\u001b[31merror\u001b[39m - Error: Uncaught Local Variable Error - {\"randomVariableToRecord\":\"LOCAL_VARIABLE\"}\n    at GET$1 (webpack-internal:///(sc_server)/./app/api/test-local-variables-uncaught/route.ts:23:11)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/nextjs/cjs/common/wrapRouteHandlerWithSentry.js:55:42\n    at Object.handleCallbackErrors (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/core/cjs/utils/handleCallbackErrors.js:26:26)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/nextjs/cjs/common/wrapRouteHandlerWithSentry.js:54:45\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/opentelemetry/cjs/index.js:859:13\n    at Object.handleCallbackErrors (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/core/cjs/utils/handleCallbackErrors.js:26:26)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/opentelemetry/cjs/index.js:858:17\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at SentryContextManager.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@opentelemetry/context-async-hooks/build/src/AsyncLocalStorageContextManager.js:33:40)\n    at SentryContextManager.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/opentelemetry/cjs/index.js:1283:24)\n    at ContextAPI.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@opentelemetry/api/build/src/api/context.js:60:46)\n    at Tracer.startActiveSpan (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@opentelemetry/sdk-trace-base/build/src/Tracer.js:121:32)\n    at Object.startSpan (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/opentelemetry/cjs/index.js:855:17)\n    at Object.startSpan (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/core/cjs/tracing/trace.js:35:16)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/nextjs/cjs/common/wrapRouteHandlerWithSentry.js:43:25\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/opentelemetry/cjs/index.js:1193:14\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at SentryContextManager.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@opentelemetry/context-async-hooks/build/src/AsyncLocalStorageContextManager.js:33:40)\n    at SentryContextManager.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/opentelemetry/cjs/index.js:1283:24)\n    at ContextAPI.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@opentelemetry/api/build/src/api/context.js:60:46)\n    at Object.withSetIsolationScope (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/opentelemetry/cjs/index.js:1192:28)\n    at Object.withIsolationScope (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/core/cjs/currentScopes.js:103:16)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/nextjs/cjs/common/wrapRouteHandlerWithSentry.js:40:21\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/nextjs/cjs/common/utils/tracingUtils.js:89:16\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/nextjs/cjs/common/utils/tracingUtils.js:88:40\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/opentelemetry/cjs/index.js:948:59\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at SentryContextManager.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@opentelemetry/context-async-hooks/build/src/AsyncLocalStorageContextManager.js:33:40)\n    at SentryContextManager.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/opentelemetry/cjs/index.js:1283:24)\n    at ContextAPI.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@opentelemetry/api/build/src/api/context.js:60:46)\n    at Object.withActiveSpan (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/opentelemetry/cjs/index.js:948:26)\n    at Object.withActiveSpan (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/core/cjs/tracing/trace.js:189:16)\n    at Object.escapeNextjsTracing (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/nextjs/cjs/common/utils/tracingUtils.js:83:17)\n    at Object.apply (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/nextjs/cjs/common/wrapRouteHandlerWithSentry.js:22:27)\n    at Object.apply (webpack-internal:///(sc_server)/./app/api/test-local-variables-uncaught/route.ts:63:10)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/future/route-handlers/app-route-route-handler.js:306:24\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at StaticGenerationAsyncStorageWrapper.wrap (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/async-storage/static-generation-async-storage-wrapper.js:33:24)\n    at StaticGenerationAsyncStorageWrapper.wrap (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/async-storage/static-generation-async-storage-wrapper.js:7:52)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/future/route-handlers/app-route-route-handler.js:217:52\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at RequestAsyncStorageWrapper.wrap (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/async-storage/request-async-storage-wrapper.js:65:24)\n    at RequestAsyncStorageWrapper.wrap (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/async-storage/request-async-storage-wrapper.js:30:43)\n    at AppRouteRouteHandler.execute (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/future/route-handlers/app-route-route-handler.js:214:69)\n    at AppRouteRouteHandler.handle (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/future/route-handlers/app-route-route-handler.js:348:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async RouteHandlerManager.handle (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/future/route-handler-managers/route-handler-manager.js:16:24)\n    at async doRender (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/base-server.js:743:32)\n    at async cacheEntry1.responseCache.get.incrementalCache.incrementalCache (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/base-server.js:926:28)",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "error",
+        "message": "\u001b[31merror\u001b[39m - Error: Uncaught Local Variable Error - {\"randomVariableToRecord\":\"LOCAL_VARIABLE\"}\n    at GET$1 (webpack-internal:///(sc_server)/./app/api/test-local-variables-uncaught/route.ts:23:11)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/nextjs/cjs/common/wrapRouteHandlerWithSentry.js:55:42\n    at Object.handleCallbackErrors (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/core/cjs/utils/handleCallbackErrors.js:26:26)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/nextjs/cjs/common/wrapRouteHandlerWithSentry.js:54:45\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/opentelemetry/cjs/index.js:859:13\n    at Object.handleCallbackErrors (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/core/cjs/utils/handleCallbackErrors.js:26:26)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/opentelemetry/cjs/index.js:858:17\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at SentryContextManager.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@opentelemetry/context-async-hooks/build/src/AsyncLocalStorageContextManager.js:33:40)\n    at SentryContextManager.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/opentelemetry/cjs/index.js:1283:24)\n    at ContextAPI.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@opentelemetry/api/build/src/api/context.js:60:46)\n    at Tracer.startActiveSpan (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@opentelemetry/sdk-trace-base/build/src/Tracer.js:121:32)\n    at Object.startSpan (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/opentelemetry/cjs/index.js:855:17)\n    at Object.startSpan (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/core/cjs/tracing/trace.js:35:16)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/nextjs/cjs/common/wrapRouteHandlerWithSentry.js:43:25\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/opentelemetry/cjs/index.js:1193:14\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at SentryContextManager.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@opentelemetry/context-async-hooks/build/src/AsyncLocalStorageContextManager.js:33:40)\n    at SentryContextManager.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/opentelemetry/cjs/index.js:1283:24)\n    at ContextAPI.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@opentelemetry/api/build/src/api/context.js:60:46)\n    at Object.withSetIsolationScope (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/opentelemetry/cjs/index.js:1192:28)\n    at Object.withIsolationScope (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/core/cjs/currentScopes.js:103:16)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/nextjs/cjs/common/wrapRouteHandlerWithSentry.js:40:21\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/nextjs/cjs/common/utils/tracingUtils.js:89:16\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/nextjs/cjs/common/utils/tracingUtils.js:88:40\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/opentelemetry/cjs/index.js:948:59\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at SentryContextManager.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@opentelemetry/context-async-hooks/build/src/AsyncLocalStorageContextManager.js:33:40)\n    at SentryContextManager.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/opentelemetry/cjs/index.js:1283:24)\n    at ContextAPI.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@opentelemetry/api/build/src/api/context.js:60:46)\n    at Object.withActiveSpan (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/opentelemetry/cjs/index.js:948:26)\n    at Object.withActiveSpan (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/core/cjs/tracing/trace.js:189:16)\n    at Object.escapeNextjsTracing (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/nextjs/cjs/common/utils/tracingUtils.js:83:17)\n    at Object.apply (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/nextjs/cjs/common/wrapRouteHandlerWithSentry.js:22:27)\n    at Object.apply (webpack-internal:///(sc_server)/./app/api/test-local-variables-uncaught/route.ts:63:10)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/future/route-handlers/app-route-route-handler.js:306:24\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at StaticGenerationAsyncStorageWrapper.wrap (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/async-storage/static-generation-async-storage-wrapper.js:33:24)\n    at StaticGenerationAsyncStorageWrapper.wrap (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/async-storage/static-generation-async-storage-wrapper.js:7:52)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/future/route-handlers/app-route-route-handler.js:217:52\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at RequestAsyncStorageWrapper.wrap (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/async-storage/request-async-storage-wrapper.js:65:24)\n    at RequestAsyncStorageWrapper.wrap (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/async-storage/request-async-storage-wrapper.js:30:43)\n    at AppRouteRouteHandler.execute (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/future/route-handlers/app-route-route-handler.js:214:69)\n    at AppRouteRouteHandler.handle (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/future/route-handlers/app-route-route-handler.js:348:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async RouteHandlerManager.handle (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/future/route-handler-managers/route-handler-manager.js:16:24)\n    at async doRender (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/base-server.js:743:32)\n    at async cacheEntry1.responseCache.get.incrementalCache.incrementalCache (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/base-server.js:926:28)",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\u001b[36mwait\u001b[39m  - compiling /api/test-local-variables-caught/route (client and server)...",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\u001b[35mevent\u001b[39m - compiled successfully in 86 ms (109 modules)",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "error",
+        "message": "\u001b[31merror\u001b[39m - Error: Uncaught Local Variable Error - {\"randomVariableToRecord\":\"LOCAL_VARIABLE\"}\n    at GET$1 (webpack-internal:///(sc_server)/./app/api/test-local-variables-uncaught/route.ts:23:11)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/nextjs/cjs/common/wrapRouteHandlerWithSentry.js:55:42\n    at Object.handleCallbackErrors (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/core/cjs/utils/handleCallbackErrors.js:26:26)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/nextjs/cjs/common/wrapRouteHandlerWithSentry.js:54:45\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/opentelemetry/cjs/index.js:859:13\n    at Object.handleCallbackErrors (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/core/cjs/utils/handleCallbackErrors.js:26:26)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/opentelemetry/cjs/index.js:858:17\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at SentryContextManager.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@opentelemetry/context-async-hooks/build/src/AsyncLocalStorageContextManager.js:33:40)\n    at SentryContextManager.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/opentelemetry/cjs/index.js:1283:24)\n    at ContextAPI.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@opentelemetry/api/build/src/api/context.js:60:46)\n    at Tracer.startActiveSpan (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@opentelemetry/sdk-trace-base/build/src/Tracer.js:121:32)\n    at Object.startSpan (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/opentelemetry/cjs/index.js:855:17)\n    at Object.startSpan (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/core/cjs/tracing/trace.js:35:16)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/nextjs/cjs/common/wrapRouteHandlerWithSentry.js:43:25\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/opentelemetry/cjs/index.js:1193:14\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at SentryContextManager.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@opentelemetry/context-async-hooks/build/src/AsyncLocalStorageContextManager.js:33:40)\n    at SentryContextManager.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/opentelemetry/cjs/index.js:1283:24)\n    at ContextAPI.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@opentelemetry/api/build/src/api/context.js:60:46)\n    at Object.withSetIsolationScope (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/opentelemetry/cjs/index.js:1192:28)\n    at Object.withIsolationScope (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/core/cjs/currentScopes.js:103:16)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/nextjs/cjs/common/wrapRouteHandlerWithSentry.js:40:21\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/nextjs/cjs/common/utils/tracingUtils.js:89:16\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/nextjs/cjs/common/utils/tracingUtils.js:88:40\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/opentelemetry/cjs/index.js:948:59\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at SentryContextManager.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@opentelemetry/context-async-hooks/build/src/AsyncLocalStorageContextManager.js:33:40)\n    at SentryContextManager.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/opentelemetry/cjs/index.js:1283:24)\n    at ContextAPI.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@opentelemetry/api/build/src/api/context.js:60:46)\n    at Object.withActiveSpan (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/opentelemetry/cjs/index.js:948:26)\n    at Object.withActiveSpan (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/core/cjs/tracing/trace.js:189:16)\n    at Object.escapeNextjsTracing (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/nextjs/cjs/common/utils/tracingUtils.js:83:17)\n    at Object.apply (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/nextjs/cjs/common/wrapRouteHandlerWithSentry.js:22:27)\n    at Object.apply (webpack-internal:///(sc_server)/./app/api/test-local-variables-uncaught/route.ts:63:10)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/future/route-handlers/app-route-route-handler.js:306:24\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at StaticGenerationAsyncStorageWrapper.wrap (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/async-storage/static-generation-async-storage-wrapper.js:33:24)\n    at StaticGenerationAsyncStorageWrapper.wrap (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/async-storage/static-generation-async-storage-wrapper.js:7:52)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/future/route-handlers/app-route-route-handler.js:217:52\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at RequestAsyncStorageWrapper.wrap (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/async-storage/request-async-storage-wrapper.js:65:24)\n    at RequestAsyncStorageWrapper.wrap (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/async-storage/request-async-storage-wrapper.js:30:43)\n    at AppRouteRouteHandler.execute (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/future/route-handlers/app-route-route-handler.js:214:69)\n    at AppRouteRouteHandler.handle (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/future/route-handlers/app-route-route-handler.js:348:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async RouteHandlerManager.handle (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/future/route-handler-managers/route-handler-manager.js:16:24)\n    at async doRender (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/base-server.js:743:32)\n    at async cacheEntry1.responseCache.get.incrementalCache.incrementalCache (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/base-server.js:926:28)",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "error",
+        "message": "\u001b[31merror\u001b[39m - Error: Uncaught Local Variable Error - {\"randomVariableToRecord\":\"LOCAL_VARIABLE\"}\n    at GET$1 (webpack-internal:///(sc_server)/./app/api/test-local-variables-uncaught/route.ts:23:11)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/nextjs/cjs/common/wrapRouteHandlerWithSentry.js:55:42\n    at Object.handleCallbackErrors (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/core/cjs/utils/handleCallbackErrors.js:26:26)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/nextjs/cjs/common/wrapRouteHandlerWithSentry.js:54:45\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/opentelemetry/cjs/index.js:859:13\n    at Object.handleCallbackErrors (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/core/cjs/utils/handleCallbackErrors.js:26:26)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/opentelemetry/cjs/index.js:858:17\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at SentryContextManager.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@opentelemetry/context-async-hooks/build/src/AsyncLocalStorageContextManager.js:33:40)\n    at SentryContextManager.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/opentelemetry/cjs/index.js:1283:24)\n    at ContextAPI.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@opentelemetry/api/build/src/api/context.js:60:46)\n    at Tracer.startActiveSpan (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@opentelemetry/sdk-trace-base/build/src/Tracer.js:121:32)\n    at Object.startSpan (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/opentelemetry/cjs/index.js:855:17)\n    at Object.startSpan (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/core/cjs/tracing/trace.js:35:16)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/nextjs/cjs/common/wrapRouteHandlerWithSentry.js:43:25\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/opentelemetry/cjs/index.js:1193:14\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at SentryContextManager.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@opentelemetry/context-async-hooks/build/src/AsyncLocalStorageContextManager.js:33:40)\n    at SentryContextManager.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/opentelemetry/cjs/index.js:1283:24)\n    at ContextAPI.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@opentelemetry/api/build/src/api/context.js:60:46)\n    at Object.withSetIsolationScope (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/opentelemetry/cjs/index.js:1192:28)\n    at Object.withIsolationScope (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/core/cjs/currentScopes.js:103:16)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/nextjs/cjs/common/wrapRouteHandlerWithSentry.js:40:21\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/nextjs/cjs/common/utils/tracingUtils.js:89:16\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/nextjs/cjs/common/utils/tracingUtils.js:88:40\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/opentelemetry/cjs/index.js:948:59\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at SentryContextManager.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@opentelemetry/context-async-hooks/build/src/AsyncLocalStorageContextManager.js:33:40)\n    at SentryContextManager.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/opentelemetry/cjs/index.js:1283:24)\n    at ContextAPI.with (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@opentelemetry/api/build/src/api/context.js:60:46)\n    at Object.withActiveSpan (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/opentelemetry/cjs/index.js:948:26)\n    at Object.withActiveSpan (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/core/cjs/tracing/trace.js:189:16)\n    at Object.escapeNextjsTracing (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/nextjs/cjs/common/utils/tracingUtils.js:83:17)\n    at Object.apply (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/@sentry/nextjs/cjs/common/wrapRouteHandlerWithSentry.js:22:27)\n    at Object.apply (webpack-internal:///(sc_server)/./app/api/test-local-variables-uncaught/route.ts:63:10)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/future/route-handlers/app-route-route-handler.js:306:24\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at StaticGenerationAsyncStorageWrapper.wrap (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/async-storage/static-generation-async-storage-wrapper.js:33:24)\n    at StaticGenerationAsyncStorageWrapper.wrap (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/async-storage/static-generation-async-storage-wrapper.js:7:52)\n    at /Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/future/route-handlers/app-route-route-handler.js:217:52\n    at AsyncLocalStorage.run (node:async_hooks:346:14)\n    at RequestAsyncStorageWrapper.wrap (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/async-storage/request-async-storage-wrapper.js:65:24)\n    at RequestAsyncStorageWrapper.wrap (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/async-storage/request-async-storage-wrapper.js:30:43)\n    at AppRouteRouteHandler.execute (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/future/route-handlers/app-route-route-handler.js:214:69)\n    at AppRouteRouteHandler.handle (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/future/route-handlers/app-route-route-handler.js:348:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async RouteHandlerManager.handle (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/future/route-handler-managers/route-handler-manager.js:16:24)\n    at async doRender (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/base-server.js:743:32)\n    at async cacheEntry1.responseCache.get.incrementalCache.incrementalCache (/Users/sigridh/Documents/DEV/sentry-javascript-examples/node_modules/next/dist/server/base-server.js:926:28)",
+        "timestamp": "[[timestamp]]"
+      }
+    ],
+    "contexts": {
+      "app": {
+        "app_memory": "[[highNumber]]",
+        "app_start_time": "[[ISODateString]]"
+      },
+      "cloud_resource": {},
+      "culture": {
+        "locale": "en-US",
+        "timezone": "Europe/Vienna"
+      },
+      "device": {
+        "arch": "arm64",
+        "boot_time": "[[ISODateString]]",
+        "cpu_description": "Apple M1 Pro",
+        "free_memory": "[[highNumber]]",
+        "memory_size": "[[highNumber]]",
+        "processor_count": 10,
+        "processor_frequency": "[[highNumber]]"
+      },
+      "os": {
+        "build": "23C64",
+        "kernel_version": "23.2.0",
+        "name": "macOS",
+        "version": "14.2"
+      },
+      "otel": {
+        "resource": {
+          "service.name": "node",
+          "service.namespace": "sentry",
+          "service.version": "8.0.0-beta.3",
+          "telemetry.sdk.language": "nodejs",
+          "telemetry.sdk.name": "opentelemetry",
+          "telemetry.sdk.version": "1.23.0"
+        }
+      },
+      "runtime": {
+        "name": "node",
+        "version": "v20.12.1"
+      },
+      "trace": {
+        "data": {
+          "otel.kind": "INTERNAL",
+          "sentry.origin": "manual",
+          "sentry.sample_rate": 1,
+          "sentry.source": "custom"
+        },
+        "origin": "manual",
+        "span_id": "[[ID3]]",
+        "status": "ok",
+        "trace_id": "[[ID2]]"
+      }
+    },
+    "environment": "qa",
+    "event_id": "[[ID1]]",
+    "modules": {
+      "ansi-styles": "4.3.0",
+      "balanced-match": "1.0.2",
+      "brace-expansion": "2.0.1",
+      "caniuse-lite": "1.0.30001612",
+      "commondir": "1.0.1",
+      "debug": "4.3.4",
+      "estree-walker": "2.0.2",
+      "fs.realpath": "1.0.0",
+      "function-bind": "1.1.2",
+      "has-flag": "4.0.0",
+      "hasown": "2.0.2",
+      "import-in-the-middle": "1.7.1",
+      "inflight": "1.0.6",
+      "inherits": "2.0.4",
+      "is-core-module": "2.13.1",
+      "is-reference": "1.2.1",
+      "js-tokens": "4.0.0",
+      "loose-envify": "1.4.0",
+      "magic-string": "0.27.0",
+      "module-details-from-path": "1.0.3",
+      "next": "13.2.0",
+      "once": "1.4.0",
+      "opentelemetry-instrumentation-fetch-node": "1.2.0",
+      "picomatch": "2.3.1",
+      "react": "18.2.0",
+      "react-dom": "18.2.0",
+      "require-in-the-middle": "7.3.0",
+      "resolve": "1.22.8",
+      "rollup": "3.29.4",
+      "scheduler": "0.23.0",
+      "semver": "7.6.0",
+      "shimmer": "1.2.1",
+      "stacktrace-parser": "0.1.10",
+      "styled-jsx": "5.1.1",
+      "supports-color": "5.5.0",
+      "wrappy": "1.0.2",
+      "yallist": "4.0.0"
+    },
+    "platform": "node",
+    "sdk": {
+      "integrations": [
+        "InboundFilters",
+        "FunctionToString",
+        "LinkedErrors",
+        "RequestData",
+        "Console",
+        "NodeFetch",
+        "OnUncaughtException",
+        "OnUnhandledRejection",
+        "ContextLines",
+        "LocalVariablesAsync",
+        "Context",
+        "Modules",
+        "Express",
+        "Fastify",
+        "Graphql",
+        "Mongo",
+        "Mongoose",
+        "Mysql",
+        "Mysql2",
+        "Postgres",
+        "Nest",
+        "Hapi",
+        "Koa",
+        "Connect",
+        "Http",
+        "DistDirRewriteFrames"
+      ],
+      "name": "sentry.javascript.nextjs",
+      "packages": [
+        {
+          "name": "npm:@sentry/nextjs",
+          "version": "8.0.0-beta.3"
+        },
+        {
+          "name": "npm:@sentry/node",
+          "version": "8.0.0-beta.3"
+        }
+      ],
+      "version": "8.0.0-beta.3"
+    },
+    "server_name": "D9M3PY4LQ7.local",
+    "spans": [
+      {
+        "data": {
+          "otel.kind": "INTERNAL",
+          "sentry.origin": "manual"
+        },
+        "description": "BaseServer.renderToResponse",
+        "origin": "manual",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID4]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "ok",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "otel.kind": "INTERNAL",
+          "sentry.origin": "manual"
+        },
+        "description": "NextNodeServer.findPageComponents",
+        "origin": "manual",
+        "parent_span_id": "[[ID4]]",
+        "span_id": "[[ID5]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "ok",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      }
+    ],
+    "start_timestamp": "[[timestamp]]",
+    "timestamp": "[[timestamp]]",
+    "transaction": "NextServer.getRequestHandler",
+    "transaction_info": {
+      "source": "custom"
+    },
+    "type": "transaction"
+  }
+]
