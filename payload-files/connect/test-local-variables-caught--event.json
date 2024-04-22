@@ -4,7 +4,7 @@
     "event_id": "[[ID1]]",
     "sdk": {
       "name": "sentry.javascript.node",
-      "version": "7.110.1"
+      "version": "8.0.0-beta.3"
     },
     "sent_at": "[[ISODateString]]",
     "trace": {
@@ -13,7 +13,7 @@
       "sample_rate": "1",
       "sampled": "true",
       "trace_id": "[[ID2]]",
-      "transaction": "GET /test-local-variables-uncaught"
+      "transaction": "GET /test-local-variables-caught"
     }
   },
   {
@@ -58,14 +58,6 @@
         "version": "v20.12.1"
       },
       "trace": {
-        "data": {
-          "sentry.op": "http.server",
-          "sentry.origin": "auto.http.node.tracingHandler",
-          "sentry.sample_rate": 1,
-          "sentry.source": "url"
-        },
-        "op": "http.server",
-        "origin": "auto.http.node.tracingHandler",
         "span_id": "[[ID3]]",
         "trace_id": "[[ID2]]"
       }
@@ -76,42 +68,15 @@
       "values": [
         {
           "mechanism": {
-            "handled": false,
-            "type": "middleware"
+            "handled": true,
+            "type": "generic"
           },
           "stacktrace": {
             "frames": [
               {
-                "colno": 5,
-                "context_line": "    next();",
+                "colno": 14,
+                "context_line": "      return next(err);",
                 "filename": "[[FILENAME1]]",
-                "function": "sentryTracingMiddleware",
-                "in_app": false,
-                "lineno": 91,
-                "module": "@sentry.node.cjs:handlers",
-                "post_context": [
-                  "  };",
-                  "}",
-                  "",
-                  "/**",
-                  " * Backwards compatibility shim which can be removed in v8. Forces the given options to follow the",
-                  " * `AddRequestDataToEventOptions` interface.",
-                  " *"
-                ],
-                "pre_context": [
-                  "        // eslint-disable-next-line deprecation/deprecation",
-                  "        utils.addRequestDataToTransaction(transaction, req);",
-                  "        core.setHttpStatus(transaction, res.statusCode);",
-                  "        transaction.end();",
-                  "      });",
-                  "    });",
-                  ""
-                ]
-              },
-              {
-                "colno": 14,
-                "context_line": "      return next(err);",
-                "filename": "[[FILENAME2]]",
                 "function": "next",
                 "in_app": false,
                 "lineno": 161,
@@ -138,7 +103,7 @@
               {
                 "colno": 14,
                 "context_line": "      return next(err);",
-                "filename": "[[FILENAME2]]",
+                "filename": "[[FILENAME1]]",
                 "function": "next",
                 "in_app": false,
                 "lineno": 161,
@@ -165,7 +130,7 @@
               {
                 "colno": 14,
                 "context_line": "      return next(err);",
-                "filename": "[[FILENAME2]]",
+                "filename": "[[FILENAME1]]",
                 "function": "next",
                 "in_app": false,
                 "lineno": 161,
@@ -192,7 +157,7 @@
               {
                 "colno": 14,
                 "context_line": "      return next(err);",
-                "filename": "[[FILENAME2]]",
+                "filename": "[[FILENAME1]]",
                 "function": "next",
                 "in_app": false,
                 "lineno": 161,
@@ -219,7 +184,7 @@
               {
                 "colno": 14,
                 "context_line": "      return next(err);",
-                "filename": "[[FILENAME2]]",
+                "filename": "[[FILENAME1]]",
                 "function": "next",
                 "in_app": false,
                 "lineno": 161,
@@ -246,7 +211,7 @@
               {
                 "colno": 14,
                 "context_line": "      return next(err);",
-                "filename": "[[FILENAME2]]",
+                "filename": "[[FILENAME1]]",
                 "function": "next",
                 "in_app": false,
                 "lineno": 161,
@@ -273,7 +238,7 @@
               {
                 "colno": 5,
                 "context_line": "    call(layer.handle, route, err, req, res, next);",
-                "filename": "[[FILENAME2]]",
+                "filename": "[[FILENAME1]]",
                 "function": "next",
                 "in_app": false,
                 "lineno": 183,
@@ -300,7 +265,7 @@
               {
                 "colno": 7,
                 "context_line": "      handle(req, res, next);",
-                "filename": "[[FILENAME2]]",
+                "filename": "[[FILENAME1]]",
                 "function": "call",
                 "in_app": false,
                 "lineno": 239,
@@ -325,32 +290,60 @@
                 ]
               },
               {
-                "colno": 11,
-                "context_line": "    throw new Error(\"Uncaught Local Variable Error - \".concat(stringify({ randomVariableToRecord: randomVariableToRecord })));",
+                "colno": 31,
+                "context_line": "            return middleWare.apply(this, arguments);",
+                "filename": "[[FILENAME2]]",
+                "function": "patchedMiddleware",
+                "in_app": false,
+                "lineno": 130,
+                "module": "@opentelemetry.instrumentation-connect.build.src:instrumentation",
+                "post_context": [
+                  "        }",
+                  "        Object.defineProperty(patchedMiddleware, 'length', {",
+                  "            value: middleWare.length,",
+                  "            writable: false,",
+                  "            configurable: true,",
+                  "        });",
+                  "        return patchedMiddleware;"
+                ],
+                "pre_context": [
+                  "                else {",
+                  "                    instrumentation._diag.debug(`span ${span.name} - already finished`);",
+                  "                }",
+                  "                res.removeListener('close', finishSpan);",
+                  "            }",
+                  "            res.addListener('close', finishSpan);",
+                  "            arguments[nextArgIdx] = instrumentation._patchNext(next, finishSpan);"
+                ]
+              },
+              {
+                "colno": 15,
+                "context_line": "        throw new Error('Local Variable Error');",
                 "filename": "[[FILENAME3]]",
-                "function": "<anonymous>",
+                "function": "?",
                 "in_app": true,
-                "lineno": 166,
+                "lineno": 171,
                 "module": "app",
                 "post_context": [
+                  "    }",
+                  "    catch (e) {",
+                  "        exceptionId = Sentry.captureException(e);",
+                  "    }",
+                  "    res.end(stringify({ exceptionId: exceptionId, randomVariableToRecord: randomVariableToRecord }));",
+                  "});",
+                  "Sentry.setupConnectErrorHandler(app);"
+                ],
+                "pre_context": [
+                  "    var randomVariableToRecord = 'LOCAL VARIABLE';",
+                  "    throw new Error(\"Uncaught Local Variable Error - \".concat(stringify({ randomVariableToRecord: randomVariableToRecord })));",
                   "});",
                   "app.use('/test-local-variables-caught', function (req, res) {",
                   "    var randomVariableToRecord = 'LOCAL VARIABLE';",
                   "    var exceptionId;",
-                  "    try {",
-                  "        throw new Error('Local Variable Error');",
-                  "    }"
-                ],
-                "pre_context": [
-                  "                    return [2 /*return*/];",
-                  "            }",
-                  "        });",
-                  "    });",
-                  "});",
-                  "app.use('/test-local-variables-uncaught', function (req, res) {",
-                  "    var randomVariableToRecord = 'LOCAL VARIABLE';"
+                  "    try {"
                 ],
                 "vars": {
+                  "exceptionId": "<undefined>",
                   "randomVariableToRecord": "LOCAL VARIABLE",
                   "req": "<IncomingMessage>",
                   "res": "<ServerResponse>"
@@ -359,20 +352,33 @@
             ]
           },
           "type": "Error",
-          "value": "Uncaught Local Variable Error - {\n  \"randomVariableToRecord\": \"LOCAL VARIABLE\"\n}"
+          "value": "Local Variable Error"
         }
       ]
     },
     "modules": {
       "connect": "3.7.0",
+      "debug": "4.3.4",
       "dotenv": "16.4.5",
       "ee-first": "1.1.1",
       "encodeurl": "1.0.2",
       "escape-html": "1.0.3",
       "finalhandler": "1.1.2",
+      "function-bind": "1.1.2",
+      "hasown": "2.0.2",
+      "import-in-the-middle": "1.7.1",
+      "is-core-module": "2.13.1",
+      "module-details-from-path": "1.0.3",
+      "opentelemetry-instrumentation-fetch-node": "1.2.0",
       "parseurl": "1.3.3",
+      "require-in-the-middle": "7.3.0",
+      "resolve": "1.22.8",
+      "semver": "7.6.0",
+      "shimmer": "1.2.1",
+      "supports-color": "5.5.0",
       "unpipe": "1.0.0",
-      "utils-merge": "1.0.1"
+      "utils-merge": "1.0.1",
+      "yallist": "4.0.0"
     },
     "platform": "node",
     "request": {
@@ -393,7 +399,7 @@
         "user-agent": "[[user-agent]]"
       },
       "method": "GET",
-      "url": "http://localhost:3030/test-local-variables-uncaught"
+      "url": "http://localhost:3030/test-local-variables-caught"
     },
     "sdk": {
       "integrations": [
@@ -403,28 +409,37 @@
         "RequestData",
         "Console",
         "Http",
-        "Undici",
+        "NodeFetch",
         "OnUncaughtException",
         "OnUnhandledRejection",
         "ContextLines",
-        "LocalVariables",
+        "LocalVariablesAsync",
         "Context",
-        "Modules"
+        "Modules",
+        "Express",
+        "Fastify",
+        "Graphql",
+        "Mongo",
+        "Mongoose",
+        "Mysql",
+        "Mysql2",
+        "Postgres",
+        "Nest",
+        "Hapi",
+        "Koa",
+        "Connect"
       ],
       "name": "sentry.javascript.node",
       "packages": [
         {
           "name": "npm:@sentry/node",
-          "version": "7.110.1"
+          "version": "8.0.0-beta.3"
         }
       ],
-      "version": "7.110.1"
+      "version": "8.0.0-beta.3"
     },
-    "server_name": "D9M3PY4LQ7.oekorouter.com",
-    "tags": {
-      "transaction": "GET /test-local-variables-uncaught"
-    },
+    "server_name": "D9M3PY4LQ7.local",
     "timestamp": "[[timestamp]]",
-    "transaction": "GET /test-local-variables-uncaught"
+    "transaction": "GET /test-local-variables-caught"
   }
 ]

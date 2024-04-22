@@ -4,7 +4,7 @@
     "event_id": "[[ID1]]",
     "sdk": {
       "name": "sentry.javascript.node",
-      "version": "7.110.1"
+      "version": "8.0.0-beta.3"
     },
     "sent_at": "[[ISODateString]]",
     "trace": {
@@ -53,26 +53,50 @@
         "name": "macOS",
         "version": "14.2"
       },
+      "otel": {
+        "resource": {
+          "service.name": "node",
+          "service.namespace": "sentry",
+          "service.version": "8.0.0-beta.3",
+          "telemetry.sdk.language": "nodejs",
+          "telemetry.sdk.name": "opentelemetry",
+          "telemetry.sdk.version": "1.23.0"
+        }
+      },
       "runtime": {
         "name": "node",
         "version": "v20.12.1"
       },
       "trace": {
         "data": {
+          "http.flavor": "1.1",
+          "http.host": "localhost:3030",
+          "http.method": "GET",
           "http.response.status_code": 200,
+          "http.route": "/test-success-manual",
+          "http.scheme": "http",
+          "http.status_code": 200,
+          "http.status_text": "OK",
+          "http.target": "/test-success-manual",
+          "http.url": "http://localhost:3030/test-success-manual",
+          "http.user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:125.0) Gecko/20100101 Firefox/125.0",
+          "net.host.ip": "::ffff:127.0.0.1",
+          "net.host.name": "localhost",
+          "net.host.port": "[[highNumber]]",
+          "net.peer.ip": "::ffff:127.0.0.1",
+          "net.peer.port": "[[highNumber]]",
+          "net.transport": "ip_tcp",
+          "otel.kind": "SERVER",
           "sentry.op": "http.server",
-          "sentry.origin": "auto.http.node.tracingHandler",
+          "sentry.origin": "auto.http.otel.http",
           "sentry.sample_rate": 1,
-          "sentry.source": "url",
-          "url": "/test-success-manual"
+          "sentry.source": "route",
+          "url": "http://localhost:3030/test-success-manual"
         },
         "op": "http.server",
-        "origin": "auto.http.node.tracingHandler",
+        "origin": "auto.http.otel.http",
         "span_id": "[[ID3]]",
         "status": "ok",
-        "tags": {
-          "http.status_code": "200"
-        },
         "trace_id": "[[ID2]]"
       }
     },
@@ -80,14 +104,27 @@
     "event_id": "[[ID1]]",
     "modules": {
       "connect": "3.7.0",
+      "debug": "4.3.4",
       "dotenv": "16.4.5",
       "ee-first": "1.1.1",
       "encodeurl": "1.0.2",
       "escape-html": "1.0.3",
       "finalhandler": "1.1.2",
+      "function-bind": "1.1.2",
+      "hasown": "2.0.2",
+      "import-in-the-middle": "1.7.1",
+      "is-core-module": "2.13.1",
+      "module-details-from-path": "1.0.3",
+      "opentelemetry-instrumentation-fetch-node": "1.2.0",
       "parseurl": "1.3.3",
+      "require-in-the-middle": "7.3.0",
+      "resolve": "1.22.8",
+      "semver": "7.6.0",
+      "shimmer": "1.2.1",
+      "supports-color": "5.5.0",
       "unpipe": "1.0.0",
-      "utils-merge": "1.0.1"
+      "utils-merge": "1.0.1",
+      "yallist": "4.0.0"
     },
     "platform": "node",
     "request": {
@@ -118,27 +155,40 @@
         "RequestData",
         "Console",
         "Http",
-        "Undici",
+        "NodeFetch",
         "OnUncaughtException",
         "OnUnhandledRejection",
         "ContextLines",
-        "LocalVariables",
+        "LocalVariablesAsync",
         "Context",
-        "Modules"
+        "Modules",
+        "Express",
+        "Fastify",
+        "Graphql",
+        "Mongo",
+        "Mongoose",
+        "Mysql",
+        "Mysql2",
+        "Postgres",
+        "Nest",
+        "Hapi",
+        "Koa",
+        "Connect"
       ],
       "name": "sentry.javascript.node",
       "packages": [
         {
           "name": "npm:@sentry/node",
-          "version": "7.110.1"
+          "version": "8.0.0-beta.3"
         }
       ],
-      "version": "7.110.1"
+      "version": "8.0.0-beta.3"
     },
-    "server_name": "D9M3PY4LQ7.oekorouter.com",
+    "server_name": "D9M3PY4LQ7.local",
     "spans": [
       {
         "data": {
+          "otel.kind": "INTERNAL",
           "sentry.op": "e2e-test",
           "sentry.origin": "manual"
         },
@@ -148,11 +198,13 @@
         "parent_span_id": "[[ID3]]",
         "span_id": "[[ID4]]",
         "start_timestamp": "[[timestamp]]",
+        "status": "ok",
         "timestamp": "[[timestamp]]",
         "trace_id": "[[ID2]]"
       },
       {
         "data": {
+          "otel.kind": "INTERNAL",
           "sentry.origin": "manual"
         },
         "description": "test-span",
@@ -160,18 +212,33 @@
         "parent_span_id": "[[ID4]]",
         "span_id": "[[ID5]]",
         "start_timestamp": "[[timestamp]]",
+        "status": "ok",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "connect.name": "/test-success-manual",
+          "connect.type": "request_handler",
+          "http.route": "/test-success-manual",
+          "otel.kind": "INTERNAL",
+          "sentry.origin": "manual"
+        },
+        "description": "request handler - /test-success-manual",
+        "origin": "manual",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID6]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "ok",
         "timestamp": "[[timestamp]]",
         "trace_id": "[[ID2]]"
       }
     ],
     "start_timestamp": "[[timestamp]]",
-    "tags": {
-      "http.status_code": "200"
-    },
     "timestamp": "[[timestamp]]",
     "transaction": "GET /test-success-manual",
     "transaction_info": {
-      "source": "custom"
+      "source": "route"
     },
     "type": "transaction"
   }
