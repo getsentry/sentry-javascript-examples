@@ -4,7 +4,7 @@
     "event_id": "[[ID1]]",
     "sdk": {
       "name": "sentry.javascript.node",
-      "version": "7.110.1"
+      "version": "8.0.0-beta.3"
     },
     "sent_at": "[[ISODateString]]",
     "trace": {
@@ -40,20 +40,16 @@
         "processor_frequency": "[[highNumber]]"
       },
       "os": {
-        "build": "23D56",
-        "kernel_version": "23.3.0",
+        "build": "23C64",
+        "kernel_version": "23.2.0",
         "name": "macOS",
-        "version": "14.3"
+        "version": "14.2"
       },
       "runtime": {
         "name": "node",
         "version": "v20.12.1"
       },
       "trace": {
-        "data": {
-          "sentry.origin": "manual"
-        },
-        "origin": "manual",
         "parent_span_id": "[[ID3]]",
         "span_id": "[[ID4]]",
         "trace_id": "[[ID2]]"
@@ -71,82 +67,82 @@
           "stacktrace": {
             "frames": [
               {
-                "colno": 25,
+                "colno": 17,
                 "filename": "[[FILENAME1]]",
-                "function": "Object.runWithAsyncContext",
+                "function": "Object.startSpan",
                 "in_app": false,
-                "lineno": 50,
-                "module": "@sentry.src.async:hooks.ts"
+                "lineno": 45,
+                "module": "@sentry.src:trace.ts"
+              },
+              {
+                "colno": 28,
+                "filename": "[[FILENAME2]]",
+                "function": "Tracer.startActiveSpan",
+                "in_app": false,
+                "lineno": 241,
+                "module": "@opentelemetry.sdk-trace-base.src:Tracer.ts"
+              },
+              {
+                "colno": 42,
+                "filename": "[[FILENAME3]]",
+                "function": "ContextAPI.with",
+                "in_app": false,
+                "lineno": 77,
+                "module": "@opentelemetry.api.src.api:context.ts"
+              },
+              {
+                "colno": 24,
+                "filename": "[[FILENAME4]]",
+                "function": "SentryContextManager.with",
+                "in_app": false,
+                "lineno": 71,
+                "module": "@sentry.src:contextManager.ts"
+              },
+              {
+                "colno": 36,
+                "filename": "[[FILENAME5]]",
+                "function": "SentryContextManager.with",
+                "in_app": false,
+                "lineno": 40,
+                "module": "@opentelemetry.context-async-hooks.src:AsyncLocalStorageContextManager.ts"
               },
               {
                 "colno": 14,
-                "filename": "[[FILENAME2]]",
+                "filename": "[[FILENAME6]]",
                 "function": "AsyncLocalStorage.run",
                 "in_app": false,
                 "lineno": 346,
                 "module": "node:async_hooks"
               },
               {
-                "colno": 14,
+                "colno": 32,
                 "filename": "[[FILENAME1]]",
-                "function": "<anonymous>",
+                "function": "?",
                 "in_app": false,
-                "lineno": 51,
-                "module": "@sentry.src.async:hooks.ts"
-              },
-              {
-                "colno": 12,
-                "filename": "[[FILENAME3]]",
-                "function": "<anonymous>",
-                "in_app": false,
-                "lineno": 86,
-                "module": "@sentry.src.tracing:trace.ts"
-              },
-              {
-                "colno": 18,
-                "filename": "[[FILENAME4]]",
-                "function": "Object.withScope",
-                "in_app": false,
-                "lineno": 207,
-                "module": "@sentry.src:exports.ts"
-              },
-              {
-                "colno": 28,
-                "filename": "[[FILENAME5]]",
-                "function": "Hub.withScope",
-                "in_app": false,
-                "lineno": 279,
-                "module": "@sentry.src:hub.ts"
-              },
-              {
-                "colno": 14,
-                "filename": "[[FILENAME3]]",
-                "function": "<anonymous>",
-                "in_app": false,
-                "lineno": 102,
-                "module": "@sentry.src.tracing:trace.ts"
+                "lineno": 48,
+                "module": "@sentry.src:trace.ts"
               },
               {
                 "colno": 26,
-                "filename": "[[FILENAME6]]",
+                "filename": "[[FILENAME7]]",
                 "function": "Object.handleCallbackErrors",
                 "in_app": false,
                 "lineno": 25,
                 "module": "@sentry.src.utils:handleCallbackErrors.ts"
               },
               {
-                "colno": 15,
-                "filename": "[[FILENAME3]]",
-                "function": "handleCallbackErrors.handleCallbackErrors.status.status",
+                "colno": 13,
+                "filename": "[[FILENAME1]]",
+                "function": "?",
                 "in_app": false,
-                "lineno": 103,
-                "module": "@sentry.src.tracing:trace.ts"
+                "lineno": 49,
+                "module": "@sentry.src:trace.ts"
               },
               {
                 "colno": 57,
                 "context_line": "                                Sentry.captureException(new Error('This is an error'));",
-                "filename": "[[FILENAME7]]",
-                "function": "<anonymous>",
+                "filename": "[[FILENAME8]]",
+                "function": "?",
                 "in_app": true,
                 "lineno": 133,
                 "module": "app.service",
@@ -192,6 +188,7 @@
       "cookie-signature": "1.0.6",
       "core-util-is": "1.0.3",
       "cors": "2.8.5",
+      "debug": "4.3.4",
       "define-data-property": "1.1.4",
       "depd": "2.0.0",
       "destroy": "1.2.0",
@@ -216,8 +213,10 @@
       "hasown": "2.0.2",
       "http-errors": "2.0.0",
       "iconv-lite": "0.4.24",
+      "import-in-the-middle": "1.7.1",
       "inherits": "2.0.4",
       "ipaddr.js": "1.9.1",
+      "is-core-module": "2.13.1",
       "iterare": "1.2.1",
       "media-typer": "0.3.0",
       "merge-descriptors": "1.0.1",
@@ -225,13 +224,14 @@
       "mime": "1.6.0",
       "mime-db": "1.52.0",
       "mime-types": "2.1.35",
-      "mkdirp": "0.5.6",
+      "module-details-from-path": "1.0.3",
       "ms": "2.1.3",
       "multer": "1.4.4-lts.1",
       "negotiator": "0.6.3",
       "object-assign": "4.1.1",
       "object-inspect": "1.13.1",
       "on-finished": "2.4.1",
+      "opentelemetry-instrumentation-fetch-node": "1.2.0",
       "parseurl": "1.3.3",
       "path-to-regexp": "0.1.7",
       "process-nextick-args": "2.0.1",
@@ -240,17 +240,22 @@
       "range-parser": "1.2.1",
       "raw-body": "2.5.2",
       "reflect-metadata": "0.2.2",
+      "require-in-the-middle": "7.3.0",
+      "resolve": "1.22.8",
       "rxjs": "7.8.1",
       "safe-buffer": "5.2.1",
       "safer-buffer": "2.1.2",
+      "semver": "7.6.0",
       "send": "0.18.0",
       "serve-static": "1.15.0",
       "set-function-length": "1.2.2",
       "setprototypeof": "1.2.0",
+      "shimmer": "1.2.1",
       "side-channel": "1.0.6",
       "source-map-support": "0.5.21",
       "statuses": "2.0.1",
       "streamsearch": "1.1.0",
+      "supports-color": "5.5.0",
       "toidentifier": "1.0.1",
       "tslib": "2.6.2",
       "type-is": "1.6.18",
@@ -259,24 +264,20 @@
       "util-deprecate": "1.0.2",
       "utils-merge": "1.0.1",
       "vary": "1.1.2",
-      "xtend": "4.0.2"
+      "xtend": "4.0.2",
+      "yallist": "4.0.0"
     },
     "platform": "node",
     "request": {
-      "cookies": {
-        "sc": "2pGHpwfeQfLDqPcR9gwpxKl0DHTlOKYq"
-      },
+      "cookies": {},
       "headers": {
-        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
-        "accept-encoding": "gzip, deflate, br, zstd",
-        "accept-language": "en-GB,en-US;q=0.9,en;q=0.8,de;q=0.7",
-        "cache-control": "max-age=0",
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        "accept-encoding": "gzip, deflate, br",
+        "accept-language": "en-US,en;q=0.5",
+        "cache-control": "no-cache",
         "connection": "keep-alive",
-        "cookie": "sc=2pGHpwfeQfLDqPcR9gwpxKl0DHTlOKYq",
         "host": "localhost:3030",
-        "sec-ch-ua": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"",
-        "sec-ch-ua-mobile": "?0",
-        "sec-ch-ua-platform": "\"macOS\"",
+        "pragma": "no-cache",
         "sec-fetch-dest": "document",
         "sec-fetch-mode": "navigate",
         "sec-fetch-site": "none",
@@ -285,7 +286,6 @@
         "user-agent": "[[user-agent]]"
       },
       "method": "GET",
-      "query_string": {},
       "url": "http://localhost:3030/test-error-manual"
     },
     "sdk": {
@@ -296,27 +296,36 @@
         "RequestData",
         "Console",
         "Http",
-        "Undici",
+        "NodeFetch",
         "OnUncaughtException",
         "OnUnhandledRejection",
         "ContextLines",
-        "LocalVariables",
+        "LocalVariablesAsync",
         "Context",
-        "Modules"
+        "Modules",
+        "Express",
+        "Fastify",
+        "Graphql",
+        "Mongo",
+        "Mongoose",
+        "Mysql",
+        "Mysql2",
+        "Postgres",
+        "Nest",
+        "Hapi",
+        "Koa",
+        "Connect"
       ],
       "name": "sentry.javascript.node",
       "packages": [
         {
           "name": "npm:@sentry/node",
-          "version": "7.110.1"
+          "version": "8.0.0-beta.3"
         }
       ],
-      "version": "7.110.1"
+      "version": "8.0.0-beta.3"
     },
-    "server_name": "JH0G94X29Q.local",
-    "tags": {
-      "transaction": "GET /test-error-manual"
-    },
+    "server_name": "D9M3PY4LQ7.local",
     "timestamp": "[[timestamp]]",
     "transaction": "GET /test-error-manual"
   }

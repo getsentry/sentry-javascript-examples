@@ -4,7 +4,7 @@
     "event_id": "[[ID1]]",
     "sdk": {
       "name": "sentry.javascript.node",
-      "version": "7.110.1"
+      "version": "8.0.0-beta.3"
     },
     "sent_at": "[[ISODateString]]",
     "trace": {
@@ -40,10 +40,20 @@
         "processor_frequency": "[[highNumber]]"
       },
       "os": {
-        "build": "23D56",
-        "kernel_version": "23.3.0",
+        "build": "23C64",
+        "kernel_version": "23.2.0",
         "name": "macOS",
-        "version": "14.3"
+        "version": "14.2"
+      },
+      "otel": {
+        "resource": {
+          "service.name": "node",
+          "service.namespace": "sentry",
+          "service.version": "8.0.0-beta.3",
+          "telemetry.sdk.language": "nodejs",
+          "telemetry.sdk.name": "opentelemetry",
+          "telemetry.sdk.version": "1.23.0"
+        }
       },
       "runtime": {
         "name": "node",
@@ -51,21 +61,34 @@
       },
       "trace": {
         "data": {
+          "http.flavor": "1.1",
+          "http.host": "localhost:3030",
+          "http.method": "GET",
           "http.response.status_code": 200,
-          "query": {},
+          "http.route": "/test-error",
+          "http.scheme": "http",
+          "http.status_code": 200,
+          "http.status_text": "OK",
+          "http.target": "/test-error",
+          "http.url": "http://localhost:3030/test-error",
+          "http.user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:125.0) Gecko/20100101 Firefox/125.0",
+          "net.host.ip": "::ffff:127.0.0.1",
+          "net.host.name": "localhost",
+          "net.host.port": "[[highNumber]]",
+          "net.peer.ip": "::ffff:127.0.0.1",
+          "net.peer.port": "[[highNumber]]",
+          "net.transport": "ip_tcp",
+          "otel.kind": "SERVER",
           "sentry.op": "http.server",
-          "sentry.origin": "auto.http.node.tracingHandler",
+          "sentry.origin": "auto.http.otel.http",
           "sentry.sample_rate": 1,
-          "sentry.source": "url",
-          "url": "/test-error"
+          "sentry.source": "route",
+          "url": "http://localhost:3030/test-error"
         },
         "op": "http.server",
-        "origin": "auto.http.node.tracingHandler",
+        "origin": "auto.http.otel.http",
         "span_id": "[[ID3]]",
         "status": "ok",
-        "tags": {
-          "http.status_code": "200"
-        },
         "trace_id": "[[ID2]]"
       }
     },
@@ -87,6 +110,7 @@
       "cookie-signature": "1.0.6",
       "core-util-is": "1.0.3",
       "cors": "2.8.5",
+      "debug": "4.3.4",
       "define-data-property": "1.1.4",
       "depd": "2.0.0",
       "destroy": "1.2.0",
@@ -111,8 +135,10 @@
       "hasown": "2.0.2",
       "http-errors": "2.0.0",
       "iconv-lite": "0.4.24",
+      "import-in-the-middle": "1.7.1",
       "inherits": "2.0.4",
       "ipaddr.js": "1.9.1",
+      "is-core-module": "2.13.1",
       "iterare": "1.2.1",
       "media-typer": "0.3.0",
       "merge-descriptors": "1.0.1",
@@ -120,13 +146,14 @@
       "mime": "1.6.0",
       "mime-db": "1.52.0",
       "mime-types": "2.1.35",
-      "mkdirp": "0.5.6",
+      "module-details-from-path": "1.0.3",
       "ms": "2.1.3",
       "multer": "1.4.4-lts.1",
       "negotiator": "0.6.3",
       "object-assign": "4.1.1",
       "object-inspect": "1.13.1",
       "on-finished": "2.4.1",
+      "opentelemetry-instrumentation-fetch-node": "1.2.0",
       "parseurl": "1.3.3",
       "path-to-regexp": "0.1.7",
       "process-nextick-args": "2.0.1",
@@ -135,17 +162,22 @@
       "range-parser": "1.2.1",
       "raw-body": "2.5.2",
       "reflect-metadata": "0.2.2",
+      "require-in-the-middle": "7.3.0",
+      "resolve": "1.22.8",
       "rxjs": "7.8.1",
       "safe-buffer": "5.2.1",
       "safer-buffer": "2.1.2",
+      "semver": "7.6.0",
       "send": "0.18.0",
       "serve-static": "1.15.0",
       "set-function-length": "1.2.2",
       "setprototypeof": "1.2.0",
+      "shimmer": "1.2.1",
       "side-channel": "1.0.6",
       "source-map-support": "0.5.21",
       "statuses": "2.0.1",
       "streamsearch": "1.1.0",
+      "supports-color": "5.5.0",
       "toidentifier": "1.0.1",
       "tslib": "2.6.2",
       "type-is": "1.6.18",
@@ -154,24 +186,20 @@
       "util-deprecate": "1.0.2",
       "utils-merge": "1.0.1",
       "vary": "1.1.2",
-      "xtend": "4.0.2"
+      "xtend": "4.0.2",
+      "yallist": "4.0.0"
     },
     "platform": "node",
     "request": {
-      "cookies": {
-        "sc": "2pGHpwfeQfLDqPcR9gwpxKl0DHTlOKYq"
-      },
+      "cookies": {},
       "headers": {
-        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
-        "accept-encoding": "gzip, deflate, br, zstd",
-        "accept-language": "en-GB,en-US;q=0.9,en;q=0.8,de;q=0.7",
-        "cache-control": "max-age=0",
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        "accept-encoding": "gzip, deflate, br",
+        "accept-language": "en-US,en;q=0.5",
+        "cache-control": "no-cache",
         "connection": "keep-alive",
-        "cookie": "sc=2pGHpwfeQfLDqPcR9gwpxKl0DHTlOKYq",
         "host": "localhost:3030",
-        "sec-ch-ua": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"",
-        "sec-ch-ua-mobile": "?0",
-        "sec-ch-ua-platform": "\"macOS\"",
+        "pragma": "no-cache",
         "sec-fetch-dest": "document",
         "sec-fetch-mode": "navigate",
         "sec-fetch-site": "none",
@@ -180,7 +208,6 @@
         "user-agent": "[[user-agent]]"
       },
       "method": "GET",
-      "query_string": {},
       "url": "http://localhost:3030/test-error"
     },
     "sdk": {
@@ -191,33 +218,128 @@
         "RequestData",
         "Console",
         "Http",
-        "Undici",
+        "NodeFetch",
         "OnUncaughtException",
         "OnUnhandledRejection",
         "ContextLines",
-        "LocalVariables",
+        "LocalVariablesAsync",
         "Context",
-        "Modules"
+        "Modules",
+        "Express",
+        "Fastify",
+        "Graphql",
+        "Mongo",
+        "Mongoose",
+        "Mysql",
+        "Mysql2",
+        "Postgres",
+        "Nest",
+        "Hapi",
+        "Koa",
+        "Connect"
       ],
       "name": "sentry.javascript.node",
       "packages": [
         {
           "name": "npm:@sentry/node",
-          "version": "7.110.1"
+          "version": "8.0.0-beta.3"
         }
       ],
-      "version": "7.110.1"
+      "version": "8.0.0-beta.3"
     },
-    "server_name": "JH0G94X29Q.local",
-    "spans": [],
+    "server_name": "D9M3PY4LQ7.local",
+    "spans": [
+      {
+        "data": {
+          "express.name": "query",
+          "express.type": "middleware",
+          "http.route": "/",
+          "otel.kind": "INTERNAL",
+          "sentry.origin": "auto.http.otel.express"
+        },
+        "description": "middleware - query",
+        "origin": "auto.http.otel.express",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID4]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "ok",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "express.name": "expressInit",
+          "express.type": "middleware",
+          "http.route": "/",
+          "otel.kind": "INTERNAL",
+          "sentry.origin": "auto.http.otel.express"
+        },
+        "description": "middleware - expressInit",
+        "origin": "auto.http.otel.express",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID5]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "ok",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "express.name": "jsonParser",
+          "express.type": "middleware",
+          "http.route": "/",
+          "otel.kind": "INTERNAL",
+          "sentry.origin": "auto.http.otel.express"
+        },
+        "description": "middleware - jsonParser",
+        "origin": "auto.http.otel.express",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID6]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "ok",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "express.name": "urlencodedParser",
+          "express.type": "middleware",
+          "http.route": "/",
+          "otel.kind": "INTERNAL",
+          "sentry.origin": "auto.http.otel.express"
+        },
+        "description": "middleware - urlencodedParser",
+        "origin": "auto.http.otel.express",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID7]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "ok",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "express.name": "/test-error",
+          "express.type": "request_handler",
+          "http.route": "/test-error",
+          "otel.kind": "INTERNAL",
+          "sentry.origin": "auto.http.otel.express"
+        },
+        "description": "request handler - /test-error",
+        "origin": "auto.http.otel.express",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID8]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "ok",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      }
+    ],
     "start_timestamp": "[[timestamp]]",
-    "tags": {
-      "http.status_code": "200"
-    },
     "timestamp": "[[timestamp]]",
     "transaction": "GET /test-error",
     "transaction_info": {
-      "source": "custom"
+      "source": "route"
     },
     "type": "transaction"
   }
