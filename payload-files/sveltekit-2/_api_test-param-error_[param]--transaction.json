@@ -1,0 +1,132 @@
+[
+  {
+    "dsn": "[[dsn]]",
+    "event_id": "[[ID1]]",
+    "sdk": {
+      "name": "sentry.javascript.sveltekit",
+      "version": "7.110.1"
+    },
+    "sent_at": "[[ISODateString]]",
+    "trace": {
+      "environment": "qa",
+      "public_key": "[[publicKey]]",
+      "sample_rate": "1",
+      "sampled": "true",
+      "trace_id": "[[ID2]]",
+      "transaction": "GET /api/test-param-error/[param]"
+    }
+  },
+  {
+    "type": "transaction"
+  },
+  {
+    "breadcrumbs": [
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\u001b[2m5:58:35 PM\u001b[22m \u001b[36m\u001b[1m[vite]\u001b[22m\u001b[39m \u001b[32m✨ new dependencies optimized: \u001b[33m@sentry/sveltekit\u001b[32m\u001b[39m",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\u001b[2m5:58:35 PM\u001b[22m \u001b[36m\u001b[1m[vite]\u001b[22m\u001b[39m \u001b[32m✨ optimized dependencies changed. reloading\u001b[39m",
+        "timestamp": "[[timestamp]]"
+      }
+    ],
+    "contexts": {
+      "app": {
+        "app_memory": "[[highNumber]]",
+        "app_start_time": "[[ISODateString]]"
+      },
+      "cloud_resource": {},
+      "culture": {
+        "locale": "en-US",
+        "timezone": "Europe/Vienna"
+      },
+      "device": {
+        "arch": "arm64",
+        "boot_time": "[[ISODateString]]",
+        "cpu_description": "Apple M1 Pro",
+        "free_memory": "[[highNumber]]",
+        "memory_size": "[[highNumber]]",
+        "processor_count": 10,
+        "processor_frequency": "[[highNumber]]"
+      },
+      "os": {
+        "build": "23C64",
+        "kernel_version": "23.2.0",
+        "name": "macOS",
+        "version": "14.2"
+      },
+      "runtime": {
+        "name": "node",
+        "version": "v20.12.1"
+      },
+      "trace": {
+        "data": {
+          "http.response.status_code": 500,
+          "sentry.op": "http.server",
+          "sentry.origin": "auto.http.sveltekit",
+          "sentry.sample_rate": 1
+        },
+        "op": "http.server",
+        "origin": "auto.http.sveltekit",
+        "span_id": "[[ID3]]",
+        "status": "internal_error",
+        "tags": {
+          "http.status_code": "500"
+        },
+        "trace_id": "[[ID2]]"
+      }
+    },
+    "environment": "qa",
+    "event_id": "[[ID1]]",
+    "modules": {},
+    "platform": "node",
+    "sdk": {
+      "integrations": [
+        "InboundFilters",
+        "FunctionToString",
+        "LinkedErrors",
+        "RequestData",
+        "Console",
+        "Http",
+        "Undici",
+        "OnUncaughtException",
+        "OnUnhandledRejection",
+        "ContextLines",
+        "LocalVariables",
+        "Context",
+        "Modules",
+        "RewriteFrames"
+      ],
+      "name": "sentry.javascript.sveltekit",
+      "packages": [
+        {
+          "name": "npm:@sentry/sveltekit",
+          "version": "7.110.1"
+        },
+        {
+          "name": "npm:@sentry/node",
+          "version": "7.110.1"
+        }
+      ],
+      "version": "7.110.1"
+    },
+    "server_name": "D9M3PY4LQ7.local",
+    "spans": [],
+    "start_timestamp": "[[timestamp]]",
+    "tags": {
+      "http.status_code": "500",
+      "runtime": "node",
+      "transaction": "GET /api/test-param-error/[param]"
+    },
+    "timestamp": "[[timestamp]]",
+    "transaction": "GET /api/test-param-error/[param]",
+    "transaction_info": {
+      "source": "route"
+    },
+    "type": "transaction"
+  }
+]

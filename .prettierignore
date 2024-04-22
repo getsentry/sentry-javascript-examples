@@ -1,1 +1,2 @@
 utils/event-proxy-server/payload-files/**/*.json
+payload-files/**/*.json

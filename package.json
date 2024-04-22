@@ -16,6 +16,7 @@
     "start:proxy-server:koa": "APP_NAME=koa yarn workspace event-proxy-server run start",
     "start:proxy-server:nextjs-13_2_0": "APP_NAME=nextjs-13_2_0 yarn workspace event-proxy-server run start",
     "start:proxy-server:nextjs-14_2_1": "APP_NAME=nextjs-14_2_1 yarn workspace event-proxy-server run start",
+    "start:proxy-server:sveltekit-2": "APP_NAME=sveltekit-2 yarn workspace event-proxy-server run start",
     "start:app:express": "yarn workspace express-test-application run start",
     "start:app:fastify": "yarn workspace fastify-test-application run start",
     "start:app:connect": "APP_NAME=connect yarn workspace connect-test-application run start",
@@ -23,6 +24,7 @@
     "start:app:koa": "yarn workspace koa-test-application run start",
     "start:app:nextjs-13_2_0": "yarn workspace nextjs-13_2_0-test-application run dev",
     "start:app:nextjs-14_2_1": "yarn workspace nextjs-14_2_1-test-application run dev",
+    "start:app:sveltekit-2": "yarn workspace sveltekit-2-test-application run dev",
     "start:express": "run-p start:proxy-server:express start:app:express",
     "start:fastify": "run-p start:proxy-server:fastify start:app:fastify",
     "start:connect": "run-p start:proxy-server:connect start:app:connect",
@@ -30,6 +32,7 @@
     "start:koa": "run-p start:proxy-server:koa start:app:koa",
     "start:nextjs-13_2_0": "run-p start:proxy-server:nextjs-13_2_0 start:app:nextjs-13_2_0",
     "start:nextjs-14_2_1": "run-p start:proxy-server:nextjs-14_2_1 start:app:nextjs-14_2_1",
+    "start:sveltekit-2": "run-p start:proxy-server:sveltekit-2 start:app:sveltekit-2",
     "fix:prettier": "prettier . --write",
     "fix:lint": "yarn run eslint --fix",
     "lint": "yarn run eslint"
@@ -42,7 +45,8 @@
     "apps/nestjs",
     "apps/koa",
     "apps/nextjs-13_2_0",
-    "apps/nextjs-14_2_1"
+    "apps/nextjs-14_2_1",
+    "apps/sveltekit-2"
   ],
   "devDependencies": {
     "@eslint/js": "^9.0.0",

@@ -1,0 +1,342 @@
+[
+  {
+    "event_id": "dfae2f65f34942feb2a772991f533a74",
+    "sent_at": "2024-04-22T15:51:35.796Z",
+    "sdk": { "name": "sentry.javascript.sveltekit", "version": "7.110.1" },
+    "dsn": "https://3b6c388182fb435097f41d181be2b2ba@o4504321058471936.ingest.sentry.io/4504321066008576",
+    "trace": {
+      "environment": "qa",
+      "public_key": "3b6c388182fb435097f41d181be2b2ba",
+      "trace_id": "dca50d93a66e4802b170ca3e5e271135"
+    }
+  },
+  { "type": "event" },
+  {
+    "exception": {
+      "values": [
+        {
+          "type": "TypeError",
+          "value": "__vite_ssr_import_0__.startSpan is not a function",
+          "stacktrace": {
+            "frames": [
+              {
+                "filename": "app:///index.js",
+                "function": "<anonymous>",
+                "lineno": 524,
+                "colno": 22,
+                "in_app": false,
+                "pre_context": [
+                  "\t\t\t\t\tres.end(",
+                  "\t\t\t\t\t\terror_template({ status: 500, message: manifest_error.message ?? 'Invalid routes' })",
+                  "\t\t\t\t\t);",
+                  "",
+                  "\t\t\t\t\treturn;",
+                  "\t\t\t\t}",
+                  ""
+                ],
+                "context_line": "\t\t\t\tconst rendered = await server.respond(request, {",
+                "post_context": [
+                  "\t\t\t\t\tgetClientAddress: () => {",
+                  "\t\t\t\t\t\tconst { remoteAddress } = req.socket;",
+                  "\t\t\t\t\t\tif (remoteAddress) return remoteAddress;",
+                  "\t\t\t\t\t\tthrow new Error('Could not determine clientAddress');",
+                  "\t\t\t\t\t},",
+                  "\t\t\t\t\tread: (file) => fs.readFileSync(path.join(svelte_config.kit.files.assets, file)),",
+                  "\t\t\t\t\tbefore_handle: (event, config, prerender) => {"
+                ]
+              },
+              {
+                "filename": "app:///respond.js",
+                "function": "Module.respond",
+                "lineno": 319,
+                "colno": 20,
+                "in_app": false,
+                "pre_context": [
+                  "\t\t\tstate,",
+                  "\t\t\tget_cookie_header,",
+                  "\t\t\tset_internal",
+                  "\t\t});",
+                  "",
+                  "\t\tif (state.prerendering && !state.prerendering.fallback) disable_search(url);",
+                  ""
+                ],
+                "context_line": "\t\tconst response = await options.hooks.handle({",
+                "post_context": [
+                  "\t\t\tevent,",
+                  "\t\t\tresolve: (event, opts) =>",
+                  "\t\t\t\tresolve(event, opts).then((response) => {",
+                  "\t\t\t\t\t// add headers/cookies here, rather than inside `resolve`, so that we",
+                  "\t\t\t\t\t// can do it once for all responses instead of once per `return`",
+                  "\t\t\t\t\tfor (const key in headers) {",
+                  "\t\t\t\t\t\tconst value = headers[key];"
+                ]
+              },
+              {
+                "filename": "app:///handle.js",
+                "function": "instrumentHandle",
+                "lineno": 133,
+                "colno": 27,
+                "in_app": false,
+                "pre_context": [
+                  "    return resolve(event);",
+                  "  }",
+                  "",
+                  "  const { dynamicSamplingContext, traceparentData, propagationContext } = utils.getTracePropagationData(event);",
+                  "  core.getCurrentScope().setPropagationContext(propagationContext);",
+                  "",
+                  "  try {"
+                ],
+                "context_line": "    const resolveResult = await core.startSpan(",
+                "post_context": [
+                  "      {",
+                  "        op: 'http.server',",
+                  "        attributes: {",
+                  "          [core.SEMANTIC_ATTRIBUTE_SENTRY_ORIGIN]: 'auto.http.sveltekit',",
+                  "        },",
+                  "        name: `${event.request.method} ${_optionalChain([event, 'access', _3 => _3.route, 'optionalAccess', _4 => _4.id]) || event.url.pathname}`,",
+                  "        status: 'ok',"
+                ]
+              },
+              {
+                "filename": "app:///handle.js",
+                "function": "<anonymous>",
+                "lineno": 148,
+                "colno": 21,
+                "in_app": false,
+                "pre_context": [
+                  "        ...traceparentData,",
+                  "        metadata: {",
+                  "          source: _optionalChain([event, 'access', _5 => _5.route, 'optionalAccess', _6 => _6.id]) ? 'route' : 'url',",
+                  "          dynamicSamplingContext: traceparentData && !dynamicSamplingContext ? {} : dynamicSamplingContext,",
+                  "        },",
+                  "      },",
+                  "      async (span) => {"
+                ],
+                "context_line": "        const res = await resolve(event, {",
+                "post_context": [
+                  "          transformPageChunk: addSentryCodeToPage(options),",
+                  "        });",
+                  "        if (span) {",
+                  "          core.setHttpStatus(span, res.status);",
+                  "        }",
+                  "        return res;",
+                  "      },"
+                ]
+              },
+              {
+                "filename": "app:///respond.js",
+                "function": "resolve",
+                "lineno": 443,
+                "colno": 23,
+                "in_app": false,
+                "pre_context": [
+                  "\t\t\t\t\t\toptions,",
+                  "\t\t\t\t\t\tmanifest,",
+                  "\t\t\t\t\t\tstate,",
+                  "\t\t\t\t\t\tinvalidated_data_nodes,",
+                  "\t\t\t\t\t\ttrailing_slash ?? 'never'",
+                  "\t\t\t\t\t);",
+                  "\t\t\t\t} else if (route.endpoint && (!route.page || is_endpoint_request(event))) {"
+                ],
+                "context_line": "\t\t\t\t\tresponse = await render_endpoint(event, await route.endpoint(), state);",
+                "post_context": [
+                  "\t\t\t\t} else if (route.page) {",
+                  "\t\t\t\t\tif (page_methods.has(method)) {",
+                  "\t\t\t\t\t\tresponse = await render_page(event, route.page, options, manifest, state, resolve_opts);",
+                  "\t\t\t\t\t} else {",
+                  "\t\t\t\t\t\tconst allowed_methods = new Set(allowed_page_methods);",
+                  "\t\t\t\t\t\tconst node = await manifest._.nodes[route.page.leaf]();",
+                  "\t\t\t\t\t\tif (node?.server?.actions) {"
+                ]
+              },
+              {
+                "filename": "app:///endpoint.js",
+                "function": "Module.render_endpoint",
+                "lineno": 43,
+                "colno": 24,
+                "in_app": false,
+                "pre_context": [
+                  "\t\t\t// if request came direct from the crawler, signal that",
+                  "\t\t\t// this route cannot be prerendered, but don't bail",
+                  "\t\t\treturn new Response(undefined, { status: 204 });",
+                  "\t\t}",
+                  "\t}",
+                  "",
+                  "\ttry {"
+                ],
+                "context_line": "\t\tlet response = await handler(",
+                "post_context": [
+                  "\t\t\t/** @type {import('@sveltejs/kit').RequestEvent<Record<string, any>>} */ (event)",
+                  "\t\t);",
+                  "",
+                  "\t\tif (!(response instanceof Response)) {",
+                  "\t\t\tthrow new Error(",
+                  "\t\t\t\t`Invalid response from route ${event.url.pathname}: handler should return a Response object`",
+                  "\t\t\t);"
+                ]
+              },
+              {
+                "filename": "app:///+server.ts",
+                "function": "GET",
+                "lineno": 5,
+                "colno": 9,
+                "in_app": true,
+                "pre_context": [
+                  "import type { RequestHandler } from './$types';",
+                  "import * as Sentry from '@sentry/nextjs';",
+                  "",
+                  "export const GET: RequestHandler = async () => {"
+                ],
+                "context_line": "\tSentry.startSpan({ name: 'test-span' }, () => {",
+                "post_context": [
+                  "\t\tSentry.startSpan({ name: 'child-span' }, () => {",
+                  "\t\t\tSentry.captureException(new Error('This is an error'));",
+                  "\t\t});",
+                  "\t});",
+                  "",
+                  "\tawait Sentry.flush();",
+                  ""
+                ]
+              }
+            ]
+          },
+          "mechanism": { "type": "sveltekit", "handled": false }
+        }
+      ]
+    },
+    "event_id": "dfae2f65f34942feb2a772991f533a74",
+    "platform": "node",
+    "contexts": {
+      "trace": {
+        "data": {
+          "sentry.origin": "auto.http.sveltekit",
+          "sentry.op": "http.server",
+          "sentry.sample_rate": 1
+        },
+        "op": "http.server",
+        "parent_span_id": "bf0ecc711b3696c7",
+        "span_id": "b708661cf3f252ac",
+        "status": "ok",
+        "trace_id": "dca50d93a66e4802b170ca3e5e271135",
+        "origin": "auto.http.sveltekit"
+      },
+      "runtime": { "name": "node", "version": "v20.12.1" },
+      "app": { "app_start_time": "2024-04-22T15:51:20.411Z", "app_memory": 222543872 },
+      "os": { "kernel_version": "23.2.0", "name": "macOS", "version": "14.2", "build": "23C64" },
+      "device": {
+        "boot_time": "2024-03-25T08:51:02.269Z",
+        "arch": "arm64",
+        "memory_size": 34359738368,
+        "free_memory": 216334336,
+        "processor_count": 10,
+        "cpu_description": "Apple M1 Pro",
+        "processor_frequency": 2400
+      },
+      "culture": { "locale": "en-US", "timezone": "Europe/Vienna" },
+      "cloud_resource": {}
+    },
+    "server_name": "D9M3PY4LQ7.local",
+    "timestamp": 1713801095.788,
+    "environment": "qa",
+    "sdk": {
+      "integrations": [
+        "InboundFilters",
+        "FunctionToString",
+        "LinkedErrors",
+        "RequestData",
+        "Console",
+        "Http",
+        "Undici",
+        "OnUncaughtException",
+        "OnUnhandledRejection",
+        "ContextLines",
+        "LocalVariables",
+        "Context",
+        "Modules",
+        "RewriteFrames"
+      ],
+      "name": "sentry.javascript.sveltekit",
+      "version": "7.110.1",
+      "packages": [
+        { "name": "npm:@sentry/sveltekit", "version": "7.110.1" },
+        { "name": "npm:@sentry/node", "version": "7.110.1" }
+      ]
+    },
+    "tags": { "transaction": "GET /api/test-error-manual", "runtime": "node" },
+    "breadcrumbs": [
+      {
+        "timestamp": 1713801090.106,
+        "category": "console",
+        "level": "log",
+        "message": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+      },
+      {
+        "timestamp": 1713801090.106,
+        "category": "console",
+        "level": "log",
+        "message": "\u001b[2m5:51:30 PM\u001b[22m \u001b[36m\u001b[1m[vite]\u001b[22m\u001b[39m \u001b[32mpage reload \u001b[39m\u001b[2m.svelte-kit/generated/client/nodes/0.js\u001b[22m"
+      },
+      {
+        "timestamp": 1713801090.107,
+        "category": "console",
+        "level": "log",
+        "message": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+      },
+      {
+        "timestamp": 1713801090.107,
+        "category": "console",
+        "level": "log",
+        "message": "\u001b[2m5:51:30 PM\u001b[22m \u001b[36m\u001b[1m[vite]\u001b[22m\u001b[39m \u001b[32mpage reload \u001b[39m\u001b[2m.svelte-kit/generated/client/nodes/1.js\u001b[22m"
+      },
+      {
+        "timestamp": 1713801090.107,
+        "category": "console",
+        "level": "log",
+        "message": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+      },
+      {
+        "timestamp": 1713801090.107,
+        "category": "console",
+        "level": "log",
+        "message": "\u001b[2m5:51:30 PM\u001b[22m \u001b[36m\u001b[1m[vite]\u001b[22m\u001b[39m \u001b[32mpage reload \u001b[39m\u001b[2m.svelte-kit/generated/client/nodes/3.js\u001b[22m"
+      },
+      {
+        "timestamp": 1713801090.107,
+        "category": "console",
+        "level": "log",
+        "message": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+      },
+      {
+        "timestamp": 1713801090.107,
+        "category": "console",
+        "level": "log",
+        "message": "\u001b[2m5:51:30 PM\u001b[22m \u001b[36m\u001b[1m[vite]\u001b[22m\u001b[39m \u001b[32mpage reload \u001b[39m\u001b[2m.svelte-kit/generated/client/app.js\u001b[22m"
+      },
+      {
+        "timestamp": 1713801090.107,
+        "category": "console",
+        "level": "log",
+        "message": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+      },
+      {
+        "timestamp": 1713801090.107,
+        "category": "console",
+        "level": "log",
+        "message": "\u001b[2m5:51:30 PM\u001b[22m \u001b[36m\u001b[1m[vite]\u001b[22m\u001b[39m \u001b[32mpage reload \u001b[39m\u001b[2m.svelte-kit/generated/client/matchers.js\u001b[22m"
+      },
+      {
+        "timestamp": 1713801090.107,
+        "category": "console",
+        "level": "log",
+        "message": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+      },
+      {
+        "timestamp": 1713801090.107,
+        "category": "console",
+        "level": "log",
+        "message": "\u001b[2m5:51:30 PM\u001b[22m \u001b[36m\u001b[1m[vite]\u001b[22m\u001b[39m \u001b[32mpage reload \u001b[39m\u001b[2m.svelte-kit/generated/server/internal.js\u001b[22m"
+      }
+    ],
+    "modules": {}
+  }
+]
