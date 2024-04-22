@@ -4,7 +4,7 @@
     "event_id": "[[ID1]]",
     "sdk": {
       "name": "sentry.javascript.node",
-      "version": "7.110.1"
+      "version": "8.0.0-beta.3"
     },
     "sent_at": "[[ISODateString]]",
     "trace": {
@@ -40,25 +40,18 @@
         "processor_frequency": "[[highNumber]]"
       },
       "os": {
-        "build": "23D56",
-        "kernel_version": "23.3.0",
+        "build": "23C64",
+        "kernel_version": "23.2.0",
         "name": "macOS",
-        "version": "14.3"
+        "version": "14.2"
       },
       "runtime": {
         "name": "node",
         "version": "v20.12.1"
       },
       "trace": {
-        "data": {
-          "sentry.op": "http.server",
-          "sentry.origin": "auto.http.node.tracingHandler",
-          "sentry.sample_rate": 1,
-          "sentry.source": "url"
-        },
-        "op": "http.server",
-        "origin": "auto.http.node.tracingHandler",
-        "span_id": "[[ID3]]",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID4]]",
         "trace_id": "[[ID2]]"
       }
     },
@@ -68,50 +61,184 @@
       "values": [
         {
           "mechanism": {
-            "handled": false,
-            "type": "middleware"
+            "handled": true,
+            "type": "generic"
           },
           "stacktrace": {
             "frames": [
               {
-                "colno": 5,
+                "colno": 10,
+                "context_line": "  return fn(request, reply, next)",
                 "filename": "[[FILENAME1]]",
-                "function": "process.processTicksAndRejections",
+                "function": "hookIterator",
                 "in_app": false,
-                "lineno": 95,
-                "module": "task_queues"
-              },
-              {
-                "colno": 7,
-                "context_line": "      next()",
-                "filename": "[[FILENAME2]]",
-                "function": "handleResolve",
-                "in_app": false,
-                "lineno": 250,
+                "lineno": 405,
                 "module": "fastify.lib:hooks",
                 "post_context": [
-                  "    }",
+                  "}",
                   "",
-                  "    function handleReject (err) {",
-                  "      if (!err) {",
-                  "        err = new FST_ERR_SEND_UNDEFINED_ERR()",
-                  "      }",
-                  ""
+                  "module.exports = {",
+                  "  Hooks,",
+                  "  buildHooks,",
+                  "  hookRunnerGenerator,",
+                  "  preParsingHookRunner,"
                 ],
                 "pre_context": [
-                  "      }",
-                  "      if (result && typeof result.then === 'function') {",
-                  "        result.then(handleResolve, handleReject)",
-                  "      }",
-                  "    }",
+                  "  }",
                   "",
-                  "    function handleResolve () {"
+                  "  next()",
+                  "}",
+                  "",
+                  "function hookIterator (fn, request, reply, next) {",
+                  "  if (reply.sent === true) return undefined"
+                ]
+              },
+              {
+                "colno": 38,
+                "context_line": "            return api_1.context.with(api_1.trace.setSpan(api_1.context.active(), span), () => {",
+                "filename": "[[FILENAME2]]",
+                "function": "Object.preHandler",
+                "in_app": false,
+                "lineno": 193,
+                "module": "@opentelemetry.instrumentation-fastify.build.src:instrumentation",
+                "post_context": [
+                  "                done();",
+                  "            });",
+                  "        };",
+                  "    }",
+                  "}",
+                  "exports.FastifyInstrumentation = FastifyInstrumentation;",
+                  "//# sourceMappingURL=instrumentation.js.map"
+                ],
+                "pre_context": [
+                  "            if (instrumentation.getConfig().requestHook) {",
+                  "                (0, instrumentation_1.safeExecuteInTheMiddle)(() => instrumentation.getConfig().requestHook(span, { request }), e => {",
+                  "                    if (e) {",
+                  "                        instrumentation._diag.error('request hook failed', e);",
+                  "                    }",
+                  "                }, true);",
+                  "            }"
+                ]
+              },
+              {
+                "colno": 46,
+                "context_line": "        return this._getContextManager().with(context, fn, thisArg, ...args);",
+                "filename": "[[FILENAME3]]",
+                "function": "ContextAPI.with",
+                "in_app": false,
+                "lineno": 60,
+                "module": "@opentelemetry.api.build.src.api:context",
+                "post_context": [
+                  "    }",
+                  "    /**",
+                  "     * Bind a context to a target function or event emitter",
+                  "     *",
+                  "     * @param context context to bind to the event emitter or function. Defaults to the currently active context",
+                  "     * @param target function or event emitter to bind",
+                  "     */"
+                ],
+                "pre_context": [
+                  "     *",
+                  "     * @param context context to be active during function execution",
+                  "     * @param fn function to execute in a context",
+                  "     * @param thisArg optional receiver to be used for calling fn",
+                  "     * @param args optional arguments forwarded to fn",
+                  "     */",
+                  "    with(context, fn, thisArg, ...args) {"
+                ]
+              },
+              {
+                "colno": 24,
+                "context_line": "      return super.with(ctx2, fn, thisArg, ...args);",
+                "filename": "[[FILENAME4]]",
+                "function": "SentryContextManager.with",
+                "in_app": false,
+                "lineno": "[[highNumber]]",
+                "module": "@sentry.opentelemetry.cjs:index",
+                "post_context": [
+                  "    }",
+                  "  }",
+                  "",
+                  "  return SentryContextManager ;",
+                  "}",
+                  "",
+                  "/** If this attribute is true, it means that the parent is a remote span. */"
+                ],
+                "pre_context": [
+                  "      const ctx2 = ctx1",
+                  "        .deleteValue(SENTRY_FORK_ISOLATION_SCOPE_CONTEXT_KEY)",
+                  "        .deleteValue(SENTRY_FORK_SET_SCOPE_CONTEXT_KEY)",
+                  "        .deleteValue(SENTRY_FORK_SET_ISOLATION_SCOPE_CONTEXT_KEY);",
+                  "",
+                  "      setContextOnScope(newCurrentScope, ctx2);",
+                  ""
+                ]
+              },
+              {
+                "colno": 40,
+                "context_line": "        return this._asyncLocalStorage.run(context, cb, ...args);",
+                "filename": "[[FILENAME5]]",
+                "function": "SentryContextManager.with",
+                "in_app": false,
+                "lineno": 33,
+                "module": "@opentelemetry.context-async-hooks.build.src:AsyncLocalStorageContextManager",
+                "post_context": [
+                  "    }",
+                  "    enable() {",
+                  "        return this;",
+                  "    }",
+                  "    disable() {",
+                  "        this._asyncLocalStorage.disable();",
+                  "        return this;"
+                ],
+                "pre_context": [
+                  "    }",
+                  "    active() {",
+                  "        var _a;",
+                  "        return (_a = this._asyncLocalStorage.getStore()) !== null && _a !== void 0 ? _a : api_1.ROOT_CONTEXT;",
+                  "    }",
+                  "    with(context, fn, thisArg, ...args) {",
+                  "        const cb = thisArg == null ? fn : fn.bind(thisArg);"
+                ]
+              },
+              {
+                "colno": 14,
+                "filename": "[[FILENAME6]]",
+                "function": "AsyncLocalStorage.run",
+                "in_app": false,
+                "lineno": 346,
+                "module": "node:async_hooks"
+              },
+              {
+                "colno": 17,
+                "context_line": "                done();",
+                "filename": "[[FILENAME2]]",
+                "function": "?",
+                "in_app": false,
+                "lineno": 194,
+                "module": "@opentelemetry.instrumentation-fastify.build.src:instrumentation",
+                "post_context": [
+                  "            });",
+                  "        };",
+                  "    }",
+                  "}",
+                  "exports.FastifyInstrumentation = FastifyInstrumentation;",
+                  "//# sourceMappingURL=instrumentation.js.map"
+                ],
+                "pre_context": [
+                  "                (0, instrumentation_1.safeExecuteInTheMiddle)(() => instrumentation.getConfig().requestHook(span, { request }), e => {",
+                  "                    if (e) {",
+                  "                        instrumentation._diag.error('request hook failed', e);",
+                  "                    }",
+                  "                }, true);",
+                  "            }",
+                  "            return api_1.context.with(api_1.trace.setSpan(api_1.context.active(), span), () => {"
                 ]
               },
               {
                 "colno": 9,
                 "context_line": "        cb(err, request, reply)",
-                "filename": "[[FILENAME2]]",
+                "filename": "[[FILENAME1]]",
                 "function": "next",
                 "in_app": false,
                 "lineno": 233,
@@ -136,144 +263,9 @@
                 ]
               },
               {
-                "colno": 5,
-                "context_line": "    handleRequest(null, request, reply)",
-                "filename": "[[FILENAME3]]",
-                "function": "runPreParsing",
-                "in_app": false,
-                "lineno": 609,
-                "module": "fastify.lib:route",
-                "post_context": [
-                  "  }",
-                  "}",
-                  "",
-                  "/**",
-                  " * Used within the route handler as a `net.Socket.close` event handler.",
-                  " * The purpose is to remove a socket from the tracked sockets collection when",
-                  " * the socket has naturally timed out."
-                ],
-                "pre_context": [
-                  "  }",
-                  "",
-                  "  request[kRequestPayloadStream] = request.raw",
-                  "",
-                  "  if (request[kRouteContext].preParsing !== null) {",
-                  "    preParsingHookRunner(request[kRouteContext].preParsing, request, reply, handleRequest)",
-                  "  } else {"
-                ]
-              },
-              {
-                "colno": 5,
-                "context_line": "    handler(request, reply)",
-                "filename": "[[FILENAME4]]",
-                "function": "handleRequest",
-                "in_app": false,
-                "lineno": 24,
-                "module": "fastify.lib:handleRequest",
-                "post_context": [
-                  "    return",
-                  "  }",
-                  "",
-                  "  const contentType = headers['content-type']",
-                  "",
-                  "  if (method === 'POST' || method === 'PUT' || method === 'PATCH' || method === 'TRACE' || method === 'SEARCH') {",
-                  "    if (contentType === undefined) {"
-                ],
-                "pre_context": [
-                  "  }",
-                  "",
-                  "  const method = request.raw.method",
-                  "  const headers = request.headers",
-                  "  const context = request[kRouteContext]",
-                  "",
-                  "  if (method === 'GET' || method === 'HEAD') {"
-                ]
-              },
-              {
-                "colno": 7,
-                "context_line": "      preValidationCallback(null, request, reply)",
-                "filename": "[[FILENAME4]]",
-                "function": "handler",
-                "in_app": false,
-                "lineno": 75,
-                "module": "fastify.lib:handleRequest",
-                "post_context": [
-                  "    }",
-                  "  } catch (err) {",
-                  "    preValidationCallback(err, request, reply)",
-                  "  }",
-                  "}",
-                  "",
-                  "function preValidationCallback (err, request, reply) {"
-                ],
-                "pre_context": [
-                  "      preValidationHookRunner(",
-                  "        request[kRouteContext].preValidation,",
-                  "        request,",
-                  "        reply,",
-                  "        preValidationCallback",
-                  "      )",
-                  "    } else {"
-                ]
-              },
-              {
-                "colno": 5,
-                "context_line": "    validationCompleted(request, reply, validationErr)",
-                "filename": "[[FILENAME4]]",
-                "function": "preValidationCallback",
-                "in_app": false,
-                "lineno": 98,
-                "module": "fastify.lib:handleRequest",
-                "post_context": [
-                  "  }",
-                  "}",
-                  "",
-                  "function validationCompleted (request, reply, validationErr) {",
-                  "  if (validationErr) {",
-                  "    if (reply[kRouteContext].attachValidation === false) {",
-                  "      reply.send(validationErr)"
-                ],
-                "pre_context": [
-                  "  const validationErr = validateSchema(reply[kRouteContext], request)",
-                  "  const isAsync = (validationErr && typeof validationErr.then === 'function') || false",
-                  "",
-                  "  if (isAsync) {",
-                  "    const cb = validationCompleted.bind(null, request, reply)",
-                  "    validationErr.then(cb, cb)",
-                  "  } else {"
-                ]
-              },
-              {
-                "colno": 5,
-                "context_line": "    preHandlerCallback(null, request, reply)",
-                "filename": "[[FILENAME4]]",
-                "function": "validationCompleted",
-                "in_app": false,
-                "lineno": 121,
-                "module": "fastify.lib:handleRequest",
-                "post_context": [
-                  "  }",
-                  "}",
-                  "",
-                  "function preHandlerCallback (err, request, reply) {",
-                  "  if (reply.sent) return",
-                  "",
-                  "  if (err != null) {"
-                ],
-                "pre_context": [
-                  "    preHandlerHookRunner(",
-                  "      request[kRouteContext].preHandler,",
-                  "      request,",
-                  "      reply,",
-                  "      preHandlerCallback",
-                  "    )",
-                  "  } else {"
-                ]
-              },
-              {
                 "colno": 37,
                 "context_line": "    result = request[kRouteContext].handler(request, reply)",
-                "filename": "[[FILENAME4]]",
+                "filename": "[[FILENAME7]]",
                 "function": "preHandlerCallback",
                 "in_app": false,
                 "lineno": 137,
@@ -300,10 +292,10 @@
               {
                 "colno": 11,
                 "context_line": "    throw new Error(\"Uncaught Local Variable Error - \".concat(JSON.stringify({ randomVariableToRecord: randomVariableToRecord })));",
-                "filename": "[[FILENAME5]]",
-                "function": "Object.<anonymous>",
+                "filename": "[[FILENAME8]]",
+                "function": "Object.?",
                 "in_app": true,
-                "lineno": 170,
+                "lineno": 156,
                 "module": "app",
                 "post_context": [
                   "});",
@@ -336,7 +328,7 @@
       "ajv": "8.12.0",
       "atomic-sleep": "1.0.0",
       "avvio": "8.3.0",
-      "dotenv": "16.4.5",
+      "debug": "4.3.4",
       "fast-content-type-parse": "1.1.0",
       "fast-decode-uri-component": "1.0.1",
       "fast-deep-equal": "3.1.3",
@@ -348,14 +340,22 @@
       "fastq": "1.17.1",
       "find-my-way": "8.1.0",
       "forwarded": "0.2.0",
+      "function-bind": "1.1.2",
+      "hasown": "2.0.2",
+      "import-in-the-middle": "1.7.1",
       "ipaddr.js": "1.9.1",
+      "is-core-module": "2.13.1",
       "json-schema-ref-resolver": "1.0.1",
+      "module-details-from-path": "1.0.3",
       "on-exit-leak-free": "2.1.2",
+      "opentelemetry-instrumentation-fetch-node": "1.2.0",
       "pino": "8.20.0",
       "pino-std-serializers": "6.2.2",
       "process-warning": "3.0.0",
       "proxy-addr": "2.0.7",
       "quick-format-unescaped": "4.0.4",
+      "require-in-the-middle": "7.3.0",
+      "resolve": "1.22.8",
       "ret": "0.2.2",
       "reusify": "1.0.4",
       "rfdc": "1.3.1",
@@ -363,7 +363,9 @@
       "safe-stable-stringify": "2.4.3",
       "secure-json-parse": "2.7.0",
       "semver": "7.6.0",
+      "shimmer": "1.2.1",
       "sonic-boom": "3.8.1",
+      "supports-color": "5.5.0",
       "thread-stream": "2.4.1",
       "toad-cache": "3.7.0",
       "uri-js": "4.4.1",
@@ -371,24 +373,18 @@
     },
     "platform": "node",
     "request": {
-      "cookies": {
-        "sc": "2pGHpwfeQfLDqPcR9gwpxKl0DHTlOKYq"
-      },
+      "cookies": {},
       "headers": {
-        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
-        "accept-encoding": "gzip, deflate, br, zstd",
-        "accept-language": "en-GB,en-US;q=0.9,en;q=0.8,de;q=0.7",
-        "cache-control": "max-age=0",
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        "accept-encoding": "gzip, deflate, br",
+        "accept-language": "en-US,en;q=0.5",
+        "cache-control": "no-cache",
         "connection": "keep-alive",
-        "cookie": "sc=2pGHpwfeQfLDqPcR9gwpxKl0DHTlOKYq",
         "host": "localhost:3030",
-        "sec-ch-ua": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"",
-        "sec-ch-ua-mobile": "?0",
-        "sec-ch-ua-platform": "\"macOS\"",
+        "pragma": "no-cache",
         "sec-fetch-dest": "document",
         "sec-fetch-mode": "navigate",
-        "sec-fetch-site": "none",
-        "sec-fetch-user": "?1",
+        "sec-fetch-site": "cross-site",
         "upgrade-insecure-requests": "1",
         "user-agent": "[[user-agent]]"
       },
@@ -403,27 +399,36 @@
         "RequestData",
         "Console",
         "Http",
-        "Undici",
+        "NodeFetch",
         "OnUncaughtException",
         "OnUnhandledRejection",
         "ContextLines",
-        "LocalVariables",
+        "LocalVariablesAsync",
         "Context",
-        "Modules"
+        "Modules",
+        "Express",
+        "Fastify",
+        "Graphql",
+        "Mongo",
+        "Mongoose",
+        "Mysql",
+        "Mysql2",
+        "Postgres",
+        "Nest",
+        "Hapi",
+        "Koa",
+        "Connect"
       ],
       "name": "sentry.javascript.node",
       "packages": [
         {
           "name": "npm:@sentry/node",
-          "version": "7.110.1"
+          "version": "8.0.0-beta.3"
         }
       ],
-      "version": "7.110.1"
+      "version": "8.0.0-beta.3"
     },
-    "server_name": "JH0G94X29Q.local",
-    "tags": {
-      "transaction": "GET /test-local-variables-uncaught"
-    },
+    "server_name": "D9M3PY4LQ7.local",
     "timestamp": "[[timestamp]]",
     "transaction": "GET /test-local-variables-uncaught"
   }
