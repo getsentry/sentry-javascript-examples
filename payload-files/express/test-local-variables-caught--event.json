@@ -4,7 +4,7 @@
     "event_id": "[[ID1]]",
     "sdk": {
       "name": "sentry.javascript.node",
-      "version": "8.0.0-beta.2"
+      "version": "8.0.0-beta.3"
     },
     "sent_at": "[[ISODateString]]",
     "trace": {
@@ -444,7 +444,8 @@
         "connection": "keep-alive",
         "cookie": "sc=2pGHpwfeQfLDqPcR9gwpxKl0DHTlOKYq",
         "host": "localhost:3030",
-        "sec-ch-ua": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"",
+        "if-none-match": "[[W/entityTagValue]]",
+        "sec-ch-ua": "\"Chromium\";v=\"124\", \"Google Chrome\";v=\"124\", \"Not-A.Brand\";v=\"99\"",
         "sec-ch-ua-mobile": "?0",
         "sec-ch-ua-platform": "\"macOS\"",
         "sec-fetch-dest": "document",
@@ -482,16 +483,17 @@
         "Postgres",
         "Nest",
         "Hapi",
-        "Koa"
+        "Koa",
+        "Connect"
       ],
       "name": "sentry.javascript.node",
       "packages": [
         {
           "name": "npm:@sentry/node",
-          "version": "8.0.0-beta.2"
+          "version": "8.0.0-beta.3"
         }
       ],
-      "version": "8.0.0-beta.2"
+      "version": "8.0.0-beta.3"
     },
     "server_name": "JH0G94X29Q.local",
     "timestamp": "[[timestamp]]",
