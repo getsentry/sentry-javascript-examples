@@ -1,4 +1,7 @@
 import * as Sentry from '@sentry/nextjs';
+import dotenv from 'dotenv';
+
+dotenv.config({ path: './../../.env' });
 
 Sentry.init({
   environment: 'qa', // dynamic sampling bias to keep transactions

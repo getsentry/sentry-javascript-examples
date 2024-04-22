@@ -13,7 +13,7 @@
       "sample_rate": "1",
       "sampled": "true",
       "trace_id": "[[ID2]]",
-      "transaction": "GET /test-error-manual"
+      "transaction": "GET /test-param-success/:param"
     }
   },
   {
@@ -73,12 +73,12 @@
           "http.host": "localhost:3030",
           "http.method": "GET",
           "http.response.status_code": 200,
-          "http.route": "/test-error-manual",
+          "http.route": "/test-param-success/:param",
           "http.scheme": "http",
           "http.status_code": 200,
           "http.status_text": "OK",
-          "http.target": "/test-error-manual",
-          "http.url": "http://localhost:3030/test-error-manual",
+          "http.target": "/test-param-success/1337",
+          "http.url": "http://localhost:3030/test-param-success/1337",
           "http.user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:125.0) Gecko/20100101 Firefox/125.0",
           "net.host.ip": "::ffff:127.0.0.1",
           "net.host.name": "localhost",
@@ -91,7 +91,7 @@
           "sentry.origin": "auto.http.otel.http",
           "sentry.sample_rate": 1,
           "sentry.source": "route",
-          "url": "http://localhost:3030/test-error-manual"
+          "url": "http://localhost:3030/test-param-success/1337"
         },
         "op": "http.server",
         "origin": "auto.http.otel.http",
@@ -190,13 +190,12 @@
         "pragma": "no-cache",
         "sec-fetch-dest": "document",
         "sec-fetch-mode": "navigate",
-        "sec-fetch-site": "none",
-        "sec-fetch-user": "?1",
+        "sec-fetch-site": "cross-site",
         "upgrade-insecure-requests": "1",
         "user-agent": "[[user-agent]]"
       },
       "method": "GET",
-      "url": "http://localhost:3030/test-error-manual"
+      "url": "http://localhost:3030/test-param-success/1337"
     },
     "sdk": {
       "integrations": [
@@ -273,46 +272,16 @@
       },
       {
         "data": {
-          "express.name": "/test-error-manual",
+          "express.name": "/test-param-success/:param",
           "express.type": "request_handler",
-          "http.route": "/test-error-manual",
+          "http.route": "/test-param-success/:param",
           "otel.kind": "INTERNAL",
           "sentry.origin": "auto.http.otel.express"
         },
-        "description": "request handler - /test-error-manual",
+        "description": "request handler - /test-param-success/:param",
         "origin": "auto.http.otel.express",
         "parent_span_id": "[[ID3]]",
         "span_id": "[[ID6]]",
-        "start_timestamp": "[[timestamp]]",
-        "status": "ok",
-        "timestamp": "[[timestamp]]",
-        "trace_id": "[[ID2]]"
-      },
-      {
-        "data": {
-          "otel.kind": "INTERNAL",
-          "sentry.op": "e2e-test",
-          "sentry.origin": "manual"
-        },
-        "description": "test-transaction",
-        "op": "e2e-test",
-        "origin": "manual",
-        "parent_span_id": "[[ID3]]",
-        "span_id": "[[ID7]]",
-        "start_timestamp": "[[timestamp]]",
-        "status": "ok",
-        "timestamp": "[[timestamp]]",
-        "trace_id": "[[ID2]]"
-      },
-      {
-        "data": {
-          "otel.kind": "INTERNAL",
-          "sentry.origin": "manual"
-        },
-        "description": "test-span",
-        "origin": "manual",
-        "parent_span_id": "[[ID7]]",
-        "span_id": "[[ID8]]",
         "start_timestamp": "[[timestamp]]",
         "status": "ok",
         "timestamp": "[[timestamp]]",
@@ -321,7 +290,7 @@
     ],
     "start_timestamp": "[[timestamp]]",
     "timestamp": "[[timestamp]]",
-    "transaction": "GET /test-error-manual",
+    "transaction": "GET /test-param-success/:param",
     "transaction_info": {
       "source": "route"
     },

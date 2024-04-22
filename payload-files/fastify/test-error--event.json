@@ -1,103 +1,132 @@
 [
   {
+    "dsn": "[[dsn]]",
     "event_id": "[[ID1]]",
-    "sent_at": "[[ISODateString]]",
     "sdk": {
       "name": "sentry.javascript.node",
-      "version": "7.110.1"
+      "version": "8.0.0-beta.3"
     },
-    "dsn": "[[dsn]]",
+    "sent_at": "[[ISODateString]]",
     "trace": {
       "environment": "qa",
       "public_key": "[[publicKey]]",
-      "trace_id": "[[ID2]]",
       "sample_rate": "1",
-      "transaction": "GET /test-error",
-      "sampled": "true"
+      "sampled": "true",
+      "trace_id": "[[ID2]]",
+      "transaction": "GET /test-error"
     }
   },
   {
     "type": "event"
   },
   {
+    "contexts": {
+      "app": {
+        "app_memory": "[[highNumber]]",
+        "app_start_time": "[[ISODateString]]"
+      },
+      "cloud_resource": {},
+      "culture": {
+        "locale": "en-US",
+        "timezone": "Europe/Vienna"
+      },
+      "device": {
+        "arch": "arm64",
+        "boot_time": "[[ISODateString]]",
+        "cpu_description": "Apple M1 Pro",
+        "free_memory": "[[highNumber]]",
+        "memory_size": "[[highNumber]]",
+        "processor_count": 10,
+        "processor_frequency": "[[highNumber]]"
+      },
+      "os": {
+        "build": "23C64",
+        "kernel_version": "23.2.0",
+        "name": "macOS",
+        "version": "14.2"
+      },
+      "runtime": {
+        "name": "node",
+        "version": "v20.12.1"
+      },
+      "trace": {
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID4]]",
+        "trace_id": "[[ID2]]"
+      }
+    },
+    "environment": "qa",
+    "event_id": "[[ID1]]",
     "exception": {
       "values": [
         {
-          "type": "Error",
-          "value": "This is an error",
+          "mechanism": {
+            "handled": true,
+            "type": "generic"
+          },
           "stacktrace": {
             "frames": [
               {
+                "colno": 17,
+                "context_line": "                done();",
                 "filename": "[[FILENAME1]]",
-                "module": "fastify.lib:handleRequest",
-                "function": "preValidationCallback",
-                "lineno": 98,
-                "colno": 5,
+                "function": "?",
                 "in_app": false,
-                "pre_context": [
-                  "  const validationErr = validateSchema(reply[kRouteContext], request)",
-                  "  const isAsync = (validationErr && typeof validationErr.then === 'function') || false",
-                  "",
-                  "  if (isAsync) {",
-                  "    const cb = validationCompleted.bind(null, request, reply)",
-                  "    validationErr.then(cb, cb)",
-                  "  } else {"
-                ],
-                "context_line": "    validationCompleted(request, reply, validationErr)",
+                "lineno": 194,
+                "module": "@opentelemetry.instrumentation-fastify.build.src:instrumentation",
                 "post_context": [
-                  "  }",
+                  "            });",
+                  "        };",
+                  "    }",
                   "}",
-                  "",
-                  "function validationCompleted (request, reply, validationErr) {",
-                  "  if (validationErr) {",
-                  "    if (reply[kRouteContext].attachValidation === false) {",
-                  "      reply.send(validationErr)"
+                  "exports.FastifyInstrumentation = FastifyInstrumentation;",
+                  "//# sourceMappingURL=instrumentation.js.map"
+                ],
+                "pre_context": [
+                  "                (0, instrumentation_1.safeExecuteInTheMiddle)(() => instrumentation.getConfig().requestHook(span, { request }), e => {",
+                  "                    if (e) {",
+                  "                        instrumentation._diag.error('request hook failed', e);",
+                  "                    }",
+                  "                }, true);",
+                  "            }",
+                  "            return api_1.context.with(api_1.trace.setSpan(api_1.context.active(), span), () => {"
                 ]
               },
               {
-                "filename": "[[FILENAME1]]",
-                "module": "fastify.lib:handleRequest",
-                "function": "validationCompleted",
-                "lineno": 121,
-                "colno": 5,
+                "colno": 9,
+                "context_line": "        cb(err, request, reply)",
+                "filename": "[[FILENAME2]]",
+                "function": "next",
                 "in_app": false,
-                "pre_context": [
-                  "    preHandlerHookRunner(",
-                  "      request[kRouteContext].preHandler,",
-                  "      request,",
-                  "      reply,",
-                  "      preHandlerCallback",
-                  "    )",
-                  "  } else {"
-                ],
-                "context_line": "    preHandlerCallback(null, request, reply)",
+                "lineno": 233,
+                "module": "fastify.lib:hooks",
                 "post_context": [
-                  "  }",
-                  "}",
+                  "        return",
+                  "      }",
                   "",
-                  "function preHandlerCallback (err, request, reply) {",
-                  "  if (reply.sent) return",
+                  "      let result",
+                  "      try {",
+                  "        result = iterator(functions[i++], request, reply, next)",
+                  "      } catch (error) {"
+                ],
+                "pre_context": [
                   "",
-                  "  if (err != null) {"
+                  "function hookRunnerGenerator (iterator) {",
+                  "  return function hookRunner (functions, request, reply, cb) {",
+                  "    let i = 0",
+                  "",
+                  "    function next (err) {",
+                  "      if (err || i === functions.length) {"
                 ]
               },
               {
-                "filename": "[[FILENAME1]]",
-                "module": "fastify.lib:handleRequest",
-                "function": "preHandlerCallback",
-                "lineno": 137,
                 "colno": 37,
-                "in_app": false,
-                "pre_context": [
-                  "    reply.send(err)",
-                  "    return",
-                  "  }",
-                  "",
-                  "  let result",
-                  "",
-                  "  try {"
-                ],
                 "context_line": "    result = request[kRouteContext].handler(request, reply)",
+                "filename": "[[FILENAME3]]",
+                "function": "preHandlerCallback",
+                "in_app": false,
+                "lineno": 137,
+                "module": "fastify.lib:handleRequest",
                 "post_context": [
                   "  } catch (err) {",
                   "    reply[kReplyIsError] = true",
@@ -106,25 +135,25 @@
                   "  }",
                   "",
                   "  if (result !== undefined) {"
+                ],
+                "pre_context": [
+                  "    reply.send(err)",
+                  "    return",
+                  "  }",
+                  "",
+                  "  let result",
+                  "",
+                  "  try {"
                 ]
               },
               {
-                "filename": "[[FILENAME2]]",
-                "module": "app",
-                "function": "Object.<anonymous>",
-                "lineno": 89,
                 "colno": 12,
-                "in_app": true,
-                "pre_context": [
-                  "        return [2 /*return*/];",
-                  "    });",
-                  "}); });",
-                  "app.get('/test-success', function (_req, res) {",
-                  "    res.send({ version: 'v1' });",
-                  "});",
-                  "app.get('/test-error', function (req, res) {"
-                ],
                 "context_line": "    return __awaiter(this, void 0, void 0, function () {",
+                "filename": "[[FILENAME4]]",
+                "function": "Object.?",
+                "in_app": true,
+                "lineno": 80,
+                "module": "app",
                 "post_context": [
                   "        var exceptionId;",
                   "        return __generator(this, function (_a) {",
@@ -133,25 +162,25 @@
                   "                    exceptionId = Sentry.captureException(new Error('This is an error'));",
                   "                    return [4 /*yield*/, Sentry.flush(2000)];",
                   "                case 1:"
+                ],
+                "pre_context": [
+                  "var app = (0, fastify_1.fastify)();",
+                  "// @ts-ignore",
+                  "Sentry.setupFastifyErrorHandler(app);",
+                  "app.get('/test-success', function (_req, res) {",
+                  "    res.send({ version: 'v1' });",
+                  "});",
+                  "app.get('/test-error', function (req, res) {"
                 ]
               },
               {
-                "filename": "[[FILENAME2]]",
-                "module": "app",
-                "function": "__awaiter",
-                "lineno": 27,
                 "colno": 12,
-                "in_app": true,
-                "pre_context": [
-                  "    var result = {};",
-                  "    if (mod != null) for (var k in mod) if (k !== \"default\" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);",
-                  "    __setModuleDefault(result, mod);",
-                  "    return result;",
-                  "};",
-                  "var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {",
-                  "    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }"
-                ],
                 "context_line": "    return new (P || (P = Promise))(function (resolve, reject) {",
+                "filename": "[[FILENAME4]]",
+                "function": "__awaiter",
+                "in_app": true,
+                "lineno": 27,
+                "module": "app",
                 "post_context": [
                   "        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }",
                   "        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }",
@@ -160,31 +189,31 @@
                   "    });",
                   "};",
                   "var __generator = (this && this.__generator) || function (thisArg, body) {"
+                ],
+                "pre_context": [
+                  "    var result = {};",
+                  "    if (mod != null) for (var k in mod) if (k !== \"default\" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);",
+                  "    __setModuleDefault(result, mod);",
+                  "    return result;",
+                  "};",
+                  "var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {",
+                  "    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }"
                 ]
               },
               {
-                "filename": "[[FILENAME3]]",
-                "module": "<anonymous>",
+                "filename": "[[FILENAME5]]",
                 "function": "new Promise",
-                "in_app": false
+                "in_app": false,
+                "module": "<anonymous>"
               },
               {
-                "filename": "[[FILENAME2]]",
-                "module": "app",
-                "function": "<anonymous>",
-                "lineno": 31,
                 "colno": 71,
-                "in_app": true,
-                "pre_context": [
-                  "};",
-                  "var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {",
-                  "    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }",
-                  "    return new (P || (P = Promise))(function (resolve, reject) {",
-                  "        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }",
-                  "        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }",
-                  "        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }"
-                ],
                 "context_line": "        step((generator = generator.apply(thisArg, _arguments || [])).next());",
+                "filename": "[[FILENAME4]]",
+                "function": "?",
+                "in_app": true,
+                "lineno": 31,
+                "module": "app",
                 "post_context": [
                   "    });",
                   "};",
@@ -193,25 +222,25 @@
                   "    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { re {snip}",
                   "    function verb(n) { return function (v) { return step([n, v]); }; }",
                   "    function step(op) {"
+                ],
+                "pre_context": [
+                  "};",
+                  "var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {",
+                  "    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }",
+                  "    return new (P || (P = Promise))(function (resolve, reject) {",
+                  "        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }",
+                  "        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }",
+                  "        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }"
                 ]
               },
               {
-                "filename": "[[FILENAME2]]",
-                "module": "app",
-                "function": "Object.next",
-                "lineno": 37,
                 "colno": 53,
-                "in_app": true,
-                "pre_context": [
-                  "        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }",
-                  "        step((generator = generator.apply(thisArg, _arguments || [])).next());",
-                  "    });",
-                  "};",
-                  "var __generator = (this && this.__generator) || function (thisArg, body) {",
-                  "    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;",
-                  "    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { re {snip}"
-                ],
                 "context_line": "    function verb(n) { return function (v) { return step([n, v]); }; }",
+                "filename": "[[FILENAME4]]",
+                "function": "Object.next",
+                "in_app": true,
+                "lineno": 37,
+                "module": "app",
                 "post_context": [
                   "    function step(op) {",
                   "        if (f) throw new TypeError(\"Generator is already executing.\");",
@@ -220,15 +249,34 @@
                   "            if (y = 0, t) op = [op[0] & 2, t.value];",
                   "            switch (op[0]) {",
                   "                case 0: case 1: t = op; break;"
+                ],
+                "pre_context": [
+                  "        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }",
+                  "        step((generator = generator.apply(thisArg, _arguments || [])).next());",
+                  "    });",
+                  "};",
+                  "var __generator = (this && this.__generator) || function (thisArg, body) {",
+                  "    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;",
+                  "    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { re {snip}"
                 ]
               },
               {
-                "filename": "[[FILENAME2]]",
-                "module": "app",
-                "function": "step",
-                "lineno": 56,
                 "colno": 23,
+                "context_line": "            op = body.call(thisArg, _);",
+                "filename": "[[FILENAME4]]",
+                "function": "step",
                 "in_app": true,
+                "lineno": 56,
+                "module": "app",
+                "post_context": [
+                  "        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }",
+                  "        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };",
+                  "    }",
+                  "};",
+                  "Object.defineProperty(exports, \"__esModule\", { value: true });",
+                  "var Sentry = __importStar(require(\"@sentry/node\"));",
+                  "Sentry.init({"
+                ],
                 "pre_context": [
                   "                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }",
                   "                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }",
@@ -237,35 +285,16 @@
                   "                    if (t[2]) _.ops.pop();",
                   "                    _.trys.pop(); continue;",
                   "            }"
-                ],
-                "context_line": "            op = body.call(thisArg, _);",
-                "post_context": [
-                  "        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }",
-                  "        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };",
-                  "    }",
-                  "};",
-                  "Object.defineProperty(exports, \"__esModule\", { value: true });",
-                  "var Sentry = __importStar(require(\"@sentry/node\"));",
-                  "var fastify_1 = require(\"fastify\");"
                 ]
               },
               {
-                "filename": "[[FILENAME2]]",
-                "module": "app",
-                "function": "Object.<anonymous>",
-                "lineno": 94,
                 "colno": 59,
-                "in_app": true,
-                "pre_context": [
-                  "});",
-                  "app.get('/test-error', function (req, res) {",
-                  "    return __awaiter(this, void 0, void 0, function () {",
-                  "        var exceptionId;",
-                  "        return __generator(this, function (_a) {",
-                  "            switch (_a.label) {",
-                  "                case 0:"
-                ],
                 "context_line": "                    exceptionId = Sentry.captureException(new Error('This is an error'));",
+                "filename": "[[FILENAME4]]",
+                "function": "Object.?",
+                "in_app": true,
+                "lineno": 85,
+                "module": "app",
                 "post_context": [
                   "                    return [4 /*yield*/, Sentry.flush(2000)];",
                   "                case 1:",
@@ -274,64 +303,93 @@
                   "                    return [2 /*return*/];",
                   "            }",
                   "        });"
+                ],
+                "pre_context": [
+                  "});",
+                  "app.get('/test-error', function (req, res) {",
+                  "    return __awaiter(this, void 0, void 0, function () {",
+                  "        var exceptionId;",
+                  "        return __generator(this, function (_a) {",
+                  "            switch (_a.label) {",
+                  "                case 0:"
                 ]
               }
             ]
           },
-          "mechanism": {
-            "type": "generic",
-            "handled": true
-          }
+          "type": "Error",
+          "value": "This is an error"
         }
       ]
     },
-    "event_id": "[[ID1]]",
-    "platform": "node",
-    "contexts": {
-      "trace": {
-        "data": {
-          "sentry.source": "url",
-          "sentry.origin": "auto.http.node.tracingHandler",
-          "sentry.op": "http.server",
-          "sentry.sample_rate": 1
-        },
-        "op": "http.server",
-        "span_id": "[[ID3]]",
-        "trace_id": "[[ID2]]",
-        "origin": "auto.http.node.tracingHandler"
-      },
-      "runtime": {
-        "name": "node",
-        "version": "v20.12.1"
-      },
-      "app": {
-        "app_start_time": "[[ISODateString]]",
-        "app_memory": "[[highNumber]]"
-      },
-      "os": {
-        "kernel_version": "23.2.0",
-        "name": "macOS",
-        "version": "14.2",
-        "build": "23C64"
-      },
-      "device": {
-        "boot_time": "[[ISODateString]]",
-        "arch": "arm64",
-        "memory_size": "[[highNumber]]",
-        "free_memory": "[[highNumber]]",
-        "processor_count": 10,
-        "cpu_description": "Apple M1 Pro",
-        "processor_frequency": "[[highNumber]]"
-      },
-      "culture": {
-        "locale": "en-US",
-        "timezone": "Europe/Vienna"
-      },
-      "cloud_resource": {}
+    "modules": {
+      "abstract-logging": "2.0.1",
+      "ajv": "8.12.0",
+      "atomic-sleep": "1.0.0",
+      "avvio": "8.3.0",
+      "debug": "4.3.4",
+      "fast-content-type-parse": "1.1.0",
+      "fast-decode-uri-component": "1.0.1",
+      "fast-deep-equal": "3.1.3",
+      "fast-json-stringify": "5.14.1",
+      "fast-querystring": "1.1.2",
+      "fast-redact": "3.5.0",
+      "fast-uri": "2.3.0",
+      "fastify": "4.26.2",
+      "fastq": "1.17.1",
+      "find-my-way": "8.1.0",
+      "forwarded": "0.2.0",
+      "function-bind": "1.1.2",
+      "hasown": "2.0.2",
+      "import-in-the-middle": "1.7.1",
+      "ipaddr.js": "1.9.1",
+      "is-core-module": "2.13.1",
+      "json-schema-ref-resolver": "1.0.1",
+      "module-details-from-path": "1.0.3",
+      "on-exit-leak-free": "2.1.2",
+      "opentelemetry-instrumentation-fetch-node": "1.2.0",
+      "pino": "8.20.0",
+      "pino-std-serializers": "6.2.2",
+      "process-warning": "3.0.0",
+      "proxy-addr": "2.0.7",
+      "quick-format-unescaped": "4.0.4",
+      "require-in-the-middle": "7.3.0",
+      "resolve": "1.22.8",
+      "ret": "0.2.2",
+      "reusify": "1.0.4",
+      "rfdc": "1.3.1",
+      "safe-regex2": "2.0.0",
+      "safe-stable-stringify": "2.4.3",
+      "secure-json-parse": "2.7.0",
+      "semver": "7.6.0",
+      "shimmer": "1.2.1",
+      "sonic-boom": "3.8.1",
+      "supports-color": "5.5.0",
+      "thread-stream": "2.4.1",
+      "toad-cache": "3.7.0",
+      "uri-js": "4.4.1",
+      "yallist": "4.0.0"
     },
-    "server_name": "D9M3PY4LQ7.local",
-    "timestamp": "[[timestamp]]",
-    "environment": "qa",
+    "platform": "node",
+    "request": {
+      "cookies": {},
+      "headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        "accept-encoding": "gzip, deflate, br",
+        "accept-language": "en-US,en;q=0.5",
+        "cache-control": "no-cache",
+        "connection": "keep-alive",
+        "host": "localhost:3030",
+        "pragma": "no-cache",
+        "sec-fetch-dest": "document",
+        "sec-fetch-mode": "navigate",
+        "sec-fetch-site": "none",
+        "sec-fetch-user": "?1",
+        "upgrade-insecure-requests": "1",
+        "user-agent": "[[user-agent]]"
+      },
+      "method": "GET",
+      "url": "http://localhost:3030/test-error"
+    },
     "sdk": {
       "integrations": [
         "InboundFilters",
@@ -340,62 +398,37 @@
         "RequestData",
         "Console",
         "Http",
-        "Undici",
+        "NodeFetch",
         "OnUncaughtException",
         "OnUnhandledRejection",
         "ContextLines",
-        "LocalVariables",
+        "LocalVariablesAsync",
         "Context",
-        "Modules"
+        "Modules",
+        "Express",
+        "Fastify",
+        "Graphql",
+        "Mongo",
+        "Mongoose",
+        "Mysql",
+        "Mysql2",
+        "Postgres",
+        "Nest",
+        "Hapi",
+        "Koa",
+        "Connect"
       ],
       "name": "sentry.javascript.node",
-      "version": "7.110.1",
       "packages": [
         {
           "name": "npm:@sentry/node",
-          "version": "7.110.1"
+          "version": "8.0.0-beta.3"
         }
-      ]
+      ],
+      "version": "8.0.0-beta.3"
     },
-    "tags": {
-      "transaction": "GET /test-error"
-    },
-    "modules": {
-      "fastify": "4.26.2",
-      "avvio": "8.3.0",
-      "fastq": "1.17.1",
-      "reusify": "1.0.4",
-      "process-warning": "3.0.0",
-      "abstract-logging": "2.0.1",
-      "pino": "8.20.0",
-      "pino-std-serializers": "6.2.2",
-      "fast-redact": "3.5.0",
-      "quick-format-unescaped": "4.0.4",
-      "sonic-boom": "3.8.1",
-      "atomic-sleep": "1.0.0",
-      "on-exit-leak-free": "2.1.2",
-      "thread-stream": "2.4.1",
-      "safe-stable-stringify": "2.4.3",
-      "rfdc": "1.3.1",
-      "fast-json-stringify": "5.14.1",
-      "ajv": "8.12.0",
-      "fast-deep-equal": "3.1.3",
-      "uri-js": "4.4.1",
-      "fast-uri": "2.3.0",
-      "proxy-addr": "2.0.7",
-      "forwarded": "0.2.0",
-      "ipaddr.js": "1.9.1",
-      "semver": "7.6.0",
-      "yallist": "4.0.0",
-      "toad-cache": "3.7.0",
-      "fast-content-type-parse": "1.1.0",
-      "secure-json-parse": "2.7.0",
-      "json-schema-ref-resolver": "1.0.1",
-      "find-my-way": "8.1.0",
-      "fast-querystring": "1.1.2",
-      "fast-decode-uri-component": "1.0.1",
-      "safe-regex2": "2.0.0",
-      "ret": "0.2.2"
-    }
+    "server_name": "D9M3PY4LQ7.local",
+    "timestamp": "[[timestamp]]",
+    "transaction": "GET /test-error"
   }
 ]

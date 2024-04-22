@@ -16,8 +16,8 @@
     "clean": "rimraf -g ./node_modules ./build"
   },
   "dependencies": {
-    "@sentry/types": "8.0.0-beta.1",
-    "@sentry/utils": "8.0.0-beta.1"
+    "@sentry/types": "8.0.0-beta.3",
+    "@sentry/utils": "8.0.0-beta.3"
   },
   "volta": {
     "extends": "../../package.json"

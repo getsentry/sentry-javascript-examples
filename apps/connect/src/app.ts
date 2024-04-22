@@ -1,17 +1,7 @@
 import * as Sentry from '@sentry/node';
-import connect from 'connect';
 import dotenv from 'dotenv';
 
 dotenv.config({ path: './../../.env' });
-
-declare global {
-  namespace globalThis {
-    var transactionIds: string[];
-  }
-}
-
-const app = connect();
-const port = 3030;
 
 Sentry.init({
   environment: 'qa', // dynamic sampling bias to keep transactions
@@ -22,8 +12,17 @@ Sentry.init({
   tracesSampleRate: 1,
 });
 
-app.use(Sentry.Handlers.requestHandler());
-app.use(Sentry.Handlers.tracingHandler());
+// can use `import` instead of `require` because of `'esModuleInterop': true` in tsconfig.json
+import connect from 'connect';
+
+declare global {
+  namespace globalThis {
+    var transactionIds: string[];
+  }
+}
+
+const app = connect();
+const port = 3030;
 
 const stringify = (obj: any) => JSON.stringify(obj, null, 2);
 
@@ -102,7 +101,7 @@ app.use('/test-local-variables-caught', function (req, res) {
   res.end(stringify({ exceptionId, randomVariableToRecord }));
 });
 
-app.use(Sentry.Handlers.errorHandler());
+Sentry.setupConnectErrorHandler(app);
 
 // @ts-ignore
 app.use(function onError(err, req, res, next) {

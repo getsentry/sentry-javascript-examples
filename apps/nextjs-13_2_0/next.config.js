@@ -4,6 +4,7 @@ const { withSentryConfig } = require('@sentry/nextjs');
 const nextConfig = {
   experimental: {
     appDir: true,
+    instrumentationHook: true,
   },
 };
 
