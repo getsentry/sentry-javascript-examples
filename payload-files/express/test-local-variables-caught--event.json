@@ -4,7 +4,7 @@
     "event_id": "[[ID1]]",
     "sdk": {
       "name": "sentry.javascript.node",
-      "version": "7.110.1"
+      "version": "8.0.0-beta.3"
     },
     "sent_at": "[[ISODateString]]",
     "trace": {
@@ -58,14 +58,6 @@
         "version": "v20.12.1"
       },
       "trace": {
-        "data": {
-          "sentry.op": "http.server",
-          "sentry.origin": "auto.http.node.tracingHandler",
-          "sentry.sample_rate": 1,
-          "sentry.source": "route"
-        },
-        "op": "http.server",
-        "origin": "auto.http.node.tracingHandler",
         "span_id": "[[ID3]]",
         "trace_id": "[[ID2]]"
       }
@@ -82,30 +74,30 @@
           "stacktrace": {
             "frames": [
               {
-                "colno": 16,
-                "context_line": "          next.call(this, ...args);",
+                "colno": 12,
+                "context_line": "    return next();",
                 "filename": "[[FILENAME1]]",
-                "function": "<anonymous>",
+                "function": "Layer.handle [as handle_request]",
                 "in_app": false,
-                "lineno": 114,
-                "module": "@sentry-internal.tracing.cjs.node.integrations:express",
+                "lineno": 91,
+                "module": "express.lib.router:layer",
                 "post_context": [
-                  "        });",
-                  "      };",
-                  "    }",
-                  "    case 4: {",
-                  "      return function (",
+                  "  }",
                   "",
-                  "        err,"
+                  "  try {",
+                  "    fn(req, res, next);",
+                  "  } catch (err) {",
+                  "    next(err);",
+                  "  }"
                 ],
                 "pre_context": [
-                  "        const span = _optionalChain([transaction, 'optionalAccess', _2 => _2.startChild, 'call', _3 => _3({",
-                  "          description: fn.name,",
-                  "          op: `middleware.express.${method}`,",
-                  "          origin: 'auto.middleware.express',",
-                  "        })]);",
-                  "        fn.call(this, req, res, function ( ...args) {",
-                  "          _optionalChain([span, 'optionalAccess', _4 => _4.end, 'call', _5 => _5()]);"
+                  " */",
+                  "",
+                  "Layer.prototype.handle_request = function handle(req, res, next) {",
+                  "  var fn = this.handle;",
+                  "",
+                  "  if (fn.length > 3) {",
+                  "    // not a standard request handler"
                 ]
               },
               {
@@ -133,33 +125,6 @@
                   "    var layerPath = layer.path;",
                   "",
                   "    // this should be done for the layer"
-                ]
-              },
-              {
-                "colno": 34,
-                "context_line": "    return originalProcessParams.call(this, layer, called, req, res, done);",
-                "filename": "[[FILENAME1]]",
-                "function": "Function.process_params",
-                "in_app": false,
-                "lineno": 314,
-                "module": "@sentry-internal.tracing.cjs.node.integrations:express",
-                "post_context": [
-                  "  };",
-                  "}",
-                  "",
-                  "/**",
-                  " * Recreate layer.route.path from layer.regexp and layer.keys.",
-                  " * Works until express.js used package path-to-regexp@0.1.7",
-                  " * or until layer.keys contain offset attribute"
-                ],
-                "pre_context": [
-                  "",
-                  "        const [name, source] = utils.extractPathForTransaction(req, { path: true, method: true, customRoute: finalRoute });",
-                  "        transaction.updateName(name);",
-                  "        transaction.setAttribute(core.SEMANTIC_ATTRIBUTE_SENTRY_SOURCE, source);",
-                  "      }",
-                  "    }",
-                  ""
                 ]
               },
               {
@@ -193,7 +158,7 @@
                 "colno": 15,
                 "context_line": "        layer.handle_request(req, res, next)",
                 "filename": "[[FILENAME2]]",
-                "function": "<anonymous>",
+                "function": "?",
                 "in_app": false,
                 "lineno": 284,
                 "module": "express.lib.router:index",
@@ -219,7 +184,7 @@
               {
                 "colno": 5,
                 "context_line": "    fn(req, res, next);",
-                "filename": "[[FILENAME3]]",
+                "filename": "[[FILENAME1]]",
                 "function": "Layer.handle [as handle_request]",
                 "in_app": false,
                 "lineno": 95,
@@ -241,6 +206,33 @@
                   "  }",
                   "",
                   "  try {"
+                ]
+              },
+              {
+                "colno": 37,
+                "context_line": "                    return original.apply(this, arguments);",
+                "filename": "[[FILENAME3]]",
+                "function": "?",
+                "in_app": false,
+                "lineno": 214,
+                "module": "@opentelemetry.instrumentation-express.build.src:instrumentation",
+                "post_context": [
+                  "                }",
+                  "                catch (anyError) {",
+                  "                    const [error, message] = (0, utils_1.asErrorAndMessage)(anyError);",
+                  "                    span.recordException(error);",
+                  "                    span.setStatus({",
+                  "                        code: api_1.SpanStatusCode.ERROR,",
+                  "                        message,"
+                ],
+                "pre_context": [
+                  "                            req[internal_types_1._LAYERS_STORE_PROPERTY].pop();",
+                  "                        }",
+                  "                        const callback = args[callbackIdx];",
+                  "                        return callback.apply(this, arguments);",
+                  "                    };",
+                  "                }",
+                  "                try {"
                 ]
               },
               {
@@ -300,7 +292,7 @@
               {
                 "colno": 5,
                 "context_line": "    fn(req, res, next);",
-                "filename": "[[FILENAME3]]",
+                "filename": "[[FILENAME1]]",
                 "function": "Layer.handle [as handle_request]",
                 "in_app": false,
                 "lineno": 95,
@@ -328,9 +320,9 @@
                 "colno": 15,
                 "context_line": "        throw new Error('Local Variable Error');",
                 "filename": "[[FILENAME5]]",
-                "function": "<anonymous>",
+                "function": "?",
                 "in_app": true,
-                "lineno": 168,
+                "lineno": 166,
                 "module": "app",
                 "post_context": [
                   "    }",
@@ -339,7 +331,7 @@
                   "    }",
                   "    res.send({ exceptionId: exceptionId, randomVariableToRecord: randomVariableToRecord });",
                   "});",
-                  "app.use(Sentry.Handlers.errorHandler());"
+                  "// @ts-ignore"
                 ],
                 "pre_context": [
                   "    var randomVariableToRecord = 'LOCAL VARIABLE';",
@@ -351,6 +343,7 @@
                   "    try {"
                 ],
                 "vars": {
+                  "exceptionId": "<undefined>",
                   "randomVariableToRecord": "LOCAL VARIABLE",
                   "req": "<IncomingMessage>",
                   "res": "<ServerResponse>"
@@ -373,6 +366,7 @@
       "content-type": "1.0.5",
       "cookie": "0.6.0",
       "cookie-signature": "1.0.6",
+      "debug": "4.3.4",
       "define-data-property": "1.1.4",
       "depd": "2.0.0",
       "destroy": "1.2.0",
@@ -396,37 +390,47 @@
       "hasown": "2.0.2",
       "http-errors": "2.0.0",
       "iconv-lite": "0.4.24",
+      "import-in-the-middle": "1.7.1",
       "inherits": "2.0.4",
       "ipaddr.js": "1.9.1",
+      "is-core-module": "2.13.1",
       "media-typer": "0.3.0",
       "merge-descriptors": "1.0.1",
       "methods": "1.1.2",
       "mime": "1.6.0",
       "mime-db": "1.52.0",
       "mime-types": "2.1.35",
+      "module-details-from-path": "1.0.3",
       "ms": "2.1.3",
       "negotiator": "0.6.3",
       "object-inspect": "1.13.1",
       "on-finished": "2.4.1",
+      "opentelemetry-instrumentation-fetch-node": "1.2.0",
       "parseurl": "1.3.3",
       "path-to-regexp": "0.1.7",
       "proxy-addr": "2.0.7",
       "qs": "6.11.0",
       "range-parser": "1.2.1",
       "raw-body": "2.5.2",
+      "require-in-the-middle": "7.3.0",
+      "resolve": "1.22.8",
       "safe-buffer": "5.2.1",
       "safer-buffer": "2.1.2",
+      "semver": "7.6.0",
       "send": "0.18.0",
       "serve-static": "1.15.0",
       "set-function-length": "1.2.2",
       "setprototypeof": "1.2.0",
+      "shimmer": "1.2.1",
       "side-channel": "1.0.6",
       "statuses": "2.0.1",
+      "supports-color": "5.5.0",
       "toidentifier": "1.0.1",
       "type-is": "1.6.18",
       "unpipe": "1.0.0",
       "utils-merge": "1.0.1",
-      "vary": "1.1.2"
+      "vary": "1.1.2",
+      "yallist": "4.0.0"
     },
     "platform": "node",
     "request": {
@@ -440,7 +444,8 @@
         "connection": "keep-alive",
         "cookie": "sc=2pGHpwfeQfLDqPcR9gwpxKl0DHTlOKYq",
         "host": "localhost:3030",
-        "sec-ch-ua": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"",
+        "if-none-match": "[[W/entityTagValue]]",
+        "sec-ch-ua": "\"Chromium\";v=\"124\", \"Google Chrome\";v=\"124\", \"Not-A.Brand\";v=\"99\"",
         "sec-ch-ua-mobile": "?0",
         "sec-ch-ua-platform": "\"macOS\"",
         "sec-fetch-dest": "document",
@@ -451,7 +456,6 @@
         "user-agent": "[[user-agent]]"
       },
       "method": "GET",
-      "query_string": {},
       "url": "http://localhost:3030/test-local-variables-caught"
     },
     "sdk": {
@@ -462,28 +466,36 @@
         "RequestData",
         "Console",
         "Http",
-        "Undici",
+        "NodeFetch",
         "OnUncaughtException",
         "OnUnhandledRejection",
         "ContextLines",
-        "LocalVariables",
+        "LocalVariablesAsync",
         "Context",
         "Modules",
-        "Express"
+        "Express",
+        "Fastify",
+        "Graphql",
+        "Mongo",
+        "Mongoose",
+        "Mysql",
+        "Mysql2",
+        "Postgres",
+        "Nest",
+        "Hapi",
+        "Koa",
+        "Connect"
       ],
       "name": "sentry.javascript.node",
       "packages": [
         {
           "name": "npm:@sentry/node",
-          "version": "7.110.1"
+          "version": "8.0.0-beta.3"
         }
       ],
-      "version": "7.110.1"
+      "version": "8.0.0-beta.3"
     },
     "server_name": "JH0G94X29Q.local",
-    "tags": {
-      "transaction": "GET /test-local-variables-caught"
-    },
     "timestamp": "[[timestamp]]",
     "transaction": "GET /test-local-variables-caught"
   }
