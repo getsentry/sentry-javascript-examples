@@ -4,7 +4,7 @@
     "event_id": "[[ID1]]",
     "sdk": {
       "name": "sentry.javascript.sveltekit",
-      "version": "7.110.1"
+      "version": "8.0.0-beta.3"
     },
     "sent_at": "[[ISODateString]]",
     "trace": {
@@ -63,25 +63,50 @@
         "name": "macOS",
         "version": "14.2"
       },
+      "otel": {
+        "resource": {
+          "service.name": "node",
+          "service.namespace": "sentry",
+          "service.version": "8.0.0-beta.3",
+          "telemetry.sdk.language": "nodejs",
+          "telemetry.sdk.name": "opentelemetry",
+          "telemetry.sdk.version": "1.23.0"
+        }
+      },
       "runtime": {
         "name": "node",
         "version": "v20.12.1"
       },
       "trace": {
         "data": {
+          "http.flavor": "1.1",
+          "http.host": "localhost:4173",
+          "http.method": "GET",
           "http.response.status_code": 500,
+          "http.scheme": "http",
+          "http.status_code": 500,
+          "http.status_text": "INTERNAL SERVER ERROR",
+          "http.target": "/api/test-local-variables-caught",
+          "http.url": "http://localhost:4173/api/test-local-variables-caught",
+          "http.user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:125.0) Gecko/20100101 Firefox/125.0",
+          "net.host.ip": "::1",
+          "net.host.name": "localhost",
+          "net.host.port": "[[highNumber]]",
+          "net.peer.ip": "::1",
+          "net.peer.port": "[[highNumber]]",
+          "net.transport": "ip_tcp",
+          "otel.kind": "SERVER",
           "sentry.op": "http.server",
-          "sentry.origin": "auto.http.sveltekit",
-          "sentry.sample_rate": 1
+          "sentry.origin": "auto.http.otel.http",
+          "sentry.sample_rate": 1,
+          "sentry.source": "url",
+          "url": "http://localhost:4173/api/test-local-variables-caught"
         },
         "op": "http.server",
-        "origin": "auto.http.sveltekit",
+        "origin": "auto.http.otel.http",
         "parent_span_id": "[[ID3]]",
         "span_id": "[[ID4]]",
-        "status": "internal_error",
-        "tags": {
-          "http.status_code": "500"
-        },
+        "status": "unknown_error",
         "trace_id": "[[ID2]]"
       }
     },
@@ -89,7 +114,28 @@
     "event_id": "[[ID1]]",
     "modules": {},
     "platform": "node",
-    "release": "016d073b9f5b47ef8e2d2cff020115bb",
+    "release": "769bfcd7ef414979b49e11a65ea1802c",
+    "request": {
+      "cookies": {},
+      "headers": {
+        "accept": "*/*",
+        "accept-encoding": "gzip, deflate, br",
+        "accept-language": "en-US,en;q=0.5",
+        "baggage": "sentry-environment=qa,sentry-release=016d073b9f5b47ef8e2d2cff020115bb,sentry-public_key=3b6c388182fb435097f41d181be2b2ba,sentry-trace_id=91547693adbd4206ad8e99a0f0f9b6b8",
+        "cache-control": "no-cache",
+        "connection": "keep-alive",
+        "host": "localhost:4173",
+        "pragma": "no-cache",
+        "referer": "http://localhost:4173/test-route-handlers",
+        "sec-fetch-dest": "empty",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "same-origin",
+        "sentry-trace": "91547693adbd4206ad8e99a0f0f9b6b8-95323cad6cbd9e51",
+        "user-agent": "[[user-agent]]"
+      },
+      "method": "GET",
+      "url": "http://localhost:4173/api/test-local-variables-caught"
+    },
     "sdk": {
       "integrations": [
         "InboundFilters",
@@ -98,44 +144,50 @@
         "RequestData",
         "Console",
         "Http",
-        "Undici",
+        "NodeFetch",
         "OnUncaughtException",
         "OnUnhandledRejection",
         "ContextLines",
-        "LocalVariables",
+        "LocalVariablesAsync",
         "Context",
         "Modules",
+        "Express",
+        "Fastify",
+        "Graphql",
+        "Mongo",
+        "Mongoose",
+        "Mysql",
+        "Mysql2",
+        "Postgres",
+        "Nest",
+        "Hapi",
+        "Koa",
+        "Connect",
         "RewriteFrames"
       ],
       "name": "sentry.javascript.sveltekit",
       "packages": [
         {
           "name": "npm:@sentry/sveltekit",
-          "version": "7.110.1"
+          "version": "8.0.0-beta.3"
         },
         {
           "name": "npm:@sentry/node",
-          "version": "7.110.1"
+          "version": "8.0.0-beta.3"
         }
       ],
-      "version": "7.110.1"
+      "version": "8.0.0-beta.3"
     },
     "server_name": "D9M3PY4LQ7.local",
     "spans": [],
     "start_timestamp": "[[timestamp]]",
     "tags": {
-      "bundler": "vite",
-      "finalize-release": true,
-      "http.status_code": "500",
-      "include": "multiple-entries",
-      "node": "v20.12.1",
-      "runtime": "node",
-      "transaction": "GET /api/test-local-variables-caught"
+      "runtime": "node"
     },
     "timestamp": "[[timestamp]]",
     "transaction": "GET /api/test-local-variables-caught",
     "transaction_info": {
-      "source": "route"
+      "source": "url"
     },
     "type": "transaction"
   }
