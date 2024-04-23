@@ -193,6 +193,8 @@ async function transformSavedJSON(
         filenameOrigin === 'transactionName'
           ? transactionName !== ' ' // In v7 "transaction" is a space in error events in Next.js
             ? transactionName
+              ? transactionName
+              : transactionNameFromTags
             : transactionNameFromTags
           : url;
 
