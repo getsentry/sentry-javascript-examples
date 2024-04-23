@@ -1,5 +1,5 @@
 import type { RequestHandler } from './$types';
-import * as Sentry from '@sentry/nextjs';
+import * as Sentry from '@sentry/sveltekit';
 
 export const GET: RequestHandler = () => {
 	const randomVariableToRecord = 'LOCAL_VARIABLE';
