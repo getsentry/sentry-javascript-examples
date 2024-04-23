@@ -4,7 +4,7 @@
     "event_id": "[[ID1]]",
     "sdk": {
       "name": "sentry.javascript.remix",
-      "version": "7.110.1"
+      "version": "8.0.0-beta.3"
     },
     "sent_at": "[[ISODateString]]",
     "trace": {
@@ -20,122 +20,6 @@
     "type": "event"
   },
   {
-    "breadcrumbs": [
-      {
-        "category": "console",
-        "level": "log",
-        "message": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": "\u001b[2m2:54:02 PM\u001b[22m \u001b[36m\u001b[1m[vite]\u001b[22m\u001b[39m \u001b[32mpage reload \u001b[39m\u001b[2mapp/entry.server.tsx\u001b[22m \u001b[33m(x2)\u001b[39m",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": "\u001b[2m2:54:35 PM\u001b[22m \u001b[36m\u001b[1m[vite]\u001b[22m\u001b[39m \u001b[32mhmr update \u001b[39m\u001b[2m/app/root.tsx, /app/root.tsx?client-route=1\u001b[22m",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": "\u001b[2m2:55:29 PM\u001b[22m \u001b[36m\u001b[1m[vite]\u001b[22m\u001b[39m \u001b[32mhmr update \u001b[39m\u001b[2m/app/root.tsx, /app/root.tsx?client-route=1\u001b[22m \u001b[33m(x2)\u001b[39m",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": "\u001b[2m2:56:33 PM\u001b[22m \u001b[36m\u001b[1m[vite]\u001b[22m\u001b[39m \u001b[32mhmr update \u001b[39m\u001b[2m/app/root.tsx, /app/root.tsx?client-route=1\u001b[22m \u001b[33m(x3)\u001b[39m",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": "\u001b[2m2:57:34 PM\u001b[22m \u001b[36m\u001b[1m[vite]\u001b[22m\u001b[39m \u001b[32mhmr update \u001b[39m\u001b[2m/app/root.tsx, /app/root.tsx?client-route=1\u001b[22m \u001b[33m(x4)\u001b[39m",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": "\u001b[2m2:57:34 PM\u001b[22m \u001b[36m\u001b[1m[vite]\u001b[22m\u001b[39m \u001b[33mhmr invalidate \u001b[39m\u001b[2m/app/root.tsx\u001b[22m Could not Fast Refresh (new export)",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": "\u001b[2m2:57:34 PM\u001b[22m \u001b[36m\u001b[1m[vite]\u001b[22m\u001b[39m \u001b[32mpage reload \u001b[39m\u001b[2mapp/root.tsx\u001b[22m",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": "\u001b[2m2:57:34 PM\u001b[22m \u001b[36m\u001b[1m[vite]\u001b[22m\u001b[39m \u001b[33mhmr invalidate \u001b[39m\u001b[2m/app/root.tsx?client-route=1\u001b[22m Could not Fast Refresh (new export)",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": "\u001b[2m2:57:46 PM\u001b[22m \u001b[36m\u001b[1m[vite]\u001b[22m\u001b[39m \u001b[32mhmr update \u001b[39m\u001b[2m/app/root.tsx, /app/root.tsx?client-route=1\u001b[22m",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": "\u001b[2m2:57:46 PM\u001b[22m \u001b[36m\u001b[1m[vite]\u001b[22m\u001b[39m \u001b[32mhmr update \u001b[39m\u001b[2m/app/root.tsx, /app/root.tsx?client-route=1\u001b[22m \u001b[33m(x2)\u001b[39m",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": "\u001b[2m2:58:14 PM\u001b[22m \u001b[36m\u001b[1m[vite]\u001b[22m\u001b[39m \u001b[32mpage reload \u001b[39m\u001b[2mapp/entry.server.tsx\u001b[22m",
-        "timestamp": "[[timestamp]]"
-      }
-    ],
     "contexts": {
       "app": {
         "app_memory": "[[highNumber]]",
@@ -166,17 +50,8 @@
         "version": "v20.11.1"
       },
       "trace": {
-        "data": {
-          "sentry.op": "function.remix.loader",
-          "sentry.origin": "auto.ui.remix"
-        },
-        "op": "function.remix.loader",
-        "origin": "auto.ui.remix",
         "parent_span_id": "[[ID3]]",
         "span_id": "[[ID4]]",
-        "tags": {
-          "name": "loader"
-        },
         "trace_id": "[[ID2]]"
       }
     },
@@ -198,7 +73,7 @@
                 "colno": 15,
                 "context_line": "              await nodeHandler(req, res);",
                 "filename": "[[FILENAME1]]",
-                "function": "<anonymous>",
+                "function": "?",
                 "in_app": false,
                 "lineno": 840,
                 "module": "@remix-run.dev.dist.vite:plugin",
@@ -249,44 +124,36 @@
                 ]
               },
               {
-                "colno": 20,
-                "context_line": "      const res = (await origRequestHandler.call(this, request, loadContext)) ;",
+                "colno": 24,
+                "context_line": "          const res = (await origRequestHandler.call(this, request, loadContext)) ;",
                 "filename": "[[FILENAME2]]",
-                "function": "<anonymous>",
+                "function": "?",
                 "in_app": false,
-                "lineno": 449,
+                "lineno": 428,
                 "module": "@sentry.remix.cjs.utils:instrumentServer",
                 "post_context": [
                   "",
-                  "      if (response.isResponse(res)) {",
-                  "        core.setHttpStatus(transaction, res.status);",
-                  "      }",
+                  "          if (response.isResponse(res)) {",
+                  "            core.setHttpStatus(span, res.status);",
+                  "          }",
                   "",
-                  "      transaction.end();",
-                  ""
+                  "          return res;",
+                  "        },"
                 ],
                 "pre_context": [
-                  "        headers: {",
-                  "          'sentry-trace': request.headers.get('sentry-trace') || '',",
+                  "          name,",
+                  "          source,",
+                  "          sentryTrace: request.headers.get('sentry-trace') || '',",
                   "          baggage: request.headers.get('baggage') || '',",
+                  "          method: request.method,",
                   "        },",
-                  "        method: request.method,",
-                  "      });",
-                  ""
+                  "        async span => {"
                 ]
-              },
-              {
-                "colno": 5,
-                "filename": "[[FILENAME3]]",
-                "function": "process.processTicksAndRejections",
-                "in_app": false,
-                "lineno": 95,
-                "module": "task_queues"
               },
               {
                 "colno": 24,
                 "context_line": "      response = await handleDocumentRequestRR(serverMode, _build, staticHandler, request, loadContext, handleError, criticalCss);",
-                "filename": "[[FILENAME4]]",
+                "filename": "[[FILENAME3]]",
                 "function": "requestHandler",
                 "in_app": false,
                 "lineno": 108,
@@ -313,7 +180,7 @@
               {
                 "colno": 35,
                 "context_line": "    context = await staticHandler.query(request, {",
-                "filename": "[[FILENAME4]]",
+                "filename": "[[FILENAME3]]",
                 "function": "handleDocumentRequestRR",
                 "in_app": false,
                 "lineno": 184,
@@ -340,7 +207,7 @@
               {
                 "colno": 24,
                 "context_line": "    let result = await queryImpl(request, location, matches, requestContext);",
-                "filename": "[[FILENAME5]]",
+                "filename": "[[FILENAME4]]",
                 "function": "Object.query",
                 "in_app": false,
                 "lineno": "[[highNumber]]",
@@ -367,7 +234,7 @@
               {
                 "colno": 26,
                 "context_line": "      let result = await loadRouteData(request, matches, requestContext, routeMatch);",
-                "filename": "[[FILENAME5]]",
+                "filename": "[[FILENAME4]]",
                 "function": "queryImpl",
                 "in_app": false,
                 "lineno": "[[highNumber]]",
@@ -394,7 +261,7 @@
               {
                 "colno": 55,
                 "context_line": "    let results = await Promise.all([...matchesToLoad.map(match => callLoaderOrAction(\"loader\", request, match, matches, manifest, mapRouteP {snip}",
-                "filename": "[[FILENAME5]]",
+                "filename": "[[FILENAME4]]",
                 "function": "loadRouteData",
                 "in_app": false,
                 "lineno": "[[highNumber]]",
@@ -419,7 +286,7 @@
                 ]
               },
               {
-                "filename": "[[FILENAME6]]",
+                "filename": "[[FILENAME5]]",
                 "function": "Array.map",
                 "in_app": false,
                 "module": "<anonymous>"
@@ -427,8 +294,8 @@
               {
                 "colno": 68,
                 "context_line": "'{snip} results = await Promise.all([...matchesToLoad.map(match => callLoaderOrAction(\"loader\", request, match, matches, manifest, mapRoutePropertie {snip}",
-                "filename": "[[FILENAME5]]",
-                "function": "<anonymous>",
+                "filename": "[[FILENAME4]]",
+                "function": "?",
                 "in_app": false,
                 "lineno": "[[highNumber]]",
                 "module": "@remix-run.router.dist:router.cjs",
@@ -454,7 +321,7 @@
               {
                 "colno": 22,
                 "context_line": "      result = await runHandler(handler);",
-                "filename": "[[FILENAME5]]",
+                "filename": "[[FILENAME4]]",
                 "function": "callLoaderOrAction",
                 "in_app": false,
                 "lineno": "[[highNumber]]",
@@ -481,7 +348,7 @@
               {
                 "colno": 26,
                 "context_line": "    return Promise.race([handler({",
-                "filename": "[[FILENAME5]]",
+                "filename": "[[FILENAME4]]",
                 "function": "runHandler",
                 "in_app": false,
                 "lineno": "[[highNumber]]",
@@ -508,7 +375,7 @@
               {
                 "colno": 20,
                 "context_line": "      args => data.callRouteLoaderRR({",
-                "filename": "[[FILENAME7]]",
+                "filename": "[[FILENAME6]]",
                 "function": "commonRoute.loader",
                 "in_app": false,
                 "lineno": 54,
@@ -535,7 +402,7 @@
               {
                 "colno": 22,
                 "context_line": "  let result = await loader({",
-                "filename": "[[FILENAME8]]",
+                "filename": "[[FILENAME7]]",
                 "function": "Object.callRouteLoaderRR",
                 "in_app": false,
                 "lineno": 52,
@@ -560,36 +427,368 @@
                 ]
               },
               {
-                "colno": 26,
-                "context_line": "      res = await origFn.call(this, args);",
+                "colno": 17,
+                "context_line": "    return core.startSpan(",
                 "filename": "[[FILENAME2]]",
-                "function": "<anonymous>",
+                "function": "?",
                 "in_app": false,
-                "lineno": 226,
+                "lineno": 208,
                 "module": "@sentry.remix.cjs.utils:instrumentServer",
                 "post_context": [
+                  "      {",
+                  "        op: `function.remix.${name}`,",
+                  "        name: id,",
+                  "        attributes: {",
+                  "          [core.SEMANTIC_ATTRIBUTE_SENTRY_ORIGIN]: 'auto.ui.remix',",
+                  "          name,",
+                  "        },"
+                ],
+                "pre_context": [
+                  "  manuallyInstrumented,",
+                  ") {",
+                  "  return async function ( args) {",
+                  "    if (args.context.__sentry_express_wrapped__ && !manuallyInstrumented) {",
+                  "      return origFn.call(this, args);",
+                  "    }",
+                  ""
+                ]
+              },
+              {
+                "colno": 16,
+                "context_line": "    return acs.startSpan(context, callback);",
+                "filename": "[[FILENAME8]]",
+                "function": "Object.startSpan",
+                "in_app": false,
+                "lineno": 35,
+                "module": "@sentry.core.cjs.tracing:trace",
+                "post_context": [
+                  "  }",
                   "",
-                  "      // eslint-disable-next-line deprecation/deprecation",
-                  "      currentScope.setSpan(activeTransaction);",
-                  "      _optionalChain([span, 'optionalAccess', _8 => _8.end, 'call', _9 => _9()]);",
-                  "    } catch (err) {",
-                  "      const isRemixV2 = _optionalChain([FUTURE_FLAGS, 'optionalAccess', _10 => _10.v2_errorBoundary]) || remixVersion === 2;",
+                  "  const spanContext = normalizeContext(context);",
+                  "",
+                  "  return currentScopes.withScope(context.scope, scope => {",
+                  "    const parentSpan = getParentSpan(scope);",
                   ""
                 ],
                 "pre_context": [
+                  " *",
+                  " * You'll always get a span passed to the callback,",
+                  " * it may just be a non-recording span if the span is not sampled or if tracing is disabled.",
+                  " */",
+                  "function startSpan(context, callback) {",
+                  "  const acs = getAcs();",
+                  "  if (acs.startSpan) {"
+                ]
+              },
+              {
+                "colno": 17,
+                "context_line": "  return tracer.startActiveSpan(name, spanContext, ctx, span => {",
+                "filename": "[[FILENAME9]]",
+                "function": "Object.startSpan",
+                "in_app": false,
+                "lineno": 855,
+                "module": "@sentry.opentelemetry.cjs:index",
+                "post_context": [
+                  "    _applySentryAttributesToSpan(span, options);",
                   "",
-                  "      if (span) {",
-                  "        // Assign data function to hub to be able to see `db` transactions (if any) as children.",
-                  "        // eslint-disable-next-line deprecation/deprecation",
-                  "        currentScope.setSpan(span);",
-                  "      }",
+                  "    return core.handleCallbackErrors(",
+                  "      () => callback(span),",
+                  "      () => {",
+                  "        // Only set the span status to ERROR when there wasn't any status set before, in order to avoid stomping useful span statuses",
+                  "        if (core.spanToJSON(span).status === undefined) {"
+                ],
+                "pre_context": [
+                  "",
+                  "  const activeCtx = getContext(options.scope, options.forceTransaction);",
+                  "  const shouldSkipSpan = options.onlyIfParent && !api.trace.getSpan(activeCtx);",
+                  "  const ctx = shouldSkipSpan ? core$1.suppressTracing(activeCtx) : activeCtx;",
+                  "",
+                  "  const spanContext = getSpanContext(options);",
                   ""
+                ]
+              },
+              {
+                "colno": 32,
+                "context_line": "        return api.context.with(contextWithSpanSet, fn, undefined, span);",
+                "filename": "[[FILENAME10]]",
+                "function": "Tracer.startActiveSpan",
+                "in_app": false,
+                "lineno": 121,
+                "module": "@opentelemetry.sdk-trace-base.build.src:Tracer",
+                "post_context": [
+                  "    }",
+                  "    /** Returns the active {@link GeneralLimits}. */",
+                  "    getGeneralLimits() {",
+                  "        return this._generalLimits;",
+                  "    }",
+                  "    /** Returns the active {@link SpanLimits}. */",
+                  "    getSpanLimits() {"
+                ],
+                "pre_context": [
+                  "            opts = arg2;",
+                  "            ctx = arg3;",
+                  "            fn = arg4;",
+                  "        }",
+                  "        const parentContext = ctx !== null && ctx !== void 0 ? ctx : api.context.active();",
+                  "        const span = this.startSpan(name, opts, parentContext);",
+                  "        const contextWithSpanSet = api.trace.setSpan(parentContext, span);"
+                ]
+              },
+              {
+                "colno": 46,
+                "context_line": "        return this._getContextManager().with(context, fn, thisArg, ...args);",
+                "filename": "[[FILENAME11]]",
+                "function": "ContextAPI.with",
+                "in_app": false,
+                "lineno": 60,
+                "module": "@opentelemetry.api.build.src.api:context",
+                "post_context": [
+                  "    }",
+                  "    /**",
+                  "     * Bind a context to a target function or event emitter",
+                  "     *",
+                  "     * @param context context to bind to the event emitter or function. Defaults to the currently active context",
+                  "     * @param target function or event emitter to bind",
+                  "     */"
+                ],
+                "pre_context": [
+                  "     *",
+                  "     * @param context context to be active during function execution",
+                  "     * @param fn function to execute in a context",
+                  "     * @param thisArg optional receiver to be used for calling fn",
+                  "     * @param args optional arguments forwarded to fn",
+                  "     */",
+                  "    with(context, fn, thisArg, ...args) {"
+                ]
+              },
+              {
+                "colno": 24,
+                "context_line": "      return super.with(ctx2, fn, thisArg, ...args);",
+                "filename": "[[FILENAME9]]",
+                "function": "SentryContextManager.with",
+                "in_app": false,
+                "lineno": "[[highNumber]]",
+                "module": "@sentry.opentelemetry.cjs:index",
+                "post_context": [
+                  "    }",
+                  "  }",
+                  "",
+                  "  return SentryContextManager ;",
+                  "}",
+                  "",
+                  "/** If this attribute is true, it means that the parent is a remote span. */"
+                ],
+                "pre_context": [
+                  "      const ctx2 = ctx1",
+                  "        .deleteValue(SENTRY_FORK_ISOLATION_SCOPE_CONTEXT_KEY)",
+                  "        .deleteValue(SENTRY_FORK_SET_SCOPE_CONTEXT_KEY)",
+                  "        .deleteValue(SENTRY_FORK_SET_ISOLATION_SCOPE_CONTEXT_KEY);",
+                  "",
+                  "      setContextOnScope(newCurrentScope, ctx2);",
+                  ""
+                ]
+              },
+              {
+                "colno": 40,
+                "context_line": "        return this._asyncLocalStorage.run(context, cb, ...args);",
+                "filename": "[[FILENAME12]]",
+                "function": "SentryContextManager.with",
+                "in_app": false,
+                "lineno": 33,
+                "module": "@opentelemetry.context-async-hooks.build.src:AsyncLocalStorageContextManager",
+                "post_context": [
+                  "    }",
+                  "    enable() {",
+                  "        return this;",
+                  "    }",
+                  "    disable() {",
+                  "        this._asyncLocalStorage.disable();",
+                  "        return this;"
+                ],
+                "pre_context": [
+                  "    }",
+                  "    active() {",
+                  "        var _a;",
+                  "        return (_a = this._asyncLocalStorage.getStore()) !== null && _a !== void 0 ? _a : api_1.ROOT_CONTEXT;",
+                  "    }",
+                  "    with(context, fn, thisArg, ...args) {",
+                  "        const cb = thisArg == null ? fn : fn.bind(thisArg);"
+                ]
+              },
+              {
+                "colno": 14,
+                "filename": "[[FILENAME13]]",
+                "function": "AsyncLocalStorage.run",
+                "in_app": false,
+                "lineno": 346,
+                "module": "node:async_hooks"
+              },
+              {
+                "colno": 17,
+                "context_line": "    return core.handleCallbackErrors(",
+                "filename": "[[FILENAME9]]",
+                "function": "?",
+                "in_app": false,
+                "lineno": 858,
+                "module": "@sentry.opentelemetry.cjs:index",
+                "post_context": [
+                  "      () => callback(span),",
+                  "      () => {",
+                  "        // Only set the span status to ERROR when there wasn't any status set before, in order to avoid stomping useful span statuses",
+                  "        if (core.spanToJSON(span).status === undefined) {",
+                  "          span.setStatus({ code: api.SpanStatusCode.ERROR });",
+                  "        }",
+                  "      },"
+                ],
+                "pre_context": [
+                  "  const ctx = shouldSkipSpan ? core$1.suppressTracing(activeCtx) : activeCtx;",
+                  "",
+                  "  const spanContext = getSpanContext(options);",
+                  "",
+                  "  return tracer.startActiveSpan(name, spanContext, ctx, span => {",
+                  "    _applySentryAttributesToSpan(span, options);",
+                  ""
+                ]
+              },
+              {
+                "colno": 26,
+                "context_line": "    maybePromiseResult = fn();",
+                "filename": "[[FILENAME14]]",
+                "function": "Object.handleCallbackErrors",
+                "in_app": false,
+                "lineno": 26,
+                "module": "@sentry.core.cjs.utils:handleCallbackErrors",
+                "post_context": [
+                  "  } catch (e) {",
+                  "    onError(e);",
+                  "    onFinally();",
+                  "    throw e;",
+                  "  }",
+                  "",
+                  "  return maybeHandlePromiseRejection(maybePromiseResult, onError, onFinally);"
+                ],
+                "pre_context": [
+                  "  fn,",
+                  "  onError,",
+                  "  // eslint-disable-next-line @typescript-eslint/no-empty-function",
+                  "  onFinally = () => {},",
+                  ") {",
+                  "  let maybePromiseResult;",
+                  "  try {"
+                ]
+              },
+              {
+                "colno": 13,
+                "context_line": "      () => callback(span),",
+                "filename": "[[FILENAME9]]",
+                "function": "?",
+                "in_app": false,
+                "lineno": 859,
+                "module": "@sentry.opentelemetry.cjs:index",
+                "post_context": [
+                  "      () => {",
+                  "        // Only set the span status to ERROR when there wasn't any status set before, in order to avoid stomping useful span statuses",
+                  "        if (core.spanToJSON(span).status === undefined) {",
+                  "          span.setStatus({ code: api.SpanStatusCode.ERROR });",
+                  "        }",
+                  "      },",
+                  "      () => span.end(),"
+                ],
+                "pre_context": [
+                  "",
+                  "  const spanContext = getSpanContext(options);",
+                  "",
+                  "  return tracer.startActiveSpan(name, spanContext, ctx, span => {",
+                  "    _applySentryAttributesToSpan(span, options);",
+                  "",
+                  "    return core.handleCallbackErrors("
+                ]
+              },
+              {
+                "colno": 21,
+                "context_line": "        return core.handleCallbackErrors(",
+                "filename": "[[FILENAME2]]",
+                "function": "?",
+                "in_app": false,
+                "lineno": 218,
+                "module": "@sentry.remix.cjs.utils:instrumentServer",
+                "post_context": [
+                  "          () => origFn.call(this, args),",
+                  "          err => {",
+                  "            const isRemixV2 = _optionalChain([FUTURE_FLAGS, 'optionalAccess', _2 => _2.v2_errorBoundary]) || remixVersion === 2;",
+                  "",
+                  "            // On Remix v2, we capture all unexpected errors (except the `Route Error Response`s / Thrown Responses) in `handleError` function.",
+                  "            // This is both for consistency and also avoid duplicates such as primitives like `string` or `number` being captured twice.",
+                  "            // Remix v1 does not have a `handleError` function, so we capture all errors here."
+                ],
+                "pre_context": [
+                  "        name: id,",
+                  "        attributes: {",
+                  "          [core.SEMANTIC_ATTRIBUTE_SENTRY_ORIGIN]: 'auto.ui.remix',",
+                  "          name,",
+                  "        },",
+                  "      },",
+                  "      () => {"
+                ]
+              },
+              {
+                "colno": 26,
+                "context_line": "    maybePromiseResult = fn();",
+                "filename": "[[FILENAME15]]",
+                "function": "Object.handleCallbackErrors",
+                "in_app": false,
+                "lineno": 26,
+                "module": "@sentry.core.cjs.utils:handleCallbackErrors",
+                "post_context": [
+                  "  } catch (e) {",
+                  "    onError(e);",
+                  "    onFinally();",
+                  "    throw e;",
+                  "  }",
+                  "",
+                  "  return maybeHandlePromiseRejection(maybePromiseResult, onError, onFinally);"
+                ],
+                "pre_context": [
+                  "  fn,",
+                  "  onError,",
+                  "  // eslint-disable-next-line @typescript-eslint/no-empty-function",
+                  "  onFinally = () => {},",
+                  ") {",
+                  "  let maybePromiseResult;",
+                  "  try {"
+                ]
+              },
+              {
+                "colno": 24,
+                "context_line": "          () => origFn.call(this, args),",
+                "filename": "[[FILENAME2]]",
+                "function": "core.handleCallbackErrors.isRemixV2",
+                "in_app": false,
+                "lineno": 219,
+                "module": "@sentry.remix.cjs.utils:instrumentServer",
+                "post_context": [
+                  "          err => {",
+                  "            const isRemixV2 = _optionalChain([FUTURE_FLAGS, 'optionalAccess', _2 => _2.v2_errorBoundary]) || remixVersion === 2;",
+                  "",
+                  "            // On Remix v2, we capture all unexpected errors (except the `Route Error Response`s / Thrown Responses) in `handleError` function.",
+                  "            // This is both for consistency and also avoid duplicates such as primitives like `string` or `number` being captured twice.",
+                  "            // Remix v1 does not have a `handleError` function, so we capture all errors here.",
+                  "            if (isRemixV2 ? response.isResponse(err) : true) {"
+                ],
+                "pre_context": [
+                  "        attributes: {",
+                  "          [core.SEMANTIC_ATTRIBUTE_SENTRY_ORIGIN]: 'auto.ui.remix',",
+                  "          name,",
+                  "        },",
+                  "      },",
+                  "      () => {",
+                  "        return core.handleCallbackErrors("
                 ]
               },
               {
                 "colno": 9,
                 "context_line": "  throw new Error(`Uncaught Local Variable Error - ${JSON.stringify({ randomVariableToRecord })}`);",
-                "filename": "[[FILENAME9]]",
+                "filename": "[[FILENAME16]]",
                 "function": "loader",
                 "in_app": true,
                 "lineno": 7,
@@ -701,6 +900,7 @@
       "human-signals": "2.1.0",
       "iconv-lite": "0.4.24",
       "icss-utils": "5.1.0",
+      "import-in-the-middle": "1.7.1",
       "imurmurhash": "0.1.4",
       "indent-string": "4.0.0",
       "inherits": "2.0.4",
@@ -742,6 +942,7 @@
       "minipass-pipeline": "1.2.4",
       "mlly": "1.6.1",
       "modern-ahocorasick": "1.0.1",
+      "module-details-from-path": "1.0.3",
       "ms": "2.1.3",
       "nanoid": "3.3.7",
       "negotiator": "0.6.3",
@@ -755,6 +956,7 @@
       "object-inspect": "1.13.1",
       "on-finished": "2.4.1",
       "onetime": "5.1.2",
+      "opentelemetry-instrumentation-fetch-node": "1.2.0",
       "outdent": "0.8.0",
       "p-limit": "3.1.0",
       "p-locate": "5.0.0",
@@ -780,6 +982,7 @@
       "postcss-modules-values": "4.0.0",
       "postcss-selector-parser": "6.0.16",
       "postcss-value-parser": "4.2.0",
+      "preact": "10.20.2",
       "prettier": "2.8.8",
       "pretty-ms": "7.0.1",
       "proc-log": "3.0.0",
@@ -797,7 +1000,9 @@
       "react-router-dom": "6.22.3",
       "readdirp": "3.6.0",
       "remark-mdx-frontmatter": "1.1.1",
+      "require-in-the-middle": "7.3.0",
       "require-like": "0.1.2",
+      "resolve": "1.22.8",
       "resolve.exports": "2.0.2",
       "retry": "0.12.0",
       "safe-buffer": "5.2.1",
@@ -811,6 +1016,7 @@
       "setprototypeof": "1.2.0",
       "shebang-command": "2.0.0",
       "shebang-regex": "3.0.0",
+      "shimmer": "1.2.1",
       "side-channel": "1.0.6",
       "signal-exit": "3.0.7",
       "source-map-js": "1.2.0",
@@ -863,8 +1069,7 @@
         "pragma": "no-cache",
         "sec-fetch-dest": "document",
         "sec-fetch-mode": "navigate",
-        "sec-fetch-site": "none",
-        "sec-fetch-user": "?1",
+        "sec-fetch-site": "cross-site",
         "upgrade-insecure-requests": "1",
         "user-agent": "[[user-agent]]"
       },
@@ -879,34 +1084,44 @@
         "RequestData",
         "Console",
         "Http",
-        "Undici",
+        "NodeFetch",
         "OnUncaughtException",
         "OnUnhandledRejection",
         "ContextLines",
-        "LocalVariables",
+        "LocalVariablesAsync",
         "Context",
         "Modules",
-        "BrowserTracing"
+        "Express",
+        "Fastify",
+        "Graphql",
+        "Mongo",
+        "Mongoose",
+        "Mysql",
+        "Mysql2",
+        "Postgres",
+        "Nest",
+        "Hapi",
+        "Koa",
+        "Connect"
       ],
       "name": "sentry.javascript.remix",
       "packages": [
         {
           "name": "npm:@sentry/remix",
-          "version": "7.110.1"
+          "version": "8.0.0-beta.3"
         },
         {
           "name": "npm:@sentry/node",
-          "version": "7.110.1"
+          "version": "8.0.0-beta.3"
         }
       ],
-      "version": "7.110.1"
+      "version": "8.0.0-beta.3"
     },
     "server_name": "D9M3PY4LQ7.local",
     "tags": {
-      "runtime": "node",
-      "transaction": "routes/test-local-variables-uncaught"
+      "runtime": "node"
     },
     "timestamp": "[[timestamp]]",
-    "transaction": "GET routes/test-local-variables-uncaught"
+    "transaction": "routes/test-local-variables-uncaught"
   }
 ]
