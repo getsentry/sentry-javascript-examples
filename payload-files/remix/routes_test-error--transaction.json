@@ -1,0 +1,125 @@
+[
+  {
+    "dsn": "[[dsn]]",
+    "event_id": "[[ID1]]",
+    "sdk": {
+      "name": "sentry.javascript.remix",
+      "version": "7.110.1"
+    },
+    "sent_at": "[[ISODateString]]",
+    "trace": {
+      "environment": "qa",
+      "public_key": "[[publicKey]]",
+      "sample_rate": "1",
+      "sampled": "true",
+      "trace_id": "[[ID2]]",
+      "transaction": "routes/test-error"
+    }
+  },
+  {
+    "type": "transaction"
+  },
+  {
+    "breadcrumbs": [
+      {
+        "category": "console",
+        "data": {
+          "arguments": [
+            "[vite] connected."
+          ],
+          "logger": "console"
+        },
+        "level": "debug",
+        "message": "[vite] connected.",
+        "timestamp": "[[timestamp]]"
+      }
+    ],
+    "contexts": {
+      "trace": {
+        "data": {
+          "sentry.op": "pageload",
+          "sentry.origin": "auto.pageload.remix",
+          "sentry.sample_rate": 1,
+          "sentry.source": "route"
+        },
+        "op": "pageload",
+        "origin": "auto.pageload.remix",
+        "span_id": "[[ID3]]",
+        "tags": {
+          "hardwareConcurrency": "10",
+          "lcp.element": "body > pre",
+          "lcp.size": "[[highNumber]]",
+          "routing.instrumentation": "remix-router"
+        },
+        "trace_id": "[[ID2]]"
+      }
+    },
+    "environment": "qa",
+    "event_id": "[[ID1]]",
+    "measurements": {
+      "fcp": {
+        "unit": "millisecond",
+        "value": 100
+      },
+      "lcp": {
+        "unit": "millisecond",
+        "value": 101
+      },
+      "ttfb": {
+        "unit": "millisecond",
+        "value": 80
+      },
+      "ttfb.requestTime": {
+        "unit": "millisecond",
+        "value": 65
+      }
+    },
+    "platform": "javascript",
+    "request": {
+      "headers": {
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:125.0) Gecko/20100101 Firefox/125.0"
+      },
+      "url": "http://localhost:3030/test-error"
+    },
+    "sdk": {
+      "integrations": [
+        "InboundFilters",
+        "FunctionToString",
+        "TryCatch",
+        "Breadcrumbs",
+        "GlobalHandlers",
+        "LinkedErrors",
+        "Dedupe",
+        "HttpContext",
+        "BrowserTracing"
+      ],
+      "name": "sentry.javascript.remix",
+      "packages": [
+        {
+          "name": "npm:@sentry/remix",
+          "version": "7.110.1"
+        },
+        {
+          "name": "npm:@sentry/react",
+          "version": "7.110.1"
+        }
+      ],
+      "version": "7.110.1"
+    },
+    "spans": [],
+    "start_timestamp": "[[timestamp]]",
+    "tags": {
+      "hardwareConcurrency": "10",
+      "lcp.element": "body > pre",
+      "lcp.size": "[[highNumber]]",
+      "routing.instrumentation": "remix-router",
+      "runtime": "browser"
+    },
+    "timestamp": "[[timestamp]]",
+    "transaction": "routes/test-error",
+    "transaction_info": {
+      "source": "route"
+    },
+    "type": "transaction"
+  }
+]

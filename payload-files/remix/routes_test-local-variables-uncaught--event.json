@@ -1,0 +1,912 @@
+[
+  {
+    "dsn": "[[dsn]]",
+    "event_id": "[[ID1]]",
+    "sdk": {
+      "name": "sentry.javascript.remix",
+      "version": "7.110.1"
+    },
+    "sent_at": "[[ISODateString]]",
+    "trace": {
+      "environment": "qa",
+      "public_key": "[[publicKey]]",
+      "sample_rate": "1",
+      "sampled": "true",
+      "trace_id": "[[ID2]]",
+      "transaction": "routes/test-local-variables-uncaught"
+    }
+  },
+  {
+    "type": "event"
+  },
+  {
+    "breadcrumbs": [
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\u001b[2m2:54:02 PM\u001b[22m \u001b[36m\u001b[1m[vite]\u001b[22m\u001b[39m \u001b[32mpage reload \u001b[39m\u001b[2mapp/entry.server.tsx\u001b[22m \u001b[33m(x2)\u001b[39m",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\u001b[2m2:54:35 PM\u001b[22m \u001b[36m\u001b[1m[vite]\u001b[22m\u001b[39m \u001b[32mhmr update \u001b[39m\u001b[2m/app/root.tsx, /app/root.tsx?client-route=1\u001b[22m",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\u001b[2m2:55:29 PM\u001b[22m \u001b[36m\u001b[1m[vite]\u001b[22m\u001b[39m \u001b[32mhmr update \u001b[39m\u001b[2m/app/root.tsx, /app/root.tsx?client-route=1\u001b[22m \u001b[33m(x2)\u001b[39m",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\u001b[2m2:56:33 PM\u001b[22m \u001b[36m\u001b[1m[vite]\u001b[22m\u001b[39m \u001b[32mhmr update \u001b[39m\u001b[2m/app/root.tsx, /app/root.tsx?client-route=1\u001b[22m \u001b[33m(x3)\u001b[39m",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\u001b[2m2:57:34 PM\u001b[22m \u001b[36m\u001b[1m[vite]\u001b[22m\u001b[39m \u001b[32mhmr update \u001b[39m\u001b[2m/app/root.tsx, /app/root.tsx?client-route=1\u001b[22m \u001b[33m(x4)\u001b[39m",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\u001b[2m2:57:34 PM\u001b[22m \u001b[36m\u001b[1m[vite]\u001b[22m\u001b[39m \u001b[33mhmr invalidate \u001b[39m\u001b[2m/app/root.tsx\u001b[22m Could not Fast Refresh (new export)",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\u001b[2m2:57:34 PM\u001b[22m \u001b[36m\u001b[1m[vite]\u001b[22m\u001b[39m \u001b[32mpage reload \u001b[39m\u001b[2mapp/root.tsx\u001b[22m",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\u001b[2m2:57:34 PM\u001b[22m \u001b[36m\u001b[1m[vite]\u001b[22m\u001b[39m \u001b[33mhmr invalidate \u001b[39m\u001b[2m/app/root.tsx?client-route=1\u001b[22m Could not Fast Refresh (new export)",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\u001b[2m2:57:46 PM\u001b[22m \u001b[36m\u001b[1m[vite]\u001b[22m\u001b[39m \u001b[32mhmr update \u001b[39m\u001b[2m/app/root.tsx, /app/root.tsx?client-route=1\u001b[22m",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\u001b[2m2:57:46 PM\u001b[22m \u001b[36m\u001b[1m[vite]\u001b[22m\u001b[39m \u001b[32mhmr update \u001b[39m\u001b[2m/app/root.tsx, /app/root.tsx?client-route=1\u001b[22m \u001b[33m(x2)\u001b[39m",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\u001b[2m2:58:14 PM\u001b[22m \u001b[36m\u001b[1m[vite]\u001b[22m\u001b[39m \u001b[32mpage reload \u001b[39m\u001b[2mapp/entry.server.tsx\u001b[22m",
+        "timestamp": "[[timestamp]]"
+      }
+    ],
+    "contexts": {
+      "app": {
+        "app_memory": "[[highNumber]]",
+        "app_start_time": "[[ISODateString]]"
+      },
+      "cloud_resource": {},
+      "culture": {
+        "locale": "en-US",
+        "timezone": "Europe/Vienna"
+      },
+      "device": {
+        "arch": "arm64",
+        "boot_time": "[[ISODateString]]",
+        "cpu_description": "Apple M1 Pro",
+        "free_memory": "[[highNumber]]",
+        "memory_size": "[[highNumber]]",
+        "processor_count": 10,
+        "processor_frequency": "[[highNumber]]"
+      },
+      "os": {
+        "build": "23C64",
+        "kernel_version": "23.2.0",
+        "name": "macOS",
+        "version": "14.2"
+      },
+      "runtime": {
+        "name": "node",
+        "version": "v20.11.1"
+      },
+      "trace": {
+        "data": {
+          "sentry.op": "function.remix.loader",
+          "sentry.origin": "auto.ui.remix"
+        },
+        "op": "function.remix.loader",
+        "origin": "auto.ui.remix",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID4]]",
+        "tags": {
+          "name": "loader"
+        },
+        "trace_id": "[[ID2]]"
+      }
+    },
+    "environment": "qa",
+    "event_id": "[[ID1]]",
+    "exception": {
+      "values": [
+        {
+          "mechanism": {
+            "data": {
+              "function": "remix.server.handleError"
+            },
+            "handled": false,
+            "type": "instrument"
+          },
+          "stacktrace": {
+            "frames": [
+              {
+                "colno": 15,
+                "context_line": "              await nodeHandler(req, res);",
+                "filename": "[[FILENAME1]]",
+                "function": "<anonymous>",
+                "in_app": false,
+                "lineno": 840,
+                "module": "@remix-run.dev.dist.vite:plugin",
+                "post_context": [
+                  "            } catch (error) {",
+                  "              next(error);",
+                  "            }",
+                  "          });",
+                  "        }",
+                  "      };",
+                  "    },"
+                ],
+                "pre_context": [
+                  "              let build = await viteDevServer.ssrLoadModule(serverBuildId);",
+                  "              let handler = serverRuntime.createRequestHandler(build, \"development\");",
+                  "              let nodeHandler = async (nodeReq, nodeRes) => {",
+                  "                let req = nodeAdapter.fromNodeRequest(nodeReq);",
+                  "                let res = await handler(req, await remixDevLoadContext(req));",
+                  "                await nodeAdapter.toNodeRequest(res, nodeRes);",
+                  "              };"
+                ]
+              },
+              {
+                "colno": 27,
+                "context_line": "                let res = await handler(req, await remixDevLoadContext(req));",
+                "filename": "[[FILENAME1]]",
+                "function": "nodeHandler",
+                "in_app": false,
+                "lineno": 837,
+                "module": "@remix-run.dev.dist.vite:plugin",
+                "post_context": [
+                  "                await nodeAdapter.toNodeRequest(res, nodeRes);",
+                  "              };",
+                  "              await nodeHandler(req, res);",
+                  "            } catch (error) {",
+                  "              next(error);",
+                  "            }",
+                  "          });"
+                ],
+                "pre_context": [
+                  "        if (!viteDevServer.config.server.middlewareMode) {",
+                  "          viteDevServer.middlewares.use(async (req, res, next) => {",
+                  "            try {",
+                  "              let build = await viteDevServer.ssrLoadModule(serverBuildId);",
+                  "              let handler = serverRuntime.createRequestHandler(build, \"development\");",
+                  "              let nodeHandler = async (nodeReq, nodeRes) => {",
+                  "                let req = nodeAdapter.fromNodeRequest(nodeReq);"
+                ]
+              },
+              {
+                "colno": 20,
+                "context_line": "      const res = (await origRequestHandler.call(this, request, loadContext)) ;",
+                "filename": "[[FILENAME2]]",
+                "function": "<anonymous>",
+                "in_app": false,
+                "lineno": 449,
+                "module": "@sentry.remix.cjs.utils:instrumentServer",
+                "post_context": [
+                  "",
+                  "      if (response.isResponse(res)) {",
+                  "        core.setHttpStatus(transaction, res.status);",
+                  "      }",
+                  "",
+                  "      transaction.end();",
+                  ""
+                ],
+                "pre_context": [
+                  "        headers: {",
+                  "          'sentry-trace': request.headers.get('sentry-trace') || '',",
+                  "          baggage: request.headers.get('baggage') || '',",
+                  "        },",
+                  "        method: request.method,",
+                  "      });",
+                  ""
+                ]
+              },
+              {
+                "colno": 5,
+                "filename": "[[FILENAME3]]",
+                "function": "process.processTicksAndRejections",
+                "in_app": false,
+                "lineno": 95,
+                "module": "task_queues"
+              },
+              {
+                "colno": 24,
+                "context_line": "      response = await handleDocumentRequestRR(serverMode, _build, staticHandler, request, loadContext, handleError, criticalCss);",
+                "filename": "[[FILENAME4]]",
+                "function": "requestHandler",
+                "in_app": false,
+                "lineno": 108,
+                "module": "@remix-run.server-runtime.dist:server",
+                "post_context": [
+                  "    }",
+                  "    if (request.method === \"HEAD\") {",
+                  "      return new Response(null, {",
+                  "        headers: response.headers,",
+                  "        status: response.status,",
+                  "        statusText: response.statusText",
+                  "      });"
+                ],
+                "pre_context": [
+                  "        });",
+                  "      }",
+                  "    } else if (matches && matches[matches.length - 1].route.module.default == null && matches[matches.length - 1].route.module.ErrorBoundary {snip}",
+                  "      response = await handleResourceRequestRR(serverMode, staticHandler, matches.slice(-1)[0].route.id, request, loadContext, handleError);",
+                  "    } else {",
+                  "      var _getDevServerHooks2, _getDevServerHooks2$g;",
+                  "      let criticalCss = mode$1 === mode.ServerMode.Development ? await ((_getDevServerHooks2 = dev.getDevServerHooks()) === null || _getDevS {snip}"
+                ]
+              },
+              {
+                "colno": 35,
+                "context_line": "    context = await staticHandler.query(request, {",
+                "filename": "[[FILENAME4]]",
+                "function": "handleDocumentRequestRR",
+                "in_app": false,
+                "lineno": 184,
+                "module": "@remix-run.server-runtime.dist:server",
+                "post_context": [
+                  "      requestContext: loadContext",
+                  "    });",
+                  "  } catch (error) {",
+                  "    handleError(error);",
+                  "    return new Response(null, {",
+                  "      status: 500",
+                  "    });"
+                ],
+                "pre_context": [
+                  "      }",
+                  "    });",
+                  "  }",
+                  "}",
+                  "async function handleDocumentRequestRR(serverMode, build, staticHandler, request, loadContext, handleError, criticalCss) {",
+                  "  let context;",
+                  "  try {"
+                ]
+              },
+              {
+                "colno": 24,
+                "context_line": "    let result = await queryImpl(request, location, matches, requestContext);",
+                "filename": "[[FILENAME5]]",
+                "function": "Object.query",
+                "in_app": false,
+                "lineno": "[[highNumber]]",
+                "module": "@remix-run.router.dist:router.cjs",
+                "post_context": [
+                  "    if (isResponse(result)) {",
+                  "      return result;",
+                  "    }",
+                  "",
+                  "    // When returning StaticHandlerContext, we patch back in the location here",
+                  "    // since we need it for React Context.  But this helps keep our submit and",
+                  "    // loadRouteData operating on a Request instead of a Location"
+                ],
+                "pre_context": [
+                  "        },",
+                  "        statusCode: error.status,",
+                  "        loaderHeaders: {},",
+                  "        actionHeaders: {},",
+                  "        activeDeferreds: null",
+                  "      };",
+                  "    }"
+                ]
+              },
+              {
+                "colno": 26,
+                "context_line": "      let result = await loadRouteData(request, matches, requestContext, routeMatch);",
+                "filename": "[[FILENAME5]]",
+                "function": "queryImpl",
+                "in_app": false,
+                "lineno": "[[highNumber]]",
+                "module": "@remix-run.router.dist:router.cjs",
+                "post_context": [
+                  "      return isResponse(result) ? result : _extends({}, result, {",
+                  "        actionData: null,",
+                  "        actionHeaders: {}",
+                  "      });",
+                  "    } catch (e) {",
+                  "      // If the user threw/returned a Response in callLoaderOrAction, we throw",
+                  "      // it to bail out and then return or throw here based on whether the user"
+                ],
+                "pre_context": [
+                  "  async function queryImpl(request, location, matches, requestContext, routeMatch) {",
+                  "    invariant(request.signal, \"query()/queryRoute() requests must contain an AbortController signal\");",
+                  "    try {",
+                  "      if (isMutationMethod(request.method.toLowerCase())) {",
+                  "        let result = await submit(request, matches, routeMatch || getTargetMatch(matches, location), requestContext, routeMatch != null);",
+                  "        return result;",
+                  "      }"
+                ]
+              },
+              {
+                "colno": 55,
+                "context_line": "    let results = await Promise.all([...matchesToLoad.map(match => callLoaderOrAction(\"loader\", request, match, matches, manifest, mapRouteP {snip}",
+                "filename": "[[FILENAME5]]",
+                "function": "loadRouteData",
+                "in_app": false,
+                "lineno": "[[highNumber]]",
+                "module": "@remix-run.router.dist:router.cjs",
+                "post_context": [
+                  "      isStaticRequest: true,",
+                  "      isRouteRequest,",
+                  "      requestContext",
+                  "    }))]);",
+                  "    if (request.signal.aborted) {",
+                  "      throwStaticHandlerAbortedError(request, isRouteRequest, future);",
+                  "    }"
+                ],
+                "pre_context": [
+                  "        }), {}),",
+                  "        errors: pendingActionError || null,",
+                  "        statusCode: 200,",
+                  "        loaderHeaders: {},",
+                  "        activeDeferreds: null",
+                  "      };",
+                  "    }"
+                ]
+              },
+              {
+                "filename": "[[FILENAME6]]",
+                "function": "Array.map",
+                "in_app": false,
+                "module": "<anonymous>"
+              },
+              {
+                "colno": 68,
+                "context_line": "'{snip} results = await Promise.all([...matchesToLoad.map(match => callLoaderOrAction(\"loader\", request, match, matches, manifest, mapRoutePropertie {snip}",
+                "filename": "[[FILENAME5]]",
+                "function": "<anonymous>",
+                "in_app": false,
+                "lineno": "[[highNumber]]",
+                "module": "@remix-run.router.dist:router.cjs",
+                "post_context": [
+                  "      isStaticRequest: true,",
+                  "      isRouteRequest,",
+                  "      requestContext",
+                  "    }))]);",
+                  "    if (request.signal.aborted) {",
+                  "      throwStaticHandlerAbortedError(request, isRouteRequest, future);",
+                  "    }"
+                ],
+                "pre_context": [
+                  "        }), {}),",
+                  "        errors: pendingActionError || null,",
+                  "        statusCode: 200,",
+                  "        loaderHeaders: {},",
+                  "        activeDeferreds: null",
+                  "      };",
+                  "    }"
+                ]
+              },
+              {
+                "colno": 22,
+                "context_line": "      result = await runHandler(handler);",
+                "filename": "[[FILENAME5]]",
+                "function": "callLoaderOrAction",
+                "in_app": false,
+                "lineno": "[[highNumber]]",
+                "module": "@remix-run.router.dist:router.cjs",
+                "post_context": [
+                  "    }",
+                  "    invariant(result !== undefined, \"You defined \" + (type === \"action\" ? \"an action\" : \"a loader\") + \" for route \" + (\"\\\"\" + match.route.id {snip}",
+                  "  } catch (e) {",
+                  "    resultType = ResultType.error;",
+                  "    result = e;",
+                  "  } finally {",
+                  "    if (onReject) {"
+                ],
+                "pre_context": [
+                  "    } else if (!handler) {",
+                  "      let url = new URL(request.url);",
+                  "      let pathname = url.pathname + url.search;",
+                  "      throw getInternalRouterError(404, {",
+                  "        pathname",
+                  "      });",
+                  "    } else {"
+                ]
+              },
+              {
+                "colno": 26,
+                "context_line": "    return Promise.race([handler({",
+                "filename": "[[FILENAME5]]",
+                "function": "runHandler",
+                "in_app": false,
+                "lineno": "[[highNumber]]",
+                "module": "@remix-run.router.dist:router.cjs",
+                "post_context": [
+                  "      request,",
+                  "      params: match.params,",
+                  "      context: opts.requestContext",
+                  "    }), abortPromise]);",
+                  "  };",
+                  "  try {",
+                  "    let handler = match.route[type];"
+                ],
+                "pre_context": [
+                  "  let onReject;",
+                  "  let runHandler = handler => {",
+                  "    // Setup a promise we can race against so that abort signals short circuit",
+                  "    let reject;",
+                  "    let abortPromise = new Promise((_, r) => reject = r);",
+                  "    onReject = () => reject();",
+                  "    request.signal.addEventListener(\"abort\", onReject);"
+                ]
+              },
+              {
+                "colno": 20,
+                "context_line": "      args => data.callRouteLoaderRR({",
+                "filename": "[[FILENAME7]]",
+                "function": "commonRoute.loader",
+                "in_app": false,
+                "lineno": 54,
+                "module": "@remix-run.server-runtime.dist:routes",
+                "post_context": [
+                  "        request: args.request,",
+                  "        params: args.params,",
+                  "        loadContext: args.context,",
+                  "        loader: route.module.loader,",
+                  "        routeId: route.id",
+                  "      }) : undefined,",
+                  "      action: route.module.action ? args => data.callRouteActionRR({"
+                ],
+                "pre_context": [
+                  "      // Always include root due to default boundaries",
+                  "      hasErrorBoundary: route.id === \"root\" || route.module.ErrorBoundary != null,",
+                  "      id: route.id,",
+                  "      path: route.path,",
+                  "      loader: route.module.loader ?",
+                  "      // Need to use RR's version here to permit the optional context even",
+                  "      // though we know it'll always be provided in remix"
+                ]
+              },
+              {
+                "colno": 22,
+                "context_line": "  let result = await loader({",
+                "filename": "[[FILENAME8]]",
+                "function": "Object.callRouteLoaderRR",
+                "in_app": false,
+                "lineno": 52,
+                "module": "@remix-run.server-runtime.dist:data",
+                "post_context": [
+                  "    request: stripDataParam(stripIndexParam(request)),",
+                  "    context: loadContext,",
+                  "    params",
+                  "  });",
+                  "  if (result === undefined) {",
+                  "    throw new Error(`You defined a loader for route \"${routeId}\" but didn't return ` + `anything from your \\`loader\\` function. Please retur {snip}",
+                  "  }"
+                ],
+                "pre_context": [
+                  "async function callRouteLoaderRR({",
+                  "  loadContext,",
+                  "  loader,",
+                  "  params,",
+                  "  request,",
+                  "  routeId",
+                  "}) {"
+                ]
+              },
+              {
+                "colno": 26,
+                "context_line": "      res = await origFn.call(this, args);",
+                "filename": "[[FILENAME2]]",
+                "function": "<anonymous>",
+                "in_app": false,
+                "lineno": 226,
+                "module": "@sentry.remix.cjs.utils:instrumentServer",
+                "post_context": [
+                  "",
+                  "      // eslint-disable-next-line deprecation/deprecation",
+                  "      currentScope.setSpan(activeTransaction);",
+                  "      _optionalChain([span, 'optionalAccess', _8 => _8.end, 'call', _9 => _9()]);",
+                  "    } catch (err) {",
+                  "      const isRemixV2 = _optionalChain([FUTURE_FLAGS, 'optionalAccess', _10 => _10.v2_errorBoundary]) || remixVersion === 2;",
+                  ""
+                ],
+                "pre_context": [
+                  "",
+                  "      if (span) {",
+                  "        // Assign data function to hub to be able to see `db` transactions (if any) as children.",
+                  "        // eslint-disable-next-line deprecation/deprecation",
+                  "        currentScope.setSpan(span);",
+                  "      }",
+                  ""
+                ]
+              },
+              {
+                "colno": 9,
+                "context_line": "  throw new Error(`Uncaught Local Variable Error - ${JSON.stringify({ randomVariableToRecord })}`);",
+                "filename": "[[FILENAME9]]",
+                "function": "loader",
+                "in_app": true,
+                "lineno": 7,
+                "module": "test-local-variables-uncaught.tsx",
+                "post_context": [
+                  "};",
+                  "",
+                  "export default function TestLocalVariablesUncaught() {",
+                  "  const data = useLoaderData<typeof loader>();",
+                  "",
+                  "  return <pre>{data ? stringify(data) : 'Not Found'}</pre>;",
+                  "}"
+                ],
+                "pre_context": [
+                  "import { type LoaderFunctionArgs } from '@remix-run/node';",
+                  "import { useLoaderData } from '@remix-run/react';",
+                  "import { stringify } from '~/utils/stringify';",
+                  "",
+                  "export const loader = async ({}: LoaderFunctionArgs) => {",
+                  "  const randomVariableToRecord = 'LOCAL VARIABLE';"
+                ]
+              }
+            ]
+          },
+          "type": "Error",
+          "value": "Uncaught Local Variable Error - {\"randomVariableToRecord\":\"LOCAL VARIABLE\"}"
+        }
+      ]
+    },
+    "modules": {
+      "abort-controller": "3.0.0",
+      "accepts": "1.3.8",
+      "acorn": "8.11.3",
+      "aggregate-error": "3.1.0",
+      "ansi-styles": "4.3.0",
+      "anymatch": "3.1.3",
+      "arg": "5.0.2",
+      "array-flatten": "1.1.1",
+      "balanced-match": "1.0.2",
+      "binary-extensions": "2.3.0",
+      "body-parser": "1.20.2",
+      "brace-expansion": "2.0.1",
+      "braces": "3.0.2",
+      "browserslist": "4.23.0",
+      "builtins": "5.1.0",
+      "bytes": "3.1.2",
+      "cacache": "17.1.4",
+      "call-bind": "1.0.7",
+      "caniuse-lite": "1.0.30001610",
+      "chalk": "4.1.2",
+      "chokidar": "3.6.0",
+      "clean-stack": "2.2.0",
+      "confbox": "0.1.7",
+      "content-disposition": "0.5.4",
+      "content-type": "1.0.5",
+      "cookie": "0.6.0",
+      "cookie-signature": "1.2.1",
+      "cross-spawn": "7.0.3",
+      "css-what": "6.1.0",
+      "cssesc": "3.0.0",
+      "data-uri-to-buffer": "3.0.1",
+      "debug": "4.3.4",
+      "define-data-property": "1.1.4",
+      "depd": "2.0.0",
+      "destroy": "1.2.0",
+      "ee-first": "1.1.1",
+      "electron-to-chromium": "1.4.737",
+      "encodeurl": "1.0.2",
+      "err-code": "2.0.3",
+      "es-define-property": "1.0.0",
+      "es-errors": "1.3.0",
+      "es-module-lexer": "1.5.0",
+      "esbuild": "0.17.6",
+      "esbuild-plugins-node-modules-polyfill": "1.6.3",
+      "escape-html": "1.0.3",
+      "estree-util-value-to-estree": "1.3.0",
+      "etag": "1.8.1",
+      "eval": "0.1.8",
+      "event-target-shim": "5.0.1",
+      "execa": "5.1.1",
+      "exit-hook": "2.2.1",
+      "express": "4.19.2",
+      "fill-range": "7.0.1",
+      "find-up": "5.0.0",
+      "forwarded": "0.2.0",
+      "fresh": "0.5.2",
+      "fs-extra": "10.1.0",
+      "fs-minipass": "3.0.3",
+      "fsevents": "2.3.3",
+      "function-bind": "1.1.2",
+      "generic-names": "4.0.0",
+      "gensync": "1.0.0-beta.2",
+      "get-intrinsic": "1.2.4",
+      "get-port": "5.1.1",
+      "get-stream": "6.0.1",
+      "glob": "10.3.12",
+      "glob-parent": "5.1.2",
+      "globrex": "0.1.2",
+      "gopd": "1.0.1",
+      "graceful-fs": "4.2.11",
+      "has-flag": "4.0.0",
+      "has-property-descriptors": "1.0.2",
+      "has-proto": "1.0.3",
+      "has-symbols": "1.0.3",
+      "hasown": "2.0.2",
+      "hoist-non-react-statics": "3.3.2",
+      "hosted-git-info": "6.1.1",
+      "http-errors": "2.0.0",
+      "human-signals": "2.1.0",
+      "iconv-lite": "0.4.24",
+      "icss-utils": "5.1.0",
+      "imurmurhash": "0.1.4",
+      "indent-string": "4.0.0",
+      "inherits": "2.0.4",
+      "ipaddr.js": "1.9.1",
+      "is-binary-path": "2.1.0",
+      "is-core-module": "2.13.1",
+      "is-extglob": "2.1.1",
+      "is-glob": "4.0.3",
+      "is-number": "7.0.0",
+      "is-stream": "2.0.1",
+      "isexe": "2.0.0",
+      "javascript-stringify": "2.1.0",
+      "js-tokens": "4.0.0",
+      "js-yaml": "4.1.0",
+      "jsesc": "3.0.2",
+      "json5": "2.2.3",
+      "jsonfile": "6.1.0",
+      "lilconfig": "3.1.1",
+      "loader-utils": "3.2.1",
+      "local-pkg": "0.5.0",
+      "locate-path": "6.0.0",
+      "lodash": "4.17.21",
+      "lodash.camelcase": "4.3.0",
+      "lodash.debounce": "4.0.8",
+      "lru-cache": "7.18.3",
+      "media-query-parser": "2.0.2",
+      "media-typer": "0.3.0",
+      "merge-descriptors": "1.0.1",
+      "merge-stream": "2.0.0",
+      "methods": "1.1.2",
+      "mime": "1.6.0",
+      "mime-db": "1.52.0",
+      "mime-types": "2.1.35",
+      "mimic-fn": "2.1.0",
+      "minimatch": "9.0.4",
+      "minipass": "7.0.4",
+      "minipass-collect": "1.0.2",
+      "minipass-flush": "1.0.5",
+      "minipass-pipeline": "1.2.4",
+      "mlly": "1.6.1",
+      "modern-ahocorasick": "1.0.1",
+      "ms": "2.1.3",
+      "nanoid": "3.3.7",
+      "negotiator": "0.6.3",
+      "node-releases": "2.0.14",
+      "normalize-path": "3.0.0",
+      "npm-install-checks": "6.3.0",
+      "npm-normalize-package-bin": "3.0.1",
+      "npm-package-arg": "10.1.0",
+      "npm-pick-manifest": "8.0.2",
+      "npm-run-path": "4.0.1",
+      "object-inspect": "1.13.1",
+      "on-finished": "2.4.1",
+      "onetime": "5.1.2",
+      "outdent": "0.8.0",
+      "p-limit": "3.1.0",
+      "p-locate": "5.0.0",
+      "p-map": "4.0.0",
+      "parse-ms": "2.1.0",
+      "parseurl": "1.3.3",
+      "path-exists": "4.0.0",
+      "path-key": "3.1.1",
+      "path-scurry": "1.10.2",
+      "path-to-regexp": "0.1.7",
+      "pathe": "1.1.2",
+      "picocolors": "1.0.0",
+      "picomatch": "2.3.1",
+      "pidtree": "0.6.0",
+      "pkg-types": "1.1.0",
+      "postcss": "8.4.38",
+      "postcss-discard-duplicates": "5.1.0",
+      "postcss-load-config": "4.0.2",
+      "postcss-modules": "6.0.0",
+      "postcss-modules-extract-imports": "3.1.0",
+      "postcss-modules-local-by-default": "4.0.5",
+      "postcss-modules-scope": "3.2.0",
+      "postcss-modules-values": "4.0.0",
+      "postcss-selector-parser": "6.0.16",
+      "postcss-value-parser": "4.2.0",
+      "prettier": "2.8.8",
+      "pretty-ms": "7.0.1",
+      "proc-log": "3.0.0",
+      "promise-inflight": "1.0.1",
+      "promise-retry": "2.0.1",
+      "proxy-addr": "2.0.7",
+      "qs": "6.11.0",
+      "range-parser": "1.2.1",
+      "raw-body": "2.5.2",
+      "react": "18.2.0",
+      "react-dom": "18.2.0",
+      "react-is": "16.13.1",
+      "react-refresh": "0.14.0",
+      "react-router": "6.22.3",
+      "react-router-dom": "6.22.3",
+      "readdirp": "3.6.0",
+      "remark-mdx-frontmatter": "1.1.1",
+      "require-like": "0.1.2",
+      "resolve.exports": "2.0.2",
+      "retry": "0.12.0",
+      "safe-buffer": "5.2.1",
+      "safer-buffer": "2.1.2",
+      "scheduler": "0.23.0",
+      "semver": "7.6.0",
+      "send": "0.18.0",
+      "serve-static": "1.15.0",
+      "set-cookie-parser": "2.6.0",
+      "set-function-length": "1.2.2",
+      "setprototypeof": "1.2.0",
+      "shebang-command": "2.0.0",
+      "shebang-regex": "3.0.0",
+      "side-channel": "1.0.6",
+      "signal-exit": "3.0.7",
+      "source-map-js": "1.2.0",
+      "spdx-correct": "3.2.0",
+      "spdx-exceptions": "2.5.0",
+      "spdx-expression-parse": "3.0.1",
+      "spdx-license-ids": "3.0.17",
+      "ssri": "10.0.5",
+      "statuses": "2.0.1",
+      "stream-slice": "0.1.2",
+      "string-hash": "1.1.3",
+      "strip-bom": "3.0.0",
+      "strip-final-newline": "2.0.0",
+      "supports-color": "5.5.0",
+      "to-fast-properties": "2.0.0",
+      "to-regex-range": "5.0.1",
+      "toidentifier": "1.0.1",
+      "toml": "3.0.0",
+      "tsconfig-paths": "4.2.0",
+      "type-is": "1.6.18",
+      "ufo": "1.5.3",
+      "unique-filename": "3.0.0",
+      "unique-slug": "4.0.0",
+      "universalify": "2.0.1",
+      "unpipe": "1.0.0",
+      "util-deprecate": "1.0.2",
+      "utils-merge": "1.0.1",
+      "validate-npm-package-license": "3.0.4",
+      "validate-npm-package-name": "5.0.0",
+      "vary": "1.1.2",
+      "vite": "5.2.10",
+      "web-encoding": "1.1.5",
+      "web-streams-polyfill": "3.3.3",
+      "which": "2.0.2",
+      "ws": "7.5.9",
+      "yallist": "4.0.0",
+      "yaml": "2.4.1",
+      "yocto-queue": "0.1.0"
+    },
+    "platform": "node",
+    "request": {
+      "cookies": {},
+      "headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        "accept-encoding": "gzip, deflate, br",
+        "accept-language": "en-US,en;q=0.5",
+        "cache-control": "no-cache",
+        "connection": "keep-alive",
+        "host": "localhost:3030",
+        "pragma": "no-cache",
+        "sec-fetch-dest": "document",
+        "sec-fetch-mode": "navigate",
+        "sec-fetch-site": "none",
+        "sec-fetch-user": "?1",
+        "upgrade-insecure-requests": "1",
+        "user-agent": "[[user-agent]]"
+      },
+      "method": "GET",
+      "url": "http://localhost:3030/test-local-variables-uncaught"
+    },
+    "sdk": {
+      "integrations": [
+        "InboundFilters",
+        "FunctionToString",
+        "LinkedErrors",
+        "RequestData",
+        "Console",
+        "Http",
+        "Undici",
+        "OnUncaughtException",
+        "OnUnhandledRejection",
+        "ContextLines",
+        "LocalVariables",
+        "Context",
+        "Modules",
+        "BrowserTracing"
+      ],
+      "name": "sentry.javascript.remix",
+      "packages": [
+        {
+          "name": "npm:@sentry/remix",
+          "version": "7.110.1"
+        },
+        {
+          "name": "npm:@sentry/node",
+          "version": "7.110.1"
+        }
+      ],
+      "version": "7.110.1"
+    },
+    "server_name": "D9M3PY4LQ7.local",
+    "tags": {
+      "runtime": "node",
+      "transaction": "routes/test-local-variables-uncaught"
+    },
+    "timestamp": "[[timestamp]]",
+    "transaction": "GET routes/test-local-variables-uncaught"
+  }
+]
