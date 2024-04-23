@@ -79,34 +79,19 @@
       },
       "trace": {
         "data": {
-          "http.flavor": "1.1",
-          "http.host": "localhost:4173",
           "http.method": "GET",
-          "http.response.status_code": 500,
-          "http.scheme": "http",
-          "http.status_code": 500,
-          "http.status_text": "INTERNAL SERVER ERROR",
-          "http.target": "/api/test-error-manual",
-          "http.url": "http://localhost:4173/api/test-error-manual",
-          "http.user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:125.0) Gecko/20100101 Firefox/125.0",
-          "net.host.ip": "::1",
-          "net.host.name": "localhost",
-          "net.host.port": "[[highNumber]]",
-          "net.peer.ip": "::1",
-          "net.peer.port": "[[highNumber]]",
-          "net.transport": "ip_tcp",
-          "otel.kind": "SERVER",
+          "http.response.status_code": 200,
+          "otel.kind": "INTERNAL",
           "sentry.op": "http.server",
-          "sentry.origin": "auto.http.otel.http",
+          "sentry.origin": "auto.http.sveltekit",
           "sentry.sample_rate": 1,
-          "sentry.source": "url",
-          "url": "http://localhost:4173/api/test-error-manual"
+          "sentry.source": "route"
         },
         "op": "http.server",
-        "origin": "auto.http.otel.http",
+        "origin": "auto.http.sveltekit",
         "parent_span_id": "[[ID3]]",
         "span_id": "[[ID4]]",
-        "status": "unknown_error",
+        "status": "ok",
         "trace_id": "[[ID2]]"
       }
     },
@@ -114,28 +99,7 @@
     "event_id": "[[ID1]]",
     "modules": {},
     "platform": "node",
-    "release": "769bfcd7ef414979b49e11a65ea1802c",
-    "request": {
-      "cookies": {},
-      "headers": {
-        "accept": "*/*",
-        "accept-encoding": "gzip, deflate, br",
-        "accept-language": "en-US,en;q=0.5",
-        "baggage": "sentry-environment=qa,sentry-release=016d073b9f5b47ef8e2d2cff020115bb,sentry-public_key=3b6c388182fb435097f41d181be2b2ba,sentry-trace_id=91547693adbd4206ad8e99a0f0f9b6b8",
-        "cache-control": "no-cache",
-        "connection": "keep-alive",
-        "host": "localhost:4173",
-        "pragma": "no-cache",
-        "referer": "http://localhost:4173/test-route-handlers",
-        "sec-fetch-dest": "empty",
-        "sec-fetch-mode": "cors",
-        "sec-fetch-site": "same-origin",
-        "sentry-trace": "91547693adbd4206ad8e99a0f0f9b6b8-95323cad6cbd9e51",
-        "user-agent": "[[user-agent]]"
-      },
-      "method": "GET",
-      "url": "http://localhost:4173/api/test-error-manual"
-    },
+    "release": "6ba2507ba4f94699b609ae42c22ec685",
     "sdk": {
       "integrations": [
         "InboundFilters",
@@ -179,7 +143,36 @@
       "version": "8.0.0-beta.3"
     },
     "server_name": "D9M3PY4LQ7.local",
-    "spans": [],
+    "spans": [
+      {
+        "data": {
+          "otel.kind": "INTERNAL",
+          "sentry.origin": "manual"
+        },
+        "description": "test-span",
+        "origin": "manual",
+        "parent_span_id": "[[ID4]]",
+        "span_id": "[[ID5]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "ok",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "otel.kind": "INTERNAL",
+          "sentry.origin": "manual"
+        },
+        "description": "child-span",
+        "origin": "manual",
+        "parent_span_id": "[[ID5]]",
+        "span_id": "[[ID6]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "ok",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      }
+    ],
     "start_timestamp": "[[timestamp]]",
     "tags": {
       "runtime": "node"
@@ -187,7 +180,7 @@
     "timestamp": "[[timestamp]]",
     "transaction": "GET /api/test-error-manual",
     "transaction_info": {
-      "source": "url"
+      "source": "route"
     },
     "type": "transaction"
   }

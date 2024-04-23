@@ -99,7 +99,7 @@
     "event_id": "[[ID1]]",
     "modules": {},
     "platform": "node",
-    "release": "769bfcd7ef414979b49e11a65ea1802c",
+    "release": "6ba2507ba4f94699b609ae42c22ec685",
     "sdk": {
       "integrations": [
         "InboundFilters",

@@ -203,13 +203,6 @@
                 ]
               },
               {
-                "colno": 5,
-                "filename": "[[FILENAME3]]",
-                "function": "process.processTicksAndRejections",
-                "in_app": false,
-                "lineno": 95
-              },
-              {
                 "colno": 28,
                 "context_line": "          response = await render_endpoint(event2, await route.endpoint(), state);",
                 "filename": "[[FILENAME1]]",
@@ -264,7 +257,7 @@
               {
                 "colno": 9,
                 "context_line": "  throw new Error(`Uncaught Local Variable Error - ${JSON.stringify({ randomVariableToRecord })}`);",
-                "filename": "[[FILENAME4]]",
+                "filename": "[[FILENAME3]]",
                 "function": "GET",
                 "in_app": true,
                 "lineno": 12,
@@ -294,28 +287,7 @@
     },
     "modules": {},
     "platform": "node",
-    "release": "769bfcd7ef414979b49e11a65ea1802c",
-    "request": {
-      "cookies": {},
-      "headers": {
-        "accept": "*/*",
-        "accept-encoding": "gzip, deflate, br",
-        "accept-language": "en-US,en;q=0.5",
-        "baggage": "sentry-environment=qa,sentry-release=016d073b9f5b47ef8e2d2cff020115bb,sentry-public_key=3b6c388182fb435097f41d181be2b2ba,sentry-trace_id=91547693adbd4206ad8e99a0f0f9b6b8",
-        "cache-control": "no-cache",
-        "connection": "keep-alive",
-        "host": "localhost:4173",
-        "pragma": "no-cache",
-        "referer": "http://localhost:4173/test-route-handlers",
-        "sec-fetch-dest": "empty",
-        "sec-fetch-mode": "cors",
-        "sec-fetch-site": "same-origin",
-        "sentry-trace": "91547693adbd4206ad8e99a0f0f9b6b8-95323cad6cbd9e51",
-        "user-agent": "[[user-agent]]"
-      },
-      "method": "GET",
-      "url": "http://localhost:4173/api/test-local-variables-uncaught"
-    },
+    "release": "6ba2507ba4f94699b609ae42c22ec685",
     "sdk": {
       "integrations": [
         "InboundFilters",

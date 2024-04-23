@@ -76,13 +76,8 @@
     "debug_meta": {
       "images": [
         {
-          "code_file": "app:///index.js",
-          "debug_id": "[[ID5]]",
-          "type": "sourcemap"
-        },
-        {
           "code_file": "app:///_server.ts.js",
-          "debug_id": "[[ID6]]",
+          "debug_id": "[[ID5]]",
           "type": "sourcemap"
         }
       ]
@@ -93,231 +88,262 @@
       "values": [
         {
           "mechanism": {
-            "handled": false,
-            "type": "sveltekit"
+            "handled": true,
+            "type": "generic"
           },
           "stacktrace": {
             "frames": [
               {
-                "colno": 5,
-                "context_line": "\t\t\t\tawait server.respond(request, {",
+                "colno": 17,
+                "context_line": "  return tracer.startActiveSpan(name, spanContext, ctx, span => {",
                 "filename": "[[FILENAME1]]",
-                "function": "?",
+                "function": "Object.startSpan",
                 "in_app": false,
-                "lineno": 190,
+                "lineno": 855,
                 "post_context": [
-                  "\t\t\t\t\tgetClientAddress: () => {",
-                  "\t\t\t\t\t\tconst { remoteAddress } = req.socket;",
-                  "\t\t\t\t\t\tif (remoteAddress) return remoteAddress;",
-                  "\t\t\t\t\t\tthrow new Error('Could not determine clientAddress');",
-                  "\t\t\t\t\t},",
-                  "\t\t\t\t\tread: (file) => fs.readFileSync(join(svelte_config.kit.files.assets, file)),",
-                  "\t\t\t\t\temulator"
+                  "    _applySentryAttributesToSpan(span, options);",
+                  "",
+                  "    return core.handleCallbackErrors(",
+                  "      () => callback(span),",
+                  "      () => {",
+                  "        // Only set the span status to ERROR when there wasn't any status set before, in order to avoid stomping useful span statuses",
+                  "        if (core.spanToJSON(span).status === undefined) {"
                 ],
                 "pre_context": [
-                  "\t\t\tconst request = await getRequest({",
-                  "\t\t\t\tbase: `${protocol}://${host}`,",
-                  "\t\t\t\trequest: req",
-                  "\t\t\t});",
                   "",
-                  "\t\t\tsetResponse(",
-                  "\t\t\t\tres,"
+                  "  const activeCtx = getContext(options.scope, options.forceTransaction);",
+                  "  const shouldSkipSpan = options.onlyIfParent && !api.trace.getSpan(activeCtx);",
+                  "  const ctx = shouldSkipSpan ? core$1.suppressTracing(activeCtx) : activeCtx;",
+                  "",
+                  "  const spanContext = getSpanContext(options);",
+                  ""
                 ]
               },
               {
-                "colno": 22,
-                "context_line": "    const response = await options2.hooks.handle({",
+                "colno": 32,
+                "context_line": "        return api.context.with(contextWithSpanSet, fn, undefined, span);",
+                "filename": "[[FILENAME2]]",
+                "function": "Tracer.startActiveSpan",
+                "in_app": false,
+                "lineno": 121,
+                "post_context": [
+                  "    }",
+                  "    /** Returns the active {@link GeneralLimits}. */",
+                  "    getGeneralLimits() {",
+                  "        return this._generalLimits;",
+                  "    }",
+                  "    /** Returns the active {@link SpanLimits}. */",
+                  "    getSpanLimits() {"
+                ],
+                "pre_context": [
+                  "            opts = arg2;",
+                  "            ctx = arg3;",
+                  "            fn = arg4;",
+                  "        }",
+                  "        const parentContext = ctx !== null && ctx !== void 0 ? ctx : api.context.active();",
+                  "        const span = this.startSpan(name, opts, parentContext);",
+                  "        const contextWithSpanSet = api.trace.setSpan(parentContext, span);"
+                ]
+              },
+              {
+                "colno": 46,
+                "context_line": "        return this._getContextManager().with(context, fn, thisArg, ...args);",
+                "filename": "[[FILENAME3]]",
+                "function": "ContextAPI.with",
+                "in_app": false,
+                "lineno": 60,
+                "post_context": [
+                  "    }",
+                  "    /**",
+                  "     * Bind a context to a target function or event emitter",
+                  "     *",
+                  "     * @param context context to bind to the event emitter or function. Defaults to the currently active context",
+                  "     * @param target function or event emitter to bind",
+                  "     */"
+                ],
+                "pre_context": [
+                  "     *",
+                  "     * @param context context to be active during function execution",
+                  "     * @param fn function to execute in a context",
+                  "     * @param thisArg optional receiver to be used for calling fn",
+                  "     * @param args optional arguments forwarded to fn",
+                  "     */",
+                  "    with(context, fn, thisArg, ...args) {"
+                ]
+              },
+              {
+                "colno": 24,
+                "context_line": "      return super.with(ctx2, fn, thisArg, ...args);",
                 "filename": "[[FILENAME1]]",
-                "function": "respond",
-                "in_app": true,
+                "function": "SentryContextManager.with",
+                "in_app": false,
                 "lineno": "[[highNumber]]",
                 "post_context": [
-                  "      event,",
-                  "      resolve: (event2, opts) => resolve2(event2, opts).then((response2) => {",
-                  "        for (const key2 in headers2) {",
-                  "          const value = headers2[key2];",
-                  "          response2.headers.set(",
-                  "            key2,",
-                  "            /** @type {string} */"
-                ],
-                "pre_context": [
-                  "      manifest,",
-                  "      state,",
-                  "      get_cookie_header,",
-                  "      set_internal",
-                  "    });",
-                  "    if (state.prerendering && !state.prerendering.fallback)",
-                  "      disable_search(url);"
-                ]
-              },
-              {
-                "colno": 27,
-                "context_line": "    const resolveResult = await core.startSpan(",
-                "filename": "[[FILENAME2]]",
-                "function": "instrumentHandle",
-                "in_app": false,
-                "lineno": 154,
-                "post_context": [
-                  "      {",
-                  "        op: 'http.server',",
-                  "        attributes: {",
-                  "          [core.SEMANTIC_ATTRIBUTE_SENTRY_ORIGIN]: 'auto.http.sveltekit',",
-                  "          [core.SEMANTIC_ATTRIBUTE_SENTRY_SOURCE]: _optionalChain([event, 'access', _5 => _5.route, 'optionalAccess', _6 => _6.id]) ? 'route' : 'url',",
-                  "          'http.method': event.request.method,",
-                  "        },"
-                ],
-                "pre_context": [
-                  "  if (core.getIsolationScope() !== core.getDefaultIsolationScope()) {",
-                  "    core.getIsolationScope().setTransactionName(routeName);",
-                  "  } else {",
-                  "    debugBuild.DEBUG_BUILD && utils$1.logger.warn('Isolation scope is default isolation scope - skipping setting transactionName');",
+                  "    }",
                   "  }",
                   "",
-                  "  try {"
+                  "  return SentryContextManager ;",
+                  "}",
+                  "",
+                  "/** If this attribute is true, it means that the parent is a remote span. */"
+                ],
+                "pre_context": [
+                  "      const ctx2 = ctx1",
+                  "        .deleteValue(SENTRY_FORK_ISOLATION_SCOPE_CONTEXT_KEY)",
+                  "        .deleteValue(SENTRY_FORK_SET_SCOPE_CONTEXT_KEY)",
+                  "        .deleteValue(SENTRY_FORK_SET_ISOLATION_SCOPE_CONTEXT_KEY);",
+                  "",
+                  "      setContextOnScope(newCurrentScope, ctx2);",
+                  ""
                 ]
               },
               {
-                "colno": 21,
-                "context_line": "        const res = await resolve(event, {",
-                "filename": "[[FILENAME2]]",
+                "colno": 40,
+                "context_line": "        return this._asyncLocalStorage.run(context, cb, ...args);",
+                "filename": "[[FILENAME4]]",
+                "function": "SentryContextManager.with",
+                "in_app": false,
+                "lineno": 33,
+                "post_context": [
+                  "    }",
+                  "    enable() {",
+                  "        return this;",
+                  "    }",
+                  "    disable() {",
+                  "        this._asyncLocalStorage.disable();",
+                  "        return this;"
+                ],
+                "pre_context": [
+                  "    }",
+                  "    active() {",
+                  "        var _a;",
+                  "        return (_a = this._asyncLocalStorage.getStore()) !== null && _a !== void 0 ? _a : api_1.ROOT_CONTEXT;",
+                  "    }",
+                  "    with(context, fn, thisArg, ...args) {",
+                  "        const cb = thisArg == null ? fn : fn.bind(thisArg);"
+                ]
+              },
+              {
+                "colno": 14,
+                "filename": "[[FILENAME5]]",
+                "function": "AsyncLocalStorage.run",
+                "in_app": false,
+                "lineno": 346
+              },
+              {
+                "colno": 17,
+                "context_line": "    return core.handleCallbackErrors(",
+                "filename": "[[FILENAME1]]",
                 "function": "?",
                 "in_app": false,
-                "lineno": 165,
+                "lineno": 858,
                 "post_context": [
-                  "          transformPageChunk: addSentryCodeToPage(options),",
-                  "        });",
-                  "        if (span) {",
-                  "          core.setHttpStatus(span, res.status);",
+                  "      () => callback(span),",
+                  "      () => {",
+                  "        // Only set the span status to ERROR when there wasn't any status set before, in order to avoid stomping useful span statuses",
+                  "        if (core.spanToJSON(span).status === undefined) {",
+                  "          span.setStatus({ code: api.SpanStatusCode.ERROR });",
                   "        }",
-                  "        return res;",
                   "      },"
                 ],
                 "pre_context": [
-                  "          [core.SEMANTIC_ATTRIBUTE_SENTRY_ORIGIN]: 'auto.http.sveltekit',",
-                  "          [core.SEMANTIC_ATTRIBUTE_SENTRY_SOURCE]: _optionalChain([event, 'access', _5 => _5.route, 'optionalAccess', _6 => _6.id]) ? 'route' : 'url',",
-                  "          'http.method': event.request.method,",
-                  "        },",
-                  "        name: routeName,",
-                  "      },",
-                  "      async (span) => {"
-                ]
-              },
-              {
-                "colno": 5,
-                "filename": "[[FILENAME3]]",
-                "function": "process.processTicksAndRejections",
-                "in_app": false,
-                "lineno": 95
-              },
-              {
-                "colno": 28,
-                "context_line": "          response = await render_endpoint(event2, await route.endpoint(), state);",
-                "filename": "[[FILENAME1]]",
-                "function": "resolve2",
-                "in_app": true,
-                "lineno": "[[highNumber]]",
-                "post_context": [
-                  "        } else if (route.page) {",
-                  "          if (page_methods.has(method)) {",
-                  "            response = await render_page(event2, route.page, options2, manifest, state, resolve_opts);",
-                  "          } else {",
-                  "            const allowed_methods2 = new Set(allowed_page_methods);",
-                  "            const node = await manifest._.nodes[route.page.leaf]();",
-                  "            if (node?.server?.actions) {"
-                ],
-                "pre_context": [
-                  "            options2,",
-                  "            manifest,",
-                  "            state,",
-                  "            invalidated_data_nodes,",
-                  "            trailing_slash ?? \"never\"",
-                  "          );",
-                  "        } else if (route.endpoint && (!route.page || is_endpoint_request(event2))) {"
+                  "  const ctx = shouldSkipSpan ? core$1.suppressTracing(activeCtx) : activeCtx;",
+                  "",
+                  "  const spanContext = getSpanContext(options);",
+                  "",
+                  "  return tracer.startActiveSpan(name, spanContext, ctx, span => {",
+                  "    _applySentryAttributesToSpan(span, options);",
+                  ""
                 ]
               },
               {
                 "colno": 26,
-                "context_line": "    let response = await handler(",
-                "filename": "[[FILENAME1]]",
-                "function": "render_endpoint",
-                "in_app": true,
-                "lineno": 272,
+                "context_line": "    maybePromiseResult = fn();",
+                "filename": "[[FILENAME6]]",
+                "function": "Object.handleCallbackErrors",
+                "in_app": false,
+                "lineno": 26,
                 "post_context": [
-                  "      /** @type {import('@sveltejs/kit').RequestEvent<Record<string, any>>} */",
-                  "      event",
-                  "    );",
-                  "    if (!(response instanceof Response)) {",
-                  "      throw new Error(",
-                  "        `Invalid response from route ${event.url.pathname}: handler should return a Response object`",
-                  "      );"
+                  "  } catch (e) {",
+                  "    onError(e);",
+                  "    onFinally();",
+                  "    throw e;",
+                  "  }",
+                  "",
+                  "  return maybeHandlePromiseRejection(maybePromiseResult, onError, onFinally);"
                 ],
                 "pre_context": [
-                  "    if (state.depth > 0) {",
-                  "      throw new Error(`${event.route.id} is not prerenderable`);",
-                  "    } else {",
-                  "      return new Response(void 0, { status: 204 });",
-                  "    }",
-                  "  }",
+                  "  fn,",
+                  "  onError,",
+                  "  // eslint-disable-next-line @typescript-eslint/no-empty-function",
+                  "  onFinally = () => {},",
+                  ") {",
+                  "  let maybePromiseResult;",
                   "  try {"
                 ]
               },
               {
-                "colno": 10,
-                "context_line": "  Sentry.startSpan({ name: \"test-span\" }, () => {",
-                "filename": "[[FILENAME4]]",
-                "function": "GET",
-                "in_app": true,
-                "lineno": 12,
+                "colno": 13,
+                "context_line": "      () => callback(span),",
+                "filename": "[[FILENAME1]]",
+                "function": "?",
+                "in_app": false,
+                "lineno": 859,
                 "post_context": [
-                  "    Sentry.startSpan({ name: \"child-span\" }, () => {",
-                  "      Sentry.captureException(new Error(\"This is an error\"));",
+                  "      () => {",
+                  "        // Only set the span status to ERROR when there wasn't any status set before, in order to avoid stomping useful span statuses",
+                  "        if (core.spanToJSON(span).status === undefined) {",
+                  "          span.setStatus({ code: api.SpanStatusCode.ERROR });",
+                  "        }",
+                  "      },",
+                  "      () => span.end(),"
+                ],
+                "pre_context": [
+                  "",
+                  "  const spanContext = getSpanContext(options);",
+                  "",
+                  "  return tracer.startActiveSpan(name, spanContext, ctx, span => {",
+                  "    _applySentryAttributesToSpan(span, options);",
+                  "",
+                  "    return core.handleCallbackErrors("
+                ]
+              },
+              {
+                "colno": 31,
+                "context_line": "      Sentry.captureException(new Error(\"This is an error\"));",
+                "filename": "[[FILENAME7]]",
+                "function": "?",
+                "in_app": true,
+                "lineno": 14,
+                "post_context": [
                   "    });",
                   "  });",
                   "  await Sentry.flush();",
                   "  return Response.json({ data: \"test-error-body\" });",
-                  "};"
+                  "};",
+                  "export {",
+                  "  GET"
                 ],
                 "pre_context": [
-                  "    n && (e._sentryDebugIds = e._sentryDebugIds || {}, e._sentryDebugIds[n] = \"b2c11aa0-a5e1-4dd0-aabd-db965de4b81c\", e._sentryDebugIdIdenti {snip}",
-                  "  } catch (e2) {",
                   "  }",
                   "}();",
-                  "import * as Sentry from \"@sentry/nextjs\";",
+                  "import * as Sentry from \"@sentry/sveltekit\";",
                   "import \"../../../../chunks/_sentry-release-injection-file.js\";",
-                  "const GET = async () => {"
+                  "const GET = async () => {",
+                  "  Sentry.startSpan({ name: \"test-span\" }, () => {",
+                  "    Sentry.startSpan({ name: \"child-span\" }, () => {"
                 ]
               }
             ]
           },
-          "type": "TypeError",
-          "value": "Sentry.startSpan is not a function"
+          "type": "Error",
+          "value": "This is an error"
         }
       ]
     },
     "modules": {},
     "platform": "node",
-    "release": "769bfcd7ef414979b49e11a65ea1802c",
-    "request": {
-      "cookies": {},
-      "headers": {
-        "accept": "*/*",
-        "accept-encoding": "gzip, deflate, br",
-        "accept-language": "en-US,en;q=0.5",
-        "baggage": "sentry-environment=qa,sentry-release=016d073b9f5b47ef8e2d2cff020115bb,sentry-public_key=3b6c388182fb435097f41d181be2b2ba,sentry-trace_id=91547693adbd4206ad8e99a0f0f9b6b8",
-        "cache-control": "no-cache",
-        "connection": "keep-alive",
-        "host": "localhost:4173",
-        "pragma": "no-cache",
-        "referer": "http://localhost:4173/test-route-handlers",
-        "sec-fetch-dest": "empty",
-        "sec-fetch-mode": "cors",
-        "sec-fetch-site": "same-origin",
-        "sentry-trace": "91547693adbd4206ad8e99a0f0f9b6b8-95323cad6cbd9e51",
-        "user-agent": "[[user-agent]]"
-      },
-      "method": "GET",
-      "url": "http://localhost:4173/api/test-error-manual"
-    },
+    "release": "6ba2507ba4f94699b609ae42c22ec685",
     "sdk": {
       "integrations": [
         "InboundFilters",

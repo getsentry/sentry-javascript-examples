@@ -10,7 +10,7 @@
     "trace": {
       "environment": "qa",
       "public_key": "[[publicKey]]",
-      "release": "769bfcd7ef414979b49e11a65ea1802c",
+      "release": "6ba2507ba4f94699b609ae42c22ec685",
       "sample_rate": "1",
       "sampled": "true",
       "trace_id": "[[ID2]]",
@@ -95,8 +95,8 @@
       "values": [
         {
           "mechanism": {
-            "handled": false,
-            "type": "sveltekit"
+            "handled": true,
+            "type": "generic"
           },
           "stacktrace": {
             "frames": [
@@ -205,13 +205,6 @@
                 ]
               },
               {
-                "colno": 5,
-                "filename": "[[FILENAME3]]",
-                "function": "process.processTicksAndRejections",
-                "in_app": false,
-                "lineno": 95
-              },
-              {
                 "colno": 28,
                 "context_line": "          response = await render_endpoint(event2, await route.endpoint(), state);",
                 "filename": "[[FILENAME1]]",
@@ -264,9 +257,9 @@
                 ]
               },
               {
-                "colno": 30,
+                "colno": 47,
                 "context_line": "  const exceptionId = Sentry.captureException(new Error(\"This is an error\"));",
-                "filename": "[[FILENAME4]]",
+                "filename": "[[FILENAME3]]",
                 "function": "GET",
                 "in_app": true,
                 "lineno": 12,
@@ -280,44 +273,25 @@
                   "export {"
                 ],
                 "pre_context": [
-                  "    n && (e._sentryDebugIds = e._sentryDebugIds || {}, e._sentryDebugIds[n] = \"d71c388e-fef3-44c7-b184-b2dc7e981396\", e._sentryDebugIdIdenti {snip}",
+                  "    n && (e._sentryDebugIds = e._sentryDebugIds || {}, e._sentryDebugIds[n] = \"2e7df4ad-c8d1-49e2-a112-5e5c47e16d97\", e._sentryDebugIdIdenti {snip}",
                   "  } catch (e2) {",
                   "  }",
                   "}();",
-                  "import * as Sentry from \"@sentry/nextjs\";",
+                  "import * as Sentry from \"@sentry/sveltekit\";",
                   "import \"../../../../../chunks/_sentry-release-injection-file.js\";",
                   "const GET = async ({ url }) => {"
                 ]
               }
             ]
           },
-          "type": "TypeError",
-          "value": "Sentry.captureException is not a function"
+          "type": "Error",
+          "value": "This is an error"
         }
       ]
     },
     "modules": {},
     "platform": "node",
-    "release": "769bfcd7ef414979b49e11a65ea1802c",
-    "request": {
-      "cookies": {},
-      "headers": {
-        "accept": "*/*",
-        "accept-encoding": "gzip, deflate, br",
-        "accept-language": "en-US,en;q=0.5",
-        "cache-control": "no-cache",
-        "connection": "keep-alive",
-        "host": "localhost:4173",
-        "pragma": "no-cache",
-        "referer": "http://localhost:4173/test-route-handlers",
-        "sec-fetch-dest": "empty",
-        "sec-fetch-mode": "cors",
-        "sec-fetch-site": "same-origin",
-        "user-agent": "[[user-agent]]"
-      },
-      "method": "GET",
-      "url": "http://localhost:4173/api/test-param-error/1337"
-    },
+    "release": "6ba2507ba4f94699b609ae42c22ec685",
     "sdk": {
       "integrations": [
         "InboundFilters",
