@@ -249,31 +249,35 @@
                 ]
               },
               {
-                "colno": 10,
-                "context_line": "  Sentry.startSpan({ name: \"test-span\" }, () => {",
+                "colno": 26,
+                "context_line": "    exceptionId = Sentry.captureException(e);",
                 "filename": "[[FILENAME4]]",
                 "function": "GET",
                 "in_app": true,
-                "lineno": 4,
+                "lineno": 9,
                 "post_context": [
-                  "    Sentry.startSpan({ name: \"child-span\" }, () => {",
-                  "      Sentry.captureException(new Error(\"This is an error\"));",
-                  "    });",
-                  "  });",
-                  "  await Sentry.flush();",
-                  "  return Response.json({ data: \"test-error-body\" });",
-                  "};"
+                  "  }",
+                  "  return Response.json({ exceptionId, randomVariableToRecord });",
+                  "};",
+                  "export {",
+                  "  GET",
+                  "};",
+                  "//# sourceMappingURL=_server.ts.js.map"
                 ],
                 "pre_context": [
-                  "import * as Sentry from \"@sentry/nextjs\";",
                   "import \"../../../../chunks/sentry-release-injection-file.js\";",
-                  "const GET = async () => {"
+                  "const GET = () => {",
+                  "  const randomVariableToRecord = \"LOCAL_VARIABLE\";",
+                  "  let exceptionId;",
+                  "  try {",
+                  "    throw new Error(\"Local Variable Error\");",
+                  "  } catch (e) {"
                 ]
               }
             ]
           },
           "type": "TypeError",
-          "value": "Sentry.startSpan is not a function"
+          "value": "Sentry.captureException is not a function"
         }
       ]
     },
@@ -317,7 +321,7 @@
       "include": "multiple-entries",
       "node": "v20.12.1",
       "runtime": "node",
-      "transaction": "GET /api/test-error-manual"
+      "transaction": "GET /api/test-local-variables-caught"
     },
     "timestamp": "[[timestamp]]"
   }

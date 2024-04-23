@@ -197,6 +197,13 @@
                 ]
               },
               {
+                "colno": 5,
+                "filename": "[[FILENAME4]]",
+                "function": "process.processTicksAndRejections",
+                "in_app": false,
+                "lineno": 95
+              },
+              {
                 "colno": 28,
                 "context_line": "          response = await render_endpoint(event2, await route.endpoint(), state);",
                 "filename": "[[FILENAME2]]",
@@ -249,20 +256,20 @@
                 ]
               },
               {
-                "colno": 10,
-                "context_line": "  Sentry.startSpan({ name: \"test-span\" }, () => {",
-                "filename": "[[FILENAME4]]",
+                "colno": 30,
+                "context_line": "  const exceptionId = Sentry.captureException(new Error(\"This is an error\"));",
+                "filename": "[[FILENAME5]]",
                 "function": "GET",
                 "in_app": true,
                 "lineno": 4,
                 "post_context": [
-                  "    Sentry.startSpan({ name: \"child-span\" }, () => {",
-                  "      Sentry.captureException(new Error(\"This is an error\"));",
-                  "    });",
-                  "  });",
-                  "  await Sentry.flush();",
-                  "  return Response.json({ data: \"test-error-body\" });",
-                  "};"
+                  "  await Sentry.flush(2e3);",
+                  "  return Response.json({ exceptionId });",
+                  "};",
+                  "export {",
+                  "  GET",
+                  "};",
+                  "//# sourceMappingURL=_server.ts.js.map"
                 ],
                 "pre_context": [
                   "import * as Sentry from \"@sentry/nextjs\";",
@@ -273,7 +280,7 @@
             ]
           },
           "type": "TypeError",
-          "value": "Sentry.startSpan is not a function"
+          "value": "Sentry.captureException is not a function"
         }
       ]
     },
@@ -317,7 +324,7 @@
       "include": "multiple-entries",
       "node": "v20.12.1",
       "runtime": "node",
-      "transaction": "GET /api/test-error-manual"
+      "transaction": "GET /api/test-error"
     },
     "timestamp": "[[timestamp]]"
   }

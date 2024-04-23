@@ -11,7 +11,10 @@
       "environment": "qa",
       "public_key": "[[publicKey]]",
       "release": "016d073b9f5b47ef8e2d2cff020115bb",
-      "trace_id": "[[ID2]]"
+      "sample_rate": "1",
+      "sampled": "true",
+      "trace_id": "[[ID2]]",
+      "transaction": "GET /api/test-param-error/[param]"
     }
   },
   {
@@ -75,8 +78,7 @@
         },
         "op": "http.server",
         "origin": "auto.http.sveltekit",
-        "parent_span_id": "[[ID3]]",
-        "span_id": "[[ID4]]",
+        "span_id": "[[ID3]]",
         "status": "ok",
         "trace_id": "[[ID2]]"
       }
@@ -249,31 +251,31 @@
                 ]
               },
               {
-                "colno": 10,
-                "context_line": "  Sentry.startSpan({ name: \"test-span\" }, () => {",
+                "colno": 30,
+                "context_line": "  const exceptionId = Sentry.captureException(new Error(\"This is an error\"));",
                 "filename": "[[FILENAME4]]",
                 "function": "GET",
                 "in_app": true,
                 "lineno": 4,
                 "post_context": [
-                  "    Sentry.startSpan({ name: \"child-span\" }, () => {",
-                  "      Sentry.captureException(new Error(\"This is an error\"));",
-                  "    });",
-                  "  });",
-                  "  await Sentry.flush();",
-                  "  return Response.json({ data: \"test-error-body\" });",
-                  "};"
+                  "  await Sentry.flush(2e3);",
+                  "  const pathname = url.pathname;",
+                  "  const parts = pathname.split(\"/\");",
+                  "  const param = parts[parts.length - 1];",
+                  "  return Response.json({ exceptionId, paramWas: param });",
+                  "};",
+                  "export {"
                 ],
                 "pre_context": [
                   "import * as Sentry from \"@sentry/nextjs\";",
-                  "import \"../../../../chunks/sentry-release-injection-file.js\";",
-                  "const GET = async () => {"
+                  "import \"../../../../../chunks/sentry-release-injection-file.js\";",
+                  "const GET = async ({ url }) => {"
                 ]
               }
             ]
           },
           "type": "TypeError",
-          "value": "Sentry.startSpan is not a function"
+          "value": "Sentry.captureException is not a function"
         }
       ]
     },
@@ -317,7 +319,7 @@
       "include": "multiple-entries",
       "node": "v20.12.1",
       "runtime": "node",
-      "transaction": "GET /api/test-error-manual"
+      "transaction": "GET /api/test-param-error/[param]"
     },
     "timestamp": "[[timestamp]]"
   }

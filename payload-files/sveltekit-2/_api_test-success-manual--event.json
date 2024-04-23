@@ -257,12 +257,12 @@
                 "lineno": 4,
                 "post_context": [
                   "    Sentry.startSpan({ name: \"child-span\" }, () => {",
-                  "      Sentry.captureException(new Error(\"This is an error\"));",
                   "    });",
                   "  });",
                   "  await Sentry.flush();",
-                  "  return Response.json({ data: \"test-error-body\" });",
-                  "};"
+                  "  return Response.json({ data: \"test-success-body\" });",
+                  "};",
+                  "export {"
                 ],
                 "pre_context": [
                   "import * as Sentry from \"@sentry/nextjs\";",
@@ -317,7 +317,7 @@
       "include": "multiple-entries",
       "node": "v20.12.1",
       "runtime": "node",
-      "transaction": "GET /api/test-error-manual"
+      "transaction": "GET /api/test-success-manual"
     },
     "timestamp": "[[timestamp]]"
   }

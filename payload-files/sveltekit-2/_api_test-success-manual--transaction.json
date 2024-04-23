@@ -10,6 +10,7 @@
     "trace": {
       "environment": "qa",
       "public_key": "[[publicKey]]",
+      "release": "016d073b9f5b47ef8e2d2cff020115bb",
       "trace_id": "[[ID2]]"
     }
   },
@@ -21,13 +22,19 @@
       {
         "category": "console",
         "level": "log",
-        "message": "\u001b[2m5:58:35 PM\u001b[22m \u001b[36m\u001b[1m[vite]\u001b[22m\u001b[39m \u001b[32m✨ new dependencies optimized: \u001b[33m@sentry/sveltekit\u001b[32m\u001b[39m",
+        "message": "  \u001b[32m➜\u001b[39m  \u001b[1mLocal\u001b[22m:   \u001b[36mhttp://localhost:\u001b[1m4173\u001b[22m/\u001b[39m",
         "timestamp": "[[timestamp]]"
       },
       {
         "category": "console",
         "level": "log",
-        "message": "\u001b[2m5:58:35 PM\u001b[22m \u001b[36m\u001b[1m[vite]\u001b[22m\u001b[39m \u001b[32m✨ optimized dependencies changed. reloading\u001b[39m",
+        "message": "\u001b[2m  \u001b[32m➜\u001b[39m  \u001b[1mNetwork\u001b[22m\u001b[2m: use \u001b[22m\u001b[1m--host\u001b[22m\u001b[2m to expose\u001b[22m",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\u001b[2m\u001b[32m  ➜\u001b[39m\u001b[22m\u001b[2m  press \u001b[22m\u001b[1mh + enter\u001b[22m\u001b[2m to show help\u001b[22m",
         "timestamp": "[[timestamp]]"
       }
     ],
@@ -82,6 +89,7 @@
     "event_id": "[[ID1]]",
     "modules": {},
     "platform": "node",
+    "release": "016d073b9f5b47ef8e2d2cff020115bb",
     "sdk": {
       "integrations": [
         "InboundFilters",
@@ -116,7 +124,11 @@
     "spans": [],
     "start_timestamp": "[[timestamp]]",
     "tags": {
+      "bundler": "vite",
+      "finalize-release": true,
       "http.status_code": "500",
+      "include": "multiple-entries",
+      "node": "v20.12.1",
       "runtime": "node",
       "transaction": "GET /api/test-success-manual"
     },

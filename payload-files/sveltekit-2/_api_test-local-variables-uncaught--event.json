@@ -249,31 +249,30 @@
                 ]
               },
               {
-                "colno": 10,
-                "context_line": "  Sentry.startSpan({ name: \"test-span\" }, () => {",
+                "colno": 9,
+                "context_line": "  throw new Error(`Uncaught Local Variable Error - ${JSON.stringify({ randomVariableToRecord })}`);",
                 "filename": "[[FILENAME4]]",
                 "function": "GET",
                 "in_app": true,
                 "lineno": 4,
                 "post_context": [
-                  "    Sentry.startSpan({ name: \"child-span\" }, () => {",
-                  "      Sentry.captureException(new Error(\"This is an error\"));",
-                  "    });",
-                  "  });",
-                  "  await Sentry.flush();",
-                  "  return Response.json({ data: \"test-error-body\" });",
-                  "};"
+                  "};",
+                  "export {",
+                  "  GET",
+                  "};",
+                  "//# sourceMappingURL=_server.ts.js.map",
+                  ""
                 ],
                 "pre_context": [
-                  "import * as Sentry from \"@sentry/nextjs\";",
                   "import \"../../../../chunks/sentry-release-injection-file.js\";",
-                  "const GET = async () => {"
+                  "const GET = () => {",
+                  "  const randomVariableToRecord = \"LOCAL_VARIABLE\";"
                 ]
               }
             ]
           },
-          "type": "TypeError",
-          "value": "Sentry.startSpan is not a function"
+          "type": "Error",
+          "value": "Uncaught Local Variable Error - {\"randomVariableToRecord\":\"LOCAL_VARIABLE\"}"
         }
       ]
     },
@@ -317,7 +316,7 @@
       "include": "multiple-entries",
       "node": "v20.12.1",
       "runtime": "node",
-      "transaction": "GET /api/test-error-manual"
+      "transaction": "GET /api/test-local-variables-uncaught"
     },
     "timestamp": "[[timestamp]]"
   }
