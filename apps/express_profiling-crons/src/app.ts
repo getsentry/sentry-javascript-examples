@@ -1,15 +1,8 @@
 import * as Sentry from '@sentry/node';
-import express from 'express';
-import dotenv from 'dotenv';
-import { CronJob } from 'cron';
-import cron from 'node-cron';
-import * as schedule from 'node-schedule';
 import { nodeProfilingIntegration } from '@sentry/profiling-node';
+import dotenv from 'dotenv';
 
 dotenv.config({ path: './../../.env' });
-
-const app = express();
-const port = 3030;
 
 Sentry.init({
   environment: 'qa', // dynamic sampling bias to keep transactions
@@ -19,11 +12,18 @@ Sentry.init({
   tunnel: `http://localhost:3031/`, // proxy server
   tracesSampleRate: 1,
   profilesSampleRate: 1,
-  integrations: [new Sentry.Integrations.Express({ app }), nodeProfilingIntegration()],
+  integrations: [nodeProfilingIntegration()],
 });
 
-app.use(Sentry.Handlers.requestHandler());
-app.use(Sentry.Handlers.tracingHandler());
+import express from 'express';
+import { CronJob } from 'cron';
+import cron from 'node-cron';
+import * as schedule from 'node-schedule';
+
+const app = express();
+const port = 3030;
+
+Sentry.setupExpressErrorHandler(app);
 
 // cron
 const CronJobWithCheckIn = Sentry.cron.instrumentCron(CronJob, 'cron_slug');
