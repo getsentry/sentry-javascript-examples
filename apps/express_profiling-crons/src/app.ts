@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import { CronJob } from 'cron';
 import cron from 'node-cron';
 import * as schedule from 'node-schedule';
+import { nodeProfilingIntegration } from '@sentry/profiling-node';
 
 dotenv.config({ path: './../../.env' });
 
@@ -18,7 +19,7 @@ Sentry.init({
   tunnel: `http://localhost:3031/`, // proxy server
   tracesSampleRate: 1,
   profilesSampleRate: 1,
-  integrations: [new Sentry.Integrations.Express({ app })],
+  integrations: [new Sentry.Integrations.Express({ app }), nodeProfilingIntegration()],
 });
 
 app.use(Sentry.Handlers.requestHandler());
@@ -54,7 +55,26 @@ scheduleWithCheckIn.scheduleJob('node-schedule_slug', '13 * * * * *', () => {
   console.log('node-schedule: Job is running every few seconds');
 });
 
-app.use(Sentry.Handlers.errorHandler());
+// profiling
+app.get('/test-profiling-manual', async function (req, res) {
+  Sentry.startSpan({ name: 'test-transaction', op: 'e2e-test' }, () => {
+    Sentry.startSpan({ name: 'test-span' }, () => console.log('Did some work'));
+  });
+
+  await Sentry.flush();
+
+  res.send({ profiling: 'manual' });
+});
+
+app.get('/test-profiling-auto', async function (req, res) {
+  setTimeout(() => {
+    console.log('Did some work');
+  }, 1000);
+
+  await Sentry.flush();
+
+  res.send({ profiling: 'auto' });
+});
 
 // @ts-ignore
 app.use(function onError(err, req, res, next) {
