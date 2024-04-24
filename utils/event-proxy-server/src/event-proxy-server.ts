@@ -153,6 +153,9 @@ function replaceDynamicValues(jsonData: object[]): object[] {
     if (item.dsn) {
       item.dsn = '[[dsn]]';
     }
+    if (item.duration) {
+      item.duration = '[[duration]]';
+    }
   });
 
   return jsonData;
@@ -175,13 +178,15 @@ async function transformSavedJSON(
     const sortedJSON = sortObjectKeys(JSON.parse(jsonData));
     const transformedJSON = replaceDynamicValues(sortedJSON as object[]);
 
-    const type = (transformedJSON[1] as unknown as { type: string }).type; // transaction or event
+    const type = (transformedJSON[1] as unknown as { type: string }).type; // transaction, event (error) or check_in (cron)
 
     const objData = transformedJSON[2] as unknown as {
       request?: { url?: string };
       tags?: { transaction?: string };
       transaction?: string;
       contexts?: { trace?: { data?: { url?: string } } };
+      monitor_slug?: string;
+      status?: string;
     };
 
     if ('request' in objData || 'contexts' in objData) {
@@ -189,14 +194,18 @@ async function transformSavedJSON(
       const transactionNameFromTags = objData?.tags?.transaction;
       const url = objData?.request?.url || objData.contexts?.trace?.data?.url;
 
-      const filename =
-        filenameOrigin === 'transactionName'
-          ? transactionName !== ' ' // In v7 "transaction" is a space in error events in Next.js
-            ? transactionName
-              ? transactionName
-              : transactionNameFromTags
-            : transactionNameFromTags
-          : url;
+      let filename;
+      switch (filenameOrigin) {
+        case 'transactionName':
+          // In v7 "transaction" is a space (" ") in error events in Next.js
+          filename =
+            transactionName !== ' ' && transactionName ? transactionName : transactionNameFromTags;
+          break;
+        default:
+          // 'check_in' is for cron jobs
+          filename = type === 'check_in' ? `${objData.monitor_slug}-${objData.status}` : url;
+          break;
+      }
 
       if (filename) {
         const replaceForwardSlashes = (str: string) => str.split('/').join('_');
