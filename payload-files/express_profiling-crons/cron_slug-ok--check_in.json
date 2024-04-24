@@ -1,0 +1,31 @@
+[
+  {
+    "dsn": "[[dsn]]",
+    "sdk": {
+      "name": "sentry.javascript.node",
+      "version": "7.112.1"
+    },
+    "sent_at": "[[ISODateString]]",
+    "trace": {
+      "environment": "qa",
+      "public_key": "[[publicKey]]",
+      "trace_id": "[[ID1]]"
+    }
+  },
+  {
+    "type": "check_in"
+  },
+  {
+    "check_in_id": "[[ID2]]",
+    "contexts": {
+      "trace": {
+        "span_id": "[[ID3]]",
+        "trace_id": "[[ID1]]"
+      }
+    },
+    "duration": "[[duration]]",
+    "environment": "qa",
+    "monitor_slug": "cron_slug",
+    "status": "ok"
+  }
+]
