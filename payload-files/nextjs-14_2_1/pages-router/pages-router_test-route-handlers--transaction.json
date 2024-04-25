@@ -4,12 +4,13 @@
     "event_id": "[[ID1]]",
     "sdk": {
       "name": "sentry.javascript.nextjs",
-      "version": "7.110.1"
+      "version": "8.0.0-beta.4"
     },
     "sent_at": "[[ISODateString]]",
     "trace": {
       "environment": "qa",
       "public_key": "[[publicKey]]",
+      "sample_rate": "1",
       "sampled": "true",
       "trace_id": "[[ID2]]",
       "transaction": "/pages-router/test-route-handlers"
@@ -35,7 +36,7 @@
       {
         "category": "fetch",
         "data": {
-          "__span": "89bb2cab285da137",
+          "__span": "be07f43010a877aa",
           "method": "GET",
           "status_code": 200,
           "url": "/_next/static/development/_devMiddlewareManifest.json"
@@ -55,19 +56,16 @@
     "contexts": {
       "trace": {
         "data": {
+          "hardwareConcurrency": "10",
           "sentry.op": "pageload",
-          "sentry.origin": "auto.pageload.nextjs.pages_router_instrumentation"
+          "sentry.origin": "auto.pageload.nextjs.pages_router_instrumentation",
+          "sentry.sample_rate": 1,
+          "sentry.source": "route"
         },
         "op": "pageload",
         "origin": "auto.pageload.nextjs.pages_router_instrumentation",
         "parent_span_id": "[[ID3]]",
         "span_id": "[[ID4]]",
-        "tags": {
-          "hardwareConcurrency": "10",
-          "lcp.element": "body > div#__next > p",
-          "lcp.size": "[[highNumber]]",
-          "routing.instrumentation": "next-pages-router"
-        },
         "trace_id": "[[ID2]]"
       }
     },
@@ -75,10 +73,6 @@
     "event_id": "[[ID1]]",
     "measurements": {
       "fcp": {
-        "unit": "millisecond",
-        "value": "[[highNumber]]"
-      },
-      "lcp": {
         "unit": "millisecond",
         "value": "[[highNumber]]"
       },
@@ -102,27 +96,27 @@
       "integrations": [
         "InboundFilters",
         "FunctionToString",
-        "TryCatch",
+        "BrowserApiErrors",
         "Breadcrumbs",
         "GlobalHandlers",
         "LinkedErrors",
         "Dedupe",
         "HttpContext",
-        "RewriteFrames",
-        "BrowserTracing"
+        "BrowserTracing",
+        "NextjsClientStackFrameNormalization"
       ],
       "name": "sentry.javascript.nextjs",
       "packages": [
         {
           "name": "npm:@sentry/nextjs",
-          "version": "7.110.1"
+          "version": "8.0.0-beta.4"
         },
         {
           "name": "npm:@sentry/react",
-          "version": "7.110.1"
+          "version": "8.0.0-beta.4"
         }
       ],
-      "version": "7.110.1"
+      "version": "8.0.0-beta.4"
     },
     "spans": [
       {
@@ -139,10 +133,12 @@
           "http.request.response_start": "[[highNumber]]",
           "http.request.secure_connection_start": "[[highNumber]]",
           "http.response.status_code": 200,
+          "http.url": "http://localhost:3030/_next/static/development/_devMiddlewareManifest.json",
           "network.protocol.name": "http",
           "network.protocol.version": "1.1",
           "sentry.op": "http.client",
           "sentry.origin": "auto.http.browser",
+          "server.address": "localhost:3030",
           "type": "fetch",
           "url": "/_next/static/development/_devMiddlewareManifest.json"
         },
@@ -153,9 +149,6 @@
         "span_id": "[[ID5]]",
         "start_timestamp": "[[timestamp]]",
         "status": "ok",
-        "tags": {
-          "http.status_code": "200"
-        },
         "timestamp": "[[timestamp]]",
         "trace_id": "[[ID2]]"
       },
@@ -176,11 +169,11 @@
       {
         "data": {
           "sentry.op": "browser",
-          "sentry.origin": "auto.browser.browser.metrics"
+          "sentry.origin": "auto.ui.browser.metrics"
         },
         "description": "unloadEvent",
         "op": "browser",
-        "origin": "auto.browser.browser.metrics",
+        "origin": "auto.ui.browser.metrics",
         "parent_span_id": "[[ID4]]",
         "span_id": "[[ID7]]",
         "start_timestamp": "[[timestamp]]",
@@ -190,11 +183,11 @@
       {
         "data": {
           "sentry.op": "browser",
-          "sentry.origin": "auto.browser.browser.metrics"
+          "sentry.origin": "auto.ui.browser.metrics"
         },
         "description": "domContentLoadedEvent",
         "op": "browser",
-        "origin": "auto.browser.browser.metrics",
+        "origin": "auto.ui.browser.metrics",
         "parent_span_id": "[[ID4]]",
         "span_id": "[[ID8]]",
         "start_timestamp": "[[timestamp]]",
@@ -204,11 +197,11 @@
       {
         "data": {
           "sentry.op": "browser",
-          "sentry.origin": "auto.browser.browser.metrics"
+          "sentry.origin": "auto.ui.browser.metrics"
         },
         "description": "loadEvent",
         "op": "browser",
-        "origin": "auto.browser.browser.metrics",
+        "origin": "auto.ui.browser.metrics",
         "parent_span_id": "[[ID4]]",
         "span_id": "[[ID9]]",
         "start_timestamp": "[[timestamp]]",
@@ -218,11 +211,11 @@
       {
         "data": {
           "sentry.op": "browser",
-          "sentry.origin": "auto.browser.browser.metrics"
+          "sentry.origin": "auto.ui.browser.metrics"
         },
         "description": "connect",
         "op": "browser",
-        "origin": "auto.browser.browser.metrics",
+        "origin": "auto.ui.browser.metrics",
         "parent_span_id": "[[ID4]]",
         "span_id": "[[ID10]]",
         "start_timestamp": "[[timestamp]]",
@@ -232,11 +225,11 @@
       {
         "data": {
           "sentry.op": "browser",
-          "sentry.origin": "auto.browser.browser.metrics"
+          "sentry.origin": "auto.ui.browser.metrics"
         },
         "description": "cache",
         "op": "browser",
-        "origin": "auto.browser.browser.metrics",
+        "origin": "auto.ui.browser.metrics",
         "parent_span_id": "[[ID4]]",
         "span_id": "[[ID11]]",
         "start_timestamp": "[[timestamp]]",
@@ -246,11 +239,11 @@
       {
         "data": {
           "sentry.op": "browser",
-          "sentry.origin": "auto.browser.browser.metrics"
+          "sentry.origin": "auto.ui.browser.metrics"
         },
         "description": "DNS",
         "op": "browser",
-        "origin": "auto.browser.browser.metrics",
+        "origin": "auto.ui.browser.metrics",
         "parent_span_id": "[[ID4]]",
         "span_id": "[[ID12]]",
         "start_timestamp": "[[timestamp]]",
@@ -260,11 +253,11 @@
       {
         "data": {
           "sentry.op": "browser",
-          "sentry.origin": "auto.browser.browser.metrics"
+          "sentry.origin": "auto.ui.browser.metrics"
         },
         "description": "request",
         "op": "browser",
-        "origin": "auto.browser.browser.metrics",
+        "origin": "auto.ui.browser.metrics",
         "parent_span_id": "[[ID4]]",
         "span_id": "[[ID13]]",
         "start_timestamp": "[[timestamp]]",
@@ -274,11 +267,11 @@
       {
         "data": {
           "sentry.op": "browser",
-          "sentry.origin": "auto.browser.browser.metrics"
+          "sentry.origin": "auto.ui.browser.metrics"
         },
         "description": "response",
         "op": "browser",
-        "origin": "auto.browser.browser.metrics",
+        "origin": "auto.ui.browser.metrics",
         "parent_span_id": "[[ID4]]",
         "span_id": "[[ID14]]",
         "start_timestamp": "[[timestamp]]",
@@ -356,7 +349,7 @@
           "url.same_origin": true,
           "url.scheme": "http"
         },
-        "description": "/_next/static/chunks/pages/_app.js",
+        "description": "/_next/static/chunks/main.js",
         "op": "resource.script",
         "origin": "auto.resource.browser.metrics",
         "parent_span_id": "[[ID4]]",
@@ -376,7 +369,7 @@
           "url.same_origin": true,
           "url.scheme": "http"
         },
-        "description": "/_next/static/chunks/main.js",
+        "description": "/_next/static/chunks/pages/_app.js",
         "op": "resource.script",
         "origin": "auto.resource.browser.metrics",
         "parent_span_id": "[[ID4]]",
@@ -490,10 +483,6 @@
     ],
     "start_timestamp": "[[timestamp]]",
     "tags": {
-      "hardwareConcurrency": "10",
-      "lcp.element": "body > div#__next > p",
-      "lcp.size": "[[highNumber]]",
-      "routing.instrumentation": "next-pages-router",
       "runtime": "browser"
     },
     "timestamp": "[[timestamp]]",

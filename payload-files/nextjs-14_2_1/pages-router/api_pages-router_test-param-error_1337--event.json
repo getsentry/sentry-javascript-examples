@@ -4,7 +4,7 @@
     "event_id": "[[ID1]]",
     "sdk": {
       "name": "sentry.javascript.nextjs",
-      "version": "7.110.1"
+      "version": "8.0.0-beta.4"
     },
     "sent_at": "[[ISODateString]]",
     "trace": {
@@ -13,7 +13,7 @@
       "sample_rate": "1",
       "sampled": "true",
       "trace_id": "[[ID2]]",
-      "transaction": "/pages-router/test-route-handlers"
+      "transaction": "GET /api/pages-router/test-param-error/[param]"
     }
   },
   {
@@ -24,13 +24,43 @@
       {
         "category": "console",
         "level": "log",
-        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled /favicon.ico in 380ms (146 modules)",
+        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Ready in 4.7s",
         "timestamp": "[[timestamp]]"
       },
       {
         "category": "console",
-        "level": "log",
-        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled /api/pages-router/test-param-error/[param] in 103ms (162 modules)",
+        "level": "warning",
+        "message": " \u001b[33m\u001b[1m⚠\u001b[22m\u001b[39m ./node_modules/@opentelemetry/instrumentation-fastify/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n./node_modules/@opentelemetry/instrumentation-fastify/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-fastify/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n./node_modules/@opentelemetry/instrumentation-fastify/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n./node_modules/@opentelemetry/instrumentation-fastify/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n./node_modules/@opentelemetry/instrumentation-fastify/build/src/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-fastify/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n./node_modules/@opentelemetry/instrumentation-graphql/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n./node_modules/@opentelemetry/instrumentation-graphql/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-graphql/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n./node_modules/@opentelemetry/instrumentation-graphql/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n./node_modules/@opentelemetry/instrumentation-graphql/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n./node_modules/@opentelemetry/instrumentation-graphql/build/src/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-graphql/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n./node_modules/@opentelemetry/instrumentation-mongoose/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n./node_modules/@opentelemetry/instrumentation-mongoose/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-mongoose/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n./node_modules/@opentelemetry/instrumentation-mongoose/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n./node_modules/@opentelemetry/instrumentation-mongoose/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n./node_modules/@opentelemetry/instrumentation-mongoose/build/src/mongoose.js\n./node_modules/@opentelemetry/instrumentation-mongoose/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n./node_modules/@opentelemetry/instrumentation-mysql/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n./node_modules/@opentelemetry/instrumentation-mysql/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-mysql/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n./node_modules/@opentelemetry/instrumentation-mysql/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n./node_modules/@opentelemetry/instrumentation-mysql/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n./node_modules/@opentelemetry/instrumentation-mysql/build/src/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-mysql/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n./node_modules/@opentelemetry/instrumentation-mysql2/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n./node_modules/@opentelemetry/instrumentation-mysql2/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-mysql2/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n./node_modules/@opentelemetry/instrumentation-mysql2/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n./node_modules/@opentelemetry/instrumentation-mysql2/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n./node_modules/@opentelemetry/instrumentation-mysql2/build/src/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-mysql2/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n./node_modules/@opentelemetry/instrumentation-nestjs-core/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n./node_modules/@opentelemetry/instrumentation-nestjs-core/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-nestjs-core/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n./node_modules/@opentelemetry/instrumentation-nestjs-core/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n./node_modules/@opentelemetry/instrumentation-nestjs-core/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n./node_modules/@opentelemetry/instrumentation-nestjs-core/build/src/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-nestjs-core/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n./node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n./node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n./node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n./node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n./node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n./node_modules/@prisma/instrumentation/dist/chunk-OFZIMDY6.js\n./node_modules/@prisma/instrumentation/dist/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@opentelemetry/instrumentation-connect/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation-connect/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-connect/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation-connect/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation-connect/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@opentelemetry/instrumentation-connect/build/src/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-connect/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@opentelemetry/instrumentation-hapi/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation-hapi/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-hapi/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation-hapi/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation-hapi/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@opentelemetry/instrumentation-hapi/build/src/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-hapi/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@opentelemetry/instrumentation-koa/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation-koa/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-koa/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation-koa/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation-koa/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@opentelemetry/instrumentation-koa/build/src/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-koa/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@opentelemetry/instrumentation-pg/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation-pg/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-pg/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation-pg/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation-pg/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@opentelemetry/instrumentation-pg/build/src/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-pg/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@opentelemetry/instrumentation-mongodb/build/src/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-mongodb/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "warning",
+        "message": " \u001b[33m\u001b[1m⚠\u001b[22m\u001b[39m ./node_modules/@opentelemetry/instrumentation-fastify/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n./node_modules/@opentelemetry/instrumentation-fastify/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-fastify/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n./node_modules/@opentelemetry/instrumentation-fastify/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n./node_modules/@opentelemetry/instrumentation-fastify/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n./node_modules/@opentelemetry/instrumentation-fastify/build/src/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-fastify/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n./node_modules/@opentelemetry/instrumentation-graphql/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n./node_modules/@opentelemetry/instrumentation-graphql/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-graphql/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n./node_modules/@opentelemetry/instrumentation-graphql/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n./node_modules/@opentelemetry/instrumentation-graphql/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n./node_modules/@opentelemetry/instrumentation-graphql/build/src/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-graphql/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n./node_modules/@opentelemetry/instrumentation-mongoose/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n./node_modules/@opentelemetry/instrumentation-mongoose/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-mongoose/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n./node_modules/@opentelemetry/instrumentation-mongoose/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n./node_modules/@opentelemetry/instrumentation-mongoose/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n./node_modules/@opentelemetry/instrumentation-mongoose/build/src/mongoose.js\n./node_modules/@opentelemetry/instrumentation-mongoose/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n./node_modules/@opentelemetry/instrumentation-mysql/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n./node_modules/@opentelemetry/instrumentation-mysql/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-mysql/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n./node_modules/@opentelemetry/instrumentation-mysql/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n./node_modules/@opentelemetry/instrumentation-mysql/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n./node_modules/@opentelemetry/instrumentation-mysql/build/src/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-mysql/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n./node_modules/@opentelemetry/instrumentation-mysql2/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n./node_modules/@opentelemetry/instrumentation-mysql2/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-mysql2/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n./node_modules/@opentelemetry/instrumentation-mysql2/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n./node_modules/@opentelemetry/instrumentation-mysql2/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n./node_modules/@opentelemetry/instrumentation-mysql2/build/src/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-mysql2/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n./node_modules/@opentelemetry/instrumentation-nestjs-core/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n./node_modules/@opentelemetry/instrumentation-nestjs-core/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-nestjs-core/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n./node_modules/@opentelemetry/instrumentation-nestjs-core/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n./node_modules/@opentelemetry/instrumentation-nestjs-core/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n./node_modules/@opentelemetry/instrumentation-nestjs-core/build/src/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-nestjs-core/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n./node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n./node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n./node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n./node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n./node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n./node_modules/@prisma/instrumentation/dist/chunk-OFZIMDY6.js\n./node_modules/@prisma/instrumentation/dist/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@opentelemetry/instrumentation-connect/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation-connect/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-connect/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation-connect/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation-connect/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@opentelemetry/instrumentation-connect/build/src/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-connect/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@opentelemetry/instrumentation-hapi/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation-hapi/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-hapi/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation-hapi/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation-hapi/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@opentelemetry/instrumentation-hapi/build/src/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-hapi/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@opentelemetry/instrumentation-koa/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation-koa/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-koa/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation-koa/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation-koa/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@opentelemetry/instrumentation-koa/build/src/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-koa/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@opentelemetry/instrumentation-pg/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation-pg/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-pg/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation-pg/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation-pg/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@opentelemetry/instrumentation-pg/build/src/utils.js\n../../node_modules/@opentelemetry/instrumentation-pg/build/src/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-pg/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@opentelemetry/instrumentation-http/build/src/http.js\n../../node_modules/@opentelemetry/instrumentation-http/build/src/index.js\n./node_modules/@sentry/nextjs/cjs/server/httpIntegration.js\n./node_modules/@sentry/nextjs/cjs/index.server.js",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "warning",
+        "message": " \u001b[33m\u001b[1m⚠\u001b[22m\u001b[39m ./node_modules/@opentelemetry/instrumentation-fastify/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n./node_modules/@opentelemetry/instrumentation-fastify/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-fastify/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n./node_modules/@opentelemetry/instrumentation-fastify/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n./node_modules/@opentelemetry/instrumentation-fastify/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n./node_modules/@opentelemetry/instrumentation-fastify/build/src/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-fastify/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n./node_modules/@opentelemetry/instrumentation-graphql/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n./node_modules/@opentelemetry/instrumentation-graphql/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-graphql/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n./node_modules/@opentelemetry/instrumentation-graphql/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n./node_modules/@opentelemetry/instrumentation-graphql/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n./node_modules/@opentelemetry/instrumentation-graphql/build/src/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-graphql/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n./node_modules/@opentelemetry/instrumentation-mongoose/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n./node_modules/@opentelemetry/instrumentation-mongoose/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-mongoose/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n./node_modules/@opentelemetry/instrumentation-mongoose/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n./node_modules/@opentelemetry/instrumentation-mongoose/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n./node_modules/@opentelemetry/instrumentation-mongoose/build/src/mongoose.js\n./node_modules/@opentelemetry/instrumentation-mongoose/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n./node_modules/@opentelemetry/instrumentation-mysql/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n./node_modules/@opentelemetry/instrumentation-mysql/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-mysql/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n./node_modules/@opentelemetry/instrumentation-mysql/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n./node_modules/@opentelemetry/instrumentation-mysql/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n./node_modules/@opentelemetry/instrumentation-mysql/build/src/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-mysql/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n./node_modules/@opentelemetry/instrumentation-mysql2/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n./node_modules/@opentelemetry/instrumentation-mysql2/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-mysql2/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n./node_modules/@opentelemetry/instrumentation-mysql2/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n./node_modules/@opentelemetry/instrumentation-mysql2/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n./node_modules/@opentelemetry/instrumentation-mysql2/build/src/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-mysql2/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n./node_modules/@opentelemetry/instrumentation-nestjs-core/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n./node_modules/@opentelemetry/instrumentation-nestjs-core/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-nestjs-core/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n./node_modules/@opentelemetry/instrumentation-nestjs-core/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n./node_modules/@opentelemetry/instrumentation-nestjs-core/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n./node_modules/@opentelemetry/instrumentation-nestjs-core/build/src/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-nestjs-core/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n./node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n./node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n./node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n./node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n./node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n./node_modules/@prisma/instrumentation/dist/chunk-OFZIMDY6.js\n./node_modules/@prisma/instrumentation/dist/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@opentelemetry/instrumentation-connect/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation-connect/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-connect/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation-connect/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation-connect/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@opentelemetry/instrumentation-connect/build/src/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-connect/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@opentelemetry/instrumentation-hapi/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation-hapi/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-hapi/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation-hapi/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation-hapi/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@opentelemetry/instrumentation-hapi/build/src/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-hapi/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@opentelemetry/instrumentation-koa/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation-koa/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-koa/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation-koa/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation-koa/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@opentelemetry/instrumentation-koa/build/src/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-koa/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@opentelemetry/instrumentation-pg/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation-pg/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-pg/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation-pg/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation-pg/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@opentelemetry/instrumentation-pg/build/src/utils.js\n../../node_modules/@opentelemetry/instrumentation-pg/build/src/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-pg/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@opentelemetry/instrumentation-http/build/src/http.js\n../../node_modules/@opentelemetry/instrumentation-http/build/src/index.js\n./node_modules/@sentry/nextjs/cjs/server/httpIntegration.js\n./node_modules/@sentry/nextjs/cjs/index.server.js",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "warning",
+        "message": " \u001b[33m\u001b[1m⚠\u001b[22m\u001b[39m ./node_modules/@opentelemetry/instrumentation-fastify/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n./node_modules/@opentelemetry/instrumentation-fastify/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-fastify/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n./node_modules/@opentelemetry/instrumentation-fastify/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n./node_modules/@opentelemetry/instrumentation-fastify/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n./node_modules/@opentelemetry/instrumentation-fastify/build/src/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-fastify/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n./node_modules/@opentelemetry/instrumentation-graphql/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n./node_modules/@opentelemetry/instrumentation-graphql/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-graphql/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n./node_modules/@opentelemetry/instrumentation-graphql/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n./node_modules/@opentelemetry/instrumentation-graphql/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n./node_modules/@opentelemetry/instrumentation-graphql/build/src/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-graphql/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n./node_modules/@opentelemetry/instrumentation-mongoose/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n./node_modules/@opentelemetry/instrumentation-mongoose/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-mongoose/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n./node_modules/@opentelemetry/instrumentation-mongoose/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n./node_modules/@opentelemetry/instrumentation-mongoose/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n./node_modules/@opentelemetry/instrumentation-mongoose/build/src/mongoose.js\n./node_modules/@opentelemetry/instrumentation-mongoose/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n./node_modules/@opentelemetry/instrumentation-mysql/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n./node_modules/@opentelemetry/instrumentation-mysql/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-mysql/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n./node_modules/@opentelemetry/instrumentation-mysql/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n./node_modules/@opentelemetry/instrumentation-mysql/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n./node_modules/@opentelemetry/instrumentation-mysql/build/src/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-mysql/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n./node_modules/@opentelemetry/instrumentation-mysql2/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n./node_modules/@opentelemetry/instrumentation-mysql2/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-mysql2/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n./node_modules/@opentelemetry/instrumentation-mysql2/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n./node_modules/@opentelemetry/instrumentation-mysql2/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n./node_modules/@opentelemetry/instrumentation-mysql2/build/src/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-mysql2/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n./node_modules/@opentelemetry/instrumentation-nestjs-core/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n./node_modules/@opentelemetry/instrumentation-nestjs-core/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-nestjs-core/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n./node_modules/@opentelemetry/instrumentation-nestjs-core/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n./node_modules/@opentelemetry/instrumentation-nestjs-core/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n./node_modules/@opentelemetry/instrumentation-nestjs-core/build/src/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-nestjs-core/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n./node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n./node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n./node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n./node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n./node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n./node_modules/@prisma/instrumentation/dist/chunk-OFZIMDY6.js\n./node_modules/@prisma/instrumentation/dist/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@opentelemetry/instrumentation-connect/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation-connect/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-connect/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation-connect/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation-connect/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@opentelemetry/instrumentation-connect/build/src/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-connect/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@opentelemetry/instrumentation-hapi/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation-hapi/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-hapi/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation-hapi/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation-hapi/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@opentelemetry/instrumentation-hapi/build/src/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-hapi/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@opentelemetry/instrumentation-koa/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation-koa/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-koa/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation-koa/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation-koa/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@opentelemetry/instrumentation-koa/build/src/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-koa/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@opentelemetry/instrumentation-pg/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation-pg/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-pg/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation-pg/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation-pg/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@opentelemetry/instrumentation-pg/build/src/utils.js\n../../node_modules/@opentelemetry/instrumentation-pg/build/src/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-pg/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@opentelemetry/instrumentation-http/build/src/http.js\n../../node_modules/@opentelemetry/instrumentation-http/build/src/index.js\n./node_modules/@sentry/nextjs/cjs/server/httpIntegration.js\n./node_modules/@sentry/nextjs/cjs/index.server.js",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "warning",
+        "message": " \u001b[33m\u001b[1m⚠\u001b[22m\u001b[39m ./node_modules/@opentelemetry/instrumentation-fastify/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n./node_modules/@opentelemetry/instrumentation-fastify/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-fastify/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n./node_modules/@opentelemetry/instrumentation-fastify/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n./node_modules/@opentelemetry/instrumentation-fastify/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n./node_modules/@opentelemetry/instrumentation-fastify/build/src/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-fastify/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n./node_modules/@opentelemetry/instrumentation-graphql/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n./node_modules/@opentelemetry/instrumentation-graphql/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-graphql/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n./node_modules/@opentelemetry/instrumentation-graphql/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n./node_modules/@opentelemetry/instrumentation-graphql/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n./node_modules/@opentelemetry/instrumentation-graphql/build/src/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-graphql/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n./node_modules/@opentelemetry/instrumentation-mongoose/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n./node_modules/@opentelemetry/instrumentation-mongoose/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-mongoose/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n./node_modules/@opentelemetry/instrumentation-mongoose/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n./node_modules/@opentelemetry/instrumentation-mongoose/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n./node_modules/@opentelemetry/instrumentation-mongoose/build/src/mongoose.js\n./node_modules/@opentelemetry/instrumentation-mongoose/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n./node_modules/@opentelemetry/instrumentation-mysql/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n./node_modules/@opentelemetry/instrumentation-mysql/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-mysql/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n./node_modules/@opentelemetry/instrumentation-mysql/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n./node_modules/@opentelemetry/instrumentation-mysql/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n./node_modules/@opentelemetry/instrumentation-mysql/build/src/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-mysql/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n./node_modules/@opentelemetry/instrumentation-mysql2/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n./node_modules/@opentelemetry/instrumentation-mysql2/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-mysql2/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n./node_modules/@opentelemetry/instrumentation-mysql2/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n./node_modules/@opentelemetry/instrumentation-mysql2/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n./node_modules/@opentelemetry/instrumentation-mysql2/build/src/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-mysql2/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n./node_modules/@opentelemetry/instrumentation-nestjs-core/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n./node_modules/@opentelemetry/instrumentation-nestjs-core/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-nestjs-core/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n./node_modules/@opentelemetry/instrumentation-nestjs-core/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n./node_modules/@opentelemetry/instrumentation-nestjs-core/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n./node_modules/@opentelemetry/instrumentation-nestjs-core/build/src/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-nestjs-core/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n./node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n./node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n./node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n./node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n./node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n./node_modules/@prisma/instrumentation/dist/chunk-OFZIMDY6.js\n./node_modules/@prisma/instrumentation/dist/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@opentelemetry/instrumentation-connect/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation-connect/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-connect/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation-connect/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation-connect/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@opentelemetry/instrumentation-connect/build/src/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-connect/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@opentelemetry/instrumentation-hapi/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation-hapi/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-hapi/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation-hapi/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation-hapi/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@opentelemetry/instrumentation-hapi/build/src/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-hapi/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@opentelemetry/instrumentation-koa/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation-koa/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-koa/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation-koa/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation-koa/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@opentelemetry/instrumentation-koa/build/src/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-koa/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@opentelemetry/instrumentation-pg/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation-pg/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-pg/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation-pg/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation-pg/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@opentelemetry/instrumentation-pg/build/src/utils.js\n../../node_modules/@opentelemetry/instrumentation-pg/build/src/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-pg/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@opentelemetry/instrumentation-http/build/src/http.js\n../../node_modules/@opentelemetry/instrumentation-http/build/src/index.js\n./node_modules/@sentry/nextjs/cjs/server/httpIntegration.js\n./node_modules/@sentry/nextjs/cjs/index.server.js",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "warning",
+        "message": " \u001b[33m\u001b[1m⚠\u001b[22m\u001b[39m ./node_modules/@opentelemetry/instrumentation-fastify/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n./node_modules/@opentelemetry/instrumentation-fastify/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-fastify/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n./node_modules/@opentelemetry/instrumentation-fastify/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n./node_modules/@opentelemetry/instrumentation-fastify/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n./node_modules/@opentelemetry/instrumentation-fastify/build/src/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-fastify/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n./node_modules/@opentelemetry/instrumentation-graphql/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n./node_modules/@opentelemetry/instrumentation-graphql/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-graphql/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n./node_modules/@opentelemetry/instrumentation-graphql/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n./node_modules/@opentelemetry/instrumentation-graphql/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n./node_modules/@opentelemetry/instrumentation-graphql/build/src/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-graphql/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n./node_modules/@opentelemetry/instrumentation-mongoose/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n./node_modules/@opentelemetry/instrumentation-mongoose/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-mongoose/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n./node_modules/@opentelemetry/instrumentation-mongoose/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n./node_modules/@opentelemetry/instrumentation-mongoose/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n./node_modules/@opentelemetry/instrumentation-mongoose/build/src/mongoose.js\n./node_modules/@opentelemetry/instrumentation-mongoose/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n./node_modules/@opentelemetry/instrumentation-mysql/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n./node_modules/@opentelemetry/instrumentation-mysql/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-mysql/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n./node_modules/@opentelemetry/instrumentation-mysql/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n./node_modules/@opentelemetry/instrumentation-mysql/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n./node_modules/@opentelemetry/instrumentation-mysql/build/src/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-mysql/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n./node_modules/@opentelemetry/instrumentation-mysql2/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n./node_modules/@opentelemetry/instrumentation-mysql2/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-mysql2/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n./node_modules/@opentelemetry/instrumentation-mysql2/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n./node_modules/@opentelemetry/instrumentation-mysql2/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n./node_modules/@opentelemetry/instrumentation-mysql2/build/src/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-mysql2/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n./node_modules/@opentelemetry/instrumentation-nestjs-core/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n./node_modules/@opentelemetry/instrumentation-nestjs-core/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-nestjs-core/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n./node_modules/@opentelemetry/instrumentation-nestjs-core/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n./node_modules/@opentelemetry/instrumentation-nestjs-core/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n./node_modules/@opentelemetry/instrumentation-nestjs-core/build/src/instrumentation.js\n./node_modules/@opentelemetry/instrumentation-nestjs-core/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n./node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n./node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n./node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n./node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n./node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n./node_modules/@prisma/instrumentation/dist/chunk-OFZIMDY6.js\n./node_modules/@prisma/instrumentation/dist/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@opentelemetry/instrumentation-connect/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation-connect/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-connect/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation-connect/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation-connect/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@opentelemetry/instrumentation-connect/build/src/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-connect/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@opentelemetry/instrumentation-hapi/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation-hapi/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-hapi/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation-hapi/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation-hapi/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@opentelemetry/instrumentation-hapi/build/src/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-hapi/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@opentelemetry/instrumentation-koa/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation-koa/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-koa/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation-koa/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation-koa/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@opentelemetry/instrumentation-koa/build/src/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-koa/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@opentelemetry/instrumentation-pg/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation-pg/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-pg/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation-pg/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation-pg/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@opentelemetry/instrumentation-pg/build/src/utils.js\n../../node_modules/@opentelemetry/instrumentation-pg/build/src/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation-pg/build/src/index.js\n./node_modules/@sentry/node/cjs/index.js\n./node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@opentelemetry/instrumentation-http/build/src/http.js\n../../node_modules/@opentelemetry/instrumentation-http/build/src/index.js\n./node_modules/@sentry/nextjs/cjs/server/httpIntegration.js\n./node_modules/@sentry/nextjs/cjs/index.server.js",
         "timestamp": "[[timestamp]]"
       }
     ],
@@ -64,13 +94,6 @@
         "version": "v20.12.1"
       },
       "trace": {
-        "data": {
-          "sentry.op": "http.server",
-          "sentry.origin": "auto.http.nextjs",
-          "sentry.source": "route"
-        },
-        "op": "http.server",
-        "origin": "auto.http.nextjs",
         "parent_span_id": "[[ID3]]",
         "span_id": "[[ID4]]",
         "trace_id": "[[ID2]]"
@@ -88,370 +111,199 @@
           "stacktrace": {
             "frames": [
               {
-                "colno": 12,
-                "context_line": "    return callback(transactionContext);",
+                "colno": 14,
                 "filename": "[[FILENAME1]]",
-                "function": "<anonymous>",
+                "function": "eval",
                 "in_app": false,
-                "lineno": 271,
+                "lineno": "[[highNumber]]",
+                "module": "@sentry.opentelemetry.cjs:index"
+              },
+              {
+                "colno": 12,
+                "context_line": "    return callback();",
+                "filename": "[[FILENAME2]]",
+                "function": "?",
+                "in_app": false,
+                "lineno": 173,
                 "module": "@sentry.core.cjs.tracing:trace",
                 "post_context": [
                   "  });",
                   "};",
                   "",
-                  "function createChildSpanOrTransaction(",
-                  "  // eslint-disable-next-line deprecation/deprecation",
-                  "  hub$1,",
-                  "  {"
+                  "/**",
+                  " * Forks the current scope and sets the provided span as active span in the context of the provided callback. Can be",
+                  " * passed `null` to start an entirely new span tree.",
+                  " *"
                 ],
                 "pre_context": [
-                  "  };",
                   "",
-                  "  if (!callback) {",
-                  "    return transactionContext;",
-                  "  }",
-                  "",
-                  "  return hub.runWithAsyncContext(() => {"
+                  ",",
+                  "  callback,",
+                  ") => {",
+                  "  return currentScopes.withScope(scope => {",
+                  "    const propagationContext = utils.propagationContextFromHeaders(sentryTrace, baggage);",
+                  "    scope.setPropagationContext(propagationContext);"
                 ]
               },
               {
-                "colno": 25,
-                "context_line": "            return core.startSpanManual(",
-                "filename": "[[FILENAME2]]",
-                "function": "<anonymous>",
+                "colno": 27,
+                "context_line": "              return core.startSpanManual(",
+                "filename": "[[FILENAME3]]",
+                "function": "?",
                 "in_app": false,
-                "lineno": 103,
+                "lineno": 82,
                 "module": "@sentry.nextjs.cjs.common:wrapApiHandlerWithSentry",
                 "post_context": [
-                  "              {",
-                  "                name: `${reqMethod}${reqPath}`,",
-                  "                op: 'http.server',",
-                  "                attributes: {",
-                  "                  [core.SEMANTIC_ATTRIBUTE_SENTRY_SOURCE]: 'route',",
-                  "                  [core.SEMANTIC_ATTRIBUTE_SENTRY_ORIGIN]: 'auto.http.nextjs',",
-                  "                },"
+                  "                {",
+                  "                  name: `${reqMethod}${reqPath}`,",
+                  "                  op: 'http.server',",
+                  "                  forceTransaction: true,",
+                  "                  attributes: {",
+                  "                    [core.SEMANTIC_ATTRIBUTE_SENTRY_SOURCE]: 'route',",
+                  "                    [core.SEMANTIC_ATTRIBUTE_SENTRY_ORIGIN]: 'auto.http.nextjs',"
                 ],
                 "pre_context": [
+                  "                }",
                   "              }",
-                  "            }",
                   "",
-                  "            const reqMethod = `${(req.method || 'GET').toUpperCase()} `;",
+                  "              const reqMethod = `${(req.method || 'GET').toUpperCase()} `;",
                   "",
-                  "            core.getCurrentScope().setSDKProcessingMetadata({ request: req });",
+                  "              isolationScope.setSDKProcessingMetadata({ request: req });",
                   ""
                 ]
               },
               {
-                "colno": 14,
-                "context_line": "  return hub.runWithAsyncContext(() => {",
+                "colno": 16,
+                "context_line": "    return acs.startSpanManual(context, callback);",
+                "filename": "[[FILENAME2]]",
+                "function": "Object.startSpanManual",
+                "in_app": false,
+                "lineno": 82,
+                "module": "@sentry.core.cjs.tracing:trace",
+                "post_context": [
+                  "  }",
+                  "",
+                  "  const spanContext = normalizeContext(context);",
+                  "",
+                  "  return currentScopes.withScope(context.scope, scope => {",
+                  "    const parentSpan = getParentSpan(scope);",
+                  ""
+                ],
+                "pre_context": [
+                  " *",
+                  " * You'll always get a span passed to the callback,",
+                  " * it may just be a non-recording span if the span is not sampled or if tracing is disabled.",
+                  " */",
+                  "function startSpanManual(context, callback) {",
+                  "  const acs = getAcs();",
+                  "  if (acs.startSpanManual) {"
+                ]
+              },
+              {
+                "colno": 17,
                 "filename": "[[FILENAME1]]",
                 "function": "Object.startSpanManual",
                 "in_app": false,
-                "lineno": 138,
-                "module": "@sentry.core.cjs.tracing:trace",
-                "post_context": [
-                  "    return exports$1.withScope(context.scope, scope => {",
-                  "      // eslint-disable-next-line deprecation/deprecation",
-                  "      const hub$1 = hub.getCurrentHub();",
-                  "      // eslint-disable-next-line deprecation/deprecation",
-                  "      const parentSpan = scope.getSpan();",
-                  "",
-                  "      const shouldSkipSpan = context.onlyIfParent && !parentSpan;"
-                ],
-                "pre_context": [
-                  " */",
-                  "function startSpanManual(",
-                  "  context,",
-                  "  callback,",
-                  ") {",
-                  "  const spanContext = normalizeContext(context);",
-                  ""
-                ]
+                "lineno": 898,
+                "module": "@sentry.opentelemetry.cjs:index"
               },
               {
-                "colno": 36,
-                "context_line": "    return registry.__SENTRY__.acs.runWithAsyncContext(callback, options);",
-                "filename": "[[FILENAME3]]",
-                "function": "Object.runWithAsyncContext",
-                "in_app": false,
-                "lineno": 777,
-                "module": "@sentry.core.cjs:hub",
-                "post_context": [
-                  "  }",
-                  "",
-                  "  // if there was no strategy, fallback to just calling the callback",
-                  "  return callback();",
-                  "}",
-                  "",
-                  "/**"
-                ],
-                "pre_context": [
-                  " * @param options Options to pass to the async context strategy",
-                  " * @returns The result of the callback",
-                  " */",
-                  "function runWithAsyncContext(callback, options = {}) {",
-                  "  const registry = getMainCarrier();",
-                  "",
-                  "  if (registry.__SENTRY__ && registry.__SENTRY__.acs) {"
-                ]
-              },
-              {
-                "colno": 25,
-                "context_line": "    return asyncStorage.run(newHub, () => {",
+                "colno": 76,
                 "filename": "[[FILENAME4]]",
-                "function": "Object.runWithAsyncContext",
+                "function": "Tracer.startActiveSpan",
                 "in_app": false,
-                "lineno": 45,
-                "module": "@sentry.node.cjs.async:hooks",
-                "post_context": [
-                  "      return callback();",
-                  "    });",
-                  "  }",
-                  "",
-                  "  core.setAsyncContextStrategy({ getCurrentHub, runWithAsyncContext });",
-                  "}",
-                  ""
-                ],
-                "pre_context": [
-                  "      // We're already in an async context, so we don't need to create a new one",
-                  "      // just call the callback with the current hub",
-                  "      return callback();",
-                  "    }",
-                  "",
-                  "    const newHub = createNewHub(existingHub);",
-                  ""
-                ]
+                "lineno": 136,
+                "module": "@opentelemetry.sdk-trace-base.build.esm:Tracer"
+              },
+              {
+                "colno": 54,
+                "filename": "[[FILENAME5]]",
+                "function": "ContextAPI.with",
+                "in_app": false,
+                "lineno": 95,
+                "module": "@opentelemetry.api.build.esm.api:context"
+              },
+              {
+                "colno": 24,
+                "filename": "[[FILENAME1]]",
+                "function": "SentryContextManager.with",
+                "in_app": false,
+                "lineno": "[[highNumber]]",
+                "module": "@sentry.opentelemetry.cjs:index"
+              },
+              {
+                "colno": 40,
+                "filename": "[[FILENAME6]]",
+                "function": "SentryContextManager.with",
+                "in_app": false,
+                "lineno": 33,
+                "module": "@opentelemetry.context-async-hooks.build.src:AsyncLocalStorageContextManager"
               },
               {
                 "colno": 14,
-                "filename": "[[FILENAME5]]",
+                "filename": "[[FILENAME7]]",
                 "function": "AsyncLocalStorage.run",
                 "in_app": false,
                 "lineno": 346,
                 "module": "node:async_hooks"
               },
               {
-                "colno": 14,
-                "context_line": "      return callback();",
-                "filename": "[[FILENAME4]]",
-                "function": "<anonymous>",
-                "in_app": false,
-                "lineno": 46,
-                "module": "@sentry.node.cjs.async:hooks",
-                "post_context": [
-                  "    });",
-                  "  }",
-                  "",
-                  "  core.setAsyncContextStrategy({ getCurrentHub, runWithAsyncContext });",
-                  "}",
-                  "",
-                  "exports.setHooksAsyncContextStrategy = setHooksAsyncContextStrategy;"
-                ],
-                "pre_context": [
-                  "      // just call the callback with the current hub",
-                  "      return callback();",
-                  "    }",
-                  "",
-                  "    const newHub = createNewHub(existingHub);",
-                  "",
-                  "    return asyncStorage.run(newHub, () => {"
-                ]
-              },
-              {
-                "colno": 22,
-                "context_line": "    return exports$1.withScope(context.scope, scope => {",
+                "colno": 17,
                 "filename": "[[FILENAME1]]",
-                "function": "<anonymous>",
+                "function": "eval",
                 "in_app": false,
-                "lineno": 139,
-                "module": "@sentry.core.cjs.tracing:trace",
-                "post_context": [
-                  "      // eslint-disable-next-line deprecation/deprecation",
-                  "      const hub$1 = hub.getCurrentHub();",
-                  "      // eslint-disable-next-line deprecation/deprecation",
-                  "      const parentSpan = scope.getSpan();",
-                  "",
-                  "      const shouldSkipSpan = context.onlyIfParent && !parentSpan;",
-                  "      const activeSpan = shouldSkipSpan"
-                ],
-                "pre_context": [
-                  "function startSpanManual(",
-                  "  context,",
-                  "  callback,",
-                  ") {",
-                  "  const spanContext = normalizeContext(context);",
-                  "",
-                  "  return hub.runWithAsyncContext(() => {"
-                ]
-              },
-              {
-                "colno": 20,
-                "context_line": "      return hub$1.withScope(callback);",
-                "filename": "[[FILENAME6]]",
-                "function": "Object.withScope",
-                "in_app": false,
-                "lineno": 177,
-                "module": "@sentry.core.cjs:exports",
-                "post_context": [
-                  "    }",
-                  "",
-                  "    // eslint-disable-next-line deprecation/deprecation",
-                  "    return hub$1.withScope(() => {",
-                  "      // eslint-disable-next-line deprecation/deprecation",
-                  "      hub$1.getStackTop().scope = scope ;",
-                  "      return callback(scope );"
-                ],
-                "pre_context": [
-                  "  const hub$1 = hub.getCurrentHub();",
-                  "",
-                  "  // If a scope is defined, we want to make this the active scope instead of the default one",
-                  "  if (rest.length === 2) {",
-                  "    const [scope, callback] = rest;",
-                  "    if (!scope) {",
-                  "      // eslint-disable-next-line deprecation/deprecation"
-                ]
-              },
-              {
-                "colno": 28,
-                "context_line": "      maybePromiseResult = callback(scope);",
-                "filename": "[[FILENAME3]]",
-                "function": "Hub.withScope",
-                "in_app": false,
-                "lineno": 194,
-                "module": "@sentry.core.cjs:hub",
-                "post_context": [
-                  "    } catch (e) {",
-                  "      // eslint-disable-next-line deprecation/deprecation",
-                  "      this.popScope();",
-                  "      throw e;",
-                  "    }",
-                  "",
-                  "    if (utils.isThenable(maybePromiseResult)) {"
-                ],
-                "pre_context": [
-                  "   */",
-                  "   withScope(callback) {",
-                  "    // eslint-disable-next-line deprecation/deprecation",
-                  "    const scope = this.pushScope();",
-                  "",
-                  "    let maybePromiseResult;",
-                  "    try {"
-                ]
-              },
-              {
-                "colno": 35,
-                "context_line": "      return handleCallbackErrors.handleCallbackErrors(",
-                "filename": "[[FILENAME1]]",
-                "function": "<anonymous>",
-                "in_app": false,
-                "lineno": 159,
-                "module": "@sentry.core.cjs.tracing:trace",
-                "post_context": [
-                  "        () => callback(activeSpan, finishAndSetSpan),",
-                  "        () => {",
-                  "          // Only update the span status if it hasn't been changed yet, and the span is not yet finished",
-                  "          if (activeSpan && activeSpan.isRecording()) {",
-                  "            const { status } = spanUtils.spanToJSON(activeSpan);",
-                  "            if (!status || status === 'ok') {",
-                  "              activeSpan.setStatus('internal_error');"
-                ],
-                "pre_context": [
-                  "            scope,",
-                  "          });",
-                  "",
-                  "      function finishAndSetSpan() {",
-                  "        activeSpan && activeSpan.end();",
-                  "      }",
-                  ""
-                ]
+                "lineno": 901,
+                "module": "@sentry.opentelemetry.cjs:index"
               },
               {
                 "colno": 26,
-                "context_line": "    maybePromiseResult = fn();",
-                "filename": "[[FILENAME7]]",
+                "filename": "[[FILENAME8]]",
                 "function": "Object.handleCallbackErrors",
                 "in_app": false,
                 "lineno": 26,
-                "module": "@sentry.core.cjs.utils:handleCallbackErrors",
-                "post_context": [
-                  "  } catch (e) {",
-                  "    onError(e);",
-                  "    onFinally();",
-                  "    throw e;",
-                  "  }",
-                  "",
-                  "  return maybeHandlePromiseRejection(maybePromiseResult, onError, onFinally);"
-                ],
-                "pre_context": [
-                  "  fn,",
-                  "  onError,",
-                  "  // eslint-disable-next-line @typescript-eslint/no-empty-function",
-                  "  onFinally = () => {},",
-                  ") {",
-                  "  let maybePromiseResult;",
-                  "  try {"
-                ]
+                "module": "@sentry.core.cjs.utils:handleCallbackErrors"
               },
               {
-                "colno": 15,
-                "context_line": "        () => callback(activeSpan, finishAndSetSpan),",
+                "colno": 13,
                 "filename": "[[FILENAME1]]",
-                "function": "<anonymous>",
+                "function": "eval",
                 "in_app": false,
-                "lineno": 160,
-                "module": "@sentry.core.cjs.tracing:trace",
-                "post_context": [
-                  "        () => {",
-                  "          // Only update the span status if it hasn't been changed yet, and the span is not yet finished",
-                  "          if (activeSpan && activeSpan.isRecording()) {",
-                  "            const { status } = spanUtils.spanToJSON(activeSpan);",
-                  "            if (!status || status === 'ok') {",
-                  "              activeSpan.setStatus('internal_error');",
-                  "            }"
-                ],
-                "pre_context": [
-                  "          });",
-                  "",
-                  "      function finishAndSetSpan() {",
-                  "        activeSpan && activeSpan.end();",
-                  "      }",
-                  "",
-                  "      return handleCallbackErrors.handleCallbackErrors("
-                ]
+                "lineno": 902,
+                "module": "@sentry.opentelemetry.cjs:index"
               },
               {
-                "colno": 62,
-                "context_line": "                  const handlerResult = await wrappingTarget.apply(thisArg, args);",
-                "filename": "[[FILENAME2]]",
-                "function": "<anonymous>",
+                "colno": 64,
+                "context_line": "                    const handlerResult = await wrappingTarget.apply(thisArg, args);",
+                "filename": "[[FILENAME3]]",
+                "function": "?",
                 "in_app": false,
-                "lineno": 136,
+                "lineno": 111,
                 "module": "@sentry.nextjs.cjs.common:wrapApiHandlerWithSentry",
                 "post_context": [
-                  "                  if (",
-                  "                    process.env.NODE_ENV === 'development' &&",
-                  "                    !process.env.SENTRY_IGNORE_API_RESOLUTION_ERROR &&",
-                  "                    !res.finished",
-                  "                    // TODO(v8): Remove this warning?",
-                  "                    // This can only happen (not always) when the user is using `withSentry` manually, which we're deprecating.",
-                  "                    // Warning suppression on Next.JS is only necessary in that case."
+                  "                    if (",
+                  "                      process.env.NODE_ENV === 'development' &&",
+                  "                      !process.env.SENTRY_IGNORE_API_RESOLUTION_ERROR &&",
+                  "                      !res.writableEnded",
+                  "                    ) {",
+                  "                      utils.consoleSandbox(() => {",
+                  "                        // eslint-disable-next-line no-console"
                 ],
                 "pre_context": [
-                  "                        target.apply(thisArg, argArray);",
-                  "                      });",
-                  "                    }",
-                  "                  },",
-                  "                });",
+                  "                          target.apply(thisArg, argArray);",
+                  "                        });",
+                  "                      }",
+                  "                    },",
+                  "                  });",
                   "",
-                  "                try {"
+                  "                  try {"
                 ]
               },
               {
                 "colno": 86,
-                "filename": "[[FILENAME8]]",
+                "filename": "[[FILENAME9]]",
                 "function": "handler",
                 "in_app": false,
-                "lineno": 13,
+                "lineno": 11,
                 "module": "[param].ts"
               }
             ]
@@ -461,47 +313,7 @@
         }
       ]
     },
-    "modules": {
-      "ansi-styles": "4.3.0",
-      "balanced-match": "1.0.2",
-      "brace-expansion": "2.0.1",
-      "busboy": "1.6.0",
-      "caniuse-lite": "1.0.30001610",
-      "chalk": "3.0.0",
-      "client-only": "0.0.1",
-      "commondir": "1.0.1",
-      "fs.realpath": "1.0.0",
-      "function-bind": "1.1.2",
-      "graceful-fs": "4.2.11",
-      "has-flag": "4.0.0",
-      "hasown": "2.0.2",
-      "inflight": "1.0.6",
-      "inherits": "2.0.4",
-      "is-core-module": "2.13.1",
-      "js-tokens": "4.0.0",
-      "localforage": "1.10.0",
-      "loose-envify": "1.4.0",
-      "nanoid": "3.3.7",
-      "next": "14.2.1",
-      "once": "1.4.0",
-      "picocolors": "1.0.0",
-      "picomatch": "2.3.1",
-      "postcss": "8.4.31",
-      "react": "18.2.0",
-      "react-dom": "18.2.0",
-      "resolve": "1.22.8",
-      "rollup": "2.78.0",
-      "rxjs": "7.8.1",
-      "scheduler": "0.23.0",
-      "source-map-js": "1.2.0",
-      "stacktrace-parser": "0.1.10",
-      "streamsearch": "1.1.0",
-      "styled-jsx": "5.1.1",
-      "supports-color": "7.2.0",
-      "tslib": "2.6.2",
-      "typescript": "5.4.5",
-      "wrappy": "1.0.2"
-    },
+    "modules": {},
     "platform": "node",
     "request": {
       "cookies": {},
@@ -509,7 +321,7 @@
         "accept": "*/*",
         "accept-encoding": "gzip, deflate, br",
         "accept-language": "en-US,en;q=0.5",
-        "baggage": "sentry-environment=qa,sentry-public_key=3b6c388182fb435097f41d181be2b2ba,sentry-trace_id=4535eaf2b0874076864b3ab22ca41e9f,sentry-sample_rate=1,sentry-transaction=%2Fpages-router%2Ftest-route-handlers,sentry-sampled=true",
+        "baggage": "sentry-environment=qa,sentry-public_key=3b6c388182fb435097f41d181be2b2ba,sentry-trace_id=7666528bc54f4022a0ec231ff335c9ce,sentry-sample_rate=1,sentry-transaction=%2Fpages-router%2Ftest-route-handlers,sentry-sampled=true",
         "cache-control": "no-cache",
         "connection": "keep-alive",
         "host": "localhost:3030",
@@ -518,7 +330,7 @@
         "sec-fetch-dest": "empty",
         "sec-fetch-mode": "cors",
         "sec-fetch-site": "same-origin",
-        "sentry-trace": "4535eaf2b0874076864b3ab22ca41e9f-8660e54efa2acd89-1",
+        "sentry-trace": "7666528bc54f4022a0ec231ff335c9ce-850695a13f0c8c3e-1",
         "user-agent": "[[user-agent]]",
         "x-forwarded-for": "::ffff:127.0.0.1",
         "x-forwarded-host": "localhost:3030",
@@ -530,9 +342,6 @@
         "x-middleware-invoke": ""
       },
       "method": "GET",
-      "query_string": {
-        "param": "1337"
-      },
       "url": "http://localhost:3030/api/pages-router/test-param-error/1337"
     },
     "sdk": {
@@ -542,35 +351,43 @@
         "LinkedErrors",
         "RequestData",
         "Console",
-        "Undici",
+        "NodeFetch",
+        "OnUncaughtException",
         "OnUnhandledRejection",
         "ContextLines",
-        "LocalVariables",
+        "LocalVariablesAsync",
         "Context",
         "Modules",
-        "RewriteFrames",
+        "Express",
+        "Fastify",
+        "Graphql",
+        "Mongo",
+        "Mongoose",
+        "Mysql",
+        "Mysql2",
+        "Postgres",
+        "Nest",
+        "Hapi",
+        "Koa",
+        "Connect",
         "Http",
-        "OnUncaughtException"
+        "DistDirRewriteFrames"
       ],
       "name": "sentry.javascript.nextjs",
       "packages": [
         {
           "name": "npm:@sentry/nextjs",
-          "version": "7.110.1"
+          "version": "8.0.0-beta.4"
         },
         {
           "name": "npm:@sentry/node",
-          "version": "7.110.1"
+          "version": "8.0.0-beta.4"
         }
       ],
-      "version": "7.110.1"
+      "version": "8.0.0-beta.4"
     },
     "server_name": "D9M3PY4LQ7.local",
-    "tags": {
-      "runtime": "node",
-      "transaction": "GET /api/pages-router/test-param-error/[param]"
-    },
     "timestamp": "[[timestamp]]",
-    "transaction": "GET /api/pages-router/test-param-error/1337"
+    "transaction": "GET /api/pages-router/test-param-error/[param]"
   }
 ]

@@ -4,13 +4,12 @@
     "event_id": "[[ID1]]",
     "sdk": {
       "name": "sentry.javascript.nextjs",
-      "version": "7.112.1"
+      "version": "8.0.0-beta.4"
     },
     "sent_at": "[[ISODateString]]",
     "trace": {
       "environment": "qa",
       "public_key": "[[publicKey]]",
-      "release": "ffwYDGFVa6H64v8gOVER_",
       "sample_rate": "1",
       "sampled": "true",
       "trace_id": "[[ID2]]",
@@ -46,6 +45,16 @@
         "name": "macOS",
         "version": "14.2"
       },
+      "otel": {
+        "resource": {
+          "service.name": "node",
+          "service.namespace": "sentry",
+          "service.version": "8.0.0-beta.4",
+          "telemetry.sdk.language": "nodejs",
+          "telemetry.sdk.name": "opentelemetry",
+          "telemetry.sdk.version": "1.23.0"
+        }
+      },
       "runtime": {
         "name": "node",
         "version": "v20.11.1"
@@ -53,6 +62,7 @@
       "trace": {
         "data": {
           "http.response.status_code": 200,
+          "otel.kind": "INTERNAL",
           "sentry.op": "http.server",
           "sentry.origin": "auto.function.nextjs",
           "sentry.sample_rate": 1,
@@ -60,11 +70,9 @@
         },
         "op": "http.server",
         "origin": "auto.function.nextjs",
-        "span_id": "[[ID3]]",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID4]]",
         "status": "ok",
-        "tags": {
-          "http.status_code": "200"
-        },
         "trace_id": "[[ID2]]"
       }
     },
@@ -72,20 +80,41 @@
     "event_id": "[[ID1]]",
     "modules": {
       "ansi-styles": "4.3.0",
+      "balanced-match": "1.0.2",
+      "brace-expansion": "2.0.1",
+      "caniuse-lite": "1.0.30001610",
+      "commondir": "1.0.1",
+      "debug": "4.3.4",
+      "fs.realpath": "1.0.0",
       "function-bind": "1.1.2",
       "has-flag": "4.0.0",
       "hasown": "2.0.2",
+      "import-in-the-middle": "1.7.1",
+      "inflight": "1.0.6",
+      "inherits": "2.0.4",
       "is-core-module": "2.13.1",
-      "localforage": "1.10.0",
+      "js-tokens": "4.0.0",
+      "loose-envify": "1.4.0",
+      "module-details-from-path": "1.0.3",
       "next": "13.2.0",
+      "once": "1.4.0",
+      "opentelemetry-instrumentation-fetch-node": "1.2.0",
+      "picomatch": "2.3.1",
       "react": "18.2.0",
       "react-dom": "18.2.0",
+      "require-in-the-middle": "7.3.0",
       "resolve": "1.22.8",
+      "rollup": "3.29.4",
+      "scheduler": "0.23.0",
+      "semver": "7.6.0",
+      "shimmer": "1.2.1",
       "stacktrace-parser": "0.1.10",
-      "styled-jsx": "5.1.1"
+      "styled-jsx": "5.1.1",
+      "supports-color": "5.5.0",
+      "wrappy": "1.0.2",
+      "yallist": "4.0.0"
     },
     "platform": "node",
-    "release": "ffwYDGFVa6H64v8gOVER_",
     "request": {
       "cookies": {},
       "headers": {
@@ -112,33 +141,46 @@
         "LinkedErrors",
         "RequestData",
         "Console",
-        "Undici",
+        "NodeFetch",
+        "OnUncaughtException",
         "OnUnhandledRejection",
         "ContextLines",
-        "LocalVariables",
+        "LocalVariablesAsync",
         "Context",
         "Modules",
-        "RewriteFrames",
+        "Express",
+        "Fastify",
+        "Graphql",
+        "Mongo",
+        "Mongoose",
+        "Mysql",
+        "Mysql2",
+        "Postgres",
+        "Nest",
+        "Hapi",
+        "Koa",
+        "Connect",
         "Http",
-        "OnUncaughtException"
+        "DistDirRewriteFrames"
       ],
       "name": "sentry.javascript.nextjs",
       "packages": [
         {
           "name": "npm:@sentry/nextjs",
-          "version": "7.112.1"
+          "version": "8.0.0-beta.4"
         },
         {
           "name": "npm:@sentry/node",
-          "version": "7.112.1"
+          "version": "8.0.0-beta.4"
         }
       ],
-      "version": "7.112.1"
+      "version": "8.0.0-beta.4"
     },
     "server_name": "D9M3PY4LQ7.local",
     "spans": [
       {
         "data": {
+          "otel.kind": "INTERNAL",
           "sentry.op": "function.nextjs",
           "sentry.origin": "auto.function.nextjs",
           "sentry.source": "route"
@@ -146,8 +188,8 @@
         "description": "getServerSideProps (/pages-router/test-route-handlers)",
         "op": "function.nextjs",
         "origin": "auto.function.nextjs",
-        "parent_span_id": "[[ID3]]",
-        "span_id": "[[ID4]]",
+        "parent_span_id": "[[ID4]]",
+        "span_id": "[[ID5]]",
         "start_timestamp": "[[timestamp]]",
         "status": "ok",
         "timestamp": "[[timestamp]]",
@@ -155,11 +197,6 @@
       }
     ],
     "start_timestamp": "[[timestamp]]",
-    "tags": {
-      "http.status_code": "200",
-      "runtime": "node",
-      "transaction": "/pages-router/test-route-handlers"
-    },
     "timestamp": "[[timestamp]]",
     "transaction": "/pages-router/test-route-handlers",
     "transaction_info": {

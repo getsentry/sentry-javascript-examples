@@ -4,13 +4,12 @@
     "event_id": "[[ID1]]",
     "sdk": {
       "name": "sentry.javascript.nextjs",
-      "version": "7.112.1"
+      "version": "8.0.0-beta.4"
     },
     "sent_at": "[[ISODateString]]",
     "trace": {
       "environment": "qa",
       "public_key": "[[publicKey]]",
-      "release": "ffwYDGFVa6H64v8gOVER_",
       "sample_rate": "1",
       "sampled": "true",
       "trace_id": "[[ID2]]",
@@ -21,6 +20,50 @@
     "type": "transaction"
   },
   {
+    "breadcrumbs": [
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\u001b[36mwait\u001b[39m  - compiling /_error (client and server)...",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\u001b[36mwait\u001b[39m  - compiling /pages-router/test-route-handlers (client and server)...",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\u001b[36mwait\u001b[39m  - compiling /api/pages-router/test-param-error/[param] (client and server)...",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\u001b[35mevent\u001b[39m - compiled client and server successfully in 422 ms (1017 modules)",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "warning",
+        "message": "\u001b[33mwarn\u001b[39m  - Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\u001b[36mwait\u001b[39m  - compiling /api/pages-router/test-param-success/[param] (client and server)...",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "\u001b[35mevent\u001b[39m - compiled successfully in 51 ms (46 modules)",
+        "timestamp": "[[timestamp]]"
+      }
+    ],
     "contexts": {
       "app": {
         "app_memory": "[[highNumber]]",
@@ -46,6 +89,16 @@
         "name": "macOS",
         "version": "14.2"
       },
+      "otel": {
+        "resource": {
+          "service.name": "node",
+          "service.namespace": "sentry",
+          "service.version": "8.0.0-beta.4",
+          "telemetry.sdk.language": "nodejs",
+          "telemetry.sdk.name": "opentelemetry",
+          "telemetry.sdk.version": "1.23.0"
+        }
+      },
       "runtime": {
         "name": "node",
         "version": "v20.11.1"
@@ -53,6 +106,7 @@
       "trace": {
         "data": {
           "http.response.status_code": 500,
+          "otel.kind": "INTERNAL",
           "sentry.op": "http.server",
           "sentry.origin": "auto.http.nextjs",
           "sentry.sample_rate": 1,
@@ -60,11 +114,9 @@
         },
         "op": "http.server",
         "origin": "auto.http.nextjs",
-        "span_id": "[[ID3]]",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID4]]",
         "status": "internal_error",
-        "tags": {
-          "http.status_code": "500"
-        },
         "trace_id": "[[ID2]]"
       }
     },
@@ -72,26 +124,48 @@
     "event_id": "[[ID1]]",
     "modules": {
       "ansi-styles": "4.3.0",
+      "balanced-match": "1.0.2",
+      "brace-expansion": "2.0.1",
+      "caniuse-lite": "1.0.30001610",
+      "commondir": "1.0.1",
+      "debug": "4.3.4",
+      "fs.realpath": "1.0.0",
       "function-bind": "1.1.2",
       "has-flag": "4.0.0",
       "hasown": "2.0.2",
+      "import-in-the-middle": "1.7.1",
+      "inflight": "1.0.6",
+      "inherits": "2.0.4",
       "is-core-module": "2.13.1",
-      "localforage": "1.10.0",
+      "js-tokens": "4.0.0",
+      "loose-envify": "1.4.0",
+      "module-details-from-path": "1.0.3",
       "next": "13.2.0",
+      "once": "1.4.0",
+      "opentelemetry-instrumentation-fetch-node": "1.2.0",
+      "picomatch": "2.3.1",
       "react": "18.2.0",
       "react-dom": "18.2.0",
+      "require-in-the-middle": "7.3.0",
       "resolve": "1.22.8",
+      "rollup": "3.29.4",
+      "scheduler": "0.23.0",
+      "semver": "7.6.0",
+      "shimmer": "1.2.1",
       "stacktrace-parser": "0.1.10",
-      "styled-jsx": "5.1.1"
+      "styled-jsx": "5.1.1",
+      "supports-color": "5.5.0",
+      "wrappy": "1.0.2",
+      "yallist": "4.0.0"
     },
     "platform": "node",
-    "release": "ffwYDGFVa6H64v8gOVER_",
     "request": {
       "cookies": {},
       "headers": {
         "accept": "*/*",
         "accept-encoding": "gzip, deflate, br",
         "accept-language": "en-US,en;q=0.5",
+        "baggage": "sentry-environment=qa,sentry-public_key=3b6c388182fb435097f41d181be2b2ba,sentry-trace_id=1f556dca3aab49d794e305c6cdcdb707,sentry-sample_rate=1,sentry-transaction=%2Fpages-router%2Ftest-route-handlers,sentry-sampled=true",
         "cache-control": "no-cache",
         "connection": "keep-alive",
         "host": "localhost:3030",
@@ -100,12 +174,10 @@
         "sec-fetch-dest": "empty",
         "sec-fetch-mode": "cors",
         "sec-fetch-site": "same-origin",
+        "sentry-trace": "1f556dca3aab49d794e305c6cdcdb707-993e0c1f09d15b21-1",
         "user-agent": "[[user-agent]]"
       },
       "method": "GET",
-      "query_string": {
-        "param": "1337"
-      },
       "url": "http://localhost:3030/api/pages-router/test-param-error/1337"
     },
     "sdk": {
@@ -115,37 +187,44 @@
         "LinkedErrors",
         "RequestData",
         "Console",
-        "Undici",
+        "NodeFetch",
+        "OnUncaughtException",
         "OnUnhandledRejection",
         "ContextLines",
-        "LocalVariables",
+        "LocalVariablesAsync",
         "Context",
         "Modules",
-        "RewriteFrames",
+        "Express",
+        "Fastify",
+        "Graphql",
+        "Mongo",
+        "Mongoose",
+        "Mysql",
+        "Mysql2",
+        "Postgres",
+        "Nest",
+        "Hapi",
+        "Koa",
+        "Connect",
         "Http",
-        "OnUncaughtException"
+        "DistDirRewriteFrames"
       ],
       "name": "sentry.javascript.nextjs",
       "packages": [
         {
           "name": "npm:@sentry/nextjs",
-          "version": "7.112.1"
+          "version": "8.0.0-beta.4"
         },
         {
           "name": "npm:@sentry/node",
-          "version": "7.112.1"
+          "version": "8.0.0-beta.4"
         }
       ],
-      "version": "7.112.1"
+      "version": "8.0.0-beta.4"
     },
     "server_name": "D9M3PY4LQ7.local",
     "spans": [],
     "start_timestamp": "[[timestamp]]",
-    "tags": {
-      "http.status_code": "500",
-      "runtime": "node",
-      "transaction": "GET /api/pages-router/test-param-error/[param]"
-    },
     "timestamp": "[[timestamp]]",
     "transaction": "GET /api/pages-router/test-param-error/[param]",
     "transaction_info": {
