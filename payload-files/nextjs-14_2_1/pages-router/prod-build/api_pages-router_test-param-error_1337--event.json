@@ -4,23 +4,31 @@
     "event_id": "[[ID1]]",
     "sdk": {
       "name": "sentry.javascript.nextjs",
-      "version": "7.110.1"
+      "version": "8.0.0-beta.4"
     },
     "sent_at": "[[ISODateString]]",
     "trace": {
       "environment": "qa",
       "public_key": "[[publicKey]]",
-      "release": "CQo-gDFwQPrKKUjGsMWsv",
+      "release": "c_Hsvah-I7NWkT5pz1vmR",
       "sample_rate": "1",
       "sampled": "true",
       "trace_id": "[[ID2]]",
-      "transaction": "/pages-router/test-route-handlers"
+      "transaction": "GET /api/pages-router/test-param-error/[param]"
     }
   },
   {
     "type": "event"
   },
   {
+    "breadcrumbs": [
+      {
+        "category": "console",
+        "level": "log",
+        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Ready in 395ms",
+        "timestamp": "[[timestamp]]"
+      }
+    ],
     "contexts": {
       "app": {
         "app_memory": "[[highNumber]]",
@@ -51,17 +59,24 @@
         "version": "v20.12.1"
       },
       "trace": {
-        "data": {
-          "sentry.op": "http.server",
-          "sentry.origin": "auto.http.nextjs",
-          "sentry.source": "route"
-        },
-        "op": "http.server",
-        "origin": "auto.http.nextjs",
         "parent_span_id": "[[ID3]]",
         "span_id": "[[ID4]]",
         "trace_id": "[[ID2]]"
       }
+    },
+    "debug_meta": {
+      "images": [
+        {
+          "code_file": "app:///_next/server/instrumentation.js",
+          "debug_id": "[[ID5]]",
+          "type": "sourcemap"
+        },
+        {
+          "code_file": "app:///_next/server/pages/api/pages-router/test-param-error/[param].js",
+          "debug_id": "[[ID6]]",
+          "type": "sourcemap"
+        }
+      ]
     },
     "environment": "qa",
     "event_id": "[[ID1]]",
@@ -75,233 +90,232 @@
           "stacktrace": {
             "frames": [
               {
-                "colno": 14,
+                "colno": "[[highNumber]]",
+                "context_line": "'{snip} ,c=this.startSpan(e,o,u),p=a.g.setSpan(u,c);return i.D.with(p,l,void 0,c)}},e.prototype.getGeneralLimits=function(){return this._generalLimi {snip}",
                 "filename": "[[FILENAME1]]",
+                "function": "e.startActiveSpan",
+                "in_app": true,
+                "lineno": 21,
+                "module": "instrumentation",
+                "post_context": [
+                  "Reason: ${e}`)})}_process(e){this._numProcessing++,e.then(e=>(this._numProcessing--,e),e=>(this._numProcessing--,e))}_clearOutcomes(){let e= {snip}",
+                  "Event: ${r.getEventDescription(e)}`),!0):(n=t.ignoreErrors,!e.type&&n&&n.length&&(function(e){let t;let n=[];e.message&&n.push(e.message);tr {snip}",
+                  "Event: ${r.getEventDescription(e)}`),!0):!function(e,t){if(\"transaction\"!==e.type||!t||!t.length)return!1;let n=e.transaction;return!!n&&r.s {snip}",
+                  "Event: ${r.getEventDescription(e)}.",
+                  "Url: ${l(e)}`),!0):(o.DEBUG_BUILD&&r.logger.warn(`Event dropped due to being matched by \\`denyUrls\\` option.",
+                  "Event: ${r.getEventDescription(e)}.",
+                  "Url: ${l(e)}`),!0):(o.DEBUG_BUILD&&r.logger.warn(`Event dropped due to being matched by \\`ignoreTransactions\\` option."
+                ],
+                "pre_context": [
+                  "`;if(o.username||o.password){let e=`${decodeURIComponent(o.username)}:${decodeURIComponent(o.password)}`;i[\"Proxy-Authorization\"]=`Basic ${B {snip}",
+                  "`;let l=(n=r,new Promise((e,t)=>{let r=0,o=[];function i(){let s=n.read();s?function(s){o.push(s),r+=s.length;let l=Buffer.concat(o,r),u=l.i {snip}",
+                  "`);let{connect:u,buffered:c}=await l;if(e.emit(\"proxyConnect\",u),this.emit(\"proxyConnect\",u,e),200===u.statusCode){if(e.once(\"socket\",e8),t. {snip}",
+                  "${JSON.stringify(t)}",
+                  "`),\"string\"==typeof n||n instanceof Uint8Array)i(n);else{let e;try{e=JSON.stringify(n)}catch(t){e=JSON.stringify(o.normalize(n))}i(e)}}retur {snip}",
+                  "Type: ${e}",
+                  "Name: ${i.getFunctionName(a)}"
+                ]
+              },
+              {
+                "colno": "[[highNumber]]",
+                "context_line": "'{snip} i-3]=arguments[i];return(r=this._getContextManager()).with.apply(r,c([e,t,n],u(o),!1))},e.prototype.bind=function(e,t){return this._getConte {snip}",
+                "filename": "[[FILENAME1]]",
+                "function": "e.with",
+                "in_app": true,
+                "lineno": 21,
+                "module": "instrumentation",
+                "post_context": [
+                  "Reason: ${e}`)})}_process(e){this._numProcessing++,e.then(e=>(this._numProcessing--,e),e=>(this._numProcessing--,e))}_clearOutcomes(){let e= {snip}",
+                  "Event: ${r.getEventDescription(e)}`),!0):(n=t.ignoreErrors,!e.type&&n&&n.length&&(function(e){let t;let n=[];e.message&&n.push(e.message);tr {snip}",
+                  "Event: ${r.getEventDescription(e)}`),!0):!function(e,t){if(\"transaction\"!==e.type||!t||!t.length)return!1;let n=e.transaction;return!!n&&r.s {snip}",
+                  "Event: ${r.getEventDescription(e)}.",
+                  "Url: ${l(e)}`),!0):(o.DEBUG_BUILD&&r.logger.warn(`Event dropped due to being matched by \\`denyUrls\\` option.",
+                  "Event: ${r.getEventDescription(e)}.",
+                  "Url: ${l(e)}`),!0):(o.DEBUG_BUILD&&r.logger.warn(`Event dropped due to being matched by \\`ignoreTransactions\\` option."
+                ],
+                "pre_context": [
+                  "`;if(o.username||o.password){let e=`${decodeURIComponent(o.username)}:${decodeURIComponent(o.password)}`;i[\"Proxy-Authorization\"]=`Basic ${B {snip}",
+                  "`;let l=(n=r,new Promise((e,t)=>{let r=0,o=[];function i(){let s=n.read();s?function(s){o.push(s),r+=s.length;let l=Buffer.concat(o,r),u=l.i {snip}",
+                  "`);let{connect:u,buffered:c}=await l;if(e.emit(\"proxyConnect\",u),this.emit(\"proxyConnect\",u,e),200===u.statusCode){if(e.once(\"socket\",e8),t. {snip}",
+                  "${JSON.stringify(t)}",
+                  "`),\"string\"==typeof n||n instanceof Uint8Array)i(n);else{let e;try{e=JSON.stringify(n)}catch(t){e=JSON.stringify(o.normalize(n))}i(e)}}retur {snip}",
+                  "Type: ${e}",
+                  "Name: ${i.getFunctionName(a)}"
+                ]
+              },
+              {
+                "colno": "[[highNumber]]",
+                "context_line": "'{snip} alue(I);return i.addNonEnumerableProperty(d,N,f),super.with(f,t,n,...r)}}return t}},50480:(e,t,n)=>{Object.defineProperty(t,\"__esModule\",{va {snip}",
+                "filename": "[[FILENAME1]]",
+                "function": "t.with",
+                "in_app": true,
+                "lineno": 21,
+                "module": "instrumentation",
+                "post_context": [
+                  "Reason: ${e}`)})}_process(e){this._numProcessing++,e.then(e=>(this._numProcessing--,e),e=>(this._numProcessing--,e))}_clearOutcomes(){let e= {snip}",
+                  "Event: ${r.getEventDescription(e)}`),!0):(n=t.ignoreErrors,!e.type&&n&&n.length&&(function(e){let t;let n=[];e.message&&n.push(e.message);tr {snip}",
+                  "Event: ${r.getEventDescription(e)}`),!0):!function(e,t){if(\"transaction\"!==e.type||!t||!t.length)return!1;let n=e.transaction;return!!n&&r.s {snip}",
+                  "Event: ${r.getEventDescription(e)}.",
+                  "Url: ${l(e)}`),!0):(o.DEBUG_BUILD&&r.logger.warn(`Event dropped due to being matched by \\`denyUrls\\` option.",
+                  "Event: ${r.getEventDescription(e)}.",
+                  "Url: ${l(e)}`),!0):(o.DEBUG_BUILD&&r.logger.warn(`Event dropped due to being matched by \\`ignoreTransactions\\` option."
+                ],
+                "pre_context": [
+                  "`;if(o.username||o.password){let e=`${decodeURIComponent(o.username)}:${decodeURIComponent(o.password)}`;i[\"Proxy-Authorization\"]=`Basic ${B {snip}",
+                  "`;let l=(n=r,new Promise((e,t)=>{let r=0,o=[];function i(){let s=n.read();s?function(s){o.push(s),r+=s.length;let l=Buffer.concat(o,r),u=l.i {snip}",
+                  "`);let{connect:u,buffered:c}=await l;if(e.emit(\"proxyConnect\",u),this.emit(\"proxyConnect\",u,e),200===u.statusCode){if(e.once(\"socket\",e8),t. {snip}",
+                  "${JSON.stringify(t)}",
+                  "`),\"string\"==typeof n||n instanceof Uint8Array)i(n);else{let e;try{e=JSON.stringify(n)}catch(t){e=JSON.stringify(o.normalize(n))}i(e)}}retur {snip}",
+                  "Type: ${e}",
+                  "Name: ${i.getFunctionName(a)}"
+                ]
+              },
+              {
+                "colno": "[[highNumber]]",
+                "context_line": "'{snip} ){let o=null==n?t:t.bind(n);return this._asyncLocalStorage.run(e,o,...r)}enable(){return this}disable(){return this._asyncLocalStorage.disab {snip}",
+                "filename": "[[FILENAME1]]",
+                "function": "t.with",
+                "in_app": true,
+                "lineno": 21,
+                "module": "instrumentation",
+                "post_context": [
+                  "Reason: ${e}`)})}_process(e){this._numProcessing++,e.then(e=>(this._numProcessing--,e),e=>(this._numProcessing--,e))}_clearOutcomes(){let e= {snip}",
+                  "Event: ${r.getEventDescription(e)}`),!0):(n=t.ignoreErrors,!e.type&&n&&n.length&&(function(e){let t;let n=[];e.message&&n.push(e.message);tr {snip}",
+                  "Event: ${r.getEventDescription(e)}`),!0):!function(e,t){if(\"transaction\"!==e.type||!t||!t.length)return!1;let n=e.transaction;return!!n&&r.s {snip}",
+                  "Event: ${r.getEventDescription(e)}.",
+                  "Url: ${l(e)}`),!0):(o.DEBUG_BUILD&&r.logger.warn(`Event dropped due to being matched by \\`denyUrls\\` option.",
+                  "Event: ${r.getEventDescription(e)}.",
+                  "Url: ${l(e)}`),!0):(o.DEBUG_BUILD&&r.logger.warn(`Event dropped due to being matched by \\`ignoreTransactions\\` option."
+                ],
+                "pre_context": [
+                  "`;if(o.username||o.password){let e=`${decodeURIComponent(o.username)}:${decodeURIComponent(o.password)}`;i[\"Proxy-Authorization\"]=`Basic ${B {snip}",
+                  "`;let l=(n=r,new Promise((e,t)=>{let r=0,o=[];function i(){let s=n.read();s?function(s){o.push(s),r+=s.length;let l=Buffer.concat(o,r),u=l.i {snip}",
+                  "`);let{connect:u,buffered:c}=await l;if(e.emit(\"proxyConnect\",u),this.emit(\"proxyConnect\",u,e),200===u.statusCode){if(e.once(\"socket\",e8),t. {snip}",
+                  "${JSON.stringify(t)}",
+                  "`),\"string\"==typeof n||n instanceof Uint8Array)i(n);else{let e;try{e=JSON.stringify(n)}catch(t){e=JSON.stringify(o.normalize(n))}i(e)}}retur {snip}",
+                  "Type: ${e}",
+                  "Name: ${i.getFunctionName(a)}"
+                ]
+              },
+              {
+                "colno": 14,
+                "filename": "[[FILENAME2]]",
                 "function": "AsyncLocalStorage.run",
                 "in_app": false,
                 "lineno": 346,
                 "module": "node:async_hooks"
               },
               {
-                "colno": 14,
-                "context_line": "      return callback();",
-                "filename": "[[FILENAME2]]",
-                "function": "<anonymous>",
-                "in_app": false,
-                "lineno": 46,
-                "module": "@sentry.node.cjs.async:hooks",
+                "colno": "[[highNumber]]",
+                "context_line": "'{snip} ng(o):o,u=$(e);return n.startActiveSpan(r,u,i,n=>(z(n,e),s.handleCallbackErrors(()=>t(n,()=>n.end()),()=>{void 0===s.spanToJSON(n).status&&n {snip}",
+                "filename": "[[FILENAME1]]",
+                "function": "?",
+                "in_app": true,
+                "lineno": 21,
+                "module": "instrumentation",
                 "post_context": [
-                  "    });",
-                  "  }",
-                  "",
-                  "  core.setAsyncContextStrategy({ getCurrentHub, runWithAsyncContext });",
-                  "}",
-                  "",
-                  "exports.setHooksAsyncContextStrategy = setHooksAsyncContextStrategy;"
+                  "Reason: ${e}`)})}_process(e){this._numProcessing++,e.then(e=>(this._numProcessing--,e),e=>(this._numProcessing--,e))}_clearOutcomes(){let e= {snip}",
+                  "Event: ${r.getEventDescription(e)}`),!0):(n=t.ignoreErrors,!e.type&&n&&n.length&&(function(e){let t;let n=[];e.message&&n.push(e.message);tr {snip}",
+                  "Event: ${r.getEventDescription(e)}`),!0):!function(e,t){if(\"transaction\"!==e.type||!t||!t.length)return!1;let n=e.transaction;return!!n&&r.s {snip}",
+                  "Event: ${r.getEventDescription(e)}.",
+                  "Url: ${l(e)}`),!0):(o.DEBUG_BUILD&&r.logger.warn(`Event dropped due to being matched by \\`denyUrls\\` option.",
+                  "Event: ${r.getEventDescription(e)}.",
+                  "Url: ${l(e)}`),!0):(o.DEBUG_BUILD&&r.logger.warn(`Event dropped due to being matched by \\`ignoreTransactions\\` option."
                 ],
                 "pre_context": [
-                  "      // just call the callback with the current hub",
-                  "      return callback();",
-                  "    }",
-                  "",
-                  "    const newHub = createNewHub(existingHub);",
-                  "",
-                  "    return asyncStorage.run(newHub, () => {"
+                  "`;if(o.username||o.password){let e=`${decodeURIComponent(o.username)}:${decodeURIComponent(o.password)}`;i[\"Proxy-Authorization\"]=`Basic ${B {snip}",
+                  "`;let l=(n=r,new Promise((e,t)=>{let r=0,o=[];function i(){let s=n.read();s?function(s){o.push(s),r+=s.length;let l=Buffer.concat(o,r),u=l.i {snip}",
+                  "`);let{connect:u,buffered:c}=await l;if(e.emit(\"proxyConnect\",u),this.emit(\"proxyConnect\",u,e),200===u.statusCode){if(e.once(\"socket\",e8),t. {snip}",
+                  "${JSON.stringify(t)}",
+                  "`),\"string\"==typeof n||n instanceof Uint8Array)i(n);else{let e;try{e=JSON.stringify(n)}catch(t){e=JSON.stringify(o.normalize(n))}i(e)}}retur {snip}",
+                  "Type: ${e}",
+                  "Name: ${i.getFunctionName(a)}"
                 ]
               },
               {
-                "colno": 22,
-                "context_line": "    return exports$1.withScope(context.scope, scope => {",
+                "colno": "[[highNumber]]",
+                "context_line": "'{snip} dleCallbackErrors=function(e,t,n=()=>{}){var o;let i;try{i=e()}catch(e){throw t(e),n(),e}return o=i,r.isThenable(o)?o.then(e=>(n(),e),e=>{th {snip}",
+                "filename": "[[FILENAME1]]",
+                "function": "t.handleCallbackErrors",
+                "in_app": true,
+                "lineno": 31,
+                "module": "instrumentation",
+                "post_context": [
+                  "${JSON.stringify(t)}",
+                  "`),\"string\"==typeof n||n instanceof Uint8Array)i(n);else{let e;try{e=JSON.stringify(n)}catch(t){e=JSON.stringify(o.normalize(n))}i(e)}}retur {snip}",
+                  "Type: ${e}",
+                  "Name: ${i.getFunctionName(a)}",
+                  "Error:`,t)}}},95106:(e,t)=>{Object.defineProperty(t,\"__esModule\",{value:!0});let n=Object.prototype.toString;function r(e,t){return n.call(e {snip}",
+                  "//# sourceMappingURL=instrumentation.js.map"
+                ],
+                "pre_context": [
+                  "Event: ${r.getEventDescription(e)}`),!0):!function(e,t){if(\"transaction\"!==e.type||!t||!t.length)return!1;let n=e.transaction;return!!n&&r.s {snip}",
+                  "Event: ${r.getEventDescription(e)}.",
+                  "Url: ${l(e)}`),!0):(o.DEBUG_BUILD&&r.logger.warn(`Event dropped due to being matched by \\`denyUrls\\` option.",
+                  "Event: ${r.getEventDescription(e)}.",
+                  "Url: ${l(e)}`),!0):(o.DEBUG_BUILD&&r.logger.warn(`Event dropped due to being matched by \\`ignoreTransactions\\` option.",
+                  "Event: ${r.getEventDescription(e)}`),!0)}(t,function(e={},t={}){return{allowUrls:[...e.allowUrls||[],...t.allowUrls||[]],denyUrls:[...e.deny {snip}",
+                  "`}return t},t.simpleHash=function(e){let t=0;for(let n=0;n<e.length;n++)t=(t<<5)-t+e.charCodeAt(n),t&=t;return t>>>0}},74145:(e,t,n)=>{Objec {snip}"
+                ]
+              },
+              {
+                "colno": "[[highNumber]]",
+                "context_line": "'{snip} tartActiveSpan(r,u,i,n=>(z(n,e),s.handleCallbackErrors(()=>t(n,()=>n.end()),()=>{void 0===s.spanToJSON(n).status&&n.setStatus({code:a.SpanSt {snip}",
+                "filename": "[[FILENAME1]]",
+                "function": "?",
+                "in_app": true,
+                "lineno": 21,
+                "module": "instrumentation",
+                "post_context": [
+                  "Reason: ${e}`)})}_process(e){this._numProcessing++,e.then(e=>(this._numProcessing--,e),e=>(this._numProcessing--,e))}_clearOutcomes(){let e= {snip}",
+                  "Event: ${r.getEventDescription(e)}`),!0):(n=t.ignoreErrors,!e.type&&n&&n.length&&(function(e){let t;let n=[];e.message&&n.push(e.message);tr {snip}",
+                  "Event: ${r.getEventDescription(e)}`),!0):!function(e,t){if(\"transaction\"!==e.type||!t||!t.length)return!1;let n=e.transaction;return!!n&&r.s {snip}",
+                  "Event: ${r.getEventDescription(e)}.",
+                  "Url: ${l(e)}`),!0):(o.DEBUG_BUILD&&r.logger.warn(`Event dropped due to being matched by \\`denyUrls\\` option.",
+                  "Event: ${r.getEventDescription(e)}.",
+                  "Url: ${l(e)}`),!0):(o.DEBUG_BUILD&&r.logger.warn(`Event dropped due to being matched by \\`ignoreTransactions\\` option."
+                ],
+                "pre_context": [
+                  "`;if(o.username||o.password){let e=`${decodeURIComponent(o.username)}:${decodeURIComponent(o.password)}`;i[\"Proxy-Authorization\"]=`Basic ${B {snip}",
+                  "`;let l=(n=r,new Promise((e,t)=>{let r=0,o=[];function i(){let s=n.read();s?function(s){o.push(s),r+=s.length;let l=Buffer.concat(o,r),u=l.i {snip}",
+                  "`);let{connect:u,buffered:c}=await l;if(e.emit(\"proxyConnect\",u),this.emit(\"proxyConnect\",u,e),200===u.statusCode){if(e.once(\"socket\",e8),t. {snip}",
+                  "${JSON.stringify(t)}",
+                  "`),\"string\"==typeof n||n instanceof Uint8Array)i(n);else{let e;try{e=JSON.stringify(n)}catch(t){e=JSON.stringify(o.normalize(n))}i(e)}}retur {snip}",
+                  "Type: ${e}",
+                  "Name: ${i.getFunctionName(a)}"
+                ]
+              },
+              {
+                "colno": 64,
+                "context_line": "                    const handlerResult = await wrappingTarget.apply(thisArg, args);",
                 "filename": "[[FILENAME3]]",
-                "function": "<anonymous>",
+                "function": "?",
                 "in_app": false,
-                "lineno": 139,
-                "module": "@sentry.core.cjs.tracing:trace",
-                "post_context": [
-                  "      // eslint-disable-next-line deprecation/deprecation",
-                  "      const hub$1 = hub.getCurrentHub();",
-                  "      // eslint-disable-next-line deprecation/deprecation",
-                  "      const parentSpan = scope.getSpan();",
-                  "",
-                  "      const shouldSkipSpan = context.onlyIfParent && !parentSpan;",
-                  "      const activeSpan = shouldSkipSpan"
-                ],
-                "pre_context": [
-                  "function startSpanManual(",
-                  "  context,",
-                  "  callback,",
-                  ") {",
-                  "  const spanContext = normalizeContext(context);",
-                  "",
-                  "  return hub.runWithAsyncContext(() => {"
-                ]
-              },
-              {
-                "colno": 20,
-                "context_line": "      return hub$1.withScope(callback);",
-                "filename": "[[FILENAME4]]",
-                "function": "Object.withScope",
-                "in_app": false,
-                "lineno": 177,
-                "module": "@sentry.core.cjs:exports",
-                "post_context": [
-                  "    }",
-                  "",
-                  "    // eslint-disable-next-line deprecation/deprecation",
-                  "    return hub$1.withScope(() => {",
-                  "      // eslint-disable-next-line deprecation/deprecation",
-                  "      hub$1.getStackTop().scope = scope ;",
-                  "      return callback(scope );"
-                ],
-                "pre_context": [
-                  "  const hub$1 = hub.getCurrentHub();",
-                  "",
-                  "  // If a scope is defined, we want to make this the active scope instead of the default one",
-                  "  if (rest.length === 2) {",
-                  "    const [scope, callback] = rest;",
-                  "    if (!scope) {",
-                  "      // eslint-disable-next-line deprecation/deprecation"
-                ]
-              },
-              {
-                "colno": 28,
-                "context_line": "      maybePromiseResult = callback(scope);",
-                "filename": "[[FILENAME5]]",
-                "function": "Hub.withScope",
-                "in_app": false,
-                "lineno": 194,
-                "module": "@sentry.core.cjs:hub",
-                "post_context": [
-                  "    } catch (e) {",
-                  "      // eslint-disable-next-line deprecation/deprecation",
-                  "      this.popScope();",
-                  "      throw e;",
-                  "    }",
-                  "",
-                  "    if (utils.isThenable(maybePromiseResult)) {"
-                ],
-                "pre_context": [
-                  "   */",
-                  "   withScope(callback) {",
-                  "    // eslint-disable-next-line deprecation/deprecation",
-                  "    const scope = this.pushScope();",
-                  "",
-                  "    let maybePromiseResult;",
-                  "    try {"
-                ]
-              },
-              {
-                "colno": 35,
-                "context_line": "      return handleCallbackErrors.handleCallbackErrors(",
-                "filename": "[[FILENAME3]]",
-                "function": "<anonymous>",
-                "in_app": false,
-                "lineno": 159,
-                "module": "@sentry.core.cjs.tracing:trace",
-                "post_context": [
-                  "        () => callback(activeSpan, finishAndSetSpan),",
-                  "        () => {",
-                  "          // Only update the span status if it hasn't been changed yet, and the span is not yet finished",
-                  "          if (activeSpan && activeSpan.isRecording()) {",
-                  "            const { status } = spanUtils.spanToJSON(activeSpan);",
-                  "            if (!status || status === 'ok') {",
-                  "              activeSpan.setStatus('internal_error');"
-                ],
-                "pre_context": [
-                  "            scope,",
-                  "          });",
-                  "",
-                  "      function finishAndSetSpan() {",
-                  "        activeSpan && activeSpan.end();",
-                  "      }",
-                  ""
-                ]
-              },
-              {
-                "colno": 26,
-                "context_line": "    maybePromiseResult = fn();",
-                "filename": "[[FILENAME6]]",
-                "function": "Object.handleCallbackErrors",
-                "in_app": false,
-                "lineno": 26,
-                "module": "@sentry.core.cjs.utils:handleCallbackErrors",
-                "post_context": [
-                  "  } catch (e) {",
-                  "    onError(e);",
-                  "    onFinally();",
-                  "    throw e;",
-                  "  }",
-                  "",
-                  "  return maybeHandlePromiseRejection(maybePromiseResult, onError, onFinally);"
-                ],
-                "pre_context": [
-                  "  fn,",
-                  "  onError,",
-                  "  // eslint-disable-next-line @typescript-eslint/no-empty-function",
-                  "  onFinally = () => {},",
-                  ") {",
-                  "  let maybePromiseResult;",
-                  "  try {"
-                ]
-              },
-              {
-                "colno": 15,
-                "context_line": "        () => callback(activeSpan, finishAndSetSpan),",
-                "filename": "[[FILENAME3]]",
-                "function": "<anonymous>",
-                "in_app": false,
-                "lineno": 160,
-                "module": "@sentry.core.cjs.tracing:trace",
-                "post_context": [
-                  "        () => {",
-                  "          // Only update the span status if it hasn't been changed yet, and the span is not yet finished",
-                  "          if (activeSpan && activeSpan.isRecording()) {",
-                  "            const { status } = spanUtils.spanToJSON(activeSpan);",
-                  "            if (!status || status === 'ok') {",
-                  "              activeSpan.setStatus('internal_error');",
-                  "            }"
-                ],
-                "pre_context": [
-                  "          });",
-                  "",
-                  "      function finishAndSetSpan() {",
-                  "        activeSpan && activeSpan.end();",
-                  "      }",
-                  "",
-                  "      return handleCallbackErrors.handleCallbackErrors("
-                ]
-              },
-              {
-                "colno": 62,
-                "context_line": "                  const handlerResult = await wrappingTarget.apply(thisArg, args);",
-                "filename": "[[FILENAME7]]",
-                "function": "<anonymous>",
-                "in_app": false,
-                "lineno": 136,
+                "lineno": 111,
                 "module": "@sentry.nextjs.cjs.common:wrapApiHandlerWithSentry",
                 "post_context": [
-                  "                  if (",
-                  "                    process.env.NODE_ENV === 'development' &&",
-                  "                    !process.env.SENTRY_IGNORE_API_RESOLUTION_ERROR &&",
-                  "                    !res.finished",
-                  "                    // TODO(v8): Remove this warning?",
-                  "                    // This can only happen (not always) when the user is using `withSentry` manually, which we're deprecating.",
-                  "                    // Warning suppression on Next.JS is only necessary in that case."
+                  "                    if (",
+                  "                      process.env.NODE_ENV === 'development' &&",
+                  "                      !process.env.SENTRY_IGNORE_API_RESOLUTION_ERROR &&",
+                  "                      !res.writableEnded",
+                  "                    ) {",
+                  "                      utils.consoleSandbox(() => {",
+                  "                        // eslint-disable-next-line no-console"
                 ],
                 "pre_context": [
-                  "                        target.apply(thisArg, argArray);",
-                  "                      });",
-                  "                    }",
-                  "                  },",
-                  "                });",
+                  "                          target.apply(thisArg, argArray);",
+                  "                        });",
+                  "                      }",
+                  "                    },",
+                  "                  });",
                   "",
-                  "                try {"
+                  "                  try {"
                 ]
               },
               {
-                "colno": 682,
-                "context_line": "'{snip} roto__:null,default:function(e,t){let r=s.captureException(Error(\"This is an error\"));t.status(500).json({exceptionId:r,paramWas:e.query.par {snip}",
-                "filename": "[[FILENAME8]]",
+                "colno": "[[highNumber]]",
+                "context_line": "'{snip} roto__:null,default:function(e,r){let t=f.captureException(Error(\"This is an error\"));r.status(500).json({exceptionId:t,paramWas:e.query.par {snip}",
+                "filename": "[[FILENAME4]]",
                 "function": "default",
                 "in_app": true,
                 "lineno": 1,
@@ -318,32 +332,16 @@
         }
       ]
     },
-    "modules": {
-      "ansi-styles": "4.3.0",
-      "chalk": "3.0.0",
-      "client-only": "0.0.1",
-      "function-bind": "1.1.2",
-      "has-flag": "4.0.0",
-      "hasown": "2.0.2",
-      "is-core-module": "2.13.1",
-      "localforage": "1.10.0",
-      "next": "14.2.1",
-      "react": "18.2.0",
-      "react-dom": "18.2.0",
-      "resolve": "1.22.8",
-      "stacktrace-parser": "0.1.10",
-      "styled-jsx": "5.1.1",
-      "supports-color": "7.2.0"
-    },
+    "modules": {},
     "platform": "node",
-    "release": "CQo-gDFwQPrKKUjGsMWsv",
+    "release": "c_Hsvah-I7NWkT5pz1vmR",
     "request": {
       "cookies": {},
       "headers": {
         "accept": "*/*",
         "accept-encoding": "gzip, deflate, br",
         "accept-language": "en-US,en;q=0.5",
-        "baggage": "sentry-environment=qa,sentry-release=CQo-gDFwQPrKKUjGsMWsv,sentry-public_key=3b6c388182fb435097f41d181be2b2ba,sentry-trace_id=3e15661265f84974b7bc831aa98673c2,sentry-sample_rate=1,sentry-transaction=%2Fpages-router%2Ftest-route-handlers,sentry-sampled=true",
+        "baggage": "sentry-environment=qa,sentry-release=c_Hsvah-I7NWkT5pz1vmR,sentry-public_key=3b6c388182fb435097f41d181be2b2ba,sentry-trace_id=50c903515ca14a02953ac533e90444cb,sentry-sample_rate=1,sentry-transaction=%2Fpages-router%2Ftest-route-handlers,sentry-sampled=true",
         "cache-control": "no-cache",
         "connection": "keep-alive",
         "host": "localhost:3030",
@@ -352,7 +350,7 @@
         "sec-fetch-dest": "empty",
         "sec-fetch-mode": "cors",
         "sec-fetch-site": "same-origin",
-        "sentry-trace": "3e15661265f84974b7bc831aa98673c2-9f964de1da7f5ecd-1",
+        "sentry-trace": "50c903515ca14a02953ac533e90444cb-b0feee72da4edf4c-1",
         "user-agent": "[[user-agent]]",
         "x-forwarded-for": "::ffff:127.0.0.1",
         "x-forwarded-host": "localhost:3030",
@@ -364,9 +362,6 @@
         "x-middleware-invoke": ""
       },
       "method": "GET",
-      "query_string": {
-        "param": "1337"
-      },
       "url": "http://localhost:3030/api/pages-router/test-param-error/1337"
     },
     "sdk": {
@@ -376,35 +371,43 @@
         "LinkedErrors",
         "RequestData",
         "Console",
-        "Undici",
+        "NodeFetch",
+        "OnUncaughtException",
         "OnUnhandledRejection",
         "ContextLines",
-        "LocalVariables",
+        "LocalVariablesAsync",
         "Context",
         "Modules",
-        "RewriteFrames",
+        "Express",
+        "Fastify",
+        "Graphql",
+        "Mongo",
+        "Mongoose",
+        "Mysql",
+        "Mysql2",
+        "Postgres",
+        "Nest",
+        "Hapi",
+        "Koa",
+        "Connect",
         "Http",
-        "OnUncaughtException"
+        "DistDirRewriteFrames"
       ],
       "name": "sentry.javascript.nextjs",
       "packages": [
         {
           "name": "npm:@sentry/nextjs",
-          "version": "7.110.1"
+          "version": "8.0.0-beta.4"
         },
         {
           "name": "npm:@sentry/node",
-          "version": "7.110.1"
+          "version": "8.0.0-beta.4"
         }
       ],
-      "version": "7.110.1"
+      "version": "8.0.0-beta.4"
     },
     "server_name": "D9M3PY4LQ7.local",
-    "tags": {
-      "runtime": "node",
-      "transaction": "GET /api/pages-router/test-param-error/[param]"
-    },
     "timestamp": "[[timestamp]]",
-    "transaction": "GET /api/pages-router/test-param-error/1337"
+    "transaction": "GET /api/pages-router/test-param-error/[param]"
   }
 ]
