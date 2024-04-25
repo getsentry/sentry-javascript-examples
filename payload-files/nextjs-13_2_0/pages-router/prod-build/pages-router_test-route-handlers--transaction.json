@@ -1,0 +1,122 @@
+[
+  {
+    "dsn": "[[dsn]]",
+    "event_id": "[[ID1]]",
+    "sdk": {
+      "name": "sentry.javascript.nextjs",
+      "version": "7.110.1"
+    },
+    "sent_at": "[[ISODateString]]",
+    "trace": {
+      "environment": "qa",
+      "public_key": "[[publicKey]]",
+      "release": "upz_BtUGLiVj-IZpfUoXL",
+      "sampled": "true",
+      "trace_id": "[[ID2]]",
+      "transaction": "/pages-router/test-route-handlers"
+    }
+  },
+  {
+    "type": "transaction"
+  },
+  {
+    "breadcrumbs": [
+      {
+        "category": "navigation",
+        "data": {
+          "from": "/pages-router/test-route-handlers",
+          "to": "/pages-router/test-route-handlers"
+        },
+        "timestamp": "[[timestamp]]"
+      }
+    ],
+    "contexts": {
+      "trace": {
+        "data": {
+          "sentry.op": "pageload",
+          "sentry.origin": "auto.pageload.nextjs.pages_router_instrumentation"
+        },
+        "op": "pageload",
+        "origin": "auto.pageload.nextjs.pages_router_instrumentation",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID4]]",
+        "tags": {
+          "hardwareConcurrency": "10",
+          "lcp.element": "body > div#__next > p",
+          "lcp.size": "[[highNumber]]",
+          "routing.instrumentation": "next-pages-router"
+        },
+        "trace_id": "[[ID2]]"
+      }
+    },
+    "environment": "qa",
+    "event_id": "[[ID1]]",
+    "measurements": {
+      "fcp": {
+        "unit": "millisecond",
+        "value": 57
+      },
+      "lcp": {
+        "unit": "millisecond",
+        "value": 59
+      },
+      "ttfb": {
+        "unit": "millisecond",
+        "value": 44
+      },
+      "ttfb.requestTime": {
+        "unit": "millisecond",
+        "value": 22
+      }
+    },
+    "platform": "javascript",
+    "release": "upz_BtUGLiVj-IZpfUoXL",
+    "request": {
+      "headers": {
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:125.0) Gecko/20100101 Firefox/125.0"
+      },
+      "url": "http://localhost:3030/pages-router/test-route-handlers"
+    },
+    "sdk": {
+      "integrations": [
+        "InboundFilters",
+        "FunctionToString",
+        "TryCatch",
+        "Breadcrumbs",
+        "GlobalHandlers",
+        "LinkedErrors",
+        "Dedupe",
+        "HttpContext",
+        "RewriteFrames",
+        "BrowserTracing"
+      ],
+      "name": "sentry.javascript.nextjs",
+      "packages": [
+        {
+          "name": "npm:@sentry/nextjs",
+          "version": "7.110.1"
+        },
+        {
+          "name": "npm:@sentry/react",
+          "version": "7.110.1"
+        }
+      ],
+      "version": "7.110.1"
+    },
+    "spans": [],
+    "start_timestamp": "[[timestamp]]",
+    "tags": {
+      "hardwareConcurrency": "10",
+      "lcp.element": "body > div#__next > p",
+      "lcp.size": "[[highNumber]]",
+      "routing.instrumentation": "next-pages-router",
+      "runtime": "browser"
+    },
+    "timestamp": "[[timestamp]]",
+    "transaction": "/pages-router/test-route-handlers",
+    "transaction_info": {
+      "source": "route"
+    },
+    "type": "transaction"
+  }
+]

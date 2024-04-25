@@ -1,0 +1,158 @@
+[
+  {
+    "dsn": "[[dsn]]",
+    "event_id": "[[ID1]]",
+    "sdk": {
+      "name": "sentry.javascript.nextjs",
+      "version": "7.110.1"
+    },
+    "sent_at": "[[ISODateString]]",
+    "trace": {
+      "environment": "qa",
+      "public_key": "[[publicKey]]",
+      "release": "upz_BtUGLiVj-IZpfUoXL",
+      "sample_rate": "1",
+      "sampled": "true",
+      "trace_id": "[[ID2]]",
+      "transaction": "/pages-router/test-route-handlers"
+    }
+  },
+  {
+    "type": "transaction"
+  },
+  {
+    "contexts": {
+      "app": {
+        "app_memory": "[[highNumber]]",
+        "app_start_time": "[[ISODateString]]"
+      },
+      "cloud_resource": {},
+      "culture": {
+        "locale": "en-US",
+        "timezone": "Europe/Vienna"
+      },
+      "device": {
+        "arch": "arm64",
+        "boot_time": "[[ISODateString]]",
+        "cpu_description": "Apple M1 Pro",
+        "free_memory": "[[highNumber]]",
+        "memory_size": "[[highNumber]]",
+        "processor_count": 10,
+        "processor_frequency": "[[highNumber]]"
+      },
+      "os": {
+        "build": "23C64",
+        "kernel_version": "23.2.0",
+        "name": "macOS",
+        "version": "14.2"
+      },
+      "runtime": {
+        "name": "node",
+        "version": "v20.11.1"
+      },
+      "trace": {
+        "data": {
+          "http.response.status_code": 200,
+          "sentry.op": "http.server",
+          "sentry.origin": "auto.http.nextjs",
+          "sentry.source": "route"
+        },
+        "op": "http.server",
+        "origin": "auto.http.nextjs",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID4]]",
+        "status": "ok",
+        "tags": {
+          "http.status_code": "200"
+        },
+        "trace_id": "[[ID2]]"
+      }
+    },
+    "environment": "qa",
+    "event_id": "[[ID1]]",
+    "modules": {
+      "ansi-styles": "4.3.0",
+      "function-bind": "1.1.2",
+      "has-flag": "4.0.0",
+      "hasown": "2.0.2",
+      "is-core-module": "2.13.1",
+      "localforage": "1.10.0",
+      "next": "13.2.0",
+      "react": "18.2.0",
+      "react-dom": "18.2.0",
+      "resolve": "1.22.8",
+      "stacktrace-parser": "0.1.10",
+      "styled-jsx": "5.1.1"
+    },
+    "platform": "node",
+    "release": "upz_BtUGLiVj-IZpfUoXL",
+    "request": {
+      "cookies": {},
+      "headers": {
+        "accept": "*/*",
+        "accept-encoding": "gzip, deflate, br",
+        "accept-language": "en-US,en;q=0.5",
+        "baggage": "sentry-environment=qa,sentry-release=upz_BtUGLiVj-IZpfUoXL,sentry-public_key=3b6c388182fb435097f41d181be2b2ba,sentry-trace_id=5e221441d2db40cba2957f668cc782a2,sentry-sample_rate=1,sentry-transaction=%2Fpages-router%2Ftest-route-handlers,sentry-sampled=true",
+        "cache-control": "no-cache",
+        "connection": "keep-alive",
+        "host": "localhost:3030",
+        "pragma": "no-cache",
+        "referer": "http://localhost:3030/pages-router/test-route-handlers",
+        "sec-fetch-dest": "empty",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-site": "same-origin",
+        "sentry-trace": "5e221441d2db40cba2957f668cc782a2-935e377f78ccc2e9-1",
+        "user-agent": "[[user-agent]]"
+      },
+      "method": "GET",
+      "query_string": {
+        "param": "1337"
+      },
+      "url": "http://localhost:3030/api/pages-router/test-param-success/1337"
+    },
+    "sdk": {
+      "integrations": [
+        "InboundFilters",
+        "FunctionToString",
+        "LinkedErrors",
+        "RequestData",
+        "Console",
+        "Undici",
+        "OnUnhandledRejection",
+        "ContextLines",
+        "LocalVariables",
+        "Context",
+        "Modules",
+        "RewriteFrames",
+        "Http",
+        "OnUncaughtException"
+      ],
+      "name": "sentry.javascript.nextjs",
+      "packages": [
+        {
+          "name": "npm:@sentry/nextjs",
+          "version": "7.110.1"
+        },
+        {
+          "name": "npm:@sentry/node",
+          "version": "7.110.1"
+        }
+      ],
+      "version": "7.110.1"
+    },
+    "server_name": "D9M3PY4LQ7.local",
+    "spans": [],
+    "start_timestamp": "[[timestamp]]",
+    "tags": {
+      "http.status_code": "200",
+      "runtime": "node",
+      "transaction": "GET /api/pages-router/test-param-success/[param]"
+    },
+    "timestamp": "[[timestamp]]",
+    "transaction": "GET /api/pages-router/test-param-success/[param]",
+    "transaction_info": {
+      "source": "route"
+    },
+    "type": "transaction"
+  }
+]
