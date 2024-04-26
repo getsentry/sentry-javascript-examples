@@ -1,0 +1,371 @@
+[
+  {
+    "dsn": "[[dsn]]",
+    "event_id": "[[ID1]]",
+    "sdk": {
+      "name": "sentry.javascript.nextjs",
+      "version": "8.0.0-beta.4"
+    },
+    "sent_at": "[[ISODateString]]",
+    "trace": {
+      "environment": "qa",
+      "public_key": "[[publicKey]]",
+      "release": "IcVjDshBkowH13rHGKACD",
+      "sample_rate": "1",
+      "sampled": "true",
+      "trace_id": "[[ID2]]"
+    }
+  },
+  {
+    "type": "transaction"
+  },
+  {
+    "breadcrumbs": [
+      {
+        "category": "navigation",
+        "data": {
+          "from": "/test-route-handlers",
+          "to": "/test-route-handlers"
+        },
+        "timestamp": "[[timestamp]]"
+      }
+    ],
+    "contexts": {
+      "trace": {
+        "data": {
+          "hardwareConcurrency": "10",
+          "sentry.op": "pageload",
+          "sentry.origin": "auto.pageload.nextjs.app_router_instrumentation",
+          "sentry.sample_rate": 1,
+          "sentry.source": "url"
+        },
+        "op": "pageload",
+        "origin": "auto.pageload.nextjs.app_router_instrumentation",
+        "span_id": "[[ID3]]",
+        "trace_id": "[[ID2]]"
+      }
+    },
+    "environment": "qa",
+    "event_id": "[[ID1]]",
+    "measurements": {
+      "fcp": {
+        "unit": "millisecond",
+        "value": 159
+      },
+      "ttfb": {
+        "unit": "millisecond",
+        "value": 137
+      },
+      "ttfb.requestTime": {
+        "unit": "millisecond",
+        "value": 118
+      }
+    },
+    "platform": "javascript",
+    "release": "IcVjDshBkowH13rHGKACD",
+    "request": {
+      "headers": {
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:125.0) Gecko/20100101 Firefox/125.0"
+      },
+      "url": "http://localhost:3030/test-route-handlers"
+    },
+    "sdk": {
+      "integrations": [
+        "InboundFilters",
+        "FunctionToString",
+        "BrowserApiErrors",
+        "Breadcrumbs",
+        "GlobalHandlers",
+        "LinkedErrors",
+        "Dedupe",
+        "HttpContext",
+        "BrowserTracing",
+        "NextjsClientStackFrameNormalization"
+      ],
+      "name": "sentry.javascript.nextjs",
+      "packages": [
+        {
+          "name": "npm:@sentry/nextjs",
+          "version": "8.0.0-beta.4"
+        },
+        {
+          "name": "npm:@sentry/react",
+          "version": "8.0.0-beta.4"
+        }
+      ],
+      "version": "8.0.0-beta.4"
+    },
+    "spans": [
+      {
+        "data": {
+          "sentry.op": "browser",
+          "sentry.origin": "auto.ui.browser.metrics"
+        },
+        "description": "unloadEvent",
+        "op": "browser",
+        "origin": "auto.ui.browser.metrics",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID4]]",
+        "start_timestamp": "[[timestamp]]",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "sentry.op": "browser",
+          "sentry.origin": "auto.ui.browser.metrics"
+        },
+        "description": "domContentLoadedEvent",
+        "op": "browser",
+        "origin": "auto.ui.browser.metrics",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID5]]",
+        "start_timestamp": "[[timestamp]]",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "sentry.op": "browser",
+          "sentry.origin": "auto.ui.browser.metrics"
+        },
+        "description": "loadEvent",
+        "op": "browser",
+        "origin": "auto.ui.browser.metrics",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID6]]",
+        "start_timestamp": "[[timestamp]]",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "sentry.op": "browser",
+          "sentry.origin": "auto.ui.browser.metrics"
+        },
+        "description": "connect",
+        "op": "browser",
+        "origin": "auto.ui.browser.metrics",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID7]]",
+        "start_timestamp": "[[timestamp]]",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "sentry.op": "browser",
+          "sentry.origin": "auto.ui.browser.metrics"
+        },
+        "description": "cache",
+        "op": "browser",
+        "origin": "auto.ui.browser.metrics",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID8]]",
+        "start_timestamp": "[[timestamp]]",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "sentry.op": "browser",
+          "sentry.origin": "auto.ui.browser.metrics"
+        },
+        "description": "DNS",
+        "op": "browser",
+        "origin": "auto.ui.browser.metrics",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID9]]",
+        "start_timestamp": "[[timestamp]]",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "sentry.op": "browser",
+          "sentry.origin": "auto.ui.browser.metrics"
+        },
+        "description": "request",
+        "op": "browser",
+        "origin": "auto.ui.browser.metrics",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID10]]",
+        "start_timestamp": "[[timestamp]]",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "sentry.op": "browser",
+          "sentry.origin": "auto.ui.browser.metrics"
+        },
+        "description": "response",
+        "op": "browser",
+        "origin": "auto.ui.browser.metrics",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID11]]",
+        "start_timestamp": "[[timestamp]]",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "http.decoded_response_content_length": 124,
+          "http.response_content_length": 124,
+          "http.response_transfer_size": 456,
+          "sentry.op": "resource.link",
+          "sentry.origin": "auto.resource.browser.metrics",
+          "server.address": "localhost:3030",
+          "url.same_origin": true,
+          "url.scheme": "http"
+        },
+        "description": "/_next/static/css/a16ece022db5362c.css",
+        "op": "resource.link",
+        "origin": "auto.resource.browser.metrics",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID12]]",
+        "start_timestamp": "[[timestamp]]",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "http.decoded_response_content_length": "[[highNumber]]",
+          "http.response_content_length": "[[highNumber]]",
+          "http.response_transfer_size": "[[highNumber]]",
+          "sentry.op": "resource.script",
+          "sentry.origin": "auto.resource.browser.metrics",
+          "server.address": "localhost:3030",
+          "url.same_origin": true,
+          "url.scheme": "http"
+        },
+        "description": "/_next/static/chunks/webpack-3f5996361e70b3cc.js",
+        "op": "resource.script",
+        "origin": "auto.resource.browser.metrics",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID13]]",
+        "start_timestamp": "[[timestamp]]",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "http.decoded_response_content_length": "[[highNumber]]",
+          "http.response_content_length": 643,
+          "http.response_transfer_size": "[[highNumber]]",
+          "sentry.op": "resource.script",
+          "sentry.origin": "auto.resource.browser.metrics",
+          "server.address": "localhost:3030",
+          "url.same_origin": true,
+          "url.scheme": "http"
+        },
+        "description": "/_next/static/chunks/main-app-e1a1ef0c4094db6c.js",
+        "op": "resource.script",
+        "origin": "auto.resource.browser.metrics",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID14]]",
+        "start_timestamp": "[[timestamp]]",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "http.decoded_response_content_length": "[[highNumber]]",
+          "http.response_content_length": "[[highNumber]]",
+          "http.response_transfer_size": "[[highNumber]]",
+          "sentry.op": "resource.script",
+          "sentry.origin": "auto.resource.browser.metrics",
+          "server.address": "localhost:3030",
+          "url.same_origin": true,
+          "url.scheme": "http"
+        },
+        "description": "/_next/static/chunks/590-1caa6e5f425da7bf.js",
+        "op": "resource.script",
+        "origin": "auto.resource.browser.metrics",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID15]]",
+        "start_timestamp": "[[timestamp]]",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "http.decoded_response_content_length": "[[highNumber]]",
+          "http.response_content_length": "[[highNumber]]",
+          "http.response_transfer_size": "[[highNumber]]",
+          "sentry.op": "resource.other",
+          "sentry.origin": "auto.resource.browser.metrics",
+          "server.address": "localhost:3030",
+          "url.same_origin": true,
+          "url.scheme": "http"
+        },
+        "description": "/favicon.ico",
+        "op": "resource.other",
+        "origin": "auto.resource.browser.metrics",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID16]]",
+        "start_timestamp": "[[timestamp]]",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "sentry.op": "paint",
+          "sentry.origin": "auto.resource.browser.metrics"
+        },
+        "description": "first-contentful-paint",
+        "op": "paint",
+        "origin": "auto.resource.browser.metrics",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID17]]",
+        "start_timestamp": "[[timestamp]]",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "sentry.op": "mark",
+          "sentry.origin": "auto.resource.browser.metrics"
+        },
+        "description": "sentry-tracing-init",
+        "op": "mark",
+        "origin": "auto.resource.browser.metrics",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID18]]",
+        "start_timestamp": "[[timestamp]]",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "http.decoded_response_content_length": "[[highNumber]]",
+          "http.response_content_length": "[[highNumber]]",
+          "http.response_transfer_size": "[[highNumber]]",
+          "sentry.op": "resource.script",
+          "sentry.origin": "auto.resource.browser.metrics",
+          "server.address": "localhost:3030",
+          "url.same_origin": true,
+          "url.scheme": "http"
+        },
+        "description": "/_next/static/chunks/app/test-route-handlers/page-ae4da5788602529e.js",
+        "op": "resource.script",
+        "origin": "auto.resource.browser.metrics",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID19]]",
+        "start_timestamp": "[[timestamp]]",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      }
+    ],
+    "start_timestamp": "[[timestamp]]",
+    "tags": {
+      "runtime": "browser"
+    },
+    "timestamp": "[[timestamp]]",
+    "transaction": "/test-route-handlers",
+    "transaction_info": {
+      "source": "url"
+    },
+    "type": "transaction"
+  }
+]
