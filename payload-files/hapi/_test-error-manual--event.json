@@ -4,7 +4,7 @@
     "event_id": "[[ID1]]",
     "sdk": {
       "name": "sentry.javascript.node",
-      "version": "7.113.0"
+      "version": "8.0.0-beta.6"
     },
     "sent_at": "[[ISODateString]]",
     "trace": {
@@ -13,7 +13,7 @@
       "sample_rate": "1",
       "sampled": "true",
       "trace_id": "[[ID2]]",
-      "transaction": "/test-error-manual"
+      "transaction": "GET /test-error-manual"
     }
   },
   {
@@ -25,18 +25,6 @@
         "category": "console",
         "level": "log",
         "message": "Server running on http://localhost:3030",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": "test console",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": "test console",
         "timestamp": "[[timestamp]]"
       }
     ],
@@ -70,10 +58,6 @@
         "version": "v20.12.1"
       },
       "trace": {
-        "data": {
-          "sentry.origin": "manual"
-        },
-        "origin": "manual",
         "parent_span_id": "[[ID3]]",
         "span_id": "[[ID4]]",
         "trace_id": "[[ID2]]"
@@ -91,172 +75,172 @@
           "stacktrace": {
             "frames": [
               {
-                "colno": 25,
-                "context_line": "    return asyncStorage.run(newHub, () => {",
+                "colno": 17,
+                "context_line": "  return tracer.startActiveSpan(name, spanContext, ctx, span => {",
                 "filename": "[[FILENAME1]]",
-                "function": "Object.runWithAsyncContext",
+                "function": "Object.startSpan",
                 "in_app": false,
-                "lineno": 45,
-                "module": "@sentry.node.cjs.async:hooks",
+                "lineno": 858,
+                "module": "@sentry.opentelemetry.cjs:index",
                 "post_context": [
-                  "      return callback();",
-                  "    });",
-                  "  }",
+                  "    _applySentryAttributesToSpan(span, options);",
                   "",
-                  "  core.setAsyncContextStrategy({ getCurrentHub, runWithAsyncContext });",
-                  "}",
-                  ""
+                  "    return core.handleCallbackErrors(",
+                  "      () => callback(span),",
+                  "      () => {",
+                  "        // Only set the span status to ERROR when there wasn't any status set before, in order to avoid stomping useful span statuses",
+                  "        if (core.spanToJSON(span).status === undefined) {"
                 ],
                 "pre_context": [
-                  "      // We're already in an async context, so we don't need to create a new one",
-                  "      // just call the callback with the current hub",
-                  "      return callback();",
-                  "    }",
                   "",
-                  "    const newHub = createNewHub(existingHub);",
+                  "  const activeCtx = getContext(options.scope, options.forceTransaction);",
+                  "  const shouldSkipSpan = options.onlyIfParent && !api.trace.getSpan(activeCtx);",
+                  "  const ctx = shouldSkipSpan ? core$1.suppressTracing(activeCtx) : activeCtx;",
+                  "",
+                  "  const spanContext = getSpanContext(options);",
                   ""
                 ]
               },
               {
-                "colno": 14,
+                "colno": 32,
+                "context_line": "        return api.context.with(contextWithSpanSet, fn, undefined, span);",
                 "filename": "[[FILENAME2]]",
+                "function": "Tracer.startActiveSpan",
+                "in_app": false,
+                "lineno": 121,
+                "module": "@opentelemetry.sdk-trace-base.build.src:Tracer",
+                "post_context": [
+                  "    }",
+                  "    /** Returns the active {@link GeneralLimits}. */",
+                  "    getGeneralLimits() {",
+                  "        return this._generalLimits;",
+                  "    }",
+                  "    /** Returns the active {@link SpanLimits}. */",
+                  "    getSpanLimits() {"
+                ],
+                "pre_context": [
+                  "            opts = arg2;",
+                  "            ctx = arg3;",
+                  "            fn = arg4;",
+                  "        }",
+                  "        const parentContext = ctx !== null && ctx !== void 0 ? ctx : api.context.active();",
+                  "        const span = this.startSpan(name, opts, parentContext);",
+                  "        const contextWithSpanSet = api.trace.setSpan(parentContext, span);"
+                ]
+              },
+              {
+                "colno": 46,
+                "context_line": "        return this._getContextManager().with(context, fn, thisArg, ...args);",
+                "filename": "[[FILENAME3]]",
+                "function": "ContextAPI.with",
+                "in_app": false,
+                "lineno": 60,
+                "module": "@opentelemetry.api.build.src.api:context",
+                "post_context": [
+                  "    }",
+                  "    /**",
+                  "     * Bind a context to a target function or event emitter",
+                  "     *",
+                  "     * @param context context to bind to the event emitter or function. Defaults to the currently active context",
+                  "     * @param target function or event emitter to bind",
+                  "     */"
+                ],
+                "pre_context": [
+                  "     *",
+                  "     * @param context context to be active during function execution",
+                  "     * @param fn function to execute in a context",
+                  "     * @param thisArg optional receiver to be used for calling fn",
+                  "     * @param args optional arguments forwarded to fn",
+                  "     */",
+                  "    with(context, fn, thisArg, ...args) {"
+                ]
+              },
+              {
+                "colno": 24,
+                "context_line": "      return super.with(ctx2, fn, thisArg, ...args);",
+                "filename": "[[FILENAME1]]",
+                "function": "SentryContextManager.with",
+                "in_app": false,
+                "lineno": "[[highNumber]]",
+                "module": "@sentry.opentelemetry.cjs:index",
+                "post_context": [
+                  "    }",
+                  "  }",
+                  "",
+                  "  return SentryContextManager ;",
+                  "}",
+                  "",
+                  "/** If this attribute is true, it means that the parent is a remote span. */"
+                ],
+                "pre_context": [
+                  "      const ctx2 = ctx1",
+                  "        .deleteValue(SENTRY_FORK_ISOLATION_SCOPE_CONTEXT_KEY)",
+                  "        .deleteValue(SENTRY_FORK_SET_SCOPE_CONTEXT_KEY)",
+                  "        .deleteValue(SENTRY_FORK_SET_ISOLATION_SCOPE_CONTEXT_KEY);",
+                  "",
+                  "      setContextOnScope(newCurrentScope, ctx2);",
+                  ""
+                ]
+              },
+              {
+                "colno": 40,
+                "context_line": "        return this._asyncLocalStorage.run(context, cb, ...args);",
+                "filename": "[[FILENAME4]]",
+                "function": "SentryContextManager.with",
+                "in_app": false,
+                "lineno": 33,
+                "module": "@opentelemetry.context-async-hooks.build.src:AsyncLocalStorageContextManager",
+                "post_context": [
+                  "    }",
+                  "    enable() {",
+                  "        return this;",
+                  "    }",
+                  "    disable() {",
+                  "        this._asyncLocalStorage.disable();",
+                  "        return this;"
+                ],
+                "pre_context": [
+                  "    }",
+                  "    active() {",
+                  "        var _a;",
+                  "        return (_a = this._asyncLocalStorage.getStore()) !== null && _a !== void 0 ? _a : api_1.ROOT_CONTEXT;",
+                  "    }",
+                  "    with(context, fn, thisArg, ...args) {",
+                  "        const cb = thisArg == null ? fn : fn.bind(thisArg);"
+                ]
+              },
+              {
+                "colno": 14,
+                "filename": "[[FILENAME5]]",
                 "function": "AsyncLocalStorage.run",
                 "in_app": false,
                 "lineno": 346,
                 "module": "node:async_hooks"
               },
               {
-                "colno": 14,
-                "context_line": "      return callback();",
+                "colno": 17,
+                "context_line": "    return core.handleCallbackErrors(",
                 "filename": "[[FILENAME1]]",
-                "function": "<anonymous>",
+                "function": "?",
                 "in_app": false,
-                "lineno": 46,
-                "module": "@sentry.node.cjs.async:hooks",
+                "lineno": 861,
+                "module": "@sentry.opentelemetry.cjs:index",
                 "post_context": [
-                  "    });",
-                  "  }",
-                  "",
-                  "  core.setAsyncContextStrategy({ getCurrentHub, runWithAsyncContext });",
-                  "}",
-                  "",
-                  "exports.setHooksAsyncContextStrategy = setHooksAsyncContextStrategy;"
+                  "      () => callback(span),",
+                  "      () => {",
+                  "        // Only set the span status to ERROR when there wasn't any status set before, in order to avoid stomping useful span statuses",
+                  "        if (core.spanToJSON(span).status === undefined) {",
+                  "          span.setStatus({ code: api.SpanStatusCode.ERROR });",
+                  "        }",
+                  "      },"
                 ],
                 "pre_context": [
-                  "      // just call the callback with the current hub",
-                  "      return callback();",
-                  "    }",
+                  "  const ctx = shouldSkipSpan ? core$1.suppressTracing(activeCtx) : activeCtx;",
                   "",
-                  "    const newHub = createNewHub(existingHub);",
+                  "  const spanContext = getSpanContext(options);",
                   "",
-                  "    return asyncStorage.run(newHub, () => {"
-                ]
-              },
-              {
-                "colno": 22,
-                "context_line": "    return exports$1.withScope(context.scope, scope => {",
-                "filename": "[[FILENAME3]]",
-                "function": "<anonymous>",
-                "in_app": false,
-                "lineno": 83,
-                "module": "@sentry.core.cjs.tracing:trace",
-                "post_context": [
-                  "      // eslint-disable-next-line deprecation/deprecation",
-                  "      const hub$1 = hub.getCurrentHub();",
-                  "      // eslint-disable-next-line deprecation/deprecation",
-                  "      const parentSpan = scope.getSpan();",
-                  "",
-                  "      const shouldSkipSpan = context.onlyIfParent && !parentSpan;",
-                  "      const activeSpan = shouldSkipSpan"
-                ],
-                "pre_context": [
-                  " * or you didn't set `tracesSampleRate`, this function will not generate spans",
-                  " * and the `span` returned from the callback will be undefined.",
-                  " */",
-                  "function startSpan(context, callback) {",
-                  "  const spanContext = normalizeContext(context);",
-                  "",
-                  "  return hub.runWithAsyncContext(() => {"
-                ]
-              },
-              {
-                "colno": 20,
-                "context_line": "      return hub$1.withScope(callback);",
-                "filename": "[[FILENAME4]]",
-                "function": "Object.withScope",
-                "in_app": false,
-                "lineno": 177,
-                "module": "@sentry.core.cjs:exports",
-                "post_context": [
-                  "    }",
-                  "",
-                  "    // eslint-disable-next-line deprecation/deprecation",
-                  "    return hub$1.withScope(() => {",
-                  "      // eslint-disable-next-line deprecation/deprecation",
-                  "      hub$1.getStackTop().scope = scope ;",
-                  "      return callback(scope );"
-                ],
-                "pre_context": [
-                  "  const hub$1 = hub.getCurrentHub();",
-                  "",
-                  "  // If a scope is defined, we want to make this the active scope instead of the default one",
-                  "  if (rest.length === 2) {",
-                  "    const [scope, callback] = rest;",
-                  "    if (!scope) {",
-                  "      // eslint-disable-next-line deprecation/deprecation"
-                ]
-              },
-              {
-                "colno": 28,
-                "context_line": "      maybePromiseResult = callback(scope);",
-                "filename": "[[FILENAME5]]",
-                "function": "Hub.withScope",
-                "in_app": false,
-                "lineno": 194,
-                "module": "@sentry.core.cjs:hub",
-                "post_context": [
-                  "    } catch (e) {",
-                  "      // eslint-disable-next-line deprecation/deprecation",
-                  "      this.popScope();",
-                  "      throw e;",
-                  "    }",
-                  "",
-                  "    if (utils.isThenable(maybePromiseResult)) {"
-                ],
-                "pre_context": [
-                  "   */",
-                  "   withScope(callback) {",
-                  "    // eslint-disable-next-line deprecation/deprecation",
-                  "    const scope = this.pushScope();",
-                  "",
-                  "    let maybePromiseResult;",
-                  "    try {"
-                ]
-              },
-              {
-                "colno": 35,
-                "context_line": "      return handleCallbackErrors.handleCallbackErrors(",
-                "filename": "[[FILENAME3]]",
-                "function": "<anonymous>",
-                "in_app": false,
-                "lineno": 99,
-                "module": "@sentry.core.cjs.tracing:trace",
-                "post_context": [
-                  "        () => callback(activeSpan),",
-                  "        () => {",
-                  "          // Only update the span status if it hasn't been changed yet",
-                  "          if (activeSpan) {",
-                  "            const { status } = spanUtils.spanToJSON(activeSpan);",
-                  "            if (!status || status === 'ok') {",
-                  "              activeSpan.setStatus('internal_error');"
-                ],
-                "pre_context": [
-                  "        : createChildSpanOrTransaction(hub$1, {",
-                  "            parentSpan,",
-                  "            spanContext,",
-                  "            forceTransaction: context.forceTransaction,",
-                  "            scope,",
-                  "          });",
+                  "  return tracer.startActiveSpan(name, spanContext, ctx, span => {",
+                  "    _applySentryAttributesToSpan(span, options);",
                   ""
                 ]
               },
@@ -288,39 +272,39 @@
                 ]
               },
               {
-                "colno": 15,
-                "context_line": "        () => callback(activeSpan),",
-                "filename": "[[FILENAME3]]",
-                "function": "handleCallbackErrors.handleCallbackErrors.status.status",
+                "colno": 13,
+                "context_line": "      () => callback(span),",
+                "filename": "[[FILENAME1]]",
+                "function": "?",
                 "in_app": false,
-                "lineno": 100,
-                "module": "@sentry.core.cjs.tracing:trace",
+                "lineno": 862,
+                "module": "@sentry.opentelemetry.cjs:index",
                 "post_context": [
-                  "        () => {",
-                  "          // Only update the span status if it hasn't been changed yet",
-                  "          if (activeSpan) {",
-                  "            const { status } = spanUtils.spanToJSON(activeSpan);",
-                  "            if (!status || status === 'ok') {",
-                  "              activeSpan.setStatus('internal_error');",
-                  "            }"
+                  "      () => {",
+                  "        // Only set the span status to ERROR when there wasn't any status set before, in order to avoid stomping useful span statuses",
+                  "        if (core.spanToJSON(span).status === undefined) {",
+                  "          span.setStatus({ code: api.SpanStatusCode.ERROR });",
+                  "        }",
+                  "      },",
+                  "      () => span.end(),"
                 ],
                 "pre_context": [
-                  "            parentSpan,",
-                  "            spanContext,",
-                  "            forceTransaction: context.forceTransaction,",
-                  "            scope,",
-                  "          });",
                   "",
-                  "      return handleCallbackErrors.handleCallbackErrors("
+                  "  const spanContext = getSpanContext(options);",
+                  "",
+                  "  return tracer.startActiveSpan(name, spanContext, ctx, span => {",
+                  "    _applySentryAttributesToSpan(span, options);",
+                  "",
+                  "    return core.handleCallbackErrors("
                 ]
               },
               {
                 "colno": 65,
                 "context_line": "                                        Sentry.captureException(new Error('This is an error'));",
                 "filename": "[[FILENAME7]]",
-                "function": "<anonymous>",
+                "function": "?",
                 "in_app": true,
-                "lineno": 155,
+                "lineno": 156,
                 "module": "app",
                 "post_context": [
                   "                                    });",
@@ -349,10 +333,44 @@
       ]
     },
     "modules": {
-      "localforage": "1.10.0",
-      "mime-db": "1.52.0"
+      "debug": "4.3.4",
+      "dotenv": "16.4.5",
+      "function-bind": "1.1.2",
+      "hasown": "2.0.2",
+      "import-in-the-middle": "1.7.1",
+      "is-core-module": "2.13.1",
+      "mime-db": "1.52.0",
+      "module-details-from-path": "1.0.3",
+      "opentelemetry-instrumentation-fetch-node": "1.2.0",
+      "require-in-the-middle": "7.3.0",
+      "resolve": "1.22.8",
+      "semver": "7.6.0",
+      "shimmer": "1.2.1",
+      "supports-color": "5.5.0",
+      "yallist": "4.0.0"
     },
     "platform": "node",
+    "request": {
+      "cookies": {},
+      "headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        "accept-encoding": "gzip, deflate, br",
+        "accept-language": "en-US,en;q=0.5",
+        "cache-control": "no-cache",
+        "connection": "keep-alive",
+        "dnt": "1",
+        "host": "localhost:3030",
+        "pragma": "no-cache",
+        "sec-fetch-dest": "document",
+        "sec-fetch-mode": "navigate",
+        "sec-fetch-site": "none",
+        "sec-fetch-user": "?1",
+        "upgrade-insecure-requests": "1",
+        "user-agent": "[[user-agent]]"
+      },
+      "method": "GET",
+      "url": "http://localhost:3030/test-error-manual"
+    },
     "sdk": {
       "integrations": [
         "InboundFilters",
@@ -361,28 +379,38 @@
         "RequestData",
         "Console",
         "Http",
-        "Undici",
+        "NodeFetch",
         "OnUncaughtException",
         "OnUnhandledRejection",
         "ContextLines",
-        "LocalVariables",
+        "LocalVariablesAsync",
         "Context",
         "Modules",
-        "Hapi"
+        "Express",
+        "Fastify",
+        "Graphql",
+        "Mongo",
+        "Mongoose",
+        "Mysql",
+        "Mysql2",
+        "Redis",
+        "Postgres",
+        "Nest",
+        "Hapi",
+        "Koa",
+        "Connect"
       ],
       "name": "sentry.javascript.node",
       "packages": [
         {
           "name": "npm:@sentry/node",
-          "version": "7.113.0"
+          "version": "8.0.0-beta.6"
         }
       ],
-      "version": "7.113.0"
+      "version": "8.0.0-beta.6"
     },
     "server_name": "D9M3PY4LQ7.local",
-    "tags": {
-      "transaction": "/test-error-manual"
-    },
-    "timestamp": "[[timestamp]]"
+    "timestamp": "[[timestamp]]",
+    "transaction": "GET /test-error-manual"
   }
 ]

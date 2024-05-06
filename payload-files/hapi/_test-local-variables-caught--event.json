@@ -4,7 +4,7 @@
     "event_id": "[[ID1]]",
     "sdk": {
       "name": "sentry.javascript.node",
-      "version": "7.113.0"
+      "version": "8.0.0-beta.6"
     },
     "sent_at": "[[ISODateString]]",
     "trace": {
@@ -13,7 +13,7 @@
       "sample_rate": "1",
       "sampled": "true",
       "trace_id": "[[ID2]]",
-      "transaction": "/test-local-variables-uncaught"
+      "transaction": "GET /test-local-variables-caught"
     }
   },
   {
@@ -25,18 +25,6 @@
         "category": "console",
         "level": "log",
         "message": "Server running on http://localhost:3030",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": "test console",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": "test console",
         "timestamp": "[[timestamp]]"
       }
     ],
@@ -70,13 +58,6 @@
         "version": "v20.12.1"
       },
       "trace": {
-        "data": {
-          "sentry.op": "hapi.request",
-          "sentry.origin": "manual",
-          "sentry.sample_rate": 1
-        },
-        "op": "hapi.request",
-        "origin": "manual",
         "span_id": "[[ID3]]",
         "trace_id": "[[ID2]]"
       }
@@ -87,11 +68,8 @@
       "values": [
         {
           "mechanism": {
-            "data": {
-              "function": "hapiErrorPlugin"
-            },
-            "handled": false,
-            "type": "hapi"
+            "handled": true,
+            "type": "generic"
           },
           "stacktrace": {
             "frames": [
@@ -239,44 +217,78 @@
                 ]
               },
               {
-                "colno": 23,
-                "context_line": "                throw new Error(\"Uncaught Local Variable Error - \".concat(JSON.stringify({ randomVariableToRecord: randomVariableToRecord })));",
+                "colno": 27,
+                "context_line": "                    throw new Error('Local Variable Error');",
                 "filename": "[[FILENAME5]]",
                 "function": "handler",
                 "in_app": true,
-                "lineno": 174,
+                "lineno": 185,
                 "module": "app",
                 "post_context": [
+                  "                }",
+                  "                catch (e) {",
+                  "                    exceptionId = Sentry.captureException(e);",
+                  "                }",
+                  "                return { exceptionId: exceptionId };",
                   "            },",
-                  "        });",
+                  "        });"
+                ],
+                "pre_context": [
                   "        server.route({",
                   "            method: 'GET',",
                   "            path: '/test-local-variables-caught',",
                   "            handler: function (request, h) {",
-                  "                var randomVariableToRecord = 'LOCAL VARIABLE';"
-                ],
-                "pre_context": [
-                  "            },",
-                  "        });",
-                  "        server.route({",
-                  "            method: 'GET',",
-                  "            path: '/test-local-variables-uncaught',",
-                  "            handler: function (request, h) {",
-                  "                var randomVariableToRecord = 'LOCAL VARIABLE';"
+                  "                var randomVariableToRecord = 'LOCAL VARIABLE';",
+                  "                var exceptionId;",
+                  "                try {"
                 ]
               }
             ]
           },
           "type": "Error",
-          "value": "Uncaught Local Variable Error - {\"randomVariableToRecord\":\"LOCAL VARIABLE\"}"
+          "value": "Local Variable Error"
         }
       ]
     },
     "modules": {
-      "localforage": "1.10.0",
-      "mime-db": "1.52.0"
+      "debug": "4.3.4",
+      "dotenv": "16.4.5",
+      "function-bind": "1.1.2",
+      "hasown": "2.0.2",
+      "import-in-the-middle": "1.7.1",
+      "is-core-module": "2.13.1",
+      "mime-db": "1.52.0",
+      "module-details-from-path": "1.0.3",
+      "opentelemetry-instrumentation-fetch-node": "1.2.0",
+      "require-in-the-middle": "7.3.0",
+      "resolve": "1.22.8",
+      "semver": "7.6.0",
+      "shimmer": "1.2.1",
+      "supports-color": "5.5.0",
+      "yallist": "4.0.0"
     },
     "platform": "node",
+    "request": {
+      "cookies": {},
+      "headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        "accept-encoding": "gzip, deflate, br",
+        "accept-language": "en-US,en;q=0.5",
+        "cache-control": "no-cache",
+        "connection": "keep-alive",
+        "dnt": "1",
+        "host": "localhost:3030",
+        "pragma": "no-cache",
+        "sec-fetch-dest": "document",
+        "sec-fetch-mode": "navigate",
+        "sec-fetch-site": "none",
+        "sec-fetch-user": "?1",
+        "upgrade-insecure-requests": "1",
+        "user-agent": "[[user-agent]]"
+      },
+      "method": "GET",
+      "url": "http://localhost:3030/test-local-variables-caught"
+    },
     "sdk": {
       "integrations": [
         "InboundFilters",
@@ -285,28 +297,38 @@
         "RequestData",
         "Console",
         "Http",
-        "Undici",
+        "NodeFetch",
         "OnUncaughtException",
         "OnUnhandledRejection",
         "ContextLines",
-        "LocalVariables",
+        "LocalVariablesAsync",
         "Context",
         "Modules",
-        "Hapi"
+        "Express",
+        "Fastify",
+        "Graphql",
+        "Mongo",
+        "Mongoose",
+        "Mysql",
+        "Mysql2",
+        "Redis",
+        "Postgres",
+        "Nest",
+        "Hapi",
+        "Koa",
+        "Connect"
       ],
       "name": "sentry.javascript.node",
       "packages": [
         {
           "name": "npm:@sentry/node",
-          "version": "7.113.0"
+          "version": "8.0.0-beta.6"
         }
       ],
-      "version": "7.113.0"
+      "version": "8.0.0-beta.6"
     },
     "server_name": "D9M3PY4LQ7.local",
-    "tags": {
-      "transaction": "/test-local-variables-uncaught"
-    },
-    "timestamp": "[[timestamp]]"
+    "timestamp": "[[timestamp]]",
+    "transaction": "GET /test-local-variables-caught"
   }
 ]

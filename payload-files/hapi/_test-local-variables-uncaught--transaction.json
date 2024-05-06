@@ -13,7 +13,7 @@
       "sample_rate": "1",
       "sampled": "true",
       "trace_id": "[[ID2]]",
-      "transaction": "GET /test-param-success/1337"
+      "transaction": "GET /test-local-variables-uncaught"
     }
   },
   {
@@ -72,12 +72,12 @@
           "http.flavor": "1.1",
           "http.host": "localhost:3030",
           "http.method": "GET",
-          "http.response.status_code": 200,
+          "http.response.status_code": 500,
           "http.scheme": "http",
-          "http.status_code": 200,
-          "http.status_text": "OK",
-          "http.target": "/test-param-success/1337",
-          "http.url": "http://localhost:3030/test-param-success/1337",
+          "http.status_code": 500,
+          "http.status_text": "INTERNAL SERVER ERROR",
+          "http.target": "/test-local-variables-uncaught",
+          "http.url": "http://localhost:3030/test-local-variables-uncaught",
           "http.user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:125.0) Gecko/20100101 Firefox/125.0",
           "net.host.ip": "::1",
           "net.host.name": "localhost",
@@ -90,12 +90,12 @@
           "sentry.origin": "auto.http.otel.http",
           "sentry.sample_rate": 1,
           "sentry.source": "url",
-          "url": "http://localhost:3030/test-param-success/1337"
+          "url": "http://localhost:3030/test-local-variables-uncaught"
         },
         "op": "http.server",
         "origin": "auto.http.otel.http",
         "span_id": "[[ID3]]",
-        "status": "ok",
+        "status": "unknown_error",
         "trace_id": "[[ID2]]"
       }
     },
@@ -138,7 +138,7 @@
         "user-agent": "[[user-agent]]"
       },
       "method": "GET",
-      "url": "http://localhost:3030/test-param-success/1337"
+      "url": "http://localhost:3030/test-local-variables-uncaught"
     },
     "sdk": {
       "integrations": [
@@ -182,7 +182,7 @@
     "spans": [],
     "start_timestamp": "[[timestamp]]",
     "timestamp": "[[timestamp]]",
-    "transaction": "GET /test-param-success/1337",
+    "transaction": "GET /test-local-variables-uncaught",
     "transaction_info": {
       "source": "url"
     },
