@@ -1,0 +1,136 @@
+[
+  {
+    "dsn": "[[dsn]]",
+    "event_id": "[[ID1]]",
+    "sdk": {
+      "name": "sentry.javascript.node",
+      "version": "7.113.0"
+    },
+    "sent_at": "[[ISODateString]]",
+    "trace": {
+      "environment": "qa",
+      "public_key": "[[publicKey]]",
+      "sample_rate": "1",
+      "sampled": "true",
+      "trace_id": "[[ID2]]",
+      "transaction": "/test-local-variables-caught"
+    }
+  },
+  {
+    "type": "transaction"
+  },
+  {
+    "breadcrumbs": [
+      {
+        "category": "console",
+        "level": "log",
+        "message": "Server running on http://localhost:3030",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "test console",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "test console",
+        "timestamp": "[[timestamp]]"
+      }
+    ],
+    "contexts": {
+      "app": {
+        "app_memory": "[[highNumber]]",
+        "app_start_time": "[[ISODateString]]"
+      },
+      "cloud_resource": {},
+      "culture": {
+        "locale": "en-US",
+        "timezone": "Europe/Vienna"
+      },
+      "device": {
+        "arch": "arm64",
+        "boot_time": "[[ISODateString]]",
+        "cpu_description": "Apple M1 Pro",
+        "free_memory": "[[highNumber]]",
+        "memory_size": "[[highNumber]]",
+        "processor_count": 10,
+        "processor_frequency": "[[highNumber]]"
+      },
+      "os": {
+        "build": "23C64",
+        "kernel_version": "23.2.0",
+        "name": "macOS",
+        "version": "14.2"
+      },
+      "runtime": {
+        "name": "node",
+        "version": "v20.12.1"
+      },
+      "trace": {
+        "data": {
+          "http.response.status_code": 200,
+          "sentry.op": "hapi.request",
+          "sentry.origin": "manual",
+          "sentry.sample_rate": 1
+        },
+        "op": "hapi.request",
+        "origin": "manual",
+        "span_id": "[[ID3]]",
+        "status": "ok",
+        "tags": {
+          "http.status_code": "200"
+        },
+        "trace_id": "[[ID2]]"
+      }
+    },
+    "environment": "qa",
+    "event_id": "[[ID1]]",
+    "modules": {
+      "localforage": "1.10.0",
+      "mime-db": "1.52.0"
+    },
+    "platform": "node",
+    "sdk": {
+      "integrations": [
+        "InboundFilters",
+        "FunctionToString",
+        "LinkedErrors",
+        "RequestData",
+        "Console",
+        "Http",
+        "Undici",
+        "OnUncaughtException",
+        "OnUnhandledRejection",
+        "ContextLines",
+        "LocalVariables",
+        "Context",
+        "Modules",
+        "Hapi"
+      ],
+      "name": "sentry.javascript.node",
+      "packages": [
+        {
+          "name": "npm:@sentry/node",
+          "version": "7.113.0"
+        }
+      ],
+      "version": "7.113.0"
+    },
+    "server_name": "D9M3PY4LQ7.local",
+    "spans": [],
+    "start_timestamp": "[[timestamp]]",
+    "tags": {
+      "http.status_code": "200",
+      "transaction": "/test-local-variables-caught"
+    },
+    "timestamp": "[[timestamp]]",
+    "transaction": "/test-local-variables-caught",
+    "transaction_info": {
+      "source": "custom"
+    },
+    "type": "transaction"
+  }
+]

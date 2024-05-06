@@ -1,0 +1,384 @@
+[
+  {
+    "dsn": "[[dsn]]",
+    "event_id": "[[ID1]]",
+    "sdk": {
+      "name": "sentry.javascript.node",
+      "version": "7.113.0"
+    },
+    "sent_at": "[[ISODateString]]",
+    "trace": {
+      "environment": "qa",
+      "public_key": "[[publicKey]]",
+      "sample_rate": "1",
+      "sampled": "true",
+      "trace_id": "[[ID2]]",
+      "transaction": "/test-error"
+    }
+  },
+  {
+    "type": "event"
+  },
+  {
+    "breadcrumbs": [
+      {
+        "category": "console",
+        "level": "log",
+        "message": "Server running on http://localhost:3030",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "test console",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "test console",
+        "timestamp": "[[timestamp]]"
+      }
+    ],
+    "contexts": {
+      "app": {
+        "app_memory": "[[highNumber]]",
+        "app_start_time": "[[ISODateString]]"
+      },
+      "cloud_resource": {},
+      "culture": {
+        "locale": "en-US",
+        "timezone": "Europe/Vienna"
+      },
+      "device": {
+        "arch": "arm64",
+        "boot_time": "[[ISODateString]]",
+        "cpu_description": "Apple M1 Pro",
+        "free_memory": "[[highNumber]]",
+        "memory_size": "[[highNumber]]",
+        "processor_count": 10,
+        "processor_frequency": "[[highNumber]]"
+      },
+      "os": {
+        "build": "23C64",
+        "kernel_version": "23.2.0",
+        "name": "macOS",
+        "version": "14.2"
+      },
+      "runtime": {
+        "name": "node",
+        "version": "v20.12.1"
+      },
+      "trace": {
+        "data": {
+          "sentry.op": "hapi.request",
+          "sentry.origin": "manual",
+          "sentry.sample_rate": 1
+        },
+        "op": "hapi.request",
+        "origin": "manual",
+        "span_id": "[[ID3]]",
+        "trace_id": "[[ID2]]"
+      }
+    },
+    "environment": "qa",
+    "event_id": "[[ID1]]",
+    "exception": {
+      "values": [
+        {
+          "mechanism": {
+            "handled": true,
+            "type": "generic"
+          },
+          "stacktrace": {
+            "frames": [
+              {
+                "colno": 36,
+                "context_line": "    const result = await internals.handler(request, request.route.settings.handler);",
+                "filename": "[[FILENAME1]]",
+                "function": "exports.execute",
+                "in_app": false,
+                "lineno": 31,
+                "module": "@hapi.hapi.lib:handler",
+                "post_context": [
+                  "    if (result._takeover ||",
+                  "        typeof result === 'symbol') {",
+                  "",
+                  "        return result;",
+                  "    }",
+                  "",
+                  "    request._setResponse(result);"
+                ],
+                "pre_context": [
+                  "                }",
+                  "            }",
+                  "        }",
+                  "    }",
+                  "",
+                  "    // Handler",
+                  ""
+                ]
+              },
+              {
+                "colno": 48,
+                "context_line": "    let response = await request._core.toolkit.execute(method, request, { bind, realm, continue: 'null' });",
+                "filename": "[[FILENAME1]]",
+                "function": "internals.handler",
+                "in_app": false,
+                "lineno": 46,
+                "module": "@hapi.hapi.lib:handler",
+                "post_context": [
+                  "",
+                  "    // Handler",
+                  "",
+                  "    if (!pre) {",
+                  "        if (response.isBoom) {",
+                  "            request._log(['handler', 'error'], response);",
+                  "            throw response;"
+                ],
+                "pre_context": [
+                  "};",
+                  "",
+                  "",
+                  "internals.handler = async function (request, method, pre) {",
+                  "",
+                  "    const bind = request.route.settings.bind;",
+                  "    const realm = request.route.realm;"
+                ]
+              },
+              {
+                "colno": 29,
+                "context_line": "                operation = method(request, h);",
+                "filename": "[[FILENAME2]]",
+                "function": "exports.Manager.execute",
+                "in_app": false,
+                "lineno": 57,
+                "module": "@hapi.hapi.lib:toolkit",
+                "post_context": [
+                  "            }",
+                  "",
+                  "            var response = await exports.timed(operation, options);",
+                  "        }",
+                  "        catch (err) {",
+                  "            if (Bounce.isSystem(err)) {",
+                  "                response = Boom.badImplementation(err);"
+                ],
+                "pre_context": [
+                  "            if (bind) {",
+                  "                operation = method.call(bind, request, h);",
+                  "            }",
+                  "            else if (options.args) {",
+                  "                operation = method(request, h, ...options.args);",
+                  "            }",
+                  "            else {"
+                ]
+              },
+              {
+                "colno": 24,
+                "context_line": "                return __awaiter(this, void 0, void 0, function () {",
+                "filename": "[[FILENAME3]]",
+                "function": "handler",
+                "in_app": true,
+                "lineno": 71,
+                "module": "app",
+                "post_context": [
+                  "                    var exceptionId;",
+                  "                    return __generator(this, function (_a) {",
+                  "                        switch (_a.label) {",
+                  "                            case 0:",
+                  "                                exceptionId = Sentry.captureException(new Error('This is an error'));",
+                  "                                return [4 /*yield*/, Sentry.flush(2000)];",
+                  "                            case 1:"
+                ],
+                "pre_context": [
+                  "                return { version: 'v1' };",
+                  "            },",
+                  "        });",
+                  "        server.route({",
+                  "            method: 'GET',",
+                  "            path: '/test-error',",
+                  "            handler: function (request, h) {"
+                ]
+              },
+              {
+                "colno": 12,
+                "context_line": "    return new (P || (P = Promise))(function (resolve, reject) {",
+                "filename": "[[FILENAME3]]",
+                "function": "__awaiter",
+                "in_app": true,
+                "lineno": 4,
+                "module": "app",
+                "post_context": [
+                  "        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }",
+                  "        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }",
+                  "        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }",
+                  "        step((generator = generator.apply(thisArg, _arguments || [])).next());",
+                  "    });",
+                  "};",
+                  "var __generator = (this && this.__generator) || function (thisArg, body) {"
+                ],
+                "pre_context": [
+                  "\"use strict\";",
+                  "var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {",
+                  "    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }"
+                ]
+              },
+              {
+                "filename": "[[FILENAME4]]",
+                "function": "new Promise",
+                "in_app": false,
+                "module": "<anonymous>"
+              },
+              {
+                "colno": 71,
+                "context_line": "        step((generator = generator.apply(thisArg, _arguments || [])).next());",
+                "filename": "[[FILENAME3]]",
+                "function": "<anonymous>",
+                "in_app": true,
+                "lineno": 8,
+                "module": "app",
+                "post_context": [
+                  "    });",
+                  "};",
+                  "var __generator = (this && this.__generator) || function (thisArg, body) {",
+                  "    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;",
+                  "    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { re {snip}",
+                  "    function verb(n) { return function (v) { return step([n, v]); }; }",
+                  "    function step(op) {"
+                ],
+                "pre_context": [
+                  "\"use strict\";",
+                  "var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {",
+                  "    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }",
+                  "    return new (P || (P = Promise))(function (resolve, reject) {",
+                  "        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }",
+                  "        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }",
+                  "        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }"
+                ]
+              },
+              {
+                "colno": 53,
+                "context_line": "    function verb(n) { return function (v) { return step([n, v]); }; }",
+                "filename": "[[FILENAME3]]",
+                "function": "Object.next",
+                "in_app": true,
+                "lineno": 14,
+                "module": "app",
+                "post_context": [
+                  "    function step(op) {",
+                  "        if (f) throw new TypeError(\"Generator is already executing.\");",
+                  "        while (g && (g = 0, op[0] && (_ = 0)), _) try {",
+                  "            if (f = 1, y && (t = op[0] & 2 ? y[\"return\"] : op[0] ? y[\"throw\"] || ((t = y[\"return\"]) && t.call(y), 0) : y.next) && !(t = t.ca {snip}",
+                  "            if (y = 0, t) op = [op[0] & 2, t.value];",
+                  "            switch (op[0]) {",
+                  "                case 0: case 1: t = op; break;"
+                ],
+                "pre_context": [
+                  "        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }",
+                  "        step((generator = generator.apply(thisArg, _arguments || [])).next());",
+                  "    });",
+                  "};",
+                  "var __generator = (this && this.__generator) || function (thisArg, body) {",
+                  "    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;",
+                  "    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { re {snip}"
+                ]
+              },
+              {
+                "colno": 23,
+                "context_line": "            op = body.call(thisArg, _);",
+                "filename": "[[FILENAME3]]",
+                "function": "step",
+                "in_app": true,
+                "lineno": 33,
+                "module": "app",
+                "post_context": [
+                  "        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }",
+                  "        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };",
+                  "    }",
+                  "};",
+                  "var __importDefault = (this && this.__importDefault) || function (mod) {",
+                  "    return (mod && mod.__esModule) ? mod : { \"default\": mod };",
+                  "};"
+                ],
+                "pre_context": [
+                  "                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }",
+                  "                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }",
+                  "                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }",
+                  "                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }",
+                  "                    if (t[2]) _.ops.pop();",
+                  "                    _.trys.pop(); continue;",
+                  "            }"
+                ]
+              },
+              {
+                "colno": 71,
+                "context_line": "                                exceptionId = Sentry.captureException(new Error('This is an error'));",
+                "filename": "[[FILENAME3]]",
+                "function": "<anonymous>",
+                "in_app": true,
+                "lineno": 76,
+                "module": "app",
+                "post_context": [
+                  "                                return [4 /*yield*/, Sentry.flush(2000)];",
+                  "                            case 1:",
+                  "                                _a.sent();",
+                  "                                return [2 /*return*/, { exceptionId: exceptionId }];",
+                  "                        }",
+                  "                    });",
+                  "                });"
+                ],
+                "pre_context": [
+                  "            path: '/test-error',",
+                  "            handler: function (request, h) {",
+                  "                return __awaiter(this, void 0, void 0, function () {",
+                  "                    var exceptionId;",
+                  "                    return __generator(this, function (_a) {",
+                  "                        switch (_a.label) {",
+                  "                            case 0:"
+                ]
+              }
+            ]
+          },
+          "type": "Error",
+          "value": "This is an error"
+        }
+      ]
+    },
+    "modules": {
+      "localforage": "1.10.0",
+      "mime-db": "1.52.0"
+    },
+    "platform": "node",
+    "sdk": {
+      "integrations": [
+        "InboundFilters",
+        "FunctionToString",
+        "LinkedErrors",
+        "RequestData",
+        "Console",
+        "Http",
+        "Undici",
+        "OnUncaughtException",
+        "OnUnhandledRejection",
+        "ContextLines",
+        "LocalVariables",
+        "Context",
+        "Modules",
+        "Hapi"
+      ],
+      "name": "sentry.javascript.node",
+      "packages": [
+        {
+          "name": "npm:@sentry/node",
+          "version": "7.113.0"
+        }
+      ],
+      "version": "7.113.0"
+    },
+    "server_name": "D9M3PY4LQ7.local",
+    "tags": {
+      "transaction": "/test-error"
+    },
+    "timestamp": "[[timestamp]]"
+  }
+]

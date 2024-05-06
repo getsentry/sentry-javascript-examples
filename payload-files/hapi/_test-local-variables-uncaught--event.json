@@ -1,0 +1,312 @@
+[
+  {
+    "dsn": "[[dsn]]",
+    "event_id": "[[ID1]]",
+    "sdk": {
+      "name": "sentry.javascript.node",
+      "version": "7.113.0"
+    },
+    "sent_at": "[[ISODateString]]",
+    "trace": {
+      "environment": "qa",
+      "public_key": "[[publicKey]]",
+      "sample_rate": "1",
+      "sampled": "true",
+      "trace_id": "[[ID2]]",
+      "transaction": "/test-local-variables-uncaught"
+    }
+  },
+  {
+    "type": "event"
+  },
+  {
+    "breadcrumbs": [
+      {
+        "category": "console",
+        "level": "log",
+        "message": "Server running on http://localhost:3030",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "test console",
+        "timestamp": "[[timestamp]]"
+      },
+      {
+        "category": "console",
+        "level": "log",
+        "message": "test console",
+        "timestamp": "[[timestamp]]"
+      }
+    ],
+    "contexts": {
+      "app": {
+        "app_memory": "[[highNumber]]",
+        "app_start_time": "[[ISODateString]]"
+      },
+      "cloud_resource": {},
+      "culture": {
+        "locale": "en-US",
+        "timezone": "Europe/Vienna"
+      },
+      "device": {
+        "arch": "arm64",
+        "boot_time": "[[ISODateString]]",
+        "cpu_description": "Apple M1 Pro",
+        "free_memory": "[[highNumber]]",
+        "memory_size": "[[highNumber]]",
+        "processor_count": 10,
+        "processor_frequency": "[[highNumber]]"
+      },
+      "os": {
+        "build": "23C64",
+        "kernel_version": "23.2.0",
+        "name": "macOS",
+        "version": "14.2"
+      },
+      "runtime": {
+        "name": "node",
+        "version": "v20.12.1"
+      },
+      "trace": {
+        "data": {
+          "sentry.op": "hapi.request",
+          "sentry.origin": "manual",
+          "sentry.sample_rate": 1
+        },
+        "op": "hapi.request",
+        "origin": "manual",
+        "span_id": "[[ID3]]",
+        "trace_id": "[[ID2]]"
+      }
+    },
+    "environment": "qa",
+    "event_id": "[[ID1]]",
+    "exception": {
+      "values": [
+        {
+          "mechanism": {
+            "data": {
+              "function": "hapiErrorPlugin"
+            },
+            "handled": false,
+            "type": "hapi"
+          },
+          "stacktrace": {
+            "frames": [
+              {
+                "colno": 9,
+                "context_line": "        await this._lifecycle();",
+                "filename": "[[FILENAME1]]",
+                "function": "Request._execute",
+                "in_app": false,
+                "lineno": 280,
+                "module": "@hapi.hapi.lib:request",
+                "post_context": [
+                  "        this._reply();",
+                  "    }",
+                  "",
+                  "    async _onRequest() {",
+                  "",
+                  "        // onRequest (can change request method and url)",
+                  ""
+                ],
+                "pre_context": [
+                  "        catch (err) {",
+                  "            Bounce.rethrow(err, 'system');",
+                  "            return this._reply(err);",
+                  "        }",
+                  "",
+                  "        this._lookup();",
+                  "        this._setTimeouts();"
+                ]
+              },
+              {
+                "colno": 5,
+                "filename": "[[FILENAME2]]",
+                "function": "process.processTicksAndRejections",
+                "in_app": false,
+                "lineno": 95,
+                "module": "task_queues"
+              },
+              {
+                "colno": 68,
+                "context_line": "                var response = await (typeof func === 'function' ? func(this) : this._invoke(func));",
+                "filename": "[[FILENAME1]]",
+                "function": "Request._lifecycle",
+                "in_app": false,
+                "lineno": 370,
+                "module": "@hapi.hapi.lib:request",
+                "post_context": [
+                  "            }",
+                  "            catch (err) {",
+                  "                Bounce.rethrow(err, 'system');",
+                  "                response = this._core.Response.wrap(err, this);",
+                  "            }",
+                  "",
+                  "            if (!response ||"
+                ],
+                "pre_context": [
+                  "",
+                  "        for (const func of this._route._cycle) {",
+                  "            if (this._isReplied) {",
+                  "                return;",
+                  "            }",
+                  "",
+                  "            try {"
+                ]
+              },
+              {
+                "colno": 36,
+                "context_line": "    const result = await internals.handler(request, request.route.settings.handler);",
+                "filename": "[[FILENAME3]]",
+                "function": "exports.execute",
+                "in_app": false,
+                "lineno": 31,
+                "module": "@hapi.hapi.lib:handler",
+                "post_context": [
+                  "    if (result._takeover ||",
+                  "        typeof result === 'symbol') {",
+                  "",
+                  "        return result;",
+                  "    }",
+                  "",
+                  "    request._setResponse(result);"
+                ],
+                "pre_context": [
+                  "                }",
+                  "            }",
+                  "        }",
+                  "    }",
+                  "",
+                  "    // Handler",
+                  ""
+                ]
+              },
+              {
+                "colno": 48,
+                "context_line": "    let response = await request._core.toolkit.execute(method, request, { bind, realm, continue: 'null' });",
+                "filename": "[[FILENAME3]]",
+                "function": "internals.handler",
+                "in_app": false,
+                "lineno": 46,
+                "module": "@hapi.hapi.lib:handler",
+                "post_context": [
+                  "",
+                  "    // Handler",
+                  "",
+                  "    if (!pre) {",
+                  "        if (response.isBoom) {",
+                  "            request._log(['handler', 'error'], response);",
+                  "            throw response;"
+                ],
+                "pre_context": [
+                  "};",
+                  "",
+                  "",
+                  "internals.handler = async function (request, method, pre) {",
+                  "",
+                  "    const bind = request.route.settings.bind;",
+                  "    const realm = request.route.realm;"
+                ]
+              },
+              {
+                "colno": 29,
+                "context_line": "                operation = method(request, h);",
+                "filename": "[[FILENAME4]]",
+                "function": "exports.Manager.execute",
+                "in_app": false,
+                "lineno": 57,
+                "module": "@hapi.hapi.lib:toolkit",
+                "post_context": [
+                  "            }",
+                  "",
+                  "            var response = await exports.timed(operation, options);",
+                  "        }",
+                  "        catch (err) {",
+                  "            if (Bounce.isSystem(err)) {",
+                  "                response = Boom.badImplementation(err);"
+                ],
+                "pre_context": [
+                  "            if (bind) {",
+                  "                operation = method.call(bind, request, h);",
+                  "            }",
+                  "            else if (options.args) {",
+                  "                operation = method(request, h, ...options.args);",
+                  "            }",
+                  "            else {"
+                ]
+              },
+              {
+                "colno": 23,
+                "context_line": "                throw new Error(\"Uncaught Local Variable Error - \".concat(JSON.stringify({ randomVariableToRecord: randomVariableToRecord })));",
+                "filename": "[[FILENAME5]]",
+                "function": "handler",
+                "in_app": true,
+                "lineno": 174,
+                "module": "app",
+                "post_context": [
+                  "            },",
+                  "        });",
+                  "        server.route({",
+                  "            method: 'GET',",
+                  "            path: '/test-local-variables-caught',",
+                  "            handler: function (request, h) {",
+                  "                var randomVariableToRecord = 'LOCAL VARIABLE';"
+                ],
+                "pre_context": [
+                  "            },",
+                  "        });",
+                  "        server.route({",
+                  "            method: 'GET',",
+                  "            path: '/test-local-variables-uncaught',",
+                  "            handler: function (request, h) {",
+                  "                var randomVariableToRecord = 'LOCAL VARIABLE';"
+                ]
+              }
+            ]
+          },
+          "type": "Error",
+          "value": "Uncaught Local Variable Error - {\"randomVariableToRecord\":\"LOCAL VARIABLE\"}"
+        }
+      ]
+    },
+    "modules": {
+      "localforage": "1.10.0",
+      "mime-db": "1.52.0"
+    },
+    "platform": "node",
+    "sdk": {
+      "integrations": [
+        "InboundFilters",
+        "FunctionToString",
+        "LinkedErrors",
+        "RequestData",
+        "Console",
+        "Http",
+        "Undici",
+        "OnUncaughtException",
+        "OnUnhandledRejection",
+        "ContextLines",
+        "LocalVariables",
+        "Context",
+        "Modules",
+        "Hapi"
+      ],
+      "name": "sentry.javascript.node",
+      "packages": [
+        {
+          "name": "npm:@sentry/node",
+          "version": "7.113.0"
+        }
+      ],
+      "version": "7.113.0"
+    },
+    "server_name": "D9M3PY4LQ7.local",
+    "tags": {
+      "transaction": "/test-local-variables-uncaught"
+    },
+    "timestamp": "[[timestamp]]"
+  }
+]
