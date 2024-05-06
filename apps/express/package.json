@@ -15,11 +15,14 @@
     "extends": "../../package.json"
   },
   "dependencies": {
-    "@sentry/node": "8.0.0-beta.3",
+    "@sentry/node": "file:.yalc/@sentry/node",
+    "@sentry/opentelemetry": "file:.yalc/@sentry/opentelemetry",
     "dotenv": "^16.4.5",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "ioredis": "^4.28.5"
   },
   "devDependencies": {
-    "@types/express": "^4"
+    "@types/express": "^4",
+    "@types/ioredis": "4.28.10"
   }
 }

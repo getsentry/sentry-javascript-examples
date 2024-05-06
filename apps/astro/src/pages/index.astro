@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+export const prerender = false;
+
+---
+
+<Layout>
+<ul>
+    <!-- li><a href="/test-success/">Test Success</a></li -->
+    <!-- li><a href="/test-error">Test Error</a></li -->
+    <li><a href="/test-param-success/1337">Test Param Success</a></li>
+    <li><a href="/test-param-error/1337">Test Param Error</a></li>
+    <!-- li><a href="/test-success-manual">Test Success Manual</a></li -->
+    <!-- li><a href="/test-error-manual">Test Error Manual</a></li -->
+    <!-- li><a href="/test-local-variables-uncaught">Test Local Variables Uncaught</a></li -->
+    <!-- li><a href="/test-local-variables-caught">Test Local Variables Caught</a></li -->
+</ul>
+</Layout>
