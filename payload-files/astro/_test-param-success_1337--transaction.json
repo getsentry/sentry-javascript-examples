@@ -4,13 +4,13 @@
     "event_id": "[[ID1]]",
     "sdk": {
       "name": "sentry.javascript.astro",
-      "version": "7.113.0"
+      "version": "8.0.0-beta.6"
     },
     "sent_at": "[[ISODateString]]",
     "trace": {
       "environment": "qa",
       "public_key": "[[publicKey]]",
-      "release": "d9b30b85f9c70e8a590b9932552161cf132eaffa",
+      "release": "9570e7fc5b7da6cd2a5395fe69d3bb14fe2551a9",
       "sample_rate": "1",
       "sampled": "true",
       "trace_id": "[[ID2]]"
@@ -23,6 +23,7 @@
     "contexts": {
       "trace": {
         "data": {
+          "hardwareConcurrency": "10",
           "sentry.op": "pageload",
           "sentry.origin": "auto.pageload.browser",
           "sentry.sample_rate": 1,
@@ -31,11 +32,6 @@
         "op": "pageload",
         "origin": "auto.pageload.browser",
         "span_id": "[[ID3]]",
-        "tags": {
-          "hardwareConcurrency": "10",
-          "lcp.element": "body > h1",
-          "lcp.size": "[[highNumber]]"
-        },
         "trace_id": "[[ID2]]"
       }
     },
@@ -44,23 +40,19 @@
     "measurements": {
       "fcp": {
         "unit": "millisecond",
-        "value": 184
-      },
-      "lcp": {
-        "unit": "millisecond",
-        "value": 186
+        "value": 135
       },
       "ttfb": {
         "unit": "millisecond",
-        "value": 103
+        "value": 60
       },
       "ttfb.requestTime": {
         "unit": "millisecond",
-        "value": 42
+        "value": 15
       }
     },
     "platform": "javascript",
-    "release": "d9b30b85f9c70e8a590b9932552161cf132eaffa",
+    "release": "9570e7fc5b7da6cd2a5395fe69d3bb14fe2551a9",
     "request": {
       "headers": {
         "Referer": "http://localhost:4321/",
@@ -72,7 +64,7 @@
       "integrations": [
         "InboundFilters",
         "FunctionToString",
-        "TryCatch",
+        "BrowserApiErrors",
         "Breadcrumbs",
         "GlobalHandlers",
         "LinkedErrors",
@@ -84,21 +76,18 @@
       "packages": [
         {
           "name": "npm:@sentry/astro",
-          "version": "7.113.0"
+          "version": "8.0.0-beta.6"
         },
         {
           "name": "npm:@sentry/browser",
-          "version": "7.113.0"
+          "version": "8.0.0-beta.6"
         }
       ],
-      "version": "7.113.0"
+      "version": "8.0.0-beta.6"
     },
     "spans": [],
     "start_timestamp": "[[timestamp]]",
     "tags": {
-      "hardwareConcurrency": "10",
-      "lcp.element": "body > h1",
-      "lcp.size": "[[highNumber]]",
       "runtime": "browser"
     },
     "timestamp": "[[timestamp]]",
