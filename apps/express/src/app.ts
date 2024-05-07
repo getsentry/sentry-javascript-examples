@@ -15,35 +15,16 @@ Sentry.init({
   dsn: 'https://eb90fdb87147dfc95899d3e63cc6ff20@o4506778646609920.ingest.us.sentry.io/4507168754761728',
   includeLocalVariables: true,
   debug: true,
-  //tunnel: `http://localhost:3031/`, // proxy server
+  tunnel: `http://localhost:3031/`, // proxy server
   tracesSampleRate: 1,
-  integrations: [Sentry.experimental_redisIntegration({ client: 'ioredis' })],
 });
 
 import express from 'express';
-import Redis from 'ioredis';
 
 const app = express();
 const port = 3030;
 
 Sentry.setupExpressErrorHandler(app);
-
-const redis = new Redis({
-  port: 6379,
-  host: 'localhost',
-  password: '1234',
-});
-
-app.get('/redis-get', function (req, res) {
-  redis.get('example-key').then(value => {
-    res.send({ 'example-key': value });
-  });
-});
-
-app.get('/redis-set', function (req, res) {
-  redis.set('example-key', 'example-value');
-  res.send('Redis SET');
-});
 
 app.get('/test-success', function (req, res) {
   res.send({ version: 'v1' });
