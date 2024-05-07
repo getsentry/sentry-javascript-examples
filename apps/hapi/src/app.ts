@@ -16,11 +16,6 @@ import Hapi from '@hapi/hapi';
 
 dotenv.config({ path: './../../.env' });
 
-const server = Hapi.server({
-  port: 3030,
-  host: 'localhost',
-});
-
 declare global {
   namespace globalThis {
     var transactionIds: string[];
@@ -28,6 +23,11 @@ declare global {
 }
 
 const init = async () => {
+  const server = Hapi.server({
+    port: 3030,
+    host: 'localhost',
+  });
+
   server.route({
     method: 'GET',
     path: '/test-success',
@@ -137,10 +137,11 @@ const init = async () => {
       return { exceptionId };
     },
   });
-};
 
-(async () => {
-  init();
+  // @ts-ignore
+  await Sentry.setupHapiErrorHandler(server);
   await server.start();
   console.log('Server running on %s', server.info.uri);
-})();
+};
+
+init();

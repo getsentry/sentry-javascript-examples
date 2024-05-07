@@ -4,7 +4,7 @@
     "event_id": "[[ID1]]",
     "sdk": {
       "name": "sentry.javascript.node",
-      "version": "8.0.0-beta.6"
+      "version": "8.0.0-rc.1"
     },
     "sent_at": "[[ISODateString]]",
     "trace": {
@@ -57,7 +57,7 @@
         "resource": {
           "service.name": "node",
           "service.namespace": "sentry",
-          "service.version": "8.0.0-beta.6",
+          "service.version": "8.0.0-rc.1",
           "telemetry.sdk.language": "nodejs",
           "telemetry.sdk.name": "opentelemetry",
           "telemetry.sdk.version": "1.23.0"
@@ -73,6 +73,7 @@
           "http.host": "localhost:3030",
           "http.method": "GET",
           "http.response.status_code": 200,
+          "http.route": "/test-error",
           "http.scheme": "http",
           "http.status_code": 200,
           "http.status_text": "OK",
@@ -89,7 +90,7 @@
           "sentry.op": "http.server",
           "sentry.origin": "auto.http.otel.http",
           "sentry.sample_rate": 1,
-          "sentry.source": "url",
+          "sentry.source": "route",
           "url": "http://localhost:3030/test-error"
         },
         "op": "http.server",
@@ -173,18 +174,38 @@
       "packages": [
         {
           "name": "npm:@sentry/node",
-          "version": "8.0.0-beta.6"
+          "version": "8.0.0-rc.1"
         }
       ],
-      "version": "8.0.0-beta.6"
+      "version": "8.0.0-rc.1"
     },
     "server_name": "D9M3PY4LQ7.local",
-    "spans": [],
+    "spans": [
+      {
+        "data": {
+          "hapi.type": "router",
+          "http.method": "GET",
+          "http.route": "/test-error",
+          "otel.kind": "INTERNAL",
+          "sentry.op": "http",
+          "sentry.origin": "manual"
+        },
+        "description": "GET /test-error",
+        "op": "http",
+        "origin": "manual",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID4]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "ok",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      }
+    ],
     "start_timestamp": "[[timestamp]]",
     "timestamp": "[[timestamp]]",
     "transaction": "GET /test-error",
     "transaction_info": {
-      "source": "url"
+      "source": "route"
     },
     "type": "transaction"
   }

@@ -4,7 +4,7 @@
     "event_id": "[[ID1]]",
     "sdk": {
       "name": "sentry.javascript.node",
-      "version": "8.0.0-beta.6"
+      "version": "8.0.0-rc.1"
     },
     "sent_at": "[[ISODateString]]",
     "trace": {
@@ -57,7 +57,7 @@
         "resource": {
           "service.name": "node",
           "service.namespace": "sentry",
-          "service.version": "8.0.0-beta.6",
+          "service.version": "8.0.0-rc.1",
           "telemetry.sdk.language": "nodejs",
           "telemetry.sdk.name": "opentelemetry",
           "telemetry.sdk.version": "1.23.0"
@@ -72,18 +72,11 @@
           "http.flavor": "1.1",
           "http.host": "localhost:3030",
           "http.method": "GET",
-          "http.response.status_code": 500,
           "http.scheme": "http",
-          "http.status_code": 500,
-          "http.status_text": "INTERNAL SERVER ERROR",
           "http.target": "/test-local-variables-uncaught",
           "http.url": "http://localhost:3030/test-local-variables-uncaught",
           "http.user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:125.0) Gecko/20100101 Firefox/125.0",
-          "net.host.ip": "::1",
           "net.host.name": "localhost",
-          "net.host.port": "[[highNumber]]",
-          "net.peer.ip": "::1",
-          "net.peer.port": "[[highNumber]]",
           "net.transport": "ip_tcp",
           "otel.kind": "SERVER",
           "sentry.op": "http.server",
@@ -95,7 +88,7 @@
         "op": "http.server",
         "origin": "auto.http.otel.http",
         "span_id": "[[ID3]]",
-        "status": "unknown_error",
+        "status": "internal_error",
         "trace_id": "[[ID2]]"
       }
     },
@@ -173,13 +166,34 @@
       "packages": [
         {
           "name": "npm:@sentry/node",
-          "version": "8.0.0-beta.6"
+          "version": "8.0.0-rc.1"
         }
       ],
-      "version": "8.0.0-beta.6"
+      "version": "8.0.0-rc.1"
     },
     "server_name": "D9M3PY4LQ7.local",
-    "spans": [],
+    "spans": [
+      {
+        "data": {
+          "hapi.type": "router",
+          "http.method": "GET",
+          "http.route": "/test-local-variables-uncaught",
+          "otel.kind": "INTERNAL",
+          "sentry.op": "http",
+          "sentry.origin": "manual"
+        },
+        "description": "GET /test-local-variables-uncaught",
+        "measurements": {},
+        "op": "http",
+        "origin": "manual",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID4]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "unknown_error",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      }
+    ],
     "start_timestamp": "[[timestamp]]",
     "timestamp": "[[timestamp]]",
     "transaction": "GET /test-local-variables-uncaught",

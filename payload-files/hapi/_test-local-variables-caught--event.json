@@ -4,7 +4,7 @@
     "event_id": "[[ID1]]",
     "sdk": {
       "name": "sentry.javascript.node",
-      "version": "8.0.0-beta.6"
+      "version": "8.0.0-rc.1"
     },
     "sent_at": "[[ISODateString]]",
     "trace": {
@@ -58,7 +58,8 @@
         "version": "v20.12.1"
       },
       "trace": {
-        "span_id": "[[ID3]]",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID4]]",
         "trace_id": "[[ID2]]"
       }
     },
@@ -74,71 +75,9 @@
           "stacktrace": {
             "frames": [
               {
-                "colno": 9,
-                "context_line": "        await this._lifecycle();",
-                "filename": "[[FILENAME1]]",
-                "function": "Request._execute",
-                "in_app": false,
-                "lineno": 280,
-                "module": "@hapi.hapi.lib:request",
-                "post_context": [
-                  "        this._reply();",
-                  "    }",
-                  "",
-                  "    async _onRequest() {",
-                  "",
-                  "        // onRequest (can change request method and url)",
-                  ""
-                ],
-                "pre_context": [
-                  "        catch (err) {",
-                  "            Bounce.rethrow(err, 'system');",
-                  "            return this._reply(err);",
-                  "        }",
-                  "",
-                  "        this._lookup();",
-                  "        this._setTimeouts();"
-                ]
-              },
-              {
-                "colno": 5,
-                "filename": "[[FILENAME2]]",
-                "function": "process.processTicksAndRejections",
-                "in_app": false,
-                "lineno": 95,
-                "module": "task_queues"
-              },
-              {
-                "colno": 68,
-                "context_line": "                var response = await (typeof func === 'function' ? func(this) : this._invoke(func));",
-                "filename": "[[FILENAME1]]",
-                "function": "Request._lifecycle",
-                "in_app": false,
-                "lineno": 370,
-                "module": "@hapi.hapi.lib:request",
-                "post_context": [
-                  "            }",
-                  "            catch (err) {",
-                  "                Bounce.rethrow(err, 'system');",
-                  "                response = this._core.Response.wrap(err, this);",
-                  "            }",
-                  "",
-                  "            if (!response ||"
-                ],
-                "pre_context": [
-                  "",
-                  "        for (const func of this._route._cycle) {",
-                  "            if (this._isReplied) {",
-                  "                return;",
-                  "            }",
-                  "",
-                  "            try {"
-                ]
-              },
-              {
                 "colno": 36,
                 "context_line": "    const result = await internals.handler(request, request.route.settings.handler);",
-                "filename": "[[FILENAME3]]",
+                "filename": "[[FILENAME1]]",
                 "function": "exports.execute",
                 "in_app": false,
                 "lineno": 31,
@@ -165,7 +104,7 @@
               {
                 "colno": 48,
                 "context_line": "    let response = await request._core.toolkit.execute(method, request, { bind, realm, continue: 'null' });",
-                "filename": "[[FILENAME3]]",
+                "filename": "[[FILENAME1]]",
                 "function": "internals.handler",
                 "in_app": false,
                 "lineno": 46,
@@ -192,7 +131,7 @@
               {
                 "colno": 29,
                 "context_line": "                operation = method(request, h);",
-                "filename": "[[FILENAME4]]",
+                "filename": "[[FILENAME2]]",
                 "function": "exports.Manager.execute",
                 "in_app": false,
                 "lineno": 57,
@@ -217,30 +156,173 @@
                 ]
               },
               {
-                "colno": 27,
-                "context_line": "                    throw new Error('Local Variable Error');",
-                "filename": "[[FILENAME5]]",
-                "function": "handler",
-                "in_app": true,
-                "lineno": 185,
-                "module": "app",
+                "colno": 50,
+                "context_line": "                    return await api.context.with(api.trace.setSpan(api.context.active(), span), () => oldHandler.call(this, ...params));",
+                "filename": "[[FILENAME3]]",
+                "function": "?",
+                "in_app": false,
+                "lineno": 266,
+                "module": "@opentelemetry.instrumentation-hapi.build.src:instrumentation",
                 "post_context": [
                   "                }",
-                  "                catch (e) {",
-                  "                    exceptionId = Sentry.captureException(e);",
-                  "                }",
-                  "                return { exceptionId: exceptionId };",
-                  "            },",
-                  "        });"
+                  "                catch (err) {",
+                  "                    span.recordException(err);",
+                  "                    span.setStatus({",
+                  "                        code: api.SpanStatusCode.ERROR,",
+                  "                        message: err.message,",
+                  "                    });"
                 ],
                 "pre_context": [
-                  "        server.route({",
-                  "            method: 'GET',",
-                  "            path: '/test-local-variables-caught',",
-                  "            handler: function (request, h) {",
-                  "                var randomVariableToRecord = 'LOCAL VARIABLE';",
-                  "                var exceptionId;",
+                  "                    rpcMetadata.route = route.path;",
+                  "                }",
+                  "                const metadata = (0, utils_1.getRouteMetadata)(route, pluginName);",
+                  "                const span = instrumentation.tracer.startSpan(metadata.name, {",
+                  "                    attributes: metadata.attributes,",
+                  "                });",
                   "                try {"
+                ]
+              },
+              {
+                "colno": 46,
+                "context_line": "        return this._getContextManager().with(context, fn, thisArg, ...args);",
+                "filename": "[[FILENAME4]]",
+                "function": "ContextAPI.with",
+                "in_app": false,
+                "lineno": 60,
+                "module": "@opentelemetry.api.build.src.api:context",
+                "post_context": [
+                  "    }",
+                  "    /**",
+                  "     * Bind a context to a target function or event emitter",
+                  "     *",
+                  "     * @param context context to bind to the event emitter or function. Defaults to the currently active context",
+                  "     * @param target function or event emitter to bind",
+                  "     */"
+                ],
+                "pre_context": [
+                  "     *",
+                  "     * @param context context to be active during function execution",
+                  "     * @param fn function to execute in a context",
+                  "     * @param thisArg optional receiver to be used for calling fn",
+                  "     * @param args optional arguments forwarded to fn",
+                  "     */",
+                  "    with(context, fn, thisArg, ...args) {"
+                ]
+              },
+              {
+                "colno": 24,
+                "context_line": "      return super.with(ctx2, fn, thisArg, ...args);",
+                "filename": "[[FILENAME5]]",
+                "function": "SentryContextManager.with",
+                "in_app": false,
+                "lineno": "[[highNumber]]",
+                "module": "@sentry.opentelemetry.cjs:index",
+                "post_context": [
+                  "    }",
+                  "  }",
+                  "",
+                  "  return SentryContextManager ;",
+                  "}",
+                  "",
+                  "/** If this attribute is true, it means that the parent is a remote span. */"
+                ],
+                "pre_context": [
+                  "      const ctx2 = ctx1",
+                  "        .deleteValue(SENTRY_FORK_ISOLATION_SCOPE_CONTEXT_KEY)",
+                  "        .deleteValue(SENTRY_FORK_SET_SCOPE_CONTEXT_KEY)",
+                  "        .deleteValue(SENTRY_FORK_SET_ISOLATION_SCOPE_CONTEXT_KEY);",
+                  "",
+                  "      setContextOnScope(newCurrentScope, ctx2);",
+                  ""
+                ]
+              },
+              {
+                "colno": 40,
+                "context_line": "        return this._asyncLocalStorage.run(context, cb, ...args);",
+                "filename": "[[FILENAME6]]",
+                "function": "SentryContextManager.with",
+                "in_app": false,
+                "lineno": 33,
+                "module": "@opentelemetry.context-async-hooks.build.src:AsyncLocalStorageContextManager",
+                "post_context": [
+                  "    }",
+                  "    enable() {",
+                  "        return this;",
+                  "    }",
+                  "    disable() {",
+                  "        this._asyncLocalStorage.disable();",
+                  "        return this;"
+                ],
+                "pre_context": [
+                  "    }",
+                  "    active() {",
+                  "        var _a;",
+                  "        return (_a = this._asyncLocalStorage.getStore()) !== null && _a !== void 0 ? _a : api_1.ROOT_CONTEXT;",
+                  "    }",
+                  "    with(context, fn, thisArg, ...args) {",
+                  "        const cb = thisArg == null ? fn : fn.bind(thisArg);"
+                ]
+              },
+              {
+                "colno": 14,
+                "filename": "[[FILENAME7]]",
+                "function": "AsyncLocalStorage.run",
+                "in_app": false,
+                "lineno": 346,
+                "module": "node:async_hooks"
+              },
+              {
+                "colno": 115,
+                "context_line": "                    return await api.context.with(api.trace.setSpan(api.context.active(), span), () => oldHandler.call(this, ...params));",
+                "filename": "[[FILENAME3]]",
+                "function": "?",
+                "in_app": false,
+                "lineno": 266,
+                "module": "@opentelemetry.instrumentation-hapi.build.src:instrumentation",
+                "post_context": [
+                  "                }",
+                  "                catch (err) {",
+                  "                    span.recordException(err);",
+                  "                    span.setStatus({",
+                  "                        code: api.SpanStatusCode.ERROR,",
+                  "                        message: err.message,",
+                  "                    });"
+                ],
+                "pre_context": [
+                  "                    rpcMetadata.route = route.path;",
+                  "                }",
+                  "                const metadata = (0, utils_1.getRouteMetadata)(route, pluginName);",
+                  "                const span = instrumentation.tracer.startSpan(metadata.name, {",
+                  "                    attributes: metadata.attributes,",
+                  "                });",
+                  "                try {"
+                ]
+              },
+              {
+                "colno": 35,
+                "context_line": "                            throw new Error('Local Variable Error');",
+                "filename": "[[FILENAME8]]",
+                "function": "handler",
+                "in_app": true,
+                "lineno": 211,
+                "module": "app",
+                "post_context": [
+                  "                        }",
+                  "                        catch (e) {",
+                  "                            exceptionId = Sentry.captureException(e);",
+                  "                        }",
+                  "                        return { exceptionId: exceptionId };",
+                  "                    },",
+                  "                });"
+                ],
+                "pre_context": [
+                  "                server.route({",
+                  "                    method: 'GET',",
+                  "                    path: '/test-local-variables-caught',",
+                  "                    handler: function (request, h) {",
+                  "                        var randomVariableToRecord = 'LOCAL VARIABLE';",
+                  "                        var exceptionId;",
+                  "                        try {"
                 ]
               }
             ]
@@ -322,10 +404,10 @@
       "packages": [
         {
           "name": "npm:@sentry/node",
-          "version": "8.0.0-beta.6"
+          "version": "8.0.0-rc.1"
         }
       ],
-      "version": "8.0.0-beta.6"
+      "version": "8.0.0-rc.1"
     },
     "server_name": "D9M3PY4LQ7.local",
     "timestamp": "[[timestamp]]",

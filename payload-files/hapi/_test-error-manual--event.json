@@ -4,7 +4,7 @@
     "event_id": "[[ID1]]",
     "sdk": {
       "name": "sentry.javascript.node",
-      "version": "8.0.0-beta.6"
+      "version": "8.0.0-rc.1"
     },
     "sent_at": "[[ISODateString]]",
     "trace": {
@@ -299,30 +299,30 @@
                 ]
               },
               {
-                "colno": 65,
-                "context_line": "                                        Sentry.captureException(new Error('This is an error'));",
+                "colno": 73,
+                "context_line": "                                                Sentry.captureException(new Error('This is an error'));",
                 "filename": "[[FILENAME7]]",
                 "function": "?",
                 "in_app": true,
-                "lineno": 156,
+                "lineno": 182,
                 "module": "app",
                 "post_context": [
-                  "                                    });",
-                  "                                });",
-                  "                                return [4 /*yield*/, Sentry.flush(2000)];",
-                  "                            case 1:",
-                  "                                _a.sent();",
-                  "                                return [2 /*return*/, {",
-                  "                                        transactionIds: global.transactionIds || [],"
+                  "                                            });",
+                  "                                        });",
+                  "                                        return [4 /*yield*/, Sentry.flush(2000)];",
+                  "                                    case 1:",
+                  "                                        _a.sent();",
+                  "                                        return [2 /*return*/, {",
+                  "                                                transactionIds: global.transactionIds || [],"
                 ],
                 "pre_context": [
-                  "            handler: function (request, h) {",
-                  "                return __awaiter(this, void 0, void 0, function () {",
-                  "                    return __generator(this, function (_a) {",
-                  "                        switch (_a.label) {",
-                  "                            case 0:",
-                  "                                Sentry.startSpan({ name: 'test-transaction', op: 'e2e-test' }, function () {",
-                  "                                    Sentry.startSpan({ name: 'test-span' }, function () {"
+                  "                    handler: function (request, h) {",
+                  "                        return __awaiter(this, void 0, void 0, function () {",
+                  "                            return __generator(this, function (_a) {",
+                  "                                switch (_a.label) {",
+                  "                                    case 0:",
+                  "                                        Sentry.startSpan({ name: 'test-transaction', op: 'e2e-test' }, function () {",
+                  "                                            Sentry.startSpan({ name: 'test-span' }, function () {"
                 ]
               }
             ]
@@ -404,10 +404,10 @@
       "packages": [
         {
           "name": "npm:@sentry/node",
-          "version": "8.0.0-beta.6"
+          "version": "8.0.0-rc.1"
         }
       ],
-      "version": "8.0.0-beta.6"
+      "version": "8.0.0-rc.1"
     },
     "server_name": "D9M3PY4LQ7.local",
     "timestamp": "[[timestamp]]",
