@@ -1,20 +1,6 @@
+// import './instrumentation'; // file preloaded with --require option in node call
 import * as Sentry from '@sentry/node';
-import dotenv from 'dotenv';
-
-dotenv.config({ path: './../../.env' });
-
-Sentry.init({
-  environment: 'qa', // dynamic sampling bias to keep transactions
-  dsn: process.env.SENTRY_DSN,
-  includeLocalVariables: true,
-  debug: true,
-  tunnel: `http://localhost:3031/`, // proxy server
-  tracesSampleRate: 1,
-});
-
 import Hapi from '@hapi/hapi';
-
-dotenv.config({ path: './../../.env' });
 
 declare global {
   namespace globalThis {
