@@ -13,7 +13,7 @@
       "sample_rate": "1",
       "sampled": "true",
       "trace_id": "[[ID2]]",
-      "transaction": "GET /test-local-variables-caught"
+      "transaction": "GET /test-local-variables-uncaught"
     }
   },
   {
@@ -237,62 +237,62 @@
               },
               {
                 "colno": 32,
-                "context_line": "        return this.appService.testLocalVariablesCaught();",
+                "context_line": "        return this.appService.testLocalVariablesUncaught();",
                 "filename": "[[FILENAME6]]",
-                "function": "AppController.testLocalVariablesCaught",
+                "function": "AppController.testLocalVariablesUncaught",
                 "in_app": true,
-                "lineno": 44,
+                "lineno": 41,
                 "module": "app.controller",
                 "post_context": [
                   "    };",
+                  "    AppController.prototype.testLocalVariablesCaught = function () {",
+                  "        return this.appService.testLocalVariablesCaught();",
+                  "    };",
                   "    __decorate([",
                   "        (0, common_1.Get)('test-success'),",
-                  "        __metadata(\"design:type\", Function),",
-                  "        __metadata(\"design:paramtypes\", []),",
-                  "        __metadata(\"design:returntype\", void 0)",
-                  "    ], AppController.prototype, \"testSuccess\", null);"
+                  "        __metadata(\"design:type\", Function),"
                 ],
                 "pre_context": [
+                  "    AppController.prototype.testSuccessManual = function () {",
+                  "        return this.appService.testSuccessManual();",
+                  "    };",
                   "    AppController.prototype.testErrorManual = function () {",
                   "        return this.appService.testErrorManual();",
                   "    };",
-                  "    AppController.prototype.testLocalVariablesUncaught = function () {",
-                  "        return this.appService.testLocalVariablesUncaught();",
-                  "    };",
-                  "    AppController.prototype.testLocalVariablesCaught = function () {"
+                  "    AppController.prototype.testLocalVariablesUncaught = function () {"
                 ]
               },
               {
-                "colno": 19,
-                "context_line": "            throw new Error('Local Variable Error');",
+                "colno": 15,
+                "context_line": "        throw new Error(\"Uncaught Local Variable Error - \".concat(JSON.stringify({ randomVariableToRecord: randomVariableToRecord })));",
                 "filename": "[[FILENAME7]]",
-                "function": "AppService.testLocalVariablesCaught",
+                "function": "AppService.testLocalVariablesUncaught",
                 "in_app": true,
-                "lineno": 152,
+                "lineno": 146,
                 "module": "app.service",
                 "post_context": [
-                  "        }",
-                  "        catch (e) {",
-                  "            exceptionId = Sentry.captureException(e);",
-                  "        }",
-                  "        return { exceptionId: exceptionId, randomVariableToRecord: randomVariableToRecord };",
-                  "    };",
-                  "    AppService = __decorate(["
-                ],
-                "pre_context": [
-                  "        var randomVariableToRecord = 'LOCAL_VARIABLE';",
-                  "        throw new Error(\"Uncaught Local Variable Error - \".concat(JSON.stringify({ randomVariableToRecord: randomVariableToRecord })));",
                   "    };",
                   "    AppService.prototype.testLocalVariablesCaught = function () {",
                   "        var randomVariableToRecord = 'LOCAL_VARIABLE';",
                   "        var exceptionId;",
-                  "        try {"
+                  "        try {",
+                  "            throw new Error('Local Variable Error');",
+                  "        }"
+                ],
+                "pre_context": [
+                  "                        return [2 /*return*/, 'test-error-body'];",
+                  "                }",
+                  "            });",
+                  "        });",
+                  "    };",
+                  "    AppService.prototype.testLocalVariablesUncaught = function () {",
+                  "        var randomVariableToRecord = 'LOCAL_VARIABLE';"
                 ]
               }
             ]
           },
           "type": "Error",
-          "value": "Local Variable Error"
+          "value": "Uncaught Local Variable Error - {\"randomVariableToRecord\":\"LOCAL_VARIABLE\"}"
         }
       ]
     },
@@ -404,13 +404,12 @@
         "pragma": "no-cache",
         "sec-fetch-dest": "document",
         "sec-fetch-mode": "navigate",
-        "sec-fetch-site": "none",
-        "sec-fetch-user": "?1",
+        "sec-fetch-site": "cross-site",
         "upgrade-insecure-requests": "1",
         "user-agent": "[[user-agent]]"
       },
       "method": "GET",
-      "url": "http://localhost:3030/test-local-variables-caught"
+      "url": "http://localhost:3030/test-local-variables-uncaught"
     },
     "sdk": {
       "integrations": [
@@ -451,6 +450,6 @@
     },
     "server_name": "D9M3PY4LQ7.local",
     "timestamp": "[[timestamp]]",
-    "transaction": "GET /test-local-variables-caught"
+    "transaction": "GET /test-local-variables-uncaught"
   }
 ]
