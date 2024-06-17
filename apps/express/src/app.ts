@@ -1,7 +1,7 @@
-// import './instrumentation'; // (import file at the top or add it to node command with --require flag)
+import './instrument';
+
 import * as Sentry from '@sentry/node';
 import express from 'express';
-
 import dotenv from 'dotenv';
 
 dotenv.config({ path: './../../.env' });
