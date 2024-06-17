@@ -4,75 +4,22 @@
     "event_id": "[[ID1]]",
     "sdk": {
       "name": "sentry.javascript.nextjs",
-      "version": "7.110.1"
+      "version": "8.0.0-beta.3"
     },
     "sent_at": "[[ISODateString]]",
     "trace": {
       "environment": "qa",
       "public_key": "[[publicKey]]",
-      "trace_id": "[[ID2]]"
+      "sample_rate": "1",
+      "sampled": "true",
+      "trace_id": "[[ID2]]",
+      "transaction": "GET /api/test-error-manual"
     }
   },
   {
     "type": "event"
   },
   {
-    "breadcrumbs": [
-      {
-        "category": "console",
-        "level": "log",
-        "message": " \u001b[37m\u001b[1m○\u001b[22m\u001b[39m Compiling / ...",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled / in 3s (2143 modules)",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled /favicon.ico in 181ms (1216 modules)",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled /api/test-success in 130ms (1218 modules)",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled /api/test-error in 300ms (1190 modules)",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled /api/test-param-success/[param] in 237ms (1190 modules)",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled /api/test-param-error/[param] in 134ms (1192 modules)",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled /api/test-success-manual in 165ms (1192 modules)",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled /api/test-error-manual in 203ms (1194 modules)",
-        "timestamp": "[[timestamp]]"
-      }
-    ],
     "contexts": {
       "app": {
         "app_memory": "[[highNumber]]",
@@ -103,10 +50,6 @@
         "version": "v20.12.1"
       },
       "trace": {
-        "data": {
-          "sentry.origin": "manual"
-        },
-        "origin": "manual",
         "parent_span_id": "[[ID3]]",
         "span_id": "[[ID4]]",
         "trace_id": "[[ID2]]"
@@ -132,52 +75,156 @@
                 "module": "node:async_hooks"
               },
               {
+                "colno": 59,
+                "filename": "[[FILENAME2]]",
+                "function": "eval",
+                "in_app": false,
+                "lineno": 948,
+                "module": "@sentry.opentelemetry.cjs:index"
+              },
+              {
+                "colno": 40,
+                "filename": "[[FILENAME3]]",
+                "function": "eval",
+                "in_app": false,
+                "lineno": 88,
+                "module": "@sentry.nextjs.cjs.common.utils:tracingUtils"
+              },
+              {
+                "colno": 14,
+                "filename": "[[FILENAME1]]",
+                "function": "AsyncLocalStorage.run",
+                "in_app": false,
+                "lineno": 346,
+                "module": "node:async_hooks"
+              },
+              {
+                "colno": 16,
+                "filename": "[[FILENAME3]]",
+                "function": "eval",
+                "in_app": false,
+                "lineno": 89,
+                "module": "@sentry.nextjs.cjs.common.utils:tracingUtils"
+              },
+              {
+                "colno": 21,
+                "filename": "[[FILENAME4]]",
+                "function": "eval",
+                "in_app": false,
+                "lineno": 40,
+                "module": "@sentry.nextjs.cjs.common:wrapRouteHandlerWithSentry"
+              },
+              {
+                "colno": 16,
+                "filename": "[[FILENAME5]]",
+                "function": "Object.withIsolationScope",
+                "in_app": false,
+                "lineno": 103,
+                "module": "@sentry.core.cjs:currentScopes"
+              },
+              {
+                "colno": 28,
+                "filename": "[[FILENAME2]]",
+                "function": "Object.withSetIsolationScope",
+                "in_app": false,
+                "lineno": "[[highNumber]]",
+                "module": "@sentry.opentelemetry.cjs:index"
+              },
+              {
+                "colno": 54,
+                "filename": "[[FILENAME6]]",
+                "function": "ContextAPI.with",
+                "in_app": false,
+                "lineno": 95,
+                "module": "@opentelemetry.api.build.esm.api:context"
+              },
+              {
+                "colno": 24,
+                "filename": "[[FILENAME2]]",
+                "function": "SentryContextManager.with",
+                "in_app": false,
+                "lineno": "[[highNumber]]",
+                "module": "@sentry.opentelemetry.cjs:index"
+              },
+              {
+                "colno": 40,
+                "filename": "[[FILENAME7]]",
+                "function": "SentryContextManager.with",
+                "in_app": false,
+                "lineno": 33,
+                "module": "@opentelemetry.context-async-hooks.build.src:AsyncLocalStorageContextManager"
+              },
+              {
+                "colno": 14,
+                "filename": "[[FILENAME1]]",
+                "function": "AsyncLocalStorage.run",
+                "in_app": false,
+                "lineno": 346,
+                "module": "node:async_hooks"
+              },
+              {
                 "colno": 14,
                 "filename": "[[FILENAME2]]",
                 "function": "eval",
                 "in_app": false,
-                "lineno": 49,
-                "module": "@sentry.node.esm.async:hooks"
+                "lineno": "[[highNumber]]",
+                "module": "@sentry.opentelemetry.cjs:index"
               },
               {
-                "colno": 12,
-                "filename": "[[FILENAME3]]",
-                "function": "eval",
-                "in_app": false,
-                "lineno": 245,
-                "module": "@sentry.core.esm:exports"
-              },
-              {
-                "colno": 75,
+                "colno": 25,
                 "filename": "[[FILENAME4]]",
                 "function": "eval",
                 "in_app": false,
                 "lineno": 43,
-                "module": "@sentry.nextjs.esm.common:wrapRouteHandlerWithSentry"
+                "module": "@sentry.nextjs.cjs.common:wrapRouteHandlerWithSentry"
               },
               {
-                "colno": 70,
-                "filename": "[[FILENAME5]]",
-                "function": "continueTrace",
+                "colno": 16,
+                "filename": "[[FILENAME8]]",
+                "function": "Object.startSpan",
                 "in_app": false,
-                "lineno": 289,
-                "module": "@sentry.core.esm.tracing:trace"
+                "lineno": 35,
+                "module": "@sentry.core.cjs.tracing:trace"
               },
               {
-                "colno": 36,
-                "filename": "[[FILENAME6]]",
-                "function": "runWithAsyncContext",
-                "in_app": false,
-                "lineno": 799,
-                "module": "@sentry.core.esm:hub"
-              },
-              {
-                "colno": 25,
+                "colno": 17,
                 "filename": "[[FILENAME2]]",
-                "function": "Object.runWithAsyncContext",
+                "function": "Object.startSpan",
                 "in_app": false,
-                "lineno": 48,
-                "module": "@sentry.node.esm.async:hooks"
+                "lineno": 855,
+                "module": "@sentry.opentelemetry.cjs:index"
+              },
+              {
+                "colno": 76,
+                "filename": "[[FILENAME9]]",
+                "function": "Tracer.startActiveSpan",
+                "in_app": false,
+                "lineno": 136,
+                "module": "@opentelemetry.sdk-trace-base.build.esm:Tracer"
+              },
+              {
+                "colno": 54,
+                "filename": "[[FILENAME6]]",
+                "function": "ContextAPI.with",
+                "in_app": false,
+                "lineno": 95,
+                "module": "@opentelemetry.api.build.esm.api:context"
+              },
+              {
+                "colno": 24,
+                "filename": "[[FILENAME2]]",
+                "function": "SentryContextManager.with",
+                "in_app": false,
+                "lineno": "[[highNumber]]",
+                "module": "@sentry.opentelemetry.cjs:index"
+              },
+              {
+                "colno": 40,
+                "filename": "[[FILENAME7]]",
+                "function": "SentryContextManager.with",
+                "in_app": false,
+                "lineno": 33,
+                "module": "@opentelemetry.context-async-hooks.build.src:AsyncLocalStorageContextManager"
               },
               {
                 "colno": 14,
@@ -188,268 +235,196 @@
                 "module": "node:async_hooks"
               },
               {
-                "colno": 14,
+                "colno": 17,
                 "filename": "[[FILENAME2]]",
                 "function": "eval",
                 "in_app": false,
-                "lineno": 49,
-                "module": "@sentry.node.esm.async:hooks"
-              },
-              {
-                "colno": 12,
-                "filename": "[[FILENAME5]]",
-                "function": "eval",
-                "in_app": false,
-                "lineno": 290,
-                "module": "@sentry.core.esm.tracing:trace"
-              },
-              {
-                "colno": 83,
-                "filename": "[[FILENAME4]]",
-                "function": "eval",
-                "in_app": false,
-                "lineno": 50,
-                "module": "@sentry.nextjs.esm.common:wrapRouteHandlerWithSentry"
-              },
-              {
-                "colno": 70,
-                "filename": "[[FILENAME5]]",
-                "function": "startSpan",
-                "in_app": false,
-                "lineno": 101,
-                "module": "@sentry.core.esm.tracing:trace"
-              },
-              {
-                "colno": 36,
-                "filename": "[[FILENAME6]]",
-                "function": "runWithAsyncContext",
-                "in_app": false,
-                "lineno": 799,
-                "module": "@sentry.core.esm:hub"
-              },
-              {
-                "colno": 25,
-                "filename": "[[FILENAME2]]",
-                "function": "Object.runWithAsyncContext",
-                "in_app": false,
-                "lineno": 48,
-                "module": "@sentry.node.esm.async:hooks"
-              },
-              {
-                "colno": 14,
-                "filename": "[[FILENAME1]]",
-                "function": "AsyncLocalStorage.run",
-                "in_app": false,
-                "lineno": 346,
-                "module": "node:async_hooks"
-              },
-              {
-                "colno": 14,
-                "filename": "[[FILENAME2]]",
-                "function": "eval",
-                "in_app": false,
-                "lineno": 49,
-                "module": "@sentry.node.esm.async:hooks"
-              },
-              {
-                "colno": 66,
-                "filename": "[[FILENAME5]]",
-                "function": "eval",
-                "in_app": false,
-                "lineno": 102,
-                "module": "@sentry.core.esm.tracing:trace"
-              },
-              {
-                "colno": 18,
-                "filename": "[[FILENAME3]]",
-                "function": "withScope",
-                "in_app": false,
-                "lineno": 214,
-                "module": "@sentry.core.esm:exports"
-              },
-              {
-                "colno": 28,
-                "filename": "[[FILENAME6]]",
-                "function": "Hub.withScope",
-                "in_app": false,
-                "lineno": 216,
-                "module": "@sentry.core.esm:hub"
-              },
-              {
-                "colno": 98,
-                "filename": "[[FILENAME5]]",
-                "function": "eval",
-                "in_app": false,
-                "lineno": 118,
-                "module": "@sentry.core.esm.tracing:trace"
+                "lineno": 858,
+                "module": "@sentry.opentelemetry.cjs:index"
               },
               {
                 "colno": 26,
-                "filename": "[[FILENAME7]]",
-                "function": "handleCallbackErrors",
+                "filename": "[[FILENAME10]]",
+                "function": "Object.handleCallbackErrors",
                 "in_app": false,
-                "lineno": 29,
-                "module": "@sentry.core.esm.utils:handleCallbackErrors"
+                "lineno": 26,
+                "module": "@sentry.core.cjs.utils:handleCallbackErrors"
               },
               {
-                "colno": 15,
-                "filename": "[[FILENAME5]]",
-                "function": "status.status",
+                "colno": 13,
+                "filename": "[[FILENAME2]]",
+                "function": "eval",
                 "in_app": false,
-                "lineno": 119,
-                "module": "@sentry.core.esm.tracing:trace"
+                "lineno": 859,
+                "module": "@sentry.opentelemetry.cjs:index"
               },
               {
-                "colno": 108,
+                "colno": 45,
                 "filename": "[[FILENAME4]]",
                 "function": "eval",
                 "in_app": false,
-                "lineno": 60,
-                "module": "@sentry.nextjs.esm.common:wrapRouteHandlerWithSentry"
+                "lineno": 54,
+                "module": "@sentry.nextjs.cjs.common:wrapRouteHandlerWithSentry"
               },
               {
                 "colno": 26,
-                "filename": "[[FILENAME7]]",
-                "function": "handleCallbackErrors",
+                "filename": "[[FILENAME11]]",
+                "function": "Object.handleCallbackErrors",
                 "in_app": false,
-                "lineno": 29,
-                "module": "@sentry.core.esm.utils:handleCallbackErrors"
+                "lineno": 26,
+                "module": "@sentry.core.cjs.utils:handleCallbackErrors"
               },
               {
-                "colno": 44,
+                "colno": 42,
                 "filename": "[[FILENAME4]]",
                 "function": "eval",
                 "in_app": false,
-                "lineno": 61,
-                "module": "@sentry.nextjs.esm.common:wrapRouteHandlerWithSentry"
+                "lineno": 55,
+                "module": "@sentry.nextjs.cjs.common:wrapRouteHandlerWithSentry"
               },
               {
                 "colno": 49,
-                "filename": "[[FILENAME8]]",
+                "filename": "[[FILENAME12]]",
                 "function": "GET$1",
+                "in_app": true,
+                "lineno": 22,
+                "module": "route.ts"
+              },
+              {
+                "colno": 16,
+                "filename": "[[FILENAME8]]",
+                "function": "Object.startSpan",
                 "in_app": false,
+                "lineno": 35,
+                "module": "@sentry.core.cjs.tracing:trace"
+              },
+              {
+                "colno": 17,
+                "filename": "[[FILENAME2]]",
+                "function": "Object.startSpan",
+                "in_app": false,
+                "lineno": 855,
+                "module": "@sentry.opentelemetry.cjs:index"
+              },
+              {
+                "colno": 76,
+                "filename": "[[FILENAME9]]",
+                "function": "Tracer.startActiveSpan",
+                "in_app": false,
+                "lineno": 136,
+                "module": "@opentelemetry.sdk-trace-base.build.esm:Tracer"
+              },
+              {
+                "colno": 54,
+                "filename": "[[FILENAME6]]",
+                "function": "ContextAPI.with",
+                "in_app": false,
+                "lineno": 95,
+                "module": "@opentelemetry.api.build.esm.api:context"
+              },
+              {
+                "colno": 24,
+                "filename": "[[FILENAME2]]",
+                "function": "SentryContextManager.with",
+                "in_app": false,
+                "lineno": "[[highNumber]]",
+                "module": "@sentry.opentelemetry.cjs:index"
+              },
+              {
+                "colno": 40,
+                "filename": "[[FILENAME7]]",
+                "function": "SentryContextManager.with",
+                "in_app": false,
+                "lineno": 33,
+                "module": "@opentelemetry.context-async-hooks.build.src:AsyncLocalStorageContextManager"
+              },
+              {
+                "colno": 14,
+                "filename": "[[FILENAME1]]",
+                "function": "AsyncLocalStorage.run",
+                "in_app": false,
+                "lineno": 346,
+                "module": "node:async_hooks"
+              },
+              {
+                "colno": 17,
+                "filename": "[[FILENAME2]]",
+                "function": "eval",
+                "in_app": false,
+                "lineno": 858,
+                "module": "@sentry.opentelemetry.cjs:index"
+              },
+              {
+                "colno": 26,
+                "filename": "[[FILENAME10]]",
+                "function": "Object.handleCallbackErrors",
+                "in_app": false,
+                "lineno": 26,
+                "module": "@sentry.core.cjs.utils:handleCallbackErrors"
+              },
+              {
+                "colno": 13,
+                "filename": "[[FILENAME2]]",
+                "function": "eval",
+                "in_app": false,
+                "lineno": 859,
+                "module": "@sentry.opentelemetry.cjs:index"
+              },
+              {
+                "colno": 53,
+                "filename": "[[FILENAME12]]",
+                "function": "eval",
+                "in_app": true,
                 "lineno": 25,
                 "module": "route.ts"
               },
               {
-                "colno": 70,
-                "filename": "[[FILENAME5]]",
-                "function": "Module.startSpan",
-                "in_app": false,
-                "lineno": 101,
-                "module": "@sentry.core.esm.tracing:trace"
-              },
-              {
-                "colno": 36,
-                "filename": "[[FILENAME6]]",
-                "function": "runWithAsyncContext",
-                "in_app": false,
-                "lineno": 799,
-                "module": "@sentry.core.esm:hub"
-              },
-              {
-                "colno": 25,
-                "filename": "[[FILENAME2]]",
-                "function": "Object.runWithAsyncContext",
-                "in_app": false,
-                "lineno": 48,
-                "module": "@sentry.node.esm.async:hooks"
-              },
-              {
-                "colno": 14,
-                "filename": "[[FILENAME1]]",
-                "function": "AsyncLocalStorage.run",
-                "in_app": false,
-                "lineno": 346,
-                "module": "node:async_hooks"
-              },
-              {
-                "colno": 14,
-                "filename": "[[FILENAME2]]",
-                "function": "eval",
-                "in_app": false,
-                "lineno": 49,
-                "module": "@sentry.node.esm.async:hooks"
-              },
-              {
-                "colno": 66,
-                "filename": "[[FILENAME5]]",
-                "function": "eval",
-                "in_app": false,
-                "lineno": 102,
-                "module": "@sentry.core.esm.tracing:trace"
-              },
-              {
-                "colno": 18,
-                "filename": "[[FILENAME3]]",
-                "function": "withScope",
-                "in_app": false,
-                "lineno": 214,
-                "module": "@sentry.core.esm:exports"
-              },
-              {
-                "colno": 28,
-                "filename": "[[FILENAME6]]",
-                "function": "Hub.withScope",
-                "in_app": false,
-                "lineno": 216,
-                "module": "@sentry.core.esm:hub"
-              },
-              {
-                "colno": 98,
-                "filename": "[[FILENAME5]]",
-                "function": "eval",
-                "in_app": false,
-                "lineno": 118,
-                "module": "@sentry.core.esm.tracing:trace"
-              },
-              {
-                "colno": 26,
-                "filename": "[[FILENAME7]]",
-                "function": "handleCallbackErrors",
-                "in_app": false,
-                "lineno": 29,
-                "module": "@sentry.core.esm.utils:handleCallbackErrors"
-              },
-              {
-                "colno": 15,
-                "filename": "[[FILENAME5]]",
-                "function": "status.status",
-                "in_app": false,
-                "lineno": 119,
-                "module": "@sentry.core.esm.tracing:trace"
-              },
-              {
-                "colno": 53,
+                "colno": 16,
                 "filename": "[[FILENAME8]]",
-                "function": "eval",
+                "function": "Object.startSpan",
                 "in_app": false,
-                "lineno": 28,
-                "module": "route.ts"
+                "lineno": 35,
+                "module": "@sentry.core.cjs.tracing:trace"
               },
               {
-                "colno": 70,
-                "filename": "[[FILENAME5]]",
-                "function": "Module.startSpan",
-                "in_app": false,
-                "lineno": 101,
-                "module": "@sentry.core.esm.tracing:trace"
-              },
-              {
-                "colno": 36,
-                "filename": "[[FILENAME6]]",
-                "function": "runWithAsyncContext",
-                "in_app": false,
-                "lineno": 799,
-                "module": "@sentry.core.esm:hub"
-              },
-              {
-                "colno": 25,
+                "colno": 17,
                 "filename": "[[FILENAME2]]",
-                "function": "Object.runWithAsyncContext",
+                "function": "Object.startSpan",
                 "in_app": false,
-                "lineno": 48,
-                "module": "@sentry.node.esm.async:hooks"
+                "lineno": 855,
+                "module": "@sentry.opentelemetry.cjs:index"
+              },
+              {
+                "colno": 76,
+                "filename": "[[FILENAME9]]",
+                "function": "Tracer.startActiveSpan",
+                "in_app": false,
+                "lineno": 136,
+                "module": "@opentelemetry.sdk-trace-base.build.esm:Tracer"
+              },
+              {
+                "colno": 54,
+                "filename": "[[FILENAME6]]",
+                "function": "ContextAPI.with",
+                "in_app": false,
+                "lineno": 95,
+                "module": "@opentelemetry.api.build.esm.api:context"
+              },
+              {
+                "colno": 24,
+                "filename": "[[FILENAME2]]",
+                "function": "SentryContextManager.with",
+                "in_app": false,
+                "lineno": "[[highNumber]]",
+                "module": "@sentry.opentelemetry.cjs:index"
+              },
+              {
+                "colno": 40,
+                "filename": "[[FILENAME7]]",
+                "function": "SentryContextManager.with",
+                "in_app": false,
+                "lineno": 33,
+                "module": "@opentelemetry.context-async-hooks.build.src:AsyncLocalStorageContextManager"
               },
               {
                 "colno": 14,
@@ -460,67 +435,35 @@
                 "module": "node:async_hooks"
               },
               {
-                "colno": 14,
+                "colno": 17,
                 "filename": "[[FILENAME2]]",
                 "function": "eval",
                 "in_app": false,
-                "lineno": 49,
-                "module": "@sentry.node.esm.async:hooks"
-              },
-              {
-                "colno": 66,
-                "filename": "[[FILENAME5]]",
-                "function": "eval",
-                "in_app": false,
-                "lineno": 102,
-                "module": "@sentry.core.esm.tracing:trace"
-              },
-              {
-                "colno": 18,
-                "filename": "[[FILENAME3]]",
-                "function": "withScope",
-                "in_app": false,
-                "lineno": 214,
-                "module": "@sentry.core.esm:exports"
-              },
-              {
-                "colno": 28,
-                "filename": "[[FILENAME6]]",
-                "function": "Hub.withScope",
-                "in_app": false,
-                "lineno": 216,
-                "module": "@sentry.core.esm:hub"
-              },
-              {
-                "colno": 98,
-                "filename": "[[FILENAME5]]",
-                "function": "eval",
-                "in_app": false,
-                "lineno": 118,
-                "module": "@sentry.core.esm.tracing:trace"
+                "lineno": 858,
+                "module": "@sentry.opentelemetry.cjs:index"
               },
               {
                 "colno": 26,
-                "filename": "[[FILENAME7]]",
-                "function": "handleCallbackErrors",
+                "filename": "[[FILENAME10]]",
+                "function": "Object.handleCallbackErrors",
                 "in_app": false,
-                "lineno": 29,
-                "module": "@sentry.core.esm.utils:handleCallbackErrors"
+                "lineno": 26,
+                "module": "@sentry.core.cjs.utils:handleCallbackErrors"
               },
               {
-                "colno": 15,
-                "filename": "[[FILENAME5]]",
-                "function": "status.status",
+                "colno": 13,
+                "filename": "[[FILENAME2]]",
+                "function": "eval",
                 "in_app": false,
-                "lineno": 119,
-                "module": "@sentry.core.esm.tracing:trace"
+                "lineno": 859,
+                "module": "@sentry.opentelemetry.cjs:index"
               },
               {
                 "colno": 74,
-                "filename": "[[FILENAME8]]",
+                "filename": "[[FILENAME12]]",
                 "function": "eval",
-                "in_app": false,
-                "lineno": 31,
+                "in_app": true,
+                "lineno": 28,
                 "module": "route.ts"
               }
             ]
@@ -538,16 +481,16 @@
         "accept": "*/*",
         "accept-encoding": "gzip, deflate, br",
         "accept-language": "en-US,en;q=0.5",
-        "baggage": "sentry-environment=qa,sentry-public_key=3b6c388182fb435097f41d181be2b2ba,sentry-trace_id=2cdc9402e1174cd08ca2f51a4804cd16",
+        "baggage": "sentry-environment=qa,sentry-public_key=3b6c388182fb435097f41d181be2b2ba,sentry-trace_id=849afbc4d0a24f309883f0df27432370,sentry-sample_rate=1,sentry-sampled=true",
         "cache-control": "no-cache",
         "connection": "keep-alive",
         "host": "localhost:3030",
         "pragma": "no-cache",
-        "referer": "http://localhost:3030/",
+        "referer": "http://localhost:3030/test-route-handlers",
         "sec-fetch-dest": "empty",
         "sec-fetch-mode": "cors",
         "sec-fetch-site": "same-origin",
-        "sentry-trace": "2cdc9402e1174cd08ca2f51a4804cd16-abe8d663cfdee8d7",
+        "sentry-trace": "849afbc4d0a24f309883f0df27432370-9004ba82f6434237-1",
         "user-agent": "[[user-agent]]",
         "x-forwarded-for": "::ffff:127.0.0.1",
         "x-forwarded-host": "localhost:3030",
@@ -563,35 +506,43 @@
         "LinkedErrors",
         "RequestData",
         "Console",
-        "Undici",
+        "NodeFetch",
+        "OnUncaughtException",
         "OnUnhandledRejection",
         "ContextLines",
-        "LocalVariables",
+        "LocalVariablesAsync",
         "Context",
         "Modules",
-        "RewriteFrames",
+        "Express",
+        "Fastify",
+        "Graphql",
+        "Mongo",
+        "Mongoose",
+        "Mysql",
+        "Mysql2",
+        "Postgres",
+        "Nest",
+        "Hapi",
+        "Koa",
+        "Connect",
         "Http",
-        "OnUncaughtException"
+        "DistDirRewriteFrames"
       ],
       "name": "sentry.javascript.nextjs",
       "packages": [
         {
           "name": "npm:@sentry/nextjs",
-          "version": "7.110.1"
+          "version": "8.0.0-beta.3"
         },
         {
           "name": "npm:@sentry/node",
-          "version": "7.110.1"
+          "version": "8.0.0-beta.3"
         }
       ],
-      "version": "7.110.1"
+      "version": "8.0.0-beta.3"
     },
     "server_name": "D9M3PY4LQ7.local",
-    "tags": {
-      "runtime": "node",
-      "transaction": "GET /api/test-error-manual"
-    },
     "timestamp": "[[timestamp]]",
-    "transaction": " "
+    "transaction": "GET /api/test-error-manual"
   }
 ]
