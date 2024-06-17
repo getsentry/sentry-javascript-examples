@@ -3,7 +3,7 @@
     "dsn": "[[dsn]]",
     "sdk": {
       "name": "sentry.javascript.node",
-      "version": "7.112.1"
+      "version": "8.0.0-beta.3"
     },
     "sent_at": "[[ISODateString]]",
     "trace": {

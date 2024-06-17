@@ -4,7 +4,7 @@
     "event_id": "[[ID1]]",
     "sdk": {
       "name": "sentry.javascript.node",
-      "version": "7.112.1"
+      "version": "8.0.0-beta.3"
     },
     "sent_at": "[[ISODateString]]",
     "trace": {
@@ -25,84 +25,6 @@
         "category": "console",
         "level": "log",
         "message": "Example app listening on port 3030",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": "cron: Job is running every few seconds",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": "node-cron: Job is running every few seconds",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": "node-schedule: Job is running every few seconds",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": "cron: Job is running every few seconds",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": "node-cron: Job is running every few seconds",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": "node-schedule: Job is running every few seconds",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": "cron: Job is running every few seconds",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": "node-cron: Job is running every few seconds",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": "node-schedule: Job is running every few seconds",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": "cron: Job is running every few seconds",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": "node-cron: Job is running every few seconds",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": "node-schedule: Job is running every few seconds",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": "cron: Job is running every few seconds",
         "timestamp": "[[timestamp]]"
       },
       {
@@ -143,27 +65,50 @@
         "name": "macOS",
         "version": "14.2"
       },
+      "otel": {
+        "resource": {
+          "service.name": "node",
+          "service.namespace": "sentry",
+          "service.version": "8.0.0-beta.3",
+          "telemetry.sdk.language": "nodejs",
+          "telemetry.sdk.name": "opentelemetry",
+          "telemetry.sdk.version": "1.23.0"
+        }
+      },
       "runtime": {
         "name": "node",
         "version": "v20.12.1"
       },
       "trace": {
         "data": {
+          "http.flavor": "1.1",
+          "http.host": "localhost:3030",
+          "http.method": "GET",
           "http.response.status_code": 200,
-          "query": {},
+          "http.route": "/test-profiling-auto",
+          "http.scheme": "http",
+          "http.status_code": 200,
+          "http.status_text": "OK",
+          "http.target": "/test-profiling-auto",
+          "http.url": "http://localhost:3030/test-profiling-auto",
+          "http.user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:125.0) Gecko/20100101 Firefox/125.0",
+          "net.host.ip": "::ffff:127.0.0.1",
+          "net.host.name": "localhost",
+          "net.host.port": "[[highNumber]]",
+          "net.peer.ip": "::ffff:127.0.0.1",
+          "net.peer.port": "[[highNumber]]",
+          "net.transport": "ip_tcp",
+          "otel.kind": "SERVER",
           "sentry.op": "http.server",
-          "sentry.origin": "auto.http.node.tracingHandler",
+          "sentry.origin": "auto.http.otel.http",
           "sentry.sample_rate": 1,
           "sentry.source": "route",
-          "url": "/test-profiling-auto"
+          "url": "http://localhost:3030/test-profiling-auto"
         },
         "op": "http.server",
-        "origin": "auto.http.node.tracingHandler",
+        "origin": "auto.http.otel.http",
         "span_id": "[[ID3]]",
         "status": "ok",
-        "tags": {
-          "http.status_code": "200"
-        },
         "trace_id": "[[ID2]]"
       }
     },
@@ -181,6 +126,7 @@
       "cookie-signature": "1.0.6",
       "cron": "3.1.7",
       "cron-parser": "4.9.0",
+      "debug": "4.3.4",
       "define-data-property": "1.1.4",
       "depd": "2.0.0",
       "destroy": "1.2.0",
@@ -204,9 +150,10 @@
       "hasown": "2.0.2",
       "http-errors": "2.0.0",
       "iconv-lite": "0.4.24",
+      "import-in-the-middle": "1.7.1",
       "inherits": "2.0.4",
       "ipaddr.js": "1.9.1",
-      "localforage": "1.10.0",
+      "is-core-module": "2.13.1",
       "long-timeout": "0.1.1",
       "luxon": "3.4.4",
       "media-typer": "0.3.0",
@@ -215,6 +162,7 @@
       "mime": "1.6.0",
       "mime-db": "1.52.0",
       "mime-types": "2.1.35",
+      "module-details-from-path": "1.0.3",
       "ms": "2.1.3",
       "negotiator": "0.6.3",
       "node-abi": "3.61.0",
@@ -222,12 +170,15 @@
       "node-schedule": "2.1.1",
       "object-inspect": "1.13.1",
       "on-finished": "2.4.1",
+      "opentelemetry-instrumentation-fetch-node": "1.2.0",
       "parseurl": "1.3.3",
       "path-to-regexp": "0.1.7",
       "proxy-addr": "2.0.7",
       "qs": "6.11.0",
       "range-parser": "1.2.1",
       "raw-body": "2.5.2",
+      "require-in-the-middle": "7.3.0",
+      "resolve": "1.22.8",
       "safe-buffer": "5.2.1",
       "safer-buffer": "2.1.2",
       "semver": "7.6.0",
@@ -235,9 +186,11 @@
       "serve-static": "1.15.0",
       "set-function-length": "1.2.2",
       "setprototypeof": "1.2.0",
+      "shimmer": "1.2.1",
       "side-channel": "1.0.6",
       "sorted-array-functions": "1.3.0",
       "statuses": "2.0.1",
+      "supports-color": "5.5.0",
       "toidentifier": "1.0.1",
       "type-is": "1.6.18",
       "unpipe": "1.0.0",
@@ -265,7 +218,6 @@
         "user-agent": "[[user-agent]]"
       },
       "method": "GET",
-      "query_string": {},
       "url": "http://localhost:3030/test-profiling-auto"
     },
     "sdk": {
@@ -276,31 +228,91 @@
         "RequestData",
         "Console",
         "Http",
-        "Undici",
+        "NodeFetch",
         "OnUncaughtException",
         "OnUnhandledRejection",
         "ContextLines",
-        "LocalVariables",
+        "LocalVariablesAsync",
         "Context",
         "Modules",
         "Express",
+        "Fastify",
+        "Graphql",
+        "Mongo",
+        "Mongoose",
+        "Mysql",
+        "Mysql2",
+        "Postgres",
+        "Nest",
+        "Hapi",
+        "Koa",
+        "Connect",
         "ProfilingIntegration"
       ],
       "name": "sentry.javascript.node",
       "packages": [
         {
           "name": "npm:@sentry/node",
-          "version": "7.112.1"
+          "version": "8.0.0-beta.3"
         }
       ],
-      "version": "7.112.1"
+      "version": "8.0.0-beta.3"
     },
     "server_name": "D9M3PY4LQ7.local",
-    "spans": [],
+    "spans": [
+      {
+        "data": {
+          "express.name": "query",
+          "express.type": "middleware",
+          "http.route": "/",
+          "otel.kind": "INTERNAL",
+          "sentry.origin": "auto.http.otel.express"
+        },
+        "description": "middleware - query",
+        "origin": "auto.http.otel.express",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID4]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "ok",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "express.name": "expressInit",
+          "express.type": "middleware",
+          "http.route": "/",
+          "otel.kind": "INTERNAL",
+          "sentry.origin": "auto.http.otel.express"
+        },
+        "description": "middleware - expressInit",
+        "origin": "auto.http.otel.express",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID5]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "ok",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "express.name": "/test-profiling-auto",
+          "express.type": "request_handler",
+          "http.route": "/test-profiling-auto",
+          "otel.kind": "INTERNAL",
+          "sentry.origin": "auto.http.otel.express"
+        },
+        "description": "request handler - /test-profiling-auto",
+        "origin": "auto.http.otel.express",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID6]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "ok",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      }
+    ],
     "start_timestamp": "[[timestamp]]",
-    "tags": {
-      "http.status_code": "200"
-    },
     "timestamp": "[[timestamp]]",
     "transaction": "GET /test-profiling-auto",
     "transaction_info": {
