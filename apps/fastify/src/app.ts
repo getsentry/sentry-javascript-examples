@@ -1,8 +1,7 @@
+import './instrument';
+
 import * as Sentry from '@sentry/node';
 import { fastify } from 'fastify';
-import dotenv from 'dotenv';
-
-dotenv.config({ path: './../../.env' });
 
 declare global {
   namespace globalThis {
@@ -10,24 +9,10 @@ declare global {
   }
 }
 
+// Make sure fastify is imported after Sentry is initialized
 const app = fastify();
 
-Sentry.init({
-  environment: 'qa', // dynamic sampling bias to keep transactions
-  dsn: process.env.SENTRY_DSN,
-  includeLocalVariables: true,
-  integrations: [],
-  tracesSampleRate: 1,
-  tunnel: 'http://localhost:3031/', // proxy server
-});
-
-app.addHook('onRequest', async (request, reply) => {
-  Sentry.Handlers.requestHandler()(request.raw, reply.raw, () => {});
-});
-
-app.addHook('onRequest', async (request, reply) => {
-  Sentry.Handlers.tracingHandler()(request.raw, reply.raw, () => {});
-});
+Sentry.setupFastifyErrorHandler(app);
 
 app.get('/test-success', function (_req, res) {
   res.send({ version: 'v1' });
@@ -95,14 +80,6 @@ app.get('/test-local-variables-caught', function (req, res) {
   }
 
   res.send({ exceptionId, randomVariableToRecord });
-});
-
-app.setErrorHandler((error, request, reply) => {
-  Sentry.Handlers.errorHandler()(error, request.raw, reply.raw, () => {});
-});
-
-app.setErrorHandler((error, request, reply) => {
-  reply.code(500).send(error);
 });
 
 app.listen({ port: 3030 });

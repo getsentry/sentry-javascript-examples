@@ -9554,7 +9554,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "fastify-test-application@workspace:apps/fastify"
   dependencies:
-    "@sentry/node": "npm:7.110.1"
+    "@sentry/node": "npm:8.9.2"
     dotenv: "npm:^16.4.5"
     fastify: "npm:4.26.2"
   languageName: unknown
