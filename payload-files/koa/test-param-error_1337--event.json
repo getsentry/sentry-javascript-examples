@@ -1,130 +1,141 @@
 [
   {
+    "dsn": "[[dsn]]",
     "event_id": "[[ID1]]",
-    "sent_at": "[[ISODateString]]",
     "sdk": {
       "name": "sentry.javascript.node",
-      "version": "7.110.0"
+      "version": "8.0.0-beta.3"
     },
-    "dsn": "[[dsn]]",
+    "sent_at": "[[ISODateString]]",
     "trace": {
       "environment": "qa",
       "public_key": "[[publicKey]]",
-      "trace_id": "[[ID2]]",
       "sample_rate": "1",
-      "transaction": "GET /test-param-error/1337",
-      "sampled": "true"
+      "sampled": "true",
+      "trace_id": "[[ID2]]",
+      "transaction": "GET /test-param-error/1337"
     }
   },
   {
     "type": "event"
   },
   {
+    "contexts": {
+      "app": {
+        "app_memory": "[[highNumber]]",
+        "app_start_time": "[[ISODateString]]"
+      },
+      "cloud_resource": {},
+      "culture": {
+        "locale": "en-US",
+        "timezone": "Europe/Vienna"
+      },
+      "device": {
+        "arch": "arm64",
+        "boot_time": "[[ISODateString]]",
+        "cpu_description": "Apple M1 Pro",
+        "free_memory": "[[highNumber]]",
+        "memory_size": "[[highNumber]]",
+        "processor_count": 10,
+        "processor_frequency": "[[highNumber]]"
+      },
+      "os": {
+        "build": "23C64",
+        "kernel_version": "23.2.0",
+        "name": "macOS",
+        "version": "14.2"
+      },
+      "runtime": {
+        "name": "node",
+        "version": "v20.12.1"
+      },
+      "trace": {
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID4]]",
+        "trace_id": "[[ID2]]"
+      }
+    },
+    "environment": "qa",
+    "event_id": "[[ID1]]",
     "exception": {
       "values": [
         {
-          "type": "Error",
-          "value": "This is an error",
+          "mechanism": {
+            "handled": true,
+            "type": "generic"
+          },
           "stacktrace": {
             "frames": [
               {
+                "colno": 40,
+                "context_line": "        return this._asyncLocalStorage.run(context, cb, ...args);",
                 "filename": "[[FILENAME1]]",
-                "module": "koa-compose:index",
-                "function": "dispatch",
-                "lineno": 42,
-                "colno": 32,
+                "function": "SentryContextManager.with",
                 "in_app": false,
-                "pre_context": [
-                  "    function dispatch (i) {",
-                  "      if (i <= index) return Promise.reject(new Error('next() called multiple times'))",
-                  "      index = i",
-                  "      let fn = middleware[i]",
-                  "      if (i === middleware.length) fn = next",
-                  "      if (!fn) return Promise.resolve()",
-                  "      try {"
-                ],
-                "context_line": "        return Promise.resolve(fn(context, dispatch.bind(null, i + 1)));",
+                "lineno": 33,
+                "module": "@opentelemetry.context-async-hooks.build.src:AsyncLocalStorageContextManager",
                 "post_context": [
-                  "      } catch (err) {",
-                  "        return Promise.reject(err)",
-                  "      }",
                   "    }",
-                  "  }",
-                  "}",
-                  ""
+                  "    enable() {",
+                  "        return this;",
+                  "    }",
+                  "    disable() {",
+                  "        this._asyncLocalStorage.disable();",
+                  "        return this;"
+                ],
+                "pre_context": [
+                  "    }",
+                  "    active() {",
+                  "        var _a;",
+                  "        return (_a = this._asyncLocalStorage.getStore()) !== null && _a !== void 0 ? _a : api_1.ROOT_CONTEXT;",
+                  "    }",
+                  "    with(context, fn, thisArg, ...args) {",
+                  "        const cb = thisArg == null ? fn : fn.bind(thisArg);"
                 ]
               },
               {
+                "colno": 14,
                 "filename": "[[FILENAME2]]",
-                "module": "@koa.router.lib:router",
-                "function": "<anonymous>",
-                "lineno": 423,
-                "colno": 16,
+                "function": "AsyncLocalStorage.run",
                 "in_app": false,
-                "pre_context": [
-                  "        ctx.routerPath = layer.path;",
-                  "        ctx.routerName = layer.name;",
-                  "        ctx._matchedRoute = layer.path;",
-                  "        if (layer.name) {",
-                  "          ctx._matchedRouteName = layer.name;",
-                  "        }",
-                  ""
-                ],
-                "context_line": "        return next();",
-                "post_context": [
-                  "      });",
-                  "      return memo.concat(layer.stack);",
-                  "    }, []);",
-                  "",
-                  "    return compose(layerChain)(ctx, next);",
-                  "  };",
-                  ""
-                ]
+                "lineno": 346,
+                "module": "node:async_hooks"
               },
               {
-                "filename": "[[FILENAME1]]",
-                "module": "koa-compose:index",
-                "function": "dispatch",
-                "lineno": 42,
-                "colno": 32,
-                "in_app": false,
-                "pre_context": [
-                  "    function dispatch (i) {",
-                  "      if (i <= index) return Promise.reject(new Error('next() called multiple times'))",
-                  "      index = i",
-                  "      let fn = middleware[i]",
-                  "      if (i === middleware.length) fn = next",
-                  "      if (!fn) return Promise.resolve()",
-                  "      try {"
-                ],
-                "context_line": "        return Promise.resolve(fn(context, dispatch.bind(null, i + 1)));",
-                "post_context": [
-                  "      } catch (err) {",
-                  "        return Promise.reject(err)",
-                  "      }",
-                  "    }",
-                  "  }",
-                  "}",
-                  ""
-                ]
-              },
-              {
+                "colno": 34,
+                "context_line": "                    return await middlewareLayer(context, next);",
                 "filename": "[[FILENAME3]]",
-                "module": "app",
-                "function": "<anonymous>",
-                "lineno": 120,
-                "colno": 64,
-                "in_app": true,
-                "pre_context": [
-                  "                return [2 /*return*/];",
-                  "        }",
-                  "    });",
-                  "}); });",
-                  "router.get('/test-param-success/:param', function (ctx) {",
-                  "    ctx.body = { paramWas: ctx.params.param };",
-                  "});"
+                "function": "?",
+                "in_app": false,
+                "lineno": 150,
+                "module": "@opentelemetry.instrumentation-koa.build.src:instrumentation",
+                "post_context": [
+                  "                }",
+                  "                catch (err) {",
+                  "                    span.recordException(err);",
+                  "                    throw err;",
+                  "                }",
+                  "                finally {",
+                  "                    span.end();"
                 ],
+                "pre_context": [
+                  "                        api.diag.error('koa instrumentation: request hook failed', e);",
+                  "                    }",
+                  "                }, true);",
+                  "            }",
+                  "            const newContext = api.trace.setSpan(api.context.active(), span);",
+                  "            return api.context.with(newContext, async () => {",
+                  "                try {"
+                ]
+              },
+              {
+                "colno": 64,
                 "context_line": "router.get('/test-param-error/:param', function (ctx) { return __awaiter(void 0, void 0, void 0, function () {",
+                "filename": "[[FILENAME4]]",
+                "function": "?",
+                "in_app": true,
+                "lineno": 95,
+                "module": "app",
                 "post_context": [
                   "    var exceptionId;",
                   "    return __generator(this, function (_a) {",
@@ -133,25 +144,25 @@
                   "        ctx.body = { exceptionId: exceptionId, paramWas: ctx.params.param };",
                   "        return [2 /*return*/];",
                   "    });"
+                ],
+                "pre_context": [
+                  "        ctx.body = { exceptionId: exceptionId };",
+                  "        return [2 /*return*/];",
+                  "    });",
+                  "}); });",
+                  "router.get('/test-param-success/:param', function (ctx) {",
+                  "    ctx.body = { paramWas: ctx.params.param };",
+                  "});"
                 ]
               },
               {
-                "filename": "[[FILENAME3]]",
-                "module": "app",
-                "function": "__awaiter",
-                "lineno": 38,
                 "colno": 12,
-                "in_app": true,
-                "pre_context": [
-                  "    var result = {};",
-                  "    if (mod != null) for (var k in mod) if (k !== \"default\" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);",
-                  "    __setModuleDefault(result, mod);",
-                  "    return result;",
-                  "};",
-                  "var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {",
-                  "    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }"
-                ],
                 "context_line": "    return new (P || (P = Promise))(function (resolve, reject) {",
+                "filename": "[[FILENAME4]]",
+                "function": "__awaiter",
+                "in_app": true,
+                "lineno": 27,
+                "module": "app",
                 "post_context": [
                   "        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }",
                   "        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }",
@@ -160,31 +171,31 @@
                   "    });",
                   "};",
                   "var __generator = (this && this.__generator) || function (thisArg, body) {"
+                ],
+                "pre_context": [
+                  "    var result = {};",
+                  "    if (mod != null) for (var k in mod) if (k !== \"default\" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);",
+                  "    __setModuleDefault(result, mod);",
+                  "    return result;",
+                  "};",
+                  "var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {",
+                  "    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }"
                 ]
               },
               {
-                "filename": "[[FILENAME4]]",
-                "module": "<anonymous>",
+                "filename": "[[FILENAME5]]",
                 "function": "new Promise",
-                "in_app": false
+                "in_app": false,
+                "module": "<anonymous>"
               },
               {
-                "filename": "[[FILENAME3]]",
-                "module": "app",
-                "function": "<anonymous>",
-                "lineno": 42,
                 "colno": 71,
-                "in_app": true,
-                "pre_context": [
-                  "};",
-                  "var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {",
-                  "    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }",
-                  "    return new (P || (P = Promise))(function (resolve, reject) {",
-                  "        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }",
-                  "        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }",
-                  "        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }"
-                ],
                 "context_line": "        step((generator = generator.apply(thisArg, _arguments || [])).next());",
+                "filename": "[[FILENAME4]]",
+                "function": "?",
+                "in_app": true,
+                "lineno": 31,
+                "module": "app",
                 "post_context": [
                   "    });",
                   "};",
@@ -193,25 +204,25 @@
                   "    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { re {snip}",
                   "    function verb(n) { return function (v) { return step([n, v]); }; }",
                   "    function step(op) {"
+                ],
+                "pre_context": [
+                  "};",
+                  "var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {",
+                  "    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }",
+                  "    return new (P || (P = Promise))(function (resolve, reject) {",
+                  "        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }",
+                  "        function rejected(value) { try { step(generator[\"throw\"](value)); } catch (e) { reject(e); } }",
+                  "        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }"
                 ]
               },
               {
-                "filename": "[[FILENAME3]]",
-                "module": "app",
-                "function": "Object.next",
-                "lineno": 48,
                 "colno": 53,
-                "in_app": true,
-                "pre_context": [
-                  "        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }",
-                  "        step((generator = generator.apply(thisArg, _arguments || [])).next());",
-                  "    });",
-                  "};",
-                  "var __generator = (this && this.__generator) || function (thisArg, body) {",
-                  "    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;",
-                  "    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { re {snip}"
-                ],
                 "context_line": "    function verb(n) { return function (v) { return step([n, v]); }; }",
+                "filename": "[[FILENAME4]]",
+                "function": "Object.next",
+                "in_app": true,
+                "lineno": 37,
+                "module": "app",
                 "post_context": [
                   "    function step(op) {",
                   "        if (f) throw new TypeError(\"Generator is already executing.\");",
@@ -220,15 +231,34 @@
                   "            if (y = 0, t) op = [op[0] & 2, t.value];",
                   "            switch (op[0]) {",
                   "                case 0: case 1: t = op; break;"
+                ],
+                "pre_context": [
+                  "        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }",
+                  "        step((generator = generator.apply(thisArg, _arguments || [])).next());",
+                  "    });",
+                  "};",
+                  "var __generator = (this && this.__generator) || function (thisArg, body) {",
+                  "    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;",
+                  "    return g = { next: verb(0), \"throw\": verb(1), \"return\": verb(2) }, typeof Symbol === \"function\" && (g[Symbol.iterator] = function() { re {snip}"
                 ]
               },
               {
-                "filename": "[[FILENAME3]]",
-                "module": "app",
-                "function": "step",
-                "lineno": 67,
                 "colno": 23,
+                "context_line": "            op = body.call(thisArg, _);",
+                "filename": "[[FILENAME4]]",
+                "function": "step",
                 "in_app": true,
+                "lineno": 56,
+                "module": "app",
+                "post_context": [
+                  "        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }",
+                  "        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };",
+                  "    }",
+                  "};",
+                  "var __importDefault = (this && this.__importDefault) || function (mod) {",
+                  "    return (mod && mod.__esModule) ? mod : { \"default\": mod };",
+                  "};"
+                ],
                 "pre_context": [
                   "                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }",
                   "                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }",
@@ -237,35 +267,16 @@
                   "                    if (t[2]) _.ops.pop();",
                   "                    _.trys.pop(); continue;",
                   "            }"
-                ],
-                "context_line": "            op = body.call(thisArg, _);",
-                "post_context": [
-                  "        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }",
-                  "        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };",
-                  "    }",
-                  "};",
-                  "var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {",
-                  "    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {",
-                  "        if (ar || !(i in from)) {"
                 ]
               },
               {
-                "filename": "[[FILENAME3]]",
-                "module": "app",
-                "function": "<anonymous>",
-                "lineno": 123,
                 "colno": 47,
-                "in_app": true,
-                "pre_context": [
-                  "}); });",
-                  "router.get('/test-param-success/:param', function (ctx) {",
-                  "    ctx.body = { paramWas: ctx.params.param };",
-                  "});",
-                  "router.get('/test-param-error/:param', function (ctx) { return __awaiter(void 0, void 0, void 0, function () {",
-                  "    var exceptionId;",
-                  "    return __generator(this, function (_a) {"
-                ],
                 "context_line": "        exceptionId = Sentry.captureException(new Error('This is an error'));",
+                "filename": "[[FILENAME4]]",
+                "function": "?",
+                "in_app": true,
+                "lineno": 98,
+                "module": "app",
                 "post_context": [
                   "        Sentry.flush(2000);",
                   "        ctx.body = { exceptionId: exceptionId, paramWas: ctx.params.param };",
@@ -274,63 +285,101 @@
                   "}); });",
                   "router.get('/test-success-manual', function (ctx) { return __awaiter(void 0, void 0, void 0, function () {",
                   "    return __generator(this, function (_a) {"
+                ],
+                "pre_context": [
+                  "}); });",
+                  "router.get('/test-param-success/:param', function (ctx) {",
+                  "    ctx.body = { paramWas: ctx.params.param };",
+                  "});",
+                  "router.get('/test-param-error/:param', function (ctx) { return __awaiter(void 0, void 0, void 0, function () {",
+                  "    var exceptionId;",
+                  "    return __generator(this, function (_a) {"
                 ]
               }
             ]
           },
-          "mechanism": {
-            "type": "generic",
-            "handled": true
-          }
+          "type": "Error",
+          "value": "This is an error"
         }
       ]
     },
-    "event_id": "[[ID1]]",
-    "platform": "node",
-    "contexts": {
-      "trace": {
-        "data": {
-          "sentry.origin": "manual",
-          "sentry.op": "http.server",
-          "sentry.sample_rate": 1
-        },
-        "op": "http.server",
-        "span_id": "[[ID3]]",
-        "trace_id": "[[ID2]]",
-        "origin": "manual"
-      },
-      "runtime": {
-        "name": "node",
-        "version": "v20.12.1"
-      },
-      "app": {
-        "app_start_time": "[[ISODateString]]",
-        "app_memory": "[[highNumber]]"
-      },
-      "os": {
-        "kernel_version": "23.2.0",
-        "name": "macOS",
-        "version": "14.2",
-        "build": "23C64"
-      },
-      "device": {
-        "boot_time": "[[ISODateString]]",
-        "arch": "arm64",
-        "memory_size": "[[highNumber]]",
-        "free_memory": "[[highNumber]]",
-        "processor_count": 10,
-        "cpu_description": "Apple M1 Pro",
-        "processor_frequency": "[[highNumber]]"
-      },
-      "culture": {
-        "locale": "en-US",
-        "timezone": "Europe/Vienna"
-      },
-      "cloud_resource": {}
+    "modules": {
+      "accepts": "1.3.8",
+      "cache-content-type": "1.0.1",
+      "co": "4.6.0",
+      "content-disposition": "0.5.4",
+      "content-type": "1.0.5",
+      "cookies": "0.9.1",
+      "debug": "4.3.4",
+      "deep-equal": "1.0.1",
+      "delegates": "1.0.0",
+      "depd": "2.0.0",
+      "destroy": "1.2.0",
+      "dotenv": "16.4.5",
+      "ee-first": "1.1.1",
+      "encodeurl": "1.0.2",
+      "escape-html": "1.0.3",
+      "fresh": "0.5.2",
+      "function-bind": "1.1.2",
+      "has-symbols": "1.0.3",
+      "has-tostringtag": "1.0.2",
+      "hasown": "2.0.2",
+      "http-assert": "1.5.0",
+      "http-errors": "2.0.0",
+      "import-in-the-middle": "1.7.1",
+      "inherits": "2.0.4",
+      "is-core-module": "2.13.1",
+      "is-generator-function": "1.0.10",
+      "keygrip": "1.1.0",
+      "koa": "2.15.3",
+      "koa-compose": "4.1.0",
+      "koa-convert": "2.0.0",
+      "media-typer": "0.3.0",
+      "methods": "1.1.2",
+      "mime-db": "1.52.0",
+      "mime-types": "2.1.35",
+      "module-details-from-path": "1.0.3",
+      "negotiator": "0.6.3",
+      "on-finished": "2.4.1",
+      "only": "0.0.2",
+      "opentelemetry-instrumentation-fetch-node": "1.2.0",
+      "parseurl": "1.3.3",
+      "require-in-the-middle": "7.3.0",
+      "resolve": "1.22.8",
+      "safe-buffer": "5.2.1",
+      "semver": "7.6.0",
+      "setprototypeof": "1.2.0",
+      "shimmer": "1.2.1",
+      "statuses": "2.0.1",
+      "supports-color": "5.5.0",
+      "toidentifier": "1.0.1",
+      "tsscmp": "1.0.6",
+      "type-is": "1.6.18",
+      "vary": "1.1.2",
+      "yallist": "4.0.0",
+      "ylru": "1.4.0"
     },
-    "server_name": "D9M3PY4LQ7.local",
-    "timestamp": "[[timestamp]]",
-    "environment": "qa",
+    "platform": "node",
+    "request": {
+      "cookies": {},
+      "headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        "accept-encoding": "gzip, deflate, br",
+        "accept-language": "en-US,en;q=0.5",
+        "cache-control": "no-cache",
+        "connection": "keep-alive",
+        "host": "localhost:3030",
+        "pragma": "no-cache",
+        "sec-fetch-dest": "document",
+        "sec-fetch-mode": "navigate",
+        "sec-fetch-site": "none",
+        "sec-fetch-user": "?1",
+        "upgrade-insecure-requests": "1",
+        "user-agent": "[[user-agent]]"
+      },
+      "method": "GET",
+      "url": "http://localhost:3030/test-param-error/1337"
+    },
     "sdk": {
       "integrations": [
         "InboundFilters",
@@ -339,91 +388,37 @@
         "RequestData",
         "Console",
         "Http",
-        "Undici",
+        "NodeFetch",
         "OnUncaughtException",
         "OnUnhandledRejection",
         "ContextLines",
-        "LocalVariables",
+        "LocalVariablesAsync",
         "Context",
-        "Modules"
+        "Modules",
+        "Express",
+        "Fastify",
+        "Graphql",
+        "Mongo",
+        "Mongoose",
+        "Mysql",
+        "Mysql2",
+        "Postgres",
+        "Nest",
+        "Hapi",
+        "Koa",
+        "Connect"
       ],
       "name": "sentry.javascript.node",
-      "version": "7.110.0",
       "packages": [
         {
           "name": "npm:@sentry/node",
-          "version": "7.110.0"
+          "version": "8.0.0-beta.3"
         }
-      ]
+      ],
+      "version": "8.0.0-beta.3"
     },
-    "tags": {
-      "transaction": "GET /test-param-error/1337"
-    },
-    "modules": {
-      "koa": "2.15.3",
-      "is-generator-function": "1.0.10",
-      "has-tostringtag": "1.0.2",
-      "has-symbols": "1.0.3",
-      "debug": "4.3.4",
-      "supports-color": "5.5.0",
-      "on-finished": "2.4.1",
-      "ee-first": "1.1.1",
-      "content-disposition": "0.5.4",
-      "safe-buffer": "5.2.1",
-      "cache-content-type": "1.0.1",
-      "mime-types": "2.1.35",
-      "mime-db": "1.52.0",
-      "ylru": "1.4.0",
-      "escape-html": "1.0.3",
-      "type-is": "1.6.18",
-      "media-typer": "0.3.0",
-      "destroy": "1.2.0",
-      "vary": "1.1.2",
-      "only": "0.0.2",
-      "encodeurl": "1.0.2",
-      "koa-compose": "4.1.0",
-      "setprototypeof": "1.2.0",
-      "inherits": "2.0.4",
-      "toidentifier": "1.0.1",
-      "http-assert": "1.5.0",
-      "deep-equal": "1.0.1",
-      "delegates": "1.0.0",
-      "cookies": "0.9.1",
-      "depd": "2.0.0",
-      "keygrip": "1.1.0",
-      "tsscmp": "1.0.6",
-      "accepts": "1.3.8",
-      "negotiator": "0.6.3",
-      "content-type": "1.0.5",
-      "parseurl": "1.3.3",
-      "fresh": "0.5.2",
-      "koa-convert": "2.0.0",
-      "co": "4.6.0",
-      "http-errors": "2.0.0",
-      "statuses": "2.0.1",
-      "methods": "1.1.2"
-    },
-    "request": {
-      "cookies": {},
-      "headers": {
-        "host": "localhost:3030",
-        "user-agent": "[[user-agent]]",
-        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-        "accept-language": "en-US,en;q=0.5",
-        "accept-encoding": "gzip, deflate, br",
-        "connection": "keep-alive",
-        "upgrade-insecure-requests": "1",
-        "sec-fetch-dest": "document",
-        "sec-fetch-mode": "navigate",
-        "sec-fetch-site": "none",
-        "sec-fetch-user": "?1",
-        "pragma": "no-cache",
-        "cache-control": "no-cache"
-      },
-      "method": "GET",
-      "query_string": {},
-      "url": "http://localhost:3030/test-param-error/1337"
-    },
-    "transaction": "GET /test-param-error/1337"
+    "server_name": "D9M3PY4LQ7.local",
+    "timestamp": "[[timestamp]]",
+    "transaction": "GET /test-param-error/:param"
   }
 ]
