@@ -1,19 +1,10 @@
+import './instrument';
+
 import * as Sentry from '@sentry/node';
+import connect from 'connect';
 import dotenv from 'dotenv';
 
 dotenv.config({ path: './../../.env' });
-
-Sentry.init({
-  environment: 'qa', // dynamic sampling bias to keep transactions
-  dsn: process.env.SENTRY_DSN,
-  includeLocalVariables: true,
-  debug: true,
-  tunnel: `http://localhost:3031/`, // proxy server
-  tracesSampleRate: 1,
-});
-
-// can use `import` instead of `require` because of `'esModuleInterop': true` in tsconfig.json
-import connect from 'connect';
 
 declare global {
   namespace globalThis {
