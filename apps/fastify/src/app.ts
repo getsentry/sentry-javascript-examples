@@ -1,14 +1,6 @@
+import './instrument';
+
 import * as Sentry from '@sentry/node';
-
-Sentry.init({
-  environment: 'qa', // dynamic sampling bias to keep transactions
-  dsn: process.env.SENTRY_DSN,
-  includeLocalVariables: true,
-  integrations: [],
-  tracesSampleRate: 1,
-  tunnel: 'http://localhost:3031/', // proxy server
-});
-
 import { fastify } from 'fastify';
 
 declare global {
