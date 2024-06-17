@@ -1,5 +1,7 @@
-import * as Sentry from '@sentry/node';
+import './instrument';
 
+import * as Sentry from '@sentry/node';
+import express from 'express';
 import dotenv from 'dotenv';
 
 dotenv.config({ path: './../../.env' });
@@ -9,17 +11,6 @@ declare global {
     var transactionIds: string[];
   }
 }
-
-Sentry.init({
-  environment: 'qa', // dynamic sampling bias to keep transactions
-  dsn: 'https://eb90fdb87147dfc95899d3e63cc6ff20@o4506778646609920.ingest.us.sentry.io/4507168754761728',
-  includeLocalVariables: true,
-  debug: true,
-  tunnel: `http://localhost:3031/`, // proxy server
-  tracesSampleRate: 1,
-});
-
-import express from 'express';
 
 const app = express();
 const port = 3030;
