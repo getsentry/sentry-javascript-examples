@@ -13,7 +13,7 @@
       "sample_rate": "1",
       "sampled": "true",
       "trace_id": "[[ID2]]",
-      "transaction": "GET /test-local-variables-caught"
+      "transaction": "GET /test-local-variables-uncaught"
     }
   },
   {
@@ -72,31 +72,23 @@
           "http.flavor": "1.1",
           "http.host": "localhost:3030",
           "http.method": "GET",
-          "http.response.status_code": 200,
-          "http.route": "/test-local-variables-caught",
           "http.scheme": "http",
-          "http.status_code": 200,
-          "http.status_text": "OK",
-          "http.target": "/test-local-variables-caught",
-          "http.url": "http://localhost:3030/test-local-variables-caught",
+          "http.target": "/test-local-variables-uncaught",
+          "http.url": "http://localhost:3030/test-local-variables-uncaught",
           "http.user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:125.0) Gecko/20100101 Firefox/125.0",
-          "net.host.ip": "::1",
           "net.host.name": "localhost",
-          "net.host.port": "[[highNumber]]",
-          "net.peer.ip": "::1",
-          "net.peer.port": "[[highNumber]]",
           "net.transport": "ip_tcp",
           "otel.kind": "SERVER",
           "sentry.op": "http.server",
           "sentry.origin": "auto.http.otel.http",
           "sentry.sample_rate": 1,
-          "sentry.source": "route",
-          "url": "http://localhost:3030/test-local-variables-caught"
+          "sentry.source": "url",
+          "url": "http://localhost:3030/test-local-variables-uncaught"
         },
         "op": "http.server",
         "origin": "auto.http.otel.http",
         "span_id": "[[ID3]]",
-        "status": "ok",
+        "status": "internal_error",
         "trace_id": "[[ID2]]"
       }
     },
@@ -139,7 +131,7 @@
         "user-agent": "[[user-agent]]"
       },
       "method": "GET",
-      "url": "http://localhost:3030/test-local-variables-caught"
+      "url": "http://localhost:3030/test-local-variables-uncaught"
     },
     "sdk": {
       "integrations": [
@@ -185,27 +177,28 @@
         "data": {
           "hapi.type": "router",
           "http.method": "GET",
-          "http.route": "/test-local-variables-caught",
+          "http.route": "/test-local-variables-uncaught",
           "otel.kind": "INTERNAL",
           "sentry.op": "http",
           "sentry.origin": "manual"
         },
-        "description": "GET /test-local-variables-caught",
+        "description": "GET /test-local-variables-uncaught",
+        "measurements": {},
         "op": "http",
         "origin": "manual",
         "parent_span_id": "[[ID3]]",
         "span_id": "[[ID4]]",
         "start_timestamp": "[[timestamp]]",
-        "status": "ok",
+        "status": "unknown_error",
         "timestamp": "[[timestamp]]",
         "trace_id": "[[ID2]]"
       }
     ],
     "start_timestamp": "[[timestamp]]",
     "timestamp": "[[timestamp]]",
-    "transaction": "GET /test-local-variables-caught",
+    "transaction": "GET /test-local-variables-uncaught",
     "transaction_info": {
-      "source": "route"
+      "source": "url"
     },
     "type": "transaction"
   }

@@ -4,7 +4,7 @@
     "event_id": "[[ID1]]",
     "sdk": {
       "name": "sentry.javascript.node",
-      "version": "7.113.0"
+      "version": "8.0.0-rc.1"
     },
     "sent_at": "[[ISODateString]]",
     "trace": {
@@ -13,7 +13,7 @@
       "sample_rate": "1",
       "sampled": "true",
       "trace_id": "[[ID2]]",
-      "transaction": "/test-error"
+      "transaction": "GET /test-error"
     }
   },
   {
@@ -25,18 +25,6 @@
         "category": "console",
         "level": "log",
         "message": "Server running on http://localhost:3030",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": "test console",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": "test console",
         "timestamp": "[[timestamp]]"
       }
     ],
@@ -70,14 +58,8 @@
         "version": "v20.12.1"
       },
       "trace": {
-        "data": {
-          "sentry.op": "hapi.request",
-          "sentry.origin": "manual",
-          "sentry.sample_rate": 1
-        },
-        "op": "hapi.request",
-        "origin": "manual",
-        "span_id": "[[ID3]]",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID4]]",
         "trace_id": "[[ID2]]"
       }
     },
@@ -93,120 +75,101 @@
           "stacktrace": {
             "frames": [
               {
-                "colno": 36,
-                "context_line": "    const result = await internals.handler(request, request.route.settings.handler);",
+                "colno": 40,
+                "context_line": "        return this._asyncLocalStorage.run(context, cb, ...args);",
                 "filename": "[[FILENAME1]]",
-                "function": "exports.execute",
+                "function": "SentryContextManager.with",
                 "in_app": false,
-                "lineno": 31,
-                "module": "@hapi.hapi.lib:handler",
+                "lineno": 33,
+                "module": "@opentelemetry.context-async-hooks.build.src:AsyncLocalStorageContextManager",
                 "post_context": [
-                  "    if (result._takeover ||",
-                  "        typeof result === 'symbol') {",
-                  "",
-                  "        return result;",
                   "    }",
-                  "",
-                  "    request._setResponse(result);"
+                  "    enable() {",
+                  "        return this;",
+                  "    }",
+                  "    disable() {",
+                  "        this._asyncLocalStorage.disable();",
+                  "        return this;"
                 ],
                 "pre_context": [
-                  "                }",
-                  "            }",
-                  "        }",
                   "    }",
-                  "",
-                  "    // Handler",
-                  ""
+                  "    active() {",
+                  "        var _a;",
+                  "        return (_a = this._asyncLocalStorage.getStore()) !== null && _a !== void 0 ? _a : api_1.ROOT_CONTEXT;",
+                  "    }",
+                  "    with(context, fn, thisArg, ...args) {",
+                  "        const cb = thisArg == null ? fn : fn.bind(thisArg);"
                 ]
               },
               {
-                "colno": 48,
-                "context_line": "    let response = await request._core.toolkit.execute(method, request, { bind, realm, continue: 'null' });",
-                "filename": "[[FILENAME1]]",
-                "function": "internals.handler",
-                "in_app": false,
-                "lineno": 46,
-                "module": "@hapi.hapi.lib:handler",
-                "post_context": [
-                  "",
-                  "    // Handler",
-                  "",
-                  "    if (!pre) {",
-                  "        if (response.isBoom) {",
-                  "            request._log(['handler', 'error'], response);",
-                  "            throw response;"
-                ],
-                "pre_context": [
-                  "};",
-                  "",
-                  "",
-                  "internals.handler = async function (request, method, pre) {",
-                  "",
-                  "    const bind = request.route.settings.bind;",
-                  "    const realm = request.route.realm;"
-                ]
-              },
-              {
-                "colno": 29,
-                "context_line": "                operation = method(request, h);",
+                "colno": 14,
                 "filename": "[[FILENAME2]]",
-                "function": "exports.Manager.execute",
+                "function": "AsyncLocalStorage.run",
                 "in_app": false,
-                "lineno": 57,
-                "module": "@hapi.hapi.lib:toolkit",
+                "lineno": 346,
+                "module": "node:async_hooks"
+              },
+              {
+                "colno": 115,
+                "context_line": "                    return await api.context.with(api.trace.setSpan(api.context.active(), span), () => oldHandler.call(this, ...params));",
+                "filename": "[[FILENAME3]]",
+                "function": "?",
+                "in_app": false,
+                "lineno": 266,
+                "module": "@opentelemetry.instrumentation-hapi.build.src:instrumentation",
                 "post_context": [
-                  "            }",
-                  "",
-                  "            var response = await exports.timed(operation, options);",
-                  "        }",
-                  "        catch (err) {",
-                  "            if (Bounce.isSystem(err)) {",
-                  "                response = Boom.badImplementation(err);"
+                  "                }",
+                  "                catch (err) {",
+                  "                    span.recordException(err);",
+                  "                    span.setStatus({",
+                  "                        code: api.SpanStatusCode.ERROR,",
+                  "                        message: err.message,",
+                  "                    });"
                 ],
                 "pre_context": [
-                  "            if (bind) {",
-                  "                operation = method.call(bind, request, h);",
-                  "            }",
-                  "            else if (options.args) {",
-                  "                operation = method(request, h, ...options.args);",
-                  "            }",
-                  "            else {"
+                  "                    rpcMetadata.route = route.path;",
+                  "                }",
+                  "                const metadata = (0, utils_1.getRouteMetadata)(route, pluginName);",
+                  "                const span = instrumentation.tracer.startSpan(metadata.name, {",
+                  "                    attributes: metadata.attributes,",
+                  "                });",
+                  "                try {"
                 ]
               },
               {
-                "colno": 24,
-                "context_line": "                return __awaiter(this, void 0, void 0, function () {",
-                "filename": "[[FILENAME3]]",
+                "colno": 32,
+                "context_line": "                        return __awaiter(this, void 0, void 0, function () {",
+                "filename": "[[FILENAME4]]",
                 "function": "handler",
                 "in_app": true,
-                "lineno": 71,
+                "lineno": 98,
                 "module": "app",
                 "post_context": [
-                  "                    var exceptionId;",
-                  "                    return __generator(this, function (_a) {",
-                  "                        switch (_a.label) {",
-                  "                            case 0:",
-                  "                                exceptionId = Sentry.captureException(new Error('This is an error'));",
-                  "                                return [4 /*yield*/, Sentry.flush(2000)];",
-                  "                            case 1:"
+                  "                            var exceptionId;",
+                  "                            return __generator(this, function (_a) {",
+                  "                                switch (_a.label) {",
+                  "                                    case 0:",
+                  "                                        exceptionId = Sentry.captureException(new Error('This is an error'));",
+                  "                                        return [4 /*yield*/, Sentry.flush(2000)];",
+                  "                                    case 1:"
                 ],
                 "pre_context": [
-                  "                return { version: 'v1' };",
-                  "            },",
-                  "        });",
-                  "        server.route({",
-                  "            method: 'GET',",
-                  "            path: '/test-error',",
-                  "            handler: function (request, h) {"
+                  "                        return { version: 'v1' };",
+                  "                    },",
+                  "                });",
+                  "                server.route({",
+                  "                    method: 'GET',",
+                  "                    path: '/test-error',",
+                  "                    handler: function (request, h) {"
                 ]
               },
               {
                 "colno": 12,
                 "context_line": "    return new (P || (P = Promise))(function (resolve, reject) {",
-                "filename": "[[FILENAME3]]",
+                "filename": "[[FILENAME4]]",
                 "function": "__awaiter",
                 "in_app": true,
-                "lineno": 4,
+                "lineno": 27,
                 "module": "app",
                 "post_context": [
                   "        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }",
@@ -218,13 +181,17 @@
                   "var __generator = (this && this.__generator) || function (thisArg, body) {"
                 ],
                 "pre_context": [
-                  "\"use strict\";",
+                  "    var result = {};",
+                  "    if (mod != null) for (var k in mod) if (k !== \"default\" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);",
+                  "    __setModuleDefault(result, mod);",
+                  "    return result;",
+                  "};",
                   "var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {",
                   "    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }"
                 ]
               },
               {
-                "filename": "[[FILENAME4]]",
+                "filename": "[[FILENAME5]]",
                 "function": "new Promise",
                 "in_app": false,
                 "module": "<anonymous>"
@@ -232,10 +199,10 @@
               {
                 "colno": 71,
                 "context_line": "        step((generator = generator.apply(thisArg, _arguments || [])).next());",
-                "filename": "[[FILENAME3]]",
-                "function": "<anonymous>",
+                "filename": "[[FILENAME4]]",
+                "function": "?",
                 "in_app": true,
-                "lineno": 8,
+                "lineno": 31,
                 "module": "app",
                 "post_context": [
                   "    });",
@@ -247,7 +214,7 @@
                   "    function step(op) {"
                 ],
                 "pre_context": [
-                  "\"use strict\";",
+                  "};",
                   "var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {",
                   "    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }",
                   "    return new (P || (P = Promise))(function (resolve, reject) {",
@@ -259,10 +226,10 @@
               {
                 "colno": 53,
                 "context_line": "    function verb(n) { return function (v) { return step([n, v]); }; }",
-                "filename": "[[FILENAME3]]",
+                "filename": "[[FILENAME4]]",
                 "function": "Object.next",
                 "in_app": true,
-                "lineno": 14,
+                "lineno": 37,
                 "module": "app",
                 "post_context": [
                   "    function step(op) {",
@@ -286,10 +253,10 @@
               {
                 "colno": 23,
                 "context_line": "            op = body.call(thisArg, _);",
-                "filename": "[[FILENAME3]]",
+                "filename": "[[FILENAME4]]",
                 "function": "step",
                 "in_app": true,
-                "lineno": 33,
+                "lineno": 56,
                 "module": "app",
                 "post_context": [
                   "        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }",
@@ -311,30 +278,30 @@
                 ]
               },
               {
-                "colno": 71,
-                "context_line": "                                exceptionId = Sentry.captureException(new Error('This is an error'));",
-                "filename": "[[FILENAME3]]",
-                "function": "<anonymous>",
+                "colno": 79,
+                "context_line": "                                        exceptionId = Sentry.captureException(new Error('This is an error'));",
+                "filename": "[[FILENAME4]]",
+                "function": "?",
                 "in_app": true,
-                "lineno": 76,
+                "lineno": 103,
                 "module": "app",
                 "post_context": [
-                  "                                return [4 /*yield*/, Sentry.flush(2000)];",
-                  "                            case 1:",
-                  "                                _a.sent();",
-                  "                                return [2 /*return*/, { exceptionId: exceptionId }];",
-                  "                        }",
-                  "                    });",
-                  "                });"
+                  "                                        return [4 /*yield*/, Sentry.flush(2000)];",
+                  "                                    case 1:",
+                  "                                        _a.sent();",
+                  "                                        return [2 /*return*/, { exceptionId: exceptionId }];",
+                  "                                }",
+                  "                            });",
+                  "                        });"
                 ],
                 "pre_context": [
-                  "            path: '/test-error',",
-                  "            handler: function (request, h) {",
-                  "                return __awaiter(this, void 0, void 0, function () {",
-                  "                    var exceptionId;",
-                  "                    return __generator(this, function (_a) {",
-                  "                        switch (_a.label) {",
-                  "                            case 0:"
+                  "                    path: '/test-error',",
+                  "                    handler: function (request, h) {",
+                  "                        return __awaiter(this, void 0, void 0, function () {",
+                  "                            var exceptionId;",
+                  "                            return __generator(this, function (_a) {",
+                  "                                switch (_a.label) {",
+                  "                                    case 0:"
                 ]
               }
             ]
@@ -345,10 +312,44 @@
       ]
     },
     "modules": {
-      "localforage": "1.10.0",
-      "mime-db": "1.52.0"
+      "debug": "4.3.4",
+      "dotenv": "16.4.5",
+      "function-bind": "1.1.2",
+      "hasown": "2.0.2",
+      "import-in-the-middle": "1.7.1",
+      "is-core-module": "2.13.1",
+      "mime-db": "1.52.0",
+      "module-details-from-path": "1.0.3",
+      "opentelemetry-instrumentation-fetch-node": "1.2.0",
+      "require-in-the-middle": "7.3.0",
+      "resolve": "1.22.8",
+      "semver": "7.6.0",
+      "shimmer": "1.2.1",
+      "supports-color": "5.5.0",
+      "yallist": "4.0.0"
     },
     "platform": "node",
+    "request": {
+      "cookies": {},
+      "headers": {
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        "accept-encoding": "gzip, deflate, br",
+        "accept-language": "en-US,en;q=0.5",
+        "cache-control": "no-cache",
+        "connection": "keep-alive",
+        "dnt": "1",
+        "host": "localhost:3030",
+        "pragma": "no-cache",
+        "sec-fetch-dest": "document",
+        "sec-fetch-mode": "navigate",
+        "sec-fetch-site": "none",
+        "sec-fetch-user": "?1",
+        "upgrade-insecure-requests": "1",
+        "user-agent": "[[user-agent]]"
+      },
+      "method": "GET",
+      "url": "http://localhost:3030/test-error"
+    },
     "sdk": {
       "integrations": [
         "InboundFilters",
@@ -357,28 +358,38 @@
         "RequestData",
         "Console",
         "Http",
-        "Undici",
+        "NodeFetch",
         "OnUncaughtException",
         "OnUnhandledRejection",
         "ContextLines",
-        "LocalVariables",
+        "LocalVariablesAsync",
         "Context",
         "Modules",
-        "Hapi"
+        "Express",
+        "Fastify",
+        "Graphql",
+        "Mongo",
+        "Mongoose",
+        "Mysql",
+        "Mysql2",
+        "Redis",
+        "Postgres",
+        "Nest",
+        "Hapi",
+        "Koa",
+        "Connect"
       ],
       "name": "sentry.javascript.node",
       "packages": [
         {
           "name": "npm:@sentry/node",
-          "version": "7.113.0"
+          "version": "8.0.0-rc.1"
         }
       ],
-      "version": "7.113.0"
+      "version": "8.0.0-rc.1"
     },
     "server_name": "D9M3PY4LQ7.local",
-    "tags": {
-      "transaction": "/test-error"
-    },
-    "timestamp": "[[timestamp]]"
+    "timestamp": "[[timestamp]]",
+    "transaction": "GET /test-error"
   }
 ]

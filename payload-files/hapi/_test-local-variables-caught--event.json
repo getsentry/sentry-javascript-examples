@@ -13,7 +13,7 @@
       "sample_rate": "1",
       "sampled": "true",
       "trace_id": "[[ID2]]",
-      "transaction": "GET /test-error-manual"
+      "transaction": "GET /test-local-variables-caught"
     }
   },
   {
@@ -75,63 +75,117 @@
           "stacktrace": {
             "frames": [
               {
-                "colno": 17,
-                "context_line": "  return tracer.startActiveSpan(name, spanContext, ctx, span => {",
+                "colno": 36,
+                "context_line": "    const result = await internals.handler(request, request.route.settings.handler);",
                 "filename": "[[FILENAME1]]",
-                "function": "Object.startSpan",
+                "function": "exports.execute",
                 "in_app": false,
-                "lineno": 858,
-                "module": "@sentry.opentelemetry.cjs:index",
+                "lineno": 31,
+                "module": "@hapi.hapi.lib:handler",
                 "post_context": [
-                  "    _applySentryAttributesToSpan(span, options);",
+                  "    if (result._takeover ||",
+                  "        typeof result === 'symbol') {",
                   "",
-                  "    return core.handleCallbackErrors(",
-                  "      () => callback(span),",
-                  "      () => {",
-                  "        // Only set the span status to ERROR when there wasn't any status set before, in order to avoid stomping useful span statuses",
-                  "        if (core.spanToJSON(span).status === undefined) {"
+                  "        return result;",
+                  "    }",
+                  "",
+                  "    request._setResponse(result);"
                 ],
                 "pre_context": [
+                  "                }",
+                  "            }",
+                  "        }",
+                  "    }",
                   "",
-                  "  const activeCtx = getContext(options.scope, options.forceTransaction);",
-                  "  const shouldSkipSpan = options.onlyIfParent && !api.trace.getSpan(activeCtx);",
-                  "  const ctx = shouldSkipSpan ? core$1.suppressTracing(activeCtx) : activeCtx;",
-                  "",
-                  "  const spanContext = getSpanContext(options);",
+                  "    // Handler",
                   ""
                 ]
               },
               {
-                "colno": 32,
-                "context_line": "        return api.context.with(contextWithSpanSet, fn, undefined, span);",
-                "filename": "[[FILENAME2]]",
-                "function": "Tracer.startActiveSpan",
+                "colno": 48,
+                "context_line": "    let response = await request._core.toolkit.execute(method, request, { bind, realm, continue: 'null' });",
+                "filename": "[[FILENAME1]]",
+                "function": "internals.handler",
                 "in_app": false,
-                "lineno": 121,
-                "module": "@opentelemetry.sdk-trace-base.build.src:Tracer",
+                "lineno": 46,
+                "module": "@hapi.hapi.lib:handler",
                 "post_context": [
-                  "    }",
-                  "    /** Returns the active {@link GeneralLimits}. */",
-                  "    getGeneralLimits() {",
-                  "        return this._generalLimits;",
-                  "    }",
-                  "    /** Returns the active {@link SpanLimits}. */",
-                  "    getSpanLimits() {"
+                  "",
+                  "    // Handler",
+                  "",
+                  "    if (!pre) {",
+                  "        if (response.isBoom) {",
+                  "            request._log(['handler', 'error'], response);",
+                  "            throw response;"
                 ],
                 "pre_context": [
-                  "            opts = arg2;",
-                  "            ctx = arg3;",
-                  "            fn = arg4;",
+                  "};",
+                  "",
+                  "",
+                  "internals.handler = async function (request, method, pre) {",
+                  "",
+                  "    const bind = request.route.settings.bind;",
+                  "    const realm = request.route.realm;"
+                ]
+              },
+              {
+                "colno": 29,
+                "context_line": "                operation = method(request, h);",
+                "filename": "[[FILENAME2]]",
+                "function": "exports.Manager.execute",
+                "in_app": false,
+                "lineno": 57,
+                "module": "@hapi.hapi.lib:toolkit",
+                "post_context": [
+                  "            }",
+                  "",
+                  "            var response = await exports.timed(operation, options);",
                   "        }",
-                  "        const parentContext = ctx !== null && ctx !== void 0 ? ctx : api.context.active();",
-                  "        const span = this.startSpan(name, opts, parentContext);",
-                  "        const contextWithSpanSet = api.trace.setSpan(parentContext, span);"
+                  "        catch (err) {",
+                  "            if (Bounce.isSystem(err)) {",
+                  "                response = Boom.badImplementation(err);"
+                ],
+                "pre_context": [
+                  "            if (bind) {",
+                  "                operation = method.call(bind, request, h);",
+                  "            }",
+                  "            else if (options.args) {",
+                  "                operation = method(request, h, ...options.args);",
+                  "            }",
+                  "            else {"
+                ]
+              },
+              {
+                "colno": 50,
+                "context_line": "                    return await api.context.with(api.trace.setSpan(api.context.active(), span), () => oldHandler.call(this, ...params));",
+                "filename": "[[FILENAME3]]",
+                "function": "?",
+                "in_app": false,
+                "lineno": 266,
+                "module": "@opentelemetry.instrumentation-hapi.build.src:instrumentation",
+                "post_context": [
+                  "                }",
+                  "                catch (err) {",
+                  "                    span.recordException(err);",
+                  "                    span.setStatus({",
+                  "                        code: api.SpanStatusCode.ERROR,",
+                  "                        message: err.message,",
+                  "                    });"
+                ],
+                "pre_context": [
+                  "                    rpcMetadata.route = route.path;",
+                  "                }",
+                  "                const metadata = (0, utils_1.getRouteMetadata)(route, pluginName);",
+                  "                const span = instrumentation.tracer.startSpan(metadata.name, {",
+                  "                    attributes: metadata.attributes,",
+                  "                });",
+                  "                try {"
                 ]
               },
               {
                 "colno": 46,
                 "context_line": "        return this._getContextManager().with(context, fn, thisArg, ...args);",
-                "filename": "[[FILENAME3]]",
+                "filename": "[[FILENAME4]]",
                 "function": "ContextAPI.with",
                 "in_app": false,
                 "lineno": 60,
@@ -158,7 +212,7 @@
               {
                 "colno": 24,
                 "context_line": "      return super.with(ctx2, fn, thisArg, ...args);",
-                "filename": "[[FILENAME1]]",
+                "filename": "[[FILENAME5]]",
                 "function": "SentryContextManager.with",
                 "in_app": false,
                 "lineno": "[[highNumber]]",
@@ -185,7 +239,7 @@
               {
                 "colno": 40,
                 "context_line": "        return this._asyncLocalStorage.run(context, cb, ...args);",
-                "filename": "[[FILENAME4]]",
+                "filename": "[[FILENAME6]]",
                 "function": "SentryContextManager.with",
                 "in_app": false,
                 "lineno": 33,
@@ -211,124 +265,70 @@
               },
               {
                 "colno": 14,
-                "filename": "[[FILENAME5]]",
+                "filename": "[[FILENAME7]]",
                 "function": "AsyncLocalStorage.run",
                 "in_app": false,
                 "lineno": 346,
                 "module": "node:async_hooks"
               },
               {
-                "colno": 17,
-                "context_line": "    return core.handleCallbackErrors(",
-                "filename": "[[FILENAME1]]",
+                "colno": 115,
+                "context_line": "                    return await api.context.with(api.trace.setSpan(api.context.active(), span), () => oldHandler.call(this, ...params));",
+                "filename": "[[FILENAME3]]",
                 "function": "?",
                 "in_app": false,
-                "lineno": 861,
-                "module": "@sentry.opentelemetry.cjs:index",
+                "lineno": 266,
+                "module": "@opentelemetry.instrumentation-hapi.build.src:instrumentation",
                 "post_context": [
-                  "      () => callback(span),",
-                  "      () => {",
-                  "        // Only set the span status to ERROR when there wasn't any status set before, in order to avoid stomping useful span statuses",
-                  "        if (core.spanToJSON(span).status === undefined) {",
-                  "          span.setStatus({ code: api.SpanStatusCode.ERROR });",
-                  "        }",
-                  "      },"
+                  "                }",
+                  "                catch (err) {",
+                  "                    span.recordException(err);",
+                  "                    span.setStatus({",
+                  "                        code: api.SpanStatusCode.ERROR,",
+                  "                        message: err.message,",
+                  "                    });"
                 ],
                 "pre_context": [
-                  "  const ctx = shouldSkipSpan ? core$1.suppressTracing(activeCtx) : activeCtx;",
-                  "",
-                  "  const spanContext = getSpanContext(options);",
-                  "",
-                  "  return tracer.startActiveSpan(name, spanContext, ctx, span => {",
-                  "    _applySentryAttributesToSpan(span, options);",
-                  ""
+                  "                    rpcMetadata.route = route.path;",
+                  "                }",
+                  "                const metadata = (0, utils_1.getRouteMetadata)(route, pluginName);",
+                  "                const span = instrumentation.tracer.startSpan(metadata.name, {",
+                  "                    attributes: metadata.attributes,",
+                  "                });",
+                  "                try {"
                 ]
               },
               {
-                "colno": 26,
-                "context_line": "    maybePromiseResult = fn();",
-                "filename": "[[FILENAME6]]",
-                "function": "Object.handleCallbackErrors",
-                "in_app": false,
-                "lineno": 26,
-                "module": "@sentry.core.cjs.utils:handleCallbackErrors",
-                "post_context": [
-                  "  } catch (e) {",
-                  "    onError(e);",
-                  "    onFinally();",
-                  "    throw e;",
-                  "  }",
-                  "",
-                  "  return maybeHandlePromiseRejection(maybePromiseResult, onError, onFinally);"
-                ],
-                "pre_context": [
-                  "  fn,",
-                  "  onError,",
-                  "  // eslint-disable-next-line @typescript-eslint/no-empty-function",
-                  "  onFinally = () => {},",
-                  ") {",
-                  "  let maybePromiseResult;",
-                  "  try {"
-                ]
-              },
-              {
-                "colno": 13,
-                "context_line": "      () => callback(span),",
-                "filename": "[[FILENAME1]]",
-                "function": "?",
-                "in_app": false,
-                "lineno": 862,
-                "module": "@sentry.opentelemetry.cjs:index",
-                "post_context": [
-                  "      () => {",
-                  "        // Only set the span status to ERROR when there wasn't any status set before, in order to avoid stomping useful span statuses",
-                  "        if (core.spanToJSON(span).status === undefined) {",
-                  "          span.setStatus({ code: api.SpanStatusCode.ERROR });",
-                  "        }",
-                  "      },",
-                  "      () => span.end(),"
-                ],
-                "pre_context": [
-                  "",
-                  "  const spanContext = getSpanContext(options);",
-                  "",
-                  "  return tracer.startActiveSpan(name, spanContext, ctx, span => {",
-                  "    _applySentryAttributesToSpan(span, options);",
-                  "",
-                  "    return core.handleCallbackErrors("
-                ]
-              },
-              {
-                "colno": 73,
-                "context_line": "                                                Sentry.captureException(new Error('This is an error'));",
-                "filename": "[[FILENAME7]]",
-                "function": "?",
+                "colno": 35,
+                "context_line": "                            throw new Error('Local Variable Error');",
+                "filename": "[[FILENAME8]]",
+                "function": "handler",
                 "in_app": true,
-                "lineno": 182,
+                "lineno": 211,
                 "module": "app",
                 "post_context": [
-                  "                                            });",
-                  "                                        });",
-                  "                                        return [4 /*yield*/, Sentry.flush(2000)];",
-                  "                                    case 1:",
-                  "                                        _a.sent();",
-                  "                                        return [2 /*return*/, {",
-                  "                                                transactionIds: global.transactionIds || [],"
+                  "                        }",
+                  "                        catch (e) {",
+                  "                            exceptionId = Sentry.captureException(e);",
+                  "                        }",
+                  "                        return { exceptionId: exceptionId };",
+                  "                    },",
+                  "                });"
                 ],
                 "pre_context": [
+                  "                server.route({",
+                  "                    method: 'GET',",
+                  "                    path: '/test-local-variables-caught',",
                   "                    handler: function (request, h) {",
-                  "                        return __awaiter(this, void 0, void 0, function () {",
-                  "                            return __generator(this, function (_a) {",
-                  "                                switch (_a.label) {",
-                  "                                    case 0:",
-                  "                                        Sentry.startSpan({ name: 'test-transaction', op: 'e2e-test' }, function () {",
-                  "                                            Sentry.startSpan({ name: 'test-span' }, function () {"
+                  "                        var randomVariableToRecord = 'LOCAL VARIABLE';",
+                  "                        var exceptionId;",
+                  "                        try {"
                 ]
               }
             ]
           },
           "type": "Error",
-          "value": "This is an error"
+          "value": "Local Variable Error"
         }
       ]
     },
@@ -369,7 +369,7 @@
         "user-agent": "[[user-agent]]"
       },
       "method": "GET",
-      "url": "http://localhost:3030/test-error-manual"
+      "url": "http://localhost:3030/test-local-variables-caught"
     },
     "sdk": {
       "integrations": [
@@ -411,6 +411,6 @@
     },
     "server_name": "D9M3PY4LQ7.local",
     "timestamp": "[[timestamp]]",
-    "transaction": "GET /test-error-manual"
+    "transaction": "GET /test-local-variables-caught"
   }
 ]

@@ -1,13 +1,6 @@
-const Sentry = require('@sentry/node');
+import './instrument';
+import * as Sentry from '@sentry/node';
 import Hapi from '@hapi/hapi';
-import dotenv from 'dotenv';
-
-dotenv.config({ path: './../../.env' });
-
-const server = Hapi.server({
-  port: 3030,
-  host: 'localhost',
-});
 
 declare global {
   namespace globalThis {
@@ -15,22 +8,16 @@ declare global {
   }
 }
 
-Sentry.init({
-  environment: 'qa', // dynamic sampling bias to keep transactions
-  dsn: process.env.SENTRY_DSN,
-  includeLocalVariables: true,
-  integrations: [Sentry.hapiIntegration({ server })],
-  debug: true,
-  tunnel: `http://localhost:3031/`, // proxy server
-  tracesSampleRate: 1,
-});
-
 const init = async () => {
+  const server = Hapi.server({
+    port: 3030,
+    host: 'localhost',
+  });
+
   server.route({
     method: 'GET',
     path: '/test-success',
     handler: function (request, h) {
-      console.log('test console');
       return { version: 'v1' };
     },
   });
@@ -136,10 +123,11 @@ const init = async () => {
       return { exceptionId };
     },
   });
-};
 
-(async () => {
-  init();
+  // @ts-ignore
+  await Sentry.setupHapiErrorHandler(server);
   await server.start();
   console.log('Server running on %s', server.info.uri);
-})();
+};
+
+init();
