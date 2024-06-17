@@ -1,4 +1,4 @@
-// import './instrumentation'; // file preloaded with --require option in node call
+import './instrument';
 import * as Sentry from '@sentry/node';
 import Hapi from '@hapi/hapi';
 

@@ -7,7 +7,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "start": "yarn build && node --require ./dist/instrumentation.js dist/app.js",
+    "start": "yarn build && node dist/app.js",
     "clean": "npx rimraf node_modules,pnpm-lock.yaml"
   },
   "license": "MIT",
@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@hapi/hapi": "21.3.9",
-    "@sentry/node": "8.0.0-rc.1",
+    "@sentry/node": "8.9.2",
     "dotenv": "^16.4.5"
   }
 }
