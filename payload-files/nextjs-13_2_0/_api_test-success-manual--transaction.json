@@ -4,7 +4,7 @@
     "event_id": "[[ID1]]",
     "sdk": {
       "name": "sentry.javascript.nextjs",
-      "version": "7.110.1"
+      "version": "8.0.0-beta.1"
     },
     "sent_at": "[[ISODateString]]",
     "trace": {
@@ -21,61 +21,55 @@
       {
         "category": "console",
         "level": "log",
-        "message": "\u001b[36mwait\u001b[39m  - compiling /api/test-success/route (client and server)...",
+        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Ready in 5.1s",
         "timestamp": "[[timestamp]]"
       },
       {
         "category": "console",
-        "level": "log",
-        "message": "\u001b[35mevent\u001b[39m - compiled client and server successfully in 255 ms (1321 modules)",
+        "level": "warning",
+        "message": " \u001b[33m\u001b[1m⚠\u001b[22m\u001b[39m ../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@prisma/instrumentation/dist/chunk-L6V5ZEAH.js\n../../node_modules/@prisma/instrumentation/dist/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js",
         "timestamp": "[[timestamp]]"
       },
       {
         "category": "console",
-        "level": "log",
-        "message": "\u001b[36mwait\u001b[39m  - compiling /api/test-error/route (client and server)...",
+        "level": "warning",
+        "message": " \u001b[33m\u001b[1m⚠\u001b[22m\u001b[39m ../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@prisma/instrumentation/dist/chunk-L6V5ZEAH.js\n../../node_modules/@prisma/instrumentation/dist/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n./app/layout.tsx\n\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@prisma/instrumentation/dist/chunk-L6V5ZEAH.js\n../../node_modules/@prisma/instrumentation/dist/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n./app/layout.tsx",
         "timestamp": "[[timestamp]]"
       },
       {
         "category": "console",
-        "level": "log",
-        "message": "\u001b[35mevent\u001b[39m - compiled successfully in 91 ms (502 modules)",
+        "level": "warning",
+        "message": " \u001b[33m\u001b[1m⚠\u001b[22m\u001b[39m ../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@prisma/instrumentation/dist/chunk-L6V5ZEAH.js\n../../node_modules/@prisma/instrumentation/dist/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n./app/layout.tsx\n\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@prisma/instrumentation/dist/chunk-L6V5ZEAH.js\n../../node_modules/@prisma/instrumentation/dist/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n./app/layout.tsx",
         "timestamp": "[[timestamp]]"
       },
       {
         "category": "console",
-        "level": "log",
-        "message": "\u001b[36mwait\u001b[39m  - compiling /api/test-param-success/[param]/route (client and server)...",
+        "level": "warning",
+        "message": " \u001b[33m\u001b[1m⚠\u001b[22m\u001b[39m ../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@prisma/instrumentation/dist/chunk-L6V5ZEAH.js\n../../node_modules/@prisma/instrumentation/dist/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n./app/test-route-handlers/page.tsx\n\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@prisma/instrumentation/dist/chunk-L6V5ZEAH.js\n../../node_modules/@prisma/instrumentation/dist/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n./app/test-route-handlers/page.tsx",
         "timestamp": "[[timestamp]]"
       },
       {
         "category": "console",
-        "level": "log",
-        "message": "\u001b[35mevent\u001b[39m - compiled successfully in 108 ms (502 modules)",
+        "level": "warning",
+        "message": " \u001b[33m\u001b[1m⚠\u001b[22m\u001b[39m ../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@prisma/instrumentation/dist/chunk-L6V5ZEAH.js\n../../node_modules/@prisma/instrumentation/dist/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n./app/test-route-handlers/page.tsx\n\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@prisma/instrumentation/dist/chunk-L6V5ZEAH.js\n../../node_modules/@prisma/instrumentation/dist/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n./app/test-route-handlers/page.tsx",
         "timestamp": "[[timestamp]]"
       },
       {
         "category": "console",
-        "level": "log",
-        "message": "\u001b[36mwait\u001b[39m  - compiling /api/test-param-error/[param]/route (client and server)...",
+        "level": "warning",
+        "message": " \u001b[33m\u001b[1m⚠\u001b[22m\u001b[39m ../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@prisma/instrumentation/dist/chunk-L6V5ZEAH.js\n../../node_modules/@prisma/instrumentation/dist/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n./app/test-route-handlers/page.tsx\n\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@prisma/instrumentation/dist/chunk-L6V5ZEAH.js\n../../node_modules/@prisma/instrumentation/dist/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n./app/test-route-handlers/page.tsx",
         "timestamp": "[[timestamp]]"
       },
       {
         "category": "console",
-        "level": "log",
-        "message": "\u001b[35mevent\u001b[39m - compiled successfully in 98 ms (504 modules)",
+        "level": "warning",
+        "message": " \u001b[33m\u001b[1m⚠\u001b[22m\u001b[39m ../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@prisma/instrumentation/dist/chunk-L6V5ZEAH.js\n../../node_modules/@prisma/instrumentation/dist/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n./app/test-route-handlers/page.tsx\n\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@prisma/instrumentation/dist/chunk-L6V5ZEAH.js\n../../node_modules/@prisma/instrumentation/dist/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n./app/test-route-handlers/page.tsx",
         "timestamp": "[[timestamp]]"
       },
       {
         "category": "console",
-        "level": "log",
-        "message": "\u001b[36mwait\u001b[39m  - compiling /api/test-success-manual/route (client and server)...",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": "\u001b[35mevent\u001b[39m - compiled successfully in 96 ms (506 modules)",
+        "level": "warning",
+        "message": " \u001b[33m\u001b[1m⚠\u001b[22m\u001b[39m ../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@prisma/instrumentation/dist/chunk-L6V5ZEAH.js\n../../node_modules/@prisma/instrumentation/dist/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n./app/api/test-success/route.ts\n\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\nCritical dependency: the request of a dependency is an expression\n\nImport trace for requested module:\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/instrumentation.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/node/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/platform/index.js\n../../node_modules/@prisma/instrumentation/node_modules/@opentelemetry/instrumentation/build/esm/index.js\n../../node_modules/@prisma/instrumentation/dist/chunk-L6V5ZEAH.js\n../../node_modules/@prisma/instrumentation/dist/index.js\n../../node_modules/@sentry/nextjs/node_modules/@sentry/node/cjs/index.js\n../../node_modules/@sentry/nextjs/cjs/index.server.js\n./app/api/test-success/route.ts",
         "timestamp": "[[timestamp]]"
       }
     ],
@@ -104,13 +98,32 @@
         "name": "macOS",
         "version": "14.2"
       },
+      "otel": {
+        "resource": {
+          "service.name": "node",
+          "service.namespace": "sentry",
+          "service.version": "8.0.0-beta.1",
+          "telemetry.sdk.language": "nodejs",
+          "telemetry.sdk.name": "opentelemetry",
+          "telemetry.sdk.version": "1.21.0"
+        }
+      },
       "runtime": {
         "name": "node",
         "version": "v20.12.1"
       },
       "trace": {
         "data": {
+          "http.method": "GET",
           "http.response.status_code": 200,
+          "http.route": "/api/test-success-manual/route",
+          "http.status_code": 200,
+          "http.target": "/api/test-success-manual",
+          "next.route": "/api/test-success-manual/route",
+          "next.rsc": false,
+          "next.span_name": "GET /api/test-success-manual/route",
+          "next.span_type": "BaseServer.handleRequest",
+          "otel.kind": "SERVER",
           "sentry.op": "http.server",
           "sentry.origin": "auto.function.nextjs",
           "sentry.sample_rate": 1,
@@ -121,69 +134,13 @@
         "parent_span_id": "[[ID3]]",
         "span_id": "[[ID4]]",
         "status": "ok",
-        "tags": {
-          "http.status_code": "200"
-        },
         "trace_id": "[[ID2]]"
       }
     },
     "environment": "qa",
     "event_id": "[[ID1]]",
-    "modules": {
-      "ansi-styles": "4.3.0",
-      "balanced-match": "1.0.2",
-      "brace-expansion": "2.0.1",
-      "caniuse-lite": "1.0.30001610",
-      "commondir": "1.0.1",
-      "estree-walker": "2.0.2",
-      "fs.realpath": "1.0.0",
-      "function-bind": "1.1.2",
-      "has-flag": "4.0.0",
-      "hasown": "2.0.2",
-      "inflight": "1.0.6",
-      "inherits": "2.0.4",
-      "is-core-module": "2.13.1",
-      "is-reference": "1.2.1",
-      "js-tokens": "4.0.0",
-      "localforage": "1.10.0",
-      "loose-envify": "1.4.0",
-      "nanoid": "3.3.7",
-      "next": "13.2.0",
-      "once": "1.4.0",
-      "picocolors": "1.0.0",
-      "picomatch": "2.3.1",
-      "postcss": "8.4.14",
-      "react": "18.2.0",
-      "react-dom": "18.2.0",
-      "resolve": "1.22.8",
-      "rollup": "2.78.0",
-      "scheduler": "0.23.0",
-      "source-map-js": "1.2.0",
-      "stacktrace-parser": "0.1.10",
-      "styled-jsx": "5.1.1",
-      "wrappy": "1.0.2"
-    },
+    "modules": {},
     "platform": "node",
-    "request": {
-      "cookies": {},
-      "headers": {
-        "accept": "*/*",
-        "accept-encoding": "gzip, deflate, br",
-        "accept-language": "en-US,en;q=0.5",
-        "baggage": "sentry-environment=qa,sentry-public_key=3b6c388182fb435097f41d181be2b2ba,sentry-trace_id=1e639b3a12f042eb99339c3baac20ffa",
-        "cache-control": "no-cache",
-        "connection": "keep-alive",
-        "host": "localhost:3030",
-        "pragma": "no-cache",
-        "referer": "http://localhost:3030/test-route-handlers",
-        "sec-fetch-dest": "empty",
-        "sec-fetch-mode": "cors",
-        "sec-fetch-site": "same-origin",
-        "sentry-trace": "1e639b3a12f042eb99339c3baac20ffa-84813d02de47733d",
-        "user-agent": "[[user-agent]]"
-      },
-      "url": "http://localhost:3030"
-    },
     "sdk": {
       "integrations": [
         "InboundFilters",
@@ -191,64 +148,123 @@
         "LinkedErrors",
         "RequestData",
         "Console",
-        "Undici",
+        "OnUncaughtException",
         "OnUnhandledRejection",
         "ContextLines",
         "LocalVariables",
         "Context",
         "Modules",
-        "RewriteFrames",
-        "Http",
-        "OnUncaughtException"
+        "Express",
+        "Fastify",
+        "Graphql",
+        "Mongo",
+        "Mongoose",
+        "Mysql",
+        "Mysql2",
+        "Postgres",
+        "Nest",
+        "Hapi",
+        "Koa",
+        "RequestIsolationScope",
+        "DistDirRewriteFrames"
       ],
       "name": "sentry.javascript.nextjs",
       "packages": [
         {
           "name": "npm:@sentry/nextjs",
-          "version": "7.110.1"
+          "version": "8.0.0-beta.1"
         },
         {
           "name": "npm:@sentry/node",
-          "version": "7.110.1"
+          "version": "8.0.0-beta.1"
         }
       ],
-      "version": "7.110.1"
+      "version": "8.0.0-beta.1"
     },
     "server_name": "D9M3PY4LQ7.local",
     "spans": [
       {
         "data": {
+          "next.route": "/api/test-success-manual",
+          "next.span_name": "resolve page components",
+          "next.span_type": "NextNodeServer.findPageComponents",
+          "otel.kind": "INTERNAL",
           "sentry.origin": "manual"
         },
-        "description": "test-span",
+        "description": "resolve page components",
         "origin": "manual",
         "parent_span_id": "[[ID4]]",
         "span_id": "[[ID5]]",
         "start_timestamp": "[[timestamp]]",
+        "status": "ok",
         "timestamp": "[[timestamp]]",
         "trace_id": "[[ID2]]"
       },
       {
         "data": {
+          "next.route": "/api/test-success-manual/route",
+          "next.span_name": "executing api route (app) /api/test-success-manual/route",
+          "next.span_type": "AppRouteRouteHandlers.runHandler",
+          "otel.kind": "INTERNAL",
+          "sentry.origin": "manual"
+        },
+        "description": "executing api route (app) /api/test-success-manual/route",
+        "origin": "manual",
+        "parent_span_id": "[[ID4]]",
+        "span_id": "[[ID6]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "ok",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "otel.kind": "INTERNAL",
+          "sentry.origin": "manual"
+        },
+        "description": "test-span",
+        "origin": "manual",
+        "parent_span_id": "[[ID6]]",
+        "span_id": "[[ID7]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "ok",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "otel.kind": "INTERNAL",
           "sentry.origin": "manual"
         },
         "description": "child-span",
         "origin": "manual",
-        "parent_span_id": "[[ID5]]",
-        "span_id": "[[ID6]]",
+        "parent_span_id": "[[ID7]]",
+        "span_id": "[[ID8]]",
         "start_timestamp": "[[timestamp]]",
+        "status": "ok",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "next.span_name": "start response",
+          "next.span_type": "NextNodeServer.startResponse",
+          "otel.kind": "INTERNAL",
+          "sentry.origin": "manual"
+        },
+        "description": "start response",
+        "origin": "manual",
+        "parent_span_id": "[[ID4]]",
+        "span_id": "[[ID9]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "ok",
         "timestamp": "[[timestamp]]",
         "trace_id": "[[ID2]]"
       }
     ],
     "start_timestamp": "[[timestamp]]",
-    "tags": {
-      "http.status_code": "200",
-      "runtime": "node",
-      "transaction": "GET /api/test-success-manual"
-    },
     "timestamp": "[[timestamp]]",
-    "transaction": "GET /api/test-success-manual",
+    "transaction": "GET /api/test-success-manual/route",
     "transaction_info": {
       "source": "route"
     },
