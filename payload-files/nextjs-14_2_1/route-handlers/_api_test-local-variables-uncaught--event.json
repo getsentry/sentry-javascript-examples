@@ -4,81 +4,22 @@
     "event_id": "[[ID1]]",
     "sdk": {
       "name": "sentry.javascript.nextjs",
-      "version": "7.110.1"
+      "version": "8.0.0-beta.3"
     },
     "sent_at": "[[ISODateString]]",
     "trace": {
       "environment": "qa",
       "public_key": "[[publicKey]]",
-      "trace_id": "[[ID2]]"
+      "sample_rate": "1",
+      "sampled": "true",
+      "trace_id": "[[ID2]]",
+      "transaction": "GET /api/test-local-variables-uncaught"
     }
   },
   {
     "type": "event"
   },
   {
-    "breadcrumbs": [
-      {
-        "category": "console",
-        "level": "log",
-        "message": " \u001b[37m\u001b[1m○\u001b[22m\u001b[39m Compiling / ...",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled / in 3s (2143 modules)",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled /favicon.ico in 181ms (1216 modules)",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled /api/test-success in 130ms (1218 modules)",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled /api/test-error in 300ms (1190 modules)",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled /api/test-param-success/[param] in 237ms (1190 modules)",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled /api/test-param-error/[param] in 134ms (1192 modules)",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled /api/test-success-manual in 165ms (1192 modules)",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled /api/test-error-manual in 203ms (1194 modules)",
-        "timestamp": "[[timestamp]]"
-      },
-      {
-        "category": "console",
-        "level": "log",
-        "message": " \u001b[32m\u001b[1m✓\u001b[22m\u001b[39m Compiled /api/test-local-variables-uncaught in 168ms (1194 modules)",
-        "timestamp": "[[timestamp]]"
-      }
-    ],
     "contexts": {
       "app": {
         "app_memory": "[[highNumber]]",
@@ -109,14 +50,6 @@
         "version": "v20.12.1"
       },
       "trace": {
-        "data": {
-          "sentry.op": "http.server",
-          "sentry.origin": "auto.function.nextjs",
-          "sentry.sample_rate": 1,
-          "sentry.source": "route"
-        },
-        "op": "http.server",
-        "origin": "auto.function.nextjs",
         "parent_span_id": "[[ID3]]",
         "span_id": "[[ID4]]",
         "trace_id": "[[ID2]]"
@@ -135,118 +68,9 @@
             "frames": [
               {
                 "colno": "[[highNumber]]",
-                "context_line": "'{snip} is.userland.fetchCache;let s=await this.actionAsyncStorage.run({isAppRoute:!0,isAction:function(e){let{isFetchAction:t,isURLEncodedAction:r, {snip}",
-                "filename": "[[FILENAME1]]",
-                "function": "e_.execute",
-                "in_app": false,
-                "lineno": 6,
-                "module": "next.dist.compiled.next-server:app-route.runtime.dev",
-                "post_context": ["//# sourceMappingURL=app-route.runtime.dev.js.map"],
-                "pre_context": [
-                  "(()=>{var e={\"./dist/compiled/@edge-runtime/cookies/index.js\":e=>{\"use strict\";var t=Object.defineProperty,r=Object.getOwnPropertyDescriptor {snip}",
-                  " * cookie",
-                  " * Copyright(c) 2012-2014 Roman Shtylman",
-                  " * Copyright(c) 2015 Douglas Christopher Wilson",
-                  " * MIT Licensed"
-                ]
-              },
-              {
-                "colno": 14,
-                "filename": "[[FILENAME2]]",
-                "function": "AsyncLocalStorage.run",
-                "in_app": false,
-                "lineno": 346,
-                "module": "node:async_hooks"
-              },
-              {
-                "colno": "[[highNumber]]",
-                "context_line": "'{snip} Action:o,isFetchAction:a}}(e);return!!(t||r||n)}(e)},()=>H.wrap(this.requestAsyncStorage,n,()=>V.wrap(this.staticGenerationAsyncStorage,o,n= {snip}",
-                "filename": "[[FILENAME1]]",
-                "function": "<anonymous>",
-                "in_app": false,
-                "lineno": 6,
-                "module": "next.dist.compiled.next-server:app-route.runtime.dev",
-                "post_context": ["//# sourceMappingURL=app-route.runtime.dev.js.map"],
-                "pre_context": [
-                  "(()=>{var e={\"./dist/compiled/@edge-runtime/cookies/index.js\":e=>{\"use strict\";var t=Object.defineProperty,r=Object.getOwnPropertyDescriptor {snip}",
-                  " * cookie",
-                  " * Copyright(c) 2012-2014 Roman Shtylman",
-                  " * Copyright(c) 2015 Douglas Christopher Wilson",
-                  " * MIT Licensed"
-                ]
-              },
-              {
-                "colno": "[[highNumber]]",
-                "context_line": "'{snip} },assetPrefix:(null==n?void 0:n.assetPrefix)||\"\"};return e.run(c,o,c)}};var I=r(\"./dist/compiled/react/index.js\"),U=r.n(I);let F=\"DYNAMIC_SE {snip}",
-                "filename": "[[FILENAME1]]",
-                "function": "Object.wrap",
-                "in_app": false,
-                "lineno": 6,
-                "module": "next.dist.compiled.next-server:app-route.runtime.dev",
-                "post_context": ["//# sourceMappingURL=app-route.runtime.dev.js.map"],
-                "pre_context": [
-                  "(()=>{var e={\"./dist/compiled/@edge-runtime/cookies/index.js\":e=>{\"use strict\";var t=Object.defineProperty,r=Object.getOwnPropertyDescriptor {snip}",
-                  " * cookie",
-                  " * Copyright(c) 2012-2014 Roman Shtylman",
-                  " * Copyright(c) 2015 Douglas Christopher Wilson",
-                  " * MIT Licensed"
-                ]
-              },
-              {
-                "colno": 14,
-                "filename": "[[FILENAME2]]",
-                "function": "AsyncLocalStorage.run",
-                "in_app": false,
-                "lineno": 346,
-                "module": "node:async_hooks"
-              },
-              {
-                "colno": "[[highNumber]]",
-                "context_line": "'{snip} (t||r||n)}(e)},()=>H.wrap(this.requestAsyncStorage,n,()=>V.wrap(this.staticGenerationAsyncStorage,o,n=>{var o;let s=n.isStaticGeneration;if( {snip}",
-                "filename": "[[FILENAME1]]",
-                "function": "<anonymous>",
-                "in_app": false,
-                "lineno": 6,
-                "module": "next.dist.compiled.next-server:app-route.runtime.dev",
-                "post_context": ["//# sourceMappingURL=app-route.runtime.dev.js.map"],
-                "pre_context": [
-                  "(()=>{var e={\"./dist/compiled/@edge-runtime/cookies/index.js\":e=>{\"use strict\";var t=Object.defineProperty,r=Object.getOwnPropertyDescriptor {snip}",
-                  " * cookie",
-                  " * Copyright(c) 2012-2014 Roman Shtylman",
-                  " * Copyright(c) 2015 Douglas Christopher Wilson",
-                  " * MIT Licensed"
-                ]
-              },
-              {
-                "colno": "[[highNumber]]",
-                "context_line": "'{snip} aftMode:r.isDraftMode,prerenderState:a};return r.store=s,e.run(s,n,s)}};function Y(){return new Response(null,{status:400})}function J(){ret {snip}",
-                "filename": "[[FILENAME1]]",
-                "function": "Object.wrap",
-                "in_app": false,
-                "lineno": 6,
-                "module": "next.dist.compiled.next-server:app-route.runtime.dev",
-                "post_context": ["//# sourceMappingURL=app-route.runtime.dev.js.map"],
-                "pre_context": [
-                  "(()=>{var e={\"./dist/compiled/@edge-runtime/cookies/index.js\":e=>{\"use strict\";var t=Object.defineProperty,r=Object.getOwnPropertyDescriptor {snip}",
-                  " * cookie",
-                  " * Copyright(c) 2012-2014 Roman Shtylman",
-                  " * Copyright(c) 2015 Douglas Christopher Wilson",
-                  " * MIT Licensed"
-                ]
-              },
-              {
-                "colno": 14,
-                "filename": "[[FILENAME2]]",
-                "function": "AsyncLocalStorage.run",
-                "in_app": false,
-                "lineno": 346,
-                "module": "node:async_hooks"
-              },
-              {
-                "colno": "[[highNumber]]",
                 "context_line": "'{snip} SpanAttributes())||o.set(\"next.route\",l),(0,M.getTracer)().trace(d.runHandler,{spanName:`executing api route (app) ${l}`,attributes:{\"next.r {snip}",
                 "filename": "[[FILENAME1]]",
-                "function": "<anonymous>",
+                "function": "?",
                 "in_app": false,
                 "lineno": 6,
                 "module": "next.dist.compiled.next-server:app-route.runtime.dev",
@@ -262,7 +86,7 @@
               {
                 "colno": 28,
                 "context_line": "        return context.with(spanContext.setValue(rootSpanIdKey, spanId), ()=>this.getTracerInstance().startActiveSpan(spanName, options, (span)=>{",
-                "filename": "[[FILENAME3]]",
+                "filename": "[[FILENAME2]]",
                 "function": "NextTracerImpl.trace",
                 "in_app": false,
                 "lineno": 122,
@@ -287,32 +111,61 @@
                 ]
               },
               {
-                "colno": 518,
-                "context_line": "'{snip} ve()}with(e,t,r,...n){return this._getContextManager().with(e,t,r,...n)}bind(e,t){return this._getContextManager().bind(e,t)}_getContextMana {snip}",
-                "filename": "[[FILENAME4]]",
+                "colno": 46,
+                "context_line": "        return this._getContextManager().with(context, fn, thisArg, ...args);",
+                "filename": "[[FILENAME3]]",
                 "function": "ContextAPI.with",
                 "in_app": false,
-                "lineno": 1,
-                "module": "next.dist.compiled.@opentelemetry.api:index",
-                "post_context": [],
-                "pre_context": []
+                "lineno": 60,
+                "module": "@opentelemetry.api.build.src.api:context",
+                "post_context": [
+                  "    }",
+                  "    /**",
+                  "     * Bind a context to a target function or event emitter",
+                  "     *",
+                  "     * @param context context to bind to the event emitter or function. Defaults to the currently active context",
+                  "     * @param target function or event emitter to bind",
+                  "     */"
+                ],
+                "pre_context": [
+                  "     *",
+                  "     * @param context context to be active during function execution",
+                  "     * @param fn function to execute in a context",
+                  "     * @param thisArg optional receiver to be used for calling fn",
+                  "     * @param args optional arguments forwarded to fn",
+                  "     */",
+                  "    with(context, fn, thisArg, ...args) {"
+                ]
               },
               {
-                "colno": "[[highNumber]]",
-                "context_line": "'{snip} r{active(){return n.ROOT_CONTEXT}with(e,t,r,...n){return t.call(r,...n)}bind(e,t){return t}enable(){return this}disable(){return this}}t.Noo {snip}",
+                "colno": 24,
                 "filename": "[[FILENAME4]]",
-                "function": "NoopContextManager.with",
+                "function": "SentryContextManager.with",
                 "in_app": false,
-                "lineno": 1,
-                "module": "next.dist.compiled.@opentelemetry.api:index",
-                "post_context": [],
-                "pre_context": []
+                "lineno": "[[highNumber]]",
+                "module": "@sentry.opentelemetry.cjs:index"
+              },
+              {
+                "colno": 40,
+                "filename": "[[FILENAME5]]",
+                "function": "SentryContextManager.with",
+                "in_app": false,
+                "lineno": 33,
+                "module": "@opentelemetry.context-async-hooks.build.src:AsyncLocalStorageContextManager"
+              },
+              {
+                "colno": 14,
+                "filename": "[[FILENAME6]]",
+                "function": "AsyncLocalStorage.run",
+                "in_app": false,
+                "lineno": 346,
+                "module": "node:async_hooks"
               },
               {
                 "colno": 103,
                 "context_line": "        return context.with(spanContext.setValue(rootSpanIdKey, spanId), ()=>this.getTracerInstance().startActiveSpan(spanName, options, (span)=>{",
-                "filename": "[[FILENAME3]]",
-                "function": "<anonymous>",
+                "filename": "[[FILENAME2]]",
+                "function": "?",
                 "in_app": false,
                 "lineno": 122,
                 "module": "next.dist.server.lib.trace:tracer",
@@ -336,54 +189,50 @@
                 ]
               },
               {
-                "colno": "[[highNumber]]",
-                "context_line": "'{snip} tiveSpan(e,t,r,n){const a=this._getTracer();return Reflect.apply(a.startActiveSpan,a,arguments)}_getTracer(){if(this._delegate){return this. {snip}",
-                "filename": "[[FILENAME4]]",
-                "function": "ProxyTracer.startActiveSpan",
+                "colno": 76,
+                "filename": "[[FILENAME7]]",
+                "function": "Tracer.startActiveSpan",
                 "in_app": false,
-                "lineno": 1,
-                "module": "next.dist.compiled.@opentelemetry.api:index",
-                "post_context": [],
-                "pre_context": []
+                "lineno": 136,
+                "module": "@opentelemetry.sdk-trace-base.build.esm:Tracer"
               },
               {
-                "colno": "[[highNumber]]",
-                "context_line": "'{snip} s.startSpan(e,o,u);const g=(0,a.setSpan)(u,l);return c.with(g,s,undefined,l)}}t.NoopTracer=NoopTracer;function isSpanContext(e){return typeo {snip}",
-                "filename": "[[FILENAME4]]",
-                "function": "NoopTracer.startActiveSpan",
-                "in_app": false,
-                "lineno": 1,
-                "module": "next.dist.compiled.@opentelemetry.api:index",
-                "post_context": [],
-                "pre_context": []
-              },
-              {
-                "colno": 518,
-                "context_line": "'{snip} ve()}with(e,t,r,...n){return this._getContextManager().with(e,t,r,...n)}bind(e,t){return this._getContextManager().bind(e,t)}_getContextMana {snip}",
-                "filename": "[[FILENAME4]]",
+                "colno": 54,
+                "filename": "[[FILENAME8]]",
                 "function": "ContextAPI.with",
                 "in_app": false,
-                "lineno": 1,
-                "module": "next.dist.compiled.@opentelemetry.api:index",
-                "post_context": [],
-                "pre_context": []
+                "lineno": 95,
+                "module": "@opentelemetry.api.build.esm.api:context"
               },
               {
-                "colno": "[[highNumber]]",
-                "context_line": "'{snip} r{active(){return n.ROOT_CONTEXT}with(e,t,r,...n){return t.call(r,...n)}bind(e,t){return t}enable(){return this}disable(){return this}}t.Noo {snip}",
+                "colno": 24,
                 "filename": "[[FILENAME4]]",
-                "function": "NoopContextManager.with",
+                "function": "SentryContextManager.with",
                 "in_app": false,
-                "lineno": 1,
-                "module": "next.dist.compiled.@opentelemetry.api:index",
-                "post_context": [],
-                "pre_context": []
+                "lineno": "[[highNumber]]",
+                "module": "@sentry.opentelemetry.cjs:index"
+              },
+              {
+                "colno": 40,
+                "filename": "[[FILENAME5]]",
+                "function": "SentryContextManager.with",
+                "in_app": false,
+                "lineno": 33,
+                "module": "@opentelemetry.context-async-hooks.build.src:AsyncLocalStorageContextManager"
+              },
+              {
+                "colno": 14,
+                "filename": "[[FILENAME6]]",
+                "function": "AsyncLocalStorage.run",
+                "in_app": false,
+                "lineno": 346,
+                "module": "node:async_hooks"
               },
               {
                 "colno": 36,
                 "context_line": "                    const result = fn(span);",
-                "filename": "[[FILENAME3]]",
-                "function": "<anonymous>",
+                "filename": "[[FILENAME2]]",
+                "function": "?",
                 "in_app": false,
                 "lineno": 140,
                 "module": "next.dist.server.lib.trace:tracer",
@@ -410,7 +259,7 @@
                 "colno": "[[highNumber]]",
                 "context_line": "'{snip} yncStorage:this.staticGenerationAsyncStorage});let o=await r(i,{params:t.params?function(e){let t={};for(let[r,n]of Object.entries(e))void 0 {snip}",
                 "filename": "[[FILENAME1]]",
-                "function": "<anonymous>",
+                "function": "?",
                 "in_app": false,
                 "lineno": 6,
                 "module": "next.dist.compiled.next-server:app-route.runtime.dev",
@@ -425,250 +274,290 @@
               },
               {
                 "colno": 10,
-                "filename": "[[FILENAME5]]",
+                "filename": "[[FILENAME9]]",
                 "function": "Object.apply",
-                "in_app": false,
-                "lineno": 64,
+                "in_app": true,
+                "lineno": 63,
                 "module": "route.ts"
               },
               {
-                "colno": 78,
-                "filename": "[[FILENAME6]]",
+                "colno": 27,
+                "filename": "[[FILENAME10]]",
                 "function": "Object.apply",
                 "in_app": false,
-                "lineno": 37,
-                "module": "@sentry.nextjs.esm.common:wrapRouteHandlerWithSentry"
+                "lineno": 22,
+                "module": "@sentry.nextjs.cjs.common:wrapRouteHandlerWithSentry"
               },
               {
-                "colno": 70,
-                "filename": "[[FILENAME7]]",
-                "function": "withIsolationScope",
+                "colno": 17,
+                "filename": "[[FILENAME11]]",
+                "function": "Object.escapeNextjsTracing",
                 "in_app": false,
-                "lineno": 244,
-                "module": "@sentry.core.esm:exports"
+                "lineno": 83,
+                "module": "@sentry.nextjs.cjs.common.utils:tracingUtils"
               },
               {
-                "colno": 36,
+                "colno": 16,
+                "filename": "[[FILENAME12]]",
+                "function": "Object.withActiveSpan",
+                "in_app": false,
+                "lineno": 189,
+                "module": "@sentry.core.cjs.tracing:trace"
+              },
+              {
+                "colno": 26,
+                "filename": "[[FILENAME4]]",
+                "function": "Object.withActiveSpan",
+                "in_app": false,
+                "lineno": 948,
+                "module": "@sentry.opentelemetry.cjs:index"
+              },
+              {
+                "colno": 54,
                 "filename": "[[FILENAME8]]",
-                "function": "runWithAsyncContext",
+                "function": "ContextAPI.with",
                 "in_app": false,
-                "lineno": 799,
-                "module": "@sentry.core.esm:hub"
+                "lineno": 95,
+                "module": "@opentelemetry.api.build.esm.api:context"
               },
               {
-                "colno": 25,
-                "filename": "[[FILENAME9]]",
-                "function": "Object.runWithAsyncContext",
+                "colno": 24,
+                "filename": "[[FILENAME4]]",
+                "function": "SentryContextManager.with",
                 "in_app": false,
-                "lineno": 48,
-                "module": "@sentry.node.esm.async:hooks"
+                "lineno": "[[highNumber]]",
+                "module": "@sentry.opentelemetry.cjs:index"
+              },
+              {
+                "colno": 40,
+                "filename": "[[FILENAME5]]",
+                "function": "SentryContextManager.with",
+                "in_app": false,
+                "lineno": 33,
+                "module": "@opentelemetry.context-async-hooks.build.src:AsyncLocalStorageContextManager"
               },
               {
                 "colno": 14,
-                "filename": "[[FILENAME2]]",
-                "function": "AsyncLocalStorage.run",
-                "in_app": false,
-                "lineno": 346,
-                "module": "node:async_hooks"
-              },
-              {
-                "colno": 14,
-                "filename": "[[FILENAME9]]",
-                "function": "eval",
-                "in_app": false,
-                "lineno": 49,
-                "module": "@sentry.node.esm.async:hooks"
-              },
-              {
-                "colno": 12,
-                "filename": "[[FILENAME7]]",
-                "function": "eval",
-                "in_app": false,
-                "lineno": 245,
-                "module": "@sentry.core.esm:exports"
-              },
-              {
-                "colno": 75,
                 "filename": "[[FILENAME6]]",
-                "function": "eval",
-                "in_app": false,
-                "lineno": 43,
-                "module": "@sentry.nextjs.esm.common:wrapRouteHandlerWithSentry"
-              },
-              {
-                "colno": 70,
-                "filename": "[[FILENAME10]]",
-                "function": "continueTrace",
-                "in_app": false,
-                "lineno": 289,
-                "module": "@sentry.core.esm.tracing:trace"
-              },
-              {
-                "colno": 36,
-                "filename": "[[FILENAME8]]",
-                "function": "runWithAsyncContext",
-                "in_app": false,
-                "lineno": 799,
-                "module": "@sentry.core.esm:hub"
-              },
-              {
-                "colno": 25,
-                "filename": "[[FILENAME9]]",
-                "function": "Object.runWithAsyncContext",
-                "in_app": false,
-                "lineno": 48,
-                "module": "@sentry.node.esm.async:hooks"
-              },
-              {
-                "colno": 14,
-                "filename": "[[FILENAME2]]",
                 "function": "AsyncLocalStorage.run",
                 "in_app": false,
                 "lineno": 346,
                 "module": "node:async_hooks"
               },
               {
+                "colno": 59,
+                "filename": "[[FILENAME4]]",
+                "function": "eval",
+                "in_app": false,
+                "lineno": 948,
+                "module": "@sentry.opentelemetry.cjs:index"
+              },
+              {
+                "colno": 40,
+                "filename": "[[FILENAME11]]",
+                "function": "eval",
+                "in_app": false,
+                "lineno": 88,
+                "module": "@sentry.nextjs.cjs.common.utils:tracingUtils"
+              },
+              {
                 "colno": 14,
-                "filename": "[[FILENAME9]]",
-                "function": "eval",
-                "in_app": false,
-                "lineno": 49,
-                "module": "@sentry.node.esm.async:hooks"
-              },
-              {
-                "colno": 12,
-                "filename": "[[FILENAME10]]",
-                "function": "eval",
-                "in_app": false,
-                "lineno": 290,
-                "module": "@sentry.core.esm.tracing:trace"
-              },
-              {
-                "colno": 83,
                 "filename": "[[FILENAME6]]",
-                "function": "eval",
-                "in_app": false,
-                "lineno": 50,
-                "module": "@sentry.nextjs.esm.common:wrapRouteHandlerWithSentry"
-              },
-              {
-                "colno": 70,
-                "filename": "[[FILENAME10]]",
-                "function": "startSpan",
-                "in_app": false,
-                "lineno": 101,
-                "module": "@sentry.core.esm.tracing:trace"
-              },
-              {
-                "colno": 36,
-                "filename": "[[FILENAME8]]",
-                "function": "runWithAsyncContext",
-                "in_app": false,
-                "lineno": 799,
-                "module": "@sentry.core.esm:hub"
-              },
-              {
-                "colno": 25,
-                "filename": "[[FILENAME9]]",
-                "function": "Object.runWithAsyncContext",
-                "in_app": false,
-                "lineno": 48,
-                "module": "@sentry.node.esm.async:hooks"
-              },
-              {
-                "colno": 14,
-                "filename": "[[FILENAME2]]",
                 "function": "AsyncLocalStorage.run",
                 "in_app": false,
                 "lineno": 346,
                 "module": "node:async_hooks"
               },
               {
-                "colno": 14,
-                "filename": "[[FILENAME9]]",
+                "colno": 16,
+                "filename": "[[FILENAME11]]",
                 "function": "eval",
                 "in_app": false,
-                "lineno": 49,
-                "module": "@sentry.node.esm.async:hooks"
+                "lineno": 89,
+                "module": "@sentry.nextjs.cjs.common.utils:tracingUtils"
               },
               {
-                "colno": 66,
+                "colno": 21,
                 "filename": "[[FILENAME10]]",
                 "function": "eval",
                 "in_app": false,
-                "lineno": 102,
-                "module": "@sentry.core.esm.tracing:trace"
+                "lineno": 40,
+                "module": "@sentry.nextjs.cjs.common:wrapRouteHandlerWithSentry"
               },
               {
-                "colno": 18,
-                "filename": "[[FILENAME7]]",
-                "function": "withScope",
+                "colno": 16,
+                "filename": "[[FILENAME13]]",
+                "function": "Object.withIsolationScope",
                 "in_app": false,
-                "lineno": 214,
-                "module": "@sentry.core.esm:exports"
+                "lineno": 103,
+                "module": "@sentry.core.cjs:currentScopes"
               },
               {
                 "colno": 28,
+                "filename": "[[FILENAME4]]",
+                "function": "Object.withSetIsolationScope",
+                "in_app": false,
+                "lineno": "[[highNumber]]",
+                "module": "@sentry.opentelemetry.cjs:index"
+              },
+              {
+                "colno": 54,
                 "filename": "[[FILENAME8]]",
-                "function": "Hub.withScope",
+                "function": "ContextAPI.with",
                 "in_app": false,
-                "lineno": 216,
-                "module": "@sentry.core.esm:hub"
+                "lineno": 95,
+                "module": "@opentelemetry.api.build.esm.api:context"
               },
               {
-                "colno": 98,
+                "colno": 24,
+                "filename": "[[FILENAME4]]",
+                "function": "SentryContextManager.with",
+                "in_app": false,
+                "lineno": "[[highNumber]]",
+                "module": "@sentry.opentelemetry.cjs:index"
+              },
+              {
+                "colno": 40,
+                "filename": "[[FILENAME5]]",
+                "function": "SentryContextManager.with",
+                "in_app": false,
+                "lineno": 33,
+                "module": "@opentelemetry.context-async-hooks.build.src:AsyncLocalStorageContextManager"
+              },
+              {
+                "colno": 14,
+                "filename": "[[FILENAME6]]",
+                "function": "AsyncLocalStorage.run",
+                "in_app": false,
+                "lineno": 346,
+                "module": "node:async_hooks"
+              },
+              {
+                "colno": 14,
+                "filename": "[[FILENAME4]]",
+                "function": "eval",
+                "in_app": false,
+                "lineno": "[[highNumber]]",
+                "module": "@sentry.opentelemetry.cjs:index"
+              },
+              {
+                "colno": 25,
                 "filename": "[[FILENAME10]]",
                 "function": "eval",
                 "in_app": false,
-                "lineno": 118,
-                "module": "@sentry.core.esm.tracing:trace"
+                "lineno": 43,
+                "module": "@sentry.nextjs.cjs.common:wrapRouteHandlerWithSentry"
+              },
+              {
+                "colno": 16,
+                "filename": "[[FILENAME12]]",
+                "function": "Object.startSpan",
+                "in_app": false,
+                "lineno": 35,
+                "module": "@sentry.core.cjs.tracing:trace"
+              },
+              {
+                "colno": 17,
+                "filename": "[[FILENAME4]]",
+                "function": "Object.startSpan",
+                "in_app": false,
+                "lineno": 855,
+                "module": "@sentry.opentelemetry.cjs:index"
+              },
+              {
+                "colno": 76,
+                "filename": "[[FILENAME7]]",
+                "function": "Tracer.startActiveSpan",
+                "in_app": false,
+                "lineno": 136,
+                "module": "@opentelemetry.sdk-trace-base.build.esm:Tracer"
+              },
+              {
+                "colno": 54,
+                "filename": "[[FILENAME8]]",
+                "function": "ContextAPI.with",
+                "in_app": false,
+                "lineno": 95,
+                "module": "@opentelemetry.api.build.esm.api:context"
+              },
+              {
+                "colno": 24,
+                "filename": "[[FILENAME4]]",
+                "function": "SentryContextManager.with",
+                "in_app": false,
+                "lineno": "[[highNumber]]",
+                "module": "@sentry.opentelemetry.cjs:index"
+              },
+              {
+                "colno": 40,
+                "filename": "[[FILENAME5]]",
+                "function": "SentryContextManager.with",
+                "in_app": false,
+                "lineno": 33,
+                "module": "@opentelemetry.context-async-hooks.build.src:AsyncLocalStorageContextManager"
+              },
+              {
+                "colno": 14,
+                "filename": "[[FILENAME6]]",
+                "function": "AsyncLocalStorage.run",
+                "in_app": false,
+                "lineno": 346,
+                "module": "node:async_hooks"
+              },
+              {
+                "colno": 17,
+                "filename": "[[FILENAME4]]",
+                "function": "eval",
+                "in_app": false,
+                "lineno": 858,
+                "module": "@sentry.opentelemetry.cjs:index"
               },
               {
                 "colno": 26,
-                "filename": "[[FILENAME11]]",
-                "function": "handleCallbackErrors",
+                "filename": "[[FILENAME14]]",
+                "function": "Object.handleCallbackErrors",
                 "in_app": false,
-                "lineno": 29,
-                "module": "@sentry.core.esm.utils:handleCallbackErrors"
+                "lineno": 26,
+                "module": "@sentry.core.cjs.utils:handleCallbackErrors"
               },
               {
-                "colno": 15,
+                "colno": 13,
+                "filename": "[[FILENAME4]]",
+                "function": "eval",
+                "in_app": false,
+                "lineno": 859,
+                "module": "@sentry.opentelemetry.cjs:index"
+              },
+              {
+                "colno": 45,
                 "filename": "[[FILENAME10]]",
-                "function": "status.status",
-                "in_app": false,
-                "lineno": 119,
-                "module": "@sentry.core.esm.tracing:trace"
-              },
-              {
-                "colno": 108,
-                "filename": "[[FILENAME6]]",
                 "function": "eval",
                 "in_app": false,
-                "lineno": 60,
-                "module": "@sentry.nextjs.esm.common:wrapRouteHandlerWithSentry"
+                "lineno": 54,
+                "module": "@sentry.nextjs.cjs.common:wrapRouteHandlerWithSentry"
               },
               {
                 "colno": 26,
-                "filename": "[[FILENAME11]]",
-                "function": "handleCallbackErrors",
+                "filename": "[[FILENAME15]]",
+                "function": "Object.handleCallbackErrors",
                 "in_app": false,
-                "lineno": 29,
-                "module": "@sentry.core.esm.utils:handleCallbackErrors"
+                "lineno": 26,
+                "module": "@sentry.core.cjs.utils:handleCallbackErrors"
               },
               {
-                "colno": 44,
-                "filename": "[[FILENAME6]]",
+                "colno": 42,
+                "filename": "[[FILENAME10]]",
                 "function": "eval",
                 "in_app": false,
-                "lineno": 61,
-                "module": "@sentry.nextjs.esm.common:wrapRouteHandlerWithSentry"
+                "lineno": 55,
+                "module": "@sentry.nextjs.cjs.common:wrapRouteHandlerWithSentry"
               },
               {
                 "colno": 11,
-                "filename": "[[FILENAME5]]",
+                "filename": "[[FILENAME9]]",
                 "function": "GET$1",
-                "in_app": false,
-                "lineno": 24,
+                "in_app": true,
+                "lineno": 23,
                 "module": "route.ts"
               }
             ]
@@ -686,16 +575,16 @@
         "accept": "*/*",
         "accept-encoding": "gzip, deflate, br",
         "accept-language": "en-US,en;q=0.5",
-        "baggage": "sentry-environment=qa,sentry-public_key=3b6c388182fb435097f41d181be2b2ba,sentry-trace_id=2cdc9402e1174cd08ca2f51a4804cd16",
+        "baggage": "sentry-environment=qa,sentry-public_key=3b6c388182fb435097f41d181be2b2ba,sentry-trace_id=849afbc4d0a24f309883f0df27432370,sentry-sample_rate=1,sentry-sampled=true",
         "cache-control": "no-cache",
         "connection": "keep-alive",
         "host": "localhost:3030",
         "pragma": "no-cache",
-        "referer": "http://localhost:3030/",
+        "referer": "http://localhost:3030/test-route-handlers",
         "sec-fetch-dest": "empty",
         "sec-fetch-mode": "cors",
         "sec-fetch-site": "same-origin",
-        "sentry-trace": "2cdc9402e1174cd08ca2f51a4804cd16-abe8d663cfdee8d7",
+        "sentry-trace": "849afbc4d0a24f309883f0df27432370-9004ba82f6434237-1",
         "user-agent": "[[user-agent]]",
         "x-forwarded-for": "::ffff:127.0.0.1",
         "x-forwarded-host": "localhost:3030",
@@ -711,35 +600,43 @@
         "LinkedErrors",
         "RequestData",
         "Console",
-        "Undici",
+        "NodeFetch",
+        "OnUncaughtException",
         "OnUnhandledRejection",
         "ContextLines",
-        "LocalVariables",
+        "LocalVariablesAsync",
         "Context",
         "Modules",
-        "RewriteFrames",
+        "Express",
+        "Fastify",
+        "Graphql",
+        "Mongo",
+        "Mongoose",
+        "Mysql",
+        "Mysql2",
+        "Postgres",
+        "Nest",
+        "Hapi",
+        "Koa",
+        "Connect",
         "Http",
-        "OnUncaughtException"
+        "DistDirRewriteFrames"
       ],
       "name": "sentry.javascript.nextjs",
       "packages": [
         {
           "name": "npm:@sentry/nextjs",
-          "version": "7.110.1"
+          "version": "8.0.0-beta.3"
         },
         {
           "name": "npm:@sentry/node",
-          "version": "7.110.1"
+          "version": "8.0.0-beta.3"
         }
       ],
-      "version": "7.110.1"
+      "version": "8.0.0-beta.3"
     },
     "server_name": "D9M3PY4LQ7.local",
-    "tags": {
-      "runtime": "node",
-      "transaction": "GET /api/test-local-variables-uncaught"
-    },
     "timestamp": "[[timestamp]]",
-    "transaction": " "
+    "transaction": "GET /api/test-local-variables-uncaught"
   }
 ]

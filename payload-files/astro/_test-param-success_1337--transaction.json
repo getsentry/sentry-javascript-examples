@@ -1,0 +1,111 @@
+[
+  {
+    "dsn": "[[dsn]]",
+    "event_id": "[[ID1]]",
+    "sdk": {
+      "name": "sentry.javascript.astro",
+      "version": "7.113.0"
+    },
+    "sent_at": "[[ISODateString]]",
+    "trace": {
+      "environment": "qa",
+      "public_key": "[[publicKey]]",
+      "release": "d9b30b85f9c70e8a590b9932552161cf132eaffa",
+      "sample_rate": "1",
+      "sampled": "true",
+      "trace_id": "[[ID2]]"
+    }
+  },
+  {
+    "type": "transaction"
+  },
+  {
+    "contexts": {
+      "trace": {
+        "data": {
+          "sentry.op": "pageload",
+          "sentry.origin": "auto.pageload.browser",
+          "sentry.sample_rate": 1,
+          "sentry.source": "url"
+        },
+        "op": "pageload",
+        "origin": "auto.pageload.browser",
+        "span_id": "[[ID3]]",
+        "tags": {
+          "hardwareConcurrency": "10",
+          "lcp.element": "body > h1",
+          "lcp.size": "[[highNumber]]"
+        },
+        "trace_id": "[[ID2]]"
+      }
+    },
+    "environment": "qa",
+    "event_id": "[[ID1]]",
+    "measurements": {
+      "fcp": {
+        "unit": "millisecond",
+        "value": 184
+      },
+      "lcp": {
+        "unit": "millisecond",
+        "value": 186
+      },
+      "ttfb": {
+        "unit": "millisecond",
+        "value": 103
+      },
+      "ttfb.requestTime": {
+        "unit": "millisecond",
+        "value": 42
+      }
+    },
+    "platform": "javascript",
+    "release": "d9b30b85f9c70e8a590b9932552161cf132eaffa",
+    "request": {
+      "headers": {
+        "Referer": "http://localhost:4321/",
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:125.0) Gecko/20100101 Firefox/125.0"
+      },
+      "url": "http://localhost:4321/test-param-success/1337"
+    },
+    "sdk": {
+      "integrations": [
+        "InboundFilters",
+        "FunctionToString",
+        "TryCatch",
+        "Breadcrumbs",
+        "GlobalHandlers",
+        "LinkedErrors",
+        "Dedupe",
+        "HttpContext",
+        "BrowserTracing"
+      ],
+      "name": "sentry.javascript.astro",
+      "packages": [
+        {
+          "name": "npm:@sentry/astro",
+          "version": "7.113.0"
+        },
+        {
+          "name": "npm:@sentry/browser",
+          "version": "7.113.0"
+        }
+      ],
+      "version": "7.113.0"
+    },
+    "spans": [],
+    "start_timestamp": "[[timestamp]]",
+    "tags": {
+      "hardwareConcurrency": "10",
+      "lcp.element": "body > h1",
+      "lcp.size": "[[highNumber]]",
+      "runtime": "browser"
+    },
+    "timestamp": "[[timestamp]]",
+    "transaction": "/test-param-success/1337",
+    "transaction_info": {
+      "source": "url"
+    },
+    "type": "transaction"
+  }
+]

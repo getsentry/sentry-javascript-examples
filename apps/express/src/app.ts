@@ -12,7 +12,7 @@ declare global {
 
 Sentry.init({
   environment: 'qa', // dynamic sampling bias to keep transactions
-  dsn: process.env.SENTRY_DSN,
+  dsn: 'https://eb90fdb87147dfc95899d3e63cc6ff20@o4506778646609920.ingest.us.sentry.io/4507168754761728',
   includeLocalVariables: true,
   debug: true,
   tunnel: `http://localhost:3031/`, // proxy server

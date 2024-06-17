@@ -4,7 +4,7 @@
     "event_id": "[[ID1]]",
     "sdk": {
       "name": "sentry.javascript.node",
-      "version": "7.110.1"
+      "version": "8.0.0-beta.3"
     },
     "sent_at": "[[ISODateString]]",
     "trace": {
@@ -40,24 +40,16 @@
         "processor_frequency": "[[highNumber]]"
       },
       "os": {
-        "build": "23D56",
-        "kernel_version": "23.3.0",
+        "build": "23C64",
+        "kernel_version": "23.2.0",
         "name": "macOS",
-        "version": "14.3"
+        "version": "14.2"
       },
       "runtime": {
         "name": "node",
         "version": "v20.12.1"
       },
       "trace": {
-        "data": {
-          "sentry.op": "http.server",
-          "sentry.origin": "auto.http.node.tracingHandler",
-          "sentry.sample_rate": 1,
-          "sentry.source": "url"
-        },
-        "op": "http.server",
-        "origin": "auto.http.node.tracingHandler",
         "span_id": "[[ID3]]",
         "trace_id": "[[ID2]]"
       }
@@ -74,199 +66,153 @@
           "stacktrace": {
             "frames": [
               {
-                "colno": 5,
-                "context_line": "    fn(req, res, next);",
+                "colno": 18,
+                "context_line": "            this._trySubscribe(subscriber)",
                 "filename": "[[FILENAME1]]",
-                "function": "Layer.handle [as handle_request]",
+                "function": "?",
                 "in_app": false,
-                "lineno": 95,
-                "module": "express.lib.router:layer",
+                "lineno": 234,
+                "module": "rxjs.src.internal:Observable.ts",
                 "post_context": [
-                  "  } catch (err) {",
-                  "    next(err);",
-                  "  }",
-                  "};",
+                  "      );",
+                  "    });",
                   "",
-                  "/**",
-                  " * Check if this route matches `path`, if so"
+                  "    return subscriber;",
+                  "  }",
+                  "",
+                  "  /** @internal */"
                 ],
                 "pre_context": [
-                  "",
-                  "  if (fn.length > 3) {",
-                  "    // not a standard request handler",
-                  "    return next();",
-                  "  }",
-                  "",
-                  "  try {"
+                  "          : source",
+                  "          ? // If `source` has a value, but `operator` does not, something that",
+                  "            // had intimate knowledge of our API, like our `Subject`, must have",
+                  "            // set it. We're going to just call `_subscribe` directly.",
+                  "            this._subscribe(subscriber)",
+                  "          : // In all other cases, we're likely wrapping a user-provided initializer",
+                  "            // function, so we need to catch errors and handle them appropriately."
                 ]
               },
               {
-                "colno": 3,
-                "context_line": "  next();",
-                "filename": "[[FILENAME2]]",
-                "function": "Route.dispatch",
-                "in_app": false,
-                "lineno": 119,
-                "module": "express.lib.router:route",
-                "post_context": [
-                  "",
-                  "  function next(err) {",
-                  "    // signal to exit route",
-                  "    if (err && err === 'route') {",
-                  "      return done();",
-                  "    }",
-                  ""
-                ],
-                "pre_context": [
-                  "",
-                  "  if (method === 'head' && !this.methods['head']) {",
-                  "    method = 'get';",
-                  "  }",
-                  "",
-                  "  req.route = this;",
-                  ""
-                ]
-              },
-              {
-                "colno": 13,
-                "context_line": "      layer.handle_request(req, res, next);",
-                "filename": "[[FILENAME2]]",
-                "function": "next",
-                "in_app": false,
-                "lineno": 149,
-                "module": "express.lib.router:route",
-                "post_context": [
-                  "    }",
-                  "",
-                  "    sync = 0",
-                  "  }",
-                  "};",
-                  "",
-                  "/**"
-                ],
-                "pre_context": [
-                  "    }",
-                  "",
-                  "    if (layer.method && layer.method !== method) {",
-                  "      next(err)",
-                  "    } else if (err) {",
-                  "      layer.handle_error(err, req, res, next);",
-                  "    } else {"
-                ]
-              },
-              {
-                "colno": 5,
-                "context_line": "    fn(req, res, next);",
+                "colno": 19,
+                "context_line": "      return this._subscribe(sink);",
                 "filename": "[[FILENAME1]]",
-                "function": "Layer.handle [as handle_request]",
+                "function": "Observable._trySubscribe",
                 "in_app": false,
-                "lineno": 95,
-                "module": "express.lib.router:layer",
+                "lineno": 244,
+                "module": "rxjs.src.internal:Observable.ts",
                 "post_context": [
-                  "  } catch (err) {",
-                  "    next(err);",
-                  "  }",
-                  "};",
-                  "",
-                  "/**",
-                  " * Check if this route matches `path`, if so"
+                  "    } catch (err) {",
+                  "      // We don't need to return anything in this case,",
+                  "      // because it's just going to try to `add()` to a subscription",
+                  "      // above.",
+                  "      sink.error(err);",
+                  "    }",
+                  "  }"
                 ],
                 "pre_context": [
                   "",
-                  "  if (fn.length > 3) {",
-                  "    // not a standard request handler",
-                  "    return next();",
+                  "    return subscriber;",
                   "  }",
                   "",
-                  "  try {"
+                  "  /** @internal */",
+                  "  protected _trySubscribe(sink: Subscriber<T>): TeardownLogic {",
+                  "    try {"
                 ]
               },
               {
-                "colno": 23,
-                "context_line": "                await targetCallback(req, res, next);",
+                "colno": 15,
+                "context_line": "    innerFrom(observableFactory()).subscribe(subscriber);",
+                "filename": "[[FILENAME2]]",
+                "function": "Observable._subscribe",
+                "in_app": false,
+                "lineno": 55,
+                "module": "rxjs.src.internal.observable:defer.ts",
+                "post_context": ["  });", "}", ""],
+                "pre_context": [
+                  " * Observable. May also return a Promise, which will be converted on the fly",
+                  " * to an Observable.",
+                  " * @return {Observable} An Observable whose Observers' subscriptions trigger",
+                  " * an invocation of the given Observable factory function.",
+                  " */",
+                  "export function defer<R extends ObservableInput<any>>(observableFactory: () => R): Observable<ObservedValueOf<R>> {",
+                  "  return new Observable<ObservedValueOf<R>>((subscriber) => {"
+                ]
+              },
+              {
+                "colno": 16,
                 "filename": "[[FILENAME3]]",
-                "function": "<anonymous>",
+                "function": "bound",
                 "in_app": false,
-                "lineno": 9,
-                "module": "@nestjs.core.router:router-proxy",
-                "post_context": [
-                  "            }",
-                  "            catch (e) {",
-                  "                const host = new execution_context_host_1.ExecutionContextHost([req, res, next]);",
-                  "                exceptionsHandler.next(e, host);",
-                  "                return res;",
-                  "            }",
-                  "        };"
-                ],
-                "pre_context": [
-                  "Object.defineProperty(exports, \"__esModule\", { value: true });",
-                  "exports.RouterProxy = void 0;",
-                  "const execution_context_host_1 = require(\"../helpers/execution-context-host\");",
-                  "class RouterProxy {",
-                  "    createProxy(targetCallback, exceptionsHandler) {",
-                  "        return async (req, res, next) => {",
-                  "            try {"
-                ]
+                "lineno": 238,
+                "module": "node:async_hooks"
               },
               {
-                "colno": 60,
-                "context_line": "            const result = await this.interceptorsConsumer.intercept(interceptors, [req, res, next], instance, callback, handler(args, req,  {snip}",
+                "colno": 9,
+                "filename": "[[FILENAME3]]",
+                "function": "AsyncResource.runInAsyncScope",
+                "in_app": false,
+                "lineno": 206,
+                "module": "node:async_hooks"
+              },
+              {
+                "colno": 86,
+                "context_line": "                return (0, rxjs_1.defer)(async_hooks_1.AsyncResource.bind(() => this.transformDeferred(next)));",
                 "filename": "[[FILENAME4]]",
-                "function": "<anonymous>",
+                "function": "?",
                 "in_app": false,
-                "lineno": 46,
-                "module": "@nestjs.core.router:router-execution-context",
-                "post_context": [
-                  "            await fnHandleResponse(result, res, req);",
-                  "        };",
-                  "    }",
-                  "    getMetadata(instance, callback, methodName, moduleKey, requestMethod, contextType) {",
-                  "        const cacheMetadata = this.handlerMetadataStorage.get(instance, methodName);",
-                  "        if (cacheMetadata) {",
-                  "            return cacheMetadata;"
-                ],
-                "pre_context": [
-                  "        };",
-                  "        return async (req, res, next) => {",
-                  "            const args = this.contextUtils.createNullArray(argsLength);",
-                  "            fnCanActivate && (await fnCanActivate([req, res, next]));",
-                  "            this.responseController.setStatus(res, httpStatusCode);",
-                  "            hasCustomHeaders &&",
-                  "                this.responseController.setHeaders(res, responseHeaders);"
-                ]
-              },
-              {
-                "colno": 20,
-                "context_line": "            return next();",
-                "filename": "[[FILENAME5]]",
-                "function": "InterceptorsConsumer.intercept",
-                "in_app": false,
-                "lineno": 12,
+                "lineno": 18,
                 "module": "@nestjs.core.interceptors:interceptors-consumer",
                 "post_context": [
+                  "            }",
+                  "            const handler = {",
+                  "                handle: () => (0, rxjs_1.from)(nextFn(i + 1)).pipe((0, operators_1.mergeAll)()),",
+                  "            };",
+                  "            return interceptors[i].intercept(context, handler);",
+                  "        };",
+                  "        return (0, rxjs_1.defer)(() => nextFn()).pipe((0, operators_1.mergeAll)());"
+                ],
+                "pre_context": [
+                  "        if ((0, shared_utils_1.isEmpty)(interceptors)) {",
+                  "            return next();",
                   "        }",
                   "        const context = this.createContext(args, instance, callback);",
                   "        context.setType(type);",
                   "        const nextFn = async (i = 0) => {",
-                  "            if (i >= interceptors.length) {",
-                  "                return (0, rxjs_1.defer)(async_hooks_1.AsyncResource.bind(() => this.transformDeferred(next)));",
-                  "            }"
+                  "            if (i >= interceptors.length) {"
+                ]
+              },
+              {
+                "colno": 33,
+                "context_line": "        return (0, rxjs_1.from)(next()).pipe((0, operators_1.switchMap)(res => {",
+                "filename": "[[FILENAME4]]",
+                "function": "InterceptorsConsumer.transformDeferred",
+                "in_app": false,
+                "lineno": 31,
+                "module": "@nestjs.core.interceptors:interceptors-consumer",
+                "post_context": [
+                  "            const isDeferred = res instanceof Promise || res instanceof rxjs_1.Observable;",
+                  "            return isDeferred ? res : Promise.resolve(res);",
+                  "        }));",
+                  "    }",
+                  "}",
+                  "exports.InterceptorsConsumer = InterceptorsConsumer;",
+                  ""
                 ],
                 "pre_context": [
-                  "const async_hooks_1 = require(\"async_hooks\");",
-                  "const rxjs_1 = require(\"rxjs\");",
-                  "const operators_1 = require(\"rxjs/operators\");",
-                  "const execution_context_host_1 = require(\"../helpers/execution-context-host\");",
-                  "class InterceptorsConsumer {",
-                  "    async intercept(interceptors, args, instance, callback, next, type) {",
-                  "        if ((0, shared_utils_1.isEmpty)(interceptors)) {"
+                  "        };",
+                  "        return (0, rxjs_1.defer)(() => nextFn()).pipe((0, operators_1.mergeAll)());",
+                  "    }",
+                  "    createContext(args, instance, callback) {",
+                  "        return new execution_context_host_1.ExecutionContextHost(args, instance.constructor, callback);",
+                  "    }",
+                  "    transformDeferred(next) {"
                 ]
               },
               {
                 "colno": 29,
                 "context_line": "            return callback.apply(instance, args);",
-                "filename": "[[FILENAME4]]",
-                "function": "<anonymous>",
+                "filename": "[[FILENAME5]]",
+                "function": "?",
                 "in_app": false,
                 "lineno": 38,
                 "module": "@nestjs.core.router:router-execution-context",
@@ -295,7 +241,7 @@
                 "filename": "[[FILENAME6]]",
                 "function": "AppController.testLocalVariablesCaught",
                 "in_app": true,
-                "lineno": 46,
+                "lineno": 44,
                 "module": "app.controller",
                 "post_context": [
                   "    };",
@@ -307,9 +253,9 @@
                   "    ], AppController.prototype, \"testSuccess\", null);"
                 ],
                 "pre_context": [
+                  "    AppController.prototype.testErrorManual = function () {",
                   "        return this.appService.testErrorManual();",
                   "    };",
-                  "    // unhandled exceptions do not send an event in v7 (just the transaction, if the error is handled with an exception filter)",
                   "    AppController.prototype.testLocalVariablesUncaught = function () {",
                   "        return this.appService.testLocalVariablesUncaught();",
                   "    };",
@@ -366,6 +312,7 @@
       "cookie-signature": "1.0.6",
       "core-util-is": "1.0.3",
       "cors": "2.8.5",
+      "debug": "4.3.4",
       "define-data-property": "1.1.4",
       "depd": "2.0.0",
       "destroy": "1.2.0",
@@ -390,8 +337,10 @@
       "hasown": "2.0.2",
       "http-errors": "2.0.0",
       "iconv-lite": "0.4.24",
+      "import-in-the-middle": "1.7.1",
       "inherits": "2.0.4",
       "ipaddr.js": "1.9.1",
+      "is-core-module": "2.13.1",
       "iterare": "1.2.1",
       "media-typer": "0.3.0",
       "merge-descriptors": "1.0.1",
@@ -399,13 +348,14 @@
       "mime": "1.6.0",
       "mime-db": "1.52.0",
       "mime-types": "2.1.35",
-      "mkdirp": "0.5.6",
+      "module-details-from-path": "1.0.3",
       "ms": "2.1.3",
       "multer": "1.4.4-lts.1",
       "negotiator": "0.6.3",
       "object-assign": "4.1.1",
       "object-inspect": "1.13.1",
       "on-finished": "2.4.1",
+      "opentelemetry-instrumentation-fetch-node": "1.2.0",
       "parseurl": "1.3.3",
       "path-to-regexp": "0.1.7",
       "process-nextick-args": "2.0.1",
@@ -414,17 +364,22 @@
       "range-parser": "1.2.1",
       "raw-body": "2.5.2",
       "reflect-metadata": "0.2.2",
+      "require-in-the-middle": "7.3.0",
+      "resolve": "1.22.8",
       "rxjs": "7.8.1",
       "safe-buffer": "5.2.1",
       "safer-buffer": "2.1.2",
+      "semver": "7.6.0",
       "send": "0.18.0",
       "serve-static": "1.15.0",
       "set-function-length": "1.2.2",
       "setprototypeof": "1.2.0",
+      "shimmer": "1.2.1",
       "side-channel": "1.0.6",
       "source-map-support": "0.5.21",
       "statuses": "2.0.1",
       "streamsearch": "1.1.0",
+      "supports-color": "5.5.0",
       "toidentifier": "1.0.1",
       "tslib": "2.6.2",
       "type-is": "1.6.18",
@@ -433,25 +388,20 @@
       "util-deprecate": "1.0.2",
       "utils-merge": "1.0.1",
       "vary": "1.1.2",
-      "xtend": "4.0.2"
+      "xtend": "4.0.2",
+      "yallist": "4.0.0"
     },
     "platform": "node",
     "request": {
-      "cookies": {
-        "sc": "2pGHpwfeQfLDqPcR9gwpxKl0DHTlOKYq"
-      },
+      "cookies": {},
       "headers": {
-        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
-        "accept-encoding": "gzip, deflate, br, zstd",
-        "accept-language": "en-GB,en-US;q=0.9,en;q=0.8,de;q=0.7",
-        "cache-control": "max-age=0",
+        "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+        "accept-encoding": "gzip, deflate, br",
+        "accept-language": "en-US,en;q=0.5",
+        "cache-control": "no-cache",
         "connection": "keep-alive",
-        "cookie": "sc=2pGHpwfeQfLDqPcR9gwpxKl0DHTlOKYq",
         "host": "localhost:3030",
-        "if-none-match": "[[W/entityTagValue]]",
-        "sec-ch-ua": "\"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"",
-        "sec-ch-ua-mobile": "?0",
-        "sec-ch-ua-platform": "\"macOS\"",
+        "pragma": "no-cache",
         "sec-fetch-dest": "document",
         "sec-fetch-mode": "navigate",
         "sec-fetch-site": "none",
@@ -460,7 +410,6 @@
         "user-agent": "[[user-agent]]"
       },
       "method": "GET",
-      "query_string": {},
       "url": "http://localhost:3030/test-local-variables-caught"
     },
     "sdk": {
@@ -471,27 +420,36 @@
         "RequestData",
         "Console",
         "Http",
-        "Undici",
+        "NodeFetch",
         "OnUncaughtException",
         "OnUnhandledRejection",
         "ContextLines",
-        "LocalVariables",
+        "LocalVariablesAsync",
         "Context",
-        "Modules"
+        "Modules",
+        "Express",
+        "Fastify",
+        "Graphql",
+        "Mongo",
+        "Mongoose",
+        "Mysql",
+        "Mysql2",
+        "Postgres",
+        "Nest",
+        "Hapi",
+        "Koa",
+        "Connect"
       ],
       "name": "sentry.javascript.node",
       "packages": [
         {
           "name": "npm:@sentry/node",
-          "version": "7.110.1"
+          "version": "8.0.0-beta.3"
         }
       ],
-      "version": "7.110.1"
+      "version": "8.0.0-beta.3"
     },
-    "server_name": "JH0G94X29Q.local",
-    "tags": {
-      "transaction": "GET /test-local-variables-caught"
-    },
+    "server_name": "D9M3PY4LQ7.local",
     "timestamp": "[[timestamp]]",
     "transaction": "GET /test-local-variables-caught"
   }

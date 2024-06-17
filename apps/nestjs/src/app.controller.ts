@@ -1,9 +1,7 @@
-import { Controller, Get, Param, UseFilters } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 import { AppService } from './app.service';
-import { AllExceptionsFilter } from './all-exceptions.filter';
 
 @Controller()
-@UseFilters(new AllExceptionsFilter())
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
@@ -37,7 +35,6 @@ export class AppController {
     return this.appService.testErrorManual();
   }
 
-  // unhandled exceptions do not send an event in v7 (just the transaction, if the error is handled with an exception filter)
   @Get('test-local-variables-uncaught')
   testLocalVariablesUncaught() {
     return this.appService.testLocalVariablesUncaught();
