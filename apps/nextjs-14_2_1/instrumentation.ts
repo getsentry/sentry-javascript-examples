@@ -1,13 +1,11 @@
 import * as Sentry from '@sentry/nextjs';
 
-export function register() {
-  if (process.env.NEXT_RUNTIME === 'nodejs' || process.env.NEXT_RUNTIME === 'edge') {
-    Sentry.init({
-      environment: 'qa', // dynamic sampling bias to keep transactions
-      dsn: process.env.SENTRY_DSN,
-      includeLocalVariables: true,
-      tunnel: `http://localhost:3031/`, // proxy server
-      tracesSampleRate: 1,
-    });
+export async function register() {
+  if (process.env.NEXT_RUNTIME === 'nodejs') {
+    await import('./sentry.server.config');
+  }
+
+  if (process.env.NEXT_RUNTIME === 'edge') {
+    await import('./sentry.edge.config');
   }
 }
