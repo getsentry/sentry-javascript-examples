@@ -1,24 +1,13 @@
+import './instrument';
+
 import * as Sentry from '@sentry/node';
-import { nodeProfilingIntegration } from '@sentry/profiling-node';
-import dotenv from 'dotenv';
-
-dotenv.config({ path: './../../.env' });
-
-Sentry.init({
-  environment: 'qa', // dynamic sampling bias to keep transactions
-  dsn: process.env.SENTRY_DSN,
-  includeLocalVariables: true,
-  debug: true,
-  tunnel: `http://localhost:3031/`, // proxy server
-  tracesSampleRate: 1,
-  profilesSampleRate: 1,
-  integrations: [nodeProfilingIntegration()],
-});
-
 import express from 'express';
 import { CronJob } from 'cron';
 import cron from 'node-cron';
 import * as schedule from 'node-schedule';
+import dotenv from 'dotenv';
+
+dotenv.config({ path: './../../.env' });
 
 const app = express();
 const port = 3030;
