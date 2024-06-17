@@ -1,20 +1,11 @@
+import './instrument';
+
 import * as Sentry from '@sentry/node';
+import Koa from 'koa';
+import Router from '@koa/router';
 import dotenv from 'dotenv';
 
 dotenv.config({ path: './../../.env' });
-
-Sentry.init({
-  environment: 'qa', // dynamic sampling bias to keep transactions
-  dsn: process.env.SENTRY_DSN,
-  includeLocalVariables: true,
-  debug: true,
-  tunnel: `http://localhost:3031/`, // proxy server
-  tracesSampleRate: 1,
-});
-
-import Koa from 'koa';
-import Router from '@koa/router';
-import { stripUrlQueryAndFragment } from '@sentry/utils';
 
 declare global {
   namespace globalThis {

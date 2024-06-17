@@ -11646,7 +11646,7 @@ __metadata:
   resolution: "koa-test-application@workspace:apps/koa"
   dependencies:
     "@koa/router": "npm:12.0.1"
-    "@sentry/node": "npm:7.110.1"
+    "@sentry/node": "npm:8.9.2"
     "@types/koa": "npm:2.15.0"
     "@types/koa__router": "npm:12.0.4"
     dotenv: "npm:^16.4.5"
