@@ -4,7 +4,7 @@
     "event_id": "[[ID1]]",
     "sdk": {
       "name": "sentry.javascript.remix",
-      "version": "7.110.1"
+      "version": "8.0.0-beta.3"
     },
     "sent_at": "[[ISODateString]]",
     "trace": {
@@ -23,6 +23,7 @@
     "contexts": {
       "trace": {
         "data": {
+          "hardwareConcurrency": "10",
           "sentry.op": "pageload",
           "sentry.origin": "auto.pageload.remix",
           "sentry.sample_rate": 1,
@@ -31,12 +32,6 @@
         "op": "pageload",
         "origin": "auto.pageload.remix",
         "span_id": "[[ID3]]",
-        "tags": {
-          "hardwareConcurrency": "10",
-          "lcp.element": "body > pre",
-          "lcp.size": "[[highNumber]]",
-          "routing.instrumentation": "remix-router"
-        },
         "trace_id": "[[ID2]]"
       }
     },
@@ -45,15 +40,11 @@
     "measurements": {
       "fcp": {
         "unit": "millisecond",
-        "value": 66
-      },
-      "lcp": {
-        "unit": "millisecond",
-        "value": 67
+        "value": 51
       },
       "ttfb.requestTime": {
         "unit": "millisecond",
-        "value": 17
+        "value": 10
       }
     },
     "platform": "javascript",
@@ -67,7 +58,7 @@
       "integrations": [
         "InboundFilters",
         "FunctionToString",
-        "TryCatch",
+        "BrowserApiErrors",
         "Breadcrumbs",
         "GlobalHandlers",
         "LinkedErrors",
@@ -79,22 +70,18 @@
       "packages": [
         {
           "name": "npm:@sentry/remix",
-          "version": "7.110.1"
+          "version": "8.0.0-beta.3"
         },
         {
           "name": "npm:@sentry/react",
-          "version": "7.110.1"
+          "version": "8.0.0-beta.3"
         }
       ],
-      "version": "7.110.1"
+      "version": "8.0.0-beta.3"
     },
     "spans": [],
     "start_timestamp": "[[timestamp]]",
     "tags": {
-      "hardwareConcurrency": "10",
-      "lcp.element": "body > pre",
-      "lcp.size": "[[highNumber]]",
-      "routing.instrumentation": "remix-router",
       "runtime": "browser"
     },
     "timestamp": "[[timestamp]]",
