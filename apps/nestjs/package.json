@@ -15,11 +15,11 @@
     "extends": "../../package.json"
   },
   "dependencies": {
-    "@nestjs/common": "10.3.8",
-    "@nestjs/core": "10.3.8",
+    "@nestjs/common": "10.3.9",
+    "@nestjs/core": "10.3.9",
     "@nestjs/platform-express": "10.3.8",
-    "@sentry/node": "8.2.1",
-    "@sentry/types": "8.2.1",
+    "@sentry/node": "8.9.2",
+    "@sentry/types": "8.9.2",
     "dotenv": "^16.4.5",
     "reflect-metadata": "0.2.2",
     "rxjs": "7.8.1"
