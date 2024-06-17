@@ -4,13 +4,13 @@
     "event_id": "[[ID1]]",
     "sdk": {
       "name": "sentry.javascript.astro",
-      "version": "7.113.0"
+      "version": "8.0.0-beta.6"
     },
     "sent_at": "[[ISODateString]]",
     "trace": {
       "environment": "qa",
       "public_key": "[[publicKey]]",
-      "release": "d9b30b85f9c70e8a590b9932552161cf132eaffa",
+      "release": "9570e7fc5b7da6cd2a5395fe69d3bb14fe2551a9",
       "sample_rate": "1",
       "sampled": "true",
       "trace_id": "[[ID2]]",
@@ -21,6 +21,17 @@
     "type": "transaction"
   },
   {
+    "breadcrumbs": [
+      {
+        "category": "http",
+        "data": {
+          "http.method": "GET",
+          "url": "http://localhost:4321/api/test-param-success/1337"
+        },
+        "timestamp": "[[timestamp]]",
+        "type": "http"
+      }
+    ],
     "contexts": {
       "app": {
         "app_memory": "[[highNumber]]",
@@ -46,6 +57,16 @@
         "name": "macOS",
         "version": "14.2"
       },
+      "otel": {
+        "resource": {
+          "service.name": "node",
+          "service.namespace": "sentry",
+          "service.version": "8.0.0-beta.6",
+          "telemetry.sdk.language": "nodejs",
+          "telemetry.sdk.name": "opentelemetry",
+          "telemetry.sdk.version": "1.23.0"
+        }
+      },
       "runtime": {
         "name": "node",
         "version": "v20.11.1"
@@ -54,6 +75,7 @@
         "data": {
           "http.response.status_code": 200,
           "method": "GET",
+          "otel.kind": "INTERNAL",
           "sentry.op": "http.server",
           "sentry.origin": "auto.http.astro",
           "sentry.sample_rate": 1,
@@ -64,17 +86,19 @@
         "origin": "auto.http.astro",
         "span_id": "[[ID3]]",
         "status": "ok",
-        "tags": {
-          "http.status_code": "200"
-        },
         "trace_id": "[[ID2]]"
       }
     },
     "environment": "qa",
     "event_id": "[[ID1]]",
-    "modules": {},
     "platform": "node",
-    "release": "d9b30b85f9c70e8a590b9932552161cf132eaffa",
+    "release": "9570e7fc5b7da6cd2a5395fe69d3bb14fe2551a9",
+    "request": {
+      "cookies": {},
+      "headers": {},
+      "method": "GET",
+      "url": "http://localhost:4321/test-param-success/1337"
+    },
     "sdk": {
       "integrations": [
         "InboundFilters",
@@ -83,60 +107,73 @@
         "RequestData",
         "Console",
         "Http",
-        "Undici",
+        "NodeFetch",
         "OnUncaughtException",
         "OnUnhandledRejection",
         "ContextLines",
-        "LocalVariables",
+        "LocalVariablesAsync",
         "Context",
-        "Modules"
+        "Express",
+        "Fastify",
+        "Graphql",
+        "Mongo",
+        "Mongoose",
+        "Mysql",
+        "Mysql2",
+        "Redis",
+        "Postgres",
+        "Nest",
+        "Hapi",
+        "Koa",
+        "Connect"
       ],
       "name": "sentry.javascript.astro",
       "packages": [
         {
           "name": "npm:@sentry/astro",
-          "version": "7.113.0"
+          "version": "8.0.0-beta.6"
         },
         {
           "name": "npm:@sentry/node",
-          "version": "7.113.0"
+          "version": "8.0.0-beta.6"
         }
       ],
-      "version": "7.113.0"
+      "version": "8.0.0-beta.6"
     },
     "server_name": "D9M3PY4LQ7.local",
     "spans": [
       {
         "data": {
+          "http.client": "fetch",
           "http.method": "GET",
           "http.response.status_code": 200,
+          "http.status_code": 200,
+          "http.target": "/api/test-param-success/1337",
+          "http.url": "http://localhost:4321/api/test-param-success/1337",
+          "otel.kind": "CLIENT",
           "sentry.op": "http.client",
-          "sentry.origin": "auto.http.node.undici"
+          "sentry.origin": "auto.http.otel.node_fetch",
+          "url": "http://localhost:4321/api/test-param-success/1337"
         },
         "description": "GET http://localhost:4321/api/test-param-success/1337",
         "op": "http.client",
-        "origin": "auto.http.node.undici",
+        "origin": "auto.http.otel.node_fetch",
         "parent_span_id": "[[ID3]]",
         "span_id": "[[ID4]]",
         "start_timestamp": "[[timestamp]]",
         "status": "ok",
-        "tags": {
-          "http.status_code": "200"
-        },
         "timestamp": "[[timestamp]]",
         "trace_id": "[[ID2]]"
       }
     ],
     "start_timestamp": "[[timestamp]]",
     "tags": {
-      "http.status_code": "200",
-      "runtime": "node",
-      "transaction": "GET /test-param-success/[param]"
+      "runtime": "node"
     },
     "timestamp": "[[timestamp]]",
     "transaction": "GET /test-param-success/[param]",
     "transaction_info": {
-      "source": "custom"
+      "source": "route"
     },
     "type": "transaction"
   }
