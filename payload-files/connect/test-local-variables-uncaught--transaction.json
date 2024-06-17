@@ -13,7 +13,7 @@
       "sample_rate": "1",
       "sampled": "true",
       "trace_id": "[[ID2]]",
-      "transaction": "GET /test-error"
+      "transaction": "GET /test-local-variables-uncaught"
     }
   },
   {
@@ -72,13 +72,13 @@
           "http.flavor": "1.1",
           "http.host": "localhost:3030",
           "http.method": "GET",
-          "http.response.status_code": 200,
-          "http.route": "/test-error",
+          "http.response.status_code": 500,
+          "http.route": "/test-local-variables-uncaught",
           "http.scheme": "http",
-          "http.status_code": 200,
-          "http.status_text": "OK",
-          "http.target": "/test-error",
-          "http.url": "http://localhost:3030/test-error",
+          "http.status_code": 500,
+          "http.status_text": "INTERNAL SERVER ERROR",
+          "http.target": "/test-local-variables-uncaught",
+          "http.url": "http://localhost:3030/test-local-variables-uncaught",
           "http.user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:125.0) Gecko/20100101 Firefox/125.0",
           "net.host.ip": "::ffff:127.0.0.1",
           "net.host.name": "localhost",
@@ -91,12 +91,12 @@
           "sentry.origin": "auto.http.otel.http",
           "sentry.sample_rate": 1,
           "sentry.source": "route",
-          "url": "http://localhost:3030/test-error"
+          "url": "http://localhost:3030/test-local-variables-uncaught"
         },
         "op": "http.server",
         "origin": "auto.http.otel.http",
         "span_id": "[[ID3]]",
-        "status": "ok",
+        "status": "unknown_error",
         "trace_id": "[[ID2]]"
       }
     },
@@ -145,7 +145,7 @@
         "user-agent": "[[user-agent]]"
       },
       "method": "GET",
-      "url": "http://localhost:3030/test-error"
+      "url": "http://localhost:3030/test-local-variables-uncaught"
     },
     "sdk": {
       "integrations": [
@@ -188,16 +188,50 @@
     "spans": [
       {
         "data": {
-          "connect.name": "/test-error",
-          "connect.type": "request_handler",
-          "http.route": "/test-error",
+          "connect.name": "connectErrorMiddleware",
+          "connect.type": "middleware",
+          "http.route": "/",
           "otel.kind": "INTERNAL",
           "sentry.origin": "manual"
         },
-        "description": "request handler - /test-error",
+        "description": "middleware - connectErrorMiddleware",
         "origin": "manual",
         "parent_span_id": "[[ID3]]",
         "span_id": "[[ID4]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "ok",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "connect.name": "/test-local-variables-uncaught",
+          "connect.type": "request_handler",
+          "http.route": "/test-local-variables-uncaught",
+          "otel.kind": "INTERNAL",
+          "sentry.origin": "manual"
+        },
+        "description": "request handler - /test-local-variables-uncaught",
+        "origin": "manual",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID5]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "ok",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "connect.name": "onError",
+          "connect.type": "middleware",
+          "http.route": "/",
+          "otel.kind": "INTERNAL",
+          "sentry.origin": "manual"
+        },
+        "description": "middleware - onError",
+        "origin": "manual",
+        "parent_span_id": "[[ID3]]",
+        "span_id": "[[ID6]]",
         "start_timestamp": "[[timestamp]]",
         "status": "ok",
         "timestamp": "[[timestamp]]",
@@ -206,7 +240,7 @@
     ],
     "start_timestamp": "[[timestamp]]",
     "timestamp": "[[timestamp]]",
-    "transaction": "GET /test-error",
+    "transaction": "GET /test-local-variables-uncaught",
     "transaction_info": {
       "source": "route"
     },

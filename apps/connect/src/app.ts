@@ -1,3 +1,5 @@
+import './instrument';
+
 import * as Sentry from '@sentry/node';
 import connect from 'connect';
 import dotenv from 'dotenv';
@@ -12,18 +14,6 @@ declare global {
 
 const app = connect();
 const port = 3030;
-
-Sentry.init({
-  environment: 'qa', // dynamic sampling bias to keep transactions
-  dsn: process.env.SENTRY_DSN,
-  includeLocalVariables: true,
-  debug: true,
-  tunnel: `http://localhost:3031/`, // proxy server
-  tracesSampleRate: 1,
-});
-
-app.use(Sentry.Handlers.requestHandler());
-app.use(Sentry.Handlers.tracingHandler());
 
 const stringify = (obj: any) => JSON.stringify(obj, null, 2);
 
@@ -102,7 +92,7 @@ app.use('/test-local-variables-caught', function (req, res) {
   res.end(stringify({ exceptionId, randomVariableToRecord }));
 });
 
-app.use(Sentry.Handlers.errorHandler());
+Sentry.setupConnectErrorHandler(app);
 
 // @ts-ignore
 app.use(function onError(err, req, res, next) {
