@@ -11,7 +11,7 @@
 		"format": "prettier --write ."
 	},
 	"dependencies": {
-		"@sentry/sveltekit": "7.110.1"
+		"@sentry/sveltekit": "8.9.2"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^3.0.0",

@@ -4,13 +4,13 @@
     "event_id": "[[ID1]]",
     "sdk": {
       "name": "sentry.javascript.sveltekit",
-      "version": "7.110.1"
+      "version": "8.0.0-beta.3"
     },
     "sent_at": "[[ISODateString]]",
     "trace": {
       "environment": "qa",
       "public_key": "[[publicKey]]",
-      "release": "016d073b9f5b47ef8e2d2cff020115bb",
+      "release": "6ba2507ba4f94699b609ae42c22ec685",
       "sample_rate": "1",
       "sampled": "true",
       "trace_id": "[[ID2]]",
@@ -71,17 +71,23 @@
         "version": "v20.12.1"
       },
       "trace": {
-        "data": {
-          "sentry.op": "http.server",
-          "sentry.origin": "auto.http.sveltekit",
-          "sentry.sample_rate": 1
-        },
-        "op": "http.server",
-        "origin": "auto.http.sveltekit",
         "span_id": "[[ID3]]",
-        "status": "ok",
         "trace_id": "[[ID2]]"
       }
+    },
+    "debug_meta": {
+      "images": [
+        {
+          "code_file": "app:///index.js",
+          "debug_id": "[[ID4]]",
+          "type": "sourcemap"
+        },
+        {
+          "code_file": "app:///_server.ts.js",
+          "debug_id": "[[ID5]]",
+          "type": "sourcemap"
+        }
+      ]
     },
     "environment": "qa",
     "event_id": "[[ID1]]",
@@ -89,8 +95,8 @@
       "values": [
         {
           "mechanism": {
-            "handled": false,
-            "type": "sveltekit"
+            "handled": true,
+            "type": "generic"
           },
           "stacktrace": {
             "frames": [
@@ -98,7 +104,7 @@
                 "colno": 5,
                 "context_line": "\t\t\t\tawait server.respond(request, {",
                 "filename": "[[FILENAME1]]",
-                "function": "<anonymous>",
+                "function": "?",
                 "in_app": false,
                 "lineno": 190,
                 "post_context": [
@@ -123,7 +129,7 @@
               {
                 "colno": 22,
                 "context_line": "    const response = await options2.hooks.handle({",
-                "filename": "[[FILENAME2]]",
+                "filename": "[[FILENAME1]]",
                 "function": "respond",
                 "in_app": true,
                 "lineno": "[[highNumber]]",
@@ -149,25 +155,25 @@
               {
                 "colno": 27,
                 "context_line": "    const resolveResult = await core.startSpan(",
-                "filename": "[[FILENAME3]]",
+                "filename": "[[FILENAME2]]",
                 "function": "instrumentHandle",
                 "in_app": false,
-                "lineno": 133,
+                "lineno": 154,
                 "post_context": [
                   "      {",
                   "        op: 'http.server',",
                   "        attributes: {",
                   "          [core.SEMANTIC_ATTRIBUTE_SENTRY_ORIGIN]: 'auto.http.sveltekit',",
-                  "        },",
-                  "        name: `${event.request.method} ${_optionalChain([event, 'access', _3 => _3.route, 'optionalAccess', _4 => _4.id]) || event.url.pathname}`,",
-                  "        status: 'ok',"
+                  "          [core.SEMANTIC_ATTRIBUTE_SENTRY_SOURCE]: _optionalChain([event, 'access', _5 => _5.route, 'optionalAccess', _6 => _6.id]) ? 'route' : 'url',",
+                  "          'http.method': event.request.method,",
+                  "        },"
                 ],
                 "pre_context": [
-                  "    return resolve(event);",
+                  "  if (core.getIsolationScope() !== core.getDefaultIsolationScope()) {",
+                  "    core.getIsolationScope().setTransactionName(routeName);",
+                  "  } else {",
+                  "    debugBuild.DEBUG_BUILD && utils$1.logger.warn('Isolation scope is default isolation scope - skipping setting transactionName');",
                   "  }",
-                  "",
-                  "  const { dynamicSamplingContext, traceparentData, propagationContext } = utils.getTracePropagationData(event);",
-                  "  core.getCurrentScope().setPropagationContext(propagationContext);",
                   "",
                   "  try {"
                 ]
@@ -175,10 +181,10 @@
               {
                 "colno": 21,
                 "context_line": "        const res = await resolve(event, {",
-                "filename": "[[FILENAME3]]",
-                "function": "<anonymous>",
+                "filename": "[[FILENAME2]]",
+                "function": "?",
                 "in_app": false,
-                "lineno": 148,
+                "lineno": 165,
                 "post_context": [
                   "          transformPageChunk: addSentryCodeToPage(options),",
                   "        });",
@@ -189,11 +195,11 @@
                   "      },"
                 ],
                 "pre_context": [
-                  "        ...traceparentData,",
-                  "        metadata: {",
-                  "          source: _optionalChain([event, 'access', _5 => _5.route, 'optionalAccess', _6 => _6.id]) ? 'route' : 'url',",
-                  "          dynamicSamplingContext: traceparentData && !dynamicSamplingContext ? {} : dynamicSamplingContext,",
+                  "          [core.SEMANTIC_ATTRIBUTE_SENTRY_ORIGIN]: 'auto.http.sveltekit',",
+                  "          [core.SEMANTIC_ATTRIBUTE_SENTRY_SOURCE]: _optionalChain([event, 'access', _5 => _5.route, 'optionalAccess', _6 => _6.id]) ? 'route' : 'url',",
+                  "          'http.method': event.request.method,",
                   "        },",
+                  "        name: routeName,",
                   "      },",
                   "      async (span) => {"
                 ]
@@ -201,7 +207,7 @@
               {
                 "colno": 28,
                 "context_line": "          response = await render_endpoint(event2, await route.endpoint(), state);",
-                "filename": "[[FILENAME2]]",
+                "filename": "[[FILENAME1]]",
                 "function": "resolve2",
                 "in_app": true,
                 "lineno": "[[highNumber]]",
@@ -227,10 +233,10 @@
               {
                 "colno": 26,
                 "context_line": "    let response = await handler(",
-                "filename": "[[FILENAME2]]",
+                "filename": "[[FILENAME1]]",
                 "function": "render_endpoint",
                 "in_app": true,
-                "lineno": 264,
+                "lineno": 272,
                 "post_context": [
                   "      /** @type {import('@sveltejs/kit').RequestEvent<Record<string, any>>} */",
                   "      event",
@@ -251,12 +257,12 @@
                 ]
               },
               {
-                "colno": 30,
+                "colno": 47,
                 "context_line": "  const exceptionId = Sentry.captureException(new Error(\"This is an error\"));",
-                "filename": "[[FILENAME4]]",
+                "filename": "[[FILENAME3]]",
                 "function": "GET",
                 "in_app": true,
-                "lineno": 4,
+                "lineno": 12,
                 "post_context": [
                   "  await Sentry.flush(2e3);",
                   "  const pathname = url.pathname;",
@@ -267,21 +273,25 @@
                   "export {"
                 ],
                 "pre_context": [
-                  "import * as Sentry from \"@sentry/nextjs\";",
-                  "import \"../../../../../chunks/sentry-release-injection-file.js\";",
+                  "    n && (e._sentryDebugIds = e._sentryDebugIds || {}, e._sentryDebugIds[n] = \"2e7df4ad-c8d1-49e2-a112-5e5c47e16d97\", e._sentryDebugIdIdenti {snip}",
+                  "  } catch (e2) {",
+                  "  }",
+                  "}();",
+                  "import * as Sentry from \"@sentry/sveltekit\";",
+                  "import \"../../../../../chunks/_sentry-release-injection-file.js\";",
                   "const GET = async ({ url }) => {"
                 ]
               }
             ]
           },
-          "type": "TypeError",
-          "value": "Sentry.captureException is not a function"
+          "type": "Error",
+          "value": "This is an error"
         }
       ]
     },
     "modules": {},
     "platform": "node",
-    "release": "016d073b9f5b47ef8e2d2cff020115bb",
+    "release": "6ba2507ba4f94699b609ae42c22ec685",
     "sdk": {
       "integrations": [
         "InboundFilters",
@@ -290,37 +300,45 @@
         "RequestData",
         "Console",
         "Http",
-        "Undici",
+        "NodeFetch",
         "OnUncaughtException",
         "OnUnhandledRejection",
         "ContextLines",
-        "LocalVariables",
+        "LocalVariablesAsync",
         "Context",
         "Modules",
+        "Express",
+        "Fastify",
+        "Graphql",
+        "Mongo",
+        "Mongoose",
+        "Mysql",
+        "Mysql2",
+        "Postgres",
+        "Nest",
+        "Hapi",
+        "Koa",
+        "Connect",
         "RewriteFrames"
       ],
       "name": "sentry.javascript.sveltekit",
       "packages": [
         {
           "name": "npm:@sentry/sveltekit",
-          "version": "7.110.1"
+          "version": "8.0.0-beta.3"
         },
         {
           "name": "npm:@sentry/node",
-          "version": "7.110.1"
+          "version": "8.0.0-beta.3"
         }
       ],
-      "version": "7.110.1"
+      "version": "8.0.0-beta.3"
     },
     "server_name": "D9M3PY4LQ7.local",
     "tags": {
-      "bundler": "vite",
-      "finalize-release": true,
-      "include": "multiple-entries",
-      "node": "v20.12.1",
-      "runtime": "node",
-      "transaction": "GET /api/test-param-error/[param]"
+      "runtime": "node"
     },
-    "timestamp": "[[timestamp]]"
+    "timestamp": "[[timestamp]]",
+    "transaction": "GET /api/test-param-error/[param]"
   }
 ]

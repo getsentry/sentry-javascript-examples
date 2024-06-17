@@ -4,7 +4,7 @@
     "event_id": "[[ID1]]",
     "sdk": {
       "name": "sentry.javascript.sveltekit",
-      "version": "7.110.1"
+      "version": "8.0.0-beta.3"
     },
     "sent_at": "[[ISODateString]]",
     "trace": {
@@ -63,25 +63,35 @@
         "name": "macOS",
         "version": "14.2"
       },
+      "otel": {
+        "resource": {
+          "service.name": "node",
+          "service.namespace": "sentry",
+          "service.version": "8.0.0-beta.3",
+          "telemetry.sdk.language": "nodejs",
+          "telemetry.sdk.name": "opentelemetry",
+          "telemetry.sdk.version": "1.23.0"
+        }
+      },
       "runtime": {
         "name": "node",
         "version": "v20.12.1"
       },
       "trace": {
         "data": {
-          "http.response.status_code": 500,
+          "http.method": "GET",
+          "http.response.status_code": 200,
+          "otel.kind": "INTERNAL",
           "sentry.op": "http.server",
           "sentry.origin": "auto.http.sveltekit",
-          "sentry.sample_rate": 1
+          "sentry.sample_rate": 1,
+          "sentry.source": "route"
         },
         "op": "http.server",
         "origin": "auto.http.sveltekit",
         "parent_span_id": "[[ID3]]",
         "span_id": "[[ID4]]",
-        "status": "internal_error",
-        "tags": {
-          "http.status_code": "500"
-        },
+        "status": "ok",
         "trace_id": "[[ID2]]"
       }
     },
@@ -89,7 +99,7 @@
     "event_id": "[[ID1]]",
     "modules": {},
     "platform": "node",
-    "release": "016d073b9f5b47ef8e2d2cff020115bb",
+    "release": "6ba2507ba4f94699b609ae42c22ec685",
     "sdk": {
       "integrations": [
         "InboundFilters",
@@ -98,39 +108,74 @@
         "RequestData",
         "Console",
         "Http",
-        "Undici",
+        "NodeFetch",
         "OnUncaughtException",
         "OnUnhandledRejection",
         "ContextLines",
-        "LocalVariables",
+        "LocalVariablesAsync",
         "Context",
         "Modules",
+        "Express",
+        "Fastify",
+        "Graphql",
+        "Mongo",
+        "Mongoose",
+        "Mysql",
+        "Mysql2",
+        "Postgres",
+        "Nest",
+        "Hapi",
+        "Koa",
+        "Connect",
         "RewriteFrames"
       ],
       "name": "sentry.javascript.sveltekit",
       "packages": [
         {
           "name": "npm:@sentry/sveltekit",
-          "version": "7.110.1"
+          "version": "8.0.0-beta.3"
         },
         {
           "name": "npm:@sentry/node",
-          "version": "7.110.1"
+          "version": "8.0.0-beta.3"
         }
       ],
-      "version": "7.110.1"
+      "version": "8.0.0-beta.3"
     },
     "server_name": "D9M3PY4LQ7.local",
-    "spans": [],
+    "spans": [
+      {
+        "data": {
+          "otel.kind": "INTERNAL",
+          "sentry.origin": "manual"
+        },
+        "description": "test-span",
+        "origin": "manual",
+        "parent_span_id": "[[ID4]]",
+        "span_id": "[[ID5]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "ok",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      },
+      {
+        "data": {
+          "otel.kind": "INTERNAL",
+          "sentry.origin": "manual"
+        },
+        "description": "child-span",
+        "origin": "manual",
+        "parent_span_id": "[[ID5]]",
+        "span_id": "[[ID6]]",
+        "start_timestamp": "[[timestamp]]",
+        "status": "ok",
+        "timestamp": "[[timestamp]]",
+        "trace_id": "[[ID2]]"
+      }
+    ],
     "start_timestamp": "[[timestamp]]",
     "tags": {
-      "bundler": "vite",
-      "finalize-release": true,
-      "http.status_code": "500",
-      "include": "multiple-entries",
-      "node": "v20.12.1",
-      "runtime": "node",
-      "transaction": "GET /api/test-error-manual"
+      "runtime": "node"
     },
     "timestamp": "[[timestamp]]",
     "transaction": "GET /api/test-error-manual",
