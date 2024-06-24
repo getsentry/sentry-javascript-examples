@@ -4832,7 +4832,7 @@ __metadata:
 
 "@sentry/nuxt@file:.yalc/@sentry/nuxt::locator=nuxt-app%40workspace%3Aapps%2Fnuxt":
   version: 8.9.2+8f0e62b7
-  resolution: "@sentry/nuxt@file:.yalc/@sentry/nuxt#.yalc/@sentry/nuxt::hash=c77983&locator=nuxt-app%40workspace%3Aapps%2Fnuxt"
+  resolution: "@sentry/nuxt@file:.yalc/@sentry/nuxt#.yalc/@sentry/nuxt::hash=e985fa&locator=nuxt-app%40workspace%3Aapps%2Fnuxt"
   dependencies:
     "@nuxt/kit": "npm:^3.12.2"
     "@sentry/core": "npm:8.9.2"
@@ -4842,9 +4842,7 @@ __metadata:
     "@sentry/utils": "npm:8.9.2"
     "@sentry/vite-plugin": "npm:2.18.0"
     "@sentry/vue": "npm:8.9.2"
-  peerDependencies:
-    nuxt: 3.x
-  checksum: 10c0/b3867473efe6f94fcb11daf570139cb81f5e31ada652b89c0ccf84afbaa4f6898696da556e49b16726f6d9da4b525e24b9421aa6b657f3cbb766474862607990
+  checksum: 10c0/688c09e46584e5fb5da2151eb20a1bf425210cde28fc10dd24c74f8e9ba6e7f0a732aa02522ae392683b9689d0ba15a7a14549151ecbded478ac823388849d14
   languageName: node
   linkType: hard
 
@@ -22403,8 +22401,8 @@ __metadata:
   linkType: hard
 
 "ws@npm:^7.4.5":
-  version: 7.5.9
-  resolution: "ws@npm:7.5.9"
+  version: 7.5.10
+  resolution: "ws@npm:7.5.10"
   peerDependencies:
     bufferutil: ^4.0.1
     utf-8-validate: ^5.0.2
@@ -22413,7 +22411,7 @@ __metadata:
       optional: true
     utf-8-validate:
       optional: true
-  checksum: 10c0/aec4ef4eb65821a7dde7b44790f8699cfafb7978c9b080f6d7a98a7f8fc0ce674c027073a78574c94786ba7112cc90fa2cc94fc224ceba4d4b1030cff9662494
+  checksum: 10c0/bd7d5f4aaf04fae7960c23dcb6c6375d525e00f795dd20b9385902bd008c40a94d3db3ce97d878acc7573df852056ca546328b27b39f47609f80fb22a0a9b61d
   languageName: node
   linkType: hard
 
