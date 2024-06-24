@@ -65,6 +65,7 @@
     "apps/astro",
     "apps/nextjs-13_2_0",
     "apps/nextjs-14_2_1",
+    "apps/nuxt",
     "apps/sveltekit-2",
     "apps/remix"
   ],
