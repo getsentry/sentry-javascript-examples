@@ -50,7 +50,8 @@
     "start:remix": "run-p start:proxy-server:remix start:app:remix",
     "fix:prettier": "prettier . --write",
     "fix:lint": "yarn run eslint --fix",
-    "lint": "yarn run eslint"
+    "lint": "yarn run eslint",
+    "clean:node_modules": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +"
   },
   "workspaces": [
     "utils/event-proxy-server",

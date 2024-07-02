@@ -5,6 +5,7 @@
     "allowSyntheticDefaultImports": true,
     "lib": ["es2018"],
     "strict": true,
-    "outDir": "dist"
+    "outDir": "dist",
+    "skipLibCheck": true
   }
 }
