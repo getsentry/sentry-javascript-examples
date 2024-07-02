@@ -15,8 +15,9 @@
     "extends": "../../package.json"
   },
   "dependencies": {
-    "@hapi/hapi": "21.3.9",
-    "@sentry/node": "8.9.2",
+    "@hapi/boom": "10.0.1",
+    "@hapi/hapi": "21.3.10",
+    "@sentry/node": "8.13.0",
     "dotenv": "^16.4.5"
   }
 }

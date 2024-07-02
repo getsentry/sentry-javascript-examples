@@ -1,6 +1,7 @@
 import './instrument';
 import * as Sentry from '@sentry/node';
 import Hapi from '@hapi/hapi';
+import Boom from '@hapi/boom';
 
 declare global {
   namespace globalThis {
@@ -12,6 +13,14 @@ const init = async () => {
   const server = Hapi.server({
     port: 3030,
     host: 'localhost',
+  });
+
+  server.route({
+    method: 'GET',
+    path: '/favicon.ico',
+    handler: (request, h) => {
+      return h.response('MOCK FAVICON').type('image/x-icon').code(200);
+    },
   });
 
   server.route({
@@ -38,7 +47,23 @@ const init = async () => {
     method: 'GET',
     path: '/test-failure-uncaught',
     handler: async function (request, h) {
-      throw new Error('This is an error');
+      throw new Error('This is a JS error (route)');
+    },
+  });
+
+  server.route({
+    method: 'GET',
+    path: '/test-failure-boom-5xx',
+    handler: async function (request, h) {
+      throw Boom.notImplemented('5xx not implemented (route)');
+    },
+  });
+
+  server.route({
+    method: 'GET',
+    path: '/test-failure-boom-4xx',
+    handler: async function (request, h) {
+      throw Boom.notFound('4xx not found (route)');
     },
   });
 
@@ -126,6 +151,15 @@ const init = async () => {
 
   // @ts-ignore
   await Sentry.setupHapiErrorHandler(server);
+
+  server.ext('onPreResponse', (response, h) => {
+    console.log('onPreResponse');
+    // throw Boom.notFound("4xx not found (onPreResponse)");
+    // throw Boom.gatewayTimeout("5xx not implemented (onPreResponse)");
+    // throw Error("onPreResponse")
+    return h.continue;
+  });
+
   await server.start();
   console.log('Server running on %s', server.info.uri);
 };
