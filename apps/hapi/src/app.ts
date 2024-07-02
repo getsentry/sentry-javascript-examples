@@ -53,17 +53,25 @@ const init = async () => {
 
   server.route({
     method: 'GET',
-    path: '/test-failure-boom-5xx',
+    path: '/test-failure-boom-4xx',
     handler: async function (request, h) {
-      throw Boom.notImplemented('5xx not implemented (route)');
+      throw new Error('This is an error (boom in onPreResponse)');
     },
   });
 
   server.route({
     method: 'GET',
-    path: '/test-failure-boom-4xx',
+    path: '/test-failure-boom-5xx',
     handler: async function (request, h) {
-      throw Boom.notFound('4xx not found (route)');
+      throw new Error('This is an error (boom in onPreResponse)');
+    },
+  });
+
+  server.route({
+    method: 'GET',
+    path: '/test-failure-JS-error-onPreResponse',
+    handler: async function (request, h) {
+      throw new Error('This is an error (JS error in onPreResponse)');
     },
   });
 
@@ -152,12 +160,18 @@ const init = async () => {
   // @ts-ignore
   await Sentry.setupHapiErrorHandler(server);
 
-  server.ext('onPreResponse', (response, h) => {
-    console.log('onPreResponse');
-    // throw Boom.notFound("4xx not found (onPreResponse)");
-    // throw Boom.gatewayTimeout("5xx not implemented (onPreResponse)");
-    // throw Error("onPreResponse")
-    return h.continue;
+  server.ext('onPreResponse', (request, h) => {
+    const path = request.route.path;
+
+    if (path.includes('boom-4xx')) {
+      throw Boom.notFound('4xx not found (onPreResponse)');
+    } else if (path.includes('boom-5xx')) {
+      throw Boom.notImplemented('5xx not implemented (onPreResponse)');
+    } else if (path.includes('JS-error-onPreResponse')) {
+      throw new Error('JS error in onPreResponse');
+    } else {
+      return h.continue;
+    }
   });
 
   await server.start();
