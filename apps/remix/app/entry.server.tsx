@@ -22,7 +22,7 @@ import { RemixServer, useLocation, useMatches } from '@remix-run/react';
 import { isbot } from 'isbot';
 import { renderToPipeableStream } from 'react-dom/server';
 
-export const handleError = Sentry.wrapRemixHandleError;
+export const handleError = Sentry.wrapHandleErrorWithSentry(() => {});
 
 const ABORT_DELAY = 5_000;
 
