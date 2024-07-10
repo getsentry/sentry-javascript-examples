@@ -11,9 +11,17 @@
     "clean": "npx nuxi cleanup"
   },
   "dependencies": {
-    "@sentry/nuxt": "file:.yalc/@sentry/nuxt",
-    "nuxt": "^3.12.2",
-    "vue": "^3.4.29",
-    "vue-router": "^4.3.3"
+    "@sentry/nuxt": "8.17.0",
+    "nuxt": "^3.12.2"
+  },
+  "//": {
+    "yalc deps (for testing)": {
+      "@sentry/browser": "file:.yalc/@sentry/browser",
+      "@sentry/core": "file:.yalc/@sentry/core",
+      "@sentry/node": "file:.yalc/@sentry/node",
+      "@sentry/nuxt": "file:.yalc/@sentry/nuxt",
+      "@sentry/utils": "file:.yalc/@sentry/utils",
+      "@sentry/vue": "file:.yalc/@sentry/vue"
+    }
   }
 }
