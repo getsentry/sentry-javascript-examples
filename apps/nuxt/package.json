@@ -11,7 +11,7 @@
     "clean": "npx nuxi cleanup"
   },
   "dependencies": {
-    "@sentry/nuxt": "8.17.0",
+    "@sentry/nuxt": "8.20.0",
     "nuxt": "^3.12.2"
   },
   "//": {
@@ -20,6 +20,8 @@
       "@sentry/core": "file:.yalc/@sentry/core",
       "@sentry/node": "file:.yalc/@sentry/node",
       "@sentry/nuxt": "file:.yalc/@sentry/nuxt",
+      "@sentry/opentelemetry": "file:.yalc/@sentry/opentelemetry",
+      "@sentry/types": "file:.yalc/@sentry/types",
       "@sentry/utils": "file:.yalc/@sentry/utils",
       "@sentry/vue": "file:.yalc/@sentry/vue"
     }
