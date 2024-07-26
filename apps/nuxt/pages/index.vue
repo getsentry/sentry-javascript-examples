@@ -1,13 +1,3 @@
 <template>
-  <div><button @click="triggerError">Trigger Error</button><br /></div>
+  <h1>Hello!</h1>
 </template>
-
-<script>
-export default {
-  methods: {
-    triggerError() {
-      throw new Error('This is a test error for Sentry');
-    },
-  },
-};
-</script>
