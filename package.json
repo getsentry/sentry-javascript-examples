@@ -21,6 +21,7 @@
     "start:proxy-server:nextjs-13_2_0": "APP_NAME=nextjs-13_2_0 yarn workspace event-proxy-server run start",
     "start:proxy-server:nextjs-14_2_1": "APP_NAME=nextjs-14_2_1 yarn workspace event-proxy-server run start",
     "start:proxy-server:sveltekit-2": "APP_NAME=sveltekit-2 yarn workspace event-proxy-server run start",
+    "start:proxy-server:react-rotuer": "APP_NAME=react-router yarn workspace event-proxy-server run start",
     "start:proxy-server:remix": "APP_NAME=remix yarn workspace event-proxy-server run start",
     "start:app:express_profiling-crons": "yarn workspace express_profiling-crons-test-application run start",
     "start:app:express_redis-cache": "yarn workspace express_redis-cache-test-application run start",
@@ -34,6 +35,7 @@
     "start:app:nextjs-13_2_0": "yarn workspace nextjs-13_2_0-test-application run dev",
     "start:app:nextjs-14_2_1": "yarn workspace nextjs-14_2_1-test-application run dev",
     "start:app:sveltekit-2": "yarn workspace sveltekit-2-test-application run dev",
+    "start:app:react-router": "yarn workspace react-router-test-application run dev",
     "start:app:remix": "yarn workspace remix-test-application run dev",
     "start:express_profiling-crons": "run-p start:proxy-server:express_profiling-crons start:app:express_profiling-crons",
     "start:express_redis-cache": "run-p start:proxy-server:express_redis-cache start:app:express_redis-cache",
@@ -47,6 +49,7 @@
     "start:nextjs-13_2_0": "run-p start:proxy-server:nextjs-13_2_0 start:app:nextjs-13_2_0",
     "start:nextjs-14_2_1": "run-p start:proxy-server:nextjs-14_2_1 start:app:nextjs-14_2_1",
     "start:sveltekit-2": "run-p start:proxy-server:sveltekit-2 start:app:sveltekit-2",
+    "start:react-router": "run-p start:proxy-server:react-router start:app:react-router",
     "start:remix": "run-p start:proxy-server:remix start:app:remix",
     "fix:prettier": "prettier . --write",
     "fix:lint": "yarn run eslint --fix",
@@ -67,8 +70,9 @@
     "apps/nextjs-13_2_0",
     "apps/nextjs-14_2_1",
     "apps/nuxt",
-    "apps/sveltekit-2",
-    "apps/remix"
+    "apps/react-router",
+    "apps/remix",
+    "apps/sveltekit-2"
   ],
   "devDependencies": {
     "@eslint/js": "^9.0.0",
