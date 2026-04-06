@@ -10,7 +10,7 @@
     "clean": "npx rimraf node_modules,pnpm-lock.yaml"
   },
   "devDependencies": {
-    "vite": "^6.0.3"
+    "vite": "^6.4.2"
   },
   "dependencies": {
     "@sentry/browser": "^8.47.0"
